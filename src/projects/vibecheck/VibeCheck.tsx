@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Search, Zap, Sun, Moon, BookOpen, Building2, Calendar, Sparkles, AlertCircle, Share2, Download, Loader2, ArrowLeft, ExternalLink } from 'lucide-react';
 import { saveAs } from 'file-saver';
 import { toPng } from 'html-to-image';
+import { ClearButton } from '../../components/ClearButton';
 
 // ---------------------------------------------------------------------------
 // VibeCheck runs entirely against Wikipedia's public, key-free, CORS-enabled
@@ -1108,8 +1109,9 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Search another company..."
-                    className="w-full md:w-64 bg-white/50 dark:bg-black/50 border border-gray-300 dark:border-white/20 rounded-full py-2 pl-10 pr-4 focus:outline-none focus:border-[#ccff00] focus:ring-1 focus:ring-[#ccff00] transition-all placeholder-gray-900 dark:placeholder-gray-100 text-gray-900 dark:text-white backdrop-blur-md shadow-sm text-sm"
+                    className="w-full md:w-64 bg-white/50 dark:bg-black/50 border border-gray-300 dark:border-white/20 rounded-full py-2 pl-10 pr-10 focus:outline-none focus:border-[#ccff00] focus:ring-1 focus:ring-[#ccff00] transition-all placeholder-gray-900 dark:placeholder-gray-100 text-gray-900 dark:text-white backdrop-blur-md shadow-sm text-sm"
                   />
+                  {query && <ClearButton onClear={() => setQuery('')} className="right-0 text-gray-900 dark:text-white hover:text-[#ccff00]" />}
                 </form>
               )}
               {data && (
@@ -1166,8 +1168,9 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Enter a company name (e.g., Netflix, Nike, OpenAI)..."
-                    className="w-full bg-white dark:bg-[#141414] border-2 border-gray-200 dark:border-white/10 rounded-full py-4 pl-16 pr-32 focus:outline-none focus:border-[#ccff00] transition-all placeholder-gray-900 dark:placeholder-gray-100 text-gray-900 dark:text-white shadow-xl text-lg md:text-xl"
+                    className="w-full bg-white dark:bg-[#141414] border-2 border-gray-200 dark:border-white/10 rounded-full py-4 pl-16 pr-44 focus:outline-none focus:border-[#ccff00] transition-all placeholder-gray-900 dark:placeholder-gray-100 text-gray-900 dark:text-white shadow-xl text-lg md:text-xl"
                   />
+                  {query && <ClearButton onClear={() => setQuery('')} className="right-32 text-gray-900 dark:text-white hover:text-[#ccff00]" />}
                   <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#ccff00] text-black px-6 py-2.5 rounded-full font-bold hover:bg-[#b3e600] transition-colors shadow-md">
                     Search
                   </button>
