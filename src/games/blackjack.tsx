@@ -377,7 +377,7 @@ function PlayingCard({ rank, small }: { key?: string; rank: string; small?: bool
       )}
       style={{ background: hidden ? 'linear-gradient(145deg,#3A3F4B,#20242C)' : gradientFor(rank) }}
     >
-      {hidden ? <span className="opacity-70 text-xl">✦</span> : rank}
+      {hidden ? <span className="text-xl">✦</span> : rank}
     </div>
   );
 }
@@ -420,7 +420,7 @@ function Seat({ state, id, viewerId }: { key?: string; state: BlackjackState; id
         <span className="flex items-center gap-1.5">
           {isCasino
             ? <span className="text-xs font-black font-mono px-2 py-0.5 rounded-lg bg-[#262B34] text-[#FFD60A]">🪙 {state.chips[id] ?? 0}</span>
-            : <span className="text-xs font-black font-mono px-2 py-0.5 rounded-lg bg-[#262B34] text-[#F5F6F7]">{state.scores[id] ?? 0}<span className="text-white/40">/{ROUNDS_TARGET}</span></span>}
+            : <span className="text-xs font-black font-mono px-2 py-0.5 rounded-lg bg-[#262B34] text-[#F5F6F7]">{state.scores[id] ?? 0}<span className="text-white">/{ROUNDS_TARGET}</span></span>}
           {showVal && cards.length > 0 && (
             <span className={cn('text-xs font-black font-mono px-2 py-0.5 rounded-lg', busted ? 'bg-[#E63946] text-white' : 'bg-[#262B34] text-[#F5F6F7]')}>
               {busted ? `BUST ${val}` : val}
@@ -433,7 +433,7 @@ function Seat({ state, id, viewerId }: { key?: string; state: BlackjackState; id
         {cards.length > 0
           ? cards.map((c) => <PlayingCard key={c.id} rank={c.rank} small />)
           : (
-            <span className="text-[10px] font-mono uppercase tracking-wider text-[#5B6470]">
+            <span className="text-[10px] font-mono uppercase tracking-wider text-[#E2E4E8]">
               {bankrupt ? 'Out of chips' : state.phase === 'betting'
                 ? (state.betLocked[id] ? `Bet ${state.bets[id]} · ready` : 'Placing bet…')
                 : '—'}
@@ -475,7 +475,7 @@ function Board({ state, myId, dispatch }: BoardProps<BlackjackState>) {
         <h1 className="text-3xl sm:text-4xl font-black tracking-tighter uppercase italic text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg,#F72585,#4CC9F0)' }}>
           Blackjack 21
         </h1>
-        <span className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">
+        <span className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">
           {isCasino ? `Casino · Hand ${state.round} / ${CASINO_HANDS}${pot > 0 ? ` · Pot ${pot}` : ''}` : `Round ${state.round} / ${ROUNDS_TARGET}`} · Room #{state.roomId}
         </span>
       </div>
@@ -496,15 +496,15 @@ function Board({ state, myId, dispatch }: BoardProps<BlackjackState>) {
       <div className="w-full mt-5 flex flex-col items-center gap-3">
         {inBetting ? (
           !amParticipant ? (
-            <p className="text-sm font-mono uppercase tracking-widest text-[#9CA3AF] text-center">Out of chips — spectating this hand…</p>
+            <p className="text-sm font-mono uppercase tracking-widest text-[#E2E4E8] text-center">Out of chips — spectating this hand…</p>
           ) : myLocked ? (
-            <p className="text-sm font-mono uppercase tracking-widest text-[#9CA3AF] animate-pulse text-center">Bet {state.bets[myId]} locked — waiting for the table…</p>
+            <p className="text-sm font-mono uppercase tracking-widest text-[#E2E4E8] text-center">Bet {state.bets[myId]} locked — waiting for the table…</p>
           ) : (
             <div className="w-full flex flex-col items-center gap-3">
               <div className="flex items-center gap-2 text-[#FFD60A] font-mono font-black text-lg">
-                <span className="text-[10px] uppercase tracking-widest text-[#9CA3AF]">Bet</span>
+                <span className="text-[10px] uppercase tracking-widest text-[#E2E4E8]">Bet</span>
                 🪙 {pendingBet}
-                <span className="text-[10px] uppercase tracking-widest text-[#9CA3AF]">of {myChips}</span>
+                <span className="text-[10px] uppercase tracking-widest text-[#E2E4E8]">of {myChips}</span>
               </div>
               <div className="flex gap-2 flex-wrap justify-center">
                 {CHIP_DENOMS.map((d) => (
@@ -520,12 +520,12 @@ function Board({ state, myId, dispatch }: BoardProps<BlackjackState>) {
                 ))}
               </div>
               <div className="grid grid-cols-3 gap-2 w-full max-w-sm">
-                <button onClick={() => setPendingBet(0)} className="py-3 rounded-xl font-black uppercase tracking-widest text-xs text-[#9CA3AF] border-2 border-[#39414E] hover:text-white active:translate-y-0.5 transition-all">Clear</button>
+                <button onClick={() => setPendingBet(0)} className="py-3 rounded-xl font-black uppercase tracking-widest text-xs text-[#E2E4E8] border-2 border-[#39414E] hover:text-white active:translate-y-0.5 transition-all">Clear</button>
                 <button onClick={() => setPendingBet(myChips)} className="py-3 rounded-xl font-black uppercase tracking-widest text-xs text-white border-2 border-[#39414E] hover:bg-[#262B34] active:translate-y-0.5 transition-all">All in</button>
                 <button
                   onClick={() => dispatch({ a: 'lockBet', amount: pendingBet })}
                   disabled={pendingBet < Math.min(MIN_BET, myChips) || pendingBet <= 0}
-                  className="py-3 rounded-xl font-black uppercase tracking-widest text-xs text-white active:translate-y-0.5 transition-all shadow-[0_4px_0_#118AB2] disabled:opacity-40 disabled:shadow-none"
+                  className="py-3 rounded-xl font-black uppercase tracking-widest text-xs text-white active:translate-y-0.5 transition-all shadow-[0_4px_0_#118AB2] disabled:cursor-not-allowed disabled:shadow-none"
                   style={{ background: 'linear-gradient(145deg,#06D6A0,#118AB2)' }}
                 >
                   Deal
@@ -537,20 +537,20 @@ function Board({ state, myId, dispatch }: BoardProps<BlackjackState>) {
           <div className="grid grid-cols-3 gap-3 w-full max-w-md">
             <button onClick={() => dispatch({ a: 'hit' })} className="py-4 rounded-2xl font-black uppercase tracking-widest text-white active:translate-y-0.5 transition-all shadow-[0_5px_0_#118AB2]" style={{ background: 'linear-gradient(145deg,#06D6A0,#118AB2)' }}>Hit</button>
             <button onClick={() => dispatch({ a: 'stand' })} className="py-4 rounded-2xl font-black uppercase tracking-widest text-white active:translate-y-0.5 transition-all shadow-[0_5px_0_#B5179E]" style={{ background: 'linear-gradient(145deg,#F72585,#B5179E)' }}>Stand</button>
-            <button onClick={() => canDouble && dispatch({ a: 'double' })} disabled={!canDouble} className="py-4 rounded-2xl font-black uppercase tracking-widest text-white active:translate-y-0.5 transition-all shadow-[0_5px_0_#FF5400] disabled:opacity-40 disabled:shadow-none" style={{ background: 'linear-gradient(145deg,#FF9E00,#FF5400)' }}>2×</button>
+            <button onClick={() => canDouble && dispatch({ a: 'double' })} disabled={!canDouble} className="py-4 rounded-2xl font-black uppercase tracking-widest text-white active:translate-y-0.5 transition-all shadow-[0_5px_0_#FF5400] disabled:cursor-not-allowed disabled:shadow-none" style={{ background: 'linear-gradient(145deg,#FF9E00,#FF5400)' }}>2×</button>
           </div>
         ) : inReveal ? (
           state.ready[myId] ? (
-            <p className="text-sm font-mono uppercase tracking-widest text-[#9CA3AF] animate-pulse text-center">Ready — waiting for the table…</p>
+            <p className="text-sm font-mono uppercase tracking-widest text-[#E2E4E8] text-center">Ready — waiting for the table…</p>
           ) : (
             <button onClick={() => dispatch({ a: 'next' })} className="w-full max-w-md py-4 rounded-2xl font-black uppercase tracking-[0.2em] text-white active:translate-y-0.5 transition-all shadow-[0_5px_0_#3A0CA3]" style={{ background: 'linear-gradient(145deg,#8338EC,#3A0CA3)' }}>
               ♻ {isCasino ? 'Next Hand' : 'Next Round'}
             </button>
           )
         ) : (
-          <p className="text-sm font-mono uppercase tracking-widest text-[#9CA3AF] animate-pulse text-center">Waiting for {turnName}…</p>
+          <p className="text-sm font-mono uppercase tracking-widest text-[#E2E4E8] text-center">Waiting for {turnName}…</p>
         )}
-        <p className="text-[10px] font-mono uppercase tracking-wider text-[#8A92A0] text-center">Aces count 11 or 1 · face cards are 10 · best hand under 22 takes the {isCasino ? 'pot' : 'round'}</p>
+        <p className="text-[10px] font-mono uppercase tracking-wider text-[#E2E4E8] text-center">Aces count 11 or 1 · face cards are 10 · best hand under 22 takes the {isCasino ? 'pot' : 'round'}</p>
       </div>
     </div>
   );
@@ -566,7 +566,7 @@ function ModePicker({ state, myId, dispatch }: BoardProps<BlackjackState>) {
   ];
   return (
     <div>
-      <p className="text-[11px] font-mono uppercase tracking-widest text-[#8A92A0] mb-3 text-center">Game mode</p>
+      <p className="text-[11px] font-mono uppercase tracking-widest text-[#E2E4E8] mb-3 text-center">Game mode</p>
       <div className="grid grid-cols-1 gap-3">
         {options.map((o) => {
           const selected = state.mode === o.id;
@@ -578,19 +578,19 @@ function ModePicker({ state, myId, dispatch }: BoardProps<BlackjackState>) {
               className={cn(
                 'text-left p-4 rounded-2xl border-2 transition-all',
                 selected ? 'border-white bg-white/5' : 'border-[#39414E] bg-[#1A1D24] hover:border-[#8A92A0]',
-                !isHost && 'opacity-70 cursor-not-allowed',
+                !isHost && 'cursor-not-allowed',
               )}
             >
               <div className="flex items-center justify-between">
                 <span className="font-black uppercase tracking-wider text-[#F5F6F7]">{o.label}</span>
                 {selected && <span className="text-[10px] font-mono uppercase tracking-widest text-[#06D6A0]">selected ✓</span>}
               </div>
-              <p className="text-xs text-[#9CA3AF] mt-1 leading-snug normal-case tracking-normal">{o.blurb}</p>
+              <p className="text-xs text-[#E2E4E8] mt-1 leading-snug normal-case tracking-normal">{o.blurb}</p>
             </button>
           );
         })}
       </div>
-      <p className="text-[9px] font-mono uppercase tracking-wider text-[#5B6470] mt-3 text-center leading-relaxed">
+      <p className="text-[9px] font-mono uppercase tracking-wider text-[#E2E4E8] mt-3 text-center leading-relaxed">
         {isHost ? 'Your pick applies to the whole table.' : 'Only the host picks the mode.'}
       </p>
     </div>

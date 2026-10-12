@@ -298,7 +298,7 @@ function ModeChooser({ myTurn, chooserName, dispatch }: { myTurn: boolean; choos
     <div className="flex flex-col items-center p-4 sm:p-8 max-w-md mx-auto w-full">
       <div className="w-full flex flex-col items-center mb-8 border-b-2 border-[#39414E] pb-4">
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tighter uppercase italic text-[#F5F6F7]">Lotería</h1>
-        <span className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Choose your mode</span>
+        <span className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">Choose your mode</span>
       </div>
 
       {myTurn ? (
@@ -308,7 +308,7 @@ function ModeChooser({ myTurn, chooserName, dispatch }: { myTurn: boolean; choos
             className="w-full p-6 text-left bg-[#1A1D24] hover:bg-[#262B34] active:translate-y-1 transition-all border-2 border-[#39414E] shadow-[4px_4px_0px_#454C5A] hover:shadow-[2px_2px_0px_#454C5A]"
           >
             <div className="text-xl font-bold uppercase tracking-wider text-[#F5F6F7]">🎴 Clásico</div>
-            <div className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF] mt-2">
+            <div className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8] mt-2">
               Sing the cartas · fill the whole tabla · shout ¡Lotería!
             </div>
           </button>
@@ -318,13 +318,13 @@ function ModeChooser({ myTurn, chooserName, dispatch }: { myTurn: boolean; choos
             style={{ boxShadow: `4px 4px 0px ${ACCENT}` }}
           >
             <div className="text-xl font-bold uppercase tracking-wider text-[#F5F6F7]">⚡ Frenzy</div>
-            <div className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF] mt-2">
+            <div className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8] mt-2">
               Classic + surprise 🎁 mystery power-ups: maybe a free bean… maybe not
             </div>
           </button>
         </div>
       ) : (
-        <p className="text-sm font-mono uppercase tracking-widest text-[#9CA3AF] animate-pulse text-center">
+        <p className="text-sm font-mono uppercase tracking-widest text-[#E2E4E8] text-center">
           Waiting for {chooserName} to pick a mode…
         </p>
       )}
@@ -336,7 +336,7 @@ function CalledCard({ carta, count, total }: { carta: Carta | null; count: numbe
   const color = carta ? colorOf(carta.id) : ACCENT;
   return (
     <div className="flex flex-col items-center gap-3">
-      <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-[#8A92A0]">
+      <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-[#E2E4E8]">
         La carta cantada · {count}/{total}
       </span>
       <div
@@ -347,12 +347,12 @@ function CalledCard({ carta, count, total }: { carta: Carta | null; count: numbe
           <>
             <div className="text-6xl sm:text-7xl leading-none">{carta.emoji}</div>
             <div className="text-lg font-black uppercase tracking-tight text-[#F5F6F7]">{carta.name}</div>
-            <div className="text-[11px] italic leading-snug text-[#9CA3AF]">“{carta.verse}”</div>
+            <div className="text-[11px] italic leading-snug text-[#E2E4E8]">“{carta.verse}”</div>
           </>
         ) : (
           <>
             <div className="text-6xl sm:text-7xl leading-none opacity-40">🎴</div>
-            <div className="text-sm font-mono uppercase tracking-widest text-[#8A92A0]">La primera carta</div>
+            <div className="text-sm font-mono uppercase tracking-widest text-[#E2E4E8]">La primera carta</div>
           </>
         )}
       </div>
@@ -381,7 +381,7 @@ function TablaCell({ carta, color, called, marked, flash, onClick }: TablaCellPr
       style={{ background, borderColor: color }}
       className={cn(
         'relative aspect-[3/4] border-2 flex flex-col items-center justify-center gap-0.5 p-1 transition-all touch-manipulation overflow-hidden',
-        !called && !marked && 'opacity-80',
+        !called && !marked && 'grayscale',
         called && !marked && 'hover:brightness-125 active:translate-y-0.5',
         marked && 'ring-2 ring-[#F72585] ring-offset-1 ring-offset-[#0F1117]',
         flash && 'ring-4 ring-[#FFD60A] ring-offset-1 ring-offset-[#0F1117] animate-pulse z-10',
@@ -436,7 +436,7 @@ function Board({ state, myId, dispatch }: BoardProps<LoteriaState>) {
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tighter uppercase italic text-[#F5F6F7]">
           Lotería <span className="not-italic" style={{ color: ACCENT }}>{state.frenzy ? 'Frenzy ⚡' : 'Clásico'}</span>
         </h1>
-        <span className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Room ID: #{state.roomId}</span>
+        <span className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">Room ID: #{state.roomId}</span>
       </div>
 
       {/* Bean-count scoreboard — all players (2–5). */}
@@ -452,8 +452,8 @@ function Board({ state, myId, dispatch }: BoardProps<LoteriaState>) {
                 me ? 'bg-[#F72585]/10' : 'bg-[#1A1D24]',
               )}
             >
-              <div className="text-[10px] font-mono uppercase tracking-widest text-[#9CA3AF] truncate">{nameOf(id)} 🫘</div>
-              <div className="text-xl font-black font-mono text-[#F5F6F7]">{b}<span className="text-xs text-[#8A92A0]">/{TABLA_SIZE}</span></div>
+              <div className="text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8] truncate">{nameOf(id)} 🫘</div>
+              <div className="text-xl font-black font-mono text-[#F5F6F7]">{b}<span className="text-xs text-[#E2E4E8]">/{TABLA_SIZE}</span></div>
             </div>
           );
         })}
@@ -467,7 +467,7 @@ function Board({ state, myId, dispatch }: BoardProps<LoteriaState>) {
       {state.frenzy && myMystery && (
         <div className="w-full max-w-md mb-4 border-2 border-[#FFD60A] bg-[#FFD60A]/10 p-3 flex flex-col items-center gap-2">
           <div className="text-sm font-black uppercase tracking-widest text-[#F5F6F7]">🎁 ¡Power-up misterioso!</div>
-          <div className="text-[10px] font-mono uppercase tracking-widest text-[#9CA3AF]">¿Lo usas? Podría ser bueno… o no 😅</div>
+          <div className="text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8]">¿Lo usas? Podría ser bueno… o no 😅</div>
           <div className="flex gap-3 w-full">
             <button
               onClick={() => dispatch({ type: 'mystery', use: true })}
@@ -499,7 +499,7 @@ function Board({ state, myId, dispatch }: BoardProps<LoteriaState>) {
         return (
           <div className={cn(
             'w-full max-w-md mb-4 border-2 px-4 py-2 text-center text-xs font-mono font-bold uppercase tracking-widest',
-            iBenefited ? 'border-[#06D6A0] bg-[#06D6A0]/10 text-[#9BE7D3]' : 'border-[#39414E] bg-[#1A1D24] text-[#9CA3AF]',
+            iBenefited ? 'border-[#06D6A0] bg-[#06D6A0]/10 text-[#9BE7D3]' : 'border-[#39414E] bg-[#1A1D24] text-[#E2E4E8]',
           )}>
             {text}
           </div>
@@ -509,7 +509,7 @@ function Board({ state, myId, dispatch }: BoardProps<LoteriaState>) {
       {/* Round gate: flash your slot, bean it, then tap Listo. */}
       <div className="w-full max-w-md flex flex-col items-center gap-2 mb-5">
         {deckDone ? (
-          <p className="text-[11px] font-mono uppercase tracking-widest text-[#8A92A0] text-center">
+          <p className="text-[11px] font-mono uppercase tracking-widest text-[#E2E4E8] text-center">
             Todas las cartas cantadas — termina tu tabla
           </p>
         ) : (
@@ -520,7 +520,7 @@ function Board({ state, myId, dispatch }: BoardProps<LoteriaState>) {
               className={cn(
                 'w-full py-3 font-black uppercase tracking-[0.2em] border-2 border-[#39414E] transition-all',
                 iReady
-                  ? 'bg-[#1A1D24] text-[#5B6472] animate-pulse cursor-default'
+                  ? 'bg-[#1A1D24] text-[#E2E4E8] cursor-default'
                   : 'bg-[#262B34] text-white shadow-[4px_4px_0px_#06D6A0] hover:shadow-[2px_2px_0px_#06D6A0] active:translate-y-1 active:shadow-none',
               )}
             >
@@ -531,7 +531,7 @@ function Board({ state, myId, dispatch }: BoardProps<LoteriaState>) {
                 ¡La tienes! Toca la carta que parpadea 🫘
               </p>
             )}
-            <p className="text-[10px] font-mono uppercase tracking-widest text-[#6B7280]">
+            <p className="text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8]">
               Listos: {readyCount}/{ids.length}
             </p>
           </>
@@ -579,7 +579,7 @@ function Board({ state, myId, dispatch }: BoardProps<LoteriaState>) {
             ¡Tabla llena — grítalo!
           </span>
         ) : (
-          <span className="text-[10px] font-mono uppercase tracking-widest text-[#6B7280]">
+          <span className="text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8]">
             {state.frenzy ? 'Llena toda la tabla · vigila los 🎁 misteriosos' : 'Llena toda la tabla para ganar'}
           </span>
         )}

@@ -89,7 +89,7 @@ function Board({ state, myId, dispatch }: BoardProps<TicTacToeState>) {
     <div className="flex flex-col items-center p-4 sm:p-8 max-w-xl mx-auto w-full">
       <div className="w-full flex flex-col items-center mb-6 border-b-2 border-[#39414E] pb-4">
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tighter uppercase italic text-[#F5F6F7]">Tic-Tac-Toe</h1>
-        <span className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Room ID: #{state.roomId}</span>
+        <span className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">Room ID: #{state.roomId}</span>
       </div>
 
       <div className={cn(

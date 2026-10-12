@@ -48,7 +48,7 @@ export function GameOver({ def, state, myId, onExit, onPlayAgain }: GameOverProp
         </div>
         <div>
           <h1 className="text-4xl font-extrabold text-[#F5F6F7] tracking-tighter uppercase italic">GAME OVER</h1>
-          <p className="text-base mt-4 text-[#9CA3AF] font-mono tracking-widest uppercase">{message}</p>
+          <p className="text-base mt-4 text-[#E2E4E8] font-mono tracking-widest uppercase">{message}</p>
         </div>
 
         <button

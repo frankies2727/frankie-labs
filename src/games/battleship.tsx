@@ -270,7 +270,7 @@ function FleetStatus({ title, sunk, tone }: { title: string; sunk: boolean[]; to
   return (
     <div className="border-2 border-[#39414E] bg-[#1A1D24] p-3 w-full">
       <div className="flex items-center justify-between mb-2">
-        <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#9CA3AF]">{title}</span>
+        <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#E2E4E8]">{title}</span>
         <span className={cn('text-[10px] font-mono font-bold uppercase tracking-widest', remaining ? 'text-[#E63946]' : 'text-[#2A9D8F]')}>
           {remaining} left
         </span>
@@ -278,7 +278,7 @@ function FleetStatus({ title, sunk, tone }: { title: string; sunk: boolean[]; to
       <ul className="space-y-1">
         {SHIPS.map((size, id) => (
           <li key={id} className="flex items-center justify-between gap-2">
-            <span className={cn('text-xs font-bold', sunk[id] ? 'line-through text-[#6B7280]' : 'text-[#E2E4E8]')}>
+            <span className={cn('text-xs font-bold', sunk[id] ? 'line-through text-[#E2E4E8]' : 'text-[#E2E4E8]')}>
               {SHIP_NAMES[id]}
             </span>
             <span className="flex items-center gap-1">
@@ -287,7 +287,7 @@ function FleetStatus({ title, sunk, tone }: { title: string; sunk: boolean[]; to
                   <span key={k} className={cn('w-2 h-2 border', sunk[id] ? 'bg-[#E63946] border-[#E63946]' : tone === 'enemy' ? 'bg-transparent border-[#5b6770]' : 'bg-[#5b6770] border-[#5b6770]')} />
                 ))}
               </span>
-              <span className="text-[9px] font-mono text-[#8A92A0] w-8 text-right">{sunk[id] ? 'SUNK' : `(${size})`}</span>
+              <span className="text-[9px] font-mono text-[#E2E4E8] w-8 text-right">{sunk[id] ? 'SUNK' : `(${size})`}</span>
             </span>
           </li>
         ))}
@@ -347,7 +347,7 @@ function PlacementBoard({
     <div className="flex flex-col items-center p-4 sm:p-8 max-w-md mx-auto w-full">
       <div className="w-full flex flex-col items-center mb-4 border-b-2 border-[#39414E] pb-4">
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tighter uppercase italic text-[#F5F6F7]">Battleship</h1>
-        <span className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Place your fleet · Room #{roomId}</span>
+        <span className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">Place your fleet · Room #{roomId}</span>
       </div>
 
       {iAmReady ? (
@@ -357,7 +357,7 @@ function PlacementBoard({
               <GridCell key={i} kind={cell != null ? 'ship' : 'water'} small />
             ))}
           </div>
-          <p className="text-sm font-mono uppercase tracking-widest text-[#9CA3AF] animate-pulse text-center">
+          <p className="text-sm font-mono uppercase tracking-widest text-[#E2E4E8] text-center">
             Waiting for admirals to ready up… ({readyCount}/{totalPlayers})
           </p>
         </>
@@ -370,7 +370,7 @@ function PlacementBoard({
                 onClick={() => switchMode(m)}
                 className={cn(
                   'flex-1 py-2 text-xs font-bold uppercase tracking-widest border-2 border-[#39414E] transition-all',
-                  mode === m ? 'bg-[#E63946] text-white' : 'bg-[#1A1D24] text-[#9CA3AF] hover:text-white',
+                  mode === m ? 'bg-[#E63946] text-white' : 'bg-[#1A1D24] text-[#E2E4E8] hover:text-white',
                 )}
               >
                 {m === 'auto' ? '🎲 Random' : '✋ Place by hand'}
@@ -402,7 +402,7 @@ function PlacementBoard({
           {mode === 'manual' && (
             <div className="w-full max-w-[420px] mb-4 space-y-3">
               <div className="flex items-center justify-between gap-2">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#8A92A0]">Orientation</span>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8]">Orientation</span>
                 <button
                   onClick={() => setHoriz((h) => !h)}
                   className="px-4 py-2 text-xs font-bold uppercase tracking-widest bg-[#1A1D24] text-[#F5F6F7] border-2 border-[#39414E] shadow-[3px_3px_0px_#454C5A] active:translate-y-0.5 active:shadow-none"
@@ -421,14 +421,14 @@ function PlacementBoard({
                         ? 'border-[#2A9D8F] text-[#2A9D8F] bg-[#2A9D8F]/10'
                         : activeShip === shipId
                           ? 'border-[#E63946] text-white bg-[#E63946]/20'
-                          : 'border-[#39414E] text-[#9CA3AF]',
+                          : 'border-[#39414E] text-[#E2E4E8]',
                     )}
                   >
                     {SHIP_NAMES[shipId]} ({size}){isPlaced(shipId) ? ' ✓' : ''}
                   </button>
                 ))}
               </div>
-              <p className="text-[10px] font-mono uppercase tracking-wider text-[#8A92A0] text-center">
+              <p className="text-[10px] font-mono uppercase tracking-wider text-[#E2E4E8] text-center">
                 Pick a ship, set orientation, tap a cell to drop it.
               </p>
             </div>
@@ -453,7 +453,7 @@ function PlacementBoard({
             <button
               onClick={() => complete && dispatch({ a: 'ready' })}
               disabled={!complete}
-              className="flex-1 py-4 bg-[#E63946] text-white font-bold uppercase tracking-widest border-2 border-[#39414E] shadow-[4px_4px_0px_#454C5A] hover:shadow-[2px_2px_0px_#454C5A] active:translate-y-1 active:shadow-none transition-all disabled:opacity-40 disabled:active:translate-y-0 disabled:shadow-[4px_4px_0px_#2E343F]"
+              className="flex-1 py-4 bg-[#E63946] text-white font-bold uppercase tracking-widest border-2 border-[#39414E] shadow-[4px_4px_0px_#454C5A] hover:shadow-[2px_2px_0px_#454C5A] active:translate-y-1 active:shadow-none transition-all disabled:cursor-not-allowed disabled:active:translate-y-0 disabled:shadow-[4px_4px_0px_#2E343F]"
             >
               ✓ Ready
             </button>
@@ -524,16 +524,16 @@ function Board({ state, myId, dispatch }: BoardProps<BattleshipState>) {
     <div className="flex flex-col items-center p-4 sm:p-6 max-w-5xl mx-auto w-full">
       <div className="w-full flex flex-col items-center mb-4 border-b-2 border-[#39414E] pb-4">
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tighter uppercase italic text-[#F5F6F7]">Battleship</h1>
-        <span className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">{state.order.length} admirals · Room #{state.roomId}</span>
+        <span className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">{state.order.length} admirals · Room #{state.roomId}</span>
       </div>
 
       <div className={cn(
         'px-6 py-2 border-2 border-[#39414E] font-bold text-sm uppercase shadow-[4px_4px_0px_#454C5A] mb-2',
-        iAmOut ? 'bg-[#262B34] text-[#8A92A0]' : myTurn ? 'bg-[#E63946] text-white' : 'bg-[#262B34] text-white',
+        iAmOut ? 'bg-[#262B34] text-[#E2E4E8]' : myTurn ? 'bg-[#E63946] text-white' : 'bg-[#262B34] text-white',
       )}>
         {iAmOut ? 'You were sunk — spectating' : myTurn ? 'Your turn — pick a target & fire!' : `${state.players[state.turnId ?? '']?.name ?? 'Someone'}'s turn`}
       </div>
-      <p className="text-[11px] font-mono uppercase tracking-wider text-[#9CA3AF] mb-6 text-center">{lastText}</p>
+      <p className="text-[11px] font-mono uppercase tracking-wider text-[#E2E4E8] mb-6 text-center">{lastText}</p>
 
       {/* Opponent tabs */}
       {opponents.length > 1 && (
@@ -547,12 +547,12 @@ function Board({ state, myId, dispatch }: BoardProps<BattleshipState>) {
                 disabled={out}
                 className={cn(
                   'px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider border-2 transition-all flex items-center gap-2',
-                  target === id ? 'border-[#E63946] bg-[#E63946]/15 text-white' : 'border-[#39414E] bg-[#1A1D24] text-[#9CA3AF] hover:text-white',
-                  out && 'opacity-50 line-through',
+                  target === id ? 'border-[#E63946] bg-[#E63946]/15 text-white' : 'border-[#39414E] bg-[#1A1D24] text-[#E2E4E8] hover:text-white',
+                  out && 'line-through grayscale',
                 )}
               >
                 {out ? '💀' : '🎯'} {state.players[id]?.name ?? '—'}
-                <span className="font-mono text-[9px] text-[#8A92A0]">{out ? 'out' : `${shipsLeft(id)} left`}</span>
+                <span className="font-mono text-[9px] text-[#E2E4E8]">{out ? 'out' : `${shipsLeft(id)} left`}</span>
               </button>
             );
           })}
@@ -572,7 +572,7 @@ function Board({ state, myId, dispatch }: BoardProps<BattleshipState>) {
             </div>
             <div className={cn(
               'grid grid-cols-12 gap-0.5 w-full max-w-[360px] bg-[#262B34] p-1 border-2 border-[#39414E] shadow-[6px_6px_0px_#2E343F]',
-              !canFireTarget && 'opacity-70',
+              !canFireTarget && 'grayscale',
             )}>
               {Array.from({ length: CELLS }).map((_, i) => {
                 const shot = targetIncoming[i];
@@ -593,7 +593,7 @@ function Board({ state, myId, dispatch }: BoardProps<BattleshipState>) {
           <div className="flex flex-col items-center">
             <div className="flex justify-between w-full max-w-[360px] mb-2">
               <h2 className="font-bold text-xs uppercase tracking-widest text-[#F5F6F7]">Your fleet</h2>
-              <span className="font-mono text-xs text-[#9CA3AF] font-bold">{theirHitsOnMe}/{TOTAL_SHIP_CELLS} hit</span>
+              <span className="font-mono text-xs text-[#E2E4E8] font-bold">{theirHitsOnMe}/{TOTAL_SHIP_CELLS} hit</span>
             </div>
             <div className="grid grid-cols-12 gap-0.5 w-full max-w-[360px] bg-[#262B34] p-1 border-2 border-[#39414E] shadow-[6px_6px_0px_#2E343F]">
               {myFleet.map((cell, i) => {

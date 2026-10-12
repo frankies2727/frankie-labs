@@ -27,6 +27,12 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+        env:
+          # Optional private TURN relay for cross-network play (see README).
+          # Plain variables, not secrets: they end up in the public bundle.
+          VITE_TURN_URLS: ${{ vars.VITE_TURN_URLS }}
+          VITE_TURN_USERNAME: ${{ vars.VITE_TURN_USERNAME }}
+          VITE_TURN_CREDENTIAL: ${{ vars.VITE_TURN_CREDENTIAL }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

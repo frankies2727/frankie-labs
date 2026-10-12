@@ -135,7 +135,7 @@ function Board({ state, myId, dispatch }: BoardProps<HighLowState>) {
     <div className="flex flex-col items-center p-4 sm:p-8 max-w-xl mx-auto w-full">
       <div className="w-full flex flex-col items-center mb-6 border-b-2 border-[#39414E] pb-4">
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tighter uppercase italic text-[#F5F6F7]">High-Low</h1>
-        <span className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Room ID: #{state.roomId}</span>
+        <span className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">Room ID: #{state.roomId}</span>
       </div>
 
       {/* Scoreboard */}
@@ -146,14 +146,14 @@ function Board({ state, myId, dispatch }: BoardProps<HighLowState>) {
             state.guesserId === p.id ? "bg-[#9D4EDD] text-white" : "bg-[#1A1D24] text-[#F5F6F7]"
           )}>
             <div className="text-[10px] font-mono uppercase tracking-widest truncate">{i === 0 ? 'You' : p.name}</div>
-            <div className="text-3xl font-black font-mono">{state.scores[p.id] ?? 0}<span className="text-sm text-[#8A92A0]">/{TARGET_SCORE}</span></div>
+            <div className="text-3xl font-black font-mono">{state.scores[p.id] ?? 0}<span className="text-sm text-[#E2E4E8]">/{TARGET_SCORE}</span></div>
           </div>
         ))}
       </div>
 
       {/* Current card */}
       <div className="flex flex-col items-center gap-2 mb-6">
-        <span className="text-[10px] font-mono uppercase tracking-widest text-[#8A92A0]">Current card</span>
+        <span className="text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8]">Current card</span>
         <Card value={state.currentCard} />
       </div>
 
@@ -162,7 +162,7 @@ function Board({ state, myId, dispatch }: BoardProps<HighLowState>) {
         "w-full max-w-md text-center text-xs font-mono font-bold uppercase tracking-wider px-4 py-3 border-2 border-[#39414E] mb-8",
         r?.outcome === 'correct' ? "bg-green-900/40 text-green-200" :
         r?.outcome === 'wrong' ? "bg-red-900/40 text-red-200" :
-        r?.outcome === 'push' ? "bg-yellow-900/40 text-yellow-100" : "bg-[#1A1D24] text-[#9CA3AF]"
+        r?.outcome === 'push' ? "bg-yellow-900/40 text-yellow-100" : "bg-[#1A1D24] text-[#E2E4E8]"
       )}>
         {resultText}
       </div>
@@ -178,12 +178,12 @@ function Board({ state, myId, dispatch }: BoardProps<HighLowState>) {
             </div>
           </div>
         ) : (
-          <p className="text-sm font-mono uppercase tracking-widest text-[#9CA3AF] animate-pulse text-center">
+          <p className="text-sm font-mono uppercase tracking-widest text-[#E2E4E8] text-center">
             Waiting for {guesser?.name ?? 'opponent'} to make a secret call…
           </p>
         )
       ) : iAmGuesser ? (
-        <p className="text-sm font-mono uppercase tracking-widest text-[#9CA3AF] text-center">
+        <p className="text-sm font-mono uppercase tracking-widest text-[#E2E4E8] text-center">
           You called <span className="text-[#9D4EDD] font-bold">{state.pendingGuess?.toUpperCase()}</span>.
           <br />Waiting for {opponent?.name ?? 'opponent'} to deal a card…
         </p>
@@ -205,7 +205,7 @@ function Board({ state, myId, dispatch }: BoardProps<HighLowState>) {
           </div>
         </div>
       )}
-      <p className="text-[10px] font-mono uppercase tracking-widest text-[#8A92A0] mt-6">cards run {CARD_MIN}–{CARD_MAX} · first to {TARGET_SCORE} wins</p>
+      <p className="text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8] mt-6">cards run {CARD_MIN}–{CARD_MAX} · first to {TARGET_SCORE} wins</p>
     </div>
   );
 }

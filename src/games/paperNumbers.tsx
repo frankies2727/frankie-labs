@@ -144,11 +144,11 @@ function Board({ state, myId, dispatch }: BoardProps<PaperNumbersState>) {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 border-b-2 border-[#39414E] pb-4 gap-4">
         <div className="flex flex-col">
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tighter uppercase italic text-[#F5F6F7]">Paper Numbers</h1>
-          <span className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Room ID: #{state.roomId}</span>
+          <span className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">Room ID: #{state.roomId}</span>
         </div>
         <div className="flex items-center gap-6 sm:gap-12 w-full md:w-auto justify-between md:justify-end">
           <div className="text-center">
-            <div className="text-[10px] sm:text-xs uppercase font-bold text-[#8A92A0] mb-1 tracking-widest">Current Role</div>
+            <div className="text-[10px] sm:text-xs uppercase font-bold text-[#E2E4E8] mb-1 tracking-widest">Current Role</div>
             <div className={cn(
               "px-4 sm:px-6 py-2 border-2 border-[#39414E] font-bold text-sm sm:text-lg uppercase shadow-[4px_4px_0px_#454C5A]",
               isMyTurnToFind ? "bg-[#E63946] text-white" : "bg-[#262B34] text-white"
@@ -157,7 +157,7 @@ function Board({ state, myId, dispatch }: BoardProps<PaperNumbersState>) {
             </div>
           </div>
           <div className="text-center">
-            <div className="text-[10px] sm:text-xs uppercase font-bold text-[#8A92A0] mb-1 tracking-widest">Target</div>
+            <div className="text-[10px] sm:text-xs uppercase font-bold text-[#E2E4E8] mb-1 tracking-widest">Target</div>
             <div className="text-4xl sm:text-5xl font-black text-[#E63946] font-mono leading-none">
               {state.targetNumber ?? '--'}
             </div>
@@ -169,7 +169,7 @@ function Board({ state, myId, dispatch }: BoardProps<PaperNumbersState>) {
         {/* My Sheet (8x8 Dots) */}
         <div className={cn(
           "col-span-1 lg:col-span-3 bg-[#1A1D24] border border-[#2E343F] p-4 shadow-[4px_4px_0px_#454C5A] flex flex-col transition-opacity duration-300 min-h-[400px]",
-          isMyTurnToFind && "opacity-60 grayscale pointer-events-none"
+          isMyTurnToFind && "grayscale pointer-events-none"
         )}>
           <div className="flex justify-between items-end mb-6">
             <h2 className="font-bold text-sm underline underline-offset-4 uppercase">YOUR SHEET</h2>
@@ -196,7 +196,7 @@ function Board({ state, myId, dispatch }: BoardProps<PaperNumbersState>) {
             <div className="h-1 bg-[#262B34] w-full">
               <div className="h-1 bg-blue-600 transition-all duration-300" style={{ width: `${(myDotsCount/64)*100}%` }}></div>
             </div>
-            <p className="text-[10px] mt-2 text-[#8A92A0] italic uppercase tracking-wider font-bold">
+            <p className="text-[10px] mt-2 text-[#E2E4E8] italic uppercase tracking-wider font-bold">
               Status: {isMyTurnToFind ? 'Finding Number...' : 'Circling Dots...'}
             </p>
           </div>
@@ -205,7 +205,7 @@ function Board({ state, myId, dispatch }: BoardProps<PaperNumbersState>) {
         {/* Master Sheet (10x10) */}
         <div className={cn(
           "col-span-1 lg:col-span-6 flex flex-col h-full min-h-[400px] transition-opacity duration-300",
-          !isMyTurnToFind && "opacity-60 pointer-events-none"
+          !isMyTurnToFind && "grayscale pointer-events-none"
         )}>
           <div className="bg-[#1A1D24] border-2 border-[#39414E] p-2 flex-1 shadow-[8px_8px_0px_#2E343F] overflow-hidden">
             <div className="grid grid-cols-10 h-full border border-[#2E343F]">
@@ -221,7 +221,7 @@ function Board({ state, myId, dispatch }: BoardProps<PaperNumbersState>) {
                       "aspect-square border-[0.5px] border-[#23272F] flex items-center justify-center font-mono text-sm sm:text-base lg:text-lg outline-none transition-colors duration-75 touch-manipulation",
                       claimed
                         ? "bg-[#E63946]/15 text-[#E63946] line-through font-bold"
-                        : "text-[#CDD2DA] bg-[#1A1D24]",
+                        : "text-[#E2E4E8] bg-[#1A1D24]",
                       isMyTurnToFind && !claimed ? "hover:bg-[#262B34] active:bg-[#2E343F]" : "",
                       isFlash && (flash!.ok ? "bg-green-900/40 text-green-200" : "bg-red-900/40 text-red-200")
                     )}
@@ -233,14 +233,14 @@ function Board({ state, myId, dispatch }: BoardProps<PaperNumbersState>) {
             </div>
           </div>
           <div className="flex justify-center mt-6">
-            <p className="text-[10px] sm:text-xs font-bold text-[#9CA3AF] border-l-2 border-[#E63946] pl-3 uppercase tracking-widest">
+            <p className="text-[10px] sm:text-xs font-bold text-[#E2E4E8] border-l-2 border-[#E63946] pl-3 uppercase tracking-widest">
               Claimed numbers turn red. Tap the target to claim it.
             </p>
           </div>
         </div>
 
         {/* Opponent Sheet (reference) */}
-        <div className="col-span-1 lg:col-span-3 bg-[#1A1D24] border border-[#2E343F] p-4 shadow-[4px_4px_0px_#454C5A] flex flex-col grayscale opacity-60 pointer-events-none min-h-[400px]">
+        <div className="col-span-1 lg:col-span-3 bg-[#1A1D24] border border-[#2E343F] p-4 shadow-[4px_4px_0px_#454C5A] flex flex-col grayscale pointer-events-none min-h-[400px]">
           <div className="flex justify-between items-end mb-6">
             <h2 className="font-bold text-sm underline underline-offset-4 uppercase">{opponent?.name || 'OPPONENT'}</h2>
             <span className="font-mono text-xs text-[#E63946] font-bold tracking-widest">{opponentDotsCount}/64</span>
@@ -262,7 +262,7 @@ function Board({ state, myId, dispatch }: BoardProps<PaperNumbersState>) {
             <div className="h-1 bg-[#262B34] w-full">
               <div className="h-1 bg-red-600" style={{ width: `${(opponentDotsCount/64)*100}%` }}></div>
             </div>
-            <p className="text-[10px] mt-2 text-[#8A92A0] italic uppercase tracking-wider font-bold">
+            <p className="text-[10px] mt-2 text-[#E2E4E8] italic uppercase tracking-wider font-bold">
               Status: {!isMyTurnToFind ? 'Finding Number...' : 'Circling Dots...'}
             </p>
           </div>

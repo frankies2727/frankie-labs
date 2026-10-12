@@ -290,17 +290,17 @@ function Board({ state, myId, dispatch }: BoardProps<UnoState>) {
         <h1 className="text-3xl sm:text-4xl font-black tracking-tighter uppercase italic text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg,#EF4444,#F5C518,#22C55E,#3B82F6)' }}>
           Uno Frenzy!
         </h1>
-        <span className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Room ID: #{state.roomId}</span>
+        <span className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">Room ID: #{state.roomId}</span>
       </div>
 
       {/* Opponent */}
       <div className="w-full flex items-center justify-between mb-4">
-        <span className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">{opponent?.name ?? 'Opponent'} · {oppHand.length} cards</span>
-        {state.turnId === oppId && <span className="text-[10px] font-mono uppercase tracking-widest text-white bg-[#E63946] px-2 py-1 rounded animate-pulse">their turn</span>}
+        <span className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">{opponent?.name ?? 'Opponent'} · {oppHand.length} cards</span>
+        {state.turnId === oppId && <span className="text-[10px] font-mono uppercase tracking-widest text-white bg-[#E63946] px-2 py-1 rounded">their turn</span>}
       </div>
       <div className="flex gap-1 mb-6 flex-wrap justify-center min-h-[3.5rem]">
         {oppHand.slice(0, 12).map((c, i) => <UnoCard key={i} card={{ id: `b${i}`, color: 'back', kind: 'back' }} small />)}
-        {oppHand.length > 12 && <span className="self-center text-xs font-mono text-[#9CA3AF] ml-1">+{oppHand.length - 12}</span>}
+        {oppHand.length > 12 && <span className="self-center text-xs font-mono text-[#E2E4E8] ml-1">+{oppHand.length - 12}</span>}
       </div>
 
       {/* Table: draw pile + discard + active colour */}
@@ -311,15 +311,15 @@ function Board({ state, myId, dispatch }: BoardProps<UnoState>) {
           className="flex flex-col items-center gap-1"
         >
           <UnoCard card={{ id: 'draw', color: 'back', kind: 'back' }} playable={myTurn} />
-          <span className="text-[9px] font-mono uppercase tracking-widest text-[#9CA3AF]">Draw</span>
+          <span className="text-[9px] font-mono uppercase tracking-widest text-[#E2E4E8]">Draw</span>
         </button>
         <div className="flex flex-col items-center gap-1">
           {top && <UnoCard card={top} />}
-          <span className="text-[9px] font-mono uppercase tracking-widest text-[#9CA3AF]">Discard</span>
+          <span className="text-[9px] font-mono uppercase tracking-widest text-[#E2E4E8]">Discard</span>
         </div>
         <div className="flex flex-col items-center gap-1">
           <span className="w-10 h-10 rounded-full border-2 border-white" style={{ background: state.activeColor === 'wild' ? RAINBOW : COLOR_HEX[state.activeColor] }} />
-          <span className="text-[9px] font-mono uppercase tracking-widest text-[#9CA3AF]">Colour</span>
+          <span className="text-[9px] font-mono uppercase tracking-widest text-[#E2E4E8]">Colour</span>
         </div>
       </div>
 
@@ -327,7 +327,7 @@ function Board({ state, myId, dispatch }: BoardProps<UnoState>) {
       <div className={cn('px-6 py-2 border-2 border-[#39414E] font-bold text-sm uppercase shadow-[4px_4px_0px_#454C5A] mb-4 text-white', myTurn ? 'bg-[#E63946]' : 'bg-[#262B34]')}>
         {myTurn ? 'Your turn — play or draw' : `${opponent?.name ?? 'Opponent'}'s turn`}
       </div>
-      <p className="text-[10px] font-mono uppercase tracking-wider text-[#8A92A0] mb-4 text-center min-h-[1rem]">{state.lastEvent ?? 'Match the colour or number · powerups play any time'}</p>
+      <p className="text-[10px] font-mono uppercase tracking-wider text-[#E2E4E8] mb-4 text-center min-h-[1rem]">{state.lastEvent ?? 'Match the colour or number · powerups play any time'}</p>
 
       {/* My hand */}
       <div className="flex gap-1.5 flex-wrap justify-center w-full">
@@ -335,13 +335,13 @@ function Board({ state, myId, dispatch }: BoardProps<UnoState>) {
           <UnoCard key={card.id} card={card} playable={myTurn && !!top && canPlay(card, top, state.activeColor)} onClick={() => clickCard(card)} />
         ))}
       </div>
-      <span className="text-[10px] font-mono uppercase tracking-widest text-[#9CA3AF] mt-3">Your hand · {myHand.length} cards</span>
+      <span className="text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8] mt-3">Your hand · {myHand.length} cards</span>
 
       {/* Wild colour picker */}
       {pendingWild && (
         <div className="fixed inset-0 z-40 flex items-center justify-center p-4 bg-[#0F1117]/80 backdrop-blur-sm" onClick={() => setPendingWild(null)}>
           <div className="bg-[#1A1D24] border-2 border-[#39414E] rounded-2xl p-6 space-y-4" onClick={(e) => e.stopPropagation()}>
-            <p className="text-center text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Pick a colour</p>
+            <p className="text-center text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">Pick a colour</p>
             <div className="grid grid-cols-2 gap-3">
               {PLAY_COLORS.map((c) => (
                 <button key={c} onClick={() => chooseColor(c)} className="w-24 h-16 rounded-xl border-[3px] border-white active:translate-y-0.5 transition-all" style={{ background: COLOR_HEX[c] }} />

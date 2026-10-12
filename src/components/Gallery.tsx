@@ -1,6 +1,8 @@
 import { ArrowLeft } from 'lucide-react';
 import { ExternalGameDefinition, GameDefinition } from '../types';
 
+const CARD_COLORS = ['green', 'yellow', 'orange', 'red', 'purple', 'blue'].map((c) => `var(--color-rainbow-${c})`);
+
 interface GalleryProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   games: GameDefinition<any>[];
@@ -20,7 +22,7 @@ export function Gallery({ games, externalGames = [], onSelect, onBack }: Gallery
       <div className="max-w-4xl mx-auto">
         <button
           onClick={onBack}
-          className="group inline-flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-widest text-[#9CA3AF] hover:text-[#F5F6F7] transition-colors mb-10"
+          className="group inline-flex items-center gap-2 text-[10px] font-mono font-bold uppercase tracking-widest text-[#E2E4E8] hover:text-[#F5F6F7] transition-colors mb-10 motion-safe:animate-bounce"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
           Back to Frankie Labs
@@ -30,16 +32,18 @@ export function Gallery({ games, externalGames = [], onSelect, onBack }: Gallery
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tighter uppercase italic text-[#F5F6F7]">
             Games
           </h1>
-          <p className="text-xs sm:text-sm font-mono uppercase tracking-[0.3em] text-[#9CA3AF] mt-4">
+          <p className="text-xs sm:text-sm font-mono uppercase tracking-[0.3em] text-[#E2E4E8] mt-4">
             Chill · Real-time multiplayer games · Play with friends &amp; bots
           </p>
         </header>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {cards.map((game) => {
+          {cards.map((game, i) => {
             const external = 'href' in game ? game.href : undefined;
             const cardClass =
-              'group text-left bg-[#1A1D24] border-2 border-[#39414E] p-6 shadow-[6px_6px_0px_#454C5A] hover:shadow-[2px_2px_0px_#454C5A] hover:translate-x-1 hover:translate-y-1 active:translate-x-1.5 active:translate-y-1.5 transition-all flex flex-col gap-4 min-h-[200px]';
+              'group text-left bg-[#1A1D24] border-[3px] p-6 shadow-[6px_6px_0px_#454C5A] hover:shadow-[2px_2px_0px_#454C5A] hover:translate-x-1 hover:translate-y-1 active:translate-x-1.5 active:translate-y-1.5 transition-all flex flex-col gap-4 min-h-[200px]';
+            // Each card takes the next of the six accent colours, all the way round.
+            const border = { borderColor: CARD_COLORS[i % CARD_COLORS.length] };
             const inner = (
               <>
                 <div
@@ -50,7 +54,7 @@ export function Gallery({ games, externalGames = [], onSelect, onBack }: Gallery
                 </div>
                 <div className="flex-1">
                   <h2 className="text-xl font-bold uppercase tracking-tight text-[#F5F6F7]">{game.name}</h2>
-                  <p className="text-sm text-[#9CA3AF] mt-2 leading-snug">{game.tagline}</p>
+                  <p className="text-sm text-[#E2E4E8] mt-2 leading-snug">{game.tagline}</p>
                 </div>
                 <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-white">
                   {external ? 'Play ↗' : 'Play →'}
@@ -61,18 +65,18 @@ export function Gallery({ games, externalGames = [], onSelect, onBack }: Gallery
             // A separately-hosted game opens in a new tab; in-app games route
             // to their full-screen shell.
             return external ? (
-              <a key={game.id} href={external} target="_blank" rel="noreferrer noopener" className={cardClass}>
+              <a key={game.id} href={external} target="_blank" rel="noreferrer noopener" className={cardClass} style={border}>
                 {inner}
               </a>
             ) : (
-              <button key={game.id} onClick={() => onSelect(game.id)} className={cardClass}>
+              <button key={game.id} onClick={() => onSelect(game.id)} className={cardClass} style={border}>
                 {inner}
               </button>
             );
           })}
         </div>
 
-        <footer className="text-center mt-16 text-[10px] font-mono uppercase tracking-widest text-[#6B7280]">
+        <footer className="text-center mt-16 text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8]">
           Peer-to-peer · share a room code to play
         </footer>
       </div>

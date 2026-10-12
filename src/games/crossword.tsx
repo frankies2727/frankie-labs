@@ -356,7 +356,7 @@ function botMove(state: CrosswordState, bid: string): GameAction | null {
 // ---------------------------------------------------------------------------
 
 const INK = '#F5F6F7';
-const SUB = '#9CA3AF';
+const SUB = '#E2E4E8';
 const LINE = '#39414E';
 const PANEL = '#1A1D24';
 
@@ -377,7 +377,7 @@ function ModeChooser({ myTurn, chooserName, dispatch, ready }: { myTurn: boolean
     <div className="flex flex-col items-center p-4 sm:p-8 max-w-md mx-auto w-full">
       <div className="w-full flex flex-col items-center mb-8 border-b-2 border-[#39414E] pb-4">
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tighter uppercase italic text-[#F5F6F7]">Crossword</h1>
-        <span className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Choose your mode</span>
+        <span className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">Choose your mode</span>
       </div>
 
       {myTurn ? (
@@ -385,30 +385,30 @@ function ModeChooser({ myTurn, chooserName, dispatch, ready }: { myTurn: boolean
           <button
             onClick={() => dispatch({ type: 'mode', hard: false })}
             disabled={!ready}
-            className="w-full p-6 text-left bg-[#1A1D24] hover:bg-[#262B34] active:translate-y-1 transition-all border-2 border-[#39414E] shadow-[4px_4px_0px_#454C5A] hover:shadow-[2px_2px_0px_#454C5A] disabled:opacity-50 disabled:pointer-events-none"
+            className="w-full p-6 text-left bg-[#1A1D24] hover:bg-[#262B34] active:translate-y-1 transition-all border-2 border-[#39414E] shadow-[4px_4px_0px_#454C5A] hover:shadow-[2px_2px_0px_#454C5A] disabled:cursor-not-allowed disabled:pointer-events-none"
           >
             <div className="text-xl font-bold uppercase tracking-wider text-[#F5F6F7]">🟢 Normal</div>
-            <div className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF] mt-2">
+            <div className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8] mt-2">
               4×4 grid · friendly clues · wrong guesses are free
             </div>
           </button>
           <button
             onClick={() => dispatch({ type: 'mode', hard: true })}
             disabled={!ready}
-            className="w-full p-6 text-left bg-[#1A1D24] hover:bg-[#262B34] active:translate-y-1 transition-all border-2 border-[#39414E] disabled:opacity-50 disabled:pointer-events-none"
+            className="w-full p-6 text-left bg-[#1A1D24] hover:bg-[#262B34] active:translate-y-1 transition-all border-2 border-[#39414E] disabled:cursor-not-allowed disabled:pointer-events-none"
             style={{ boxShadow: '4px 4px 0px #E63946' }}
           >
             <div className="text-xl font-bold uppercase tracking-wider text-[#F5F6F7]">🔴 Hard</div>
-            <div className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF] mt-2">
+            <div className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8] mt-2">
               Bigger 5×5 grid · terser, trickier clues
             </div>
           </button>
-          <p className="text-[10px] font-mono uppercase tracking-widest text-[#6B7280] text-center mt-2">
+          <p className="text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8] text-center mt-2">
             {ready ? 'Everyone gets 3× 🔍 hints — reveal a letter of your selected word' : 'Loading puzzles…'}
           </p>
         </div>
       ) : (
-        <p className="text-sm font-mono uppercase tracking-widest text-[#9CA3AF] animate-pulse text-center">
+        <p className="text-sm font-mono uppercase tracking-widest text-[#E2E4E8] text-center">
           Waiting for {chooserName} to pick a mode…
         </p>
       )}
@@ -441,7 +441,7 @@ function Board({ state, myId, dispatch }: BoardProps<CrosswordState>) {
     return (
       <div className="flex flex-col gap-4 min-h-[60vh] items-center justify-center">
         <div className="animate-spin rounded-full h-10 w-10 border-b-4 border-[#39414E]" />
-        <p className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Loading puzzle…</p>
+        <p className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">Loading puzzle…</p>
       </div>
     );
   }
@@ -497,8 +497,8 @@ function Board({ state, myId, dispatch }: BoardProps<CrosswordState>) {
               selected ? 'bg-[#262B34] border-[#5B6472]' : 'bg-[#14171D] border-[#23272F] hover:border-[#39414E]',
             )}
           >
-            <span className="text-[11px] font-mono font-bold text-[#8A92A0] w-5 shrink-0 pt-0.5">{clueNumber(c.dir, c.index, size)}</span>
-            <span className="flex-1 text-[12px] leading-snug text-[#D6D9DE]">{c.clue}</span>
+            <span className="text-[11px] font-mono font-bold text-[#E2E4E8] w-5 shrink-0 pt-0.5">{clueNumber(c.dir, c.index, size)}</span>
+            <span className="flex-1 text-[12px] leading-snug text-[#E2E4E8]">{c.clue}</span>
             {owner ? (
               <span
                 className="text-[9px] font-mono font-bold uppercase tracking-wider px-1.5 py-0.5 shrink-0"
@@ -518,7 +518,7 @@ function Board({ state, myId, dispatch }: BoardProps<CrosswordState>) {
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tighter uppercase italic text-[#F5F6F7]">
           Crossword <span className="not-italic" style={{ color: state.hard ? '#E63946' : '#06D6A0' }}>{state.hard ? 'Hard' : 'Normal'}</span>
         </h1>
-        <span className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">
+        <span className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">
           Room #{state.roomId} · {solvedCount}/{totalClues} words claimed
         </span>
       </div>
@@ -535,8 +535,8 @@ function Board({ state, myId, dispatch }: BoardProps<CrosswordState>) {
               style={{ borderColor: color }}
             >
               <div className="text-[10px] font-mono uppercase tracking-widest truncate" style={{ color }}>{nameOf(id)}</div>
-              <div className="text-xl font-black font-mono text-[#F5F6F7]">{state.scores[id] ?? 0}<span className="text-[10px] text-[#8A92A0]"> pts</span></div>
-              <div className="text-[10px] font-mono text-[#8A92A0]">🔍 {state.hints[id] ?? 0} left</div>
+              <div className="text-xl font-black font-mono text-[#F5F6F7]">{state.scores[id] ?? 0}<span className="text-[10px] text-[#E2E4E8]"> pts</span></div>
+              <div className="text-[10px] font-mono text-[#E2E4E8]">🔍 {state.hints[id] ?? 0} left</div>
             </div>
           );
         })}
@@ -579,7 +579,7 @@ function Board({ state, myId, dispatch }: BoardProps<CrosswordState>) {
                   }}
                 >
                   {num > 0 && (
-                    <span className="absolute top-0.5 left-1 text-[8px] sm:text-[9px] font-mono text-[#6B7280] leading-none">{num}</span>
+                    <span className="absolute top-0.5 left-1 text-[8px] sm:text-[9px] font-mono text-[#E2E4E8] leading-none">{num}</span>
                   )}
                   <span
                     className={cn('text-lg sm:text-2xl font-black uppercase', mineReveal && !pub ? 'text-[#FFD166]' : 'text-[#F5F6F7]')}
@@ -590,7 +590,7 @@ function Board({ state, myId, dispatch }: BoardProps<CrosswordState>) {
               );
             })}
           </div>
-          <p className="text-[10px] font-mono uppercase tracking-widest text-[#6B7280] text-center mt-2">
+          <p className="text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8] text-center mt-2">
             Tap a clue or a cell to select · fill the grid to end the race
           </p>
         </div>
@@ -600,16 +600,16 @@ function Board({ state, myId, dispatch }: BoardProps<CrosswordState>) {
           {/* Selected clue / answer entry */}
           <div className="border-2 border-[#39414E] bg-[#14171D] p-3">
             {!selClue ? (
-              <p className="text-xs font-mono uppercase tracking-widest text-[#8A92A0] text-center py-2">
+              <p className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8] text-center py-2">
                 Select a clue to answer it
               </p>
             ) : (
               <div className="flex flex-col gap-2">
                 <div className="flex items-baseline gap-2">
-                  <span className="text-[11px] font-mono font-bold text-[#8A92A0]">
+                  <span className="text-[11px] font-mono font-bold text-[#E2E4E8]">
                     {clueNumber(sel!.dir, sel!.index, size)} {sel!.dir === 'across' ? 'Across' : 'Down'}
                   </span>
-                  <span className="text-[10px] font-mono text-[#6B7280]">{selClue.answer.length} letters</span>
+                  <span className="text-[10px] font-mono text-[#E2E4E8]">{selClue.answer.length} letters</span>
                 </div>
                 <p className="text-sm text-[#E2E4E8] leading-snug">{selClue.clue}</p>
 
@@ -648,7 +648,7 @@ function Board({ state, myId, dispatch }: BoardProps<CrosswordState>) {
                       <button
                         onClick={submit}
                         disabled={draft.replace(/[^A-Za-z]/g, '').length !== selClue.answer.length}
-                        className="px-3 py-2 font-black uppercase tracking-widest text-xs text-[#0F1117] bg-[#06D6A0] border-2 border-[#39414E] disabled:opacity-40 active:translate-y-0.5"
+                        className="px-3 py-2 font-black uppercase tracking-widest text-xs text-[#0F1117] bg-[#06D6A0] border-2 border-[#39414E] disabled:cursor-not-allowed active:translate-y-0.5"
                       >
                         Go
                       </button>
@@ -656,7 +656,7 @@ function Board({ state, myId, dispatch }: BoardProps<CrosswordState>) {
                         onClick={() => dispatch({ type: 'hint', dir: sel!.dir, index: sel!.index })}
                         disabled={myHints <= 0}
                         title={myHints > 0 ? `Reveal a letter (${myHints} left)` : 'No hints left'}
-                        className="px-3 py-2 font-black uppercase tracking-widest text-xs text-[#0F1117] bg-[#FFD166] border-2 border-[#39414E] disabled:opacity-40 active:translate-y-0.5"
+                        className="px-3 py-2 font-black uppercase tracking-widest text-xs text-[#0F1117] bg-[#FFD166] border-2 border-[#39414E] disabled:cursor-not-allowed active:translate-y-0.5"
                       >
                         🔍 {myHints}
                       </button>
@@ -675,11 +675,11 @@ function Board({ state, myId, dispatch }: BoardProps<CrosswordState>) {
           {/* Clue lists */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <h3 className="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#8A92A0] mb-1.5">Across</h3>
+              <h3 className="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#E2E4E8] mb-1.5">Across</h3>
               <div className="flex flex-col gap-1">{clueList('across')}</div>
             </div>
             <div>
-              <h3 className="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#8A92A0] mb-1.5">Down</h3>
+              <h3 className="text-[11px] font-mono font-bold uppercase tracking-[0.25em] text-[#E2E4E8] mb-1.5">Down</h3>
               <div className="flex flex-col gap-1">{clueList('down')}</div>
             </div>
           </div>

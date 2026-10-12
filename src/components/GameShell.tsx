@@ -21,7 +21,7 @@ function Chrome({ onExit, error, children }: { onExit: () => void; error?: strin
       <div className="sticky top-0 z-30 bg-[#0F1117]/95 backdrop-blur border-b border-[#23272F]">
         <button
           onClick={onExit}
-          className="flex items-center gap-2 px-4 py-3 text-xs font-mono font-bold uppercase tracking-widest text-[#9CA3AF] hover:text-[#F5F6F7] transition-colors"
+          className="flex items-center gap-2 px-4 py-3 text-xs font-mono font-bold uppercase tracking-widest text-[#E2E4E8] hover:text-[#F5F6F7] transition-colors"
         >
           <ArrowLeft className="w-4 h-4" /> Gallery
         </button>
@@ -54,9 +54,9 @@ function Connecting() {
   return (
     <div className="flex flex-col gap-6 min-h-[80vh] items-center justify-center px-4 text-center">
       <div className="animate-spin rounded-full h-12 w-12 border-b-4 border-[#39414E]" />
-      <p className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Connecting to room…</p>
+      <p className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">Connecting to room…</p>
       {slow && (
-        <p className="text-[10px] font-mono uppercase tracking-widest text-[#8A92A0] max-w-xs leading-relaxed">
+        <p className="text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8] max-w-xs leading-relaxed">
           Taking a moment — finding a route to the host. Make sure they still have the game open.
         </p>
       )}
@@ -67,7 +67,7 @@ function Connecting() {
 // Online (peer-to-peer) flow: join a room code, lobby, then play.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function OnlineGame({ def, onExit, onPlayBot }: { def: GameDefinition<any>; onExit: () => void; onPlayBot: () => void }) {
-  const { state, myId, conn, error, join, start, move, rematch, canManageBots, addBot, removeBot } = usePeerSession(def);
+  const { state, myId, conn, error, join, host, start, move, rematch, canManageBots, addBot, removeBot } = usePeerSession(def);
   const Board = def.Board;
   // Remember what was typed: a join that fails drops back to this screen, and
   // making someone re-enter the code and their name to try again is miserable.
@@ -75,6 +75,10 @@ function OnlineGame({ def, onExit, onPlayBot }: { def: GameDefinition<any>; onEx
   const handleJoin = (roomId: string, name: string) => {
     setLastTry({ roomId, name });
     join(roomId, name);
+  };
+  const handleHost = (name: string) => {
+    setLastTry((t) => ({ ...t, name }));
+    host(name);
   };
 
   return (
@@ -85,6 +89,7 @@ function OnlineGame({ def, onExit, onPlayBot }: { def: GameDefinition<any>; onEx
         <JoinGame
           gameName={def.name}
           tagline={def.tagline}
+          onHost={handleHost}
           onJoin={handleJoin}
           onPlayBot={def.botMove ? onPlayBot : undefined}
           minPlayers={def.minPlayers}
@@ -136,7 +141,7 @@ function PlayerCountPicker({ min, max, accent, onPick }: { min: number; max: num
               className="w-full py-4 text-left px-6 bg-[#262B34] hover:bg-[#323A47] active:translate-y-1 transition-all text-white font-bold border-2 border-[#39414E] uppercase tracking-[0.2em]"
               style={{ boxShadow: `4px 4px 0px ${accent}` }}
             >
-              {n} players <span className="text-[#8A92A0] text-xs normal-case tracking-normal font-mono">· you + {n - 1} bot{n - 1 > 1 ? 's' : ''}</span>
+              {n} players <span className="text-[#E2E4E8] text-xs normal-case tracking-normal font-mono">· you + {n - 1} bot{n - 1 > 1 ? 's' : ''}</span>
             </button>
           ))}
         </div>
@@ -187,7 +192,7 @@ function BotGame({ def, onExit }: { def: GameDefinition<any>; onExit: () => void
       ) : !state || state.status === 'waiting' ? (
         <div className="flex flex-col gap-6 min-h-[80vh] items-center justify-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-4 border-[#39414E]" />
-          <p className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Dealing you in…</p>
+          <p className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">Dealing you in…</p>
         </div>
       ) : (
         <>

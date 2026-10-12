@@ -12,11 +12,29 @@
   --color-brand-red: #E63946;
   --color-brand-gray: #2E343F;
   --color-brand-gray-light: #262B34;
-  --color-brand-gray-text: #9CA3AF;
+
+  /* Six-colour accent set for the games portal pill and the game cards. */
+  --color-rainbow-green: #5EBD3E;  /* True Parrot Green */
+  --color-rainbow-yellow: #FFB900; /* Amber */
+  --color-rainbow-orange: #F78200; /* Gold Drop */
+  --color-rainbow-red: #E23838;    /* Average Red */
+  --color-rainbow-purple: #973999; /* Dark Fuchsia */
+  --color-rainbow-blue: #009CDF;   /* German Blue */
 }
 
 :root {
   color-scheme: dark;
+}
+
+/* No dimmed text anywhere: placeholders render at full strength (Tailwind's
+   default is 50% of the text colour). Italic keeps a hint apart from a real
+   value. */
+@layer base {
+  ::placeholder {
+    color: currentColor;
+    opacity: 1;
+    font-style: italic;
+  }
 }
 
 body {
@@ -35,6 +53,33 @@ body {
 }
 .animate-flash-line {
   animation: flash-line 0.8s ease-in-out infinite;
+}
+
+/* Six-colour border whose colours travel around the edge. The fill is painted
+   on the padding box and the gradient on the border box, so it follows any
+   border-radius (the games pill is fully round). Set --fill to the surface. */
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+.rainbow-border {
+  border: 3px solid transparent;
+  background:
+    linear-gradient(var(--fill), var(--fill)) padding-box,
+    conic-gradient(
+      from var(--border-angle),
+      var(--color-rainbow-green), var(--color-rainbow-yellow), var(--color-rainbow-orange),
+      var(--color-rainbow-red), var(--color-rainbow-purple), var(--color-rainbow-blue),
+      var(--color-rainbow-green)
+    ) border-box;
+  animation: border-spin 4s linear infinite;
+}
+@keyframes border-spin {
+  to { --border-angle: 360deg; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rainbow-border { animation: none; }
 }
 
 /* --- VibeCheck project utilities --- */
