@@ -1,5 +1,6 @@
 import { BaseState, BoardProps, GameAction, GameDefinition } from '../types';
 import { cn } from '../lib/utils';
+import { gameCard } from './catalog';
 
 export interface TicTacToeState extends BaseState {
   board: (string | null)[]; // 9 cells, value = player id
@@ -125,11 +126,7 @@ function Board({ state, myId, dispatch }: BoardProps<TicTacToeState>) {
 }
 
 export const ticTacToe: GameDefinition<TicTacToeState> = {
-  id: 'tic-tac-toe',
-  name: 'Tic-Tac-Toe',
-  tagline: 'The timeless 3-in-a-row duel.',
-  accent: '#2A9D8F',
-  emoji: '⭕',
+  ...gameCard('tic-tac-toe'),
   createInitialState,
   start,
   reducer,

@@ -1,11 +1,10 @@
 import { ArrowLeft } from 'lucide-react';
-import { ExternalGameDefinition, GameDefinition } from '../types';
+import { ExternalGameDefinition, GameCard } from '../types';
 
 const CARD_COLORS = ['green', 'yellow', 'orange', 'red', 'purple', 'blue'].map((c) => `var(--color-rainbow-${c})`);
 
 interface GalleryProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  games: GameDefinition<any>[];
+  games: GameCard[];
   /** Separately-hosted games; rendered as the same card but linking out. */
   externalGames?: ExternalGameDefinition[];
   onSelect: (id: string) => void;
@@ -14,8 +13,7 @@ interface GalleryProps {
 
 export function Gallery({ games, externalGames = [], onSelect, onBack }: GalleryProps) {
   // One list so external games sit in the same grid as the in-app ones.
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const cards: (GameDefinition<any> | ExternalGameDefinition)[] = [...games, ...externalGames];
+  const cards: (GameCard | ExternalGameDefinition)[] = [...games, ...externalGames];
 
   return (
     <div className="min-h-screen bg-[#0F1117] text-[#E2E4E8] font-sans selection:bg-[#262B34] px-4 py-12 sm:py-20">

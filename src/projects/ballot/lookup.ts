@@ -57,8 +57,13 @@ function inRing(x: number, y: number, ring: number[]): boolean {
   return inside;
 }
 
+let maps: Promise<{ default: unknown }> | null = null;
+// A failed download (flaky connection) is forgotten so the next lookup retries.
+export const prefetchDistricts = () =>
+  (maps ??= import('./data/districts.json').catch((e) => { maps = null; throw e; }));
+
 export async function districtsAt(lat: number, lng: number): Promise<Districts> {
-  const { layers } = (await import('./data/districts.json')).default as unknown as { layers: Record<string, Layer> };
+  const { layers } = (await prefetchDistricts()).default as { layers: Record<string, Layer> };
   const out: Districts = {};
   for (const [type, features] of Object.entries(layers)) {
     // Odd number of rings containing the point = inside (handles holes).

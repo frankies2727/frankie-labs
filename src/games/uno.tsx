@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { BaseState, BoardProps, GameAction, GameDefinition } from '../types';
 import { cn } from '../lib/utils';
+import { gameCard } from './catalog';
 
 // Uno Frenzy! — Uno's colour-matching core plus a deck of chaotic powerups and
 // lucky swings: SWAP trades whole hands, STEAL yanks cards from your rival, and
@@ -354,34 +355,9 @@ function Board({ state, myId, dispatch }: BoardProps<UnoState>) {
   );
 }
 
-// Gallery icon: "Uno" is Spanish for "one", so a bold 1 with a star orbiting
-// it (a slow-spinning layer carries the star around a faint ring).
-function UnoIcon() {
-  return (
-    <span className="relative inline-flex h-full w-full items-center justify-center">
-      {/* faint orbit ring */}
-      <span className="absolute inset-1 rounded-full border border-[#F5C518]/30" />
-      {/* spinning layer carries the star around the ring */}
-      <span className="absolute inset-0 animate-[spin_5s_linear_infinite]">
-        <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 text-[11px] leading-none">
-          ✨
-        </span>
-      </span>
-      {/* the "1" */}
-      <span className="relative bg-gradient-to-br from-[#F5C518] via-[#ffd66b] to-[#ff5ea8] bg-clip-text text-2xl font-black italic leading-none text-transparent">
-        1
-      </span>
-    </span>
-  );
-}
 
 export const uno: GameDefinition<UnoState> = {
-  id: 'uno-frenzy',
-  name: 'Uno Frenzy!',
-  tagline: 'Uno with chaos: swap hands, steal cards, and bury rivals in a Frenzy.',
-  accent: '#F5C518',
-  emoji: '🔥',
-  icon: <UnoIcon />,
+  ...gameCard('uno-frenzy'),
   createInitialState,
   start,
   reducer,

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { BaseState, BoardProps, GameAction, GameDefinition } from '../types';
 import { cn } from '../lib/utils';
+import { gameCard } from './catalog';
 
 export interface PaperNumbersState extends BaseState {
   masterSheet: number[]; // 1..100 shuffled
@@ -273,11 +274,7 @@ function Board({ state, myId, dispatch }: BoardProps<PaperNumbersState>) {
 }
 
 export const paperNumbers: GameDefinition<PaperNumbersState> = {
-  id: 'paper-numbers',
-  name: 'Paper Numbers',
-  tagline: 'Race to find numbers while your rival fills their dot sheet.',
-  accent: '#E63946',
-  emoji: '🔢',
+  ...gameCard('paper-numbers'),
   createInitialState,
   start,
   reducer,

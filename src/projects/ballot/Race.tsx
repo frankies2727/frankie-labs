@@ -1,5 +1,5 @@
 import { Check, ExternalLink, Info, Scale, X } from 'lucide-react';
-import { useEffect, useRef, type ReactNode } from 'react';
+import { memo, useEffect, useRef, type ReactNode } from 'react';
 import { explainOffice } from './offices';
 import { researchLinks } from './research';
 import { money, type Choice } from './store';
@@ -113,12 +113,15 @@ interface RaceProps {
   /** Show official ballot numbers (only true for Chicago ballots). */
   numbered: boolean;
   choice: Choice | undefined;
-  onChoose: (c: Choice) => void;
-  onInfo: (c: Candidate) => void;
-  onCompare: () => void;
+  // Stable callbacks keyed by race (not per-card closures), so a tap only
+  // re-renders the card it changed: with ~170 races open that matters.
+  onChoose: (id: string, c: Choice) => void;
+  onInfo: (race: Race, c: Candidate) => void;
+  onCompare: (race: Race) => void;
 }
 
-export function RaceCard({ race, color, ink, numbered, choice, onChoose, onInfo, onCompare }: RaceProps) {
+export const RaceCard = memo(function RaceCard({ race, color, ink, numbered, choice, onChoose: chooseFor, onInfo, onCompare }: RaceProps) {
+  const onChoose = (c: Choice) => chooseFor(race.id, c);
   const picked = Array.isArray(choice) ? choice : [];
   const toggle = (ballot: number) => {
     if (race.voteFor === 1) return onChoose(picked[0] === ballot ? [] : [ballot]);
@@ -167,7 +170,7 @@ export function RaceCard({ race, color, ink, numbered, choice, onChoose, onInfo,
                     </span>
                   </span>
                 </button>
-                <button type="button" onClick={() => onInfo(c)} aria-label={`About ${c.name}`} className="shrink-0 w-12 rounded-xl border-2 border-[#2E343F] bg-[#262B34] flex items-center justify-center text-[#F5F6F7] hover:border-[#F5F6F7]">
+                <button type="button" onClick={() => onInfo(race, c)} aria-label={`About ${c.name}`} className="shrink-0 w-12 rounded-xl border-2 border-[#2E343F] bg-[#262B34] flex items-center justify-center text-[#F5F6F7] hover:border-[#F5F6F7]">
                   <Info className="w-5 h-5" />
                 </button>
               </li>
@@ -177,7 +180,7 @@ export function RaceCard({ race, color, ink, numbered, choice, onChoose, onInfo,
 
         <footer className="flex flex-wrap items-center gap-2">
           {race.candidates.length > 1 && (
-            <button type="button" onClick={onCompare} className="inline-flex items-center gap-2 min-h-[44px] rounded-xl border-2 border-[#F5F6F7] px-4 font-bold text-[#F5F6F7] hover:bg-[#262B34]">
+            <button type="button" onClick={() => onCompare(race)} className="inline-flex items-center gap-2 min-h-[44px] rounded-xl border-2 border-[#F5F6F7] px-4 font-bold text-[#F5F6F7] hover:bg-[#262B34]">
               <Scale className="w-4 h-4" aria-hidden="true" /> Compare
             </button>
           )}
@@ -195,7 +198,7 @@ export function RaceCard({ race, color, ink, numbered, choice, onChoose, onInfo,
       </div>
     </article>
   );
-}
+});
 
 // ---- candidate sheet ---------------------------------------------------------
 
@@ -296,7 +299,8 @@ export function Compare({ race, color, ink, numbered, picked, onPick, onClose }:
 
 // ---- retention & referenda -------------------------------------------------------
 
-export function RetentionCard({ r, choice, onChoose }: { key?: string; r: Retention; choice: Choice | undefined; onChoose: (c: Choice) => void }) {
+export const RetentionCard = memo(function RetentionCard({ r, choice, onChoose: chooseFor }: { key?: string; r: Retention; choice: Choice | undefined; onChoose: (id: string, c: Choice) => void }) {
+  const onChoose = (c: Choice) => chooseFor(r.id, c);
   return (
     <div id={`race-${r.id}`} className="scroll-mt-40 rounded-2xl border-2 bg-[#1A1D24] p-4 space-y-3" style={{ borderColor: choice ? '#FFB900' : '#2E343F' }}>
       <div>
@@ -306,7 +310,7 @@ export function RetentionCard({ r, choice, onChoose }: { key?: string; r: Retent
       <YesNo value={choice} onChange={onChoose} label={`Retain ${r.judge}?`} />
     </div>
   );
-}
+});
 
 const SCOPE: Record<Measure['scope']['type'], (m: Measure) => string> = {
   county: () => 'All of Cook County',
@@ -316,7 +320,8 @@ const SCOPE: Record<Measure['scope']['type'], (m: Measure) => string> = {
   named: (m) => `Only inside the ${(m.scope as { name: string }).name}`,
 };
 
-export function MeasureCard({ m, choice, onChoose }: { key?: string; m: Measure; choice: Choice | undefined; onChoose: (c: Choice) => void }) {
+export const MeasureCard = memo(function MeasureCard({ m, choice, onChoose: chooseFor }: { key?: string; m: Measure; choice: Choice | undefined; onChoose: (id: string, c: Choice) => void }) {
+  const onChoose = (c: Choice) => chooseFor(m.id, c);
   return (
     <article id={`race-${m.id}`} className="scroll-mt-40 rounded-2xl border-2 bg-[#1A1D24] p-5 space-y-4" style={{ borderColor: choice ? '#E23838' : '#2E343F' }}>
       <div className="space-y-2">
@@ -331,4 +336,4 @@ export function MeasureCard({ m, choice, onChoose }: { key?: string; m: Measure;
       <YesNo value={choice} onChange={onChoose} label={m.title} />
     </article>
   );
-}
+});

@@ -1,5 +1,6 @@
 import { BaseState, BoardProps, GameAction, GameDefinition } from '../types';
 import { cn } from '../lib/utils';
+import { gameCard } from './catalog';
 
 const ROWS = 6;
 const COLS = 7;
@@ -176,11 +177,7 @@ function Board({ state, myId, dispatch }: BoardProps<ConnectFourState>) {
 }
 
 export const connectFour: GameDefinition<ConnectFourState> = {
-  id: 'connect-four',
-  name: 'Connect 4',
-  tagline: 'Stack discs and line up four before your rival.',
-  accent: '#1D3557',
-  emoji: '🔴',
+  ...gameCard('connect-four'),
   createInitialState,
   start,
   reducer,

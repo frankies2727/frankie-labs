@@ -1,7 +1,7 @@
 import { ArrowLeft, ChevronDown, Crosshair, MapPin, Printer, Search, Share2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import rawData from './data/ballot.json';
-import { ballotFor, districtsAt, geocode, inChicago, inCook } from './lookup';
+import { ballotFor, districtsAt, geocode, inChicago, inCook, prefetchDistricts } from './lookup';
 import { RETENTION_EXPLAINER } from './offices';
 import { LINKS, PlanToVote } from './PlanToVote';
 import { CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard } from './Race';
@@ -100,6 +100,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   const allDone = total > 0 && done === total;
 
   const choose = useCallback((id: string, c: Choice) => setSaved((s) => ({ ...s, picks: { ...s.picks, [id]: c } })), [setSaved]);
+  const openSheet = useCallback((race: Race, c: Candidate) => setSheet({ race, c }), []);
   const setPlan = useCallback((k: string, v: boolean | string) => setSaved((s) => ({ ...s, plan: { ...s.plan, [k]: v } })), [setSaved]);
 
   // Cheer each section as it's finished, and the whole ballot once.
@@ -197,6 +198,15 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
     }
   };
 
+  // Back to the address screen. Picks stay saved; races that are on both the
+  // old and new ballot keep their picks.
+  const changeAddress = () => {
+    setSaved((s) => ({ ...s, place: null, browsing: undefined }));
+    setTab('ballot');
+    setWelcomeBack(false);
+    window.scrollTo({ top: 0 });
+  };
+
   const doShare = async () => {
     setShareMsg('');
     try {
@@ -244,7 +254,10 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                 <Ring pct={total ? done / total : 0} />
                 <div className="min-w-0 flex-1">
                   <p className="font-black text-lg leading-tight">{allDone ? 'Ballot ready 🎉' : `${done} of ${total} decided`}</p>
-                  <p className="text-sm text-[#E2E4E8] truncate">{saved.place ? `📍 ${saved.place.label}` : 'Browsing every race in Cook County'}</p>
+                  <button type="button" onClick={changeAddress} className="flex max-w-full items-center gap-1.5 text-sm text-[#E2E4E8] hover:text-[#F5F6F7]">
+                    <span className="truncate">{saved.place ? `📍 ${saved.place.label}` : 'Browsing every race'}</span>
+                    <span className="shrink-0 font-bold text-[#F5F6F7] underline underline-offset-2">{saved.place ? 'Change' : 'Add address'}</span>
+                  </button>
                 </div>
                 {!allDone && (
                   <button type="button" onClick={nextUp} className="shrink-0 min-h-[44px] rounded-xl bg-[#5EBD3E] px-4 font-black text-[#0F1117]">Next up →</button>
@@ -281,7 +294,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                     </div>
                   </div>
                 )}
-                <WhereYouVote districts={districts} chicago={chicago} onChange={() => { setSaved((s) => ({ ...s, place: null })); setBrowsing(false); }} />
+                <WhereYouVote districts={districts} chicago={chicago} onChange={changeAddress} />
 
                 {sections.map((s) => {
                   const open = !collapsed[s.id];
@@ -303,16 +316,16 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                             Skip the ones I haven’t answered
                           </button>
                           <div className="grid gap-3 sm:grid-cols-2">
-                            {ballot.retentions.map((r) => <RetentionCard key={r.id} r={r} choice={saved.picks[r.id]} onChoose={(c) => choose(r.id, c)} />)}
+                            {ballot.retentions.map((r) => <RetentionCard key={r.id} r={r} choice={saved.picks[r.id]} onChoose={choose} />)}
                           </div>
                         </div>
                       )}
-                      {open && s.id === 'measures' && ballot.measures.map((m) => <MeasureCard key={m.id} m={m} choice={saved.picks[m.id]} onChoose={(c) => choose(m.id, c)} />)}
+                      {open && s.id === 'measures' && ballot.measures.map((m) => <MeasureCard key={m.id} m={m} choice={saved.picks[m.id]} onChoose={choose} />)}
                       {open && s.id !== 'retention' && s.id !== 'measures' && s.ids.map((id) => {
                         const race = raceById.get(id)!;
                         return (
                           <RaceCard key={id} race={race} color={s.color} ink={s.ink} numbered={chicago && race.numbered !== false} choice={saved.picks[id]}
-                            onChoose={(c) => choose(id, c)} onInfo={(c) => setSheet({ race, c })} onCompare={() => setComparing(race)} />
+                            onChoose={choose} onInfo={openSheet} onCompare={setComparing} />
                         );
                       })}
                     </section>
@@ -405,6 +418,9 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, da
   onSubmit: (e: FormEvent) => void; onLocate: () => void; onBrowse: () => void; daysLeft: number;
 }) {
   const candidates = data.races.reduce((n, r) => n + r.candidates.length, 0);
+  // Start fetching the district maps while the voter types, so "Find my
+  // ballot" doesn't wait on a download.
+  useEffect(() => { prefetchDistricts(); }, []);
   return (
     <div className="space-y-8 pt-6">
       <header className="space-y-4">
