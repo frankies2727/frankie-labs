@@ -1,7 +1,7 @@
 import { ArrowLeft, ChevronDown, Crosshair, MapPin, Printer, Search, Share2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import rawData from './data/ballot.json';
-import { ballotFor, districtsAt, geocode, inChicago, inCook, prefetchDistricts } from './lookup';
+import { ballotFor, ballotIdsFor, districtsAt, geocode, inChicago, inCook, prefetchDistricts } from './lookup';
 import { RETENTION_EXPLAINER } from './offices';
 import { LINKS, PlanToVote } from './PlanToVote';
 import { CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard } from './Race';
@@ -11,6 +11,7 @@ import { daysUntil, hasProgress, isDecided, readResumeLink, resumeLink, useSaved
 import type { BallotData, Candidate, Districts, Race } from './types';
 
 const data = rawData as unknown as BallotData;
+const ballotIds = (d: Districts) => ballotIdsFor(data, d);
 const SHARE_URL = `https://frankies2727.github.io${import.meta.env.BASE_URL}projects/know-your-ballot`;
 // Runs elections in suburban Cook (the Chicago Board runs Chicago's).
 const COOK_CLERK = 'https://www.cookcountyclerkil.gov/';
@@ -158,7 +159,20 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   const place = async (lat: number, lng: number, label: string) => {
     const d = await districtsAt(lat, lng);
     if (!inCook(d)) { setStatus({ busy: false, error: '', outside: true }); return; }
-    setSaved((s) => ({ ...s, place: { label, districts: d } }));
+    // A new address means a new ballot. Statewide and countywide contests are
+    // the same race at both addresses, so those picks still stand; picks for
+    // races that aren't on this ballot (old districts, old ward) are dropped
+    // rather than lingering hidden in storage and save links.
+    const onBallot = ballotIds(d);
+    const before = Object.keys(saved.picks);
+    const kept = before.filter((id) => onBallot.has(id));
+    setSaved((s) => ({ ...s, place: { label, districts: d }, picks: Object.fromEntries(Object.entries(s.picks).filter(([id]) => onBallot.has(id))) }));
+    if (before.length) {
+      const dropped = before.length - kept.length;
+      setToast(dropped
+        ? `New ballot: kept ${kept.length} pick${kept.length === 1 ? '' : 's'} for races on both ballots, cleared ${dropped} that aren’t on this one.`
+        : `New ballot: all ${kept.length} of your picks are for races on this ballot too.`);
+    }
     setStatus({ busy: false, error: '', outside: false });
     setBrowsing(false);
     window.scrollTo({ top: 0 });
@@ -245,6 +259,8 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
           <Landing
             address={address} setAddress={setAddress} status={status} onSubmit={lookUp} onLocate={useLocation}
             onBrowse={() => setBrowsing(true)} daysLeft={daysLeft}
+            saved={Object.keys(saved.picks).length}
+            onStartFresh={() => { setSaved((s) => ({ ...s, picks: {}, plan: {} })); setToast('Cleared. Starting fresh.'); }}
           />
         ) : (
           <>
@@ -413,10 +429,14 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
 
 // ---- pieces ------------------------------------------------------------------------
 
-function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, daysLeft }: {
+function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, daysLeft, saved, onStartFresh }: {
   address: string; setAddress: (s: string) => void; status: { busy: boolean; error: string; outside: boolean };
   onSubmit: (e: FormEvent) => void; onLocate: () => void; onBrowse: () => void; daysLeft: number;
+  /** Picks already saved on this device. */
+  saved: number; onStartFresh: () => void;
 }) {
+  // Two taps: wiping someone's picks shouldn't be one slip of the thumb.
+  const [confirming, setConfirming] = useState(false);
   const candidates = data.races.reduce((n, r) => n + r.candidates.length, 0);
   // Start fetching the district maps while the voter types, so "Find my
   // ballot" doesn't wait on a download.
@@ -455,6 +475,15 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, da
           <p role="alert" className="rounded-xl bg-[#262B34] border-2 border-[#FFB900] px-4 py-3 font-bold">
             That address is outside Cook County. This guide covers Chicago and suburban Cook for now. Anywhere else in Illinois, look up your registration and polling place with the <a className="underline text-[#FFB900]" href={LINKS.stateLookup} target="_blank" rel="noreferrer noopener">State Board of Elections ↗</a>.
           </p>
+        )}
+        {saved > 0 && (
+          <div className="rounded-xl border-2 border-[#2E343F] bg-[#1A1D24] p-3 space-y-2">
+            <p className="text-[15px]">You have <strong>{saved} pick{saved === 1 ? '' : 's'}</strong> saved. Same voter, new address? Races on both ballots keep their picks. Looking up someone else’s ballot? Start fresh.</p>
+            <button type="button" onClick={() => { if (confirming) { onStartFresh(); setConfirming(false); } else setConfirming(true); }}
+              className={`min-h-[44px] rounded-xl border-2 px-4 font-bold ${confirming ? 'border-[#E23838] bg-[#E23838] text-white' : 'border-[#F5F6F7] text-[#F5F6F7]'}`}>
+              {confirming ? `Tap again to clear ${saved} pick${saved === 1 ? '' : 's'} and your plan` : 'Start fresh'}
+            </button>
+          </div>
         )}
         <p className="text-sm leading-relaxed text-[#E2E4E8]">🔒 Your address goes once to Cook County’s address lookup (or OpenStreetMap, if the county’s is down) to find your districts. It’s saved only on this device, like your picks, and never shared.</p>
       </form>

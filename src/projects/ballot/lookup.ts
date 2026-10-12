@@ -92,6 +92,12 @@ function measureApplies(m: Measure, d: Districts | null): boolean {
   return s.type === 'precinct' && d.precinct === `${s.ward}-${s.precinct}`;
 }
 
+/** Ids of every contest on the ballot for these districts. */
+export function ballotIdsFor(data: BallotData, d: Districts | null): Set<string> {
+  const b = ballotFor(data, d);
+  return new Set([...b.races, ...b.retentions, ...b.measures].map((x) => x.id));
+}
+
 export function ballotFor(data: BallotData, d: Districts | null) {
   return {
     races: data.races.filter((r) => raceApplies(r, d)),
