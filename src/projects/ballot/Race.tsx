@@ -9,7 +9,12 @@ const AREA_LABEL: Record<string, string> = {
   cd: 'Congressional District', sldu: 'State Senate District', sldl: 'State House District',
   commissioner: 'County Board District', bor: 'Board of Review District', subcircuit: 'Judicial Subcircuit', school: 'School Subdistrict',
 };
-const areaLabel = (r: Race) => (r.area ? `${AREA_LABEL[r.area.type]} ${r.area.id}` : 'Everyone in Chicago');
+const areaLabel = (r: Race) => {
+  if (r.area?.type === 'city') return 'Everyone in Chicago';
+  if (r.area?.type === 'mwrd') return 'Water Reclamation District';
+  if (r.area) return `${AREA_LABEL[r.area.type]} ${r.area.id}`;
+  return r.section === 'federal' || r.section === 'state' ? 'Statewide' : 'All of Cook County';
+};
 
 // ---- shared bits ---------------------------------------------------------
 
@@ -105,13 +110,15 @@ interface RaceProps {
   color: string;
   /** Text colour that reads on `color`. */
   ink: string;
+  /** Show official ballot numbers (only true for Chicago ballots). */
+  numbered: boolean;
   choice: Choice | undefined;
   onChoose: (c: Choice) => void;
   onInfo: (c: Candidate) => void;
   onCompare: () => void;
 }
 
-export function RaceCard({ race, color, ink, choice, onChoose, onInfo, onCompare }: RaceProps) {
+export function RaceCard({ race, color, ink, numbered, choice, onChoose, onInfo, onCompare }: RaceProps) {
   const picked = Array.isArray(choice) ? choice : [];
   const toggle = (ballot: number) => {
     if (race.voteFor === 1) return onChoose(picked[0] === ballot ? [] : [ballot]);
@@ -149,7 +156,7 @@ export function RaceCard({ race, color, ink, choice, onChoose, onInfo, onCompare
                   style={on ? { borderColor: color, background: `${color}26` } : { borderColor: '#2E343F', background: '#262B34' }}
                 >
                   <span className="shrink-0 w-9 h-9 rounded-full border-2 flex items-center justify-center text-sm font-black" style={on ? { background: color, borderColor: color, color: ink } : { borderColor: '#F5F6F7', color: '#F5F6F7' }}>
-                    {on ? <Check className="w-5 h-5" strokeWidth={3} /> : c.ballot}
+                    {on ? <Check className="w-5 h-5" strokeWidth={3} /> : numbered ? c.ballot : ''}
                   </span>
                   <span className="min-w-0">
                     <span className="block font-bold leading-snug text-[#F5F6F7]">{c.name}</span>
@@ -192,14 +199,14 @@ export function RaceCard({ race, color, ink, choice, onChoose, onInfo, onCompare
 
 // ---- candidate sheet ---------------------------------------------------------
 
-export function CandidateSheet({ race, c, color, ink, picked, onPick, onClose }: { race: Race; c: Candidate; color: string; ink: string; picked: boolean; onPick: () => void; onClose: () => void }) {
+export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, onClose }: { race: Race; c: Candidate; color: string; ink: string; numbered: boolean; picked: boolean; onPick: () => void; onClose: () => void }) {
   return (
     <Dialog title={c.name} onClose={onClose}>
       <div className="space-y-6">
         <div className="flex flex-wrap gap-2">
           <Badge tone={color} ink={ink}>{race.office}</Badge>
           <Badge>{c.party}</Badge>
-          <Badge>Ballot #{c.ballot}</Badge>
+          {numbered && <Badge>Ballot #{c.ballot}</Badge>}
           {c.incumbent && <Badge tone="#F5F6F7" ink="#0F1117">Incumbent</Badge>}
         </div>
 
@@ -246,7 +253,7 @@ export function CandidateSheet({ race, c, color, ink, picked, onPick, onClose }:
 
 // ---- head-to-head --------------------------------------------------------------
 
-export function Compare({ race, color, ink, picked, onPick, onClose }: { race: Race; color: string; ink: string; picked: number[]; onPick: (ballot: number) => void; onClose: () => void }) {
+export function Compare({ race, color, ink, numbered, picked, onPick, onClose }: { race: Race; color: string; ink: string; numbered: boolean; picked: number[]; onPick: (ballot: number) => void; onClose: () => void }) {
   const max = Math.max(1, ...race.candidates.map((c) => c.money ? Math.max(c.money.raised, c.money.spent, c.money.cash) : 0));
   const anyMoney = race.candidates.some((c) => c.money);
   return (
@@ -261,7 +268,7 @@ export function Compare({ race, color, ink, picked, onPick, onClose }: { race: R
                   <p className="text-lg font-black leading-tight text-[#F5F6F7]">{c.name}</p>
                   <div className="flex flex-wrap gap-1.5">
                     <Badge>{c.party}</Badge>
-                    <Badge>#{c.ballot}</Badge>
+                    {numbered && <Badge>#{c.ballot}</Badge>}
                   </div>
                 </div>
                 <dl className="space-y-1 text-sm">

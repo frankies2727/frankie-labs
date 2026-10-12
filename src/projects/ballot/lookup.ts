@@ -6,16 +6,20 @@ import type { BallotData, Districts, Measure, Race } from './types';
 // policy caps a whole app at ~1 request/second, too little to lean on.
 const COOK_LOCATOR = 'https://gis.cookcountyil.gov/traditional/rest/services/AddressLocator/CookAddressComposite/GeocodeServer/findAddressCandidates';
 const NOMINATIM = 'https://nominatim.openstreetmap.org/search';
-const CHICAGO_VIEWBOX = '-87.94,42.03,-87.52,41.64';
+const COOK_VIEWBOX = '-88.27,42.16,-87.52,41.46';
 const MIN_SCORE = 85; // below this the locator is guessing (e.g. wrong N/S)
+// A lookup that hangs would leave the voter staring at a spinner.
+const TIMEOUT_MS = 10_000;
 
 export interface Place { lat: number; lng: number; label: string }
 
-const withCity = (address: string) => (/chicago/i.test(address) ? address : `${address}, Chicago, IL`);
+// A bare street address is most likely in Chicago; anything naming a town or
+// ZIP is left alone so suburban addresses resolve where they are.
+const withCity = (address: string) => (/,|\b(il|illinois)\b|\d{5}/i.test(address) ? address : `${address}, Chicago, IL`);
 const titleCase = (s: string) => s.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
 
 async function cookCounty(address: string): Promise<Place | null> {
-  const res = await fetch(`${COOK_LOCATOR}?SingleLine=${encodeURIComponent(withCity(address))}&maxLocations=1&outSR=4326&f=json`);
+  const res = await fetch(`${COOK_LOCATOR}?SingleLine=${encodeURIComponent(withCity(address))}&maxLocations=1&outSR=4326&f=json`, { signal: AbortSignal.timeout(TIMEOUT_MS) });
   if (!res.ok) throw new Error(`Cook County locator: ${res.status}`);
   const { candidates } = (await res.json()) as { candidates?: { address: string; score: number; location: { x: number; y: number } }[] };
   const hit = candidates?.[0];
@@ -25,8 +29,8 @@ async function cookCounty(address: string): Promise<Place | null> {
 }
 
 async function openStreetMap(address: string): Promise<Place | null> {
-  const url = `${NOMINATIM}?format=jsonv2&limit=1&countrycodes=us&viewbox=${CHICAGO_VIEWBOX}&bounded=1&q=${encodeURIComponent(withCity(address))}`;
-  const res = await fetch(url, { headers: { Accept: 'application/json' } });
+  const url = `${NOMINATIM}?format=jsonv2&limit=1&countrycodes=us&viewbox=${COOK_VIEWBOX}&bounded=1&q=${encodeURIComponent(withCity(address))}`;
+  const res = await fetch(url, { headers: { Accept: 'application/json' }, signal: AbortSignal.timeout(TIMEOUT_MS) });
   if (!res.ok) throw new Error(`Nominatim: ${res.status}`);
   const [hit] = (await res.json()) as { lat: string; lon: string; display_name: string }[];
   return hit ? { lat: Number(hit.lat), lng: Number(hit.lon), label: hit.display_name.split(',').slice(0, 2).join(',') } : null;
@@ -61,11 +65,13 @@ export async function districtsAt(lat: number, lng: number): Promise<Districts> 
     const hit = features.find((f) => f.rings.filter((r) => inRing(lng, lat, r)).length % 2 === 1);
     if (hit) out[type as keyof Districts] = hit.id;
   }
+  if (out.ward) out.city = 'chicago'; // Chicago-only contests key off this
   return out;
 }
 
-/** Is this voter in Chicago at all? Every Chicago address is in a ward. */
+/** Every Chicago address is in a ward; every Cook address in a County Board district. */
 export const inChicago = (d: Districts) => Boolean(d.ward);
+export const inCook = (d: Districts) => Boolean(d.commissioner);
 
 // Districts -> the contests on this voter's ballot.
 const raceApplies = (race: Race, d: Districts | null) =>
@@ -73,8 +79,10 @@ const raceApplies = (race: Race, d: Districts | null) =>
 
 function measureApplies(m: Measure, d: Districts | null): boolean {
   const s = m.scope;
-  if (s.type === 'county' || s.type === 'city' || s.type === 'named') return true;
-  if (!d) return true;
+  if (s.type === 'county' || !d) return true;
+  // Everything else on the list is a City of Chicago question.
+  if (!inChicago(d)) return false;
+  if (s.type === 'city' || s.type === 'named') return true;
   if (s.type === 'ward') return d.ward === s.id;
   return s.type === 'precinct' && d.precinct === `${s.ward}-${s.precinct}`;
 }

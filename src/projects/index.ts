@@ -28,9 +28,9 @@ export const PROJECTS: ProjectDefinition[] = [
   {
     id: 'know-your-ballot',
     name: 'Know Your Ballot',
-    tagline: 'Every name on your Chicago ballot, explained.',
+    tagline: 'Every name on your Cook County ballot, explained.',
     description:
-      'Enter your Chicago address to see every race on your Nov 3 ballot, from U.S. Senate to judges and school board: what each job does, who’s running, who’s funding them. Build your picks, plan your vote, take it to the booth. Official data, nonpartisan.',
+      'Enter your Chicago or suburban Cook address to see every race on your Nov 3 ballot, from U.S. Senate to judges: what each job does, who’s running, who’s funding them. Build your picks, plan your vote, take it to the booth. Official data, nonpartisan.',
     emoji: '🗳️',
     gradient: 'from-[#009CDF] via-[#973999] to-[#0a0a0a]',
     Component: KnowYourBallot,

@@ -11,7 +11,9 @@ const lead = (name: string) => name.split(' & ')[0];
 export function researchLinks(c: Candidate, race: Race): ResearchLink[] {
   const who = lead(c.name);
   const links: ResearchLink[] = [
-    { label: 'Their campaign site', href: `https://duckduckgo.com/?q=${q(`${who} ${race.office} Illinois 2026 campaign`)}`, note: 'Their own words on the issues' },
+    c.website
+      ? { label: 'Their campaign site', href: c.website, note: 'Their own words, as listed on their state filing' }
+      : { label: 'Find their campaign site', href: `https://duckduckgo.com/?q=${q(`${who} ${race.office} Illinois 2026 campaign`)}`, note: 'Their own words on the issues' },
     { label: 'Ballotpedia', href: `https://ballotpedia.org/wiki/index.php?search=${q(who)}`, note: 'Bio, experience and survey answers' },
   ];
   if (c.money?.source === 'FEC') {

@@ -2,8 +2,8 @@
 
 export type Section = 'federal' | 'state' | 'county' | 'judicial' | 'school';
 
-/** Which voters see a contest. `null` on a race = every Chicago voter. */
-export type AreaType = 'cd' | 'sldu' | 'sldl' | 'commissioner' | 'bor' | 'subcircuit' | 'school' | 'ward';
+/** Which voters see a contest. `null` on a race = every voter in Cook County. */
+export type AreaType = 'cd' | 'sldu' | 'sldl' | 'commissioner' | 'bor' | 'subcircuit' | 'school' | 'ward' | 'mwrd' | 'city';
 export interface Area { type: AreaType; id: string }
 
 /** Campaign totals this cycle (since Jan 1, 2025), from official filings. */
@@ -26,6 +26,8 @@ export interface Candidate {
   party: string;
   /** Only set when official records (FEC or ISBE) say so. */
   incumbent?: boolean;
+  /** Campaign website from the candidate's own filing with the State Board. */
+  website?: string;
   money?: Money;
 }
 
@@ -37,6 +39,11 @@ export interface Race {
   voteFor: number;
   candidates: Candidate[];
   writeIn: boolean;
+  /**
+   * false for suburban contests from the State Board list, which has no
+   * ballot positions; their `ballot` numbers only identify picks.
+   */
+  numbered?: boolean;
 }
 
 export interface Retention { id: string; court: string; judge: string }
@@ -53,6 +60,7 @@ export interface BallotData {
   election: { name: string; date: string };
   sources: {
     candidates: { url: string; page: string; asOf: string | null };
+    stateCandidates: { url: string };
     money: { url: string; file: string };
     stateMoney: { url: string };
     earlyVoting: { page: string };

@@ -7,6 +7,8 @@ export interface ShareStats {
   sections: { title: string; color: string; done: number; total: number }[];
   daysLeft: number;
   url: string;
+  /** "Chicago" or "Cook County". */
+  place: string;
 }
 
 const W = 1080;
@@ -30,7 +32,7 @@ export async function drawShareCard(s: ShareStats): Promise<Blob> {
   g.font = font(900, 64);
   g.fillText('I know my ballot.', 80, 160);
   g.font = font(600, 36);
-  g.fillText('Chicago · General Election · Nov 3, 2026', 80, 220);
+  g.fillText(`${s.place} · General Election · Nov 3, 2026`, 80, 220);
 
   // Progress ring.
   const cx = W / 2, cy = 470, r = 185, pct = s.total ? s.done / s.total : 0;

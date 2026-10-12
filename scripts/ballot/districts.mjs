@@ -19,9 +19,10 @@ import { mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-const CHICAGO_BBOX = '-87.94,41.64,-87.52,42.03';
+// All of Cook County (Chicago plus the suburbs).
+const COOK_BBOX = '-88.27,41.46,-87.52,42.16';
 const tiger = (layer, field) =>
-  `https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Legislative/MapServer/${layer}/query?where=STATE%3D%2717%27&geometry=${CHICAGO_BBOX}&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=${field}&returnGeometry=true&outSR=4326&f=geojson`;
+  `https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Legislative/MapServer/${layer}/query?where=STATE%3D%2717%27&geometry=${COOK_BBOX}&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=${field}&returnGeometry=true&outSR=4326&f=geojson`;
 const cook = (layer) =>
   `https://gis.cookcountyil.gov/traditional/rest/services/politicalBoundary/MapServer/${layer}/query?where=1%3D1&outFields=*&outSR=4326&f=geojson`;
 
@@ -33,6 +34,8 @@ const SOURCES = {
   bor: { url: cook(10), id: (p) => p.DISTRICT_TXT },
   subcircuit: { url: cook(5), id: (p) => p.DISTRICT },
   ward: { url: 'https://data.cityofchicago.org/resource/p293-wvbd.geojson?$limit=5000', id: (p) => p.ward },
+  // One district, possibly several polygons.
+  mwrd: { url: cook(21), id: () => '1' },
 };
 const SCHOOL_SHP = 'https://ilsenateredistricting.com/images/shape-files/ERSB_20_Sub_District_Map_FA1_SB_15.zip';
 const PRECINCTS = 'https://data.cityofchicago.org/resource/i8fv-xe4b.geojson?$limit=5000';
@@ -79,10 +82,10 @@ function simplify(points) {
   return points.filter((_, i) => keep[i]);
 }
 
-// Clip a ring to Chicago's bounding box (Sutherland–Hodgman against each
-// edge). Most districts here spill far into the suburbs; only the part over
-// Chicago can ever match a Chicago address, and the rest is dead weight.
-const [MINX, MINY, MAXX, MAXY] = CHICAGO_BBOX.split(',').map(Number);
+// Clip a ring to Cook County's bounding box (Sutherland–Hodgman against each
+// edge). Congressional and legislative districts spill into the collar
+// counties; only the part over Cook can match an address we serve.
+const [MINX, MINY, MAXX, MAXY] = COOK_BBOX.split(',').map(Number);
 function clip(ring) {
   const edges = [
     [(p) => p[0] >= MINX, (a, b) => cut(a, b, 0, MINX)],
@@ -176,6 +179,37 @@ async function schoolSubdistricts() {
   }));
 }
 
+function inRing(x, y, r) {
+  let inside = false;
+  for (let i = 0, j = r.length - 2; i < r.length; j = i, i += 2) {
+    if ((r[i + 1] > y) !== (r[j + 1] > y) && x < ((r[j] - r[i]) * (y - r[i + 1])) / (r[j + 1] - r[i + 1]) + r[i]) inside = !inside;
+  }
+  return inside;
+}
+
+/**
+ * Does a district reach into Cook County? Districts that merely share a border
+ * with Cook have boundary points "inside" it, so sample a grid of points in
+ * the district's interior and look for one inside a commissioner district.
+ */
+const GRID = 60;
+export function touchesCook(layers, type, id) {
+  const inside = (x, y, feats) => feats.some((f) => f.rings.filter((r) => inRing(x, y, r)).length % 2 === 1);
+  const feats = (layers[type] ?? []).filter((f) => f.id === id);
+  const xs = feats.flatMap((f) => f.rings.flatMap((r) => r.filter((_, i) => i % 2 === 0)));
+  const ys = feats.flatMap((f) => f.rings.flatMap((r) => r.filter((_, i) => i % 2 === 1)));
+  if (!xs.length) return false;
+  const [x0, x1, y0, y1] = [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)];
+  for (let i = 0.5; i < GRID; i++) {
+    for (let j = 0.5; j < GRID; j++) {
+      const x = x0 + ((x1 - x0) * i) / GRID;
+      const y = y0 + ((y1 - y0) * j) / GRID;
+      if (inside(x, y, feats) && inside(x, y, layers.commissioner)) return true;
+    }
+  }
+  return false;
+}
+
 /**
  * @param {string[]} precinctKeys "ward-precinct" keys that have a referendum;
  *   only those precincts are kept (all 1,291 would be most of the file).
@@ -190,9 +224,9 @@ export async function buildDistricts(precinctKeys) {
   layers.precinct = fromGeoJson(await getJson(PRECINCTS), (p) => `${normalizeId(p.ward)}-${normalizeId(p.precinct)}`)
     .filter((f) => wanted.has(f.id));
 
-  // Chicago-only maps must be complete; the county and state ones are clipped
-  // to Chicago, so the build checks them against the races instead.
-  const expect = { school: 20, ward: 50 };
+  // County and city maps must be complete; the state and federal ones are
+  // clipped to Cook, so the build checks them against the races instead.
+  const expect = { commissioner: 17, bor: 3, subcircuit: 20, school: 20, ward: 50 };
   for (const [type, n] of Object.entries(expect)) {
     if (new Set(layers[type].map((f) => f.id)).size !== n) throw new Error(`${type}: expected ${n} districts, got ${layers[type].length}`);
   }

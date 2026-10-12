@@ -1,7 +1,7 @@
 import { ArrowLeft, ChevronDown, Crosshair, MapPin, Printer, Search, Share2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import rawData from './data/ballot.json';
-import { ballotFor, districtsAt, geocode, inChicago } from './lookup';
+import { ballotFor, districtsAt, geocode, inChicago, inCook } from './lookup';
 import { RETENTION_EXPLAINER } from './offices';
 import { LINKS, PlanToVote } from './PlanToVote';
 import { CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard } from './Race';
@@ -12,8 +12,8 @@ import type { BallotData, Candidate, Districts, Race } from './types';
 
 const data = rawData as unknown as BallotData;
 const SHARE_URL = `https://frankies2727.github.io${import.meta.env.BASE_URL}projects/know-your-ballot`;
-// Works for any Illinois voter: registration, polling place, sample ballot links.
-const IL_LOOKUP = 'https://ova.elections.il.gov/RegistrationLookup.aspx';
+// Runs elections in suburban Cook (the Chicago Board runs Chicago's).
+const COOK_CLERK = 'https://www.cookcountyclerkil.gov/';
 
 // Ballot order. Section colours are the lab's six; party never gets a colour.
 const SECTIONS = [
@@ -75,6 +75,9 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   const [shareMsg, setShareMsg] = useState('');
 
   const districts = saved.place?.districts ?? null;
+  // Ballot numbers come from the Chicago Board's list and only match Chicago
+  // ballots; suburban ballots number candidates differently.
+  const chicago = districts ? inChicago(districts) : true;
   const showBallot = !!saved.place || browsing;
   const daysLeft = daysUntil(data.election.date);
 
@@ -125,7 +128,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   // ---- address -> districts --------------------------------------------------
   const place = async (lat: number, lng: number, label: string) => {
     const d = await districtsAt(lat, lng);
-    if (!inChicago(d)) { setStatus({ busy: false, error: '', outside: true }); return; }
+    if (!inCook(d)) { setStatus({ busy: false, error: '', outside: true }); return; }
     setSaved((s) => ({ ...s, place: { label, districts: d } }));
     setStatus({ busy: false, error: '', outside: false });
     setBrowsing(false);
@@ -137,7 +140,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
     setStatus({ busy: true, error: '', outside: false });
     try {
       const hit = await geocode(address.trim());
-      if (!hit) { setStatus({ busy: false, error: 'We couldn’t find that address in Chicago. Try the street number and name, like “121 N LaSalle St”.', outside: false }); return; }
+      if (!hit) { setStatus({ busy: false, error: 'We couldn’t find that address in Cook County. Try the street number, name and town, like “1501 Sherman Ave, Evanston”.', outside: false }); return; }
       await place(hit.lat, hit.lng, hit.label);
     } catch {
       setStatus({ busy: false, error: 'The address search didn’t answer. Check your connection, or use your location instead.', outside: false });
@@ -157,7 +160,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
     setShareMsg('');
     try {
       const blob = await drawShareCard({
-        done, total, daysLeft, url: SHARE_URL,
+        done, total, daysLeft, url: SHARE_URL, place: chicago ? 'Chicago' : 'Cook County',
         sections: sections.map((s) => ({ title: s.title, color: s.color, done: s.done, total: s.ids.length })),
       });
       setShareMsg((await shareCard(blob, SHARE_URL)) === 'downloaded' ? 'Saved the image: post it anywhere.' : 'Thanks for spreading the word!');
@@ -200,7 +203,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                 <Ring pct={total ? done / total : 0} />
                 <div className="min-w-0 flex-1">
                   <p className="font-black text-lg leading-tight">{allDone ? 'Ballot ready 🎉' : `${done} of ${total} decided`}</p>
-                  <p className="text-sm text-[#E2E4E8] truncate">{saved.place ? `📍 ${saved.place.label}` : 'Browsing every Chicago race'}</p>
+                  <p className="text-sm text-[#E2E4E8] truncate">{saved.place ? `📍 ${saved.place.label}` : 'Browsing every race in Cook County'}</p>
                 </div>
                 {!allDone && (
                   <button type="button" onClick={nextUp} className="shrink-0 min-h-[44px] rounded-xl bg-[#5EBD3E] px-4 font-black text-[#0F1117]">Next up →</button>
@@ -218,7 +221,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
 
             {tab === 'ballot' && (
               <div className="space-y-8 pt-6">
-                <WhereYouVote districts={districts} onChange={() => { setSaved((s) => ({ ...s, place: null })); setBrowsing(false); }} />
+                <WhereYouVote districts={districts} chicago={chicago} onChange={() => { setSaved((s) => ({ ...s, place: null })); setBrowsing(false); }} />
 
                 {sections.map((s) => {
                   const open = !collapsed[s.id];
@@ -248,7 +251,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                       {open && s.id !== 'retention' && s.id !== 'measures' && s.ids.map((id) => {
                         const race = raceById.get(id)!;
                         return (
-                          <RaceCard key={id} race={race} color={s.color} ink={s.ink} choice={saved.picks[id]}
+                          <RaceCard key={id} race={race} color={s.color} ink={s.ink} numbered={chicago && race.numbered !== false} choice={saved.picks[id]}
                             onChoose={(c) => choose(id, c)} onInfo={(c) => setSheet({ race, c })} onCompare={() => setComparing(race)} />
                         );
                       })}
@@ -262,7 +265,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
 
             {tab === 'plan' && (
               <div className="pt-6 space-y-6">
-                <PlanToVote plan={saved.plan} setPlan={setPlan} ward={districts?.ward}
+                <PlanToVote plan={saved.plan} setPlan={setPlan} chicago={chicago} clerk={COOK_CLERK} ward={districts?.ward}
                   wardSite={districts?.ward ? data.earlyVotingSites[districts.ward] : undefined}
                   ballotDone={allDone} />
                 <button type="button" onClick={() => window.print()} className="w-full inline-flex items-center justify-center gap-2 min-h-[52px] rounded-xl border-2 border-[#F5F6F7] font-black text-[#F5F6F7] hover:bg-[#262B34]">
@@ -294,10 +297,10 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
       </div>
 
       {/* Print view: the voter's picks, in ballot order, to take into the booth. */}
-      <PrintBallot sections={sections} picks={saved.picks} label={saved.place?.label} />
+      <PrintBallot sections={sections} picks={saved.picks} label={saved.place?.label} numbered={chicago} />
 
       {sheet && (
-        <CandidateSheet race={sheet.race} c={sheet.c} color={sectionOf(sheet.race.section).color} ink={sectionOf(sheet.race.section).ink}
+        <CandidateSheet race={sheet.race} c={sheet.c} color={sectionOf(sheet.race.section).color} ink={sectionOf(sheet.race.section).ink} numbered={chicago && sheet.race.numbered !== false}
           picked={picksFor(sheet.race.id).includes(sheet.c.ballot)}
           onPick={() => {
             const cur = picksFor(sheet.race.id);
@@ -308,7 +311,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
           onClose={() => setSheet(null)} />
       )}
       {comparing && (
-        <Compare race={comparing} color={sectionOf(comparing.section).color} ink={sectionOf(comparing.section).ink} picked={picksFor(comparing.id)}
+        <Compare race={comparing} color={sectionOf(comparing.section).color} ink={sectionOf(comparing.section).ink} numbered={chicago && comparing.numbered !== false} picked={picksFor(comparing.id)}
           onPick={(b) => {
             const cur = picksFor(comparing.id);
             choose(comparing.id, cur.includes(b) ? cur.filter((x) => x !== b) : comparing.voteFor === 1 ? [b] : [...cur, b].slice(-comparing.voteFor));
@@ -340,16 +343,16 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, da
           </p>
         )}
         <h1 className="text-4xl sm:text-5xl font-black leading-[1.05] tracking-tight">Every name on your ballot, explained.</h1>
-        <p className="text-lg leading-relaxed text-[#E2E4E8]">Chicago’s Nov 3 ballot runs from U.S. Senate down to judges and your school board. Enter your address to see exactly what’s on yours, what each job does, who’s running and who’s funding them. Then make your picks and bring them to the booth.</p>
+        <p className="text-lg leading-relaxed text-[#E2E4E8]">For Chicago and suburban Cook County. The Nov 3 ballot runs from U.S. Senate down to judges (and, in Chicago, your school board). Enter your address to see exactly what’s on yours, what each job does, who’s running and who’s funding them. Then make your picks and bring them to the booth.</p>
       </header>
 
       <form onSubmit={onSubmit} className="space-y-3">
-        <label htmlFor="kyb-address" className="block font-black text-lg">Your Chicago address</label>
+        <label htmlFor="kyb-address" className="block font-black text-lg">Your address in Cook County</label>
         <div className="flex gap-2">
           <div className="relative flex-1 min-w-0">
             <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#F5F6F7] pointer-events-none" aria-hidden="true" />
             <input id="kyb-address" type="text" autoComplete="street-address" value={address} onChange={(e) => setAddress(e.target.value)}
-              placeholder="e.g. 121 N LaSalle St"
+              placeholder="e.g. 121 N LaSalle St or 1501 Sherman Ave, Evanston"
               className="w-full min-h-[56px] rounded-2xl border-2 border-[#2E343F] bg-[#1A1D24] pl-12 pr-4 text-lg font-bold text-[#F5F6F7] focus:border-[#009CDF] focus:outline-none" />
           </div>
           <button type="submit" disabled={status.busy} className="shrink-0 min-h-[56px] rounded-2xl bg-[#009CDF] px-5 font-black text-[#0F1117] disabled:cursor-wait inline-flex items-center gap-2">
@@ -362,7 +365,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, da
         {status.error && <p role="alert" className="rounded-xl bg-[#E23838] px-4 py-3 font-bold text-white">{status.error}</p>}
         {status.outside && (
           <p role="alert" className="rounded-xl bg-[#262B34] border-2 border-[#FFB900] px-4 py-3 font-bold">
-            That address is outside Chicago. This guide covers Chicago ballots for now. Anywhere else in Illinois, look up your registration and polling place with the <a className="underline text-[#FFB900]" href={IL_LOOKUP} target="_blank" rel="noreferrer noopener">State Board of Elections ↗</a>.
+            That address is outside Cook County. This guide covers Chicago and suburban Cook for now. Anywhere else in Illinois, look up your registration and polling place with the <a className="underline text-[#FFB900]" href={LINKS.stateLookup} target="_blank" rel="noreferrer noopener">State Board of Elections ↗</a>.
           </p>
         )}
         <p className="text-sm leading-relaxed text-[#E2E4E8]">🔒 Your address goes once to Cook County’s address lookup (or OpenStreetMap, if the county’s is down) to find your districts. It’s saved only on this device, like your picks, and never shared.</p>
@@ -370,7 +373,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, da
 
       <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {[
-          [data.races.length, 'races citywide'], [candidates, 'candidates'],
+          [data.races.length, 'races across Cook'], [candidates, 'candidates'],
           [data.retentions.length, 'judges up for retention'], [data.measures.length, 'ballot questions'],
         ].map(([n, label]) => (
           <li key={label} className="rounded-2xl border-2 border-[#2E343F] bg-[#1A1D24] p-4">
@@ -381,14 +384,26 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, da
       </ul>
 
       <button type="button" onClick={onBrowse} className="min-h-[44px] font-bold text-[#F5F6F7] underline underline-offset-4">
-        Or browse every Chicago race →
+        Or browse every race in Cook County →
       </button>
       <Sources />
     </div>
   );
 }
 
-function WhereYouVote({ districts, onChange }: { districts: Districts | null; onChange: () => void }) {
+// Suburban contests from the Cook County Clerk (county board districts the
+// Chicago list doesn't reach, and suburban referenda) aren't loaded yet; say
+// exactly what's missing for this address rather than leaving it silent.
+function suburbanGaps(d: Districts): string[] {
+  const gaps = [];
+  if (d.commissioner && !data.races.some((r) => r.area?.type === 'commissioner' && r.area.id === d.commissioner)) {
+    gaps.push(`County Board District ${d.commissioner}`);
+  }
+  gaps.push('local referenda (school, village, township and park questions)');
+  return gaps;
+}
+
+function WhereYouVote({ districts, chicago, onChange }: { districts: Districts | null; chicago: boolean; onChange: () => void }) {
   return (
     <div className="rounded-2xl border-2 border-[#2E343F] bg-[#1A1D24] p-4 space-y-3">
       {districts ? (
@@ -399,13 +414,19 @@ function WhereYouVote({ districts, onChange }: { districts: Districts | null; on
               <li key={k} className="rounded-full bg-[#262B34] px-3 py-1 text-sm font-bold">{label} {districts[k]}</li>
             ))}
           </ul>
+          {!chicago && (
+            <div className="rounded-xl border-2 border-[#FFB900] bg-[#262B34] p-3 text-[15px] leading-relaxed">
+              <p className="font-black text-[#FFB900]">Suburban Cook: a few things aren’t in here yet</p>
+              <p>Not included: {suburbanGaps(districts).join(' and ')}. Ballot numbers aren’t shown because suburban ballots order candidates differently. See your full sample ballot at the <a className="font-bold underline text-[#F5F6F7]" href={COOK_CLERK} target="_blank" rel="noreferrer noopener">Cook County Clerk ↗</a>.</p>
+            </div>
+          )}
           <p className="text-sm text-[#E2E4E8]">
-            Not right? Check the <a className="font-bold underline text-[#F5F6F7]" href={LINKS.addressLookup} target="_blank" rel="noreferrer noopener">official address lookup ↗</a> or{' '}
+            Not right? Check the <a className="font-bold underline text-[#F5F6F7]" href={chicago ? LINKS.addressLookup : LINKS.stateLookup} target="_blank" rel="noreferrer noopener">official address lookup ↗</a> or{' '}
             <button type="button" onClick={onChange} className="font-bold underline text-[#F5F6F7]">change your address</button>.
           </p>
         </>
       ) : (
-        <p className="text-[15px]">You’re seeing <strong>every</strong> race on any Chicago ballot. <button type="button" onClick={onChange} className="font-bold underline">Enter your address</button> to see only yours.</p>
+        <p className="text-[15px]">You’re seeing <strong>every</strong> race on any ballot in Chicago or suburban Cook. <button type="button" onClick={onChange} className="font-bold underline">Enter your address</button> to see only yours.</p>
       )}
     </div>
   );
@@ -416,19 +437,19 @@ function Sources() {
   return (
     <footer className="rounded-2xl border-2 border-[#2E343F] p-5 space-y-2 text-sm leading-relaxed text-[#E2E4E8]">
       <p className="font-black text-[#F5F6F7]">Where this comes from</p>
-      <p>Candidates and ballot questions: <a className="underline font-bold text-[#F5F6F7]" href={s.candidates.url} target="_blank" rel="noreferrer noopener">Chicago Board of Elections candidate list</a>{s.candidates.asOf ? `, as of ${s.candidates.asOf}` : ''}, in official ballot order. Campaign money and incumbency: <a className="underline font-bold text-[#F5F6F7]" href={s.money.url} target="_blank" rel="noreferrer noopener">Federal Election Commission</a> and <a className="underline font-bold text-[#F5F6F7]" href={s.stateMoney.url} target="_blank" rel="noreferrer noopener">Illinois State Board of Elections</a>. District maps: U.S. Census Bureau, Cook County, City of Chicago and the Illinois Senate.</p>
-      <p>Nonpartisan and independent: not affiliated with any campaign, party or the Board of Elections. Always double-check your <a className="underline font-bold text-[#F5F6F7]" href={LINKS.myInfo} target="_blank" rel="noreferrer noopener">official sample ballot</a>.</p>
+      <p>Candidates and ballot questions: <a className="underline font-bold text-[#F5F6F7]" href={s.candidates.url} target="_blank" rel="noreferrer noopener">Chicago Board of Elections candidate list</a>{s.candidates.asOf ? `, as of ${s.candidates.asOf}` : ''}, in official ballot order; suburban contests from the <a className="underline font-bold text-[#F5F6F7]" href={s.stateCandidates.url} target="_blank" rel="noreferrer noopener">State Board of Elections certified list</a>. Campaign money and incumbency: <a className="underline font-bold text-[#F5F6F7]" href={s.money.url} target="_blank" rel="noreferrer noopener">Federal Election Commission</a> and <a className="underline font-bold text-[#F5F6F7]" href={s.stateMoney.url} target="_blank" rel="noreferrer noopener">Illinois State Board of Elections</a>. District maps: U.S. Census Bureau, Cook County, City of Chicago and the Illinois Senate.</p>
+      <p>Nonpartisan and independent: not affiliated with any campaign, party or election authority. Always double-check your <a className="underline font-bold text-[#F5F6F7]" href={LINKS.myInfo} target="_blank" rel="noreferrer noopener">official sample ballot</a>.</p>
     </footer>
   );
 }
 
-function PrintBallot({ sections, picks, label }: { sections: { id: SectionId; title: string; ids: string[] }[]; picks: Record<string, Choice>; label?: string }) {
+function PrintBallot({ sections, picks, label, numbered }: { sections: { id: SectionId; title: string; ids: string[] }[]; picks: Record<string, Choice>; label?: string; numbered: boolean }) {
   const raceById = new Map(data.races.map((r) => [r.id, r]));
   const name = (id: string): [string, string] => {
     const race = raceById.get(id);
     const c = picks[id];
     if (race) {
-      const chosen = Array.isArray(c) ? race.candidates.filter((x) => c.includes(x.ballot)).map((x) => `#${x.ballot} ${x.name}`).join(', ') : '';
+      const chosen = Array.isArray(c) ? race.candidates.filter((x) => c.includes(x.ballot)).map((x) => (numbered && race.numbered !== false ? `#${x.ballot} ${x.name}` : x.name)).join(', ') : '';
       return [race.office, chosen || (c === 'skip' ? 'Skip' : '—')];
     }
     const ret = data.retentions.find((r) => r.id === id);
@@ -438,7 +459,7 @@ function PrintBallot({ sections, picks, label }: { sections: { id: SectionId; ti
   };
   return (
     <div className="hidden print:block p-6 text-black bg-white text-[11pt]">
-      <h1 className="text-xl font-black">My Ballot · Chicago · Nov 3, 2026</h1>
+      <h1 className="text-xl font-black">My Ballot · {numbered ? 'Chicago' : 'Cook County'} · Nov 3, 2026</h1>
       {label && <p>{label}</p>}
       {sections.map((s) => (
         <section key={s.id} className="mt-4 break-inside-avoid-page">

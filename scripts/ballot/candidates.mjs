@@ -10,9 +10,13 @@ const ORDINAL = /(\d+)(?:st|nd|rd|th)/;
 
 const clean = (s) => s.replace(/\s+/g, ' ').trim();
 
-// Where an office's voters live. `null` area = every Chicago voter.
+// Where an office's voters live. `null` area = every voter in Cook County
+// (statewide and countywide contests). `city` = Chicago only; `mwrd` = inside
+// the Water Reclamation District, which covers most but not all of Cook.
 function areaFor(office) {
   let m;
+  if (/^President of the Chicago Board of Education/.test(office)) return { type: 'city', id: 'chicago' };
+  if (/^Metropolitan Water Reclamation District/.test(office)) return { type: 'mwrd', id: '1' };
   if ((m = office.match(/^U\.S\. Representative, (\d+)\w\w District/))) return { type: 'cd', id: m[1] };
   if ((m = office.match(/^State Senator, (\d+)\w\w District/))) return { type: 'sldu', id: m[1] };
   if ((m = office.match(/^State Representative, (\d+)\w\w District/))) return { type: 'sldl', id: m[1] };

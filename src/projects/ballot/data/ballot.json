@@ -9,6 +9,9 @@
    "page": "https://chicagoelections.gov/getting-ballot/candidates",
    "asOf": "9/11/2026 3:47:15 PM"
   },
+  "stateCandidates": {
+   "url": "https://www.elections.il.gov/ElectionOperations/DownloadCandidates.aspx?ID=sejIrI%2bQmww%3d"
+  },
   "money": {
    "url": "https://www.fec.gov/data/",
    "file": "https://www.fec.gov/files/bulk-downloads/2026/weball26.zip"
@@ -45,6 +48,7 @@
      "ballot": 2,
      "name": "Juliana Stratton",
      "party": "Democratic",
+     "website": "https://Julianastratton.com",
      "money": {
       "source": "FEC",
       "id": "S6IL00458",
@@ -81,6 +85,7 @@
      "ballot": 4,
      "name": "Darren Bailey & Aaron B. Del Mar",
      "party": "Republican",
+     "website": "https://baileyforillinois.com",
      "money": {
       "source": "ISBE",
       "id": "34092",
@@ -108,6 +113,7 @@
      "ballot": 6,
      "name": "Collin Corbett & Carolyn Schofield",
      "party": "Independent",
+     "website": "https://CollinForIL.com",
      "money": {
       "source": "ISBE",
       "id": "41172",
@@ -168,6 +174,7 @@
      "ballot": 9,
      "name": "Diane M. Harris",
      "party": "Republican",
+     "website": "https://www.harrisforsos.com",
      "money": {
       "source": "ISBE",
       "id": "37026",
@@ -241,6 +248,7 @@
      "ballot": 13,
      "name": "Max Solomon",
      "party": "Republican",
+     "website": "https://www.maxsolomon.info",
      "money": {
       "source": "ISBE",
       "id": "25411",
@@ -281,6 +289,7 @@
      "ballot": 21,
      "name": "Christian Maxwell",
      "party": "Republican",
+     "website": "https://www.christianmaxwellforcongress.com",
      "money": {
       "source": "FEC",
       "id": "H6IL01191",
@@ -326,6 +335,7 @@
      "ballot": 22,
      "name": "Donna Miller",
      "party": "Democratic",
+     "website": "https://donnaforcongress.com",
      "money": {
       "source": "FEC",
       "id": "H6IL02355",
@@ -352,6 +362,7 @@
      "ballot": 21,
      "name": "Angel Oakley",
      "party": "Republican",
+     "website": "https://libertyangel.us",
      "money": {
       "source": "FEC",
       "id": "H6IL03163",
@@ -409,7 +420,8 @@
     {
      "ballot": 23,
      "name": "Ed Hershey",
-     "party": "Working Class Party"
+     "party": "Working Class Party",
+     "website": "https://workingclassparty.org"
     },
     {
      "ballot": 24,
@@ -440,7 +452,8 @@
     {
      "ballot": 21,
      "name": "Tommy Hanson",
-     "party": "Republican"
+     "party": "Republican",
+     "website": "https://votetommyhanson.com"
     },
     {
      "ballot": 22,
@@ -473,6 +486,7 @@
      "ballot": 21,
      "name": "Niki Conforti",
      "party": "Republican",
+     "website": "https://www.conforti4congress.com",
      "money": {
       "source": "FEC",
       "id": "H2IL06090",
@@ -590,12 +604,14 @@
     {
      "ballot": 21,
      "name": "John Elleson",
-     "party": "Republican"
+     "party": "Republican",
+     "website": "https://johnelleson.com"
     },
     {
      "ballot": 22,
      "name": "Daniel Biss",
      "party": "Democratic",
+     "website": "https://danielbiss.com",
      "money": {
       "source": "FEC",
       "id": "H6IL09228",
@@ -676,6 +692,7 @@
      "ballot": 32,
      "name": "Lakesia Collins",
      "party": "Democratic",
+     "website": "https://lakesiacollinsforsenate.com",
      "incumbent": true,
      "money": {
       "source": "ISBE",
@@ -703,6 +720,7 @@
      "ballot": 32,
      "name": "Sara Feigenholtz",
      "party": "Democratic",
+     "website": "https://sarafeigenholtz.com",
      "incumbent": true,
      "money": {
       "source": "ISBE",
@@ -976,6 +994,7 @@
      "ballot": 32,
      "name": "Graciela Guzman",
      "party": "Democratic",
+     "website": "https://gracielafor20.org",
      "incumbent": true,
      "money": {
       "source": "ISBE",
@@ -1003,6 +1022,7 @@
      "ballot": 32,
      "name": "Don Harmon",
      "party": "Democratic",
+     "website": "https://harmonforillinois.com",
      "incumbent": true,
      "money": {
       "source": "ISBE",
@@ -1111,6 +1131,7 @@
      "ballot": 42,
      "name": "Kimberly Neely DuBuclet",
      "party": "Democratic",
+     "website": "https://Kim4StateRep.com",
      "incumbent": true,
      "money": {
       "source": "ISBE",
@@ -1285,6 +1306,7 @@
      "ballot": 42,
      "name": "Paul Kendrick",
      "party": "Democratic",
+     "website": "https://paulforillinois.com",
      "money": {
       "source": "ISBE",
       "id": "40740",
@@ -1324,6 +1346,7 @@
      "ballot": 42,
      "name": "Demerike \"Demi\" Palecek",
      "party": "Democratic",
+     "website": "https://demiforillinois.com",
      "money": {
       "source": "ISBE",
       "id": "40735",
@@ -1897,7 +1920,8 @@
     {
      "ballot": 41,
      "name": "David A. Dewar",
-     "party": "Republican"
+     "party": "Republican",
+     "website": "https://RepDavidDewar.com"
     },
     {
      "ballot": 42,
@@ -2002,6 +2026,7 @@
      "ballot": 42,
      "name": "Miguel Alvelo-Rivera",
      "party": "Democratic",
+     "website": "https://miguelfor40.org",
      "money": {
       "source": "ISBE",
       "id": "40930",
@@ -2090,7 +2115,10 @@
    "id": "metropolitan-water-reclamation-district-commissioners-full-6-year-term",
    "office": "Metropolitan Water Reclamation District Commissioners Full 6-Year Term",
    "section": "county",
-   "area": null,
+   "area": {
+    "type": "mwrd",
+    "id": "1"
+   },
    "voteFor": 3,
    "candidates": [
     {
@@ -2156,7 +2184,10 @@
    "id": "metropolitan-water-reclamation-district-commissioners-unexpired-2-year-term",
    "office": "Metropolitan Water Reclamation District Commissioners Unexpired 2-Year Term",
    "section": "county",
-   "area": null,
+   "area": {
+    "type": "mwrd",
+    "id": "1"
+   },
    "voteFor": 1,
    "candidates": [
     {
@@ -2846,6 +2877,7 @@
      "ballot": 105,
      "name": "Ashonta C. Rice",
      "party": "Democratic",
+     "website": "https://www.ashontaforjudge.com",
      "money": {
       "source": "ISBE",
       "id": "39572",
@@ -2918,6 +2950,7 @@
      "ballot": 112,
      "name": "Radiance Ward",
      "party": "Democratic",
+     "website": "https://radiancewardforjudge.com",
      "money": {
       "source": "ISBE",
       "id": "40620",
@@ -2944,6 +2977,7 @@
      "ballot": 114,
      "name": "Ashley Greer Shambley",
      "party": "Democratic",
+     "website": "https://ashleygreershambleyforjudge.com",
      "money": {
       "source": "ISBE",
       "id": "40608",
@@ -3092,6 +3126,7 @@
      "ballot": 112,
      "name": "Jarrett Knox",
      "party": "Democratic",
+     "website": "https://knoxforjudge.com",
      "money": {
       "source": "ISBE",
       "id": "40861",
@@ -3144,6 +3179,7 @@
      "ballot": 112,
      "name": "Julian Sanchez Crozier",
      "party": "Democratic",
+     "website": "https://jscforjudge.com",
      "money": {
       "source": "ISBE",
       "id": "40644",
@@ -3170,6 +3206,7 @@
      "ballot": 114,
      "name": "Jessica Karina Velez",
      "party": "Democratic",
+     "website": "https://jessicavelezforjudge.com",
      "money": {
       "source": "ISBE",
       "id": "40643",
@@ -3196,6 +3233,7 @@
      "ballot": 112,
      "name": "Natalia Moore",
      "party": "Democratic",
+     "website": "https://Natalia4judge.com",
      "money": {
       "source": "ISBE",
       "id": "40731",
@@ -3300,6 +3338,7 @@
      "ballot": 112,
      "name": "Michael J. Zink",
      "party": "Democratic",
+     "website": "https://zinkforjudge.com",
      "money": {
       "source": "ISBE",
       "id": "39605",
@@ -3342,7 +3381,10 @@
    "id": "president-of-the-chicago-board-of-education",
    "office": "President of the Chicago Board of Education",
    "section": "school",
-   "area": null,
+   "area": {
+    "type": "city",
+    "id": "chicago"
+   },
    "voteFor": 1,
    "candidates": [
     {
@@ -4128,6 +4170,1311 @@
     }
    ],
    "writeIn": true
+  },
+  {
+   "id": "sldl-56-staterepresentativethdistrict",
+   "office": "State Representative, 56th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "56"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Michelle Mussman",
+     "ballot": 1,
+     "website": "https://votemichelle.org",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "22346",
+      "raised": 29315,
+      "spent": 53406,
+      "cash": 102848,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "party": "Republican",
+     "name": "Rhys Read",
+     "ballot": 2
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-54-staterepresentativethdistrict",
+   "office": "State Representative, 54th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "54"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Mary Beth Canty",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "36915",
+      "raised": 411270,
+      "spent": 119345,
+      "cash": 462621,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "party": "Republican",
+     "name": "Joseph M. Tracy",
+     "ballot": 2
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldu-29-statesenatorthdistrict",
+   "office": "State Senator, 29th District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "29"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Julie A. Morrison",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "23762",
+      "raised": 372731,
+      "spent": 363023,
+      "cash": 539895,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "party": "Republican",
+     "name": "Kate McGrath",
+     "ballot": 2,
+     "money": {
+      "source": "ISBE",
+      "id": "40796",
+      "raised": 9400,
+      "spent": 2195,
+      "cash": 7205,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-80-staterepresentativethdistrict",
+   "office": "State Representative, 80th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "80"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Anthony DeLuca",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "20309",
+      "raised": 292725,
+      "spent": 125003,
+      "cash": 1164503,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "party": "Republican",
+     "name": "Adam M. Beaty",
+     "ballot": 2,
+     "money": {
+      "source": "ISBE",
+      "id": "39500",
+      "raised": 920,
+      "spent": 685,
+      "cash": 408,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-44-staterepresentativethdistrict",
+   "office": "State Representative, 44th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "44"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Fred Crespo",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "18583",
+      "raised": 55561,
+      "spent": 95793,
+      "cash": 72679,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "party": "Republican",
+     "name": "Ralph Black",
+     "ballot": 2,
+     "money": {
+      "source": "ISBE",
+      "id": "40820",
+      "raised": 10002,
+      "spent": 6483,
+      "cash": 3619,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-17-staterepresentativethdistrict",
+   "office": "State Representative, 17th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "17"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Jennifer Gong-Gershowitz",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "34008",
+      "raised": 219197,
+      "spent": 91968,
+      "cash": 522911,
+      "through": "09/30/2026"
+     }
+    },
+    {
+     "party": "Republican",
+     "name": "James \"Jim\" Geldermann",
+     "ballot": 2,
+     "money": {
+      "source": "ISBE",
+      "id": "39283",
+      "raised": 21475,
+      "spent": 22626,
+      "cash": 1879,
+      "through": "09/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-53-staterepresentativerddistrict",
+   "office": "State Representative, 53rd District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "53"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Nicolle Grasse",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39885",
+      "raised": 235063,
+      "spent": 26000,
+      "cash": 232395,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "party": "Republican",
+     "name": "Elizabeth Bauer",
+     "ballot": 2,
+     "money": {
+      "source": "ISBE",
+      "id": "40884",
+      "raised": 31221,
+      "spent": 12198,
+      "cash": 19023,
+      "through": "09/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-57-staterepresentativethdistrict",
+   "office": "State Representative, 57th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "57"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Tracy Katz Muhl",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39446",
+      "raised": 225936,
+      "spent": 184698,
+      "cash": 303342,
+      "through": "09/30/2026"
+     }
+    },
+    {
+     "party": "Republican",
+     "name": "Daniel T. Behr",
+     "ballot": 2,
+     "money": {
+      "source": "ISBE",
+      "id": "39779",
+      "raised": 135,
+      "spent": 5075,
+      "cash": 3148,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-51-staterepresentativestdistrict",
+   "office": "State Representative, 51st District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "51"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Jenny Levin",
+     "ballot": 1,
+     "money": {
+      "source": "ISBE",
+      "id": "40784",
+      "raised": 52166,
+      "spent": 38949,
+      "cash": 13716,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "party": "Republican",
+     "name": "Lori Smith",
+     "ballot": 2,
+     "money": {
+      "source": "ISBE",
+      "id": "41026",
+      "raised": 4176,
+      "spent": 2092,
+      "cash": 2084,
+      "through": "09/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-2-staterepresentativenddistrict",
+   "office": "State Representative, 2nd District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "2"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Elizabeth \"Lisa\" Hernandez",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "16776",
+      "raised": 566476,
+      "spent": 739412,
+      "cash": 466762,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "party": "Republican",
+     "name": "Laura Hruska",
+     "ballot": 2
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldu-23-statesenatorrddistrict",
+   "office": "State Senator, 23rd District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "23"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Suzanne \"Suzy\" Glowiak Hilton",
+     "ballot": 1,
+     "website": "https://suzyforsenate.com",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "25613",
+      "raised": 336829,
+      "spent": 82139,
+      "cash": 426265,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "party": "Republican",
+     "name": "Linda Z. Polacek",
+     "ballot": 2,
+     "money": {
+      "source": "ISBE",
+      "id": "41041",
+      "raised": 4596,
+      "spent": 296,
+      "cash": 4300,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldu-27-statesenatorthdistrict",
+   "office": "State Senator, 27th District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "27"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Carina Santa Maria",
+     "ballot": 1,
+     "money": {
+      "source": "ISBE",
+      "id": "40126",
+      "raised": 154440,
+      "spent": 86747,
+      "cash": 67809,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "party": "Republican",
+     "name": "David Mathis",
+     "ballot": 2,
+     "money": {
+      "source": "ISBE",
+      "id": "40810",
+      "raised": 1400,
+      "spent": 961,
+      "cash": 439,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "cd-10-usrepresentativethdistrict",
+   "office": "U.S. Representative, 10th District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "10"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Brad Schneider",
+     "ballot": 1,
+     "website": "https://SchneiderforCongress.com",
+     "money": {
+      "source": "FEC",
+      "id": "H2IL10068",
+      "raised": 3006863,
+      "spent": 2279282,
+      "cash": 1699007,
+      "through": "06/30/2026"
+     },
+     "incumbent": true
+    },
+    {
+     "party": "Republican",
+     "name": "Carl Lambrecht",
+     "ballot": 2
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-49-staterepresentativethdistrict",
+   "office": "State Representative, 49th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "49"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Maura Hirschauer",
+     "ballot": 1,
+     "website": "https://votemaura.com",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "35683",
+      "raised": 233558,
+      "spent": 32433,
+      "cash": 215614,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "party": "Republican",
+     "name": "John Paul Augustynowicz",
+     "ballot": 2,
+     "money": {
+      "source": "ISBE",
+      "id": "34667",
+      "raised": 1000,
+      "spent": 380,
+      "cash": 620,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-77-staterepresentativethdistrict",
+   "office": "State Representative, 77th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "77"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Norma Hernandez",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "36454",
+      "raised": 256848,
+      "spent": 192082,
+      "cash": 90487,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "party": "Republican",
+     "name": "Anthony Airdo",
+     "ballot": 2,
+     "money": {
+      "source": "ISBE",
+      "id": "23533",
+      "raised": 0,
+      "spent": 0,
+      "cash": 7839,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-52-staterepresentativenddistrict",
+   "office": "State Representative, 52nd District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "52"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Maria Peterson",
+     "ballot": 1,
+     "money": {
+      "source": "ISBE",
+      "id": "34354",
+      "raised": 256413,
+      "spent": 181826,
+      "cash": 86659,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "party": "Republican",
+     "name": "Martin McLaughlin",
+     "ballot": 2,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "35707",
+      "raised": 180115,
+      "spent": 65884,
+      "cash": 193213,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-58-staterepresentativethdistrict",
+   "office": "State Representative, 58th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "58"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Bob Morgan",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "32872",
+      "raised": 295621,
+      "spent": 581510,
+      "cash": 55582,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-59-staterepresentativethdistrict",
+   "office": "State Representative, 59th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "59"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Daniel Didech",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "34241",
+      "raised": 333644,
+      "spent": 303049,
+      "cash": 189763,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-79-staterepresentativethdistrict",
+   "office": "State Representative, 79th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "79"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Republican",
+     "name": "Jackie Haas",
+     "ballot": 1,
+     "website": "https://votejackie.com",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "35843",
+      "raised": 140068,
+      "spent": 153466,
+      "cash": 25289,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "subcircuit-13-judgethsubcircuitvacancyofmartinckelley",
+   "office": "Judge, 13th Subcircuit (Vacancy of Martin C. Kelley)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "13"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Brittany Michelle Pedersen",
+     "ballot": 1,
+     "money": {
+      "source": "ISBE",
+      "id": "40651",
+      "raised": 33575,
+      "spent": 12871,
+      "cash": 20704,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "subcircuit-13-judgethsubcircuitvacancyofomalley",
+   "office": "Judge, 13th Subcircuit (Vacancy of O'malley)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "13"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Dan Naranjo",
+     "ballot": 1,
+     "money": {
+      "source": "ISBE",
+      "id": "40586",
+      "raised": 70187,
+      "spent": 28974,
+      "cash": 41213,
+      "through": "09/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "subcircuit-13-judgethsubcircuitvacancyofthomasjkelley",
+   "office": "Judge, 13th Subcircuit (Vacancy of Thomas J. Kelley)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "13"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "William F. Kelley",
+     "ballot": 1,
+     "money": {
+      "source": "ISBE",
+      "id": "40788",
+      "raised": 29800,
+      "spent": 29800,
+      "cash": 0,
+      "through": "05/11/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldu-24-statesenatorthdistrict",
+   "office": "State Senator, 24th District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "24"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Benjamin \"Ben\" McAdams",
+     "ballot": 1,
+     "money": {
+      "source": "ISBE",
+      "id": "40904",
+      "raised": 41348,
+      "spent": 24642,
+      "cash": 16707,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "party": "Republican",
+     "name": "Seth Lewis",
+     "ballot": 2,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "25522",
+      "raised": 239589,
+      "spent": 130127,
+      "cash": 222773,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldu-26-statesenatorthdistrict",
+   "office": "State Senator, 26th District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "26"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Nabeela Syed",
+     "ballot": 1,
+     "website": "https://nabeelasyed.com",
+     "money": {
+      "source": "ISBE",
+      "id": "37009",
+      "raised": 507846,
+      "spent": 289071,
+      "cash": 280490,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "party": "Republican",
+     "name": "Darby Hills",
+     "ballot": 2,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "40496",
+      "raised": 994087,
+      "spent": 352945,
+      "cash": 641142,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "cd-11-usrepresentativethdistrict",
+   "office": "U.S. Representative, 11th District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "11"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Bill Foster",
+     "ballot": 1,
+     "money": {
+      "source": "FEC",
+      "id": "H8IL14067",
+      "raised": 2180937,
+      "spent": 1226214,
+      "cash": 2505288,
+      "through": "06/30/2026"
+     },
+     "incumbent": true
+    },
+    {
+     "party": "Republican",
+     "name": "Jeff Walter",
+     "ballot": 2,
+     "website": "https://www.jeffwalterforcongress.com",
+     "money": {
+      "source": "FEC",
+      "id": "H6IL11166",
+      "raised": 311439,
+      "spent": 288674,
+      "cash": 22765,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-37-staterepresentativethdistrict",
+   "office": "State Representative, 37th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "37"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Republican",
+     "name": "Patrick Sheehan",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "37244",
+      "raised": 205042,
+      "spent": 113206,
+      "cash": 136648,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-38-staterepresentativethdistrict",
+   "office": "State Representative, 38th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "38"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Debbie Meyers-Martin",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "24887",
+      "raised": 55181,
+      "spent": 94867,
+      "cash": 3105,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "subcircuit-13-judgethsubcircuitvacancyofcurryjr",
+   "office": "Judge, 13th Subcircuit (Vacancy of Curry, Jr.)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "13"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Robert \"Bob\" Groebner",
+     "ballot": 1,
+     "money": {
+      "source": "ISBE",
+      "id": "40704",
+      "raised": 350018,
+      "spent": 349371,
+      "cash": 647,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-30-staterepresentativethdistrict",
+   "office": "State Representative, 30th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "30"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "William \"Will\" Davis",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "16392",
+      "raised": 114306,
+      "spent": 152895,
+      "cash": 64534,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldu-30-statesenatorthdistrict",
+   "office": "State Senator, 30th District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "30"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Adriane L. Johnson",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "36278",
+      "raised": 241398,
+      "spent": 250518,
+      "cash": 108948,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-48-staterepresentativethdistrict",
+   "office": "State Representative, 48th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "48"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Amanda Zahorak",
+     "ballot": 1,
+     "money": {
+      "source": "ISBE",
+      "id": "41068",
+      "raised": 7346,
+      "spent": 2865,
+      "cash": 4754,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "party": "Republican",
+     "name": "Jennifer Sanalitro",
+     "ballot": 2,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "37202",
+      "raised": 154578,
+      "spent": 136909,
+      "cash": 105422,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldu-41-statesenatorstdistrict",
+   "office": "State Senator, 41st District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "41"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Republican",
+     "name": "John Curran",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "18949",
+      "raised": 1757713,
+      "spent": 783555,
+      "cash": 3059627,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-45-staterepresentativethdistrict",
+   "office": "State Representative, 45th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "45"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Martha \"Marti\" Deuter",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39601",
+      "raised": 66549,
+      "spent": 13424,
+      "cash": 67286,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "party": "Republican",
+     "name": "Gina Parrilli",
+     "ballot": 2,
+     "money": {
+      "source": "ISBE",
+      "id": "41116",
+      "raised": 3585,
+      "spent": 1274,
+      "cash": 7258,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "subcircuit-18-judgethsubcircuitvacancyofandreou",
+   "office": "Judge, 18th Subcircuit (Vacancy of Andreou)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "18"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Sam Bae",
+     "ballot": 1,
+     "money": {
+      "source": "ISBE",
+      "id": "40646",
+      "raised": 568787,
+      "spent": 560881,
+      "cash": 7905,
+      "through": "09/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "subcircuit-18-judgethsubcircuitvacancyofchrones",
+   "office": "Judge, 18th Subcircuit (Vacancy of Chrones)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "18"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Juan Ponce de Leon",
+     "ballot": 1,
+     "website": "https://juan4judge.com",
+     "money": {
+      "source": "ISBE",
+      "id": "40746",
+      "raised": 57158,
+      "spent": 24797,
+      "cash": 32361,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-43-staterepresentativerddistrict",
+   "office": "State Representative, 43rd District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "43"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Anna Moeller",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "25879",
+      "raised": 151397,
+      "spent": 148866,
+      "cash": 62752,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-7-staterepresentativethdistrict",
+   "office": "State Representative, 7th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "7"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Democratic",
+     "name": "Emanuel \"Chris\" Welch",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "19328",
+      "raised": 11931189,
+      "spent": 3258214,
+      "cash": 11440633,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
+  },
+  {
+   "id": "sldl-82-staterepresentativenddistrict",
+   "office": "State Representative, 82nd District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "82"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "party": "Republican",
+     "name": "Nicole La Ha",
+     "ballot": 1,
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39529",
+      "raised": 139231,
+      "spent": 96424,
+      "cash": 78916,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false,
+   "numbered": false
   }
  ],
  "retentions": [

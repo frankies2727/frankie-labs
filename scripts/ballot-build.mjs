@@ -23,7 +23,8 @@ import { join } from 'node:path';
 import { parseCandidateList } from './ballot/candidates.mjs';
 import { parseWeball, addFederalMoney } from './ballot/fec.mjs';
 import { ISBE_BASE, ISBE_FILES, addStateMoney } from './ballot/isbe.mjs';
-import { buildDistricts } from './ballot/districts.mjs';
+import { addStateList, fetchCertifiedList } from './ballot/statewide.mjs';
+import { buildDistricts, touchesCook } from './ballot/districts.mjs';
 
 const OUT = 'src/projects/ballot/data';
 const CANDIDATES_PAGE = 'https://chicagoelections.gov/getting-ballot/candidates';
@@ -109,6 +110,18 @@ async function main() {
     throw new Error(`Parsed only ${ballot.races.length} races / ${ballot.retentions.length} retentions — refusing to overwrite.`);
   }
 
+  // Maps first: the suburban contests are kept only if their district is in Cook.
+  const precinctKeys = ballot.measures.filter((m) => m.scope.type === 'precinct').map((m) => `${m.scope.ward}-${m.scope.precinct}`);
+  const districts = await buildDistricts([...new Set(precinctKeys)]);
+
+  // Suburban Cook: the State Board's certified list adds the congressional,
+  // legislative and subcircuit contests outside Chicago (countywide contests
+  // and retentions are the same everywhere in Cook) plus campaign websites.
+  const certified = await fetchCertifiedList();
+  const merged = addStateList(certified.text, ballot.races, districts.layers, touchesCook);
+  ballot.races = merged.races;
+  console.log(`State list: +${merged.added} suburban contests, ${merged.withSite} candidate websites`);
+
   await download(FEC_WEBALL, join(work, 'weball.zip'));
   execFileSync('unzip', ['-o', '-q', join(work, 'weball.zip'), '-d', work]);
   const money = addFederalMoney(ballot.races, parseWeball(readFileSync(join(work, 'weball26.txt'), 'utf8')));
@@ -120,19 +133,19 @@ async function main() {
   for (const line of state.log) console.log('  ' + line);
 
   const sites = await earlyVotingSites();
-  const precinctKeys = ballot.measures.filter((m) => m.scope.type === 'precinct').map((m) => `${m.scope.ward}-${m.scope.precinct}`);
-  const districts = await buildDistricts([...new Set(precinctKeys)]);
   await browser?.close();
 
   // A race whose district isn't on the map would silently vanish from every
   // ballot, so treat that as a broken build.
-  const missing = ballot.races.filter((r) => r.area && !districts.layers[r.area.type]?.some((f) => f.id === r.area.id));
+  // (`city` isn't a map: it's "has a Chicago ward".)
+  const missing = ballot.races.filter((r) => r.area && r.area.type !== 'city' && !districts.layers[r.area.type]?.some((f) => f.id === r.area.id));
   if (missing.length) throw new Error('No map for: ' + missing.map((r) => r.office).join('; '));
 
   writeFileSync(join(OUT, 'ballot.json'), JSON.stringify({
     election: { name: 'General Election', date: '2026-11-03' },
     sources: {
       candidates: { url: pdfUrl, page: CANDIDATES_PAGE, asOf: ballot.asOf },
+      stateCandidates: { url: certified.url },
       money: { url: 'https://www.fec.gov/data/', file: FEC_WEBALL },
       stateMoney: { url: ISBE_BASE },
       earlyVoting: { page: EARLY_VOTING_PAGE },
