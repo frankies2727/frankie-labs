@@ -7,7 +7,7 @@ import { LINKS, PlanToVote } from './PlanToVote';
 import { CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard } from './Race';
 import { JUDGE_RATINGS } from './research';
 import { drawShareCard, shareCard } from './share';
-import { daysUntil, isDecided, useSaved, type Choice } from './store';
+import { daysUntil, hasProgress, isDecided, readResumeLink, resumeLink, useSaved, type Choice, type Saved } from './store';
 import type { BallotData, Candidate, Districts, Race } from './types';
 
 const data = rawData as unknown as BallotData;
@@ -63,8 +63,14 @@ function Confetti({ onDone }: { onDone: () => void }) {
 
 export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   const [saved, setSaved] = useSaved();
-  const [browsing, setBrowsing] = useState(false);
+  const browsing = !!saved.browsing;
+  const setBrowsing = (on: boolean) => setSaved((s) => ({ ...s, browsing: on || undefined }));
   const [tab, setTab] = useState<'ballot' | 'plan' | 'share'>('ballot');
+  // Someone coming back mid-ballot gets a nudge to pick up where they left off.
+  const [welcomeBack, setWelcomeBack] = useState(() => hasProgress(saved));
+  // Progress arriving in a #resume link while this device has its own: ask first.
+  const [incoming, setIncoming] = useState<Saved | null>(null);
+  const [linkMsg, setLinkMsg] = useState('');
   const [address, setAddress] = useState('');
   const [status, setStatus] = useState<{ busy: boolean; error: string; outside: boolean }>({ busy: false, error: '', outside: false });
   const [sheet, setSheet] = useState<{ race: Race; c: Candidate } | null>(null);
@@ -112,6 +118,28 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   }, [sections, allDone, saved.place]);
   useEffect(() => { if (!toast) return; const t = setTimeout(() => setToast(''), 3500); return () => clearTimeout(t); }, [toast]);
 
+  // Opened from a resume link (or one pasted into this already-open tab, which
+  // only changes the #): load it, asking first if this device already has
+  // progress, then drop it from the address bar so a reload or a copied URL
+  // doesn't carry it along.
+  const savedRef = useRef(saved);
+  savedRef.current = saved;
+  useEffect(() => {
+    const take = () => {
+      if (!location.hash.startsWith('#resume=')) return;
+      readResumeLink(location.hash).then((link) => {
+        history.replaceState(null, '', location.pathname + location.search);
+        if (!link) { setToast('That saved-progress link didn’t work. It may be cut off; try copying it again.'); return; }
+        if (hasProgress(savedRef.current)) { setIncoming(link); return; }
+        setSaved(link);
+        setWelcomeBack(true);
+      });
+    };
+    take();
+    window.addEventListener('hashchange', take);
+    return () => window.removeEventListener('hashchange', take);
+  }, [setSaved]);
+
   const nextUp = () => {
     const s = sections.find((sec) => sec.done < sec.ids.length);
     const id = s?.ids.find((i) => !isDecided(saved.picks[i]));
@@ -154,6 +182,19 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
       () => setStatus({ busy: false, error: 'Location wasn’t shared. Type your address instead.', outside: false }),
       { enableHighAccuracy: true, timeout: 15_000 },
     );
+  };
+
+  const saveLink = async (send: boolean) => {
+    setLinkMsg('');
+    // Same site the voter is on (also right for previews and local runs).
+    const url = await resumeLink(saved, `${location.origin}${import.meta.env.BASE_URL}projects/know-your-ballot`);
+    try {
+      if (send && navigator.share) { await navigator.share({ title: 'My ballot progress', url }); return; }
+      await navigator.clipboard.writeText(url);
+      setLinkMsg('Link copied. Paste it somewhere safe, like a note or a text to yourself.');
+    } catch (e) {
+      if ((e as Error).name !== 'AbortError') setLinkMsg('Couldn’t copy automatically on this device. Try “Send it to myself”.');
+    }
   };
 
   const doShare = async () => {
@@ -210,7 +251,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                 )}
               </div>
               <div className="mt-3 grid grid-cols-3 gap-2" role="tablist" aria-label="Views">
-                {([['ballot', 'My Ballot'], ['plan', 'Plan to vote'], ['share', 'Share']] as const).map(([id, label]) => (
+                {([['ballot', 'My Ballot'], ['plan', 'Plan to vote'], ['share', 'Save & share']] as const).map(([id, label]) => (
                   <button key={id} type="button" role="tab" aria-selected={tab === id} onClick={() => { setTab(id); window.scrollTo({ top: 0 }); }}
                     className={`min-h-[44px] rounded-xl font-bold border-2 ${tab === id ? 'bg-[#F5F6F7] text-[#0F1117] border-[#F5F6F7]' : 'border-[#2E343F] text-[#F5F6F7] hover:border-[#F5F6F7]'}`}>
                     {label}
@@ -221,6 +262,25 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
 
             {tab === 'ballot' && (
               <div className="space-y-8 pt-6">
+                {incoming && (
+                  <div role="alertdialog" aria-label="Load saved progress?" className="rounded-2xl border-2 border-[#009CDF] bg-[#1A1D24] p-4 space-y-3">
+                    <p className="font-black">Load progress from your saved link?</p>
+                    <p className="text-[15px] text-[#E2E4E8]">It has {Object.keys(incoming.picks).length} decisions. This device has {Object.keys(saved.picks).length}. Loading replaces what’s here.</p>
+                    <div className="flex flex-wrap gap-2">
+                      <button type="button" onClick={() => { setSaved(incoming); setIncoming(null); setWelcomeBack(true); }} className="min-h-[44px] rounded-xl bg-[#009CDF] px-4 font-black text-[#0F1117]">Load my saved link</button>
+                      <button type="button" onClick={() => setIncoming(null)} className="min-h-[44px] rounded-xl border-2 border-[#F5F6F7] px-4 font-bold">Keep this device’s</button>
+                    </div>
+                  </div>
+                )}
+                {welcomeBack && !allDone && done > 0 && (
+                  <div className="rounded-2xl bg-[#5EBD3E] p-4 text-[#0F1117] space-y-3">
+                    <p className="text-lg font-black leading-snug">Welcome back! You’re {done} of {total} done.</p>
+                    <div className="flex flex-wrap gap-2">
+                      <button type="button" onClick={() => { setWelcomeBack(false); nextUp(); }} className="min-h-[44px] rounded-xl bg-[#0F1117] px-4 font-black text-[#F5F6F7]">Pick up where I left off →</button>
+                      <button type="button" onClick={() => setWelcomeBack(false)} className="min-h-[44px] rounded-xl border-2 border-[#0F1117] px-4 font-bold">Dismiss</button>
+                    </div>
+                  </div>
+                )}
                 <WhereYouVote districts={districts} chicago={chicago} onChange={() => { setSaved((s) => ({ ...s, place: null })); setBrowsing(false); }} />
 
                 {sections.map((s) => {
@@ -276,6 +336,18 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
 
             {tab === 'share' && (
               <div className="pt-6 space-y-5">
+                <section className="rounded-2xl border-2 border-[#009CDF] bg-[#1A1D24] p-5 space-y-3" aria-labelledby="kyb-keep">
+                  <h2 id="kyb-keep" className="text-2xl font-black leading-tight">💾 Keep your progress</h2>
+                  <p className="text-[15px] leading-relaxed text-[#E2E4E8]">Your picks save on this device automatically. To pick up on another phone or computer, or in case your browser clears its data, save a link: opening it brings everything back.</p>
+                  <div className="flex flex-wrap gap-2">
+                    {typeof navigator !== 'undefined' && 'share' in navigator && (
+                      <button type="button" onClick={() => saveLink(true)} className="min-h-[48px] rounded-xl bg-[#009CDF] px-4 font-black text-[#0F1117]">Send it to myself</button>
+                    )}
+                    <button type="button" onClick={() => saveLink(false)} className="min-h-[48px] rounded-xl border-2 border-[#F5F6F7] px-4 font-bold">Copy my link</button>
+                  </div>
+                  {linkMsg && <p role="status" className="font-bold">{linkMsg}</p>}
+                  <p className="text-sm text-[#E2E4E8]">🔒 The link holds your picks and districts, not your street address. Keep it to yourself.</p>
+                </section>
                 <h2 className="text-2xl font-black leading-tight">Get your people to look up theirs</h2>
                 <p className="text-[15px] leading-relaxed text-[#E2E4E8]">Share a card with your progress: how many races you’ve researched, section by section. <strong className="text-[#F5F6F7]">It never shows who you picked.</strong></p>
                 <div className="rounded-2xl border-2 border-[#2E343F] bg-[#1A1D24] p-5 space-y-3">
