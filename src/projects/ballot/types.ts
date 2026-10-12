@@ -70,6 +70,23 @@ export interface BallotData {
   measures: Measure[];
   /** Each ward's early voting / vote center site, keyed by ward number. */
   earlyVotingSites: Record<string, EarlyVotingSite>;
+  /** What the daily refresh found different, newest last (about 60 days kept). */
+  changes?: Change[];
+}
+
+/** One thing the daily refresh found different from the day before. */
+export interface Change {
+  /** ISO timestamp of the refresh that noticed it. */
+  at: string;
+  /** Contest id. */
+  id: string;
+  /** Office, judge or question title, kept so a contest that's gone can still be named. */
+  what: string;
+  kind: 'candidate-added' | 'candidate-removed' | 'money' | 'contest-added' | 'contest-removed';
+  name?: string;
+  ballot?: number;
+  /** Total raised as of the new report. */
+  raised?: number;
 }
 
 export interface EarlyVotingSite { site: string; address: string; language?: string }

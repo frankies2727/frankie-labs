@@ -11,6 +11,8 @@ export interface Saved {
   plan: Record<string, boolean | string>;
   /** Looking at every race without an address; reopens there next time. */
   browsing?: boolean;
+  /** When this device last opened the guide (ISO), for "since your last visit". */
+  seen?: string;
 }
 
 const KEY = 'know-your-ballot:2026-11-03';
@@ -48,7 +50,8 @@ function sanitize(raw: unknown): Saved {
     }
     place = { label: shortStr(raw.place.label, 120) ?? 'Your saved ballot', districts };
   }
-  return { place, picks, plan, browsing: raw.browsing === true || undefined };
+  const seen = typeof raw.seen === 'string' && /^\d{4}-\d\d-\d\dT[\d:.]{8,12}Z$/.test(raw.seen) ? raw.seen : undefined;
+  return { place, picks, plan, browsing: raw.browsing === true || undefined, seen };
 }
 
 function load(): Saved {
@@ -126,6 +129,13 @@ export function money(n: number): string {
   if (Math.abs(n) >= 1e6) return `$${(n / 1e6).toFixed(1)}M`;
   if (Math.abs(n) >= 1e4) return `$${Math.round(n / 1e3)}K`;
   return usd.format(n);
+}
+
+/** The current time, refreshed every minute so countdowns roll over at midnight. */
+export function useNow(): Date {
+  const [now, setNow] = useState(() => new Date());
+  useEffect(() => { const t = setInterval(() => setNow(new Date()), 60_000); return () => clearInterval(t); }, []);
+  return now;
 }
 
 /** Whole days from today (Chicago time) until a YYYY-MM-DD date. */

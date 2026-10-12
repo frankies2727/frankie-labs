@@ -4,6 +4,8 @@ import rawData from './data/ballot.json';
 import { ballotFor, ballotIdsFor, districtsAt, geocode, inChicago, inCook, prefetchDistricts } from './lookup';
 import { RETENTION_EXPLAINER } from './offices';
 import { BallotSearch } from './Search';
+import { SinceLastVisit } from './Updates';
+import { KeyDates, NextElectionNote } from './Calendar';
 import { LINKS, PlanToVote } from './PlanToVote';
 import { CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard } from './Race';
 import { JUDGE_RATINGS } from './research';
@@ -109,6 +111,9 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   const [toast, setToast] = useState('');
   const [party, setParty] = useState(false);
   const [shareMsg, setShareMsg] = useState('');
+  // When this device last opened the guide; this visit becomes the new mark.
+  const [lastSeen, setLastSeen] = useState(saved.seen);
+  useEffect(() => { setSaved((s) => ({ ...s, seen: new Date().toISOString() })); }, [setSaved]);
 
   const districts = saved.place?.districts ?? null;
   // Ballot numbers come from the Chicago Board's list and only match Chicago
@@ -125,6 +130,13 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
       : ballot.races.filter((r) => r.section === s.id).map((r) => r.id);
     return { ...s, ids, done: ids.filter((id) => isDecided(saved.picks[id])).length };
   }).filter((s) => s.ids.length), [ballot, saved.picks]);
+  // What the daily refresh changed on this ballot since the last visit.
+  const updates = useMemo(() => {
+    if (!lastSeen) return [];
+    const ids = new Set(sections.flatMap((s) => s.ids));
+    return (data.changes ?? []).filter((c) => c.at > lastSeen && (ids.has(c.id) || c.id in saved.picks));
+  }, [lastSeen, sections, saved.picks]);
+  const sectionFor = (id: string) => data.races.find((r) => r.id === id)?.section ?? (data.retentions.some((r) => r.id === id) ? 'retention' : 'measures');
   const total = sections.reduce((n, s) => n + s.ids.length, 0);
   const done = sections.reduce((n, s) => n + s.done, 0);
   const allDone = total > 0 && done === total;
@@ -355,6 +367,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                     </div>
                   </div>
                 )}
+                {updates.length > 0 && <SinceLastVisit changes={updates} since={lastSeen!} picks={saved.picks} onJump={(id) => jumpTo(sectionFor(id), id)} onDismiss={() => setLastSeen(undefined)} />}
                 <WhereYouVote districts={districts} chicago={chicago} onChange={changeAddress} />
                 <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} onJump={(h) => jumpTo(h.section, h.id)} />
 
@@ -394,6 +407,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                   );
                 })}
 
+                <NextElectionNote chicago={districts ? chicago : undefined} />
                 <Sources />
               </div>
             )}
@@ -403,6 +417,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                 <PlanToVote plan={saved.plan} setPlan={setPlan} chicago={chicago} clerk={COOK_CLERK} ward={districts?.ward}
                   wardSite={districts?.ward ? data.earlyVotingSites[districts.ward] : undefined}
                   ballotDone={allDone} />
+                <KeyDates chicago={chicago} info={chicago ? LINKS.myInfo : COOK_CLERK} />
                 <button type="button" onClick={() => window.print()} className="w-full inline-flex items-center justify-center gap-2 min-h-[52px] rounded-xl border-2 border-[#F5F6F7] font-black text-[#F5F6F7] hover:bg-[#262B34]">
                   <Printer className="w-5 h-5" aria-hidden="true" /> Print My Ballot
                 </button>
@@ -549,6 +564,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, da
       <button type="button" onClick={onBrowse} className="min-h-[44px] font-bold text-[#F5F6F7] underline underline-offset-4">
         Or browse every race in Cook County →
       </button>
+      <NextElectionNote />
       <Sources />
     </div>
   );
