@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const PRIMARY = 'py-4 px-6 bg-[#262B34] hover:bg-[#323A47] active:translate-y-1 active:shadow-none transition-all text-white font-bold border-2 border-[#39414E] shadow-[4px_4px_0px_#E63946] hover:shadow-[2px_2px_0px_#E63946] uppercase tracking-[0.2em] disabled:opacity-50 disabled:active:translate-y-0 disabled:shadow-[4px_4px_0px_#2E343F] disabled:hover:shadow-[4px_4px_0px_#2E343F] disabled:border-[#2E343F] disabled:bg-[#2E343F] disabled:text-[#8A92A0]';
+const PRIMARY = 'py-4 px-6 bg-[#262B34] hover:bg-[#323A47] active:translate-y-1 active:shadow-none transition-all text-white font-bold border-2 border-[#39414E] shadow-[4px_4px_0px_#E63946] hover:shadow-[2px_2px_0px_#E63946] uppercase tracking-[0.2em] disabled:cursor-not-allowed disabled:active:translate-y-0 disabled:shadow-[4px_4px_0px_#2E343F] disabled:hover:shadow-[4px_4px_0px_#2E343F] disabled:border-[#2E343F] disabled:bg-[#2E343F] disabled:text-[#E2E4E8]';
 
 interface JoinGameProps {
   gameName: string;
@@ -29,7 +29,7 @@ export function JoinGame({ gameName, tagline, onHost, onJoin, onPlayBot, minPlay
       <div className="max-w-md w-full bg-[#1A1D24] shadow-[8px_8px_0px_#454C5A] border-2 border-[#39414E] p-8 space-y-8">
         <div className="text-center space-y-2 border-b-2 border-[#39414E] pb-6">
           <h1 className="text-4xl font-bold tracking-tighter uppercase italic text-[#F5F6F7]">{gameName}</h1>
-          <p className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">
+          <p className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">
             {tagline ?? 'Share a room code with a friend to play'}
           </p>
           {multi && (
@@ -41,7 +41,7 @@ export function JoinGame({ gameName, tagline, onHost, onJoin, onPlayBot, minPlay
 
         <div className="space-y-6">
           <div>
-            <label htmlFor="player-name" className="block text-[10px] uppercase font-bold text-[#8A92A0] mb-2 tracking-widest">Your Name</label>
+            <label htmlFor="player-name" className="block text-[10px] uppercase font-bold text-[#E2E4E8] mb-2 tracking-widest">Your Name</label>
             <input
               id="player-name"
               type="text"
@@ -61,7 +61,7 @@ export function JoinGame({ gameName, tagline, onHost, onJoin, onPlayBot, minPlay
 
           <div className="flex items-center gap-3" aria-hidden>
             <span className="h-px flex-1 bg-[#2E343F]" />
-            <span className="text-[10px] font-mono uppercase tracking-widest text-[#8A92A0]">or join a friend</span>
+            <span className="text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8]">or join a friend</span>
             <span className="h-px flex-1 bg-[#2E343F]" />
           </div>
 
@@ -90,7 +90,7 @@ export function JoinGame({ gameName, tagline, onHost, onJoin, onPlayBot, minPlay
             <>
               <div className="flex items-center gap-3" aria-hidden>
                 <span className="h-px flex-1 bg-[#2E343F]" />
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#8A92A0]">or</span>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8]">or</span>
                 <span className="h-px flex-1 bg-[#2E343F]" />
               </div>
               <button
@@ -102,7 +102,7 @@ export function JoinGame({ gameName, tagline, onHost, onJoin, onPlayBot, minPlay
             </>
           )}
 
-          <p className="text-[10px] text-center text-[#8A92A0] font-mono leading-relaxed">
+          <p className="text-[10px] text-center text-[#E2E4E8] font-mono leading-relaxed">
             {multi
               ? `One person hosts and shares the room code with up to ${maxPlayers - 1} friends — the host starts once ${minPlayers}+ are in. Hosts: keep this page open while friends join.`
               : 'One person hosts and shares the room code; the other joins with it. Hosts: keep this page open while your friend joins.'}

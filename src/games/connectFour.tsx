@@ -125,7 +125,7 @@ function Board({ state, myId, dispatch }: BoardProps<ConnectFourState>) {
     <div className="flex flex-col items-center p-4 sm:p-8 max-w-2xl mx-auto w-full">
       <div className="w-full flex flex-col items-center mb-6 border-b-2 border-[#39414E] pb-4">
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tighter uppercase italic text-[#F5F6F7]">Connect 4</h1>
-        <span className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Room ID: #{state.roomId}</span>
+        <span className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">Room ID: #{state.roomId}</span>
       </div>
 
       <div className={cn(
@@ -168,7 +168,7 @@ function Board({ state, myId, dispatch }: BoardProps<ConnectFourState>) {
           );
         })}
       </div>
-      <p className="text-[10px] sm:text-xs font-bold text-[#9CA3AF] border-l-2 border-[#E63946] pl-3 uppercase tracking-widest mt-6">
+      <p className="text-[10px] sm:text-xs font-bold text-[#E2E4E8] border-l-2 border-[#E63946] pl-3 uppercase tracking-widest mt-6">
         Drop a disc into any column. Four in a row wins.
       </p>
     </div>

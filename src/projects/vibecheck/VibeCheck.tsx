@@ -932,7 +932,7 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
               href={imageCredit.landing}
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute bottom-3 left-4 z-20 text-[10px] text-white/60 hover:text-white/90 transition-colors max-w-[70vw] truncate"
+              className="absolute bottom-3 left-4 z-20 text-[10px] text-white hover:text-white transition-colors max-w-[70vw] truncate"
               title="Image source"
             >
               Image: {imageCredit.title} · {imageCredit.creator} ({imageCredit.license}) · Openverse
@@ -959,7 +959,7 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
           </div>
 
           {slide.type === 'text' && (
-            <p className="text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed font-medium drop-shadow-sm">
+            <p className="text-lg md:text-xl lg:text-2xl text-gray-100 leading-relaxed font-medium drop-shadow-sm">
               {slide.content}
             </p>
           )}
@@ -969,7 +969,7 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
               {slide.items.map((item: string, i: number) => (
                 <li key={i} className="flex items-start gap-3 md:gap-4">
                   <span className="text-2xl md:text-3xl leading-none mt-1 text-[#ccff00] shrink-0 drop-shadow-md">✨</span>
-                  <span className="text-lg md:text-xl font-medium text-gray-200 leading-snug drop-shadow-sm">{item}</span>
+                  <span className="text-lg md:text-xl font-medium text-gray-100 leading-snug drop-shadow-sm">{item}</span>
                 </li>
               ))}
             </ul>
@@ -980,14 +980,14 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
                 {slide.facts.map((f: Fact, i: number) => (
                   <div key={i} className="bg-black/40 p-4 md:p-5 rounded-2xl border border-white/10">
-                    <div className="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest mb-1">{f.label}</div>
+                    <div className="text-[10px] md:text-xs text-gray-100 uppercase tracking-widest mb-1">{f.label}</div>
                     <div className="text-lg md:text-2xl font-black text-[#00ffcc] leading-tight drop-shadow-md break-words">{f.value}</div>
                   </div>
                 ))}
               </div>
               {slide.founders.length > 0 && (
                 <div className="bg-black/40 p-4 md:p-5 rounded-2xl border border-white/10">
-                  <div className="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest mb-2">Founders</div>
+                  <div className="text-[10px] md:text-xs text-gray-100 uppercase tracking-widest mb-2">Founders</div>
                   <div className="flex flex-wrap gap-2">
                     {slide.founders.map((f: string, i: number) => (
                       <span key={i} className="text-sm md:text-base font-bold text-white bg-white/10 px-3 py-1 rounded-full border border-white/10">{f}</span>
@@ -1003,7 +1003,7 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
               <p className="text-xs md:text-sm font-mono uppercase tracking-[0.2em] text-[#ffaa00]/80 mb-6 -mt-2">
                 {slide.milestones.length} milestone{slide.milestones.length === 1 ? '' : 's'}
                 {slide.milestones.length > 1 && (
-                  <span className="text-gray-400">
+                  <span className="text-gray-100">
                     {' · '}
                     {slide.milestones[0].year} → {slide.milestones[slide.milestones.length - 1].year}
                   </span>
@@ -1014,7 +1014,7 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
                   <motion.div key={i} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: Math.min(i * 0.08, 0.8) }} className="relative">
                     <div className="absolute -left-[35px] md:-left-[42px] top-1.5 w-5 h-5 md:w-6 md:h-6 rounded-full bg-[#ffaa00] shadow-[0_0_15px_rgba(255,170,0,0.8)] border-4 border-[#0a0a0a]" />
                     <h4 className="text-xl md:text-2xl font-black text-[#ffaa00] mb-1 md:mb-2 font-mono drop-shadow-md">{m.year}</h4>
-                    <p className="text-gray-200 text-base md:text-lg leading-relaxed drop-shadow-sm">{m.event}</p>
+                    <p className="text-gray-100 text-base md:text-lg leading-relaxed drop-shadow-sm">{m.event}</p>
                   </motion.div>
                 ))}
               </div>
@@ -1026,7 +1026,7 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
               {data?.wikiUrl && (
                 <a href={data.wikiUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-4 bg-black/40 hover:bg-black/60 p-5 rounded-2xl border border-white/10 hover:border-[#00ffff] transition-colors group">
                   <div>
-                    <div className="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest mb-1">Read the full story</div>
+                    <div className="text-[10px] md:text-xs text-gray-100 uppercase tracking-widest mb-1">Read the full story</div>
                     <div className="text-lg md:text-xl font-black text-white">Wikipedia</div>
                   </div>
                   <ExternalLink className="w-6 h-6 text-[#00ffff] group-hover:translate-x-1 transition-transform" />
@@ -1035,7 +1035,7 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
               {data?.website && (
                 <a href={`https://${data.website}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-4 bg-black/40 hover:bg-black/60 p-5 rounded-2xl border border-white/10 hover:border-[#ccff00] transition-colors group">
                   <div>
-                    <div className="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest mb-1">Official site</div>
+                    <div className="text-[10px] md:text-xs text-gray-100 uppercase tracking-widest mb-1">Official site</div>
                     <div className="text-lg md:text-xl font-black text-white break-all">{data.website}</div>
                   </div>
                   <ExternalLink className="w-6 h-6 text-[#ccff00] group-hover:translate-x-1 transition-transform" />
@@ -1043,10 +1043,10 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
               )}
               {data?.source === 'featured' && data.sources && data.sources.length > 0 && (
                 <div className="bg-black/40 p-4 md:p-5 rounded-2xl border border-white/10">
-                  <div className="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest mb-3">Grounded in these sources</div>
+                  <div className="text-[10px] md:text-xs text-gray-100 uppercase tracking-widest mb-3">Grounded in these sources</div>
                   <div className="space-y-2">
                     {data.sources.map((s, i) => (
-                      <a key={i} href={s.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-200 hover:text-[#ccff00] transition-colors group">
+                      <a key={i} href={s.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-100 hover:text-[#ccff00] transition-colors group">
                         <ExternalLink className="w-4 h-4 shrink-0 text-[#00ffff]" />
                         <span className="truncate group-hover:underline">{s.title}</span>
                       </a>
@@ -1055,7 +1055,7 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
                 </div>
               )}
               {data?.source === 'featured' && (
-                <p className="text-xs text-gray-500 leading-relaxed">
+                <p className="text-xs text-gray-100 leading-relaxed">
                   Pre-generated profile, grounded from the web with a local model. It's a helpful overview, not gospel — double-check anything important.
                 </p>
               )}
@@ -1091,7 +1091,7 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
               </button>
               {data && (
                 <>
-                  <span className="text-gray-300 dark:text-gray-700 mx-2 hidden sm:block">/</span>
+                  <span className="text-gray-900 dark:text-gray-100 mx-2 hidden sm:block">/</span>
                   <span className="font-bold text-gray-900 dark:text-white tracking-tight truncate max-w-[40vw]">{data.name}</span>
                 </>
               )}
@@ -1101,14 +1101,14 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
               {data && (
                 <form onSubmit={onSubmit} className="w-full md:w-auto relative group">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <Search className="h-4 w-4 text-gray-500 dark:text-gray-400 group-focus-within:text-[#ccff00] transition-colors" />
+                    <Search className="h-4 w-4 text-gray-900 dark:text-gray-100 group-focus-within:text-[#ccff00] transition-colors" />
                   </div>
                   <input
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Search another company..."
-                    className="w-full md:w-64 bg-white/50 dark:bg-black/50 border border-gray-300 dark:border-white/20 rounded-full py-2 pl-10 pr-4 focus:outline-none focus:border-[#ccff00] focus:ring-1 focus:ring-[#ccff00] transition-all placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white backdrop-blur-md shadow-sm text-sm"
+                    className="w-full md:w-64 bg-white/50 dark:bg-black/50 border border-gray-300 dark:border-white/20 rounded-full py-2 pl-10 pr-4 focus:outline-none focus:border-[#ccff00] focus:ring-1 focus:ring-[#ccff00] transition-all placeholder-gray-900 dark:placeholder-gray-100 text-gray-900 dark:text-white backdrop-blur-md shadow-sm text-sm"
                   />
                 </form>
               )}
@@ -1117,7 +1117,7 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
                   <button onClick={handleShare} className="p-2 rounded-full bg-white/50 dark:bg-black/50 border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white hover:text-[#ccff00] hover:border-[#ccff00] transition-colors backdrop-blur-md shadow-sm shrink-0" title="Share Link">
                     <Share2 className="w-5 h-5" />
                   </button>
-                  <button onClick={() => setIsDownloadModalOpen(true)} disabled={isDownloading} className="p-2 rounded-full bg-white/50 dark:bg-black/50 border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white hover:text-[#ccff00] hover:border-[#ccff00] transition-colors backdrop-blur-md shadow-sm shrink-0 disabled:opacity-50" title="Download Screenshots">
+                  <button onClick={() => setIsDownloadModalOpen(true)} disabled={isDownloading} className="p-2 rounded-full bg-white/50 dark:bg-black/50 border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white hover:text-[#ccff00] hover:border-[#ccff00] transition-colors backdrop-blur-md shadow-sm shrink-0 disabled:cursor-not-allowed" title="Download Screenshots">
                     {isDownloading ? <Loader2 className="w-5 h-5 animate-spin text-[#ccff00]" /> : <Download className="w-5 h-5" />}
                   </button>
                 </div>
@@ -1134,7 +1134,7 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
             {loading && (
               <motion.div key="loading" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-0 flex flex-col items-center justify-center bg-gray-50 dark:bg-[#0a0a0a] z-40">
                 <div className="w-16 h-16 border-4 border-gray-200 dark:border-white/10 border-t-[#ccff00] rounded-full animate-spin mb-6" />
-                <p className="text-gray-500 dark:text-gray-400 font-mono text-sm uppercase tracking-widest animate-pulse">Searching the web...</p>
+                <p className="text-gray-900 dark:text-gray-100 font-mono text-sm uppercase tracking-widest">Searching the web...</p>
               </motion.div>
             )}
 
@@ -1153,20 +1153,20 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
                 <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter uppercase mb-4 md:mb-6 text-gray-900 dark:text-white text-center">
                   Check the Vibe
                 </h2>
-                <p className="text-gray-500 dark:text-gray-400 text-lg md:text-xl max-w-2xl mx-auto text-center mb-8">
+                <p className="text-gray-900 dark:text-gray-100 text-lg md:text-xl max-w-2xl mx-auto text-center mb-8">
                   Type any company name below, or tap a featured profile, to generate an immersive, highly visual story.
                 </p>
 
                 <form onSubmit={onSubmit} className="w-full max-w-2xl mx-auto relative group mb-16">
                   <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
-                    <Search className="h-6 w-6 text-gray-400 group-focus-within:text-[#ccff00] transition-colors" />
+                    <Search className="h-6 w-6 text-gray-900 dark:text-gray-100 group-focus-within:text-[#ccff00] transition-colors" />
                   </div>
                   <input
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Enter a company name (e.g., Netflix, Nike, OpenAI)..."
-                    className="w-full bg-white dark:bg-[#141414] border-2 border-gray-200 dark:border-white/10 rounded-full py-4 pl-16 pr-32 focus:outline-none focus:border-[#ccff00] transition-all placeholder-gray-400 text-gray-900 dark:text-white shadow-xl text-lg md:text-xl"
+                    className="w-full bg-white dark:bg-[#141414] border-2 border-gray-200 dark:border-white/10 rounded-full py-4 pl-16 pr-32 focus:outline-none focus:border-[#ccff00] transition-all placeholder-gray-900 dark:placeholder-gray-100 text-gray-900 dark:text-white shadow-xl text-lg md:text-xl"
                   />
                   <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#ccff00] text-black px-6 py-2.5 rounded-full font-bold hover:bg-[#b3e600] transition-colors shadow-md">
                     Search
@@ -1175,7 +1175,7 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
 
                 {FEATURED.length > 0 && (
                   <>
-                    <p className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-gray-400 dark:text-gray-500 mb-4">
+                    <p className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-gray-900 dark:text-gray-100 mb-4">
                       Featured profiles
                     </p>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-5xl mx-auto">
@@ -1192,7 +1192,7 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
                           <div className="relative z-10 transform group-hover:-translate-y-1 transition-transform duration-300">
                             <h3 className="text-xl md:text-2xl font-black text-white mb-1 tracking-tight drop-shadow-md">{company.name}</h3>
                             {company.sector && (
-                              <p className="text-white/80 text-xs font-bold uppercase tracking-widest drop-shadow-md">{company.sector}</p>
+                              <p className="text-white text-xs font-bold uppercase tracking-widest drop-shadow-md">{company.sector}</p>
                             )}
                           </div>
                         </motion.button>
@@ -1215,7 +1215,7 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
                   <div className="absolute inset-0 z-[60] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
                     <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="bg-white dark:bg-[#111] border border-gray-200 dark:border-[#333] rounded-2xl p-6 shadow-2xl max-w-sm w-full">
                       <h3 className="text-xl font-bold mb-4 tracking-tight text-gray-900 dark:text-white">Download Screenshots</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">How would you like to save this VibeCheck?</p>
+                      <p className="text-sm text-gray-900 dark:text-gray-100 mb-6">How would you like to save this VibeCheck?</p>
                       <div className="flex flex-col gap-3">
                         <button onClick={() => handleDownload('current')} className="w-full py-3 px-4 bg-gray-100 dark:bg-[#222] hover:bg-gray-200 dark:hover:bg-[#333] text-gray-900 dark:text-white rounded-xl font-medium transition-colors">
                           Download Current Slide: {currentSlideIndex + 1}
@@ -1223,7 +1223,7 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
                         <button onClick={() => handleDownload('all')} className="w-full py-3 px-4 bg-[#ccff00] text-black hover:bg-[#b3e600] rounded-xl font-bold transition-colors shadow-lg shadow-[#ccff00]/20">
                           Download All ({slides.length} images)
                         </button>
-                        <button onClick={() => setIsDownloadModalOpen(false)} className="w-full mt-2 py-2 text-sm text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
+                        <button onClick={() => setIsDownloadModalOpen(false)} className="w-full mt-2 py-2 text-sm text-gray-900 dark:text-gray-100 hover:text-gray-900 dark:hover:text-white transition-colors">
                           Cancel
                         </button>
                       </div>
@@ -1246,7 +1246,7 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
                   {slides.map((slide, index) => (
                     <div id={`slide-${index}`} key={slide.id} className="w-full h-[100dvh] snap-start relative bg-gray-50 dark:bg-[#0a0a0a]">
                       {renderSlide(slide)}
-                      <div className="absolute bottom-6 right-6 text-xs font-bold font-mono text-gray-500/50 dark:text-gray-400/50 z-40 select-none">
+                      <div className="absolute bottom-6 right-6 text-xs font-bold font-mono text-gray-900 dark:text-gray-100 z-40 select-none">
                         {String(index + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
                       </div>
                     </div>
@@ -1256,7 +1256,7 @@ export function VibeCheck({ onExit }: { onExit: () => void }) {
             )}
           </AnimatePresence>
 
-          <div className="fixed bottom-6 pb-[env(safe-area-inset-bottom)] left-1/2 -translate-x-1/2 z-50 text-xs font-medium text-gray-700 dark:text-gray-300 bg-white/60 dark:bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-gray-200/50 dark:border-white/10 shadow-sm whitespace-nowrap">
+          <div className="fixed bottom-6 pb-[env(safe-area-inset-bottom)] left-1/2 -translate-x-1/2 z-50 text-xs font-medium text-gray-900 dark:text-gray-100 bg-white/60 dark:bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-gray-200/50 dark:border-white/10 shadow-sm whitespace-nowrap">
             Made by{' '}
             <a href="https://www.linkedin.com/in/francisco27/" target="_blank" rel="noopener noreferrer" className="hover:text-[#ccff00] dark:hover:text-[#ccff00] transition-colors font-bold">Frankie</a>
           </div>

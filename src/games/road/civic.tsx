@@ -419,7 +419,7 @@ function Journey({ milestones }: { milestones: number }) {
         const reached = i <= milestones;
         return (
           <div key={i} className="flex items-center gap-1">
-            <span className={cn('text-[10px] w-5 h-5 flex items-center justify-center border', reached ? 'border-[#06D6A0] bg-[#06D6A0]/15' : 'border-[#39414E] text-[#6B7280]')}>
+            <span className={cn('text-[10px] w-5 h-5 flex items-center justify-center border', reached ? 'border-[#06D6A0] bg-[#06D6A0]/15' : 'border-[#39414E] text-[#E2E4E8]')}>
               {i === 0 ? '' : s}
             </span>
             {i < stops.length - 1 && <span className={cn('w-2 h-px', reached ? 'bg-[#06D6A0]' : 'bg-[#39414E]')} />}
@@ -459,7 +459,7 @@ function QuestionCard({
           if (revealed) {
             if (isCorrect) { sc = 'bg-[#06D6A0]/15 border-[#06D6A0] text-[#F5F6F7]'; icon = <CheckCircle2 className="text-[#06D6A0]" size={20} />; }
             else if (isChosen) { sc = 'bg-[#E63946]/15 border-[#E63946] text-[#F5F6F7]'; icon = <XCircle className="text-[#E63946]" size={20} />; }
-            else sc = 'bg-[#262B34] border-[#2E343F] text-[#6B7280] opacity-60';
+            else sc = 'bg-[#262B34] border-[#2E343F] text-[#E2E4E8]';
           } else if (isChosen) sc = 'bg-[#3A86FF]/15 border-[#3A86FF] text-[#F5F6F7]';
           return (
             <button
@@ -500,9 +500,9 @@ export function CivicBoard({ state, players, myId, dispatch }: CivicBoardProps) 
         <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#F5F6F7]">
           <Landmark className="w-5 h-5 text-[#E63946]" />
           {isMyTurn ? 'Your turn' : `${curName}'s turn`}
-          <span className="text-[10px] font-mono text-[#6B7280]">· {state.phase}</span>
+          <span className="text-[10px] font-mono text-[#E2E4E8]">· {state.phase}</span>
         </div>
-        <span className="text-[10px] font-mono uppercase tracking-widest text-[#9CA3AF] border border-[#39414E] px-2 py-1">
+        <span className="text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8] border border-[#39414E] px-2 py-1">
           Bots: {state.difficulty}
         </span>
       </div>
@@ -519,7 +519,7 @@ export function CivicBoard({ state, players, myId, dispatch }: CivicBoardProps) 
                   {id === myId && <span className="text-[#E63946] text-[10px]"> ·you</span>}
                   {cp.persona && <span className="text-[#06D6A0] text-[10px] normal-case tracking-normal"> · {PERSONA_META[cp.persona].name}</span>}
                 </span>
-                <span className="text-[10px] font-mono text-[#9CA3AF]">⭐{cp.milestones}/{MILESTONES_TO_EXAM}</span>
+                <span className="text-[10px] font-mono text-[#E2E4E8]">⭐{cp.milestones}/{MILESTONES_TO_EXAM}</span>
               </div>
               <ResourceRow resources={cp.resources} />
               <Journey milestones={cp.milestones} />
@@ -541,7 +541,7 @@ export function CivicBoard({ state, players, myId, dispatch }: CivicBoardProps) 
         </div>
       )}
       {state.trade && state.trade.from === myId && (
-        <div className="border-2 border-[#39414E] bg-[#1A1D24] p-3 text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">
+        <div className="border-2 border-[#39414E] bg-[#1A1D24] p-3 text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">
           Waiting on {displayName(players, state.trade.to)} to answer your trade…
           <button onClick={() => dispatch({ type: 'cancelTrade' })} className="ml-3 underline">cancel</button>
         </div>
@@ -560,7 +560,7 @@ export function CivicBoard({ state, players, myId, dispatch }: CivicBoardProps) 
               onPick={(i) => pick(i, 'answer')}
             />
           ) : (
-            <p className="text-center text-sm font-mono uppercase tracking-widest text-[#9CA3AF] py-8">{curName} is answering a {CATEGORY_META[state.questionCategory!].label} question…</p>
+            <p className="text-center text-sm font-mono uppercase tracking-widest text-[#E2E4E8] py-8">{curName} is answering a {CATEGORY_META[state.questionCategory!].label} question…</p>
           )
         )}
 
@@ -569,7 +569,7 @@ export function CivicBoard({ state, players, myId, dispatch }: CivicBoardProps) 
           isMyTurn ? (
             <ActionPanel state={state} players={players} me={me} dispatch={dispatch} />
           ) : (
-            <p className="text-center text-sm font-mono uppercase tracking-widest text-[#9CA3AF] py-8">{curName} is planning their move…</p>
+            <p className="text-center text-sm font-mono uppercase tracking-widest text-[#E2E4E8] py-8">{curName} is planning their move…</p>
           )
         )}
 
@@ -577,7 +577,7 @@ export function CivicBoard({ state, players, myId, dispatch }: CivicBoardProps) 
         {state.phase === 'exam' && state.exam && (
           state.exam.taker === myId ? (
             <div className="space-y-4">
-              <div className="flex items-center justify-between text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">
+              <div className="flex items-center justify-between text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">
                 <span className="flex items-center gap-2"><GraduationCap className="w-4 h-4 text-[#E63946]" /> Exam {Math.min(state.exam.index + 1, EXAM_QUESTIONS)}/{EXAM_QUESTIONS}</span>
                 <span>{state.exam.correct} correct · need {EXAM_PASS}</span>
               </div>
@@ -586,7 +586,7 @@ export function CivicBoard({ state, players, myId, dispatch }: CivicBoardProps) 
               )}
             </div>
           ) : (
-            <p className="text-center text-sm font-mono uppercase tracking-widest text-[#9CA3AF] py-8">
+            <p className="text-center text-sm font-mono uppercase tracking-widest text-[#E2E4E8] py-8">
               <GraduationCap className="w-5 h-5 inline mr-2 text-[#E63946]" />
               {displayName(players, state.exam.taker)} is taking the exam — {state.exam.correct} right so far ({state.exam.index}/{EXAM_QUESTIONS})
             </p>
@@ -596,10 +596,10 @@ export function CivicBoard({ state, players, myId, dispatch }: CivicBoardProps) 
 
       {/* Activity log */}
       <div className="border-2 border-[#2E343F] bg-[#0F1117] p-3">
-        <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-[#6B7280] mb-1"><ScrollText className="w-3 h-3" /> Activity</div>
+        <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8] mb-1"><ScrollText className="w-3 h-3" /> Activity</div>
         <ul className="space-y-0.5">
           {state.log.slice(-4).map((l, i) => (
-            <li key={i} className="text-xs text-[#9CA3AF] leading-snug">{l}</li>
+            <li key={i} className="text-xs text-[#E2E4E8] leading-snug">{l}</li>
           ))}
         </ul>
       </div>
@@ -626,11 +626,11 @@ function ActionPanel({ state, players, me, dispatch }: { state: CivicState; play
       )}
       <div className="flex flex-wrap gap-3">
         <button disabled={!canBuild} onClick={() => dispatch({ type: 'build' })}
-          className={cn('flex items-center gap-2 px-4 py-3 border-2 font-bold uppercase tracking-widest text-xs transition-all', canBuild ? 'bg-[#06D6A0] text-[#0F1117] border-[#39414E] hover:-translate-y-0.5' : 'bg-[#262B34] text-[#6B7280] border-[#2E343F] cursor-not-allowed')}>
+          className={cn('flex items-center gap-2 px-4 py-3 border-2 font-bold uppercase tracking-widest text-xs transition-all', canBuild ? 'bg-[#06D6A0] text-[#0F1117] border-[#39414E] hover:-translate-y-0.5' : 'bg-[#262B34] text-[#E2E4E8] border-[#2E343F] cursor-not-allowed')}>
           <Hammer className="w-4 h-4" /> Build Milestone
         </button>
         <button disabled={!!state.trade} onClick={() => setShowTrade((s) => !s)}
-          className="flex items-center gap-2 px-4 py-3 border-2 border-[#39414E] bg-[#262B34] text-[#F5F6F7] font-bold uppercase tracking-widest text-xs hover:-translate-y-0.5 transition-all disabled:opacity-50">
+          className="flex items-center gap-2 px-4 py-3 border-2 border-[#39414E] bg-[#262B34] text-[#F5F6F7] font-bold uppercase tracking-widest text-xs hover:-translate-y-0.5 transition-all disabled:cursor-not-allowed">
           <HandCoins className="w-4 h-4" /> Trade
         </button>
         {canExam && (
@@ -640,11 +640,11 @@ function ActionPanel({ state, players, me, dispatch }: { state: CivicState; play
           </button>
         )}
         <button onClick={() => dispatch({ type: 'endTurn' })}
-          className="flex items-center gap-2 px-4 py-3 border-2 border-[#39414E] bg-[#1A1D24] text-[#9CA3AF] font-bold uppercase tracking-widest text-xs hover:text-[#F5F6F7] ml-auto transition-all">
+          className="flex items-center gap-2 px-4 py-3 border-2 border-[#39414E] bg-[#1A1D24] text-[#E2E4E8] font-bold uppercase tracking-widest text-xs hover:text-[#F5F6F7] ml-auto transition-all">
           End Turn <ChevronRight className="w-4 h-4" />
         </button>
       </div>
-      <p className="text-[10px] font-mono uppercase tracking-widest text-[#6B7280]">
+      <p className="text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8]">
         Build costs one of each: {CATEGORIES.map((c) => CATEGORY_META[c].emoji).join(' ')} · bank trade is {BANK_RATE}-of-a-kind → 1
       </p>
       {showTrade && <TradeForm state={state} players={players} me={me} dispatch={dispatch} onClose={() => setShowTrade(false)} />}
@@ -669,7 +669,7 @@ function TradeForm({ state, players, me, dispatch, onClose }: { state: CivicStat
     <div className="border-2 border-[#39414E] bg-[#0F1117] p-4 space-y-4">
       {/* Bank trade shortcut */}
       <div>
-        <div className="text-[10px] font-mono uppercase tracking-widest text-[#9CA3AF] mb-2 flex items-center gap-2"><Repeat className="w-3 h-3" /> Bank trade ({BANK_RATE} → 1)</div>
+        <div className="text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8] mb-2 flex items-center gap-2"><Repeat className="w-3 h-3" /> Bank trade ({BANK_RATE} → 1)</div>
         <div className="flex flex-wrap gap-2">
           {CATEGORIES.map((from) =>
             CATEGORIES.filter((t) => t !== from).map((toCat) => (
@@ -682,14 +682,14 @@ function TradeForm({ state, players, me, dispatch, onClose }: { state: CivicStat
             )),
           )}
           {CATEGORIES.every((c) => me.resources[c] < BANK_RATE) && (
-            <span className="text-[11px] font-mono text-[#6B7280]">Need {BANK_RATE} of one kind to bank-trade.</span>
+            <span className="text-[11px] font-mono text-[#E2E4E8]">Need {BANK_RATE} of one kind to bank-trade.</span>
           )}
         </div>
       </div>
 
       {!bankMode && (
         <div className="space-y-3">
-          <div className="text-[10px] font-mono uppercase tracking-widest text-[#9CA3AF] flex items-center gap-2"><HandCoins className="w-3 h-3" /> Offer a player</div>
+          <div className="text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8] flex items-center gap-2"><HandCoins className="w-3 h-3" /> Offer a player</div>
           <label className="flex items-center gap-2 text-xs text-[#E2E4E8]">
             To:
             <select value={to} onChange={(e) => setTo(e.target.value)} className="bg-[#262B34] border border-[#39414E] text-[#F5F6F7] px-2 py-1 text-xs">
@@ -698,10 +698,10 @@ function TradeForm({ state, players, me, dispatch, onClose }: { state: CivicStat
           </label>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <div className="text-[10px] font-mono uppercase text-[#6B7280] mb-1">You give</div>
+              <div className="text-[10px] font-mono uppercase text-[#E2E4E8] mb-1">You give</div>
               {CATEGORIES.map((c) => (
                 <div key={c} className="flex items-center justify-between text-xs text-[#E2E4E8] mb-1">
-                  <span>{CATEGORY_META[c].emoji} {give[c]}<span className="text-[#6B7280]"> /{me.resources[c]}</span></span>
+                  <span>{CATEGORY_META[c].emoji} {give[c]}<span className="text-[#E2E4E8]"> /{me.resources[c]}</span></span>
                   <span className="flex gap-1">
                     <button onClick={() => bump(setGive, give, c, -1)} className="w-5 h-5 border border-[#39414E] bg-[#262B34]">–</button>
                     <button onClick={() => bump(setGive, give, c, +1, me.resources[c])} className="w-5 h-5 border border-[#39414E] bg-[#262B34]">+</button>
@@ -710,7 +710,7 @@ function TradeForm({ state, players, me, dispatch, onClose }: { state: CivicStat
               ))}
             </div>
             <div>
-              <div className="text-[10px] font-mono uppercase text-[#6B7280] mb-1">You want</div>
+              <div className="text-[10px] font-mono uppercase text-[#E2E4E8] mb-1">You want</div>
               {CATEGORIES.map((c) => (
                 <div key={c} className="flex items-center justify-between text-xs text-[#E2E4E8] mb-1">
                   <span>{CATEGORY_META[c].emoji} {want[c]}</span>
@@ -726,15 +726,15 @@ function TradeForm({ state, players, me, dispatch, onClose }: { state: CivicStat
             <button
               disabled={!to || (totalCards(give) === 0 && totalCards(want) === 0)}
               onClick={() => { dispatch({ type: 'proposeTrade', to, give, want }); onClose(); }}
-              className="px-4 py-2 bg-[#3A86FF] text-white font-bold border-2 border-[#39414E] uppercase tracking-widest text-xs disabled:opacity-50">
+              className="px-4 py-2 bg-[#3A86FF] text-white font-bold border-2 border-[#39414E] uppercase tracking-widest text-xs disabled:cursor-not-allowed">
               Send offer
             </button>
-            <button onClick={onClose} className="px-4 py-2 bg-[#262B34] text-[#9CA3AF] font-bold border-2 border-[#39414E] uppercase tracking-widest text-xs">Close</button>
+            <button onClick={onClose} className="px-4 py-2 bg-[#262B34] text-[#E2E4E8] font-bold border-2 border-[#39414E] uppercase tracking-widest text-xs">Close</button>
           </div>
         </div>
       )}
       {bankMode && (
-        <button onClick={onClose} className="px-4 py-2 bg-[#262B34] text-[#9CA3AF] font-bold border-2 border-[#39414E] uppercase tracking-widest text-xs">Close</button>
+        <button onClick={onClose} className="px-4 py-2 bg-[#262B34] text-[#E2E4E8] font-bold border-2 border-[#39414E] uppercase tracking-widest text-xs">Close</button>
       )}
     </div>
   );

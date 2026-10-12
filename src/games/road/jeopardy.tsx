@@ -348,21 +348,21 @@ export function JeopardyBoard({ state, players, myId, dispatch }: JBoardProps) {
               <div className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {active.q.options.map((opt, i) => (
-                    <div key={i} className={cn('flex items-center justify-between p-4 border-2 font-semibold', i === active.q.correctIndex ? 'bg-[#06D6A0]/15 border-[#06D6A0] text-[#F5F6F7]' : 'bg-[#262B34] border-[#2E343F] text-[#6B7280]')}>
+                    <div key={i} className={cn('flex items-center justify-between p-4 border-2 font-semibold', i === active.q.correctIndex ? 'bg-[#06D6A0]/15 border-[#06D6A0] text-[#F5F6F7]' : 'bg-[#262B34] border-[#2E343F] text-[#E2E4E8]')}>
                       <span>{opt}</span>
                       {i === active.q.correctIndex && <CheckCircle2 className="text-[#06D6A0]" size={20} />}
                     </div>
                   ))}
                 </div>
-                <p className="text-sm text-[#9CA3AF]">{active.q.explanation}</p>
+                <p className="text-sm text-[#E2E4E8]">{active.q.explanation}</p>
                 <div className="flex items-center justify-between gap-4">
-                  <span className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">
+                  <span className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">
                     {state.lastResult?.correct ? `${name(players, state.lastResult.pid)} scored $${active.value}` : 'No one solved it'}
                   </span>
                   {iControl ? (
                     <button onClick={() => dispatch({ type: 'continue' })} className="px-6 py-3 bg-[#E63946] text-white font-bold border-2 border-[#39414E] shadow-[4px_4px_0px_#454C5A] uppercase tracking-widest text-xs">Continue</button>
                   ) : (
-                    <span className="text-xs font-mono uppercase tracking-widest text-[#6B7280]">Waiting for {controlName}…</span>
+                    <span className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">Waiting for {controlName}…</span>
                   )}
                 </div>
               </div>
@@ -380,13 +380,13 @@ export function JeopardyBoard({ state, players, myId, dispatch }: JBoardProps) {
                   ))}
                 </div>
                 {state.phase === 'steal' && (
-                  <button onClick={() => dispatch({ type: 'pass' })} className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF] hover:text-[#F5F6F7] underline">
+                  <button onClick={() => dispatch({ type: 'pass' })} className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8] hover:text-[#F5F6F7] underline">
                     Pass — don't risk it
                   </button>
                 )}
               </div>
             ) : (
-              <p className="text-center text-sm font-mono uppercase tracking-widest text-[#9CA3AF] py-6 flex items-center justify-center gap-2">
+              <p className="text-center text-sm font-mono uppercase tracking-widest text-[#E2E4E8] py-6 flex items-center justify-center gap-2">
                 {state.phase === 'steal' ? <XCircle className="w-4 h-4 text-[#E63946]" /> : null}
                 {name(players, state.answerer)} is answering…
               </p>
@@ -397,13 +397,13 @@ export function JeopardyBoard({ state, players, myId, dispatch }: JBoardProps) {
 
       {/* Activity — full history, scrollable */}
       <div className="border-2 border-[#2E343F] bg-[#0F1117] p-3">
-        <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-[#6B7280] mb-1"><ScrollText className="w-3 h-3" /> Activity</div>
+        <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8] mb-1"><ScrollText className="w-3 h-3" /> Activity</div>
         <ul ref={logRef} className="space-y-0.5 max-h-40 overflow-y-auto pr-1">
-          {state.log.map((l, i) => <li key={i} className="text-xs text-[#9CA3AF] leading-snug">{l}</li>)}
+          {state.log.map((l, i) => <li key={i} className="text-xs text-[#E2E4E8] leading-snug">{l}</li>)}
         </ul>
       </div>
 
-      <p className="text-center text-[10px] font-mono uppercase tracking-widest text-[#6B7280] flex items-center justify-center gap-2">
+      <p className="text-center text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8] flex items-center justify-center gap-2">
         <Trophy className="w-3 h-3" /> Answer right to bank the value & keep control · miss it and rivals can steal
       </p>
     </div>

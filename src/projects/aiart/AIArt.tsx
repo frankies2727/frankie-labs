@@ -116,8 +116,8 @@ function Pill({ label, color, active, onClick, title }: PillProps) {
 function MetaRow({ icon: Icon, label, children }: { icon: typeof Tag; label: string; children: ReactNode }) {
   return (
     <div className="flex items-start gap-2">
-      <Icon className="w-3.5 h-3.5 text-neutral-500 mt-[3px] shrink-0" />
-      <span className="w-11 shrink-0 text-[10px] font-mono uppercase tracking-wide text-neutral-500 mt-[3px]">{label}</span>
+      <Icon className="w-3.5 h-3.5 text-neutral-100 mt-[3px] shrink-0" />
+      <span className="w-11 shrink-0 text-[10px] font-mono uppercase tracking-wide text-neutral-100 mt-[3px]">{label}</span>
       <div className="flex-1 min-w-0 flex flex-wrap items-center gap-1">{children}</div>
     </div>
   );
@@ -155,7 +155,7 @@ function FilterDropdown({ label, icon: Icon, options, selected, onToggle, onClea
       <button
         onClick={() => setOpen((o) => !o)}
         className={`inline-flex items-center gap-1.5 text-[11px] font-mono font-bold uppercase tracking-wide px-3 py-1.5 rounded-full border transition-colors ${
-          count > 0 ? 'text-white border-[#ccff00]/60 bg-[#ccff00]/10' : 'text-neutral-300 border-white/15 hover:text-white'
+          count > 0 ? 'text-white border-[#ccff00]/60 bg-[#ccff00]/10' : 'text-neutral-100 border-white/15 hover:text-white'
         }`}
       >
         <Icon className="w-3.5 h-3.5" />
@@ -177,13 +177,13 @@ function FilterDropdown({ label, icon: Icon, options, selected, onToggle, onClea
                 onChange={(e) => setQ(e.target.value)}
                 placeholder={`Filter ${label.toLowerCase()}…`}
                 autoFocus
-                className="w-full bg-neutral-900 border border-white/10 rounded-md px-2.5 py-1.5 text-xs text-white placeholder:text-neutral-600 outline-none focus:border-[#ccff00]/60"
+                className="w-full bg-neutral-900 border border-white/10 rounded-md px-2.5 py-1.5 text-xs text-white placeholder:text-neutral-100 outline-none focus:border-[#ccff00]/60"
               />
             </div>
           )}
           <div className="overflow-y-auto py-1">
             {shown.length === 0 ? (
-              <div className="px-3 py-4 text-center text-[11px] text-neutral-600 font-mono uppercase tracking-widest">None</div>
+              <div className="px-3 py-4 text-center text-[11px] text-neutral-100 font-mono uppercase tracking-widest">None</div>
             ) : (
               shown.map((o) => (
                 <label
@@ -197,7 +197,7 @@ function FilterDropdown({ label, icon: Icon, options, selected, onToggle, onClea
                     className="w-3.5 h-3.5 shrink-0 accent-[#ccff00]"
                   />
                   <span className="flex-1 min-w-0 truncate text-[13px] text-neutral-200">{o.value}</span>
-                  <span className="text-[11px] text-neutral-500 tabular-nums">{o.n}</span>
+                  <span className="text-[11px] text-neutral-100 tabular-nums">{o.n}</span>
                 </label>
               ))
             )}
@@ -205,7 +205,7 @@ function FilterDropdown({ label, icon: Icon, options, selected, onToggle, onClea
           {count > 0 && (
             <button
               onClick={onClear}
-              className="border-t border-white/10 py-2 text-[11px] font-mono font-bold uppercase tracking-widest text-neutral-400 hover:text-white hover:bg-white/5"
+              className="border-t border-white/10 py-2 text-[11px] font-mono font-bold uppercase tracking-widest text-neutral-100 hover:text-white hover:bg-white/5"
             >
               Clear {label}
             </button>
@@ -275,7 +275,7 @@ function Lightbox({
             <MetaRow icon={Tag} label="Theme">
               {entry.themes.length
                 ? entry.themes.map((t) => <Pill key={t} label={t} color={tagColor(t)} onClick={() => onTheme(t)} title={`Filter: ${t}`} />)
-                : <span className="text-xs text-neutral-600">—</span>}
+                : <span className="text-xs text-neutral-100">—</span>}
             </MetaRow>
             <MetaRow icon={AtSign} label="User">
               <a href={xHandleUrl(entry.user, entry.url)} target="_blank" rel="noreferrer noopener" className="text-xs font-mono text-neutral-200 hover:text-[#ccff00] transition-colors truncate">
@@ -283,18 +283,18 @@ function Lightbox({
               </a>
             </MetaRow>
             <MetaRow icon={Cpu} label="Model">
-              {entry.model ? <Pill label={entry.model} color={tagColor(entry.model)} /> : <span className="text-xs text-neutral-600">—</span>}
+              {entry.model ? <Pill label={entry.model} color={tagColor(entry.model)} /> : <span className="text-xs text-neutral-100">—</span>}
             </MetaRow>
             <MetaRow icon={Link2} label="URL">
               {entry.url
-                ? <a href={entry.url} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 text-xs font-mono text-neutral-300 hover:text-[#ccff00] transition-colors"><span className="truncate">{shortUrl(entry.url)}</span><ExternalLink className="w-3 h-3 shrink-0" /></a>
-                : <span className="text-xs text-neutral-600">—</span>}
+                ? <a href={entry.url} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 text-xs font-mono text-neutral-100 hover:text-[#ccff00] transition-colors"><span className="truncate">{shortUrl(entry.url)}</span><ExternalLink className="w-3 h-3 shrink-0" /></a>
+                : <span className="text-xs text-neutral-100">—</span>}
             </MetaRow>
 
             <div className="pt-1">
-              <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-neutral-500">Prompt</span>
-              <p className="mt-1.5 text-sm text-neutral-300 leading-relaxed whitespace-pre-wrap break-words">
-                {entry.prompt || <span className="italic text-neutral-500">No prompt provided.</span>}
+              <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-neutral-100">Prompt</span>
+              <p className="mt-1.5 text-sm text-neutral-100 leading-relaxed whitespace-pre-wrap break-words">
+                {entry.prompt || <span className="italic text-neutral-100">No prompt provided.</span>}
               </p>
             </div>
           </div>
@@ -303,7 +303,7 @@ function Lightbox({
             <button
               onClick={copy}
               disabled={!entry.prompt}
-              className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-sm text-black transition-transform active:scale-[0.98] disabled:opacity-40"
+              className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-sm text-black transition-transform active:scale-[0.98] disabled:cursor-not-allowed"
               style={{ background: ACCENT }}
             >
               {copied ? <><Check className="w-4 h-4" /> Copied!</> : <><Copy className="w-4 h-4" /> Copy prompt</>}
@@ -362,7 +362,7 @@ function Card({ entry, onOpen, onCopy, copiedId, onTheme, onModel, activeThemes,
             ? entry.themes.map((t) => (
                 <Pill key={t} label={t} color={tagColor(t)} active={activeThemes.has(t)} onClick={() => onTheme(t)} title={`Filter: ${t}`} />
               ))
-            : <span className="text-xs text-neutral-600">—</span>}
+            : <span className="text-xs text-neutral-100">—</span>}
         </MetaRow>
 
         <MetaRow icon={AtSign} label="User">
@@ -379,25 +379,25 @@ function Card({ entry, onOpen, onCopy, copiedId, onTheme, onModel, activeThemes,
         <MetaRow icon={Cpu} label="Model">
           {entry.model
             ? <Pill label={entry.model} color={tagColor(entry.model)} active={activeModels.has(entry.model)} onClick={() => onModel(entry.model)} title={`Filter: ${entry.model}`} />
-            : <span className="text-xs text-neutral-600">—</span>}
+            : <span className="text-xs text-neutral-100">—</span>}
         </MetaRow>
 
         <MetaRow icon={Link2} label="URL">
           {entry.url
             ? (
-              <a href={entry.url} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 text-xs font-mono text-neutral-400 hover:text-[#ccff00] transition-colors">
+              <a href={entry.url} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 text-xs font-mono text-neutral-100 hover:text-[#ccff00] transition-colors">
                 <span className="truncate">{shortUrl(entry.url)}</span>
                 <ExternalLink className="w-3 h-3 shrink-0" />
               </a>
             )
-            : <span className="text-xs text-neutral-600">—</span>}
+            : <span className="text-xs text-neutral-100">—</span>}
         </MetaRow>
 
         {/* Copy prompt */}
         <button
           onClick={() => onCopy(entry)}
           disabled={!entry.prompt}
-          className={`mt-1 w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-bold transition-colors disabled:opacity-40 ${
+          className={`mt-1 w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-bold transition-colors disabled:cursor-not-allowed ${
             copied ? 'text-black' : 'text-[#ccff00] border border-[#ccff00]/30 hover:bg-[#ccff00]/10'
           }`}
           style={copied ? { background: ACCENT } : undefined}
@@ -483,28 +483,28 @@ export function AIArt({ onExit }: { onExit: () => void }) {
             <button
               onClick={onExit}
               title="Back to projects"
-              className="group inline-flex items-center justify-center w-9 h-9 rounded-full bg-neutral-800 hover:bg-neutral-700 text-neutral-300 hover:text-white transition-colors shrink-0"
+              className="group inline-flex items-center justify-center w-9 h-9 rounded-full bg-neutral-800 hover:bg-neutral-700 text-neutral-100 hover:text-white transition-colors shrink-0"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
             </button>
             <div className="min-w-0">
               <h1 className="text-lg sm:text-xl font-black tracking-tighter uppercase italic text-white leading-none">AI Art</h1>
-              <p className="text-[10px] font-mono uppercase tracking-widest text-neutral-500 mt-0.5 truncate">
+              <p className="text-[10px] font-mono uppercase tracking-widest text-neutral-100 mt-0.5 truncate">
                 {filtered.length}/{GALLERY.length} prompts · tap to copy
               </p>
             </div>
 
             {/* Search */}
             <div className="ml-auto relative w-40 sm:w-72 shrink">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500 pointer-events-none" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-100 pointer-events-none" />
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search prompts…"
-                className="w-full bg-neutral-900 border border-white/10 rounded-full pl-9 pr-8 py-2 text-sm text-white placeholder:text-neutral-600 outline-none focus:border-[#ccff00]/60 transition-colors"
+                className="w-full bg-neutral-900 border border-white/10 rounded-full pl-9 pr-8 py-2 text-sm text-white placeholder:text-neutral-100 outline-none focus:border-[#ccff00]/60 transition-colors"
               />
               {query && (
-                <button onClick={() => setQuery('')} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-neutral-500 hover:text-white">
+                <button onClick={() => setQuery('')} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-neutral-100 hover:text-white">
                   <X className="w-3.5 h-3.5" />
                 </button>
               )}
@@ -519,14 +519,14 @@ export function AIArt({ onExit }: { onExit: () => void }) {
             <button
               onClick={shuffle}
               title="Surprise me"
-              className="shrink-0 inline-flex items-center gap-1.5 text-[11px] font-mono font-bold uppercase tracking-wide px-3 py-1.5 rounded-full border border-white/15 text-neutral-300 hover:text-white transition-colors"
+              className="shrink-0 inline-flex items-center gap-1.5 text-[11px] font-mono font-bold uppercase tracking-wide px-3 py-1.5 rounded-full border border-white/15 text-neutral-100 hover:text-white transition-colors"
             >
               <Shuffle className="w-3.5 h-3.5" /> Random
             </button>
             {activeCount > 0 && (
               <button
                 onClick={clearAll}
-                className="shrink-0 text-[11px] font-mono font-bold uppercase tracking-wide px-3 py-1.5 rounded-full text-neutral-400 hover:text-white transition-colors ml-auto"
+                className="shrink-0 text-[11px] font-mono font-bold uppercase tracking-wide px-3 py-1.5 rounded-full text-neutral-100 hover:text-white transition-colors ml-auto"
               >
                 Clear all ({activeCount})
               </button>
@@ -547,7 +547,7 @@ export function AIArt({ onExit }: { onExit: () => void }) {
       {/* Gallery */}
       <main className="max-w-7xl mx-auto px-4 py-6">
         {filtered.length === 0 ? (
-          <div className="text-center py-24 text-neutral-500 font-mono uppercase tracking-widest text-sm">
+          <div className="text-center py-24 text-neutral-100 font-mono uppercase tracking-widest text-sm">
             No artwork matches your filters.
           </div>
         ) : (
@@ -569,7 +569,7 @@ export function AIArt({ onExit }: { onExit: () => void }) {
         )}
       </main>
 
-      <footer className="text-center py-10 text-[10px] font-mono uppercase tracking-widest text-neutral-700">
+      <footer className="text-center py-10 text-[10px] font-mono uppercase tracking-widest text-neutral-100">
         Prompts credit their original creators · migrated from Notion
       </footer>
 

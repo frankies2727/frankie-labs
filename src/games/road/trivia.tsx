@@ -135,10 +135,10 @@ export function TriviaBoard({ state, players, myId, dispatch }: TriviaBoardProps
   return (
     <div className="w-full max-w-3xl mx-auto p-4 md:p-8">
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-        <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[#9CA3AF]">
+        <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-[#E2E4E8]">
           <Landmark className="w-4 h-4 text-[#E63946]" />
           Question <span className="text-[#F5F6F7]">{state.index + 1}</span>
-          <span className="text-[#4B5563]">/</span>
+          <span className="text-[#E2E4E8]">/</span>
           {total}
         </div>
         <div className="flex gap-2 overflow-x-auto max-w-full">
@@ -194,7 +194,7 @@ export function TriviaBoard({ state, players, myId, dispatch }: TriviaBoardProps
                   stateClass = 'bg-[#E63946]/15 border-[#E63946] text-[#F5F6F7]';
                   icon = <XCircle className="text-[#E63946]" size={22} />;
                 } else {
-                  stateClass = 'bg-[#262B34] border-[#2E343F] text-[#6B7280] opacity-60';
+                  stateClass = 'bg-[#262B34] border-[#2E343F] text-[#E2E4E8]';
                 }
               } else if (isMyChoice) {
                 stateClass = 'bg-[#3A86FF]/15 border-[#3A86FF] text-[#F5F6F7]';
@@ -218,7 +218,7 @@ export function TriviaBoard({ state, players, myId, dispatch }: TriviaBoardProps
           </div>
 
           {iAnswered && !revealed && !solo && (
-            <div className="mt-8 flex items-center justify-center gap-3 text-sm font-mono uppercase tracking-widest text-[#9CA3AF]">
+            <div className="mt-8 flex items-center justify-center gap-3 text-sm font-mono uppercase tracking-widest text-[#E2E4E8]">
               <Loader2 className="w-4 h-4 animate-spin" />
               Waiting for others… ({answeredCount}/{roster.length})
             </div>
@@ -243,7 +243,7 @@ export function TriviaBoard({ state, players, myId, dispatch }: TriviaBoardProps
         </div>
       </div>
 
-      <p className="text-center mt-6 text-[10px] font-mono uppercase tracking-widest text-[#6B7280]">
+      <p className="text-center mt-6 text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8]">
         Official USCIS civics questions · anyone can tap Next once everyone's answered
       </p>
     </div>

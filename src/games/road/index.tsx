@@ -145,7 +145,7 @@ function GamePicker({ state, myId, dispatch }: BoardProps<RoadState>) {
   return (
     <div className="space-y-5">
       <div>
-        <p className="text-[11px] font-mono uppercase tracking-widest text-[#8A92A0] mb-3 text-center">Choose a game</p>
+        <p className="text-[11px] font-mono uppercase tracking-widest text-[#E2E4E8] mb-3 text-center">Choose a game</p>
         <div className="grid grid-cols-1 gap-3">
           {(Object.keys(GAME_META) as SubGame[]).map((g) => {
             const selected = state.chosen === g;
@@ -158,14 +158,14 @@ function GamePicker({ state, myId, dispatch }: BoardProps<RoadState>) {
                 className={cn(
                   'text-left p-4 border-2 transition-all',
                   selected ? 'border-white bg-white/5' : 'border-[#39414E] bg-[#1A1D24] hover:border-[#8A92A0]',
-                  !isHost && 'opacity-70 cursor-not-allowed',
+                  !isHost && 'cursor-not-allowed',
                 )}
               >
                 <div className="flex items-center justify-between">
                   <span className="font-black uppercase tracking-wider text-[#F5F6F7]">{meta.emoji} {meta.name}</span>
                   {selected && <span className="text-[10px] font-mono uppercase tracking-widest text-[#06D6A0]">selected ✓</span>}
                 </div>
-                <p className="text-xs text-[#9CA3AF] mt-1 leading-snug normal-case tracking-normal">{meta.blurb}</p>
+                <p className="text-xs text-[#E2E4E8] mt-1 leading-snug normal-case tracking-normal">{meta.blurb}</p>
               </button>
             );
           })}
@@ -174,7 +174,7 @@ function GamePicker({ state, myId, dispatch }: BoardProps<RoadState>) {
 
       {BOT_GAMES.includes(state.chosen) && (
         <div>
-          <p className="text-[11px] font-mono uppercase tracking-widest text-[#8A92A0] mb-2 text-center">Bot difficulty</p>
+          <p className="text-[11px] font-mono uppercase tracking-widest text-[#E2E4E8] mb-2 text-center">Bot difficulty</p>
           <div className="grid grid-cols-3 gap-2">
             {DIFFICULTIES.map((d) => (
               <button
@@ -183,8 +183,8 @@ function GamePicker({ state, myId, dispatch }: BoardProps<RoadState>) {
                 onClick={() => dispatch({ type: 'difficulty', value: d })}
                 className={cn(
                   'py-2 border-2 uppercase tracking-widest text-[11px] font-bold transition-all',
-                  state.difficulty === d ? 'border-[#E63946] bg-[#E63946]/15 text-[#F5F6F7]' : 'border-[#39414E] bg-[#1A1D24] text-[#9CA3AF] hover:text-[#F5F6F7]',
-                  !isHost && 'opacity-70 cursor-not-allowed',
+                  state.difficulty === d ? 'border-[#E63946] bg-[#E63946]/15 text-[#F5F6F7]' : 'border-[#39414E] bg-[#1A1D24] text-[#E2E4E8] hover:text-[#F5F6F7]',
+                  !isHost && 'cursor-not-allowed',
                 )}
               >
                 {d}
@@ -194,7 +194,7 @@ function GamePicker({ state, myId, dispatch }: BoardProps<RoadState>) {
         </div>
       )}
 
-      <p className="text-[9px] font-mono uppercase tracking-wider text-[#5B6470] text-center leading-relaxed">
+      <p className="text-[9px] font-mono uppercase tracking-wider text-[#E2E4E8] text-center leading-relaxed">
         {isHost ? 'Your pick applies to the whole room. Add bots to fill empty seats.' : 'Only the host picks the game.'}
       </p>
     </div>

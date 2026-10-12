@@ -34,7 +34,7 @@ export function Lobby({ gameName, state, onStart, myId, minPlayers = 2, maxPlaye
         </h3>
 
         <div className="space-y-4 mb-10">
-          <p className="text-xs font-mono font-bold text-[#8A92A0] uppercase tracking-widest text-center">
+          <p className="text-xs font-mono font-bold text-[#E2E4E8] uppercase tracking-widest text-center">
             Players ({players.length}/{maxPlayers})
           </p>
           <ul className="space-y-4">
@@ -54,7 +54,7 @@ export function Lobby({ gameName, state, onStart, myId, minPlayers = 2, maxPlaye
                     <button
                       onClick={() => onRemoveBot?.(p.id)}
                       aria-label={`Remove ${p.name}`}
-                      className="h-8 w-8 flex items-center justify-center text-[#9CA3AF] hover:text-[#E63946] border-2 border-[#39414E] hover:border-[#E63946] font-mono font-bold transition-colors"
+                      className="h-8 w-8 flex items-center justify-center text-[#E2E4E8] hover:text-[#E63946] border-2 border-[#39414E] hover:border-[#E63946] font-mono font-bold transition-colors"
                     >
                       ✕
                     </button>
@@ -69,7 +69,7 @@ export function Lobby({ gameName, state, onStart, myId, minPlayers = 2, maxPlaye
                   className="w-full flex items-center space-x-4 p-4 bg-[#1A1D24] hover:bg-[#262B34] active:translate-y-0.5 border-2 border-dashed border-[#39414E] hover:border-[#06D6A0] transition-all group"
                 >
                   <div className="h-12 w-12 border-2 border-dashed border-[#39414E] group-hover:border-[#06D6A0] bg-[#262B34] flex items-center justify-center text-2xl">🤖</div>
-                  <span className="font-bold text-[#9CA3AF] group-hover:text-[#F5F6F7] text-lg uppercase tracking-widest">＋ Add a bot</span>
+                  <span className="font-bold text-[#E2E4E8] group-hover:text-[#F5F6F7] text-lg uppercase tracking-widest">＋ Add a bot</span>
                 </button>
               </li>
             )}
@@ -87,7 +87,7 @@ export function Lobby({ gameName, state, onStart, myId, minPlayers = 2, maxPlaye
         <button
           onClick={onStart}
           disabled={!canStart}
-          className="w-full py-4 bg-[#E63946] hover:bg-[#D90429] active:translate-y-1 active:shadow-none transition-all text-white font-bold border-2 border-[#39414E] shadow-[4px_4px_0px_#454C5A] hover:shadow-[2px_2px_0px_#454C5A] uppercase tracking-[0.2em] mt-4 disabled:opacity-50 disabled:active:translate-y-0 disabled:shadow-none disabled:border-[#2E343F] disabled:bg-[#2E343F] disabled:text-[#8A92A0]"
+          className="w-full py-4 bg-[#E63946] hover:bg-[#D90429] active:translate-y-1 active:shadow-none transition-all text-white font-bold border-2 border-[#39414E] shadow-[4px_4px_0px_#454C5A] hover:shadow-[2px_2px_0px_#454C5A] uppercase tracking-[0.2em] mt-4 disabled:cursor-not-allowed disabled:active:translate-y-0 disabled:shadow-none disabled:border-[#2E343F] disabled:bg-[#2E343F] disabled:text-[#E2E4E8]"
         >
           {canStart
             ? maxPlayers > minPlayers
@@ -96,7 +96,7 @@ export function Lobby({ gameName, state, onStart, myId, minPlayers = 2, maxPlaye
             : `WAITING FOR PLAYERS… (${players.length}/${minPlayers})`}
         </button>
         {maxPlayers > 2 && (
-          <p className="text-[10px] text-center text-[#8A92A0] font-mono leading-relaxed mt-4">
+          <p className="text-[10px] text-center text-[#E2E4E8] font-mono leading-relaxed mt-4">
             Up to {maxPlayers} can join this room code. Start any time {minPlayers}+ are in.
           </p>
         )}
@@ -120,7 +120,7 @@ function CopyCode({ code }: { code: string }) {
     <button
       type="button"
       onClick={copy}
-      className="ml-3 align-middle px-2 py-1 text-[10px] font-mono not-italic font-bold uppercase tracking-widest text-[#9CA3AF] border-2 border-[#39414E] hover:bg-[#262B34]"
+      className="ml-3 align-middle px-2 py-1 text-[10px] font-mono not-italic font-bold uppercase tracking-widest text-[#E2E4E8] border-2 border-[#39414E] hover:bg-[#262B34]"
     >
       {copied ? 'Copied' : 'Copy'}
     </button>

@@ -495,7 +495,7 @@ function Board({ state, myId, dispatch }: BoardProps<LudoState>) {
           }}
         >
           {wild && !primary && <span className="text-[10px] font-black text-[#C084FC] leading-none">?</span>}
-          {safe && !startCol && !wild && !primary && <span className="text-[8px] text-[#5B6470] leading-none">✦</span>}
+          {safe && !startCol && !wild && !primary && <span className="text-[8px] text-[#E2E4E8] leading-none">✦</span>}
           {slotActive && !primary && <span className="w-[62%] h-[62%] rounded-full border-2" style={{ borderColor: themeForSeat(slotCol!).solid + 'AA' }} />}
           {primary && <Token fill={themeOf(primary.pid).fill} active={active} count={here.length} onClick={() => active && dispatch({ a: 'move', token: primary.idx })} />}
         </div>,
@@ -512,7 +512,7 @@ function Board({ state, myId, dispatch }: BoardProps<LudoState>) {
     <div className="flex flex-col items-center p-4 sm:p-6 max-w-2xl mx-auto w-full">
       <div className="w-full flex flex-col items-center mb-4 border-b-2 border-[#39414E] pb-4">
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tighter uppercase italic text-[#F5F6F7]">Sorry</h1>
-        <span className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Room ID: #{state.roomId}</span>
+        <span className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">Room ID: #{state.roomId}</span>
       </div>
 
       {/* Turn + die + controls */}
@@ -541,7 +541,7 @@ function Board({ state, myId, dispatch }: BoardProps<LudoState>) {
             🎲 Roll
           </button>
         ) : myTurn && !state.mustRoll ? (
-          <span className="text-[11px] font-mono uppercase tracking-wider text-[#9CA3AF] animate-pulse">Tap a glowing token</span>
+          <span className="text-[11px] font-mono uppercase tracking-wider text-[#E2E4E8]">Tap a glowing token</span>
         ) : null}
       </div>
 
@@ -558,14 +558,14 @@ function Board({ state, myId, dispatch }: BoardProps<LudoState>) {
                 onClick={() => dispatch({ a: 'guess', value: n })}
                 className={cn(
                   'w-9 h-9 border-2 font-black font-mono text-sm transition-colors',
-                  state.guess === n ? 'border-white bg-[#8338EC] text-white' : 'border-[#39414E] text-[#9CA3AF] bg-[#1A1D24] hover:border-[#8338EC]',
+                  state.guess === n ? 'border-white bg-[#8338EC] text-white' : 'border-[#39414E] text-[#E2E4E8] bg-[#1A1D24] hover:border-[#8338EC]',
                 )}
               >
                 {n}
               </button>
             ))}
           </div>
-          <p className="text-[9px] font-mono uppercase tracking-wider text-[#8A92A0] mt-2">
+          <p className="text-[9px] font-mono uppercase tracking-wider text-[#E2E4E8] mt-2">
             {state.guess ? `Guessing ${state.guess} — now roll` : 'Optional — pick a number, then roll'}
           </p>
         </div>
@@ -585,7 +585,7 @@ function Board({ state, myId, dispatch }: BoardProps<LudoState>) {
           return (
             <div
               key={pid}
-              className={cn('flex items-center gap-2 px-3 py-1.5 border-2 text-[11px] font-mono uppercase tracking-wider', state.turnId === pid ? 'border-white text-white' : 'border-[#39414E] text-[#9CA3AF]')}
+              className={cn('flex items-center gap-2 px-3 py-1.5 border-2 text-[11px] font-mono uppercase tracking-wider', state.turnId === pid ? 'border-white text-white' : 'border-[#39414E] text-[#E2E4E8]')}
             >
               <span className="w-3 h-3 rounded-full border border-black/40" style={{ background: themeOf(pid).fill }} />
               {pid === myId ? 'You' : state.players[pid]?.name} · {home}/4
@@ -596,18 +596,18 @@ function Board({ state, myId, dispatch }: BoardProps<LudoState>) {
 
       {/* Scrollable event history */}
       <div className="w-full max-w-[440px] mt-4">
-        <p className="text-[10px] font-mono uppercase tracking-widest text-[#8A92A0] mb-1">History</p>
+        <p className="text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8] mb-1">History</p>
         <div
           ref={logRef}
           className="h-28 overflow-y-auto bg-[#12151C] border-2 border-[#2E343F] p-2 space-y-1"
         >
           {history.length === 0 ? (
-            <p className="text-[10px] font-mono uppercase tracking-wider text-[#5B6470] leading-relaxed">
+            <p className="text-[10px] font-mono uppercase tracking-wider text-[#E2E4E8] leading-relaxed">
               No moves yet. Roll a 6 to release a piece, capture rivals, and race home. Land on a "?" wildcard for a lucky boost or an unlucky spill!
             </p>
           ) : (
             history.map((e, i) => (
-              <p key={i} className="text-[10px] font-mono uppercase tracking-wider text-[#8A92A0] border-l-2 border-[#E63946] pl-2 leading-relaxed">
+              <p key={i} className="text-[10px] font-mono uppercase tracking-wider text-[#E2E4E8] border-l-2 border-[#E63946] pl-2 leading-relaxed">
                 {e}
               </p>
             ))
@@ -625,7 +625,7 @@ function LobbyColorPicker({ state, myId, dispatch }: BoardProps<LudoState>) {
   const players = Object.values(state.players);
   return (
     <div>
-      <p className="text-[11px] font-mono uppercase tracking-widest text-[#8A92A0] mb-3 text-center">Pick your colour</p>
+      <p className="text-[11px] font-mono uppercase tracking-widest text-[#E2E4E8] mb-3 text-center">Pick your colour</p>
       <div className="grid grid-cols-8 gap-2 mb-4">
         {THEMES.map((t) => {
           const takenByOther = Object.entries(state.themeOf ?? {}).some(([id, tid]) => id !== myId && tid === t.id);
@@ -653,15 +653,15 @@ function LobbyColorPicker({ state, myId, dispatch }: BoardProps<LudoState>) {
           const tid = state.themeOf?.[p.id];
           const theme = tid ? THEME_BY_ID[tid] : null;
           return (
-            <div key={p.id} className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider text-[#9CA3AF]">
+            <div key={p.id} className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider text-[#E2E4E8]">
               <span className="w-3 h-3 rounded-full border border-black/40" style={{ background: theme ? theme.fill : '#2E343F' }} />
               {p.id === myId ? 'You' : p.name}
-              <span className="ml-auto text-[10px] text-[#8A92A0]">{theme ? theme.label : 'auto'}</span>
+              <span className="ml-auto text-[10px] text-[#E2E4E8]">{theme ? theme.label : 'auto'}</span>
             </div>
           );
         })}
       </div>
-      <p className="text-[9px] font-mono uppercase tracking-wider text-[#5B6470] mt-3 text-center leading-relaxed">
+      <p className="text-[9px] font-mono uppercase tracking-wider text-[#E2E4E8] mt-3 text-center leading-relaxed">
         Optional — a free colour is assigned if you skip. Locked once the game starts.
       </p>
     </div>

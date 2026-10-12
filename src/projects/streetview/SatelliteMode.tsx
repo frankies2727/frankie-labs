@@ -420,7 +420,7 @@ export function SatelliteMode() {
             className="flex-1 max-w-2xl flex flex-wrap gap-2"
           >
             <div className="relative flex-1 min-w-[180px]">
-              <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
+              <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-100" />
               <input
                 type="text"
                 placeholder="Place or city (e.g. Dubai)"
@@ -439,7 +439,7 @@ export function SatelliteMode() {
                 value={fromDate}
                 onChange={(e) => setFromDate(e.target.value)}
               />
-              <span className="text-neutral-500 text-xs">to</span>
+              <span className="text-neutral-100 text-xs">to</span>
               <input
                 type="date"
                 min="2000-01-01"
@@ -453,7 +453,7 @@ export function SatelliteMode() {
             <button
               type="submit"
               disabled={loading || !place.trim() || !plan.valid}
-              className="bg-sky-500 hover:bg-sky-400 text-neutral-950 font-medium py-2 px-6 rounded-full text-sm transition-colors disabled:opacity-50 flex items-center justify-center gap-2 min-w-[110px]"
+              className="bg-sky-500 hover:bg-sky-400 text-neutral-950 font-medium py-2 px-6 rounded-full text-sm transition-colors disabled:cursor-not-allowed flex items-center justify-center gap-2 min-w-[110px]"
             >
               {loading ? (
                 <div className="w-4 h-4 rounded-full border-2 border-neutral-950/20 border-t-neutral-950 animate-spin" />
@@ -469,7 +469,7 @@ export function SatelliteMode() {
 
         {/* Cadence selector */}
         <div className="max-w-7xl mx-auto mt-3 flex items-center gap-2 text-xs">
-          <span className="text-neutral-500 font-mono uppercase tracking-widest">
+          <span className="text-neutral-100 font-mono uppercase tracking-widest">
             Sampling
           </span>
           <div className="flex items-center gap-1 bg-neutral-800 rounded-full px-1 py-1">
@@ -481,7 +481,7 @@ export function SatelliteMode() {
                 className={`px-3 py-1 rounded-full font-medium transition-colors ${
                   step === c.step
                     ? 'bg-neutral-700 text-sky-400'
-                    : 'text-neutral-400 hover:text-white'
+                    : 'text-neutral-100 hover:text-white'
                 }`}
               >
                 {c.label}
@@ -489,7 +489,7 @@ export function SatelliteMode() {
             ))}
           </div>
 
-          <span className="text-neutral-500 font-mono uppercase tracking-widest ml-2">
+          <span className="text-neutral-100 font-mono uppercase tracking-widest ml-2">
             Zoom
           </span>
           <div className="flex items-center gap-1 bg-neutral-800 rounded-full px-1 py-1">
@@ -501,7 +501,7 @@ export function SatelliteMode() {
                 className={`px-3 py-1 rounded-full font-medium transition-colors ${
                   span === z.span
                     ? 'bg-neutral-700 text-sky-400'
-                    : 'text-neutral-400 hover:text-white'
+                    : 'text-neutral-100 hover:text-white'
                 }`}
               >
                 {z.label}
@@ -509,16 +509,16 @@ export function SatelliteMode() {
             ))}
           </div>
 
-          <span className="ml-auto text-neutral-500 hidden lg:inline">
+          <span className="ml-auto text-neutral-100 hidden lg:inline">
             {plan.valid ? (
               <>
-                ≈ <span className="text-neutral-300">{plan.count}</span> frames ·
+                ≈ <span className="text-neutral-100">{plan.count}</span> frames ·
                 every{' '}
-                <span className="text-neutral-300">
+                <span className="text-neutral-100">
                   {plan.effStep === 1 ? 'day' : `${plan.effStep} days`}
                 </span>
                 {plan.capped ? ' (auto)' : ''} · Source:{' '}
-                <span className="text-neutral-300">{planSource}</span>
+                <span className="text-neutral-100">{planSource}</span>
               </>
             ) : (
               <span className="text-amber-400/80">
@@ -562,7 +562,7 @@ export function SatelliteMode() {
                   <h3 className="text-xl font-medium text-white">
                     {isExporting ? 'Exporting Video' : 'Building Timelapse'}
                   </h3>
-                  <p className="text-sm text-neutral-400">
+                  <p className="text-sm text-neutral-100">
                     {isExporting ? 'Rendering frames…' : progressMsg}
                   </p>
                 </div>
@@ -575,7 +575,7 @@ export function SatelliteMode() {
                     transition={{ ease: 'linear', duration: 0.2 }}
                   />
                 </div>
-                <p className="text-xs text-center text-neutral-500">
+                <p className="text-xs text-center text-neutral-100">
                   {Math.round(isExporting ? exportProgress : progress)}%
                 </p>
               </div>
@@ -607,7 +607,7 @@ export function SatelliteMode() {
             </div>
           ) : (
             !loading && (
-              <div className="flex flex-col items-center justify-center text-neutral-600 gap-4">
+              <div className="flex flex-col items-center justify-center text-neutral-100 gap-4">
                 <Satellite className="w-12 h-12 opacity-20" />
                 <p className="text-sm max-w-xs text-center">
                   Pick a place and a date range to watch it change from space
@@ -632,7 +632,7 @@ export function SatelliteMode() {
                   }
                 }}
                 disabled={frames.length <= 1}
-                className="w-12 h-12 rounded-full bg-sky-500 text-neutral-950 flex items-center justify-center hover:bg-sky-400 transition-colors disabled:opacity-50 disabled:bg-neutral-800 disabled:text-neutral-500"
+                className="w-12 h-12 rounded-full bg-sky-500 text-neutral-950 flex items-center justify-center hover:bg-sky-400 transition-colors disabled:cursor-not-allowed disabled:bg-neutral-800 disabled:text-neutral-100"
               >
                 {isPlaying ? (
                   <Pause className="w-5 h-5" fill="currentColor" />
@@ -649,7 +649,7 @@ export function SatelliteMode() {
                     className={`px-2 py-1 rounded-full text-xs font-medium transition-colors ${
                       fps === s.fps
                         ? 'bg-neutral-700 text-sky-400'
-                        : 'text-neutral-400 hover:text-white'
+                        : 'text-neutral-100 hover:text-white'
                     }`}
                   >
                     {s.label}
@@ -660,7 +660,7 @@ export function SatelliteMode() {
               <button
                 onClick={exportVideo}
                 disabled={isExporting || frames.length <= 1}
-                className="ml-2 flex items-center gap-2 px-4 py-2 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full text-sm font-medium transition-colors disabled:opacity-50 disabled:bg-neutral-900"
+                className="ml-2 flex items-center gap-2 px-4 py-2 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:bg-neutral-900"
               >
                 {isExporting ? (
                   <div className="w-4 h-4 rounded-full border-2 border-neutral-500 border-t-sky-400 animate-spin" />
@@ -672,7 +672,7 @@ export function SatelliteMode() {
             </div>
 
             <div className="text-right">
-              <p className="text-sm text-neutral-500 font-medium">
+              <p className="text-sm text-neutral-100 font-medium">
                 {frames.length > 0
                   ? `Frame ${currentIndex + 1} / ${frames.length}`
                   : 'No frames yet'}
@@ -696,7 +696,7 @@ export function SatelliteMode() {
             }}
             className="w-full accent-sky-500 disabled:opacity-40"
           />
-          <div className="flex justify-between text-[10px] font-mono uppercase tracking-widest text-neutral-500">
+          <div className="flex justify-between text-[10px] font-mono uppercase tracking-widest text-neutral-100">
             <span>{frames[0]?.date ?? ''}</span>
             <span>{frames[frames.length - 1]?.date ?? ''}</span>
           </div>

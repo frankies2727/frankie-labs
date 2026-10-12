@@ -22,7 +22,7 @@ export function PlaceTimelapse({ onExit }: { onExit: () => void }) {
         <button
           onClick={onExit}
           title="Back to projects"
-          className="group inline-flex items-center justify-center w-9 h-9 rounded-full bg-neutral-800 hover:bg-neutral-700 text-neutral-300 hover:text-white transition-colors"
+          className="group inline-flex items-center justify-center w-9 h-9 rounded-full bg-neutral-800 hover:bg-neutral-700 text-neutral-100 hover:text-white transition-colors"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
         </button>
@@ -33,7 +33,7 @@ export function PlaceTimelapse({ onExit }: { onExit: () => void }) {
             className={`flex items-center gap-1.5 px-3 md:px-4 py-1.5 rounded-full text-xs font-medium transition-colors ${
               mode === 'satellite'
                 ? 'bg-sky-500 text-neutral-950'
-                : 'text-neutral-400 hover:text-white'
+                : 'text-neutral-100 hover:text-white'
             }`}
           >
             <Satellite className="w-3.5 h-3.5" />
@@ -44,7 +44,7 @@ export function PlaceTimelapse({ onExit }: { onExit: () => void }) {
             className={`flex items-center gap-1.5 px-3 md:px-4 py-1.5 rounded-full text-xs font-medium transition-colors ${
               mode === 'streetview'
                 ? 'bg-emerald-500 text-neutral-950'
-                : 'text-neutral-400 hover:text-white'
+                : 'text-neutral-100 hover:text-white'
             }`}
           >
             <Clock className="w-3.5 h-3.5" />
@@ -52,7 +52,7 @@ export function PlaceTimelapse({ onExit }: { onExit: () => void }) {
           </button>
         </div>
 
-        <span className="ml-auto hidden md:block text-[10px] font-mono uppercase tracking-widest text-neutral-600">
+        <span className="ml-auto hidden md:block text-[10px] font-mono uppercase tracking-widest text-neutral-100">
           {mode === 'satellite'
             ? 'NASA GIBS · no key needed'
             : 'Google Street View · your key'}

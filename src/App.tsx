@@ -14,7 +14,7 @@ function ExternalRedirect({ href }: { href: string }) {
   return (
     <div className="min-h-screen bg-[#0a0a0a] flex flex-col items-center justify-center gap-6">
       <div className="w-16 h-16 border-4 border-white/10 border-t-[#ccff00] rounded-full animate-spin" />
-      <p className="text-gray-400 font-mono text-sm uppercase tracking-widest animate-pulse">Opening…</p>
+      <p className="text-gray-100 font-mono text-sm uppercase tracking-widest">Opening…</p>
     </div>
   );
 }
@@ -67,7 +67,7 @@ export default function App() {
           fallback={
             <div className="min-h-screen bg-[#0a0a0a] flex flex-col items-center justify-center gap-6">
               <div className="w-16 h-16 border-4 border-white/10 border-t-[#ccff00] rounded-full animate-spin" />
-              <p className="text-gray-400 font-mono text-sm uppercase tracking-widest animate-pulse">
+              <p className="text-gray-100 font-mono text-sm uppercase tracking-widest">
                 Loading {project.name}…
               </p>
             </div>

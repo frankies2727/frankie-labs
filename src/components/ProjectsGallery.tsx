@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { CSSProperties, useState } from 'react';
 import { ProjectDefinition } from '../projects/types';
 import { PikachuIcon } from './PikachuIcon';
 
@@ -46,7 +46,8 @@ export function ProjectsGallery({ projects, onSelect, onOpenGames }: ProjectsGal
         onClick={onOpenGames}
         title="Play a game"
         aria-label="Open the games gallery"
-        className="group fixed top-4 right-4 z-50 flex items-center gap-2 rounded-full border-2 border-[#39414E] bg-[#1A1D24]/90 backdrop-blur-md pl-1.5 pr-1.5 sm:pr-3 py-1.5 shadow-[3px_3px_0px_#454C5A] hover:shadow-[1px_1px_0px_#454C5A] hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
+        style={{ '--fill': 'rgb(26 29 36 / 0.9)' } as CSSProperties}
+        className="rainbow-border group fixed top-4 right-4 z-50 flex items-center gap-2 rounded-full backdrop-blur-md pl-1.5 pr-1.5 sm:pr-3 py-1.5 shadow-[3px_3px_0px_#454C5A] hover:shadow-[1px_1px_0px_#454C5A] hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
       >
         <span className="w-8 h-8 sm:w-9 sm:h-9 shrink-0 drop-shadow-[0_0_6px_rgba(247,208,44,0.5)] group-hover:animate-bounce">
           {iconFailed ? (
@@ -86,7 +87,7 @@ export function ProjectsGallery({ projects, onSelect, onOpenGames }: ProjectsGal
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tighter uppercase italic text-[#F5F6F7]">
             Frankie Labs
           </h1>
-          <p className="text-xs sm:text-sm font-mono uppercase tracking-[0.3em] text-[#9CA3AF] mt-4">
+          <p className="text-xs sm:text-sm font-mono uppercase tracking-[0.3em] text-[#E2E4E8] mt-4">
             A lab of awesome things I&apos;m building · pick one
           </p>
         </header>
@@ -110,7 +111,7 @@ export function ProjectsGallery({ projects, onSelect, onOpenGames }: ProjectsGal
                   <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white drop-shadow-md">
                     {project.name}
                   </h2>
-                  <p className="text-sm text-white/85 mt-2 leading-snug drop-shadow-sm">
+                  <p className="text-sm text-white mt-2 leading-snug drop-shadow-sm">
                     {project.description}
                   </p>
                   <span className="inline-block mt-4 text-[10px] font-mono font-bold uppercase tracking-widest text-white group-hover:translate-x-1 transition-transform">
@@ -134,7 +135,7 @@ export function ProjectsGallery({ projects, onSelect, onOpenGames }: ProjectsGal
           })}
         </div>
 
-        <footer className="text-center mt-16 text-[10px] font-mono uppercase tracking-widest text-[#6B7280]">
+        <footer className="text-center mt-16 text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8]">
           More projects landing soon
         </footer>
       </div>

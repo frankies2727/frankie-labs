@@ -193,7 +193,7 @@ function SizeChooser({ myTurn, chooserName, dispatch }: { myTurn: boolean; choos
     <div className="flex flex-col items-center p-4 sm:p-8 max-w-md mx-auto w-full">
       <div className="w-full flex flex-col items-center mb-8 border-b-2 border-[#39414E] pb-4">
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tighter uppercase italic text-[#F5F6F7]">Dots &amp; Boxes</h1>
-        <span className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Choose a board size</span>
+        <span className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">Choose a board size</span>
       </div>
 
       {myTurn ? (
@@ -203,7 +203,7 @@ function SizeChooser({ myTurn, chooserName, dispatch }: { myTurn: boolean; choos
             className="w-full p-6 text-left bg-[#1A1D24] hover:bg-[#262B34] active:translate-y-1 transition-all border-2 border-[#39414E] shadow-[4px_4px_0px_#454C5A] hover:shadow-[2px_2px_0px_#454C5A]"
           >
             <div className="text-xl font-bold uppercase tracking-wider text-[#F5F6F7]">⚡ Quick Game</div>
-            <div className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF] mt-2">
+            <div className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8] mt-2">
               {QUICK_DOTS}×{QUICK_DOTS} dots · {cols(QUICK_DOTS) * cols(QUICK_DOTS)} boxes
             </div>
           </button>
@@ -212,13 +212,13 @@ function SizeChooser({ myTurn, chooserName, dispatch }: { myTurn: boolean; choos
             className="w-full p-6 text-left bg-[#1A1D24] hover:bg-[#262B34] active:translate-y-1 transition-all border-2 border-[#39414E] shadow-[4px_4px_0px_#E76F51] hover:shadow-[2px_2px_0px_#E76F51]"
           >
             <div className="text-xl font-bold uppercase tracking-wider text-[#F5F6F7]">🏔 Long Game</div>
-            <div className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF] mt-2">
+            <div className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8] mt-2">
               {LONG_DOTS}×{LONG_DOTS} dots · {cols(LONG_DOTS) * cols(LONG_DOTS)} boxes
             </div>
           </button>
         </div>
       ) : (
-        <p className="text-sm font-mono uppercase tracking-widest text-[#9CA3AF] animate-pulse text-center">
+        <p className="text-sm font-mono uppercase tracking-widest text-[#E2E4E8] text-center">
           Waiting for {chooserName} to pick a board size…
         </p>
       )}
@@ -322,7 +322,7 @@ function Board({ state, myId, dispatch }: BoardProps<DotsAndBoxesState>) {
     <div className="flex flex-col items-center p-4 sm:p-8 max-w-xl mx-auto w-full">
       <div className="w-full flex flex-col items-center mb-6 border-b-2 border-[#39414E] pb-4">
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tighter uppercase italic text-[#F5F6F7]">Dots &amp; Boxes</h1>
-        <span className="text-xs font-mono uppercase tracking-widest text-[#9CA3AF]">Room ID: #{state.roomId}</span>
+        <span className="text-xs font-mono uppercase tracking-widest text-[#E2E4E8]">Room ID: #{state.roomId}</span>
       </div>
 
       {/* Scoreboard */}
@@ -356,7 +356,7 @@ function Board({ state, myId, dispatch }: BoardProps<DotsAndBoxesState>) {
         {cells}
       </div>
 
-      <p className="text-[10px] font-mono uppercase tracking-widest text-[#8A92A0] mt-6 text-center">
+      <p className="text-[10px] font-mono uppercase tracking-widest text-[#E2E4E8] mt-6 text-center">
         Close the 4th side of a box to claim it &amp; go again · most boxes wins
       </p>
     </div>
