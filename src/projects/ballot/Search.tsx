@@ -76,7 +76,7 @@ export function BallotSearch({ ballot, everywhere, onJump, label }: Props) {
       </div>
 
       {q && (
-        <div role="region" aria-live="polite" aria-label="Search results" className="rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] overflow-hidden">
+        <div role="region" aria-live="polite" aria-label="Search results" className="rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] max-h-[50vh] overflow-y-auto">
           {hits.length > 0 ? (
             <ul>
               {hits.slice(0, 8).map((h) => (

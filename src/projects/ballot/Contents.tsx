@@ -60,7 +60,7 @@ function List({ sections, current, isDone, labelOf, onSection, onRace }: Props) 
 /** Desktop: a sticky column beside the ballot. */
 export function ContentsColumn(props: Props) {
   return (
-    <aside className="hidden lg:block sticky top-[calc(var(--kyb-top)+16px)] max-h-[calc(100dvh-var(--kyb-top)-32px)] overflow-y-auto rounded-2xl border border-[var(--gb-border)] bg-[var(--gb-surface)]">
+    <aside className="hidden lg:block sticky top-[calc(var(--kyb-top)+var(--kyb-bar,0px)+16px)] max-h-[calc(100dvh-var(--kyb-top)-var(--kyb-bar,0px)-32px)] overflow-y-auto rounded-2xl border border-[var(--gb-border)] bg-[var(--gb-surface)]">
       <p className="px-3 py-3 font-black border-b border-[var(--gb-border)]">☰ Contents</p>
       <List {...props} />
     </aside>
