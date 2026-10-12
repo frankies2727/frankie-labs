@@ -66,11 +66,11 @@ export function BallotSearch({ ballot, everywhere, onJump, label }: Props) {
       <div className="relative">
         <SearchIcon className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--gb-text)] pointer-events-none" aria-hidden="true" />
         <input
-          id="kyb-search" type="search" value={q} autoComplete="off"
+          id="kyb-search" type="text" inputMode="search" enterKeyHint="search" value={q} autoComplete="off"
           onChange={(e) => setQ(e.target.value)}
           onKeyDown={(e) => { if (e.key === 'Enter' && hits[0]) go(hits[0]); if (e.key === 'Escape') setQ(''); }}
           placeholder="Search races and names"
-          className="w-full min-h-[52px] rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] pl-12 pr-12 font-bold text-[var(--gb-text)] focus:border-[var(--gb-blue-hi)] focus:outline-none [&::-webkit-search-cancel-button]:hidden"
+          className="w-full min-h-[52px] rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] pl-12 pr-12 font-bold text-[var(--gb-text)] focus:border-[var(--gb-blue-hi)] focus:outline-none"
         />
         {q && <ClearButton onClear={() => setQ('')} className="right-2 text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]" />}
       </div>

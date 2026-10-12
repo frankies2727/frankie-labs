@@ -35,3 +35,7 @@
   72% { transform: rotate(-0.8deg) skewX(3deg) scaleX(1.01); }
 }
 @media (prefers-reduced-motion: reduce) { .kyb-wave { animation: none; } }
+
+/* Anything scrolled to (a focused field, a jumped-to card) lands below
+   govbot's sticky header, not under it. */
+:root:has(.gb-header) { scroll-padding-top: calc(var(--kyb-top) + 16px); }
