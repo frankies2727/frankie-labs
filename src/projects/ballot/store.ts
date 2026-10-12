@@ -20,6 +20,8 @@ export interface Saved {
   looked?: number;
   /** Decisions made on one day, for the daily goal. */
   goal?: { day: string; n: number };
+  /** Most decisions made in one day. */
+  best?: number;
 }
 
 const KEY = 'know-your-ballot:2026-11-03';
@@ -61,8 +63,9 @@ function sanitize(raw: unknown): Saved {
   const looked = Number.isInteger(raw.looked) && (raw.looked as number) >= 0 ? Math.min(raw.looked as number, 1e6) : undefined;
   const g = isObj(raw.goal) ? raw.goal : null;
   const goal = g && typeof g.day === 'string' && /^\d{4}-\d\d-\d\d$/.test(g.day) && Number.isInteger(g.n) && (g.n as number) >= 0 ? { day: g.day, n: Math.min(g.n as number, 1000) } : undefined;
+  const best = Number.isInteger(raw.best) && (raw.best as number) > 0 ? Math.min(raw.best as number, 1000) : undefined;
   const seen = typeof raw.seen === 'string' && /^\d{4}-\d\d-\d\dT[\d:.]{8,12}Z$/.test(raw.seen) ? raw.seen : undefined;
-  return { place, picks, plan, browsing: raw.browsing === true || undefined, seen, days, looked, goal };
+  return { place, picks, plan, browsing: raw.browsing === true || undefined, seen, days, looked, goal, best };
 }
 
 function load(): Saved {

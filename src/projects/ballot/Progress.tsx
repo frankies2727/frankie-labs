@@ -1,7 +1,8 @@
 import { Check } from 'lucide-react';
+import { useState } from 'react';
 
 // The ballot as a game: sections are levels, a small daily goal, a streak of
-// visits and badges for the habits that make a good voter (reading up,
+// visits and trophies for the habits that make a good voter (reading up,
 // planning, finishing). All counted on this device only.
 
 export const DAILY_GOAL = 5;
@@ -18,38 +19,76 @@ export function streak(days: string[] | undefined, todayIso: string): number {
   return n;
 }
 
-interface Ctx { done: number; total: number; allDone: boolean; looked: number; plan: Record<string, boolean | string>; visits: number }
-
-/** Each badge's progress as [have, need]; earned when have reaches need. */
-export const BADGES: { id: string; emoji: string; name: string; how: string; progress: (c: Ctx) => [number, number] }[] = [
-  { id: 'first', emoji: '🗳️', name: 'First pick', how: 'Decide one race', progress: (c) => [Math.min(c.done, 1), 1] },
-  { id: 'research', emoji: '🔎', name: 'Researcher', how: 'Open 3 candidate profiles or comparisons', progress: (c) => [Math.min(c.looked, 3), 3] },
-  { id: 'plan', emoji: '📅', name: 'Planner', how: 'Pick how you’ll vote and set a reminder', progress: (c) => [Number(!!c.plan.method) + Number(!!c.plan.reminder), 2] },
-  { id: 'share', emoji: '📣', name: 'Spread the word', how: 'Share your progress or save your link', progress: (c) => [Number(!!c.plan.shared), 1] },
-  { id: 'regular', emoji: '🔥', name: 'Regular', how: 'Come back on 3 different days', progress: (c) => [Math.min(c.visits, 3), 3] },
-  { id: 'ready', emoji: '🎉', name: 'Ballot ready', how: 'Decide every race', progress: (c) => [c.done, Math.max(c.total, 1)] },
-];
-
-const isEarned = (b: (typeof BADGES)[number], c: Ctx) => { const [have, need] = b.progress(c); return have >= need; };
-export const earnedBadges = (c: Ctx) => BADGES.filter((b) => isEarned(b, c)).map((b) => b.id);
-
 interface Level { id: string; title: string; emoji: string; color: string; ink: string; done: number; ids: string[] }
 
-interface Props {
+interface Ctx {
+  done: number; total: number; allDone: boolean;
+  /** Candidate profiles and comparisons opened. */
+  looked: number;
+  plan: Record<string, boolean | string>;
+  /** Different days visited, and the current run of days in a row. */
+  visits: number; streak: number;
+  /** Most races decided in one day. */
+  best: number;
+  hasPlace: boolean;
   levels: Level[];
-  done: number;
-  total: number;
+}
+
+export interface Trophy { id: string; emoji: string; name: string; how: string; progress: (c: Ctx) => [number, number] }
+
+const upTo = (have: number, need: number): [number, number] => [Math.min(have, need), need];
+
+/** Each trophy's progress as [have, need]; earned when have reaches need. */
+const TROPHIES: Trophy[] = [
+  { id: 'located', emoji: '📍', name: 'On the map', how: 'Look up your address', progress: (c) => upTo(Number(c.hasPlace), 1) },
+  { id: 'first', emoji: '🗳️', name: 'First pick', how: 'Decide one race', progress: (c) => upTo(c.done, 1) },
+  { id: 'five', emoji: '🖐️', name: 'High five', how: 'Decide 5 races', progress: (c) => upTo(c.done, 5) },
+  { id: 'half', emoji: '🌗', name: 'Halfway there', how: 'Decide half your ballot', progress: (c) => upTo(c.done, Math.max(1, Math.ceil(c.total / 2))) },
+  { id: 'ready', emoji: '🎉', name: 'Ballot ready', how: 'Decide every race', progress: (c) => upTo(c.done, Math.max(c.total, 1)) },
+  { id: 'research', emoji: '🔎', name: 'Researcher', how: 'Open 3 candidate profiles or comparisons', progress: (c) => upTo(c.looked, 3) },
+  { id: 'bookworm', emoji: '📚', name: 'Bookworm', how: 'Open 10 candidate profiles or comparisons', progress: (c) => upTo(c.looked, 10) },
+  { id: 'goal', emoji: '🎯', name: 'Goal getter', how: `Decide ${DAILY_GOAL} races in one day`, progress: (c) => upTo(c.best, DAILY_GOAL) },
+  { id: 'marathon', emoji: '🏃', name: 'Marathoner', how: 'Decide 20 races in one day', progress: (c) => upTo(c.best, 20) },
+  { id: 'plan', emoji: '📅', name: 'Planner', how: 'Pick how you’ll vote and set a reminder', progress: (c) => upTo(Number(!!c.plan.method) + Number(!!c.plan.reminder), 2) },
+  { id: 'share', emoji: '📣', name: 'Spread the word', how: 'Share your progress or save your link', progress: (c) => upTo(Number(!!c.plan.shared), 1) },
+  { id: 'regular', emoji: '🔥', name: 'Regular', how: 'Come back on 3 different days', progress: (c) => upTo(c.visits, 3) },
+  { id: 'roll', emoji: '⚡', name: 'On a roll', how: 'Visit 3 days in a row', progress: (c) => upTo(c.streak, 3) },
+  { id: 'devoted', emoji: '🏆', name: 'Devoted', how: 'Come back on 7 different days', progress: (c) => upTo(c.visits, 7) },
+];
+
+/** Every trophy for this ballot: the fixed set plus one per level (section). */
+export function trophies(levels: Level[]): Trophy[] {
+  return [
+    ...TROPHIES,
+    ...levels.map((l): Trophy => ({
+      id: `level-${l.id}`, emoji: l.emoji, name: `Level clear: ${l.title}`, how: `Decide every race in ${l.title}`,
+      progress: (c) => { const lv = c.levels.find((x) => x.id === l.id); return upTo(lv?.done ?? 0, Math.max(1, lv?.ids.length ?? 1)); },
+    })),
+  ];
+}
+
+const isEarned = (t: Trophy, c: Ctx) => { const [have, need] = t.progress(c); return have >= need; };
+export const earnedTrophies = (c: Ctx) => trophies(c.levels).filter((t) => isEarned(t, c));
+
+
+interface Props {
   ctx: Ctx;
   todayCount: number;
-  streakDays: number;
   onLevel: (id: string) => void;
 }
 
-export function ProgressCard({ levels, done, total, ctx, todayCount, streakDays, onLevel }: Props) {
+const SHOW_FIRST = 6;
+
+export function ProgressCard({ ctx, todayCount, onLevel }: Props) {
+  const { levels, done, total } = ctx;
+  const [allTrophies, setAllTrophies] = useState(false);
   const left = total - done;
   const minutes = Math.max(1, Math.ceil((left * SECONDS_PER_DECISION) / 60));
-  const goalHit = todayCount >= DAILY_GOAL;
-  const earned = new Set(earnedBadges(ctx));
+  // Earned first, then the ones closest to being earned.
+  const list = trophies(levels)
+    .map((t) => { const [have, need] = t.progress(ctx); return { t, have, need, got: have >= need }; })
+    .sort((a, b) => Number(b.got) - Number(a.got) || b.have / b.need - a.have / a.need);
+  const earnedCount = list.filter((x) => x.got).length;
   return (
     <section aria-labelledby="kyb-progress" className="rounded-2xl border border-[var(--gb-border)] bg-[var(--gb-surface)] p-4 sm:p-5 space-y-4">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
@@ -80,36 +119,40 @@ export function ProgressCard({ levels, done, total, ctx, todayCount, streakDays,
       {left > 0 && (
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <div className="flex items-center gap-2" aria-label={`Today's goal: ${Math.min(todayCount, DAILY_GOAL)} of ${DAILY_GOAL} races`}>
-            <span className="text-sm font-bold">{goalHit ? '🎯 Today’s goal done!' : 'Today’s goal'}</span>
+            <span className="text-sm font-bold">Today’s goal</span>
             <span className="flex gap-1" aria-hidden="true">
               {Array.from({ length: DAILY_GOAL }, (_, i) => (
                 <span key={i} className="w-5 h-2.5 rounded-full" style={{ background: i < todayCount ? 'var(--gb-primary)' : 'var(--kyb-chip-hi)' }} />
               ))}
             </span>
-            {!goalHit && <span className="text-sm font-bold">{todayCount}/{DAILY_GOAL} races</span>}
+            <span className="text-sm font-bold">{Math.min(todayCount, DAILY_GOAL)}/{DAILY_GOAL} races</span>
           </div>
-          {streakDays >= 2 && <span className="rounded-full bg-[var(--kyb-chip)] px-3 py-1 text-sm font-bold">🔥 {streakDays}-day streak</span>}
+          {ctx.streak >= 2 && <span className="rounded-full bg-[var(--kyb-chip)] px-3 py-1 text-sm font-bold">🔥 {ctx.streak}-day streak</span>}
         </div>
       )}
 
-      {/* Badges: every one on show; earned ones marked, the rest say how far along you are. */}
-      <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2" aria-label="Badges">
-        {BADGES.map((b) => {
-          const got = earned.has(b.id);
-          const [have, need] = b.progress(ctx);
-          return (
-            <li key={b.id} className={`flex items-center gap-2 rounded-xl border-2 px-3 py-2 ${got ? 'border-[var(--gb-primary)] bg-[color-mix(in_srgb,var(--gb-primary)_16%,transparent)]' : 'border-[var(--gb-border-strong)]'}`}>
-              <span className="text-2xl" aria-hidden="true">{b.emoji}</span>
+      {/* Trophies: every one on show; earned ones marked, the rest say how far along you are. */}
+      <div className="space-y-2">
+        <h3 className="text-lg">🏆 Trophies <span className="font-[family-name:var(--gb-font-sans)] text-sm font-bold">· {earnedCount} of {list.length} earned</span></h3>
+        <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2" aria-label="Trophies">
+          {(allTrophies ? list : list.slice(0, SHOW_FIRST)).map(({ t, have, need, got }) => (
+            <li key={t.id} className={`flex items-center gap-2 rounded-xl border-2 px-3 py-2 ${got ? 'border-[var(--gb-primary)] bg-[color-mix(in_srgb,var(--gb-primary)_16%,transparent)]' : 'border-[var(--gb-border-strong)]'}`}>
+              <span className="text-2xl" aria-hidden="true">{t.emoji}</span>
               <span className="min-w-0">
-                <span className="block text-sm font-black leading-tight">{b.name}</span>
+                <span className="block text-sm font-black leading-tight">{t.name}</span>
                 {got
                   ? <span className="block text-xs font-bold text-[var(--gb-primary)]">✓ Earned</span>
-                  : <span className="block text-xs leading-snug">{b.how} · {have}/{need}</span>}
+                  : <span className="block text-xs leading-snug">{t.how} · {have}/{need}</span>}
               </span>
             </li>
-          );
-        })}
-      </ul>
+          ))}
+        </ul>
+        {list.length > SHOW_FIRST && (
+          <button type="button" onClick={() => setAllTrophies(!allTrophies)} aria-expanded={allTrophies} className="min-h-[44px] rounded-xl border-2 border-[var(--gb-text)] px-4 font-bold">
+            {allTrophies ? 'Show fewer' : `Show all ${list.length} trophies`}
+          </button>
+        )}
+      </div>
     </section>
   );
 }

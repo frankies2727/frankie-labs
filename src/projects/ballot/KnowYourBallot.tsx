@@ -7,7 +7,7 @@ import { BallotSearch, type Hit } from './Search';
 import { GovbotChrome } from './GovbotChrome';
 import { Capitol } from './Hero';
 import { ContentsColumn, ContentsDrawer } from './Contents';
-import { BADGES, DAILY_GOAL, earnedBadges, ProgressCard, streak } from './Progress';
+import { earnedTrophies, ProgressCard, streak } from './Progress';
 import './ballot.css';
 import { ClearButton } from '../../components/ClearButton';
 import { SinceLastVisit } from './Updates';
@@ -117,8 +117,6 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   const browsing = !!saved.browsing;
   const setBrowsing = (on: boolean) => setSaved((s) => ({ ...s, browsing: on || undefined }));
   const [tab, setTab] = useState<'ballot' | 'plan' | 'share'>('ballot');
-  // Someone coming back mid-ballot gets a nudge to pick up where they left off.
-  const [welcomeBack, setWelcomeBack] = useState(() => hasProgress(saved));
   // Progress arriving in a #resume link while this device has its own: ask first.
   const [incoming, setIncoming] = useState<Saved | null>(null);
   const [linkMsg, setLinkMsg] = useState('');
@@ -178,7 +176,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
     // A newly decided race counts toward today's goal.
     const d = today();
     const goal = !isDecided(s.picks[id]) && isDecided(c) ? { day: d, n: (s.goal?.day === d ? s.goal.n : 0) + 1 } : s.goal;
-    return { ...s, picks: { ...s.picks, [id]: c }, goal };
+    return { ...s, picks: { ...s.picks, [id]: c }, goal, best: Math.max(s.best ?? 0, goal?.day === d ? goal.n : 0) || undefined };
   }), [setSaved]);
   // Reading up on candidates counts toward the Researcher badge.
   const lookedUp = useCallback(() => setSaved((s) => ({ ...s, looked: (s.looked ?? 0) + 1 })), [setSaved]);
@@ -209,22 +207,23 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   // The progress game: today's goal, streak and badges.
   const day = today();
   const todayCount = saved.goal?.day === day ? saved.goal.n : 0;
-  const streakDays = streak(saved.days, day);
-  const gameCtx = { done, total, allDone, looked: saved.looked ?? 0, plan: saved.plan, visits: saved.days?.length ?? 0 };
-  const earned = earnedBadges(gameCtx).join();
-  const prevEarned = useRef<string | null>(null);
-  const prevGoal = useRef(todayCount);
+  const gameCtx = {
+    done, total, allDone, looked: saved.looked ?? 0, plan: saved.plan,
+    visits: saved.days?.length ?? 0, streak: streak(saved.days, day), best: saved.best ?? 0,
+    hasPlace: !!saved.place, levels: sections,
+  };
+  const earned = earnedTrophies(gameCtx);
+  const earnedIds = earned.map((t) => t.id).join();
+  // A new trophy gets a toast; a different address (new levels) or a section
+  // finished (which has its own) doesn't count as news.
+  const prevEarned = useRef<{ ids: string; districts: Districts | null } | null>(null);
   useEffect(() => {
     const before = prevEarned.current;
-    prevEarned.current = earned;
-    const goalJustHit = prevGoal.current < DAILY_GOAL && todayCount >= DAILY_GOAL;
-    prevGoal.current = todayCount;
-    if (before === null) return;
-    // "Ballot ready" has its own confetti.
-    const fresh = BADGES.find((b) => b.id !== 'ready' && earned.split(',').includes(b.id) && !before.split(',').includes(b.id));
-    if (fresh) setToast(`${fresh.emoji} Badge unlocked: ${fresh.name}!`);
-    else if (goalJustHit && !allDone) setToast(`🎯 Today’s goal done: ${DAILY_GOAL} races! Come back tomorrow to keep your streak going.`);
-  }, [earned, todayCount, allDone]);
+    prevEarned.current = { ids: earnedIds, districts };
+    if (!before || before.districts !== districts) return;
+    const fresh = earned.find((t) => t.id !== 'ready' && !t.id.startsWith('level-') && !before.ids.split(',').includes(t.id));
+    if (fresh) setToast(`${fresh.emoji} Trophy unlocked: ${fresh.name}!`);
+  }, [earnedIds]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { if (!toast) return; const t = setTimeout(() => setToast(''), 3500); return () => clearTimeout(t); }, [toast]);
 
   // Opened from a resume link (or one pasted into this already-open tab, which
@@ -241,7 +240,6 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
         if (!link) { setToast('That saved-progress link didn’t work. It may be cut off; try copying it again.'); return; }
         if (hasProgress(savedRef.current)) { setIncoming(link); return; }
         setSaved(link);
-        setWelcomeBack(true);
       });
     };
     take();
@@ -351,7 +349,6 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
     setChange(null);
     setSaved((s) => ({ ...s, place: null, browsing: undefined }));
     setTab('ballot');
-    setWelcomeBack(false);
     window.scrollTo({ top: 0 });
   };
 
@@ -378,12 +375,6 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
     labelOf: (id: string) => raceById.get(id)?.office ?? describePick(id, undefined).what,
     onSection: openSection,
     onRace: jumpTo,
-    more: [
-      { id: 'kyb-laws', label: '🏛️ Laws that shape your ballot' },
-      { id: 'kyb-next', label: '🗓️ Feb 23, 2027 city election' },
-      { id: 'kyb-sources', label: '📂 Where the data comes from' },
-    ],
-    onMore: (id: string) => { setTab('ballot'); requestAnimationFrame(() => scrollTo(document.getElementById(id))); },
   };
   const sectionOf = (id: string) => SECTIONS.find((s) => s.id === id)!;
   const picksFor = (id: string) => { const c = saved.picks[id]; return Array.isArray(c) ? c : []; };
@@ -435,9 +426,6 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                   className="shrink-0 w-11 h-11 rounded-xl border-2 border-[var(--gb-border)] flex items-center justify-center text-[var(--gb-text)] hover:border-[var(--gb-text)]">
                   <Search className="w-5 h-5" aria-hidden="true" />
                 </button>
-                {!allDone && (
-                  <button type="button" onClick={nextUp} aria-label="Next up" className="shrink-0 min-h-[44px] rounded-xl bg-[var(--gb-primary)] px-3 sm:px-4 font-black text-[var(--gb-bg)]"><span className="hidden sm:inline">Next up </span>→</button>
-                )}
               </div>
               <div className="mt-3 grid grid-cols-3 gap-2" role="tablist" aria-label="Views">
                 {([['ballot', 'My Ballot'], ['plan', 'Plan to vote'], ['share', 'Save & share']] as const).map(([id, label]) => (
@@ -457,24 +445,15 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                     <p className="font-black">Load progress from your saved link?</p>
                     <p className="text-[15px] text-[var(--gb-text)]">It has {Object.keys(incoming.picks).length} decisions. This device has {Object.keys(saved.picks).length}. Loading replaces what’s here.</p>
                     <div className="flex flex-wrap gap-2">
-                      <button type="button" onClick={() => { setSaved(incoming); setIncoming(null); setWelcomeBack(true); }} className="min-h-[44px] rounded-xl bg-[var(--gb-blue-hi)] px-4 font-black text-[var(--gb-bg)]">Load my saved link</button>
+                      <button type="button" onClick={() => { setSaved(incoming); setIncoming(null); }} className="min-h-[44px] rounded-xl bg-[var(--gb-blue-hi)] px-4 font-black text-[var(--gb-bg)]">Load my saved link</button>
                       <button type="button" onClick={() => setIncoming(null)} className="min-h-[44px] rounded-xl border-2 border-[var(--gb-text)] px-4 font-bold">Keep this device’s</button>
                     </div>
                   </div>
                 )}
                 {change && <ChangeReport change={change} onDismiss={() => setChange(null)} onNext={() => { setChange(null); nextUp(); }} />}
-                {welcomeBack && !change && !allDone && done > 0 && (
-                  <div className="rounded-2xl bg-[var(--gb-primary)] p-4 text-[var(--gb-bg)] space-y-3">
-                    <p className="text-lg font-black leading-snug">Welcome back! You’re {done} of {total} done.</p>
-                    <div className="flex flex-wrap gap-2">
-                      <button type="button" onClick={() => { setWelcomeBack(false); nextUp(); }} className="min-h-[44px] rounded-xl bg-[var(--gb-bg)] px-4 font-black text-[var(--gb-text)]">Pick up where I left off →</button>
-                      <button type="button" onClick={() => setWelcomeBack(false)} className="min-h-[44px] rounded-xl border-2 border-[var(--gb-bg)] px-4 font-bold">Dismiss</button>
-                    </div>
-                  </div>
-                )}
                 {updates.length > 0 && <SinceLastVisit changes={updates} since={lastSeen!} picks={saved.picks} onJump={(id) => jumpTo(sectionFor(id), id)} onDismiss={() => setLastSeen(undefined)} />}
                 {total > 0 && (
-                  <ProgressCard levels={sections} done={done} total={total} ctx={gameCtx} todayCount={todayCount} streakDays={streakDays}
+                  <ProgressCard ctx={gameCtx} todayCount={todayCount}
                     onLevel={(id) => { const s = sections.find((x) => x.id === id)!; jumpTo(id, s.ids.find((i) => !isDecided(saved.picks[i])) ?? s.ids[0]); }} />
                 )}
                 <WhereYouVote districts={districts} chicago={chicago} cook={cook} onChange={changeAddress} />
@@ -524,10 +503,6 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                     </section>
                   );
                 })}
-
-                <Laws laws={data.govbot.laws} asOf={data.govbot.asOf} />
-                <NextElectionNote chicago={districts ? chicago : undefined} city={data.govbot.city} districts={districts} />
-                <Sources />
               </div>
             )}
 
@@ -577,6 +552,13 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
             </div>
           </>
         )}
+
+        {/* Always last, above the footer, on every screen. */}
+        <div className="max-w-[1100px] mx-auto mt-12 space-y-8">
+          <Laws laws={data.govbot.laws} asOf={data.govbot.asOf} />
+          <Sources />
+          <NextElectionNote chicago={districts ? chicago : undefined} city={data.govbot.city} districts={districts} />
+        </div>
       </div>
 
       {/* Print view: the voter's picks, in ballot order, to take into the booth. */}
@@ -697,8 +679,6 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
       <button type="button" onClick={onBrowse} className="min-h-[44px] font-bold text-[var(--gb-text)] underline underline-offset-4">
         Or browse every race in Cook County →
       </button>
-      <NextElectionNote />
-      <Sources />
     </div>
   );
 }
