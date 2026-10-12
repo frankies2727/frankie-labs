@@ -5,6 +5,9 @@ import { researchLinks } from './research';
 import { money, type Choice } from './store';
 import type { Candidate, Measure, Race, Retention } from './types';
 
+/** Race cards take turns in these six for their borders (lab palette). */
+export const RACE_ACCENTS = ['#5EBD3E', '#FFB900', '#F78200', '#E23838', '#973999', '#009CDF'];
+
 const AREA_LABEL: Record<string, string> = {
   cd: 'Congressional District', sldu: 'State Senate District', sldl: 'State House District',
   commissioner: 'County Board District', bor: 'Board of Review District', subcircuit: 'Judicial Subcircuit', school: 'School Subdistrict',
@@ -105,6 +108,8 @@ function MoneyBars({ c, max }: { c: Candidate; max: number }) {
 // ---- race card -------------------------------------------------------------
 
 interface RaceProps {
+  /** Border colour, from RACE_ACCENTS. */
+  accent: string;
   key?: string;
   race: Race;
   color: string;
@@ -120,7 +125,7 @@ interface RaceProps {
   onCompare: (race: Race) => void;
 }
 
-export const RaceCard = memo(function RaceCard({ race, color, ink, numbered, choice, onChoose: chooseFor, onInfo, onCompare }: RaceProps) {
+export const RaceCard = memo(function RaceCard({ accent, race, color, ink, numbered, choice, onChoose: chooseFor, onInfo, onCompare }: RaceProps) {
   const onChoose = (c: Choice) => chooseFor(race.id, c);
   const picked = Array.isArray(choice) ? choice : [];
   const toggle = (ballot: number) => {
@@ -132,8 +137,7 @@ export const RaceCard = memo(function RaceCard({ race, color, ink, numbered, cho
   const decided = choice === 'skip' || picked.length > 0;
 
   return (
-    <article id={`race-${race.id}`} className="scroll-mt-[16rem] rounded-2xl border-2 bg-[var(--gb-surface)] overflow-hidden" style={{ borderColor: decided ? color : 'var(--gb-border)' }}>
-      <div className="h-1.5" style={{ background: color }} />
+    <article id={`race-${race.id}`} className="scroll-mt-[16rem] rounded-2xl border-[3px] bg-[var(--gb-surface)] overflow-hidden" style={{ borderColor: accent }}>
       <div className="p-5 space-y-4">
         <header className="space-y-2">
           <div className="flex flex-wrap items-center gap-2">
@@ -256,7 +260,7 @@ export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, 
 
 // ---- head-to-head --------------------------------------------------------------
 
-export function Compare({ race, color, ink, numbered, picked, onPick, onClose }: { race: Race; color: string; ink: string; numbered: boolean; picked: number[]; onPick: (ballot: number) => void; onClose: () => void }) {
+export function Compare({ race, color, ink, numbered, picked, onPick, onInfo, onClose }: { race: Race; color: string; ink: string; numbered: boolean; picked: number[]; onPick: (ballot: number) => void; onInfo: (c: Candidate) => void; onClose: () => void }) {
   const max = Math.max(1, ...race.candidates.map((c) => c.money ? Math.max(c.money.raised, c.money.spent, c.money.cash) : 0));
   const anyMoney = race.candidates.some((c) => c.money);
   return (
@@ -278,10 +282,13 @@ export function Compare({ race, color, ink, numbered, picked, onPick, onClose }:
                   <div className="flex justify-between gap-2"><dt className="text-[var(--gb-text)]">Incumbent</dt><dd className="font-bold text-[var(--gb-text)]">{c.incumbent ? 'Yes' : 'No'}</dd></div>
                 </dl>
                 {anyMoney && (c.money ? <MoneyBars c={c} max={max} /> : <p className="text-sm text-[var(--gb-text)]">No campaign reports found.</p>)}
+                <button type="button" onClick={() => onInfo(c)} className="mt-auto inline-flex items-center justify-center gap-1.5 min-h-[44px] rounded-xl border-2 border-[var(--gb-border)] bg-[var(--kyb-chip)] font-bold text-[var(--gb-text)] hover:border-[var(--gb-text)]">
+                  <Info className="w-4 h-4" aria-hidden="true" /> Details
+                </button>
                 <button
                   type="button"
                   onClick={() => onPick(c.ballot)}
-                  className="mt-auto min-h-[44px] rounded-xl font-bold"
+                  className="min-h-[44px] rounded-xl font-bold"
                   style={on ? { background: color, color: ink } : { border: '2px solid var(--gb-text)', color: 'var(--gb-text)' }}
                 >
                   {on ? '✓ On My Ballot' : 'Pick'}
@@ -292,17 +299,17 @@ export function Compare({ race, color, ink, numbered, picked, onPick, onClose }:
         </div>
       </div>
       {!anyMoney && <p className="mt-4 text-[15px] text-[var(--gb-text)]">No campaign reports found for anyone in this race this cycle.</p>}
-      <p className="mt-4 text-[15px] text-[var(--gb-text)]">Money and incumbency come from official FEC and Illinois State Board of Elections records. Tap ⓘ on a candidate for donors, bio and campaign site.</p>
+      <p className="mt-4 text-[15px] text-[var(--gb-text)]">Money and incumbency come from official FEC and Illinois State Board of Elections records. Tap “ⓘ Details” under a name for donors, background and their campaign site.</p>
     </Dialog>
   );
 }
 
 // ---- retention & referenda -------------------------------------------------------
 
-export const RetentionCard = memo(function RetentionCard({ r, choice, onChoose: chooseFor }: { key?: string; r: Retention; choice: Choice | undefined; onChoose: (id: string, c: Choice) => void }) {
+export const RetentionCard = memo(function RetentionCard({ accent, r, choice, onChoose: chooseFor }: { key?: string; accent: string; r: Retention; choice: Choice | undefined; onChoose: (id: string, c: Choice) => void }) {
   const onChoose = (c: Choice) => chooseFor(r.id, c);
   return (
-    <div id={`race-${r.id}`} className="scroll-mt-[16rem] rounded-2xl border-2 bg-[var(--gb-surface)] p-4 space-y-3" style={{ borderColor: choice ? 'var(--kyb-gold)' : 'var(--gb-border)' }}>
+    <div id={`race-${r.id}`} className="scroll-mt-[16rem] rounded-2xl border-[3px] bg-[var(--gb-surface)] p-4 space-y-3" style={{ borderColor: accent }}>
       <div>
         <p className="font-black text-[var(--gb-text)] leading-snug">{r.judge}</p>
         <p className="text-sm text-[var(--gb-text)]">{r.court} · keep this judge?</p>
@@ -320,10 +327,10 @@ const SCOPE: Record<Measure['scope']['type'], (m: Measure) => string> = {
   named: (m) => `Only inside the ${(m.scope as { name: string }).name}`,
 };
 
-export const MeasureCard = memo(function MeasureCard({ m, choice, onChoose: chooseFor }: { key?: string; m: Measure; choice: Choice | undefined; onChoose: (id: string, c: Choice) => void }) {
+export const MeasureCard = memo(function MeasureCard({ accent, m, choice, onChoose: chooseFor }: { key?: string; accent: string; m: Measure; choice: Choice | undefined; onChoose: (id: string, c: Choice) => void }) {
   const onChoose = (c: Choice) => chooseFor(m.id, c);
   return (
-    <article id={`race-${m.id}`} className="scroll-mt-[16rem] rounded-2xl border-2 bg-[var(--gb-surface)] p-5 space-y-4" style={{ borderColor: choice ? 'var(--gb-red)' : 'var(--gb-border)' }}>
+    <article id={`race-${m.id}`} className="scroll-mt-[16rem] rounded-2xl border-[3px] bg-[var(--gb-surface)] p-5 space-y-4" style={{ borderColor: accent }}>
       <div className="space-y-2">
         <Badge>{SCOPE[m.scope.type](m)}</Badge>
         <h3 className="text-lg font-black leading-tight text-[var(--gb-text)]">{m.title}</h3>

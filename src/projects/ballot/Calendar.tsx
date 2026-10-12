@@ -100,7 +100,7 @@ export function NextElectionNote({ chicago, city, districts = null }: { chicago?
   if (days < 0) return null;
   const canOpen = city && chicago !== false;
   return (
-    <aside aria-label="Next election" className="rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] px-4 py-3 space-y-3">
+    <aside id="kyb-next" aria-label="Next election" className="rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] px-4 py-3 space-y-3">
       <div className="flex items-center gap-4">
         <div className="min-w-0 flex-1 space-y-2">
           <p className="text-[15px] leading-relaxed text-[var(--gb-text)]">
