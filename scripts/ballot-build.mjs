@@ -22,6 +22,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { changeLog } from './ballot/changes.mjs';
 import { govbotSlices } from './ballot/govbot.mjs';
+import { addSocial } from './ballot/social.mjs';
 import { parseCandidateList } from './ballot/candidates.mjs';
 import { parseWeball, addFederalMoney } from './ballot/fec.mjs';
 import { ISBE_BASE, ISBE_FILES, addStateMoney } from './ballot/isbe.mjs';
@@ -134,6 +135,9 @@ async function main() {
   const state = await addStateMoney(ballot.races, work);
   console.log(`Illinois: matched ${state.matched}/${state.total} state & local candidates`);
   for (const line of state.log) console.log('  ' + line);
+  const social = await addSocial(ballot.races, work);
+  console.log(`Social accounts: ${social.withSocial}/${social.total} candidates`);
+  for (const line of social.log) console.log('  ' + line);
 
   const sites = await earlyVotingSites();
   await browser?.close();

@@ -86,8 +86,26 @@ export async function districtsAt(lat: number, lng: number): Promise<Districts> 
   // The Cook maps are clipped to a box around the county, so outside Cook
   // only the statewide maps can be trusted.
   if (!inCook(out)) return lookIn(stateDistricts(), lat, lng);
-  if (out.ward) out.city = 'chicago'; // Chicago-only contests key off this
+  if (out.ward) {
+    out.city = 'chicago'; // Chicago-only contests key off this
+    // Only precincts with a precinct-level question are pre-baked (all 1,291
+    // would dwarf the rest of the maps), so ask the City for the others.
+    out.precinct ??= await chicagoPrecinct(lat, lng);
+  }
   return out;
+}
+
+const PRECINCTS = 'https://data.cityofchicago.org/resource/i8fv-xe4b.json';
+/** "ward-precinct" from the City's 2025 precinct map, or nothing if it doesn't answer. */
+async function chicagoPrecinct(lat: number, lng: number): Promise<string | undefined> {
+  try {
+    const q = new URLSearchParams({ $select: 'ward,precinct', $where: `intersects(the_geom,'POINT(${lng} ${lat})')` });
+    const res = await fetch(`${PRECINCTS}?${q}`, { signal: AbortSignal.timeout(6000) });
+    const [hit] = (await res.json()) as { ward?: string; precinct?: string }[];
+    return hit?.ward && hit.precinct && /^\d+$/.test(hit.ward) && /^\d+$/.test(hit.precinct) ? `${+hit.ward}-${+hit.precinct}` : undefined;
+  } catch {
+    return undefined; // a missing precinct only hides that one chip
+  }
 }
 
 /** Every Chicago address is in a ward; every Cook address in a County Board district. */

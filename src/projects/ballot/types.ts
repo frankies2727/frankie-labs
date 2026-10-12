@@ -26,10 +26,14 @@ export interface Candidate {
   party: string;
   /** Only set when official records (FEC or ISBE) say so. */
   incumbent?: boolean;
-  /** Campaign website from the candidate's own filing with the State Board. */
+  /** Campaign website: their State Board filing, else their official homepage. */
   website?: string;
   money?: Money;
+  /** Their social media accounts (scripts/ballot/social.mjs says where each comes from). */
+  social?: Partial<Record<SocialPlatform, string>>;
 }
+
+export type SocialPlatform = 'x' | 'facebook' | 'instagram' | 'youtube' | 'tiktok' | 'bluesky' | 'threads' | 'linkedin';
 
 export interface Race {
   id: string;
