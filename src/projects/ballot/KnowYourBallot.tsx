@@ -4,6 +4,7 @@ import rawData from './data/ballot.json';
 import { ballotFor, ballotIdsFor, districtsAt, geocode, inChicago, inCook, prefetchDistricts } from './lookup';
 import { RETENTION_EXPLAINER } from './offices';
 import { BallotSearch, type Hit } from './Search';
+import { ClearButton } from '../../components/ClearButton';
 import { SinceLastVisit } from './Updates';
 import { KeyDates, NextElectionNote } from './Calendar';
 import { LINKS, PlanToVote } from './PlanToVote';
@@ -535,7 +536,8 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
             <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#F5F6F7] pointer-events-none" aria-hidden="true" />
             <input id="kyb-address" type="text" autoComplete="street-address" value={address} onChange={(e) => setAddress(e.target.value)}
               placeholder="e.g. 121 N LaSalle St or 1501 Sherman Ave, Evanston"
-              className="w-full min-h-[56px] rounded-2xl border-2 border-[#2E343F] bg-[#1A1D24] pl-12 pr-4 text-lg font-bold text-[#F5F6F7] focus:border-[#009CDF] focus:outline-none" />
+              className="w-full min-h-[56px] rounded-2xl border-2 border-[#2E343F] bg-[#1A1D24] pl-12 pr-12 text-lg font-bold text-[#F5F6F7] focus:border-[#009CDF] focus:outline-none" />
+            {address && <ClearButton onClear={() => setAddress('')} className="right-2 text-[#F5F6F7] hover:bg-[#262B34]" />}
           </div>
           <button type="submit" disabled={status.busy} className="shrink-0 min-h-[56px] rounded-2xl bg-[#009CDF] px-5 font-black text-[#0F1117] disabled:cursor-wait inline-flex items-center gap-2">
             <Search className="w-5 h-5" aria-hidden="true" /><span className="hidden sm:inline">{status.busy ? 'Finding…' : 'Find my ballot'}</span><span className="sm:hidden">{status.busy ? '…' : 'Go'}</span>

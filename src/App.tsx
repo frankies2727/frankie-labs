@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { EXTERNAL_GAMES, GAMES, externalGameById, hasGame, loadGame } from './games';
 import { PROJECTS, projectById } from './projects';
+import { BackToTop } from './components/BackToTop';
 import { Gallery } from './components/Gallery';
 import { ProjectsGallery } from './components/ProjectsGallery';
 import { navigate, useRoute } from './lib/router';
@@ -66,6 +67,12 @@ function PlayGame({ id }: { key?: string; id: string }) {
 // path still resolves (see the canonicalising effect below) so links shared
 // before the swap keep working.
 export default function App() {
+  // Games fill the screen and have their own controls.
+  const playing = useRoute().startsWith('play/');
+  return <><Screen />{!playing && <BackToTop />}</>;
+}
+
+function Screen() {
   const route = useRoute();
   const seg = route.split('/').filter(Boolean);
 

@@ -1,4 +1,5 @@
-import { Search as SearchIcon, X } from 'lucide-react';
+import { Search as SearchIcon } from 'lucide-react';
+import { ClearButton } from '../../components/ClearButton';
 import { useMemo, useState } from 'react';
 import type { Measure, Race, Retention } from './types';
 
@@ -71,11 +72,7 @@ export function BallotSearch({ ballot, everywhere, onJump, label }: Props) {
           placeholder="Search races and names"
           className="w-full min-h-[52px] rounded-2xl border-2 border-[#2E343F] bg-[#1A1D24] pl-12 pr-12 font-bold text-[#F5F6F7] focus:border-[#009CDF] focus:outline-none [&::-webkit-search-cancel-button]:hidden"
         />
-        {q && (
-          <button type="button" onClick={() => setQ('')} aria-label="Clear search" className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center text-[#F5F6F7] hover:bg-[#262B34]">
-            <X className="w-5 h-5" />
-          </button>
-        )}
+        {q && <ClearButton onClear={() => setQ('')} className="right-2 text-[#F5F6F7] hover:bg-[#262B34]" />}
       </div>
 
       {q && (

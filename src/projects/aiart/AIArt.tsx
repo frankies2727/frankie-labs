@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import {
   ArrowLeft, AtSign, Check, ChevronDown, Copy, Cpu, ExternalLink, Link2, Search, Shuffle, Tag, User, X,
 } from 'lucide-react';
+import { ClearButton } from '../../components/ClearButton';
 
 // ---------------------------------------------------------------------------
 // AI Art — a gallery of AI-generated images and the exact prompts behind them,
@@ -501,13 +502,9 @@ export function AIArt({ onExit }: { onExit: () => void }) {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search prompts…"
-                className="w-full bg-neutral-900 border border-white/10 rounded-full pl-9 pr-8 py-2 text-sm text-white placeholder:text-neutral-100 outline-none focus:border-[#ccff00]/60 transition-colors"
+                className="w-full bg-neutral-900 border border-white/10 rounded-full pl-9 pr-10 py-2 text-sm text-white placeholder:text-neutral-100 outline-none focus:border-[#ccff00]/60 transition-colors"
               />
-              {query && (
-                <button onClick={() => setQuery('')} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-neutral-100 hover:text-white">
-                  <X className="w-3.5 h-3.5" />
-                </button>
-              )}
+              {query && <ClearButton onClear={() => setQuery('')} className="right-0 text-neutral-100 hover:text-white" />}
             </div>
           </div>
 

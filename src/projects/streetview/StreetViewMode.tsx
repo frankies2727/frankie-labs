@@ -14,6 +14,7 @@ import {
   ExternalLink,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { ClearButton } from '../../components/ClearButton';
 
 interface HistoricalImage {
   pano: string;
@@ -682,10 +683,11 @@ export function StreetViewMode() {
               <input
                 type="text"
                 placeholder="Enter an address (e.g. 1 Infinite Loop, Cupertino)"
-                className="w-full bg-neutral-900 border border-neutral-700 rounded-full py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all placeholder-neutral-500"
+                className="w-full bg-neutral-900 border border-neutral-700 rounded-full py-2.5 pl-10 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all placeholder-neutral-500"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
               />
+              {address && <ClearButton onClear={() => setAddress('')} className="right-0 text-neutral-100 hover:text-white" />}
             </div>
             <button
               type="submit"
