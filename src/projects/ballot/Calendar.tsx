@@ -12,22 +12,22 @@ function Group({ title, dates, now, info }: { title: string; dates: KeyDate[]; n
   if (!ahead.length) return null;
   return (
     <div className="space-y-2">
-      <h3 className="font-black text-[#F5F6F7]">{title}</h3>
-      <ul className="rounded-2xl border-2 border-[#2E343F] bg-[#1A1D24] divide-y divide-[#262B34]">
+      <h3 className="font-black text-[var(--gb-text)]">{title}</h3>
+      <ul className="rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] divide-y divide-[var(--kyb-chip)]">
         {ahead.map((d) => {
           const days = daysUntil(d.date, now);
           return (
             <li key={d.id} className="flex items-center gap-3 px-4 py-3">
               <div className="w-20 shrink-0">
-                <p className="font-black text-[#F5F6F7] leading-tight">{dayLabel(d.date).replace(/^\w+, /, '')}</p>
-                <p className={`text-sm font-bold ${days <= 1 ? 'text-[#FFB900]' : 'text-[#E2E4E8]'}`}>{when(days)}</p>
+                <p className="font-black text-[var(--gb-text)] leading-tight">{dayLabel(d.date).replace(/^\w+, /, '')}</p>
+                <p className={`text-sm font-bold ${days <= 1 ? 'text-[var(--gb-amber-hi)]' : 'text-[var(--gb-text)]'}`}>{when(days)}</p>
               </div>
               <div className="min-w-0 flex-1">
-                <p className="font-bold text-[#F5F6F7] leading-snug">{d.title}</p>
-                {d.detail && <p className="text-sm text-[#E2E4E8]">{d.detail}</p>}
+                <p className="font-bold text-[var(--gb-text)] leading-snug">{d.title}</p>
+                {d.detail && <p className="text-sm text-[var(--gb-text)]">{d.detail}</p>}
               </div>
               <button type="button" onClick={() => downloadReminder(d, info)} aria-label={`Add to calendar: ${d.title}, ${dayLabel(d.date)}`}
-                className="shrink-0 w-11 h-11 rounded-xl border-2 border-[#2E343F] flex items-center justify-center text-[#F5F6F7] hover:border-[#F5F6F7]">
+                className="shrink-0 w-11 h-11 rounded-xl border-2 border-[var(--gb-border)] flex items-center justify-center text-[var(--gb-text)] hover:border-[var(--gb-text)]">
                 <CalendarPlus className="w-5 h-5" aria-hidden="true" />
               </button>
             </li>
@@ -72,19 +72,19 @@ function CityRaces({ city, districts }: { city: CityRace[]; districts: Districts
     || (r.group === 'council' && r.district === districts?.ward)
     || (r.group === 'police_district_council' && r.district === districts?.police));
   return (
-    <div className="space-y-3 border-t-2 border-[#262B34] pt-3">
-      {mine.every((r) => !r.candidates.length) && <p className="text-[15px] font-bold text-[#F5F6F7]">{NO_CANDIDATES_YET}</p>}
+    <div className="space-y-3 border-t-2 border-[var(--kyb-chip)] pt-3">
+      {mine.every((r) => !r.candidates.length) && <p className="text-[15px] font-bold text-[var(--gb-text)]">{NO_CANDIDATES_YET}</p>}
       <ul className="space-y-3">
         {mine.map((r) => (
-          <li key={r.id} className="text-[15px] leading-relaxed text-[#E2E4E8]">
-            <p className="font-black text-[#F5F6F7]">{cityTitle(r)}</p>
+          <li key={r.id} className="text-[15px] leading-relaxed text-[var(--gb-text)]">
+            <p className="font-black text-[var(--gb-text)]">{cityTitle(r)}</p>
             {r.incumbent && <p>Now: {r.incumbent}</p>}
             {r.why && <p>{r.why}</p>}
-            {r.candidates.length > 0 && <p className="font-bold text-[#F5F6F7]">Running: {r.candidates.join(', ')}</p>}
+            {r.candidates.length > 0 && <p className="font-bold text-[var(--gb-text)]">Running: {r.candidates.join(', ')}</p>}
           </li>
         ))}
       </ul>
-      {!districts && <p className="text-[15px] text-[#E2E4E8]">Plus a race for your ward’s alderperson and your police district council. Enter your address to see yours.</p>}
+      {!districts && <p className="text-[15px] text-[var(--gb-text)]">Plus a race for your ward’s alderperson and your police district council. Enter your address to see yours.</p>}
     </div>
   );
 }
@@ -100,21 +100,21 @@ export function NextElectionNote({ chicago, city, districts = null }: { chicago?
   if (days < 0) return null;
   const canOpen = city && chicago !== false;
   return (
-    <aside aria-label="Next election" className="rounded-2xl border-2 border-[#2E343F] bg-[#1A1D24] px-4 py-3 space-y-3">
+    <aside aria-label="Next election" className="rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] px-4 py-3 space-y-3">
       <div className="flex items-center gap-4">
         <div className="min-w-0 flex-1 space-y-2">
-          <p className="text-[15px] leading-relaxed text-[#E2E4E8]">
-            <strong className="text-[#F5F6F7]">Get ready for Feb 23, 2027 too!</strong>{' '}
+          <p className="text-[15px] leading-relaxed text-[var(--gb-text)]">
+            <strong className="text-[var(--gb-text)]">Get ready for Feb 23, 2027 too!</strong>{' '}
             {NEXT_UP[chicago === undefined ? 'either' : chicago ? 'chicago' : 'suburbs']}{' '}
             We’ll be here with everything nice and tidy for you.
           </p>
           {canOpen && (
-            <button type="button" onClick={() => setOpen(!open)} aria-expanded={open} className="min-h-[44px] font-bold text-[#F5F6F7] underline underline-offset-2">
+            <button type="button" onClick={() => setOpen(!open)} aria-expanded={open} className="min-h-[44px] font-bold text-[var(--gb-text)] underline underline-offset-2">
               {open ? 'Hide' : 'See what’s on it'}
             </button>
           )}
         </div>
-        <p className="shrink-0 text-center text-[#F5F6F7]">
+        <p className="shrink-0 text-center text-[var(--gb-text)]">
           <span className="block text-2xl font-black leading-none">{days}</span>
           <span className="text-sm font-bold">day{days === 1 ? '' : 's'}</span>
         </p>

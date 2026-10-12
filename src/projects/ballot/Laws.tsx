@@ -21,15 +21,15 @@ function Bill({ b }: { key?: string; b: Law }) {
   const slip = safeUrl(b.hearing?.witness_slip_url);
   return (
     <li className="px-4 py-3 space-y-1">
-      <p className="font-bold text-[#F5F6F7] leading-snug">
+      <p className="font-bold text-[var(--gb-text)] leading-snug">
         <span className="font-black">{b.id}</span>{' '}
         {url
-          ? <a href={url} target="_blank" rel="noreferrer noopener" className="underline underline-offset-2 hover:text-[#009CDF]">{b.title}<ExternalLink className="inline w-3.5 h-3.5 ml-1 align-[-2px]" aria-hidden="true" /></a>
+          ? <a href={url} target="_blank" rel="noreferrer noopener" className="underline underline-offset-2 hover:text-[var(--gb-link)]">{b.title}<ExternalLink className="inline w-3.5 h-3.5 ml-1 align-[-2px]" aria-hidden="true" /></a>
           : b.title}
       </p>
-      {b.latest_action && <p className="text-sm text-[#E2E4E8]">Latest, {day(b.latest_action)}: {b.latest_action_desc}</p>}
+      {b.latest_action && <p className="text-sm text-[var(--gb-text)]">Latest, {day(b.latest_action)}: {b.latest_action_desc}</p>}
       {b.hearing && (
-        <p className="text-sm font-bold text-[#FFB900]">
+        <p className="text-sm font-bold text-[var(--gb-amber-hi)]">
           Up for a hearing{b.hearing.committee ? ` in ${b.hearing.committee}` : ''}{b.hearing.scheduled_display ? `, ${b.hearing.scheduled_display}` : ''}.
           {slip && <> <a href={slip} target="_blank" rel="noreferrer noopener" className="underline">Have your say (witness slip)</a></>}
         </p>
@@ -47,22 +47,22 @@ export function Laws({ laws, asOf }: { laws: Law[]; asOf: string }) {
   return (
     <section aria-labelledby="kyb-laws" className="space-y-3">
       <h2 id="kyb-laws" className="text-2xl font-black">🏛️ Laws that shape your ballot</h2>
-      <p className="text-[15px] leading-relaxed text-[#E2E4E8]">Bills in Springfield that change how Illinois votes and runs its schools, newest action first. From <a href="https://github.com/chihacknight/govbot" target="_blank" rel="noreferrer noopener" className="font-bold text-[#F5F6F7] underline">govbot</a>, updated {day(asOf)}.</p>
+      <p className="text-[15px] leading-relaxed text-[var(--gb-text)]">Bills in Springfield that change how Illinois votes and runs its schools, newest action first. From <a href="https://github.com/chihacknight/govbot" target="_blank" rel="noreferrer noopener" className="font-bold text-[var(--gb-text)] underline">govbot</a>, updated {day(asOf)}.</p>
       <div className="flex flex-wrap gap-2" role="tablist" aria-label="Bill topics">
         {TOPICS.map((t, i) => (
           <button key={t.tag} type="button" role="tab" aria-selected={topic === i} onClick={() => { setTopic(i); setAll(false); }}
-            className={`min-h-[44px] rounded-full border-2 px-4 font-bold ${topic === i ? 'border-[#F5F6F7] bg-[#F5F6F7] text-[#0F1117]' : 'border-[#2E343F] text-[#F5F6F7] hover:border-[#F5F6F7]'}`}>
+            className={`min-h-[44px] rounded-full border-2 px-4 font-bold ${topic === i ? 'border-[var(--gb-text)] bg-[var(--gb-text)] text-[var(--gb-bg)]' : 'border-[var(--gb-border)] text-[var(--gb-text)] hover:border-[var(--gb-text)]'}`}>
             {t.label} ({counts[i]})
           </button>
         ))}
       </div>
       {list.length ? (
-        <ul className="rounded-2xl border-2 border-[#2E343F] bg-[#1A1D24] divide-y divide-[#262B34]">
+        <ul className="rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] divide-y divide-[var(--kyb-chip)]">
           {(all ? list : list.slice(0, FIRST)).map((b) => <Bill key={b.id} b={b} />)}
         </ul>
-      ) : <p className="text-[15px] text-[#E2E4E8]">No recent bills on this topic.</p>}
+      ) : <p className="text-[15px] text-[var(--gb-text)]">No recent bills on this topic.</p>}
       {list.length > FIRST && (
-        <button type="button" onClick={() => setAll(!all)} className="min-h-[44px] rounded-xl border-2 border-[#F5F6F7] px-4 font-bold text-[#F5F6F7]">
+        <button type="button" onClick={() => setAll(!all)} className="min-h-[44px] rounded-xl border-2 border-[var(--gb-text)] px-4 font-bold text-[var(--gb-text)]">
           {all ? 'Show fewer' : `Show all ${list.length}`}
         </button>
       )}

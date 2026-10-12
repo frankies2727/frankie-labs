@@ -18,7 +18,7 @@ const areaLabel = (r: Race) => {
 
 // ---- shared bits ---------------------------------------------------------
 
-function Badge({ children, tone = '#262B34', ink = '#F5F6F7' }: { children: ReactNode; tone?: string; ink?: string }) {
+function Badge({ children, tone = 'var(--kyb-chip)', ink = 'var(--gb-text)' }: { children: ReactNode; tone?: string; ink?: string }) {
   return <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-bold whitespace-nowrap" style={{ background: tone, color: ink }}>{children}</span>;
 }
 
@@ -41,11 +41,11 @@ function Dialog({ title, onClose, children }: { title: string; onClose: () => vo
         aria-label={title}
         tabIndex={-1}
         onClick={(e) => e.stopPropagation()}
-        className="w-full sm:max-w-2xl max-h-[92dvh] overflow-y-auto rounded-t-3xl sm:rounded-3xl border-2 border-[#2E343F] bg-[#14171E] p-6 outline-none"
+        className="w-full sm:max-w-2xl max-h-[92dvh] overflow-y-auto rounded-t-3xl sm:rounded-3xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface-2)] p-6 outline-none"
       >
         <div className="flex items-start justify-between gap-4 mb-5">
-          <h2 className="text-2xl font-black leading-tight text-[#F5F6F7]">{title}</h2>
-          <button type="button" onClick={onClose} aria-label="Close" className="shrink-0 w-11 h-11 rounded-full bg-[#262B34] flex items-center justify-center text-[#F5F6F7] hover:bg-[#323A47]">
+          <h2 className="text-2xl font-black leading-tight text-[var(--gb-text)]">{title}</h2>
+          <button type="button" onClick={onClose} aria-label="Close" className="shrink-0 w-11 h-11 rounded-full bg-[var(--kyb-chip)] flex items-center justify-center text-[var(--gb-text)] hover:bg-[var(--kyb-chip-hi)]">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -58,9 +58,9 @@ function Dialog({ title, onClose, children }: { title: string; onClose: () => vo
 /** Yes / No / Skip for retentions and referenda. */
 function YesNo({ value, onChange, label }: { value: Choice | undefined; onChange: (c: Choice) => void; label: string }) {
   const opts: { v: Choice; text: string; on: string }[] = [
-    { v: 'yes', text: 'Yes', on: 'bg-[#5EBD3E] border-[#5EBD3E] text-[#0F1117]' },
-    { v: 'no', text: 'No', on: 'bg-[#E23838] border-[#E23838] text-white' },
-    { v: 'skip', text: 'Skip', on: 'bg-[#F5F6F7] border-[#F5F6F7] text-[#0F1117]' },
+    { v: 'yes', text: 'Yes', on: 'bg-[var(--gb-primary)] border-[var(--gb-primary)] text-[var(--gb-bg)]' },
+    { v: 'no', text: 'No', on: 'bg-[var(--gb-red)] border-[var(--gb-red)] text-white' },
+    { v: 'skip', text: 'Skip', on: 'bg-[var(--gb-text)] border-[var(--gb-text)] text-[var(--gb-bg)]' },
   ];
   return (
     <div className="grid grid-cols-3 gap-2" role="radiogroup" aria-label={label}>
@@ -71,7 +71,7 @@ function YesNo({ value, onChange, label }: { value: Choice | undefined; onChange
           role="radio"
           aria-checked={value === o.v}
           onClick={() => onChange(o.v)}
-          className={`min-h-[44px] rounded-xl border-2 font-bold transition-colors ${value === o.v ? o.on : 'border-[#2E343F] bg-[#262B34] text-[#F5F6F7] hover:border-[#F5F6F7]'}`}
+          className={`min-h-[44px] rounded-xl border-2 font-bold transition-colors ${value === o.v ? o.on : 'border-[var(--gb-border)] bg-[var(--kyb-chip)] text-[var(--gb-text)] hover:border-[var(--gb-text)]'}`}
         >
           {o.text}
         </button>
@@ -83,21 +83,21 @@ function YesNo({ value, onChange, label }: { value: Choice | undefined; onChange
 function MoneyBars({ c, max }: { c: Candidate; max: number }) {
   if (!c.money) return null;
   const rows: [string, number, string][] = [
-    ['Raised', c.money.raised, '#5EBD3E'],
-    ['Spent', c.money.spent, '#F78200'],
-    ['Cash', c.money.cash, '#009CDF'],
+    ['Raised', c.money.raised, 'var(--gb-primary)'],
+    ['Spent', c.money.spent, 'var(--kyb-orange)'],
+    ['Cash', c.money.cash, 'var(--gb-blue-hi)'],
   ];
   return (
     <div className="space-y-2">
       {rows.map(([label, n, color]) => (
         <div key={label}>
-          <div className="flex justify-between gap-2 text-sm font-bold text-[#F5F6F7]"><span>{label}</span><span>{money(n)}</span></div>
-          <div className="h-2.5 rounded-full bg-[#262B34] overflow-hidden">
+          <div className="flex justify-between gap-2 text-sm font-bold text-[var(--gb-text)]"><span>{label}</span><span>{money(n)}</span></div>
+          <div className="h-2.5 rounded-full bg-[var(--kyb-chip)] overflow-hidden">
             <div className="h-full rounded-full" style={{ width: `${max ? Math.max(2, (Math.max(n, 0) / max) * 100) : 0}%`, background: color }} />
           </div>
         </div>
       ))}
-      <p className="text-xs text-[#E2E4E8]">{c.money.source === 'FEC' ? 'Federal Election Commission' : 'Illinois State Board of Elections'} reports, Jan 2025 through {c.money.through}. Cash is what’s left on hand.</p>
+      <p className="text-xs text-[var(--gb-text)]">{c.money.source === 'FEC' ? 'Federal Election Commission' : 'Illinois State Board of Elections'} reports, Jan 2025 through {c.money.through}. Cash is what’s left on hand.</p>
     </div>
   );
 }
@@ -132,17 +132,17 @@ export const RaceCard = memo(function RaceCard({ race, color, ink, numbered, cho
   const decided = choice === 'skip' || picked.length > 0;
 
   return (
-    <article id={`race-${race.id}`} className="scroll-mt-40 rounded-2xl border-2 bg-[#1A1D24] overflow-hidden" style={{ borderColor: decided ? color : '#2E343F' }}>
+    <article id={`race-${race.id}`} className="scroll-mt-[16rem] rounded-2xl border-2 bg-[var(--gb-surface)] overflow-hidden" style={{ borderColor: decided ? color : 'var(--gb-border)' }}>
       <div className="h-1.5" style={{ background: color }} />
       <div className="p-5 space-y-4">
         <header className="space-y-2">
           <div className="flex flex-wrap items-center gap-2">
             <Badge>{areaLabel(race)}</Badge>
             {race.voteFor > 1 && <Badge tone={color} ink={ink}>Pick up to {race.voteFor}</Badge>}
-            {decided && <Badge tone="#5EBD3E" ink="#0F1117">✓ Done</Badge>}
+            {decided && <Badge tone="var(--gb-primary)" ink="var(--gb-bg)">✓ Done</Badge>}
           </div>
-          <h3 className="text-xl font-black leading-tight text-[#F5F6F7]">{race.office}</h3>
-          <p className="text-[15px] leading-relaxed text-[#E2E4E8]">{explainOffice(race.office)}</p>
+          <h3 className="text-xl font-black leading-tight text-[var(--gb-text)]">{race.office}</h3>
+          <p className="text-[15px] leading-relaxed text-[var(--gb-text)]">{explainOffice(race.office)}</p>
         </header>
 
         <ul className="space-y-2">
@@ -156,21 +156,21 @@ export const RaceCard = memo(function RaceCard({ race, color, ink, numbered, cho
                   disabled={!on && full && race.voteFor > 1}
                   onClick={() => toggle(c.ballot)}
                   className="flex-1 min-w-0 flex items-center gap-3 rounded-xl border-2 px-3 py-2.5 text-left transition-colors disabled:cursor-not-allowed"
-                  style={on ? { borderColor: color, background: `${color}26` } : { borderColor: '#2E343F', background: '#262B34' }}
+                  style={on ? { borderColor: color, background: `color-mix(in srgb, ${color} 15%, transparent)` } : { borderColor: 'var(--gb-border)', background: 'var(--kyb-chip)' }}
                 >
-                  <span className="shrink-0 w-9 h-9 rounded-full border-2 flex items-center justify-center text-sm font-black" style={on ? { background: color, borderColor: color, color: ink } : { borderColor: '#F5F6F7', color: '#F5F6F7' }}>
+                  <span className="shrink-0 w-9 h-9 rounded-full border-2 flex items-center justify-center text-sm font-black" style={on ? { background: color, borderColor: color, color: ink } : { borderColor: 'var(--gb-text)', color: 'var(--gb-text)' }}>
                     {on ? <Check className="w-5 h-5" strokeWidth={3} /> : numbered ? c.ballot : ''}
                   </span>
                   <span className="min-w-0">
-                    <span className="block font-bold leading-snug text-[#F5F6F7]">{c.name}</span>
+                    <span className="block font-bold leading-snug text-[var(--gb-text)]">{c.name}</span>
                     <span className="flex flex-wrap gap-1.5 mt-1">
-                      <Badge tone="#0F1117">{c.party}</Badge>
-                      {c.incumbent && <Badge tone="#F5F6F7" ink="#0F1117">Incumbent</Badge>}
-                      {c.money && <Badge tone="#0F1117">{money(c.money.raised)} raised</Badge>}
+                      <Badge tone="var(--gb-bg)">{c.party}</Badge>
+                      {c.incumbent && <Badge tone="var(--gb-text)" ink="var(--gb-bg)">Incumbent</Badge>}
+                      {c.money && <Badge tone="var(--gb-bg)">{money(c.money.raised)} raised</Badge>}
                     </span>
                   </span>
                 </button>
-                <button type="button" onClick={() => onInfo(race, c)} aria-label={`About ${c.name}`} className="shrink-0 w-12 rounded-xl border-2 border-[#2E343F] bg-[#262B34] flex items-center justify-center text-[#F5F6F7] hover:border-[#F5F6F7]">
+                <button type="button" onClick={() => onInfo(race, c)} aria-label={`About ${c.name}`} className="shrink-0 w-12 rounded-xl border-2 border-[var(--gb-border)] bg-[var(--kyb-chip)] flex items-center justify-center text-[var(--gb-text)] hover:border-[var(--gb-text)]">
                   <Info className="w-5 h-5" />
                 </button>
               </li>
@@ -180,7 +180,7 @@ export const RaceCard = memo(function RaceCard({ race, color, ink, numbered, cho
 
         <footer className="flex flex-wrap items-center gap-2">
           {race.candidates.length > 1 && (
-            <button type="button" onClick={() => onCompare(race)} className="inline-flex items-center gap-2 min-h-[44px] rounded-xl border-2 border-[#F5F6F7] px-4 font-bold text-[#F5F6F7] hover:bg-[#262B34]">
+            <button type="button" onClick={() => onCompare(race)} className="inline-flex items-center gap-2 min-h-[44px] rounded-xl border-2 border-[var(--gb-text)] px-4 font-bold text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]">
               <Scale className="w-4 h-4" aria-hidden="true" /> Compare
             </button>
           )}
@@ -188,12 +188,12 @@ export const RaceCard = memo(function RaceCard({ race, color, ink, numbered, cho
             type="button"
             aria-pressed={choice === 'skip'}
             onClick={() => onChoose(choice === 'skip' ? [] : 'skip')}
-            className={`min-h-[44px] rounded-xl border-2 px-4 font-bold ${choice === 'skip' ? 'border-[#F5F6F7] bg-[#F5F6F7] text-[#0F1117]' : 'border-[#2E343F] text-[#F5F6F7] hover:border-[#F5F6F7]'}`}
+            className={`min-h-[44px] rounded-xl border-2 px-4 font-bold ${choice === 'skip' ? 'border-[var(--gb-text)] bg-[var(--gb-text)] text-[var(--gb-bg)]' : 'border-[var(--gb-border)] text-[var(--gb-text)] hover:border-[var(--gb-text)]'}`}
           >
             {choice === 'skip' ? 'Skipped' : 'Skip this one'}
           </button>
-          {race.candidates.length === 1 && <span className="text-sm text-[#E2E4E8]">Only one candidate is running.</span>}
-          {race.writeIn && <span className="text-sm text-[#E2E4E8]">Write-ins allowed.</span>}
+          {race.candidates.length === 1 && <span className="text-sm text-[var(--gb-text)]">Only one candidate is running.</span>}
+          {race.writeIn && <span className="text-sm text-[var(--gb-text)]">Write-ins allowed.</span>}
         </footer>
       </div>
     </article>
@@ -210,31 +210,31 @@ export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, 
           <Badge tone={color} ink={ink}>{race.office}</Badge>
           <Badge>{c.party}</Badge>
           {numbered && <Badge>Ballot #{c.ballot}</Badge>}
-          {c.incumbent && <Badge tone="#F5F6F7" ink="#0F1117">Incumbent</Badge>}
+          {c.incumbent && <Badge tone="var(--gb-text)" ink="var(--gb-bg)">Incumbent</Badge>}
         </div>
 
         <section className="space-y-3">
-          <h3 className="text-sm font-black uppercase tracking-widest text-[#F5F6F7]">💰 Campaign money</h3>
+          <h3 className="text-sm font-black uppercase tracking-widest text-[var(--gb-text)]">💰 Campaign money</h3>
           {c.money ? (
             <MoneyBars c={c} max={Math.max(c.money.raised, c.money.spent, c.money.cash)} />
           ) : (
-            <p className="text-[15px] text-[#E2E4E8]">{race.section === 'federal'
+            <p className="text-[15px] text-[var(--gb-text)]">{race.section === 'federal'
               ? 'No FEC filings found. Federal candidates who raise or spend under $5,000 don’t have to file.'
               : 'No campaign reports found for this cycle. Illinois candidates who raise or spend under $5,000 in a year don’t need a campaign committee.'}</p>
           )}
         </section>
 
         <section className="space-y-3">
-          <h3 className="text-sm font-black uppercase tracking-widest text-[#F5F6F7]">🔎 Dig deeper</h3>
+          <h3 className="text-sm font-black uppercase tracking-widest text-[var(--gb-text)]">🔎 Dig deeper</h3>
           <ul className="grid gap-2 sm:grid-cols-2">
             {researchLinks(c, race).map((l) => (
               <li key={l.label}>
-                <a href={l.href} target="_blank" rel="noreferrer noopener" className="flex h-full items-start justify-between gap-3 rounded-xl border-2 border-[#2E343F] bg-[#1A1D24] p-3 hover:border-[#F5F6F7]">
+                <a href={l.href} target="_blank" rel="noreferrer noopener" className="flex h-full items-start justify-between gap-3 rounded-xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] p-3 hover:border-[var(--gb-text)]">
                   <span>
-                    <span className="block font-bold text-[#F5F6F7]">{l.label}</span>
-                    <span className="block text-sm text-[#E2E4E8]">{l.note}</span>
+                    <span className="block font-bold text-[var(--gb-text)]">{l.label}</span>
+                    <span className="block text-sm text-[var(--gb-text)]">{l.note}</span>
                   </span>
-                  <ExternalLink className="w-4 h-4 shrink-0 mt-1 text-[#F5F6F7]" aria-hidden="true" />
+                  <ExternalLink className="w-4 h-4 shrink-0 mt-1 text-[var(--gb-text)]" aria-hidden="true" />
                 </a>
               </li>
             ))}
@@ -245,7 +245,7 @@ export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, 
           type="button"
           onClick={() => { onPick(); onClose(); }}
           className="w-full min-h-[52px] rounded-xl font-black text-lg"
-          style={picked ? { background: '#262B34', color: '#F5F6F7', border: '2px solid #F5F6F7' } : { background: color, color: ink }}
+          style={picked ? { background: 'var(--kyb-chip)', color: 'var(--gb-text)', border: '2px solid var(--gb-text)' } : { background: color, color: ink }}
         >
           {picked ? 'Remove from My Ballot' : 'Add to My Ballot'}
         </button>
@@ -266,23 +266,23 @@ export function Compare({ race, color, ink, numbered, picked, onPick, onClose }:
           {race.candidates.map((c) => {
             const on = picked.includes(c.ballot);
             return (
-              <div key={c.ballot} className="flex flex-col gap-4 rounded-2xl border-2 bg-[#1A1D24] p-4" style={{ borderColor: on ? color : '#2E343F' }}>
+              <div key={c.ballot} className="flex flex-col gap-4 rounded-2xl border-2 bg-[var(--gb-surface)] p-4" style={{ borderColor: on ? color : 'var(--gb-border)' }}>
                 <div className="space-y-2">
-                  <p className="text-lg font-black leading-tight text-[#F5F6F7]">{c.name}</p>
+                  <p className="text-lg font-black leading-tight text-[var(--gb-text)]">{c.name}</p>
                   <div className="flex flex-wrap gap-1.5">
                     <Badge>{c.party}</Badge>
                     {numbered && <Badge>#{c.ballot}</Badge>}
                   </div>
                 </div>
                 <dl className="space-y-1 text-sm">
-                  <div className="flex justify-between gap-2"><dt className="text-[#E2E4E8]">Incumbent</dt><dd className="font-bold text-[#F5F6F7]">{c.incumbent ? 'Yes' : 'No'}</dd></div>
+                  <div className="flex justify-between gap-2"><dt className="text-[var(--gb-text)]">Incumbent</dt><dd className="font-bold text-[var(--gb-text)]">{c.incumbent ? 'Yes' : 'No'}</dd></div>
                 </dl>
-                {anyMoney && (c.money ? <MoneyBars c={c} max={max} /> : <p className="text-sm text-[#E2E4E8]">No campaign reports found.</p>)}
+                {anyMoney && (c.money ? <MoneyBars c={c} max={max} /> : <p className="text-sm text-[var(--gb-text)]">No campaign reports found.</p>)}
                 <button
                   type="button"
                   onClick={() => onPick(c.ballot)}
                   className="mt-auto min-h-[44px] rounded-xl font-bold"
-                  style={on ? { background: color, color: ink } : { border: '2px solid #F5F6F7', color: '#F5F6F7' }}
+                  style={on ? { background: color, color: ink } : { border: '2px solid var(--gb-text)', color: 'var(--gb-text)' }}
                 >
                   {on ? '✓ On My Ballot' : 'Pick'}
                 </button>
@@ -291,8 +291,8 @@ export function Compare({ race, color, ink, numbered, picked, onPick, onClose }:
           })}
         </div>
       </div>
-      {!anyMoney && <p className="mt-4 text-[15px] text-[#E2E4E8]">No campaign reports found for anyone in this race this cycle.</p>}
-      <p className="mt-4 text-[15px] text-[#E2E4E8]">Money and incumbency come from official FEC and Illinois State Board of Elections records. Tap ⓘ on a candidate for donors, bio and campaign site.</p>
+      {!anyMoney && <p className="mt-4 text-[15px] text-[var(--gb-text)]">No campaign reports found for anyone in this race this cycle.</p>}
+      <p className="mt-4 text-[15px] text-[var(--gb-text)]">Money and incumbency come from official FEC and Illinois State Board of Elections records. Tap ⓘ on a candidate for donors, bio and campaign site.</p>
     </Dialog>
   );
 }
@@ -302,10 +302,10 @@ export function Compare({ race, color, ink, numbered, picked, onPick, onClose }:
 export const RetentionCard = memo(function RetentionCard({ r, choice, onChoose: chooseFor }: { key?: string; r: Retention; choice: Choice | undefined; onChoose: (id: string, c: Choice) => void }) {
   const onChoose = (c: Choice) => chooseFor(r.id, c);
   return (
-    <div id={`race-${r.id}`} className="scroll-mt-40 rounded-2xl border-2 bg-[#1A1D24] p-4 space-y-3" style={{ borderColor: choice ? '#FFB900' : '#2E343F' }}>
+    <div id={`race-${r.id}`} className="scroll-mt-[16rem] rounded-2xl border-2 bg-[var(--gb-surface)] p-4 space-y-3" style={{ borderColor: choice ? 'var(--kyb-gold)' : 'var(--gb-border)' }}>
       <div>
-        <p className="font-black text-[#F5F6F7] leading-snug">{r.judge}</p>
-        <p className="text-sm text-[#E2E4E8]">{r.court} · keep this judge?</p>
+        <p className="font-black text-[var(--gb-text)] leading-snug">{r.judge}</p>
+        <p className="text-sm text-[var(--gb-text)]">{r.court} · keep this judge?</p>
       </div>
       <YesNo value={choice} onChange={onChoose} label={`Retain ${r.judge}?`} />
     </div>
@@ -323,13 +323,13 @@ const SCOPE: Record<Measure['scope']['type'], (m: Measure) => string> = {
 export const MeasureCard = memo(function MeasureCard({ m, choice, onChoose: chooseFor }: { key?: string; m: Measure; choice: Choice | undefined; onChoose: (id: string, c: Choice) => void }) {
   const onChoose = (c: Choice) => chooseFor(m.id, c);
   return (
-    <article id={`race-${m.id}`} className="scroll-mt-40 rounded-2xl border-2 bg-[#1A1D24] p-5 space-y-4" style={{ borderColor: choice ? '#E23838' : '#2E343F' }}>
+    <article id={`race-${m.id}`} className="scroll-mt-[16rem] rounded-2xl border-2 bg-[var(--gb-surface)] p-5 space-y-4" style={{ borderColor: choice ? 'var(--gb-red)' : 'var(--gb-border)' }}>
       <div className="space-y-2">
         <Badge>{SCOPE[m.scope.type](m)}</Badge>
-        <h3 className="text-lg font-black leading-tight text-[#F5F6F7]">{m.title}</h3>
-        {m.scope.type === 'named' && <p className="text-sm text-[#FFB900] font-bold">Only on ballots inside this proposed area. Your official sample ballot will show it if it’s on yours.</p>}
-        <blockquote className="rounded-xl bg-[#0F1117] p-4 text-[15px] leading-relaxed text-[#F5F6F7]">
-          <span className="block mb-1 text-xs font-black uppercase tracking-widest text-[#F5F6F7]">Official ballot text</span>
+        <h3 className="text-lg font-black leading-tight text-[var(--gb-text)]">{m.title}</h3>
+        {m.scope.type === 'named' && <p className="text-sm text-[var(--gb-amber-hi)] font-bold">Only on ballots inside this proposed area. Your official sample ballot will show it if it’s on yours.</p>}
+        <blockquote className="rounded-xl bg-[var(--gb-bg)] p-4 text-[15px] leading-relaxed text-[var(--gb-text)]">
+          <span className="block mb-1 text-xs font-black uppercase tracking-widest text-[var(--gb-text)]">Official ballot text</span>
           “{m.question}”
         </blockquote>
       </div>
