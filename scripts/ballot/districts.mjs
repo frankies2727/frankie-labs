@@ -7,8 +7,9 @@
 //     current ones)
 //   - Illinois Senate Redistricting: Chicago Board of Education subdistricts
 //     enacted by P.A. 103-0584 (published only as a WGS84 shapefile)
-//   - City of Chicago: wards (2023-) and ward precincts (2025-, first used in
-//     the March 2026 primary)
+//   - City of Chicago: wards (2023-), ward precincts (2025-, first used in
+//     the March 2026 primary) and police districts (2012-; each elects a
+//     police district council, first on the Feb 2027 ballot)
 //
 // Output per layer: [{ id, rings: [[lng, lat, lng, lat, ...], ...] }]. A point
 // is inside a feature when it falls inside an odd number of its rings, which
@@ -34,6 +35,8 @@ const SOURCES = {
   bor: { url: cook(10), id: (p) => p.DISTRICT_TXT },
   subcircuit: { url: cook(5), id: (p) => p.DISTRICT },
   ward: { url: 'https://data.cityofchicago.org/resource/p293-wvbd.geojson?$limit=5000', id: (p) => p.ward },
+  // 22 districts with councils, plus 31 (O'Hare and other pockets) without one.
+  police: { url: 'https://data.cityofchicago.org/resource/24zt-jpfn.geojson?$limit=100', id: (p) => p.dist_num },
   // One district, possibly several polygons.
   mwrd: { url: cook(21), id: () => '1' },
 };
@@ -214,11 +217,15 @@ export function touchesCook(layers, type, id) {
  * @param {string[]} precinctKeys "ward-precinct" keys that have a referendum;
  *   only those precincts are kept (all 1,291 would be most of the file).
  */
+/** One of the layers above, downloaded and packed. */
+export async function sourceLayer(type) {
+  const { url, id } = SOURCES[type];
+  return fromGeoJson(await getJson(url), id);
+}
+
 export async function buildDistricts(precinctKeys) {
   const layers = {};
-  for (const [type, { url, id }] of Object.entries(SOURCES)) {
-    layers[type] = fromGeoJson(await getJson(url), id);
-  }
+  for (const type of Object.keys(SOURCES)) layers[type] = await sourceLayer(type);
   layers.school = await schoolSubdistricts();
   const wanted = new Set(precinctKeys);
   layers.precinct = fromGeoJson(await getJson(PRECINCTS), (p) => `${normalizeId(p.ward)}-${normalizeId(p.precinct)}`)
@@ -226,7 +233,7 @@ export async function buildDistricts(precinctKeys) {
 
   // County and city maps must be complete; the state and federal ones are
   // clipped to Cook, so the build checks them against the races instead.
-  const expect = { commissioner: 17, bor: 3, subcircuit: 20, school: 20, ward: 50 };
+  const expect = { commissioner: 17, bor: 3, subcircuit: 20, school: 20, ward: 50, police: 23 };
   for (const [type, n] of Object.entries(expect)) {
     if (new Set(layers[type].map((f) => f.id)).size !== n) throw new Error(`${type}: expected ${n} districts, got ${layers[type].length}`);
   }

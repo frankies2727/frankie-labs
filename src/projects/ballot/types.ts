@@ -3,7 +3,7 @@
 export type Section = 'federal' | 'state' | 'county' | 'judicial' | 'school';
 
 /** Which voters see a contest. `null` on a race = every voter in Cook County. */
-export type AreaType = 'cd' | 'sldu' | 'sldl' | 'commissioner' | 'bor' | 'subcircuit' | 'school' | 'ward' | 'mwrd' | 'city';
+export type AreaType = 'cd' | 'sldu' | 'sldl' | 'commissioner' | 'bor' | 'subcircuit' | 'school' | 'ward' | 'mwrd' | 'city' | 'police';
 export interface Area { type: AreaType; id: string }
 
 /** Campaign totals this cycle (since Jan 1, 2025), from official filings. */
@@ -72,6 +72,39 @@ export interface BallotData {
   earlyVotingSites: Record<string, EarlyVotingSite>;
   /** What the daily refresh found different, newest last (about 60 days kept). */
   changes?: Change[];
+  govbot: Govbot;
+}
+
+/** From govbot's election data (github.com/chihacknight/govbot), refreshed daily. */
+export interface Govbot {
+  asOf: string;
+  /** Illinois bills on elections and schools, newest action first. */
+  laws: Law[];
+  /** Chicago's Feb 23, 2027 city races. */
+  city: CityRace[];
+}
+
+export interface Law {
+  id: string;
+  title: string;
+  url?: string;
+  tags: string[];
+  latest_action?: string;
+  latest_action_desc?: string;
+  hearing?: { committee?: string; scheduled_display?: string; details_url?: string; witness_slip_url?: string };
+}
+
+export interface CityRace {
+  id: string;
+  office: string;
+  group: 'citywide' | 'council' | 'police_district_council';
+  /** Ward or police district number; null for citywide. */
+  district: string | null;
+  seats: number;
+  why: string | null;
+  incumbent: string | null;
+  /** Official candidates, once the Board certifies them. */
+  candidates: string[];
 }
 
 /** One thing the daily refresh found different from the day before. */

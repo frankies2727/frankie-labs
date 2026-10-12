@@ -7,6 +7,7 @@ import { BallotSearch, type Hit } from './Search';
 import { ClearButton } from '../../components/ClearButton';
 import { SinceLastVisit } from './Updates';
 import { KeyDates, NextElectionNote } from './Calendar';
+import { Laws } from './Laws';
 import { LINKS, PlanToVote } from './PlanToVote';
 import { CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard } from './Race';
 import { JUDGE_RATINGS } from './research';
@@ -59,7 +60,7 @@ interface BallotChange {
 
 const DISTRICT_CHIPS: [keyof Districts, string][] = [
   ['ward', 'Ward'], ['cd', 'Congress'], ['sldu', 'State Senate'], ['sldl', 'State House'],
-  ['commissioner', 'County Board'], ['subcircuit', 'Subcircuit'], ['school', 'School'],
+  ['commissioner', 'County Board'], ['subcircuit', 'Subcircuit'], ['school', 'School'], ['police', 'Police district'],
 ];
 
 function Ring({ pct, size = 64 }: { pct: number; size?: number }) {
@@ -421,7 +422,8 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                   );
                 })}
 
-                <NextElectionNote chicago={districts ? chicago : undefined} />
+                <Laws laws={data.govbot.laws} asOf={data.govbot.asOf} />
+                <NextElectionNote chicago={districts ? chicago : undefined} city={data.govbot.city} districts={districts} />
                 <Sources />
               </div>
             )}
@@ -679,7 +681,7 @@ function Sources() {
   return (
     <footer className="rounded-2xl border-2 border-[#2E343F] p-5 space-y-2 text-sm leading-relaxed text-[#E2E4E8]">
       <p className="font-black text-[#F5F6F7]">Where this comes from</p>
-      <p>Candidates and ballot questions: <a className="underline font-bold text-[#F5F6F7]" href={s.candidates.url} target="_blank" rel="noreferrer noopener">Chicago Board of Elections candidate list</a>{s.candidates.asOf ? `, as of ${s.candidates.asOf}` : ''}, in official ballot order; suburban contests from the <a className="underline font-bold text-[#F5F6F7]" href={s.stateCandidates.url} target="_blank" rel="noreferrer noopener">State Board of Elections certified list</a>. Campaign money and incumbency: <a className="underline font-bold text-[#F5F6F7]" href={s.money.url} target="_blank" rel="noreferrer noopener">Federal Election Commission</a> and <a className="underline font-bold text-[#F5F6F7]" href={s.stateMoney.url} target="_blank" rel="noreferrer noopener">Illinois State Board of Elections</a>. District maps: U.S. Census Bureau, Cook County, City of Chicago and the Illinois Senate.</p>
+      <p>Candidates and ballot questions: <a className="underline font-bold text-[#F5F6F7]" href={s.candidates.url} target="_blank" rel="noreferrer noopener">Chicago Board of Elections candidate list</a>{s.candidates.asOf ? `, as of ${s.candidates.asOf}` : ''}, in official ballot order; suburban contests from the <a className="underline font-bold text-[#F5F6F7]" href={s.stateCandidates.url} target="_blank" rel="noreferrer noopener">State Board of Elections certified list</a>. Campaign money and incumbency: <a className="underline font-bold text-[#F5F6F7]" href={s.money.url} target="_blank" rel="noreferrer noopener">Federal Election Commission</a> and <a className="underline font-bold text-[#F5F6F7]" href={s.stateMoney.url} target="_blank" rel="noreferrer noopener">Illinois State Board of Elections</a>. District maps: U.S. Census Bureau, Cook County, City of Chicago (wards, precincts, police districts) and the Illinois Senate. Springfield bills and Chicago’s 2027 races: <a className="underline font-bold text-[#F5F6F7]" href="https://github.com/chihacknight/govbot" target="_blank" rel="noreferrer noopener">govbot</a> (Chi Hack Night), with alderpersons from the City’s data portal.</p>
       <p>Nonpartisan and independent: not affiliated with any campaign, party or election authority. Always double-check your <a className="underline font-bold text-[#F5F6F7]" href={LINKS.myInfo} target="_blank" rel="noreferrer noopener">official sample ballot</a>.</p>
     </footer>
   );

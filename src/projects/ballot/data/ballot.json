@@ -6292,5 +6292,1162 @@
    "address": "137 S. State St.",
    "language": "Spanish, Chinese (Mandarin/Cantonese), and Hindi/Gujarati/Urdu"
   }
+ },
+ "govbot": {
+  "asOf": "2026-10-12T18:03:46Z",
+  "laws": [
+   {
+    "id": "HB5808",
+    "title": "STUDENT ATHLETE-TRANSFER RULES",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5808&GAID=18&DocTypeID=HB&LegId=168853&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-09-21",
+    "latest_action_desc": "Added Co-Sponsor Rep. Michelle Mussman"
+   },
+   {
+    "id": "SB3776",
+    "title": "EDUCATION CHOICE FOR CHILD ACT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3776&GAID=18&DocTypeID=SB&LegId=167091&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-09-04",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Dave Syverson"
+   },
+   {
+    "id": "HB5809",
+    "title": "STUDENT CARDIAC SAFETY ACT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5809&GAID=18&DocTypeID=HB&LegId=168858&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-08-26",
+    "latest_action_desc": "Filed with the Clerk by Rep. Lindsey LaPointe"
+   },
+   {
+    "id": "HB1581",
+    "title": "EQUITABLE UNIVERSITY FUNDING",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1581&GAID=18&DocTypeID=HB&LegId=157693&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-08-10",
+    "latest_action_desc": "Removed Co-Sponsor Rep. Michael Crawford"
+   },
+   {
+    "id": "SB3688",
+    "title": "MENOPAUSE THERAPY & EDUCATION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3688&GAID=18&DocTypeID=SB&LegId=166896&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-08-07",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB5574",
+    "title": "DHFS-PACE-OUTREACH & EDUCATION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5574&GAID=18&DocTypeID=HB&LegId=167616&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-08-07",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB5552",
+    "title": "EDUCATION-VARIOUS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5552&GAID=18&DocTypeID=HB&LegId=167567&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-08-07",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB5321",
+    "title": "SCH CD-TEACHER SALARY-CONT ED",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5321&GAID=18&DocTypeID=HB&LegId=167081&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-08-07",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB5107",
+    "title": "SCH SAFETY-PANIC ALERT SYSTEM",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5107&GAID=18&DocTypeID=HB&LegId=166665&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-08-07",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB4826",
+    "title": "IDFPR-CONTINUING EDUCATION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4826&GAID=18&DocTypeID=HB&LegId=166047&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-08-07",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB4304",
+    "title": "HIGHER ED STUDENT BILL OF RTS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4304&GAID=18&DocTypeID=HB&LegId=164803&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-08-07",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "SB1718",
+    "title": "USE/OCC TAX-SCHOOL HOLIDAY",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1718&GAID=18&DocTypeID=SB&LegId=160738&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-08-06",
+    "latest_action_desc": "Added as Chief Co-Sponsor Sen. Christopher Belt"
+   },
+   {
+    "id": "SB3774",
+    "title": "SCH CD-ADMIN WITHDRAW-TRUANCY",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3774&GAID=18&DocTypeID=SB&LegId=167089&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-31",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "SB3361",
+    "title": "SCH CD-RELIGIOUS HAIRSTYLES",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3361&GAID=18&DocTypeID=SB&LegId=166238&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-31",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "SB3224",
+    "title": "ILLINOIS SCHOOL FOR THE BLIND",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3224&GAID=18&DocTypeID=SB&LegId=165939&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-31",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB5204",
+    "title": "EARLY LEARNING COUNCIL",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5204&GAID=18&DocTypeID=HB&LegId=166861&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-31",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB5135",
+    "title": "ADULT EDUCATION PROGRAMS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5135&GAID=18&DocTypeID=HB&LegId=166729&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-31",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB4862",
+    "title": "SCH CD-STAFF MENTAL HEALTH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4862&GAID=18&DocTypeID=HB&LegId=166150&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-31",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB4788",
+    "title": "SCH CD-CPR-FEMALE MANIKINS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4788&GAID=18&DocTypeID=HB&LegId=165943&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-31",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB4687",
+    "title": "REPEAL-LOAN DEFAULT ACT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4687&GAID=18&DocTypeID=HB&LegId=165672&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-31",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB1783",
+    "title": "ST BD ED-LANGUAGE ASSESSMENT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1783&GAID=18&DocTypeID=HB&LegId=159179&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-30",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "SB2918",
+    "title": "PARENT-TEACHER ADVISORY COMM",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2918&GAID=18&DocTypeID=SB&LegId=165286&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-24",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "SB2914",
+    "title": "SCH CD-REMOVE/DISMISS TEACHERS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2914&GAID=18&DocTypeID=SB&LegId=165276&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-24",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "SB2913",
+    "title": "SCH CD-TEACHER EVALUATION PLAN",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2913&GAID=18&DocTypeID=SB&LegId=165275&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-24",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB4239",
+    "title": "SCH CD-HIGH SCH COURSE CREDIT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4239&GAID=18&DocTypeID=HB&LegId=164711&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-24",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB3860",
+    "title": "SCH CD-DEACTIVATE SCH-CONTRACT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3860&GAID=18&DocTypeID=HB&LegId=162759&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-24",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB3250",
+    "title": "SCH CD-GLOBAL SCHOLAR CERTIFY",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3250&GAID=18&DocTypeID=HB&LegId=161736&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-24",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB3175",
+    "title": "VEH CD-PASSING SCHOOL BUS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3175&GAID=18&DocTypeID=HB&LegId=161592&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-24",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB4339",
+    "title": "SCH CD-HIGH SCH-REGISTER VOTER",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4339&GAID=18&DocTypeID=HB&LegId=164865&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-07-20",
+    "latest_action_desc": "Added as Alternate Chief Co-Sponsor Sen. Adriane Johnson"
+   },
+   {
+    "id": "SB3783",
+    "title": "INC TX-EDUCATION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3783&GAID=18&DocTypeID=SB&LegId=167100&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-13",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Erica Harriss"
+   },
+   {
+    "id": "SB2909",
+    "title": "SCH CD-TEACHER EVALUATION-AI",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2909&GAID=18&DocTypeID=SB&LegId=165259&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-10",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB4577",
+    "title": "KINDERGARTEN-PLAY-BASED LEARN",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4577&GAID=18&DocTypeID=HB&LegId=165437&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-10",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB4535",
+    "title": "SCH CD-E-LEARNING DAY-ELECTION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4535&GAID=18&DocTypeID=HB&LegId=165362&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-07-10",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB1807",
+    "title": "DFPR-NURSING EDUCATION PROGRAM",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1807&GAID=18&DocTypeID=HB&LegId=159239&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-10",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "SB3855",
+    "title": "ENGINEER STUDENT SCHOLARSHIP",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3855&GAID=18&DocTypeID=SB&LegId=167280&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-08",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Darby A. Hills"
+   },
+   {
+    "id": "SB3338",
+    "title": "FACILITATE VOTING FOR ALL",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3338&GAID=18&DocTypeID=SB&LegId=166197&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-07-07",
+    "latest_action_desc": "Added as Chief Co-Sponsor Sen. David Koehler"
+   },
+   {
+    "id": "SR752",
+    "title": "SCHOOL START TIMES",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=752&GAID=18&DocTypeID=SR&LegId=168399&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-02",
+    "latest_action_desc": "Pursuant to Senate Rule 3-9(b) / Referred to Assignments"
+   },
+   {
+    "id": "SJR58",
+    "title": "DENY-SCHOOL CODE WAIVER",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=58&GAID=18&DocTypeID=SJR&LegId=168099&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-02",
+    "latest_action_desc": "Pursuant to Senate Rule 3-9(b) / Referred to Assignments"
+   },
+   {
+    "id": "SB958",
+    "title": "ELECTIONS-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=958&GAID=18&DocTypeID=SB&LegId=158691&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-07-02",
+    "latest_action_desc": "Senate Floor Amendment No. 1 Pursuant to Senate Rule 3-9(b) / Referred to Assignments"
+   },
+   {
+    "id": "SB3393",
+    "title": "OSFM-CONTINUING EDUCATION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3393&GAID=18&DocTypeID=SB&LegId=166313&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-02",
+    "latest_action_desc": "Pursuant to Senate Rule 3-9(b) / Referred to Assignments"
+   }
+  ],
+  "city": [
+   {
+    "id": "chicago-mayor",
+    "office": "Mayor",
+    "group": "citywide",
+    "district": null,
+    "seats": 1,
+    "why": "Chicago's citywide chief executive. On the 2027 municipal ballot — a non-partisan race; if no candidate wins a majority, the top two advance to an April runoff.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-city-clerk",
+    "office": "City Clerk",
+    "group": "citywide",
+    "district": null,
+    "seats": 1,
+    "why": "Citywide office that keeps City Council records and issues city stickers and licenses. On the 2027 municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-city-treasurer",
+    "office": "City Treasurer",
+    "group": "citywide",
+    "district": null,
+    "seats": 1,
+    "why": "Citywide office that manages and invests city funds and pension money. On the 2027 municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-01",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "1",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Daniel La Spata",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-02",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "2",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Brian Hopkins",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-03",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "3",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Pat Dowell",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-04",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "4",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Lamont J. Robinson",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-05",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "5",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Desmon C. Yancy",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-06",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "6",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "William E. Hall",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-07",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "7",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Gregory I. Mitchell",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-08",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "8",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Michelle A. Harris",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-09",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "9",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Anthony Beale",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-10",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "10",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Peter Chico",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-11",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "11",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Nicole T. Lee",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-12",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "12",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Julia M. Ramirez",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-13",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "13",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Marty Quinn",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-14",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "14",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Jeylu B. Gutierrez",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-15",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "15",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Raymond A. Lopez",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-16",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "16",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Stephanie D. Coleman",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-17",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "17",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "David H. Moore",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-18",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "18",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Derrick G. Curtis",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-19",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "19",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Matthew J. O'Shea",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-20",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "20",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Jeanette B. Taylor",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-21",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "21",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Ronnie L. Mosley",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-22",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "22",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Michael D. Rodriguez",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-23",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "23",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Silvana Tabares",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-24",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "24",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Monique L. Scott",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-25",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "25",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Byron Sigcho-Lopez",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-26",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "26",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Jessica L. Fuentes",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-27",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "27",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Walter R. Burnett",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-28",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "28",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Jason C. Ervin",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-29",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "29",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Chris Taliaferro",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-30",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "30",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Ruth Cruz",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-31",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "31",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Jr., Felix Cardona",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-32",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "32",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Scott Waguespack",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-33",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "33",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Rossana Rodriguez Sanchez",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-34",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "34",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "William Conway",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-35",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "35",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Anthony J. Quezada",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-36",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "36",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Gilbert Villegas",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-37",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "37",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Emma Mitts",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-38",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "38",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Nicholas Sposato",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-39",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "39",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Samantha Nugent",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-40",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "40",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Jr., Andre Vasquez",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-41",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "41",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Anthony V. Napolitano",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-42",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "42",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Brendan Reilly",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-43",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "43",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Timothy R. Knudsen",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-44",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "44",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Bennett R. Lawson",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-45",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "45",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "James M. Gardiner",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-46",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "46",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Angela Clay",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-47",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "47",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Matthew J. Martin",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-48",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "48",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Leni Manaa-Hoppenworth",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-49",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "49",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Maria E. Hadden",
+    "candidates": []
+   },
+   {
+    "id": "chicago-alderperson-ward-50",
+    "office": "Alderperson",
+    "group": "council",
+    "district": "50",
+    "seats": 1,
+    "why": "Represents one of Chicago's 50 wards on the City Council. Elected by ward on the 2027 municipal ballot (non-partisan).",
+    "incumbent": "Debra L. Silverstein",
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-001",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "1",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-002",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "2",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-003",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "3",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-004",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "4",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-005",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "5",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-006",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "6",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-007",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "7",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-008",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "8",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-009",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "9",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-010",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "10",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-011",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "11",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-012",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "12",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-014",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "14",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-015",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "15",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-016",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "16",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-017",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "17",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-018",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "18",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-019",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "19",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-020",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "20",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-022",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "22",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-024",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "24",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   },
+   {
+    "id": "chicago-police-district-council-025",
+    "office": "Police District Councilmember",
+    "group": "police_district_council",
+    "district": "25",
+    "seats": 3,
+    "why": "One of three seats on the elected Police District Council for this Chicago police district. District Councils shape local policing priorities and help pick the citywide Community Commission. On the 2027 Chicago municipal ballot.",
+    "incumbent": null,
+    "candidates": []
+   }
+  ]
  }
 }
