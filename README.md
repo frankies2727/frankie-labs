@@ -1,254 +1,144 @@
+<div align="center">
+
+<img src="public/favicon.svg" width="96" alt="Frankie Labs logo: a beaker holding a play button" />
+
 # Frankie Labs
 
-A gallery of chill, real-time multiplayer browser games. Play over a shared
-room code (**2 players**, or **2–4** for Ludo, **2–5** for Lotería, Blackjack,
-Crossword Clash & Battleship),
-or hit **Play vs Computer** on any game's join screen to take on built-in bots
-solo (offline).
-In an online room, the **host can also add bots** to fill open seats, so you can
-mix real friends and CPUs in the same game. Pick one from the home screen:
+**A lab of awesome things I'm building:** chill multiplayer games and a handful of fun projects.<br>
+No accounts. No installs. No server. Just open the link.
 
-- **Paper Numbers** — one player is the **Finder** (races to spot a target number
-  on a 10×10 grid; claimed numbers turn red) while the other is the **Dotter**
-  (fills a 64-dot sheet). Finding the number swaps roles — first to fill all 64
-  dots wins.
-- **Tic-Tac-Toe** — the classic 3-in-a-row duel.
-- **Connect 4** — drop discs and line up four.
-- **High-Low** — the guesser secretly calls higher or lower, then the *opponent
-  deals a card blind* (they can't see the call). Each round starts from a fresh
-  random card. Correct call scores; first to 6.
-- **Battleship** — now for **2–5 admirals** on a bigger **12×12** ocean with a
-  **six-ship fleet** (Carrier, Battleship, Destroyer, Cruiser, Submarine, Patrol
-  Boat). Arrange your fleet (shuffle a **random** layout or **place each ship by
-  hand**); the game starts once **everyone** readies up. On your turn, **pick
-  which opponent to fire at** (tabs show each rival and how many of their ships
-  are left) — sink a whole fleet to knock that admiral out, and the **last fleet
-  afloat wins**. A side panel lists **every ship kind and size** and which remain
-  to sink, for your target and for your own fleet. Opponent ship positions are
-  masked server-side (`redact`) so they can't be read off the wire.
-- **Dots & Boxes** — pick a **quick** (5×5) or **long** (8×8) board, then take
-  turns drawing the edges of the grid; close the fourth side of a box to claim it
-  and take another turn. Most boxes wins.
-- **Ludo** — the classic **2–4 player** race on the cross board. Roll the die,
-  release a token on a 6, chase your tokens clockwise around the shared loop, and
-  land on rivals to send them back to their pen (except on safe squares). Turn up
-  your colour's home column into the centre; first to get all four tokens home
-  wins. Rolling a 6 — or capturing / finishing a token — earns another roll. Solo
-  play lets you pick 2–4 players (you plus bots); online, up to four share a room
-  code and the host starts once everyone's in. Before Start, each player **picks
-  their colour** in the lobby (solo play gets a setup screen) from a wide palette
-  of solids, gradients, and a full **rainbow** — one colour per player, locked in
-  once the game begins. When **all four** of your pieces are stuck in the pen,
-  **guess the die** before you roll — land the guess (or roll a 6) and one piece
-  breaks free. A **scrollable history** under the board tracks every roll, move,
-  capture, and wildcard.
-- **Uno Frenzy!** — Uno's colour/number matching plus a deck of chaos: **Swap**
-  trades entire hands, **Steal** yanks cards from your rival, and **Frenzy** buries
-  them under six. Classic Skip / Reverse / +2 / Wild / +4 included. Empty your hand
-  first to win. (Opponent hands are masked server-side via `redact`.)
-- **Blackjack 21** — a neon, suit-free race to 21 for **2–5 players** (mix
-  friends and bots). Hit, Stand, or Double Down; the best hand under 22 takes the
-  round. Pick a mode in the lobby: **Casino** — everyone starts with **1,000** in
-  mixed-denomination chips, bets before each hand, and the winner rakes the pot
-  (bust the table, or hold the biggest stack after 20 hands) — or **15 Rounds**,
-  where whoever wins the most of 15 hands takes the match. Every rival's hole cards stay hidden (`redact`) until the
-  reveal.
-- **Lotería Millennial** — the Mexican bingo of images with a millennial twist,
-  for **2–5 players**. Pick **Clásico** or **Frenzy** to start. Each player gets a
-  4×4 **tabla**; one carta is sung at a time, the slot **flashes** on your tabla
-  if you hold it, you drop a **frijol** (bean) on it, then everyone taps **Listo**
-  — the next carta is only sung once *all* players are ready. Fill the **whole
-  tabla**, then shout **¡Lotería!**. In **Frenzy**, a 🎁 **mystery power-up** pops
-  up for a random player at random moments — use it and it's either **"¡1 Free
-  Bean!!"** (for you) or **"a random player just got a free bean… awww"**; you
-  don't know which until you gamble. The deck blends classic cartas with modern
-  chaos (El WiFi, El Aguacate, El Mezcal, El Selfie) and a bunch of very personal
-  trip cartas — **El Ajolote**, **La Piedra del Sol** (Museo de Antropología),
-  **La Ciudadela**, **La Casa de Tacuba**, **El Chapultepec**, **El Matcha**
-  (Matcha Mío Café), **El Zócalo** (Palacio Nacional & its vendors), and **Tacos
-  Del Valle**. The deck's un-sung tail is masked server-side (`redact`) so nobody
-  peeks ahead.
-- **Crossword Clash** — a **2–5 player** brain-teaser race over one shared
-  crossword (mix friends and bots). Pick a clue, type the answer, and if you're
-  right you **claim** that word: its letters lock in for everyone and you bank
-  **points equal to the word's length** — first to fill the whole grid ends it,
-  most points wins. Choose a mode to start: **Normal** — a snappy **4×4** grid
-  with friendly clues — or **Hard** — a chunkier **5×5** grid with terser,
-  trickier clues. Wrong guesses never cost anything in either mode; only a
-  correct answer claims the word. Every player gets exactly **3× 🔍 hints**, a
-  power-up that reveals one more letter of your selected word, just for you.
-  **Play Again** deals a fresh board in the same mode (no re-picking). There are
-  **hundreds of puzzles** (240 Normal + 160 Hard) — generated offline (grids
-  solved &amp; every crossing verified, clues drawn from dictionary definitions)
-  and dealt from a **shuffle-bag** so a session never repeats a board until the
-  whole pool is used up. The data is lazy-loaded (its own async chunk) so it
-  never weighs down the rest of the site. Answers never travel on the wire —
-  game state only carries which words have been claimed — so nothing leaks to a
-  peer's console.
-- **Road to Citizenship** — a **hub of citizenship games** for the U.S.
-  naturalization test, **solo or 1–6 friends** over one room code (with bots to
-  fill empty seats). After you join and enter your name, the **host picks the
-  game** in the lobby:
-  - **Citizenship Trivia** — everyone answers the **same** question at once from
-    the **official USCIS civics questions** (options shuffled each time); once the
-    whole room has locked in, the round **reveals** — the correct choice, a short
-    fact, and each player's ✓/✗ — and scores update. Most correct after **10
-    questions** wins (solo, you're scored against the USCIS **60% pass mark**).
-  - **The Civic Path** — a **strategy board game**. On your turn you answer a
-    random-category civics question to earn a **resource card** (📜 History,
-    🗺️ Geography, 🏛️ Legislative, ⚖️ Rights). Complete a full set to build a
-    **Civic Milestone**; **trade** with the bank (4:1) or **negotiate** card
-    swaps with other players to fill the sets you're short on. Build **3
-    milestones** to unlock the **citizenship exam**, then answer **6 of 10**
-    official USCIS questions to win (miss it and you lose a milestone — regroup
-    and try again). Empty seats fill with **bots** on three difficulty tiers
-    (**Novice / Citizen / Scholar** set how often they answer correctly) and with
-    distinct personas — **Govbot-y** aggressively hoards Legislative & History
-    cards, so humans have to adapt.
-  - **Citizenship Jeopardy!** — a quiz-board showdown on a grid of civics
-    categories × dollar values ($200–$800). The player in control picks a clue
-    and answers; answer right to **bank the value** and keep control, miss it and
-    it **subtracts** — then rivals get to **steal** it in turn (answer or pass).
-    Play out the whole board; the **biggest bank wins**. It's turn-based (no
-    real-time buzzer) so humans and bots compete fairly, and empty seats fill with
-    the same difficulty-tiered **bots**.
+### 👉 [**Play it now: frankies2727.github.io/frankie-labs**](https://frankies2727.github.io/frankie-labs/) 👈
 
-  The answer key never travels on the wire before it's safe: game state masks
-  each question's correct answer, other players' picks, unanswered exam questions,
-  and un-played Jeopardy clues (`redact`) so nothing leaks to a peer's console.
-  Time-sensitive and
-  location-specific questions from the official 100 (current office-holders, your
-  state's senators/representative/governor/capital) are left out so every answer
-  stays correct.
+</div>
 
-  All three games draw from an expanded bank of **500+** civics, U.S. history and
-  geography questions — the official USCIS set plus data-driven additions (all 50
-  state capitals, the Presidents in order, key constitutional amendments) and
-  curated facts — and every game **reshuffles a fresh, category-balanced set**, so
-  sessions rarely repeat. The Jeopardy activity log keeps the **full history**,
-  scrollable.
+---
 
-When a game ends, the final board stays on screen behind the result panel — hit
-**View Final Board** to inspect exactly how it played out before heading back.
+## ⚡ TL;DR
 
-## ⚡ Projects
+| | |
+|---|---|
+| 🎮 **What** | 13 browser games + 4 projects in one site |
+| 👥 **Who** | You + friends over a room code, or solo vs bots |
+| 🌍 **Where** | Any browser, phone or desktop, any network |
+| 💸 **Cost** | Free. Runs entirely on GitHub Pages |
 
-The home screen is the projects gallery — the things I'm building. (Tap the
-**mini Pikachu** in the top-right to jump over to the games.) First up
-is **VibeCheck**: type any company (or tap a featured profile) to generate an
-immersive, scrollable visual story — the rundown, fast facts, a timeline, and
-fun facts. Two key-free data sources, both working for every visitor:
+**Jump to:** [🎮 Games](#-games) · [👋 How to play](#-how-to-play) · [🧪 Projects](#-projects) · [🔧 For developers](#-for-developers)
 
-- **Wikipedia** (fallback) — real data from Wikipedia's public API (search +
-  article summary + infobox). Great for established brands; niche or private
-  companies may not have an article.
-- **Featured profiles** — for companies Wikipedia can't cover (small VC firms,
-  private startups), profiles are **pre-generated offline** by a GitHub Action
-  running Ollama + Gemma, grounded from the web, and committed as JSON under
-  `src/projects/vibecheck/data/`. The static site reads those, so they resolve
-  instantly for everyone — no live model, no key, no server. See
-  [docs/VIBECHECK_FEATURED.md](docs/VIBECHECK_FEATURED.md) to run/extend it.
+---
 
-On search, a matching featured profile wins; otherwise it falls back to Wikipedia.
+## 🎮 Games
 
-Also in the gallery:
+Every game has **Play vs Computer** for solo play. Online, the host can **add bots** to fill empty seats.
 
-- **Place Timelapse** — watch any place on Earth change over time, from a year of
-  NASA satellite imagery to the ground-level Street View history of a spot.
-- **Govbot Social** — the social-media presence built for **Govbot**, the bot
-  that auto-posts legislative bill updates. Its card links straight out to the
-  live "Social Media Posts Dashboard" (a separate GitHub Pages site, opened in a
-  new tab) — every post across **Bluesky, X, Threads &amp; Instagram**,
-  filterable, with live Bluesky feeds and links to each account.
-- **AI Art** — a gallery of AI-generated images and the exact **prompts** behind
-  them, migrated from Notion. Browse a clean masonry grid, tap any image to read
-  its full prompt, and **copy it to your clipboard** with one tap to paste into
-  your favourite image generator. Every piece **credits its creator**, links to
-  the **original** post, tags a **theme**, and names the **AI model** used; a
-  search box and model filter chips keep all 112 pieces browsable. Images are
-  self-hosted (compressed WebP under `public/projects/ai-art/`) so the gallery is
-  fully standalone — nothing loads from Notion at runtime.
+| Game | Players | In one line |
+|---|:---:|---|
+| 🔢 **Paper Numbers** | 2 | Race to spot a number while your rival fills their dot sheet |
+| ⭕ **Tic-Tac-Toe** | 2 | The classic 3-in-a-row |
+| 🔴 **Connect 4** | 2 | Drop discs, line up four |
+| 🃏 **High-Low** | 2 | Secretly call higher or lower; your rival deals blind |
+| 🚢 **Battleship** | 2–5 | Pick a target, sink every fleet, last admiral afloat wins |
+| ⬛ **Dots & Boxes** | 2 | Draw lines, close boxes, claim the most |
+| 🎲 **Sorry** (Ludo) | 2–4 | Race four tokens home, bump rivals back to start |
+| 🌈 **Uno Frenzy!** | 2 | Uno plus chaos cards: Swap, Steal, Frenzy |
+| 🂡 **Blackjack 21** | 2–5 | Hit, stand or double; Casino chips or 15-round match |
+| 🎴 **Lotería Millennial** | 2–5 | Mexican picture bingo with a millennial twist |
+| 🔤 **Crossword Clash** | 2–5 | Race to claim words on a shared crossword |
+| 🇺🇸 **Road to Citizenship** | 1–6 | Three civics games for the U.S. naturalization test |
+| 🎈 **Balloon Rumble** | — | Night-arena brawler (opens its own site ↗) |
 
-### Swappable images (monthly refresh)
+> [!TIP]
+> When a game ends, the final board stays on screen. Hit **View Final Board** to see how it played out.
 
-Two spots load from fixed paths so you can refresh them whenever you like (a new
-one each month works great) — just upload/replace one file, no code change:
+<details>
+<summary><b>📖 Full rules for each game</b> (tap to open)</summary>
 
-- `public/projects/homescreen.jpg` — the big hero banner atop the home screen.
-- `public/projects/icon.png` — the little icon on the **Games** portal button in
-  the top-right of the home screen.
+### 🔢 Paper Numbers
+- One player is the **Finder**: race to spot the target number on a 10×10 grid (claimed numbers turn red).
+- The other is the **Dotter**: fill a 64-dot sheet.
+- Finding the number **swaps roles**. First to fill all 64 dots wins.
 
-Upload a file with that exact name (GitHub → **Add file → Upload files**) and it
-appears on the next deploy. If a file is missing, that spot falls back to the
-Pikachu icon so nothing breaks. See
-[public/projects/README.md](public/projects/README.md) for formats and sizing.
+### 🃏 High-Low
+- The guesser secretly calls **higher** or **lower**.
+- The opponent then deals a card **blind** (they can't see the call).
+- Each round starts from a fresh random card. Correct call scores; **first to 6** wins.
 
-Each project is a self-contained component under `src/projects/` registered in
-`src/projects/index.ts`, and is **lazy-loaded** so opening the home screen
-never downloads a project's (heavier) code until you actually open it.
+### 🚢 Battleship
+- **2–5 admirals** on a **12×12** ocean, each with a **six-ship fleet**.
+- Set up with a **random** layout or **place each ship by hand**. The game starts once everyone readies up.
+- On your turn, **pick which opponent to fire at**. Tabs show how many ships each rival has left.
+- Sink a whole fleet to knock that admiral out. **Last fleet afloat wins.**
+- A side panel lists every ship kind and size, and which are still afloat.
 
-Every game is fully **peer-to-peer**: the two browsers connect directly via WebRTC
-(using [PeerJS](https://peerjs.com) for the initial handshake), so there's no
-backend server to run or pay for. That's what lets it live on GitHub Pages.
+### ⬛ Dots & Boxes
+- Pick a **quick** (5×5) or **long** (8×8) board.
+- Take turns drawing edges. Close the fourth side of a box to claim it **and go again**. Most boxes wins.
 
-**Play it:** https://frankies2727.github.io/frankie-labs/
+### 🎲 Sorry (Ludo rules)
+- Roll the die, release a token on a **6**, and race clockwise round the shared loop.
+- Land on a rival to **send them back** to their pen (except on safe squares).
+- First to get **all four tokens home** wins. A 6, a capture or a finished token earns another roll.
+- Each player **picks a colour** in the lobby: solids, gradients, even a full rainbow.
+- All four pieces stuck in the pen? **Guess the die** before you roll: guess right (or roll a 6) and one breaks free.
+- A scrollable history tracks every roll, move and capture.
 
-## Adding a game
+### 🌈 Uno Frenzy!
+- Classic colour/number matching with Skip, Reverse, +2, Wild and +4.
+- Plus chaos: **Swap** trades whole hands, **Steal** yanks cards, **Frenzy** buries your rival under six.
+- Empty your hand first to win.
 
-Each game is a self-contained `GameDefinition` in `src/games/` (initial state,
-`start`, a pure `reducer`, and a `Board` component). Add it to the registry in
-`src/games/index.ts` and it shows up in the gallery automatically — the
-peer-to-peer networking in `src/hooks/usePeerSession.ts` is game-agnostic. Set
-`minPlayers`/`maxPlayers` (both default 2) to seat more than two — the lobby, the
-"Play vs Computer" flow, and the host's start gate all adapt automatically. A
-game that reads well alone can set `minPlayers: 1` so the host can also start
-solo (its `redact` keeps hidden-answer games honest — see below).
+### 🂡 Blackjack 21
+- A neon, suit-free race to 21. **Hit, Stand or Double Down**; best hand under 22 takes the round.
+- **Casino mode:** everyone starts with 1,000 in chips and bets each hand. Bust the table, or hold the biggest stack after 20 hands.
+- **15 Rounds mode:** most hands won out of 15 takes the match.
 
-A single card can also be a **hub of several games**: **Road to Citizenship**
-(`src/games/road/`) is one `GameDefinition` whose `LobbyExtra` lets the host pick
-a sub-game after everyone joins, and whose `reducer`/`Board`/`redact`/`botMove`
-just delegate to the chosen sub-game (Citizenship Trivia or The Civic Path). Each
-sub-game keeps its own nested state and returns any game-over lift to the hub, so
-new games can be added under the same card without touching the networking.
+### 🎴 Lotería Millennial
+- Everyone gets a 4×4 **tabla**. One carta is sung at a time; if you hold it, its slot **flashes**.
+- Drop a **frijol** (bean) on it, then tap **Listo**. The next carta waits until *everyone* is ready.
+- Fill the whole tabla, then shout **¡Lotería!**
+- **Frenzy mode:** a 🎁 mystery power-up pops up at random. Gamble on it: a free bean for you… or for someone else.
+- The deck mixes classic cartas, modern chaos (El WiFi, El Aguacate, El Selfie) and personal trip cartas (El Ajolote, La Piedra del Sol, El Zócalo, Tacos Del Valle and more).
 
-To make a peer-to-peer game playable solo against CPUs, add an optional `botMove(state, botId)` to its
-definition that returns the action the bot should take (or `null` when it isn't
-the bot's turn). Games with a `botMove` automatically get the **Play vs Computer**
-button; `src/hooks/useLocalSession.ts` runs the same `reducer` locally and drives
-the bot after each move.
+### 🔤 Crossword Clash
+- Pick a clue and type the answer. Right answers **claim the word** for points equal to its length.
+- **Normal:** a 4×4 grid with friendly clues. **Hard:** a 5×5 grid with trickier clues.
+- Wrong guesses never cost anything. Everyone gets **3 🔍 hints** that reveal one letter, just for you.
+- **400 puzzles** (240 Normal + 160 Hard), dealt so a session never repeats a board.
 
-## How to play
+### 🇺🇸 Road to Citizenship
+A hub of three games built on **500+ civics, history and geography questions**, including the official USCIS set. The host picks the game in the lobby.
 
-1. One player opens the site, enters a **room code** + name, and joins.
-2. They share that same room code with a friend.
-3. The friend enters the same code — the two browsers link up directly.
-4. Hit **Start** and play. Both players must be online at the same time.
+- **🧠 Citizenship Trivia:** everyone answers the same question at once. Most correct after **10** wins. Solo, you're scored against the USCIS **60% pass mark**.
+- **🗺️ The Civic Path:** a strategy board game. Answer questions to earn resource cards, trade to complete sets, build **3 milestones**, then pass the citizenship exam (**6 of 10**) to win. Bots come in three levels: Novice, Citizen and Scholar.
+- **💰 Citizenship Jeopardy!:** pick from civics categories worth $200–$800. Right answers bank the money, wrong ones subtract and let rivals **steal**. Biggest bank wins.
 
-> The room's "host" is whoever joins the code first; their browser is the
-> authoritative game state. If they close the tab, the game ends.
+Questions that change over time or depend on your state (current office-holders, your senators) are left out, so every answer stays correct.
 
-### Playing across networks
+</details>
 
-One player taps **Host a new room** and gets a room code to send; everyone else
-types it under **Join**. Only the host ever claims a code — if the host's tab is
-closed, joiners are told so instead of quietly opening an empty room of their own.
-The host should keep the game open on screen while friends join; a phone that
-backgrounds the tab re-registers the room as soon as it comes back.
+> [!NOTE]
+> 🔒 **Fair play:** hidden info (ship positions, other players' hands, upcoming cards, quiz answers) is never sent to other players' browsers, so nobody can peek in the dev console.
 
-Two players on the same wifi connect directly over their local addresses. Once
-the players are on different networks — a friend in another state, someone on
-cellular data, a school or office wifi — that direct path is usually blocked and
-the connection has to be relayed through a **TURN** server.
+---
 
-The app uses Metered's free [Open Relay](https://www.metered.ca/tools/openrelay/)
-(UDP, TCP and TLS on ports 80/443, so it gets through strict firewalls), signing
-short-lived credentials in the browser with the shared secret Metered publishes
-for public use. It's shared and best-effort (20 GB/month across everyone), so if
-joins start failing point the game at your own TURN server —
-[coturn](https://github.com/coturn/coturn) self-hosted, or a hosted provider.
-Set these at build time, in `.env.local` or as repository **variables**
-(Settings → Secrets and variables → Actions → Variables), which the Pages
-workflow passes to the build:
+## 👋 How to play
+
+1. **Pick a game** and type your name.
+2. **One person taps “Host a new room.”** They get a 5-character room code.
+3. **Send the code** to your friends (there's a **Copy** button).
+4. **Friends type the code** under **Join**.
+5. **Host taps Start.** Play!
+
+> [!IMPORTANT]
+> **Hosts: keep the game open** while friends join. The host's browser runs the game, so closing that tab ends it.
+
+**Solo?** Tap **🤖 Play vs Computer** on any game's start screen.
+
+<details>
+<summary><b>🌍 Playing with someone on a different network?</b></summary>
+
+It just works. Same wifi, different cities, or on cellular data. When a direct link is blocked, the game relays through Metered's free [Open Relay](https://www.metered.ca/tools/openrelay/) server.
+
+That relay is shared and best-effort (20 GB/month across everyone). If joins start failing, point the game at your own TURN server ([coturn](https://github.com/coturn/coturn) or a hosted provider) by setting these repository **variables** (Settings → Secrets and variables → Actions → Variables) or in `.env.local`:
 
 ```
 VITE_TURN_URLS="turn:turn.example.com:3478,turns:turn.example.com:5349"
@@ -256,42 +146,97 @@ VITE_TURN_USERNAME="username"
 VITE_TURN_CREDENTIAL="password"
 ```
 
-When `VITE_TURN_URLS` is set it replaces the public relay entirely. Anything
-baked into a static site is readable by every visitor, so use a TURN account
-with a usage cap you're happy to share, not a key that bills you without limit.
+Setting `VITE_TURN_URLS` replaces the public relay. ⚠️ Anything built into a static site is visible to every visitor, so use a TURN account with a usage cap.
 
-If a join can't be completed, the room-code screen comes back with the reason
-instead of spinning — the handshake retries a few times and then gives up.
+If a join can't connect, you're sent back to the room-code screen with the reason. It never just spins.
 
-## Run locally
+</details>
 
-**Prerequisites:** Node.js
+---
+
+## 🧪 Projects
+
+The home screen is the projects gallery. Tap the **Games** button (top right) to jump to the games.
+
+| Project | What it does |
+|---|---|
+| ⚡ **VibeCheck** | Type any company, get a scrollable visual story: rundown, fast facts, timeline |
+| 🌍 **Place Timelapse** | Watch a place change over time, from NASA satellite imagery to Street View history |
+| 🎨 **AI Art** | 112 AI images with the exact prompts behind them. Tap to copy a prompt |
+| 🤖 **Govbot Social** | Dashboard of the Govbot bill-update posts on Bluesky, X, Threads & Instagram ↗ |
+
+<details>
+<summary><b>⚡ How VibeCheck gets its data</b> (no API keys)</summary>
+
+- **Featured profiles** for companies Wikipedia doesn't cover are **pre-generated offline** by a GitHub Action (Ollama + Gemma, grounded from the web) and saved as JSON in `src/projects/vibecheck/data/`. See [docs/VIBECHECK_FEATURED.md](docs/VIBECHECK_FEATURED.md).
+- **Everything else** comes from Wikipedia's public API.
+- A matching featured profile wins; otherwise it falls back to Wikipedia.
+
+</details>
+
+### 🖼️ Swap the home-screen pictures (no code)
+
+Upload a file with the exact name below (GitHub → **Add file → Upload files**). It shows up on the next deploy.
+
+| File | Where it appears |
+|---|---|
+| `public/projects/homescreen.jpg` | Big banner at the top of the home screen |
+| `public/projects/icon.png` | Icon on the **Games** button, top right |
+
+Missing a file? That spot falls back to a built-in icon, so nothing breaks. Formats and sizes: [public/projects/README.md](public/projects/README.md).
+
+---
+
+## 🔧 For developers
+
+### ▶️ Run locally
 
 ```bash
 npm install
 npm run dev      # Vite dev server
+npm run lint     # type-check
+npm run build    # production build
 ```
 
-Open two browser tabs/windows on the same room code to test both sides.
+Open two browser tabs to test host and guest side by side.
 
-## Deploy (GitHub Pages)
+### 🚀 Deploy
 
-Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the
-static site and publishes it to GitHub Pages.
+- Push to `main` → `.github/workflows/deploy.yml` builds and publishes to GitHub Pages.
+- One-time setup: **Settings → Pages → Source → GitHub Actions**.
+- The site lives at `/frankie-labs/` (`base` in `vite.config.ts`). Change it if you rename the repo.
 
-One-time setup: in the repo's **Settings → Pages**, set **Source** to
-**GitHub Actions**.
+### 🧩 How it works
 
-The site is served from `/frankie-labs/` (configured via `base` in `vite.config.ts`);
-update that if you rename the repo.
+- **Peer-to-peer:** browsers connect directly over WebRTC ([PeerJS](https://peerjs.com) does the handshake). No backend to run or pay for.
+- **Host is the referee:** the host's browser holds the real game state and sends each player only what they're allowed to see (`redact`).
+- **Lazy-loaded:** projects and big data (like the crossword puzzles) only download when you open them.
 
-## 🎈 Externally-hosted games
+<details>
+<summary><b>➕ Adding a game</b></summary>
 
-A game that lives on its own site doesn't have an in-app state/reducer/board, so
-it isn't a `GameDefinition`. Add it to `EXTERNAL_GAMES` in `src/games/index.ts`
-instead — id, name, tagline, accent, emoji and `href`. It renders as a normal
-gallery card that opens in a new tab (`Play ↗`), and `/play/<id>` redirects to
-the real site so a shared link still lands somewhere sensible.
+1. Create a `GameDefinition` in `src/games/`: initial state, `start`, a pure `reducer`, and a `Board` component.
+2. Register it in `src/games/index.ts`. It appears in the gallery automatically.
+3. **More than 2 players?** Set `minPlayers` / `maxPlayers` (both default to 2). Lobby, bots and the Start button adapt. `minPlayers: 1` lets the host start solo.
+4. **Hidden info?** Add a `redact(state, viewerId)` so each player only receives what they may see.
+5. **Bots?** Add `botMove(state, botId)` returning the bot's action (or `null` when it's not its turn). You get **Play vs Computer** for free; `src/hooks/useLocalSession.ts` runs it offline.
 
-**Balloon Rumble** (`https://pepper-apex-brave-coral.grok.me/`) is the first
-one.
+The networking in `src/hooks/usePeerSession.ts` is game-agnostic, so none of this touches it.
+
+**One card, many games:** Road to Citizenship (`src/games/road/`) is a single `GameDefinition` whose `LobbyExtra` lets the host pick a sub-game. Its `reducer`, `Board`, `redact` and `botMove` delegate to the chosen one.
+
+</details>
+
+<details>
+<summary><b>➕ Adding a project</b></summary>
+
+Each project is a self-contained component under `src/projects/`, registered in `src/projects/index.ts`, and lazy-loaded so the home screen stays fast.
+
+</details>
+
+<details>
+<summary><b>↗ Adding an externally hosted game</b></summary>
+
+A game that lives on its own site goes in `EXTERNAL_GAMES` in `src/games/index.ts` (id, name, tagline, accent, emoji, `href`). It shows as a normal card that opens in a new tab, and `/play/<id>` redirects to the real site so shared links still work. **Balloon Rumble** is the first one.
+
+</details>
