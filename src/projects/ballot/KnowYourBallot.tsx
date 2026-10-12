@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } fro
 import rawData from './data/ballot.json';
 import { ballotFor, ballotIdsFor, districtsAt, geocode, inChicago, inCook, prefetchDistricts } from './lookup';
 import { RETENTION_EXPLAINER } from './offices';
-import { BallotSearch } from './Search';
+import { BallotSearch, type Hit } from './Search';
 import { SinceLastVisit } from './Updates';
 import { KeyDates, NextElectionNote } from './Calendar';
 import { LINKS, PlanToVote } from './PlanToVote';
@@ -198,6 +198,14 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
       el?.querySelector<HTMLElement>('button')?.focus({ preventScroll: true });
     });
   };
+  // From anywhere: back to the ballot with the search box ready to type in.
+  const openSearch = () => {
+    setTab('ballot');
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0 });
+      document.getElementById('kyb-search')?.focus({ preventScroll: true });
+    });
+  };
   const nextUp = () => {
     const s = sections.find((sec) => sec.done < sec.ids.length);
     const id = s?.ids.find((i) => !isDecided(saved.picks[i]));
@@ -315,6 +323,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
           <Landing
             address={address} setAddress={setAddress} status={status} onSubmit={lookUp} onLocate={useLocation}
             onBrowse={() => setBrowsing(true)} daysLeft={daysLeft}
+            onSearchJump={(h) => { setBrowsing(true); jumpTo(h.section, h.id); }}
             saved={Object.keys(saved.picks).length}
             onStartFresh={() => { setSaved((s) => ({ ...s, picks: {}, plan: {} })); setToast('Cleared. Starting fresh.'); }}
           />
@@ -322,7 +331,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
           <>
             {/* Sticky progress bar: the thing that keeps you going. */}
             <div className="sticky top-0 z-30 -mx-4 px-4 pt-2 pb-3 bg-[#0F1117]/95 backdrop-blur border-b-2 border-[#262B34]">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2 sm:gap-4">
                 <Ring pct={total ? done / total : 0} />
                 <div className="min-w-0 flex-1">
                   <p className="font-black text-lg leading-tight">{allDone ? 'Ballot ready 🎉' : `${done} of ${total} decided`}</p>
@@ -331,8 +340,12 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                     <span className="shrink-0 font-bold text-[#F5F6F7] underline underline-offset-2">{saved.place ? 'Change' : 'Add address'}</span>
                   </button>
                 </div>
+                <button type="button" onClick={openSearch} aria-label="Search races and candidates"
+                  className="shrink-0 w-11 h-11 rounded-xl border-2 border-[#2E343F] flex items-center justify-center text-[#F5F6F7] hover:border-[#F5F6F7]">
+                  <Search className="w-5 h-5" aria-hidden="true" />
+                </button>
                 {!allDone && (
-                  <button type="button" onClick={nextUp} className="shrink-0 min-h-[44px] rounded-xl bg-[#5EBD3E] px-4 font-black text-[#0F1117]">Next up →</button>
+                  <button type="button" onClick={nextUp} className="shrink-0 min-h-[44px] rounded-xl bg-[#5EBD3E] px-3 sm:px-4 font-black text-[#0F1117]">Next up →</button>
                 )}
               </div>
               <div className="mt-3 grid grid-cols-3 gap-2" role="tablist" aria-label="Views">
@@ -347,6 +360,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
 
             {tab === 'ballot' && (
               <div className="space-y-8 pt-6">
+                <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} onJump={(h) => jumpTo(h.section, h.id)} />
                 {incoming && (
                   <div role="alertdialog" aria-label="Load saved progress?" className="rounded-2xl border-2 border-[#009CDF] bg-[#1A1D24] p-4 space-y-3">
                     <p className="font-black">Load progress from your saved link?</p>
@@ -369,7 +383,6 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                 )}
                 {updates.length > 0 && <SinceLastVisit changes={updates} since={lastSeen!} picks={saved.picks} onJump={(id) => jumpTo(sectionFor(id), id)} onDismiss={() => setLastSeen(undefined)} />}
                 <WhereYouVote districts={districts} chicago={chicago} onChange={changeAddress} />
-                <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} onJump={(h) => jumpTo(h.section, h.id)} />
 
                 {sections.map((s) => {
                   const open = !collapsed[s.id];
@@ -490,9 +503,9 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
 
 // ---- pieces ------------------------------------------------------------------------
 
-function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, daysLeft, saved, onStartFresh }: {
+function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, onSearchJump, daysLeft, saved, onStartFresh }: {
   address: string; setAddress: (s: string) => void; status: { busy: boolean; error: string; outside: boolean };
-  onSubmit: (e: FormEvent) => void; onLocate: () => void; onBrowse: () => void; daysLeft: number;
+  onSubmit: (e: FormEvent) => void; onLocate: () => void; onBrowse: () => void; onSearchJump: (h: Hit) => void; daysLeft: number;
   /** Picks already saved on this device. */
   saved: number; onStartFresh: () => void;
 }) {
@@ -548,6 +561,8 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, da
         )}
         <p className="text-sm leading-relaxed text-[#E2E4E8]">🔒 Your address goes once to Cook County’s address lookup (or OpenStreetMap, if the county’s is down) to find your districts. It’s saved only on this device, like your picks, and never shared.</p>
       </form>
+
+      <BallotSearch ballot={everything} onJump={onSearchJump} label="Or look up any race, candidate, judge or question" />
 
       <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {[

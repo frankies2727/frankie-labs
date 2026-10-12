@@ -47,9 +47,11 @@ interface Props {
   /** Every contest in Cook County, to tell "not on yours" from "not anywhere". Omit when browsing them all. */
   everywhere?: Ballot;
   onJump: (hit: Hit) => void;
+  /** Shown above the box; otherwise the label is for screen readers only. */
+  label?: string;
 }
 
-export function BallotSearch({ ballot, everywhere, onJump }: Props) {
+export function BallotSearch({ ballot, everywhere, onJump, label }: Props) {
   const [q, setQ] = useState('');
   const mine = useMemo(() => index(ballot), [ballot]);
   const hits = useMemo(() => find(mine, q), [mine, q]);
@@ -59,14 +61,14 @@ export function BallotSearch({ ballot, everywhere, onJump }: Props) {
 
   return (
     <div className="space-y-2">
-      <label htmlFor="kyb-search" className="sr-only">Search your ballot</label>
+      <label htmlFor="kyb-search" className={label ? 'block font-black text-lg' : 'sr-only'}>{label ?? 'Search your ballot'}</label>
       <div className="relative">
         <SearchIcon className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#F5F6F7] pointer-events-none" aria-hidden="true" />
         <input
           id="kyb-search" type="search" value={q} autoComplete="off"
           onChange={(e) => setQ(e.target.value)}
           onKeyDown={(e) => { if (e.key === 'Enter' && hits[0]) go(hits[0]); if (e.key === 'Escape') setQ(''); }}
-          placeholder="Search races, candidates, judges, questions"
+          placeholder="Search races and names"
           className="w-full min-h-[52px] rounded-2xl border-2 border-[#2E343F] bg-[#1A1D24] pl-12 pr-12 font-bold text-[#F5F6F7] focus:border-[#009CDF] focus:outline-none [&::-webkit-search-cancel-button]:hidden"
         />
         {q && (
