@@ -67,7 +67,7 @@ function Connecting() {
 // Online (peer-to-peer) flow: join a room code, lobby, then play.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function OnlineGame({ def, onExit, onPlayBot }: { def: GameDefinition<any>; onExit: () => void; onPlayBot: () => void }) {
-  const { state, myId, conn, error, join, start, move, rematch, canManageBots, addBot, removeBot } = usePeerSession(def);
+  const { state, myId, conn, error, join, host, start, move, rematch, canManageBots, addBot, removeBot } = usePeerSession(def);
   const Board = def.Board;
   // Remember what was typed: a join that fails drops back to this screen, and
   // making someone re-enter the code and their name to try again is miserable.
@@ -75,6 +75,10 @@ function OnlineGame({ def, onExit, onPlayBot }: { def: GameDefinition<any>; onEx
   const handleJoin = (roomId: string, name: string) => {
     setLastTry({ roomId, name });
     join(roomId, name);
+  };
+  const handleHost = (name: string) => {
+    setLastTry((t) => ({ ...t, name }));
+    host(name);
   };
 
   return (
@@ -85,6 +89,7 @@ function OnlineGame({ def, onExit, onPlayBot }: { def: GameDefinition<any>; onEx
         <JoinGame
           gameName={def.name}
           tagline={def.tagline}
+          onHost={handleHost}
           onJoin={handleJoin}
           onPlayBot={def.botMove ? onPlayBot : undefined}
           minPlayers={def.minPlayers}

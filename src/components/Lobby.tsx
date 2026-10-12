@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import { BaseState } from '../types';
 import { isBotId } from '../hooks/usePeerSession';
 
@@ -30,6 +30,7 @@ export function Lobby({ gameName, state, onStart, myId, minPlayers = 2, maxPlaye
         <h2 className="text-2xl font-bold text-center mb-2 text-[#F5F6F7] tracking-tighter uppercase italic">{gameName}</h2>
         <h3 className="text-center mb-8 text-[#F5F6F7] tracking-tighter uppercase italic border-b-2 border-[#39414E] pb-4">
           Room: <span className="text-[#E63946] font-mono not-italic font-black">{state.roomId}</span>
+          <CopyCode code={state.roomId} />
         </h3>
 
         <div className="space-y-4 mb-10">
@@ -101,5 +102,27 @@ export function Lobby({ gameName, state, onStart, myId, minPlayers = 2, maxPlaye
         )}
       </div>
     </div>
+  );
+}
+
+// Friends joining from far away need the code texted to them; one tap beats
+// reading it off and retyping it.
+function CopyCode({ code }: { code: string }) {
+  const [copied, setCopied] = useState(false);
+  if (!navigator.clipboard) return null;
+  const copy = () => {
+    navigator.clipboard.writeText(code).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    }, () => { /* permission denied: the code is still on screen */ });
+  };
+  return (
+    <button
+      type="button"
+      onClick={copy}
+      className="ml-3 align-middle px-2 py-1 text-[10px] font-mono not-italic font-bold uppercase tracking-widest text-[#9CA3AF] border-2 border-[#39414E] hover:bg-[#262B34]"
+    >
+      {copied ? 'Copied' : 'Copy'}
+    </button>
   );
 }

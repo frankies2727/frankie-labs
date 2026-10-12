@@ -229,17 +229,26 @@ the bot after each move.
 
 ### Playing across networks
 
+One player taps **Host a new room** and gets a room code to send; everyone else
+types it under **Join**. Only the host ever claims a code — if the host's tab is
+closed, joiners are told so instead of quietly opening an empty room of their own.
+The host should keep the game open on screen while friends join; a phone that
+backgrounds the tab re-registers the room as soon as it comes back.
+
 Two players on the same wifi connect directly over their local addresses. Once
 the players are on different networks — a friend in another state, someone on
 cellular data, a school or office wifi — that direct path is usually blocked and
 the connection has to be relayed through a **TURN** server.
 
-The app ships with a set of free public relays (offered over UDP, TCP and TLS on
-port 443, so they get through strict firewalls). They're shared and best-effort,
-so if joins start failing you can point the game at your own TURN server —
-[coturn](https://github.com/coturn/coturn) self-hosted, or a hosted provider —
-by setting these at build time (e.g. in `.env.local`, or as repository secrets
-wired into the Pages workflow):
+The app uses Metered's free [Open Relay](https://www.metered.ca/tools/openrelay/)
+(UDP, TCP and TLS on ports 80/443, so it gets through strict firewalls), signing
+short-lived credentials in the browser with the shared secret Metered publishes
+for public use. It's shared and best-effort (20 GB/month across everyone), so if
+joins start failing point the game at your own TURN server —
+[coturn](https://github.com/coturn/coturn) self-hosted, or a hosted provider.
+Set these at build time, in `.env.local` or as repository **variables**
+(Settings → Secrets and variables → Actions → Variables), which the Pages
+workflow passes to the build:
 
 ```
 VITE_TURN_URLS="turn:turn.example.com:3478,turns:turn.example.com:5349"
@@ -247,7 +256,9 @@ VITE_TURN_USERNAME="username"
 VITE_TURN_CREDENTIAL="password"
 ```
 
-When `VITE_TURN_URLS` is set it replaces the public relays entirely.
+When `VITE_TURN_URLS` is set it replaces the public relay entirely. Anything
+baked into a static site is readable by every visitor, so use a TURN account
+with a usage cap you're happy to share, not a key that bills you without limit.
 
 If a join can't be completed, the room-code screen comes back with the reason
 instead of spinning — the handshake retries a few times and then gives up.
