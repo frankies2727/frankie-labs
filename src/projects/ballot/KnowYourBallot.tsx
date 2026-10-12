@@ -7,14 +7,14 @@ import { BallotSearch, type Hit } from './Search';
 import { GovbotChrome } from './GovbotChrome';
 import { Capitol } from './Hero';
 import { ContentsColumn, ContentsDrawer } from './Contents';
-import { earnedTrophies, ProgressCard, streak } from './Progress';
+import { earnedTrophies, streak, Trophies } from './Progress';
 import './ballot.css';
 import { ClearButton } from '../../components/ClearButton';
 import { SinceLastVisit } from './Updates';
 import { KeyDates, NextElectionNote } from './Calendar';
 import { Laws } from './Laws';
 import { LINKS, PlanToVote } from './PlanToVote';
-import { CandidateSheet, Compare, MeasureCard, RACE_ACCENTS as RAINBOW, RaceCard, RetentionCard } from './Race';
+import { CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard } from './Race';
 import { JUDGE_RATINGS } from './research';
 import { drawShareCard, shareCard } from './share';
 import { daysUntil, hasProgress, isDecided, today, readResumeLink, resumeLink, useSaved, type Choice, type Saved } from './store';
@@ -131,6 +131,15 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   const [chosenSection, setChosenSection] = useState<string | null>(null);
   const [contentsOpen, setContentsOpen] = useState(false);
   const closeContents = useCallback(() => setContentsOpen(false), []);
+  // The pinned bar's height, as --kyb-bar, for what has to sit below it.
+  const barObserver = useRef<ResizeObserver | null>(null);
+  const barRef = useCallback((bar: HTMLDivElement | null) => {
+    barObserver.current?.disconnect();
+    const root = document.documentElement;
+    if (!bar) { root.style.removeProperty('--kyb-bar'); return; }
+    barObserver.current = new ResizeObserver(() => root.style.setProperty('--kyb-bar', `${bar.offsetHeight}px`));
+    barObserver.current.observe(bar);
+  }, []);
   const [toast, setToast] = useState('');
   const [party, setParty] = useState(false);
   const [shareMsg, setShareMsg] = useState('');
@@ -206,7 +215,6 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
 
   // The progress game: today's goal, streak and badges.
   const day = today();
-  const todayCount = saved.goal?.day === day ? saved.goal.n : 0;
   const gameCtx = {
     done, total, allDone, looked: saved.looked ?? 0, plan: saved.plan,
     visits: saved.days?.length ?? 0, streak: streak(saved.days, day), best: saved.best ?? 0,
@@ -263,14 +271,6 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
       const el = document.getElementById(`race-${id}`);
       scrollTo(el);
       el?.querySelector<HTMLElement>('button')?.focus({ preventScroll: true });
-    });
-  };
-  // From anywhere: back to the ballot with the search box ready to type in.
-  const openSearch = () => {
-    setTab('ballot');
-    requestAnimationFrame(() => {
-      window.scrollTo({ top: 0 });
-      document.getElementById('kyb-search')?.focus({ preventScroll: true });
     });
   };
   const nextUp = () => {
@@ -402,13 +402,11 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
           />
         ) : (
           <>
-            <div className="lg:grid lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-8 lg:items-start max-w-[1100px] mx-auto">
-            <ContentsColumn {...contents} />
-            {/* In the drawer a section just opens its list; the page moves when a race is picked. */}
-            <ContentsDrawer {...contents} onSection={(id) => { setTab('ballot'); setChosenSection(id); }} open={contentsOpen} onClose={closeContents} />
-            <div className="min-w-0 max-w-3xl">
-            {/* Sticky progress bar, under govbot's header: the thing that keeps you going. */}
-            <div className="sticky top-[var(--kyb-top)] z-30 -mx-4 px-4 pt-3 pb-3 bg-[color-mix(in_srgb,var(--gb-bg)_92%,transparent)] backdrop-blur border-b border-[var(--gb-border)]">
+            {/* Progress, views and search, pinned under govbot's header all the
+                way down the page (its height feeds --kyb-bar, so the contents
+                column and jumped-to races sit just below it). */}
+            <div ref={barRef} className="sticky top-[var(--kyb-top)] z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 pt-3 pb-3 bg-[color-mix(in_srgb,var(--gb-bg)_92%,transparent)] backdrop-blur border-b border-[var(--gb-border)]">
+            <div className="max-w-[1100px] mx-auto">
               <div className="flex items-center gap-2 sm:gap-4">
                 <Ring pct={total ? done / total : 0} />
                 <div className="min-w-0 flex-1">
@@ -422,10 +420,6 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                   className="lg:hidden shrink-0 w-11 h-11 rounded-xl border-2 border-[var(--gb-border)] flex items-center justify-center text-[var(--gb-text)] hover:border-[var(--gb-text)]">
                   <ListChecks className="w-5 h-5" aria-hidden="true" />
                 </button>
-                <button type="button" onClick={openSearch} aria-label="Search races and candidates"
-                  className="shrink-0 w-11 h-11 rounded-xl border-2 border-[var(--gb-border)] flex items-center justify-center text-[var(--gb-text)] hover:border-[var(--gb-text)]">
-                  <Search className="w-5 h-5" aria-hidden="true" />
-                </button>
               </div>
               <div className="mt-3 grid grid-cols-3 gap-2" role="tablist" aria-label="Views">
                 {([['ballot', 'My Ballot'], ['plan', 'Plan to vote'], ['share', 'Save & share']] as const).map(([id, label]) => (
@@ -435,11 +429,20 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                   </button>
                 ))}
               </div>
+              {/* Search stays in reach while scrolling. */}
+              <div className="mt-3">
+                <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} onJump={(h) => jumpTo(h.section, h.id)} />
+              </div>
             </div>
+            </div>
+            <div className="lg:grid lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-8 lg:items-start max-w-[1100px] mx-auto pt-4">
+            <ContentsColumn {...contents} />
+            {/* In the drawer a section just opens its list; the page moves when a race is picked. */}
+            <ContentsDrawer {...contents} onSection={(id) => { setTab('ballot'); setChosenSection(id); }} open={contentsOpen} onClose={closeContents} />
+            <div className="min-w-0 max-w-3xl">
 
             {tab === 'ballot' && (
               <div className="space-y-8 pt-6">
-                <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} onJump={(h) => jumpTo(h.section, h.id)} />
                 {incoming && (
                   <div role="alertdialog" aria-label="Load saved progress?" className="rounded-2xl border-2 border-[var(--gb-blue-hi)] bg-[var(--gb-surface)] p-4 space-y-3">
                     <p className="font-black">Load progress from your saved link?</p>
@@ -452,17 +455,14 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                 )}
                 {change && <ChangeReport change={change} onDismiss={() => setChange(null)} onNext={() => { setChange(null); nextUp(); }} />}
                 {updates.length > 0 && <SinceLastVisit changes={updates} since={lastSeen!} picks={saved.picks} onJump={(id) => jumpTo(sectionFor(id), id)} onDismiss={() => setLastSeen(undefined)} />}
-                {total > 0 && (
-                  <ProgressCard ctx={gameCtx} todayCount={todayCount}
-                    onLevel={(id) => { const s = sections.find((x) => x.id === id)!; jumpTo(id, s.ids.find((i) => !isDecided(saved.picks[i])) ?? s.ids[0]); }} />
-                )}
+                {total > 0 && <Trophies ctx={gameCtx} />}
                 <WhereYouVote districts={districts} chicago={chicago} cook={cook} onChange={changeAddress} />
 
                 {sections.filter((s) => s.id === current).map((s) => {
                   const at = sections.indexOf(s);
                   const next = sections[at + 1];
                   return (
-                    <section key={s.id} aria-labelledby={`sec-${s.id}`} className="space-y-4 scroll-mt-[16rem]">
+                    <section key={s.id} aria-labelledby={`sec-${s.id}`} className="space-y-4 scroll-mt-[calc(var(--kyb-top)+var(--kyb-bar,260px)+16px)]">
                       <div className="flex items-center gap-3 rounded-2xl px-4 py-3" style={{ background: s.color, color: s.ink }}>
                         <span className="text-2xl" aria-hidden="true">{s.emoji}</span>
                         <h2 id={`sec-${s.id}`} className="flex-1 text-xl">
@@ -480,15 +480,15 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                             Skip the ones I haven’t answered
                           </button>
                           <div className="grid gap-3 sm:grid-cols-2">
-                            {ballot.retentions.map((r, i) => <RetentionCard key={r.id} accent={RAINBOW[i % RAINBOW.length]} r={r} choice={saved.picks[r.id]} onChoose={choose} />)}
+                            {ballot.retentions.map((r) => <RetentionCard key={r.id} color={s.color} r={r} choice={saved.picks[r.id]} onChoose={choose} />)}
                           </div>
                         </div>
                       )}
-                      {s.id === 'measures' && ballot.measures.map((m, i) => <MeasureCard key={m.id} accent={RAINBOW[i % RAINBOW.length]} m={m} choice={saved.picks[m.id]} onChoose={choose} />)}
-                      {s.id !== 'retention' && s.id !== 'measures' && s.ids.map((id, i) => {
+                      {s.id === 'measures' && ballot.measures.map((m) => <MeasureCard key={m.id} color={s.color} m={m} choice={saved.picks[m.id]} onChoose={choose} />)}
+                      {s.id !== 'retention' && s.id !== 'measures' && s.ids.map((id) => {
                         const race = raceById.get(id)!;
                         return (
-                          <RaceCard key={id} accent={RAINBOW[i % RAINBOW.length]} race={race} color={s.color} ink={s.ink} numbered={chicago && race.numbered !== false} choice={saved.picks[id]}
+                          <RaceCard key={id} race={race} color={s.color} ink={s.ink} numbered={chicago && race.numbered !== false} choice={saved.picks[id]}
                             onChoose={choose} onInfo={openSheet} onCompare={openCompare} />
                         );
                       })}
@@ -749,7 +749,7 @@ function WhereYouVote({ districts, chicago, cook, onChange }: { districts: Distr
           <p className="font-black">Your districts</p>
           <ul className="flex flex-wrap gap-2">
             {DISTRICT_CHIPS.filter(([k]) => districts[k]).map(([k, label]) => (
-              <li key={k} className="rounded-full bg-[var(--kyb-chip)] px-3 py-1 text-sm font-bold">{label} {districts[k]}</li>
+              <li key={k} className="rounded-full border-[3px] border-[var(--gb-primary)] bg-[var(--kyb-chip)] px-3 py-1 text-sm font-bold">{label} {districts[k]}</li>
             ))}
           </ul>
           {!cook && (
@@ -807,7 +807,7 @@ function Sources() {
       links: [['Find your county clerk', ELECTION_AUTHORITIES]] },
   ];
   return (
-    <details id="kyb-sources" open className="group scroll-mt-[16rem] rounded-2xl border-[3px] border-[var(--gb-primary)] bg-[var(--gb-surface)] p-4 sm:p-5 text-[var(--gb-text)]">
+    <details id="kyb-sources" open className="group scroll-mt-[calc(var(--kyb-top)+var(--kyb-bar,260px)+16px)] rounded-2xl border-[3px] border-[var(--gb-primary)] bg-[var(--gb-surface)] p-4 sm:p-5 text-[var(--gb-text)]">
       <summary className="flex cursor-pointer list-none items-center gap-2 text-lg font-black [&::-webkit-details-marker]:hidden">
         <span aria-hidden="true" className="text-sm motion-safe:transition-transform group-open:rotate-90">▶</span>
         <span aria-hidden="true">📂</span> Where the data comes from

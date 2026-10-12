@@ -5,9 +5,6 @@ import { researchLinks } from './research';
 import { money, type Choice } from './store';
 import type { Candidate, Measure, Race, Retention } from './types';
 
-/** Race cards take turns in these six for their borders (lab palette). */
-export const RACE_ACCENTS = ['#5EBD3E', '#FFB900', '#F78200', '#E23838', '#973999', '#009CDF'];
-
 const AREA_LABEL: Record<string, string> = {
   cd: 'Congressional District', sldu: 'State Senate District', sldl: 'State House District',
   commissioner: 'County Board District', bor: 'Board of Review District', subcircuit: 'Judicial Subcircuit', school: 'School Subdistrict',
@@ -108,8 +105,6 @@ function MoneyBars({ c, max }: { c: Candidate; max: number }) {
 // ---- race card -------------------------------------------------------------
 
 interface RaceProps {
-  /** Border colour, from RACE_ACCENTS. */
-  accent: string;
   key?: string;
   race: Race;
   color: string;
@@ -125,7 +120,7 @@ interface RaceProps {
   onCompare: (race: Race) => void;
 }
 
-export const RaceCard = memo(function RaceCard({ accent, race, color, ink, numbered, choice, onChoose: chooseFor, onInfo, onCompare }: RaceProps) {
+export const RaceCard = memo(function RaceCard({ race, color, ink, numbered, choice, onChoose: chooseFor, onInfo, onCompare }: RaceProps) {
   const onChoose = (c: Choice) => chooseFor(race.id, c);
   const picked = Array.isArray(choice) ? choice : [];
   const toggle = (ballot: number) => {
@@ -137,7 +132,7 @@ export const RaceCard = memo(function RaceCard({ accent, race, color, ink, numbe
   const decided = choice === 'skip' || picked.length > 0;
 
   return (
-    <article id={`race-${race.id}`} className="scroll-mt-[16rem] rounded-2xl border-[3px] bg-[var(--gb-surface)] overflow-hidden" style={{ borderColor: accent }}>
+    <article id={`race-${race.id}`} className="scroll-mt-[calc(var(--kyb-top)+var(--kyb-bar,260px)+16px)] rounded-2xl border-[3px] bg-[var(--gb-surface)] overflow-hidden" style={{ borderColor: color }}>
       <div className="p-5 space-y-4">
         <header className="space-y-2">
           <div className="flex flex-wrap items-center gap-2">
@@ -306,10 +301,10 @@ export function Compare({ race, color, ink, numbered, picked, onPick, onInfo, on
 
 // ---- retention & referenda -------------------------------------------------------
 
-export const RetentionCard = memo(function RetentionCard({ accent, r, choice, onChoose: chooseFor }: { key?: string; accent: string; r: Retention; choice: Choice | undefined; onChoose: (id: string, c: Choice) => void }) {
+export const RetentionCard = memo(function RetentionCard({ color, r, choice, onChoose: chooseFor }: { key?: string; /** Section colour, for the border. */ color: string; r: Retention; choice: Choice | undefined; onChoose: (id: string, c: Choice) => void }) {
   const onChoose = (c: Choice) => chooseFor(r.id, c);
   return (
-    <div id={`race-${r.id}`} className="scroll-mt-[16rem] rounded-2xl border-[3px] bg-[var(--gb-surface)] p-4 space-y-3" style={{ borderColor: accent }}>
+    <div id={`race-${r.id}`} className="scroll-mt-[calc(var(--kyb-top)+var(--kyb-bar,260px)+16px)] rounded-2xl border-[3px] bg-[var(--gb-surface)] p-4 space-y-3" style={{ borderColor: color }}>
       <div>
         <p className="font-black text-[var(--gb-text)] leading-snug">{r.judge}</p>
         <p className="text-sm text-[var(--gb-text)]">{r.court} · keep this judge?</p>
@@ -327,10 +322,10 @@ const SCOPE: Record<Measure['scope']['type'], (m: Measure) => string> = {
   named: (m) => `Only inside the ${(m.scope as { name: string }).name}`,
 };
 
-export const MeasureCard = memo(function MeasureCard({ accent, m, choice, onChoose: chooseFor }: { key?: string; accent: string; m: Measure; choice: Choice | undefined; onChoose: (id: string, c: Choice) => void }) {
+export const MeasureCard = memo(function MeasureCard({ color, m, choice, onChoose: chooseFor }: { key?: string; /** Section colour, for the border. */ color: string; m: Measure; choice: Choice | undefined; onChoose: (id: string, c: Choice) => void }) {
   const onChoose = (c: Choice) => chooseFor(m.id, c);
   return (
-    <article id={`race-${m.id}`} className="scroll-mt-[16rem] rounded-2xl border-[3px] bg-[var(--gb-surface)] p-5 space-y-4" style={{ borderColor: accent }}>
+    <article id={`race-${m.id}`} className="scroll-mt-[calc(var(--kyb-top)+var(--kyb-bar,260px)+16px)] rounded-2xl border-[3px] bg-[var(--gb-surface)] p-5 space-y-4" style={{ borderColor: color }}>
       <div className="space-y-2">
         <Badge>{SCOPE[m.scope.type](m)}</Badge>
         <h3 className="text-lg font-black leading-tight text-[var(--gb-text)]">{m.title}</h3>

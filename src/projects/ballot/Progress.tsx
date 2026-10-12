@@ -1,13 +1,11 @@
-import { Check } from 'lucide-react';
+import { Info } from 'lucide-react';
 import { useState } from 'react';
 
-// The ballot as a game: sections are levels, a small daily goal, a streak of
-// visits and trophies for the habits that make a good voter (reading up,
-// planning, finishing). All counted on this device only.
+// The ballot as a game: a streak of visits and trophies for the habits that
+// make a good voter (reading up, planning, finishing). All counted on this
+// device only.
 
 export const DAILY_GOAL = 5;
-// Rough time per decision, reading included, for "about N minutes left".
-const SECONDS_PER_DECISION = 25;
 
 /** Days in a row, ending today or yesterday, that this device opened the guide. */
 export function streak(days: string[] | undefined, todayIso: string): number {
@@ -71,88 +69,49 @@ const isEarned = (t: Trophy, c: Ctx) => { const [have, need] = t.progress(c); re
 export const earnedTrophies = (c: Ctx) => trophies(c.levels).filter((t) => isEarned(t, c));
 
 
-interface Props {
-  ctx: Ctx;
-  todayCount: number;
-  onLevel: (id: string) => void;
-}
-
 const SHOW_FIRST = 6;
 
-export function ProgressCard({ ctx, todayCount, onLevel }: Props) {
-  const { levels, done, total } = ctx;
-  const [allTrophies, setAllTrophies] = useState(false);
-  const left = total - done;
-  const minutes = Math.max(1, Math.ceil((left * SECONDS_PER_DECISION) / 60));
-  // Earned first, then the ones closest to being earned.
-  const list = trophies(levels)
+/** Trophies: earned ones first (tap ⓘ for what each was for), then the closest to earning. */
+export function Trophies({ ctx }: { ctx: Ctx }) {
+  const [showAll, setShowAll] = useState(false);
+  const [opened, setOpened] = useState<string | null>(null);
+  const list = trophies(ctx.levels)
     .map((t) => { const [have, need] = t.progress(ctx); return { t, have, need, got: have >= need }; })
     .sort((a, b) => Number(b.got) - Number(a.got) || b.have / b.need - a.have / a.need);
   const earnedCount = list.filter((x) => x.got).length;
   return (
-    <section aria-labelledby="kyb-progress" className="rounded-2xl border border-[var(--gb-border)] bg-[var(--gb-surface)] p-4 sm:p-5 space-y-4">
-      <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <h2 id="kyb-progress" className="text-xl">Your ballot, level by level</h2>
-        <p className="text-sm font-bold">{left ? `About ${minutes} min to finish` : 'All done!'}</p>
+    <section aria-labelledby="kyb-trophies" className="rounded-2xl border border-[var(--gb-border)] bg-[var(--gb-surface)] p-4 sm:p-5 space-y-3">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <h2 id="kyb-trophies" className="text-xl">🏆 Trophies <span className="font-[family-name:var(--gb-font-sans)] text-sm font-bold">· {earnedCount} of {list.length} earned</span></h2>
+        {ctx.streak >= 2 && <span className="rounded-full bg-[var(--kyb-chip)] px-3 py-1 text-sm font-bold">🔥 {ctx.streak}-day streak</span>}
       </div>
-
-      {/* Levels: one per section, tap to jump there. */}
-      <ol className="flex gap-2 overflow-x-auto pb-1 -mx-1 px-1 snap-x">
-        {levels.map((l, i) => {
-          const complete = l.done === l.ids.length;
-          return (
-            <li key={l.id} className="snap-start shrink-0">
-              <button type="button" onClick={() => onLevel(l.id)} aria-label={`Level ${i + 1}, ${l.title}: ${l.done} of ${l.ids.length} decided`}
-                className="min-w-[104px] min-h-[64px] rounded-xl border-2 px-3 py-2 text-left"
-                style={complete ? { background: l.color, borderColor: l.color, color: l.ink } : { borderColor: l.color }}>
-                <span className="flex items-center gap-1.5 text-sm font-black">
-                  <span aria-hidden="true">{l.emoji}</span>{complete ? <Check className="w-4 h-4" strokeWidth={3} aria-hidden="true" /> : `${l.done}/${l.ids.length}`}
-                </span>
-                <span className="block text-xs font-bold leading-tight mt-0.5">{l.title}</span>
-              </button>
-            </li>
-          );
-        })}
-      </ol>
-
-      {/* Today's goal and the streak: small, finishable, worth coming back for. */}
-      {left > 0 && (
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-          <div className="flex items-center gap-2" aria-label={`Today's goal: ${Math.min(todayCount, DAILY_GOAL)} of ${DAILY_GOAL} races`}>
-            <span className="text-sm font-bold">Today’s goal</span>
-            <span className="flex gap-1" aria-hidden="true">
-              {Array.from({ length: DAILY_GOAL }, (_, i) => (
-                <span key={i} className="w-5 h-2.5 rounded-full" style={{ background: i < todayCount ? 'var(--gb-primary)' : 'var(--kyb-chip-hi)' }} />
-              ))}
-            </span>
-            <span className="text-sm font-bold">{Math.min(todayCount, DAILY_GOAL)}/{DAILY_GOAL} races</span>
-          </div>
-          {ctx.streak >= 2 && <span className="rounded-full bg-[var(--kyb-chip)] px-3 py-1 text-sm font-bold">🔥 {ctx.streak}-day streak</span>}
-        </div>
-      )}
-
-      {/* Trophies: every one on show; earned ones marked, the rest say how far along you are. */}
-      <div className="space-y-2">
-        <h3 className="text-lg">🏆 Trophies <span className="font-[family-name:var(--gb-font-sans)] text-sm font-bold">· {earnedCount} of {list.length} earned</span></h3>
-        <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2" aria-label="Trophies">
-          {(allTrophies ? list : list.slice(0, SHOW_FIRST)).map(({ t, have, need, got }) => (
-            <li key={t.id} className={`flex items-center gap-2 rounded-xl border-2 px-3 py-2 ${got ? 'border-[var(--gb-primary)] bg-[color-mix(in_srgb,var(--gb-primary)_16%,transparent)]' : 'border-[var(--gb-border-strong)]'}`}>
+      <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2" aria-label="Trophies">
+        {(showAll ? list : list.slice(0, SHOW_FIRST)).map(({ t, have, need, got }) => (
+          <li key={t.id} className={`rounded-xl border-2 px-3 py-2 ${got ? 'border-[var(--gb-primary)] bg-[color-mix(in_srgb,var(--gb-primary)_16%,transparent)]' : 'border-[var(--gb-border-strong)]'}`}>
+            <div className="flex items-center gap-2">
               <span className="text-2xl" aria-hidden="true">{t.emoji}</span>
-              <span className="min-w-0">
+              <span className="min-w-0 flex-1">
                 <span className="block text-sm font-black leading-tight">{t.name}</span>
                 {got
                   ? <span className="block text-xs font-bold text-[var(--gb-primary)]">✓ Earned</span>
                   : <span className="block text-xs leading-snug">{t.how} · {have}/{need}</span>}
               </span>
-            </li>
-          ))}
-        </ul>
-        {list.length > SHOW_FIRST && (
-          <button type="button" onClick={() => setAllTrophies(!allTrophies)} aria-expanded={allTrophies} className="min-h-[44px] rounded-xl border-2 border-[var(--gb-text)] px-4 font-bold">
-            {allTrophies ? 'Show fewer' : `Show all ${list.length} trophies`}
-          </button>
-        )}
-      </div>
+              {got && (
+                <button type="button" onClick={() => setOpened(opened === t.id ? null : t.id)} aria-expanded={opened === t.id} aria-label={`What ${t.name} was for`}
+                  className="shrink-0 w-9 h-9 -mr-1 rounded-full flex items-center justify-center hover:bg-[var(--kyb-chip)]">
+                  <Info className="w-[18px] h-[18px]" aria-hidden="true" />
+                </button>
+              )}
+            </div>
+            {got && opened === t.id && <p className="mt-1.5 text-xs leading-snug">{t.how}: done{need > 1 ? ` (${have}/${need})` : ''}.</p>}
+          </li>
+        ))}
+      </ul>
+      {list.length > SHOW_FIRST && (
+        <button type="button" onClick={() => setShowAll(!showAll)} aria-expanded={showAll} className="min-h-[44px] rounded-xl border-2 border-[var(--gb-text)] px-4 font-bold">
+          {showAll ? 'Show fewer' : `Show all ${list.length} trophies`}
+        </button>
+      )}
     </section>
   );
 }
