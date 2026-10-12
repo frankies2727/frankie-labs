@@ -1,4 +1,4 @@
-import { Check, Lock } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 // The ballot as a game: sections are levels, a small daily goal, a streak of
 // visits and badges for the habits that make a good voter (reading up,
@@ -18,18 +18,20 @@ export function streak(days: string[] | undefined, todayIso: string): number {
   return n;
 }
 
-interface Ctx { done: number; allDone: boolean; looked: number; plan: Record<string, boolean | string>; visits: number }
+interface Ctx { done: number; total: number; allDone: boolean; looked: number; plan: Record<string, boolean | string>; visits: number }
 
-export const BADGES: { id: string; emoji: string; name: string; how: string; earned: (c: Ctx) => boolean }[] = [
-  { id: 'first', emoji: '🗳️', name: 'First pick', how: 'Decide one race', earned: (c) => c.done >= 1 },
-  { id: 'research', emoji: '🔎', name: 'Researcher', how: 'Open 3 candidate profiles or comparisons', earned: (c) => c.looked >= 3 },
-  { id: 'plan', emoji: '📅', name: 'Planner', how: 'Pick how you’ll vote and set a reminder', earned: (c) => !!c.plan.method && !!c.plan.reminder },
-  { id: 'share', emoji: '📣', name: 'Spread the word', how: 'Share your progress or save your link', earned: (c) => !!c.plan.shared },
-  { id: 'regular', emoji: '🔥', name: 'Regular', how: 'Come back on 3 different days', earned: (c) => c.visits >= 3 },
-  { id: 'ready', emoji: '🎉', name: 'Ballot ready', how: 'Decide every race', earned: (c) => c.allDone },
+/** Each badge's progress as [have, need]; earned when have reaches need. */
+export const BADGES: { id: string; emoji: string; name: string; how: string; progress: (c: Ctx) => [number, number] }[] = [
+  { id: 'first', emoji: '🗳️', name: 'First pick', how: 'Decide one race', progress: (c) => [Math.min(c.done, 1), 1] },
+  { id: 'research', emoji: '🔎', name: 'Researcher', how: 'Open 3 candidate profiles or comparisons', progress: (c) => [Math.min(c.looked, 3), 3] },
+  { id: 'plan', emoji: '📅', name: 'Planner', how: 'Pick how you’ll vote and set a reminder', progress: (c) => [Number(!!c.plan.method) + Number(!!c.plan.reminder), 2] },
+  { id: 'share', emoji: '📣', name: 'Spread the word', how: 'Share your progress or save your link', progress: (c) => [Number(!!c.plan.shared), 1] },
+  { id: 'regular', emoji: '🔥', name: 'Regular', how: 'Come back on 3 different days', progress: (c) => [Math.min(c.visits, 3), 3] },
+  { id: 'ready', emoji: '🎉', name: 'Ballot ready', how: 'Decide every race', progress: (c) => [c.done, Math.max(c.total, 1)] },
 ];
 
-export const earnedBadges = (c: Ctx) => BADGES.filter((b) => b.earned(c)).map((b) => b.id);
+const isEarned = (b: (typeof BADGES)[number], c: Ctx) => { const [have, need] = b.progress(c); return have >= need; };
+export const earnedBadges = (c: Ctx) => BADGES.filter((b) => isEarned(b, c)).map((b) => b.id);
 
 interface Level { id: string; title: string; emoji: string; color: string; ink: string; done: number; ids: string[] }
 
@@ -90,16 +92,19 @@ export function ProgressCard({ levels, done, total, ctx, todayCount, streakDays,
         </div>
       )}
 
-      {/* Badges: earned ones in colour, the rest say how to get them. */}
+      {/* Badges: every one on show; earned ones marked, the rest say how far along you are. */}
       <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2" aria-label="Badges">
         {BADGES.map((b) => {
           const got = earned.has(b.id);
+          const [have, need] = b.progress(ctx);
           return (
-            <li key={b.id} className={`flex items-center gap-2 rounded-xl px-3 py-2 ${got ? 'bg-[color-mix(in_srgb,var(--gb-primary)_16%,transparent)] border border-[var(--gb-primary)]' : 'border border-dashed border-[var(--gb-border-strong)]'}`}>
-              <span className="text-xl" aria-hidden="true">{got ? b.emoji : <Lock className="w-5 h-5" />}</span>
+            <li key={b.id} className={`flex items-center gap-2 rounded-xl border-2 px-3 py-2 ${got ? 'border-[var(--gb-primary)] bg-[color-mix(in_srgb,var(--gb-primary)_16%,transparent)]' : 'border-[var(--gb-border-strong)]'}`}>
+              <span className="text-2xl" aria-hidden="true">{b.emoji}</span>
               <span className="min-w-0">
-                <span className="block text-sm font-black leading-tight">{b.name}{got ? '' : ' (locked)'}</span>
-                {!got && <span className="block text-xs leading-snug">{b.how}</span>}
+                <span className="block text-sm font-black leading-tight">{b.name}</span>
+                {got
+                  ? <span className="block text-xs font-bold text-[var(--gb-primary)]">✓ Earned</span>
+                  : <span className="block text-xs leading-snug">{b.how} · {have}/{need}</span>}
               </span>
             </li>
           );

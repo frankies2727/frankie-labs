@@ -2,6 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 import footer from './govbot/footer.html?raw';
 import header from './govbot/header.html?raw';
 import govbotCss from './govbot/govbot.css?url';
+import govbotJs from './govbot/govbot-shell.js?url';
 
 // govbot's own site shell (header, mobile drawer, footer, stylesheet and
 // script), copied from chihacknight/govbot by scripts/ballot/govbot-shell.mjs,
@@ -36,9 +37,15 @@ export function GovbotChrome({ children }: { children: ReactNode }) {
     document.head.append(link);
     return () => { link.remove(); root.removeAttribute('data-theme'); };
   }, []);
-  // The script wires the theme toggle, menus and drawer; it expects the
-  // header to be in the page already.
-  useEffect(() => { if (styled) import('./govbot/govbot-shell.js'); }, [styled]);
+  // The script wires the theme toggle, menus and drawer to the header in the
+  // page, so it runs again each time this page opens (a module import would
+  // run only the first time, leaving a later visit's header dead).
+  useEffect(() => {
+    if (!styled) return;
+    const script = Object.assign(document.createElement('script'), { src: govbotJs });
+    document.body.append(script);
+    return () => script.remove();
+  }, [styled]);
   if (!styled) return null;
   return (
     <>
