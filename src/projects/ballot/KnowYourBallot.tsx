@@ -424,7 +424,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
               <div className="mt-3 grid grid-cols-3 gap-2" role="tablist" aria-label="Views">
                 {([['ballot', 'My Ballot'], ['plan', 'Plan to vote'], ['share', 'Save & share']] as const).map(([id, label]) => (
                   <button key={id} type="button" role="tab" aria-selected={tab === id} onClick={() => { setTab(id); window.scrollTo({ top: 0 }); }}
-                    className={`min-h-[44px] rounded-xl font-bold border-2 ${tab === id ? 'bg-[var(--gb-text)] text-[var(--gb-bg)] border-[var(--gb-text)]' : 'border-[var(--gb-border)] text-[var(--gb-text)] hover:border-[var(--gb-text)]'}`}>
+                    className={`min-h-[44px] rounded-xl font-bold border-2 border-[var(--gb-text)] ${tab === id ? 'bg-[var(--gb-text)] text-[var(--gb-bg)]' : 'text-[var(--gb-text)]'}`}>
                     {label}
                   </button>
                 ))}

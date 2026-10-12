@@ -1,5 +1,4 @@
 import { CalendarPlus } from 'lucide-react';
-import { useState } from 'react';
 import { CITY_2027, dayLabel, downloadReminder, forVoter, NEXT_ELECTION, NOV_3, type KeyDate } from './dates';
 import { daysUntil, useNow } from './store';
 import type { CityRace, Districts } from './types';
@@ -90,36 +89,28 @@ function CityRaces({ city, districts }: { city: CityRace[]; districts: Districts
 }
 
 /**
- * A quiet heads-up about the next election, counting down by the day. No
- * address yet: `chicago` unset. With `city`, Chicago voters can open it to see
- * their 2027 races.
+ * A heads-up about the next election, counting down by the day. No address
+ * yet: `chicago` unset. With `city`, Chicago voters (and anyone without an
+ * address yet) see their 2027 races right there.
  */
 export function NextElectionNote({ chicago, city, districts = null }: { chicago?: boolean; city?: CityRace[]; districts?: Districts | null }) {
   const days = daysUntil(NEXT_ELECTION, useNow());
-  const [open, setOpen] = useState(false);
   if (days < 0) return null;
-  const canOpen = city && chicago !== false;
+  const showRaces = city && chicago !== false;
   return (
-    <aside id="kyb-next" aria-label="Next election" className="rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] px-4 py-3 space-y-3">
+    <aside id="kyb-next" aria-label="Next election" className="rounded-2xl border-[3px] border-[var(--kyb-gold)] bg-[var(--gb-surface)] px-4 py-4 space-y-3">
       <div className="flex items-center gap-4">
-        <div className="min-w-0 flex-1 space-y-2">
-          <p className="text-[15px] leading-relaxed text-[var(--gb-text)]">
-            <strong className="text-[var(--gb-text)]">Get ready for Feb 23, 2027 too!</strong>{' '}
-            {NEXT_UP[chicago === undefined ? 'either' : chicago ? 'chicago' : 'suburbs']}{' '}
-            We’ll be here with everything nice and tidy for you.
-          </p>
-          {canOpen && (
-            <button type="button" onClick={() => setOpen(!open)} aria-expanded={open} className="min-h-[44px] font-bold text-[var(--gb-text)] underline underline-offset-2">
-              {open ? 'Hide' : 'See what’s on it'}
-            </button>
-          )}
-        </div>
-        <p className="shrink-0 text-center text-[var(--gb-text)]">
-          <span className="block text-2xl font-black leading-none">{days}</span>
+        <p className="min-w-0 flex-1 text-[15px] leading-relaxed text-[var(--gb-text)]">
+          <strong className="text-[var(--gb-text)]">Get ready for Feb 23, 2027 too!</strong>{' '}
+          {NEXT_UP[chicago === undefined ? 'either' : chicago ? 'chicago' : 'suburbs']}{' '}
+          We’ll be here with everything nice and tidy for you.
+        </p>
+        <p className="shrink-0 w-20 h-20 rounded-full border-[3px] border-[var(--kyb-gold)] flex flex-col items-center justify-center text-[var(--gb-text)]">
+          <span className="text-2xl font-black leading-none">{days}</span>
           <span className="text-sm font-bold">day{days === 1 ? '' : 's'}</span>
         </p>
       </div>
-      {open && city && <CityRaces city={city} districts={districts} />}
+      {showRaces && <CityRaces city={city} districts={districts} />}
     </aside>
   );
 }

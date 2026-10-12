@@ -18,7 +18,7 @@ interface Props {
 function List({ sections, current, isDone, labelOf, onSection, onRace }: Props) {
   return (
     <nav aria-label="Ballot contents" className="text-[15px]">
-      <ol className="space-y-2.5 p-2.5">
+      <ol className="space-y-4 p-4">
         {sections.map((s, i) => {
           const open = s.id === current;
           // Each section framed in its colour; the one you're on pulses.

@@ -42,10 +42,10 @@
 
 /* The contents section you're on: its coloured frame pulses gently. */
 @keyframes kyb-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--pulse) 55%, transparent); }
-  50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--pulse) 0%, transparent), 0 0 18px 2px color-mix(in srgb, var(--pulse) 45%, transparent); }
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--pulse) 75%, transparent), 0 0 0 0 transparent; }
+  50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--pulse) 50%, transparent), 0 0 20px 6px color-mix(in srgb, var(--pulse) 60%, transparent); }
 }
-.kyb-pulse { animation: kyb-pulse 1.8s ease-in-out infinite; }
+.kyb-pulse { animation: kyb-pulse 1.4s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) {
-  .kyb-pulse { animation: none; box-shadow: 0 0 0 3px color-mix(in srgb, var(--pulse) 40%, transparent); }
+  .kyb-pulse { animation: none; box-shadow: 0 0 0 5px color-mix(in srgb, var(--pulse) 50%, transparent); }
 }
