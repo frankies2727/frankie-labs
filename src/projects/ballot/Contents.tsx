@@ -13,22 +13,20 @@ interface Props {
   labelOf: (id: string) => string;
   onSection: (id: string) => void;
   onRace: (sectionId: string, id: string) => void;
-  /** Other parts of the page, by element id. */
-  more: { id: string; label: string }[];
-  onMore: (id: string) => void;
 }
 
-function List({ sections, current, isDone, labelOf, onSection, onRace, more, onMore }: Props) {
+function List({ sections, current, isDone, labelOf, onSection, onRace }: Props) {
   return (
     <nav aria-label="Ballot contents" className="text-[15px]">
-      <ol>
+      <ol className="space-y-2.5 p-2.5">
         {sections.map((s, i) => {
           const open = s.id === current;
+          // Each section framed in its colour; the one you're on pulses.
           return (
-            <li key={s.id} className="border-b border-[var(--gb-border)]">
-              <button type="button" onClick={() => onSection(s.id)} aria-expanded={open}
-                className={`w-full flex items-center gap-2 px-3 py-3 text-left font-bold hover:bg-[var(--kyb-chip)] ${open ? 'bg-[var(--kyb-chip)]' : ''}`}
-                style={open ? { boxShadow: `inset 4px 0 0 ${s.color}` } : undefined}>
+            <li key={s.id} className={`rounded-xl border-[3px] overflow-hidden ${open ? 'kyb-pulse' : ''}`}
+              style={{ borderColor: s.color, ['--pulse' as string]: s.color }}>
+              <button type="button" onClick={() => onSection(s.id)} aria-expanded={open} aria-current={open ? 'step' : undefined}
+                className={`w-full flex items-center gap-2 px-3 py-3 text-left font-bold hover:bg-[var(--kyb-chip)] ${open ? 'bg-[var(--kyb-chip)]' : ''}`}>
                 <span aria-hidden="true">{s.emoji}</span>
                 <span className="flex-1 leading-snug">{i + 1}. {s.title}</span>
                 <span className="text-sm font-black">{s.done === s.ids.length ? <Check className="w-4 h-4 text-[var(--gb-primary)]" strokeWidth={3} aria-label="done" /> : `${s.done}/${s.ids.length}`}</span>
@@ -55,13 +53,6 @@ function List({ sections, current, isDone, labelOf, onSection, onRace, more, onM
           );
         })}
       </ol>
-      <ul className="pt-2">
-        {more.map((m) => (
-          <li key={m.id}>
-            <button type="button" onClick={() => onMore(m.id)} className="w-full px-3 py-2.5 text-left font-bold underline underline-offset-2 hover:bg-[var(--kyb-chip)]">{m.label}</button>
-          </li>
-        ))}
-      </ul>
     </nav>
   );
 }
@@ -96,7 +87,7 @@ export function ContentsDrawer({ open, onClose, ...props }: Props & { open: bool
           <p className="font-black">☰ Contents</p>
           <button type="button" onClick={onClose} aria-label="Close contents" className="w-10 h-10 rounded-full border-2 border-[var(--gb-text)] flex items-center justify-center"><X className="w-5 h-5" /></button>
         </div>
-        <List {...props} onSection={props.onSection} onRace={close(props.onRace)} onMore={close(props.onMore)} />
+        <List {...props} onRace={close(props.onRace)} />
       </div>
     </div>
   );
