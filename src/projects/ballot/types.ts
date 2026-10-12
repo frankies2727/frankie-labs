@@ -6,13 +6,16 @@ export type Section = 'federal' | 'state' | 'county' | 'judicial' | 'school';
 export type AreaType = 'cd' | 'sldu' | 'sldl' | 'commissioner' | 'bor' | 'subcircuit' | 'school' | 'ward';
 export interface Area { type: AreaType; id: string }
 
+/** Campaign totals this cycle (since Jan 1, 2025), from official filings. */
 export interface Money {
-  fecId: string;
-  incumbent: boolean;
+  /** FEC for federal candidates, the Illinois State Board of Elections otherwise. */
+  source: 'FEC' | 'ISBE';
+  /** FEC candidate ID, or ISBE committee ID. */
+  id: string;
   raised: number;
   spent: number;
+  /** Cash on hand at the end of the latest report. */
   cash: number;
-  fromIndividuals: number;
   /** MM/DD/YYYY, end of the latest report. */
   through: string;
 }
@@ -21,6 +24,8 @@ export interface Candidate {
   ballot: number;
   name: string;
   party: string;
+  /** Only set when official records (FEC or ISBE) say so. */
+  incumbent?: boolean;
   money?: Money;
 }
 
@@ -49,6 +54,7 @@ export interface BallotData {
   sources: {
     candidates: { url: string; page: string; asOf: string | null };
     money: { url: string; file: string };
+    stateMoney: { url: string };
     earlyVoting: { page: string };
   };
   races: Race[];

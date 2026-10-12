@@ -13,6 +13,9 @@
    "url": "https://www.fec.gov/data/",
    "file": "https://www.fec.gov/files/bulk-downloads/2026/weball26.zip"
   },
+  "stateMoney": {
+   "url": "https://www.elections.il.gov/CampaignDisclosureDataFiles/"
+  },
   "earlyVoting": {
    "page": "https://chicagoelections.gov/voting/early-votingvote-centers"
   }
@@ -30,12 +33,11 @@
      "name": "Don Tracy",
      "party": "Republican",
      "money": {
-      "fecId": "S6IL00615",
-      "incumbent": false,
+      "source": "FEC",
+      "id": "S6IL00615",
       "raised": 2459890,
       "spent": 947466,
       "cash": 1512424,
-      "fromIndividuals": 401920,
       "through": "06/30/2026"
      }
     },
@@ -44,12 +46,11 @@
      "name": "Juliana Stratton",
      "party": "Democratic",
      "money": {
-      "fecId": "S6IL00458",
-      "incumbent": false,
+      "source": "FEC",
+      "id": "S6IL00458",
       "raised": 5906599,
       "spent": 4798641,
       "cash": 1107958,
-      "fromIndividuals": 4860706,
       "through": "06/30/2026"
      }
     },
@@ -58,12 +59,11 @@
      "name": "Whitfield Harrington Jr",
      "party": "American Center Party",
      "money": {
-      "fecId": "S6IL00680",
-      "incumbent": false,
+      "source": "FEC",
+      "id": "S6IL00680",
       "raised": 100702,
       "spent": 96951,
       "cash": 3751,
-      "fromIndividuals": 33953,
       "through": "06/30/2026"
      }
     }
@@ -80,17 +80,42 @@
     {
      "ballot": 4,
      "name": "Darren Bailey & Aaron B. Del Mar",
-     "party": "Republican"
+     "party": "Republican",
+     "money": {
+      "source": "ISBE",
+      "id": "34092",
+      "raised": 2106478,
+      "spent": 1981292,
+      "cash": 127990,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 5,
      "name": "JB Pritzker & Christian Mitchell",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "32762",
+      "raised": 25617173,
+      "spent": 26626897,
+      "cash": 3141018,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 6,
      "name": "Collin Corbett & Carolyn Schofield",
-     "party": "Independent"
+     "party": "Independent",
+     "money": {
+      "source": "ISBE",
+      "id": "41172",
+      "raised": 558240,
+      "spent": 184077,
+      "cash": 379163,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -105,12 +130,29 @@
     {
      "ballot": 7,
      "name": "Robert W. Fioretti",
-     "party": "Republican"
+     "party": "Republican",
+     "money": {
+      "source": "ISBE",
+      "id": "40846",
+      "raised": 89557,
+      "spent": 61253,
+      "cash": 28303,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 8,
      "name": "Kwame Raoul",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "18261",
+      "raised": 1160054,
+      "spent": 591591,
+      "cash": 1720908,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -125,12 +167,29 @@
     {
      "ballot": 9,
      "name": "Diane M. Harris",
-     "party": "Republican"
+     "party": "Republican",
+     "money": {
+      "source": "ISBE",
+      "id": "37026",
+      "raised": 17260,
+      "spent": 17483,
+      "cash": 134,
+      "through": "09/30/2026"
+     }
     },
     {
      "ballot": 10,
      "name": "Alexi Giannoulias",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "19323",
+      "raised": 19072778,
+      "spent": 493699,
+      "cash": 21849062,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -145,12 +204,28 @@
     {
      "ballot": 11,
      "name": "Bryan Drew",
-     "party": "Republican"
+     "party": "Republican",
+     "money": {
+      "source": "ISBE",
+      "id": "41029",
+      "raised": 83976,
+      "spent": 29740,
+      "cash": 54236,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 12,
      "name": "Margaret Croke",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "35784",
+      "raised": 2312252,
+      "spent": 2513771,
+      "cash": 108583,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -165,12 +240,29 @@
     {
      "ballot": 13,
      "name": "Max Solomon",
-     "party": "Republican"
+     "party": "Republican",
+     "money": {
+      "source": "ISBE",
+      "id": "25411",
+      "raised": 4915,
+      "spent": 3174,
+      "cash": 7167,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 14,
      "name": "Michael W. Frerichs",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "14111",
+      "raised": 1071486,
+      "spent": 481353,
+      "cash": 1741569,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -190,12 +282,11 @@
      "name": "Christian Maxwell",
      "party": "Republican",
      "money": {
-      "fecId": "H6IL01191",
-      "incumbent": false,
+      "source": "FEC",
+      "id": "H6IL01191",
       "raised": 63316,
       "spent": 36042,
       "cash": 33832,
-      "fromIndividuals": 63316,
       "through": "06/30/2026"
      }
     },
@@ -204,14 +295,14 @@
      "name": "Jonathan L. Jackson",
      "party": "Democratic",
      "money": {
-      "fecId": "H2IL01349",
-      "incumbent": true,
+      "source": "FEC",
+      "id": "H2IL01349",
       "raised": 418350,
       "spent": 424875,
       "cash": 47163,
-      "fromIndividuals": 269361,
       "through": "06/30/2026"
-     }
+     },
+     "incumbent": true
     }
    ],
    "writeIn": false
@@ -236,12 +327,11 @@
      "name": "Donna Miller",
      "party": "Democratic",
      "money": {
-      "fecId": "H6IL02355",
-      "incumbent": false,
+      "source": "FEC",
+      "id": "H6IL02355",
       "raised": 2452894,
       "spent": 2412349,
       "cash": 40546,
-      "fromIndividuals": 2315378,
       "through": "06/30/2026"
      }
     }
@@ -263,12 +353,11 @@
      "name": "Angel Oakley",
      "party": "Republican",
      "money": {
-      "fecId": "H6IL03163",
-      "incumbent": false,
+      "source": "FEC",
+      "id": "H6IL03163",
       "raised": 8080,
       "spent": 4341,
       "cash": 3738,
-      "fromIndividuals": 8080,
       "through": "06/30/2026"
      }
     },
@@ -277,14 +366,14 @@
      "name": "Delia Ramirez",
      "party": "Democratic",
      "money": {
-      "fecId": "H2IL03162",
-      "incumbent": true,
+      "source": "FEC",
+      "id": "H2IL03162",
       "raised": 1465280,
       "spent": 986630,
       "cash": 946222,
-      "fromIndividuals": 1037673,
       "through": "06/30/2026"
-     }
+     },
+     "incumbent": true
     }
    ],
    "writeIn": false
@@ -309,12 +398,11 @@
      "name": "Patty Garcia",
      "party": "Democratic",
      "money": {
-      "fecId": "H6IL04153",
-      "incumbent": false,
+      "source": "FEC",
+      "id": "H6IL04153",
       "raised": 358667,
       "spent": 173168,
       "cash": 185499,
-      "fromIndividuals": 177910,
       "through": "06/30/2026"
      }
     },
@@ -328,12 +416,11 @@
      "name": "Chris Getty",
      "party": "Independent",
      "money": {
-      "fecId": "H6IL04195",
-      "incumbent": false,
+      "source": "FEC",
+      "id": "H6IL04195",
       "raised": 188170,
       "spent": 56523,
       "cash": 131647,
-      "fromIndividuals": 188170,
       "through": "06/30/2026"
      }
     }
@@ -360,14 +447,14 @@
      "name": "Mike Quigley",
      "party": "Democratic",
      "money": {
-      "fecId": "H0IL05096",
-      "incumbent": true,
+      "source": "FEC",
+      "id": "H0IL05096",
       "raised": 725695,
       "spent": 719060,
       "cash": 1187818,
-      "fromIndividuals": 244577,
       "through": "06/30/2026"
-     }
+     },
+     "incumbent": true
     }
    ],
    "writeIn": true
@@ -387,12 +474,11 @@
      "name": "Niki Conforti",
      "party": "Republican",
      "money": {
-      "fecId": "H2IL06090",
-      "incumbent": false,
+      "source": "FEC",
+      "id": "H2IL06090",
       "raised": 313038,
       "spent": 295578,
       "cash": 22661,
-      "fromIndividuals": 308088,
       "through": "06/30/2026"
      }
     },
@@ -401,14 +487,14 @@
      "name": "Sean Casten",
      "party": "Democratic",
      "money": {
-      "fecId": "H8IL06139",
-      "incumbent": true,
+      "source": "FEC",
+      "id": "H8IL06139",
       "raised": 2108920,
       "spent": 1518045,
       "cash": 1285018,
-      "fromIndividuals": 1336291,
       "through": "06/30/2026"
-     }
+     },
+     "incumbent": true
     }
    ],
    "writeIn": false
@@ -428,12 +514,11 @@
      "name": "Chad Koppie",
      "party": "Republican",
      "money": {
-      "fecId": "H2IL08203",
-      "incumbent": false,
+      "source": "FEC",
+      "id": "H2IL08203",
       "raised": 58215,
       "spent": 58173,
       "cash": 42,
-      "fromIndividuals": 0,
       "through": "09/30/2026"
      }
     },
@@ -442,12 +527,11 @@
      "name": "La Shawn K. Ford",
      "party": "Democratic",
      "money": {
-      "fecId": "H6IL07354",
-      "incumbent": false,
+      "source": "FEC",
+      "id": "H6IL07354",
       "raised": 722009,
       "spent": 609421,
       "cash": 112588,
-      "fromIndividuals": 480392,
       "through": "06/30/2026"
      }
     }
@@ -469,12 +553,11 @@
      "name": "Jennifer Davis",
      "party": "Republican",
      "money": {
-      "fecId": "H6IL08311",
-      "incumbent": false,
+      "source": "FEC",
+      "id": "H6IL08311",
       "raised": 1476009,
       "spent": 745608,
       "cash": 730401,
-      "fromIndividuals": 462009,
       "through": "06/30/2026"
      }
     },
@@ -483,12 +566,11 @@
      "name": "Melissa L. Bean",
      "party": "Democratic",
      "money": {
-      "fecId": "H6IL08329",
-      "incumbent": false,
+      "source": "FEC",
+      "id": "H6IL08329",
       "raised": 2071076,
       "spent": 1926546,
       "cash": 144530,
-      "fromIndividuals": 1451374,
       "through": "06/30/2026"
      }
     }
@@ -515,12 +597,11 @@
      "name": "Daniel Biss",
      "party": "Democratic",
      "money": {
-      "fecId": "H6IL09228",
-      "incumbent": false,
+      "source": "FEC",
+      "id": "H6IL09228",
       "raised": 2946675,
       "spent": 2684545,
       "cash": 262130,
-      "fromIndividuals": 2733768,
       "through": "06/30/2026"
      }
     }
@@ -540,7 +621,16 @@
     {
      "ballot": 32,
      "name": "Omar Aquino",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "25909",
+      "raised": 231450,
+      "spent": 317790,
+      "cash": 114224,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -558,7 +648,16 @@
     {
      "ballot": 32,
      "name": "Mattie Hunter",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "17385",
+      "raised": 237638,
+      "spent": 255036,
+      "cash": 216281,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -576,7 +675,16 @@
     {
      "ballot": 32,
      "name": "Lakesia Collins",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "35678",
+      "raised": 276620,
+      "spent": 223246,
+      "cash": 215032,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -594,7 +702,16 @@
     {
      "ballot": 32,
      "name": "Sara Feigenholtz",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "9783",
+      "raised": 622047,
+      "spent": 944333,
+      "cash": 740063,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -640,7 +757,15 @@
     {
      "ballot": 32,
      "name": "Patrick Hanley",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40652",
+      "raised": 418674,
+      "spent": 413564,
+      "cash": 5110,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -658,7 +783,16 @@
     {
      "ballot": 32,
      "name": "Mike Porfirio",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "37283",
+      "raised": 168521,
+      "spent": 162602,
+      "cash": 49928,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -676,7 +810,16 @@
     {
      "ballot": 32,
      "name": "Celina Villanueva",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "34699",
+      "raised": 169993,
+      "spent": 191432,
+      "cash": 79803,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -694,12 +837,29 @@
     {
      "ballot": 31,
      "name": "Brian Skala",
-     "party": "Republican"
+     "party": "Republican",
+     "money": {
+      "source": "ISBE",
+      "id": "41006",
+      "raised": 20318,
+      "spent": 2252,
+      "cash": 18066,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 32,
      "name": "Emil Jones, III",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "21361",
+      "raised": 215039,
+      "spent": 38568,
+      "cash": 325410,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -717,7 +877,16 @@
     {
      "ballot": 32,
      "name": "Napoleon B. Harris III",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "24033",
+      "raised": 300445,
+      "spent": 283336,
+      "cash": 348532,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -735,12 +904,29 @@
     {
      "ballot": 31,
      "name": "Frederick L. Walls",
-     "party": "Republican"
+     "party": "Republican",
+     "money": {
+      "source": "ISBE",
+      "id": "37348",
+      "raised": 0,
+      "spent": 1050,
+      "cash": -334,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 32,
      "name": "Elgie R. Sims, Jr.",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "22210",
+      "raised": 432571,
+      "spent": 449819,
+      "cash": 451285,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -763,7 +949,15 @@
     {
      "ballot": 32,
      "name": "Frances Ann Hurley",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "23955",
+      "raised": 222952,
+      "spent": 74609,
+      "cash": 185793,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -781,7 +975,16 @@
     {
      "ballot": 32,
      "name": "Graciela Guzman",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39473",
+      "raised": 206163,
+      "spent": 232674,
+      "cash": 42417,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -799,7 +1002,16 @@
     {
      "ballot": 32,
      "name": "Don Harmon",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "16283",
+      "raised": 10358318,
+      "spent": 4427357,
+      "cash": 19917425,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -817,7 +1029,16 @@
     {
      "ballot": 42,
      "name": "Aaron M. Ortiz",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "34288",
+      "raised": 366558,
+      "spent": 220738,
+      "cash": 159231,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -835,7 +1056,16 @@
     {
      "ballot": 42,
      "name": "Eva-Dina Delgado",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "35786",
+      "raised": 336500,
+      "spent": 200210,
+      "cash": 445840,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -853,7 +1083,16 @@
     {
      "ballot": 42,
      "name": "Lilian Jimenez",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "37119",
+      "raised": 269651,
+      "spent": 241363,
+      "cash": 72213,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -871,7 +1110,16 @@
     {
      "ballot": 42,
      "name": "Kimberly Neely DuBuclet",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "23778",
+      "raised": 118236,
+      "spent": 120893,
+      "cash": 55450,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -889,7 +1137,16 @@
     {
      "ballot": 42,
      "name": "Sonya Marie Harper",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "31794",
+      "raised": 39553,
+      "spent": 57353,
+      "cash": -5120,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -907,7 +1164,15 @@
     {
      "ballot": 42,
      "name": "Shantel Franklin",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40760",
+      "raised": 271267,
+      "spent": 230129,
+      "cash": 41138,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -925,7 +1190,16 @@
     {
      "ballot": 42,
      "name": "Yolonda Morris",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39543",
+      "raised": 122202,
+      "spent": 18322,
+      "cash": 162505,
+      "through": "09/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -943,7 +1217,16 @@
     {
      "ballot": 42,
      "name": "Jawaharial \"Omar\" Williams",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "35462",
+      "raised": 168114,
+      "spent": 48561,
+      "cash": 247891,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -961,7 +1244,16 @@
     {
      "ballot": 42,
      "name": "Ann M. Williams",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "22331",
+      "raised": 192607,
+      "spent": 115604,
+      "cash": 318305,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -979,12 +1271,28 @@
     {
      "ballot": 41,
      "name": "Justin J. Kumar",
-     "party": "Republican"
+     "party": "Republican",
+     "money": {
+      "source": "ISBE",
+      "id": "40804",
+      "raised": 100,
+      "spent": 0,
+      "cash": 200,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 42,
      "name": "Paul Kendrick",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40740",
+      "raised": 367789,
+      "spent": 350021,
+      "cash": 17768,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -1002,12 +1310,28 @@
     {
      "ballot": 41,
      "name": "Terry Nguyen Le",
-     "party": "Republican"
+     "party": "Republican",
+     "money": {
+      "source": "ISBE",
+      "id": "40018",
+      "raised": 3,
+      "spent": 20,
+      "cash": 225,
+      "through": "09/30/2026"
+     }
     },
     {
      "ballot": 42,
      "name": "Demerike \"Demi\" Palecek",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40735",
+      "raised": 259824,
+      "spent": 243988,
+      "cash": 15836,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -1025,7 +1349,16 @@
     {
      "ballot": 42,
      "name": "Kelly M. Cassidy",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "23663",
+      "raised": 211894,
+      "spent": 211171,
+      "cash": 17640,
+      "through": "09/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1043,7 +1376,16 @@
     {
      "ballot": 42,
      "name": "Michael J. Kelly",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "37053",
+      "raised": 204592,
+      "spent": 238742,
+      "cash": 62512,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1061,7 +1403,16 @@
     {
      "ballot": 42,
      "name": "Kevin John Olickal",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "35758",
+      "raised": 151334,
+      "spent": 183339,
+      "cash": 15737,
+      "through": "09/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1084,7 +1435,16 @@
     {
      "ballot": 42,
      "name": "Robyn Gabel",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "22260",
+      "raised": 675953,
+      "spent": 399355,
+      "cash": 356393,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1107,7 +1467,16 @@
     {
      "ballot": 42,
      "name": "Lindsey LaPointe",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "35544",
+      "raised": 240986,
+      "spent": 237812,
+      "cash": 194247,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1125,7 +1494,16 @@
     {
      "ballot": 41,
      "name": "Brad Stephens",
-     "party": "Republican"
+     "party": "Republican",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "35553",
+      "raised": 632153,
+      "spent": 563148,
+      "cash": 121862,
+      "through": "09/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1143,12 +1521,29 @@
     {
      "ballot": 41,
      "name": "Eric Su",
-     "party": "Republican"
+     "party": "Republican",
+     "money": {
+      "source": "ISBE",
+      "id": "40717",
+      "raised": 160,
+      "spent": 122,
+      "cash": 38,
+      "through": "09/30/2026"
+     }
     },
     {
      "ballot": 42,
      "name": "Abdelnasser Rashid",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "37289",
+      "raised": 593840,
+      "spent": 686860,
+      "cash": 273889,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1166,7 +1561,16 @@
     {
      "ballot": 42,
      "name": "Angie Guerrero-Cuellar",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "36934",
+      "raised": 88730,
+      "spent": 9356,
+      "cash": 114437,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1184,7 +1588,16 @@
     {
      "ballot": 42,
      "name": "Edgar Gonzalez, Jr.",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "35804",
+      "raised": 197074,
+      "spent": 132224,
+      "cash": 216245,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1202,7 +1615,16 @@
     {
      "ballot": 42,
      "name": "Theresa Mah",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "31665",
+      "raised": 118173,
+      "spent": 122797,
+      "cash": 28153,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1220,12 +1642,29 @@
     {
      "ballot": 41,
      "name": "Antoinette Jewel Simmons",
-     "party": "Republican"
+     "party": "Republican",
+     "money": {
+      "source": "ISBE",
+      "id": "40934",
+      "raised": 0,
+      "spent": 0,
+      "cash": 0,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 42,
      "name": "Curtis J. Tarver II",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "34112",
+      "raised": 186618,
+      "spent": 123731,
+      "cash": 254166,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -1243,7 +1682,16 @@
     {
      "ballot": 42,
      "name": "Kam Buckner",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "35126",
+      "raised": 695229,
+      "spent": 491297,
+      "cash": 314098,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1261,7 +1709,16 @@
     {
      "ballot": 42,
      "name": "Justin Q. Slaughter",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "32782",
+      "raised": 170397,
+      "spent": 104835,
+      "cash": 125608,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1279,7 +1736,16 @@
     {
      "ballot": 42,
      "name": "Robert \"Bob\" Rita",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "16502",
+      "raised": 656267,
+      "spent": 728122,
+      "cash": 377752,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1297,7 +1763,16 @@
     {
      "ballot": 42,
      "name": "Thaddeus Jones",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "23713",
+      "raised": 358575,
+      "spent": 374988,
+      "cash": 39477,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -1315,7 +1790,16 @@
     {
      "ballot": 42,
      "name": "Michael \"Mike\" Crawford",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39618",
+      "raised": 70245,
+      "spent": 63455,
+      "cash": 19773,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1333,7 +1817,16 @@
     {
      "ballot": 42,
      "name": "Lisa J. Davis",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39621",
+      "raised": 65113,
+      "spent": 210934,
+      "cash": 63361,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1351,7 +1844,16 @@
     {
      "ballot": 42,
      "name": "Marcus C. Evans, Jr.",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "24362",
+      "raised": 740227,
+      "spent": 435247,
+      "cash": 882041,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1369,7 +1871,15 @@
     {
      "ballot": 42,
      "name": "Cleopatra \"Cleo\" Cowley",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "41040",
+      "raised": 96877,
+      "spent": 71772,
+      "cash": 25105,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1392,7 +1902,16 @@
     {
      "ballot": 42,
      "name": "Mary Gill",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39411",
+      "raised": 124202,
+      "spent": 79186,
+      "cash": 105766,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1410,12 +1929,29 @@
     {
      "ballot": 41,
      "name": "David Sheppard",
-     "party": "Republican"
+     "party": "Republican",
+     "money": {
+      "source": "ISBE",
+      "id": "37385",
+      "raised": 0,
+      "spent": 0,
+      "cash": 1096,
+      "through": "09/30/2026"
+     }
     },
     {
      "ballot": 42,
      "name": "Rick Ryan",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39609",
+      "raised": 119340,
+      "spent": 47545,
+      "cash": 95630,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1438,7 +1974,16 @@
     {
      "ballot": 42,
      "name": "Will Guzzardi",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "23729",
+      "raised": 273992,
+      "spent": 150692,
+      "cash": 216626,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1456,7 +2001,15 @@
     {
      "ballot": 42,
      "name": "Miguel Alvelo-Rivera",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40930",
+      "raised": 313211,
+      "spent": 295709,
+      "cash": 22502,
+      "through": "09/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1474,12 +2027,29 @@
     {
      "ballot": 41,
      "name": "Joseph Johnson",
-     "party": "Republican"
+     "party": "Republican",
+     "money": {
+      "source": "ISBE",
+      "id": "40936",
+      "raised": 16956,
+      "spent": 6570,
+      "cash": 10386,
+      "through": "09/30/2026"
+     }
     },
     {
      "ballot": 42,
      "name": "Justin Cochran",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "40957",
+      "raised": 19051,
+      "spent": 11192,
+      "cash": 7859,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1502,7 +2072,16 @@
     {
      "ballot": 42,
      "name": "Camille Lilly",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "22767",
+      "raised": 97726,
+      "spent": 64287,
+      "cash": 256047,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1532,17 +2111,43 @@
     {
      "ballot": 54,
      "name": "Precious Brady-Davis",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "37015",
+      "raised": 215043,
+      "spent": 196096,
+      "cash": 40475,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 55,
      "name": "Eira Lizeth Corral Sepúlveda",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "32778",
+      "raised": 123743,
+      "spent": 113825,
+      "cash": 42660,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 56,
      "name": "Beth McElroy Kirkwood",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "40660",
+      "raised": 146571,
+      "spent": 99901,
+      "cash": 46669,
+      "through": "09/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1557,7 +2162,16 @@
     {
      "ballot": 57,
      "name": "Cameron \"Cam\" Davis",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "34419",
+      "raised": 88307,
+      "spent": 77991,
+      "cash": 11675,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1572,12 +2186,29 @@
     {
      "ballot": 62,
      "name": "Toni Preckwinkle",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "21644",
+      "raised": 3155859,
+      "spent": 3097175,
+      "cash": 110739,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 63,
      "name": "Michael Murphy",
-     "party": "Libertarian"
+     "party": "Libertarian",
+     "money": {
+      "source": "ISBE",
+      "id": "40838",
+      "raised": 554,
+      "spent": 78,
+      "cash": 476,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1592,7 +2223,16 @@
     {
      "ballot": 64,
      "name": "Monica Gordon",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "35763",
+      "raised": 223447,
+      "spent": 174335,
+      "cash": 110447,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -1607,12 +2247,29 @@
     {
      "ballot": 65,
      "name": "Thomas J. Dart",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "19319",
+      "raised": 185619,
+      "spent": 95193,
+      "cash": 432648,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 66,
      "name": "Brad Sandefur",
-     "party": "Libertarian"
+     "party": "Libertarian",
+     "money": {
+      "source": "ISBE",
+      "id": "37056",
+      "raised": 3795,
+      "spent": 2780,
+      "cash": 1015,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1627,7 +2284,16 @@
     {
      "ballot": 67,
      "name": "Maria Pappas",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "6051",
+      "raised": 266401,
+      "spent": 70269,
+      "cash": 278135,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1642,7 +2308,15 @@
     {
      "ballot": 68,
      "name": "Pat Hynes",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "36733",
+      "raised": 2445615,
+      "spent": 2345991,
+      "cash": 100723,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 69,
@@ -1665,7 +2339,16 @@
     {
      "ballot": 72,
      "name": "Tara Stamps",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "35146",
+      "raised": 146025,
+      "spent": 113167,
+      "cash": 35160,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1683,7 +2366,16 @@
     {
      "ballot": 72,
      "name": "Michael Scott, Jr.",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "40016",
+      "raised": 150985,
+      "spent": 195722,
+      "cash": 3557,
+      "through": "09/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1701,7 +2393,16 @@
     {
      "ballot": 72,
      "name": "Bill Lowry",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "34015",
+      "raised": 229510,
+      "spent": 280181,
+      "cash": 63053,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1719,7 +2420,16 @@
     {
      "ballot": 72,
      "name": "Stanley S. Moore",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "20715",
+      "raised": 71241,
+      "spent": 84813,
+      "cash": 1989,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1742,7 +2452,16 @@
     {
      "ballot": 72,
      "name": "Kisha E. McCaskill",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "40606",
+      "raised": 134290,
+      "spent": 88885,
+      "cash": 45505,
+      "through": "09/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1760,7 +2479,16 @@
     {
      "ballot": 72,
      "name": "Alma E. Anaya",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "34289",
+      "raised": 110712,
+      "spent": 75402,
+      "cash": 89545,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1783,7 +2511,16 @@
     {
      "ballot": 72,
      "name": "Jessica Vasquez",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "40662",
+      "raised": 163022,
+      "spent": 112954,
+      "cash": 50068,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1806,7 +2543,16 @@
     {
      "ballot": 72,
      "name": "Maggie Trevor",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "34078",
+      "raised": 29560,
+      "spent": 12471,
+      "cash": 32222,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1824,7 +2570,15 @@
     {
      "ballot": 72,
      "name": "Drake Warren",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40649",
+      "raised": 174616,
+      "spent": 169050,
+      "cash": 5565,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1847,7 +2601,16 @@
     {
      "ballot": 72,
      "name": "John P. Daley",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "939",
+      "raised": 16300,
+      "spent": 17748,
+      "cash": 7272,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1865,12 +2628,28 @@
     {
      "ballot": 71,
      "name": "Xiaoli \"Alice\" Hu",
-     "party": "Republican"
+     "party": "Republican",
+     "money": {
+      "source": "ISBE",
+      "id": "41132",
+      "raised": 15425,
+      "spent": 4237,
+      "cash": 11288,
+      "through": "09/30/2026"
+     }
     },
     {
      "ballot": 72,
      "name": "Elizabeth Granato",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40741",
+      "raised": 629087,
+      "spent": 528743,
+      "cash": 100444,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1893,7 +2672,16 @@
     {
      "ballot": 72,
      "name": "Josina Morita",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "25450",
+      "raised": 155973,
+      "spent": 62568,
+      "cash": 302971,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1911,7 +2699,15 @@
     {
      "ballot": 72,
      "name": "Miranda E. Hernandez",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40923",
+      "raised": 132664,
+      "spent": 99368,
+      "cash": 33296,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1929,7 +2725,16 @@
     {
      "ballot": 82,
      "name": "George A. Cardenas",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "17290",
+      "raised": 413155,
+      "spent": 368780,
+      "cash": 57914,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1947,7 +2752,15 @@
     {
      "ballot": 82,
      "name": "Elizabeth \"Liz\" Nicholson",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40500",
+      "raised": 412136,
+      "spent": 383467,
+      "cash": 28668,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1962,7 +2775,16 @@
     {
      "ballot": 102,
      "name": "Judith C. Rice",
-     "party": "Democratic"
+     "party": "Democratic",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "6505",
+      "raised": 110301,
+      "spent": 29855,
+      "cash": 134140,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1977,7 +2799,15 @@
     {
      "ballot": 103,
      "name": "Steven Q. McKenzie",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "35539",
+      "raised": 78210,
+      "spent": 86907,
+      "cash": 0,
+      "through": "08/07/2026"
+     }
     }
    ],
    "writeIn": false
@@ -1992,7 +2822,15 @@
     {
      "ballot": 104,
      "name": "Luz Maria Toledo",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40745",
+      "raised": 95744,
+      "spent": 95744,
+      "cash": 0,
+      "through": "08/22/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2007,7 +2845,15 @@
     {
      "ballot": 105,
      "name": "Ashonta C. Rice",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "39572",
+      "raised": 69062,
+      "spent": 68480,
+      "cash": 1083,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2022,7 +2868,15 @@
     {
      "ballot": 106,
      "name": "Ava George Stewart",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40578",
+      "raised": 166538,
+      "spent": 169918,
+      "cash": -3379,
+      "through": "09/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2037,7 +2891,15 @@
     {
      "ballot": 107,
      "name": "D'Anthony \"Tony\" Thedford",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40611",
+      "raised": 81045,
+      "spent": 81210,
+      "cash": -165,
+      "through": "09/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2055,7 +2917,15 @@
     {
      "ballot": 112,
      "name": "Radiance Ward",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40620",
+      "raised": 79654,
+      "spent": 79654,
+      "cash": 0,
+      "through": "03/23/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2073,7 +2943,15 @@
     {
      "ballot": 114,
      "name": "Ashley Greer Shambley",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40608",
+      "raised": 60218,
+      "spent": 59873,
+      "cash": 345,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2091,7 +2969,15 @@
     {
      "ballot": 112,
      "name": "John Carroll",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40775",
+      "raised": 35625,
+      "spent": 32643,
+      "cash": 2982,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2109,7 +2995,15 @@
     {
      "ballot": 114,
      "name": "Rachel Marrello",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40878",
+      "raised": 19000,
+      "spent": 17358,
+      "cash": 1643,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2145,7 +3039,15 @@
     {
      "ballot": 112,
      "name": "Kathleen Cunniff Ori",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40664",
+      "raised": 77860,
+      "spent": 71063,
+      "cash": 6797,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2163,7 +3065,15 @@
     {
      "ballot": 114,
      "name": "Lester Finkle",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40666",
+      "raised": 265046,
+      "spent": 261208,
+      "cash": 3838,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2181,7 +3091,15 @@
     {
      "ballot": 112,
      "name": "Jarrett Knox",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40861",
+      "raised": 37939,
+      "spent": 37619,
+      "cash": 320,
+      "through": "09/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2199,7 +3117,15 @@
     {
      "ballot": 114,
      "name": "Kim Przekota",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "39493",
+      "raised": 97331,
+      "spent": 80653,
+      "cash": 18606,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2217,7 +3143,15 @@
     {
      "ballot": 112,
      "name": "Julian Sanchez Crozier",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40644",
+      "raised": 109025,
+      "spent": 96989,
+      "cash": 12036,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2235,7 +3169,15 @@
     {
      "ballot": 114,
      "name": "Jessica Karina Velez",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40643",
+      "raised": 27589,
+      "spent": 19906,
+      "cash": 7683,
+      "through": "09/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2253,7 +3195,15 @@
     {
      "ballot": 112,
      "name": "Natalia Moore",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40731",
+      "raised": 24381,
+      "spent": 24264,
+      "cash": 117,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2271,7 +3221,15 @@
     {
      "ballot": 114,
      "name": "Bianca B. Brown",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40624",
+      "raised": 50297,
+      "spent": 50297,
+      "cash": 0,
+      "through": "07/14/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2289,7 +3247,15 @@
     {
      "ballot": 112,
      "name": "Sara McGann",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40695",
+      "raised": 42503,
+      "spent": 42503,
+      "cash": 0,
+      "through": "09/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2307,7 +3273,15 @@
     {
      "ballot": 114,
      "name": "Monica Somerville",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "37005",
+      "raised": 4691,
+      "spent": 3941,
+      "cash": 766,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2325,7 +3299,15 @@
     {
      "ballot": 112,
      "name": "Michael J. Zink",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "39605",
+      "raised": 41528,
+      "spent": 41830,
+      "cash": 9729,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2343,7 +3325,15 @@
     {
      "ballot": 114,
      "name": "Jon Stromsta",
-     "party": "Democratic"
+     "party": "Democratic",
+     "money": {
+      "source": "ISBE",
+      "id": "40843",
+      "raised": 41468,
+      "spent": 40711,
+      "cash": 758,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2358,22 +3348,54 @@
     {
      "ballot": 121,
      "name": "Victor P. Henderson",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "41112",
+      "raised": 658575,
+      "spent": 60563,
+      "cash": 598012,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 122,
      "name": "Jessica Biggs",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "39881",
+      "raised": 165060,
+      "spent": 54976,
+      "cash": 120535,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 123,
      "name": "Sendhil Revuluri",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "40912",
+      "raised": 275938,
+      "spent": 59452,
+      "cash": 216486,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 124,
      "name": "Hilario Dominguez",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "41210",
+      "raised": 0,
+      "spent": 0,
+      "cash": 0,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -2391,12 +3413,29 @@
     {
      "ballot": 131,
      "name": "Ed Bannon",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "38810",
+      "raised": 0,
+      "spent": 0,
+      "cash": 220,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 132,
      "name": "Margie B. Luczak",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "41233",
+      "raised": 100,
+      "spent": 0,
+      "cash": 100,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -2414,12 +3453,28 @@
     {
      "ballot": 131,
      "name": "Claudia Peralta",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "41087",
+      "raised": 66690,
+      "spent": 6880,
+      "cash": 59810,
+      "through": "09/30/2026"
+     }
     },
     {
      "ballot": 132,
      "name": "Michelle N. Pierre",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "39783",
+      "raised": 2400,
+      "spent": 1657,
+      "cash": 1427,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -2437,7 +3492,16 @@
     {
      "ballot": 131,
      "name": "Ebony DeBerry",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39821",
+      "raised": 4035,
+      "spent": 1050,
+      "cash": 3800,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 132,
@@ -2460,17 +3524,42 @@
     {
      "ballot": 131,
      "name": "Deborah \"Debby\" Pope",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39834",
+      "raised": 8429,
+      "spent": 4164,
+      "cash": 7059,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 132,
      "name": "Kyna Lenhof",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "41203",
+      "raised": 200,
+      "spent": 0,
+      "cash": 200,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 133,
      "name": "Daniel Basco",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "41211",
+      "raised": 500,
+      "spent": 0,
+      "cash": 500,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2488,12 +3577,29 @@
     {
      "ballot": 131,
      "name": "Norma Rios Sierra",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "41082",
+      "raised": 9185,
+      "spent": 3649,
+      "cash": 5536,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 132,
      "name": "Peter Gonzales",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "41125",
+      "raised": 18475,
+      "spent": 3771,
+      "cash": 14704,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -2511,12 +3617,29 @@
     {
      "ballot": 131,
      "name": "Jason Dónes",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "39820",
+      "raised": 11255,
+      "spent": 1155,
+      "cash": 13430,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 132,
      "name": "Carlos A. Rivas Jr.",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39786",
+      "raised": 86252,
+      "spent": 29106,
+      "cash": 60027,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -2534,17 +3657,42 @@
     {
      "ballot": 131,
      "name": "Ellen Sherratt",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "41076",
+      "raised": 47772,
+      "spent": 3047,
+      "cash": 44725,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 132,
      "name": "Karen Zaccor",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39866",
+      "raised": 6976,
+      "spent": 1352,
+      "cash": 5627,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 133,
      "name": "Angel Alvarez",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "41178",
+      "raised": 1000,
+      "spent": 0,
+      "cash": 1000,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2562,7 +3710,16 @@
     {
      "ballot": 131,
      "name": "Ellen Rosenfeld",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39858",
+      "raised": 134069,
+      "spent": 66135,
+      "cash": 81445,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2580,12 +3737,29 @@
     {
      "ballot": 131,
      "name": "LaPamela Williams",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "41108",
+      "raised": 165,
+      "spent": 70,
+      "cash": 95,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 132,
      "name": "Aaron \"Jitu\" Brown",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39853",
+      "raised": 13768,
+      "spent": 3024,
+      "cash": 4891,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -2603,12 +3777,29 @@
     {
      "ballot": 131,
      "name": "Michilla \"Kyla\" Blaise",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "37001",
+      "raised": 10261,
+      "spent": 14006,
+      "cash": 7029,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 132,
      "name": "Anthony Hargrove",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "39831",
+      "raised": 1425,
+      "spent": 625,
+      "cash": 800,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -2626,17 +3817,42 @@
     {
      "ballot": 131,
      "name": "Anusha Thotakura",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39855",
+      "raised": 13435,
+      "spent": 4410,
+      "cash": 9066,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 132,
      "name": "Isaiah White",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "40744",
+      "raised": 51736,
+      "spent": 48703,
+      "cash": 3033,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 133,
      "name": "Brenda Lee Anderson",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "41131",
+      "raised": 3118,
+      "spent": 1944,
+      "cash": 1174,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -2659,7 +3875,15 @@
     {
      "ballot": 132,
      "name": "Brittany B. Kimble",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "41134",
+      "raised": 13861,
+      "spent": 7719,
+      "cash": 6142,
+      "through": "09/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2677,12 +3901,29 @@
     {
      "ballot": 131,
      "name": "Emma Lozano",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "41119",
+      "raised": 188,
+      "spent": 119,
+      "cash": 69,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 132,
      "name": "Jesus Ayala Jr.",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "39789",
+      "raised": 5575,
+      "spent": 5087,
+      "cash": 533,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2700,12 +3941,29 @@
     {
      "ballot": 131,
      "name": "Yesenia Lopez",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39844",
+      "raised": 11250,
+      "spent": 44,
+      "cash": 22126,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 132,
      "name": "Erika E. Diaz-Chavez",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "41220",
+      "raised": 0,
+      "spent": 0,
+      "cash": 0,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -2723,7 +3981,16 @@
     {
      "ballot": 131,
      "name": "Angel Gutierrez",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39873",
+      "raised": 56075,
+      "spent": 10169,
+      "cash": 45932,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2741,7 +4008,15 @@
     {
      "ballot": 131,
      "name": "Juan Ignacio Gonzalez",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "41111",
+      "raised": 4725,
+      "spent": 4267,
+      "cash": 1458,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true
@@ -2777,12 +4052,29 @@
     {
      "ballot": 131,
      "name": "Therese Boyle",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39843",
+      "raised": 60667,
+      "spent": 13349,
+      "cash": 48669,
+      "through": "06/30/2026"
+     }
     },
     {
      "ballot": 132,
      "name": "Katherine S. Dunneback",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "money": {
+      "source": "ISBE",
+      "id": "41231",
+      "raised": 1200,
+      "spent": 0,
+      "cash": 1200,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": false
@@ -2800,7 +4092,16 @@
     {
      "ballot": 131,
      "name": "Che \"Rhymefest\" Smith",
-     "party": "Nonpartisan"
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "money": {
+      "source": "ISBE",
+      "id": "39788",
+      "raised": 92156,
+      "spent": 44117,
+      "cash": 49454,
+      "through": "06/30/2026"
+     }
     }
    ],
    "writeIn": true

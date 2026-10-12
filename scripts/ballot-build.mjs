@@ -15,11 +15,14 @@
 // is blocking automated requests).
 
 import { execFileSync } from 'node:child_process';
-import { mkdtempSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { createWriteStream, mkdtempSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { Readable } from 'node:stream';
+import { pipeline } from 'node:stream/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { parseCandidateList } from './ballot/candidates.mjs';
 import { parseWeball, addFederalMoney } from './ballot/fec.mjs';
+import { ISBE_BASE, ISBE_FILES, addStateMoney } from './ballot/isbe.mjs';
 import { buildDistricts } from './ballot/districts.mjs';
 
 const OUT = 'src/projects/ballot/data';
@@ -30,10 +33,11 @@ const UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Geck
 
 const work = mkdtempSync(join(tmpdir(), 'ballot-'));
 
+// Streams to disk: some state disclosure files run to 150 MB.
 async function download(url, file) {
   const res = await fetch(url, { headers: { 'User-Agent': UA }, redirect: 'follow' });
   if (!res.ok) throw new Error(`${url} -> HTTP ${res.status}`);
-  writeFileSync(file, Buffer.from(await res.arrayBuffer()));
+  await pipeline(Readable.fromWeb(res.body), createWriteStream(file));
   return file;
 }
 
@@ -110,6 +114,11 @@ async function main() {
   const money = addFederalMoney(ballot.races, parseWeball(readFileSync(join(work, 'weball26.txt'), 'utf8')));
   console.log(`FEC: matched ${money.matched}/${money.total} federal candidates`);
 
+  for (const f of ISBE_FILES) await download(`${ISBE_BASE}${f}.txt`, join(work, `${f}.txt`));
+  const state = await addStateMoney(ballot.races, work);
+  console.log(`Illinois: matched ${state.matched}/${state.total} state & local candidates`);
+  for (const line of state.log) console.log('  ' + line);
+
   const sites = await earlyVotingSites();
   const precinctKeys = ballot.measures.filter((m) => m.scope.type === 'precinct').map((m) => `${m.scope.ward}-${m.scope.precinct}`);
   const districts = await buildDistricts([...new Set(precinctKeys)]);
@@ -125,6 +134,7 @@ async function main() {
     sources: {
       candidates: { url: pdfUrl, page: CANDIDATES_PAGE, asOf: ballot.asOf },
       money: { url: 'https://www.fec.gov/data/', file: FEC_WEBALL },
+      stateMoney: { url: ISBE_BASE },
       earlyVoting: { page: EARLY_VOTING_PAGE },
     },
     races: ballot.races,

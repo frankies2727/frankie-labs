@@ -416,7 +416,7 @@ function Sources() {
   return (
     <footer className="rounded-2xl border-2 border-[#2E343F] p-5 space-y-2 text-sm leading-relaxed text-[#E2E4E8]">
       <p className="font-black text-[#F5F6F7]">Where this comes from</p>
-      <p>Candidates and ballot questions: <a className="underline font-bold text-[#F5F6F7]" href={s.candidates.url} target="_blank" rel="noreferrer noopener">Chicago Board of Elections candidate list</a>{s.candidates.asOf ? `, as of ${s.candidates.asOf}` : ''}, in official ballot order. Campaign money: <a className="underline font-bold text-[#F5F6F7]" href={s.money.url} target="_blank" rel="noreferrer noopener">Federal Election Commission</a>. District maps: U.S. Census Bureau, Cook County, City of Chicago and the Illinois Senate.</p>
+      <p>Candidates and ballot questions: <a className="underline font-bold text-[#F5F6F7]" href={s.candidates.url} target="_blank" rel="noreferrer noopener">Chicago Board of Elections candidate list</a>{s.candidates.asOf ? `, as of ${s.candidates.asOf}` : ''}, in official ballot order. Campaign money and incumbency: <a className="underline font-bold text-[#F5F6F7]" href={s.money.url} target="_blank" rel="noreferrer noopener">Federal Election Commission</a> and <a className="underline font-bold text-[#F5F6F7]" href={s.stateMoney.url} target="_blank" rel="noreferrer noopener">Illinois State Board of Elections</a>. District maps: U.S. Census Bureau, Cook County, City of Chicago and the Illinois Senate.</p>
       <p>Nonpartisan and independent: not affiliated with any campaign, party or the Board of Elections. Always double-check your <a className="underline font-bold text-[#F5F6F7]" href={LINKS.myInfo} target="_blank" rel="noreferrer noopener">official sample ballot</a>.</p>
     </footer>
   );

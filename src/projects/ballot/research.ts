@@ -14,10 +14,11 @@ export function researchLinks(c: Candidate, race: Race): ResearchLink[] {
     { label: 'Their campaign site', href: `https://duckduckgo.com/?q=${q(`${who} ${race.office} Illinois 2026 campaign`)}`, note: 'Their own words on the issues' },
     { label: 'Ballotpedia', href: `https://ballotpedia.org/wiki/index.php?search=${q(who)}`, note: 'Bio, experience and survey answers' },
   ];
-  if (c.money) {
-    links.push({ label: 'FEC filings', href: `https://www.fec.gov/data/candidate/${c.money.fecId}/`, note: 'Every donor and expense, officially' });
+  if (c.money?.source === 'FEC') {
+    links.push({ label: 'FEC filings', href: `https://www.fec.gov/data/candidate/${c.money.id}/`, note: 'Every donor and expense, officially' });
   } else if (race.section !== 'federal') {
-    links.push({ label: 'Illinois Sunshine', href: `https://illinoissunshine.org/search/?term=${q(who)}`, note: 'Who funds their campaign (state & local)' });
+    // Illinois Sunshine indexes the State Board of Elections filings by name.
+    links.push({ label: 'Every donor', href: `https://illinoissunshine.org/search/?term=${q(who)}`, note: 'Itemized state & local donors (Illinois Sunshine)' });
   }
   if (race.section === 'judicial') {
     links.push({ label: 'Bar association ratings', href: 'https://voteforjudges.org/', note: 'Chicago-area bar groups rate every judicial candidate' });

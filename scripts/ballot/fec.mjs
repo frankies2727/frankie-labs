@@ -2,10 +2,10 @@
 // "all candidates" summary (weball26.txt, pipe-delimited, no header).
 // https://www.fec.gov/campaign-finance-data/all-candidates-file-description/
 
-const COL = { id: 0, name: 1, ici: 2, receipts: 5, spent: 7, cash: 10, indiv: 17, state: 18, district: 19, through: 27 };
+const COL = { id: 0, name: 1, ici: 2, receipts: 5, spent: 7, cash: 10, state: 18, district: 19, through: 27 };
 const SUFFIX = /^(jr|sr|ii|iii|iv|mr|mrs|ms|dr)$/;
 
-const words = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z\s-]/g, ' ').split(/[\s-]+/).filter((w) => w && !SUFFIX.test(w));
+const words = (s) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z\s-]/g, ' ').split(/[\s-]+/).filter((w) => w && !SUFFIX.test(w));
 
 export function parseWeball(text) {
   return text.split('\n').filter(Boolean).map((line) => {
@@ -20,7 +20,6 @@ export function parseWeball(text) {
       receipts: Number(f[COL.receipts]) || 0,
       spent: Number(f[COL.spent]) || 0,
       cash: Number(f[COL.cash]) || 0,
-      indiv: Number(f[COL.indiv]) || 0,
       state: f[COL.state],
       district: f[COL.district],
       through: f[COL.through],
@@ -46,13 +45,15 @@ export function matchCandidate(name, office, district, records) {
   if (!hits.length || people.size > 1) return null;
   const best = hits.sort((a, b) => toDate(b.through) - toDate(a.through) || b.receipts - a.receipts)[0];
   return {
-    fecId: best.id,
     incumbent: best.ici === 'I',
-    raised: Math.round(best.receipts),
-    spent: Math.round(best.spent),
-    cash: Math.round(best.cash),
-    fromIndividuals: Math.round(best.indiv),
-    through: best.through, // MM/DD/YYYY
+    money: {
+      source: 'FEC',
+      id: best.id,
+      raised: Math.round(best.receipts),
+      spent: Math.round(best.spent),
+      cash: Math.round(best.cash),
+      through: best.through, // MM/DD/YYYY
+    },
   };
 }
 
@@ -73,8 +74,12 @@ export function addFederalMoney(races, records) {
     if (!office) continue;
     for (const c of race.candidates) {
       total += 1;
-      const money = matchCandidate(c.name, office, district, records);
-      if (money) { c.money = money; matched += 1; }
+      const hit = matchCandidate(c.name, office, district, records);
+      if (hit) {
+        c.money = hit.money;
+        if (hit.incumbent) c.incumbent = true;
+        matched += 1;
+      }
     }
   }
   return { matched, total };

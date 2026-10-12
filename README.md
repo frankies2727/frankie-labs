@@ -179,7 +179,7 @@ The home screen is the projects gallery. Tap the **Games** button (top right) to
 <summary><b>🗳️ How Know Your Ballot works</b> (official data, no keys)</summary>
 
 - **Who's on the ballot:** the Chicago Board of Elections candidate list (every contest on any Chicago ballot, in ballot order, plus judicial retentions and referenda), parsed from its PDF.
-- **Campaign money:** FEC bulk filings for federal candidates. State and local candidates link to Illinois Sunshine.
+- **Campaign money & incumbency:** FEC bulk filings for federal candidates; the Illinois State Board of Elections' bulk disclosure files for state and local ones (raised and spent since Jan 2025, cash on hand). A name only gets numbers when it matches one person running for the same kind of office.
 - **Your districts:** your address goes once to Cook County's address locator; district maps (Census, Cook County, City of Chicago, Illinois Senate) are pre-baked, so matching happens on your device.
 - **Your picks and plan** stay in your browser only. The share card shows progress, never picks.
 - **Fresh daily:** `.github/workflows/ballot-refresh.yml` reruns `scripts/ballot-build.mjs` every morning and redeploys if anything changed. Needs `pdftotext` (poppler-utils) to run locally.

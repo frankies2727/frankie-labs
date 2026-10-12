@@ -80,19 +80,19 @@ function MoneyBars({ c, max }: { c: Candidate; max: number }) {
   const rows: [string, number, string][] = [
     ['Raised', c.money.raised, '#5EBD3E'],
     ['Spent', c.money.spent, '#F78200'],
-    ['Cash left', c.money.cash, '#009CDF'],
+    ['Cash', c.money.cash, '#009CDF'],
   ];
   return (
     <div className="space-y-2">
       {rows.map(([label, n, color]) => (
         <div key={label}>
-          <div className="flex justify-between text-sm font-bold text-[#F5F6F7]"><span>{label}</span><span>{money(n)}</span></div>
+          <div className="flex justify-between gap-2 text-sm font-bold text-[#F5F6F7]"><span>{label}</span><span>{money(n)}</span></div>
           <div className="h-2.5 rounded-full bg-[#262B34] overflow-hidden">
             <div className="h-full rounded-full" style={{ width: `${max ? Math.max(2, (Math.max(n, 0) / max) * 100) : 0}%`, background: color }} />
           </div>
         </div>
       ))}
-      <p className="text-xs text-[#E2E4E8]">FEC reports through {c.money.through}.</p>
+      <p className="text-xs text-[#E2E4E8]">{c.money.source === 'FEC' ? 'Federal Election Commission' : 'Illinois State Board of Elections'} reports, Jan 2025 through {c.money.through}. Cash is what’s left on hand.</p>
     </div>
   );
 }
@@ -155,7 +155,7 @@ export function RaceCard({ race, color, ink, choice, onChoose, onInfo, onCompare
                     <span className="block font-bold leading-snug text-[#F5F6F7]">{c.name}</span>
                     <span className="flex flex-wrap gap-1.5 mt-1">
                       <Badge tone="#0F1117">{c.party}</Badge>
-                      {c.money?.incumbent && <Badge tone="#F5F6F7" ink="#0F1117">Incumbent</Badge>}
+                      {c.incumbent && <Badge tone="#F5F6F7" ink="#0F1117">Incumbent</Badge>}
                       {c.money && <Badge tone="#0F1117">{money(c.money.raised)} raised</Badge>}
                     </span>
                   </span>
@@ -200,17 +200,17 @@ export function CandidateSheet({ race, c, color, ink, picked, onPick, onClose }:
           <Badge tone={color} ink={ink}>{race.office}</Badge>
           <Badge>{c.party}</Badge>
           <Badge>Ballot #{c.ballot}</Badge>
-          {c.money?.incumbent && <Badge tone="#F5F6F7" ink="#0F1117">Incumbent</Badge>}
+          {c.incumbent && <Badge tone="#F5F6F7" ink="#0F1117">Incumbent</Badge>}
         </div>
 
         <section className="space-y-3">
           <h3 className="text-sm font-black uppercase tracking-widest text-[#F5F6F7]">💰 Campaign money</h3>
           {c.money ? (
             <MoneyBars c={c} max={Math.max(c.money.raised, c.money.spent, c.money.cash)} />
-          ) : race.section === 'federal' ? (
-            <p className="text-[15px] text-[#E2E4E8]">No FEC filings found. Federal candidates who raise under $5,000 don’t have to file.</p>
           ) : (
-            <p className="text-[15px] text-[#E2E4E8]">State and local campaigns report to the Illinois State Board of Elections. Illinois Sunshine (below) makes those reports searchable.</p>
+            <p className="text-[15px] text-[#E2E4E8]">{race.section === 'federal'
+              ? 'No FEC filings found. Federal candidates who raise or spend under $5,000 don’t have to file.'
+              : 'No campaign reports found for this cycle. Illinois candidates who raise or spend under $5,000 in a year don’t need a campaign committee.'}</p>
           )}
         </section>
 
@@ -265,9 +265,9 @@ export function Compare({ race, color, ink, picked, onPick, onClose }: { race: R
                   </div>
                 </div>
                 <dl className="space-y-1 text-sm">
-                  <div className="flex justify-between gap-2"><dt className="text-[#E2E4E8]">Incumbent</dt><dd className="font-bold text-[#F5F6F7]">{c.money ? (c.money.incumbent ? 'Yes' : 'No') : '—'}</dd></div>
+                  <div className="flex justify-between gap-2"><dt className="text-[#E2E4E8]">Incumbent</dt><dd className="font-bold text-[#F5F6F7]">{c.incumbent ? 'Yes' : 'No'}</dd></div>
                 </dl>
-                {anyMoney && (c.money ? <MoneyBars c={c} max={max} /> : <p className="text-sm text-[#E2E4E8]">No FEC filings.</p>)}
+                {anyMoney && (c.money ? <MoneyBars c={c} max={max} /> : <p className="text-sm text-[#E2E4E8]">No campaign reports found.</p>)}
                 <button
                   type="button"
                   onClick={() => onPick(c.ballot)}
@@ -281,8 +281,8 @@ export function Compare({ race, color, ink, picked, onPick, onClose }: { race: R
           })}
         </div>
       </div>
-      {!anyMoney && <p className="mt-4 text-[15px] text-[#E2E4E8]">Money for state and local races is filed with the State Board of Elections; tap ⓘ on a candidate for the Illinois Sunshine link.</p>}
-      <p className="mt-4 text-[15px] text-[#E2E4E8]">Incumbency is shown only where official FEC data confirms it. Tap ⓘ on a candidate for their record and campaign site.</p>
+      {!anyMoney && <p className="mt-4 text-[15px] text-[#E2E4E8]">No campaign reports found for anyone in this race this cycle.</p>}
+      <p className="mt-4 text-[15px] text-[#E2E4E8]">Money and incumbency come from official FEC and Illinois State Board of Elections records. Tap ⓘ on a candidate for donors, bio and campaign site.</p>
     </Dialog>
   );
 }
