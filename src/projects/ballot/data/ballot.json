@@ -56,6 +56,14 @@
       "spent": 4798641,
       "cash": 1107958,
       "through": "06/30/2026"
+     },
+     "social": {
+      "x": "https://x.com/JulianaStratton",
+      "facebook": "https://www.facebook.com/JulianaForIL",
+      "instagram": "https://www.instagram.com/julianaforillinois",
+      "youtube": "https://www.youtube.com/@Juliana_Stratton",
+      "bluesky": "https://bsky.app/profile/julianastratton.bsky.social",
+      "tiktok": "https://www.tiktok.com/@julianaforil"
      }
     },
     {
@@ -93,6 +101,11 @@
       "spent": 1981292,
       "cash": 127990,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/BaileyforIllinois",
+      "x": "https://twitter.com/DarrenBaileyIL",
+      "instagram": "https://www.instagram.com/baileyforillinois"
      }
     },
     {
@@ -121,6 +134,10 @@
       "spent": 184077,
       "cash": 379163,
       "through": "06/30/2026"
+     },
+     "social": {
+      "x": "https://x.com/CollinCorbett",
+      "facebook": "https://www.facebook.com/CollinCorbett"
      }
     }
    ],
@@ -182,6 +199,10 @@
       "spent": 17483,
       "cash": 134,
       "through": "09/30/2026"
+     },
+     "social": {
+      "x": "https://x.com/harrisforsos",
+      "instagram": "https://www.instagram.com/dharrisforsos"
      }
     },
     {
@@ -311,7 +332,12 @@
       "cash": 47163,
       "through": "06/30/2026"
      },
-     "incumbent": true
+     "incumbent": true,
+     "social": {
+      "facebook": "https://www.facebook.com/repjackson",
+      "instagram": "https://www.instagram.com/repjackson"
+     },
+     "website": "https://jonathanjackson.house.gov"
     }
    ],
    "writeIn": false
@@ -343,6 +369,12 @@
       "spent": 2412349,
       "cash": 40546,
       "through": "06/30/2026"
+     },
+     "social": {
+      "instagram": "https://www.instagram.com/donnaforcongress",
+      "facebook": "https://www.facebook.com/donnamillerforcongress",
+      "x": "https://x.com/Donna4Congress",
+      "bluesky": "https://bsky.app/profile/donnaforcongress.bsky.social"
      }
     }
    ],
@@ -384,7 +416,13 @@
       "cash": 946222,
       "through": "06/30/2026"
      },
-     "incumbent": true
+     "incumbent": true,
+     "social": {
+      "x": "https://x.com/repdeliaramirez",
+      "facebook": "https://www.facebook.com/Repdeliaramirez",
+      "instagram": "https://www.instagram.com/repdeliaramirez"
+     },
+     "website": "https://ramirez.house.gov"
     }
    ],
    "writeIn": false
@@ -415,7 +453,13 @@
       "spent": 173168,
       "cash": 185499,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "x": "https://x.com/RepChuyGarcia",
+      "facebook": "https://www.facebook.com/RepChuyGarcia",
+      "bluesky": "https://bsky.app/profile/chuygarcia.house.gov"
+     },
+     "website": "https://chuygarcia.house.gov"
     },
     {
      "ballot": 23,
@@ -453,7 +497,11 @@
      "ballot": 21,
      "name": "Tommy Hanson",
      "party": "Republican",
-     "website": "https://votetommyhanson.com"
+     "website": "https://votetommyhanson.com",
+     "social": {
+      "facebook": "https://www.facebook.com/Tommy-Hanson-for-Congress-104246449040808",
+      "instagram": "https://www.instagram.com/votetommyhanson"
+     }
     },
     {
      "ballot": 22,
@@ -467,7 +515,14 @@
       "cash": 1187818,
       "through": "06/30/2026"
      },
-     "incumbent": true
+     "incumbent": true,
+     "social": {
+      "x": "https://x.com/RepMikeQuigley",
+      "facebook": "https://www.facebook.com/repmikequigley",
+      "instagram": "https://www.instagram.com/repmikequigley",
+      "youtube": "https://www.youtube.com/channel/UCDP13XegdoZ4bxYHxM34yAA"
+     },
+     "website": "https://quigley.house.gov"
     }
    ],
    "writeIn": true
@@ -508,7 +563,13 @@
       "cash": 1285018,
       "through": "06/30/2026"
      },
-     "incumbent": true
+     "incumbent": true,
+     "social": {
+      "x": "https://x.com/RepCasten",
+      "facebook": "https://www.facebook.com/RepSeanCasten",
+      "instagram": "https://www.instagram.com/repseancasten"
+     },
+     "website": "https://casten.house.gov"
     }
    ],
    "writeIn": false
@@ -619,6 +680,14 @@
       "spent": 2684545,
       "cash": 262130,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://facebook.com/danielbiss",
+      "instagram": "https://instagram.com/daniel.biss",
+      "x": "https://x.com/danielbiss",
+      "tiktok": "https://tiktok.com/@bissforcongress",
+      "bluesky": "https://bsky.app/profile/danielbiss.bsky.social",
+      "youtube": "https://youtube.com/@bissforcongress"
      }
     }
    ],
@@ -646,7 +715,8 @@
       "spent": 317790,
       "cash": 114224,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://www.senatoraquino.com/"
     }
    ],
    "writeIn": false
@@ -673,7 +743,8 @@
       "spent": 255036,
       "cash": 216281,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://www.senatorhunter.com/"
     }
    ],
    "writeIn": false
@@ -701,6 +772,10 @@
       "spent": 223246,
       "cash": 215032,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/sencollins5",
+      "instagram": "https://www.instagram.com/senlakesiacollins"
      }
     }
    ],
@@ -729,6 +804,10 @@
       "spent": 944333,
       "cash": 740063,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/sarafeigenholtzforstatesenator",
+      "instagram": "https://www.instagram.com/feigenholtzforsenate"
      }
     }
    ],
@@ -752,7 +831,8 @@
     {
      "ballot": 32,
      "name": "Ram Villivalam",
-     "party": "Democratic"
+     "party": "Democratic",
+     "website": "https://www.senatorram.com/"
     }
    ],
    "writeIn": true
@@ -810,7 +890,8 @@
       "spent": 162602,
       "cash": 49928,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://www.senatorporfirio.com/"
     }
    ],
    "writeIn": false
@@ -837,7 +918,13 @@
       "spent": 191432,
       "cash": 79803,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/SenCelina",
+      "x": "https://twitter.com/SenatorCelina",
+      "instagram": "https://www.instagram.com/senatorcelina"
+     },
+     "website": "https://www.senatorvillanueva.com/"
     }
    ],
    "writeIn": true
@@ -877,7 +964,11 @@
       "spent": 38568,
       "cash": 325410,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/senatoremiljones"
+     },
+     "website": "https://www.senatoremiljones.com/"
     }
    ],
    "writeIn": true
@@ -904,7 +995,12 @@
       "spent": 283336,
       "cash": 348532,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/SenatorNapoleonBHarrisIII",
+      "x": "https://twitter.com/SenHarrisIL"
+     },
+     "website": "https://www.senatornapoleonharris.com/"
     }
    ],
    "writeIn": false
@@ -944,7 +1040,8 @@
       "spent": 449819,
       "cash": 451285,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://www.senatorelgiesims.com/"
     }
    ],
    "writeIn": false
@@ -1003,6 +1100,11 @@
       "spent": 232674,
       "cash": 42417,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/GracielaGuzmanFor20",
+      "instagram": "https://www.instagram.com/gracielaforsenate",
+      "x": "https://twitter.com/graciela4senate"
      }
     }
    ],
@@ -1031,6 +1133,12 @@
       "spent": 4427357,
       "cash": 19917425,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/DonHarmonforIL",
+      "instagram": "https://www.instagram.com/donharmon39",
+      "x": "https://twitter.com/DonHarmonIL",
+      "linkedin": "https://www.linkedin.com/in/don-harmon-77b88966"
      }
     }
    ],
@@ -1058,7 +1166,8 @@
       "spent": 220738,
       "cash": 159231,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repaaronortiz.com/"
     }
    ],
    "writeIn": false
@@ -1085,7 +1194,14 @@
       "spent": 200210,
       "cash": 445840,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "instagram": "https://www.instagram.com/repdelgado3",
+      "x": "https://twitter.com/delgadorep",
+      "linkedin": "https://www.linkedin.com/in/eva-dina-delgado-a64b594",
+      "facebook": "https://www.facebook.com/RepDelgado"
+     },
+     "website": "https://www.staterepdelgado.com/"
     }
    ],
    "writeIn": false
@@ -1112,7 +1228,12 @@
       "spent": 241363,
       "cash": 72213,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/rep.jimenez4th",
+      "instagram": "https://www.instagram.com/rep.lilianjimenez"
+     },
+     "website": "https://www.replilianjimenez.com/"
     }
    ],
    "writeIn": false
@@ -1167,7 +1288,14 @@
       "spent": 57353,
       "cash": -5120,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/repsonyaharper",
+      "instagram": "https://www.instagram.com/repsonyaharper",
+      "x": "https://x.com/RepSonyaHarper",
+      "linkedin": "https://www.linkedin.com/in/sonyamarieharper"
+     },
+     "website": "https://www.repsonyaharper.com/"
     }
    ],
    "writeIn": false
@@ -1220,7 +1348,11 @@
       "spent": 18322,
       "cash": 162505,
       "through": "09/30/2026"
-     }
+     },
+     "social": {
+      "instagram": "https://www.instagram.com/9thdistrictstaterepyolondam"
+     },
+     "website": "https://www.repmorrisil9th.com/"
     }
    ],
    "writeIn": true
@@ -1247,7 +1379,8 @@
       "spent": 48561,
       "cash": 247891,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://justfacts.votesmart.org/candidate/biography/186497/omar-williams"
     }
    ],
    "writeIn": false
@@ -1274,7 +1407,8 @@
       "spent": 115604,
       "cash": 318305,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://www.repannwilliams.com/"
     }
    ],
    "writeIn": false
@@ -1314,6 +1448,11 @@
       "spent": 350021,
       "cash": 17768,
       "through": "06/30/2026"
+     },
+     "social": {
+      "bluesky": "https://bsky.app/profile/paulforillinois.bsky.social",
+      "instagram": "https://www.instagram.com/paulforillinois",
+      "x": "https://x.com/paulforillinois"
      }
     }
    ],
@@ -1354,6 +1493,14 @@
       "spent": 243988,
       "cash": 15836,
       "through": "06/30/2026"
+     },
+     "social": {
+      "instagram": "https://www.instagram.com/demiforillinois",
+      "facebook": "https://facebook.com/Demiforillinois",
+      "bluesky": "https://bsky.app/profile/demiforillinois.bsky.social",
+      "tiktok": "https://tiktok.com/@demiforillinois",
+      "threads": "https://www.threads.com/@demiforillinois",
+      "youtube": "https://www.youtube.com/@DemiforIllinois"
      }
     }
    ],
@@ -1381,7 +1528,13 @@
       "spent": 211171,
       "cash": 17640,
       "through": "09/30/2026"
-     }
+     },
+     "social": {
+      "instagram": "https://www.instagram.com/repcassidy",
+      "facebook": "https://www.facebook.com/repcassidy",
+      "x": "https://twitter.com/ILRepCassidy"
+     },
+     "website": "https://www.repcassidy.com/"
     }
    ],
    "writeIn": false
@@ -1408,7 +1561,8 @@
       "spent": 238742,
       "cash": 62512,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repkelly.com/"
     }
    ],
    "writeIn": false
@@ -1435,7 +1589,13 @@
       "spent": 183339,
       "cash": 15737,
       "through": "09/30/2026"
-     }
+     },
+     "social": {
+      "instagram": "https://instagram.com/StateRepKevinOlickal",
+      "tiktok": "https://tiktok.com/@staterepkevinolickal",
+      "facebook": "https://www.facebook.com/StateRepKevinOlickal"
+     },
+     "website": "https://staterepkevinolickal.com/"
     }
    ],
    "writeIn": false
@@ -1467,7 +1627,13 @@
       "spent": 399355,
       "cash": 356393,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "x": "https://x.com/RobynGabel",
+      "instagram": "https://www.instagram.com/repgabel",
+      "linkedin": "https://www.linkedin.com/in/robyn-gabel-7794b017"
+     },
+     "website": "https://robyngabel.com/"
     }
    ],
    "writeIn": false
@@ -1499,7 +1665,13 @@
       "spent": 237812,
       "cash": 194247,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/RepLaPointe",
+      "linkedin": "https://www.linkedin.com/in/lindsey-lapointe-18236110",
+      "instagram": "https://www.instagram.com/replapointe"
+     },
+     "website": "https://www.replapointe.com/"
     }
    ],
    "writeIn": false
@@ -1526,7 +1698,8 @@
       "spent": 563148,
       "cash": 121862,
       "through": "09/30/2026"
-     }
+     },
+     "website": "https://repstephens.com/"
     }
    ],
    "writeIn": false
@@ -1566,7 +1739,13 @@
       "spent": 686860,
       "cash": 273889,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/reprashid",
+      "x": "https://twitter.com/reprashidil",
+      "linkedin": "https://www.linkedin.com/company/reprashid"
+     },
+     "website": "https://www.reprashid.com/"
     }
    ],
    "writeIn": false
@@ -1593,7 +1772,8 @@
       "spent": 9356,
       "cash": 114437,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://justfacts.votesmart.org/candidate/biography/195857/angie-guerrero-cuellar"
     }
    ],
    "writeIn": false
@@ -1620,7 +1800,8 @@
       "spent": 132224,
       "cash": 216245,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://justfacts.votesmart.org/candidate/biography/188093/edgar-gonzalez-jr"
     }
    ],
    "writeIn": false
@@ -1647,7 +1828,8 @@
       "spent": 122797,
       "cash": 28153,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://www.reptheresamah.com/"
     }
    ],
    "writeIn": false
@@ -1687,7 +1869,8 @@
       "spent": 123731,
       "cash": 254166,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://justfacts.votesmart.org/candidate/biography/177148/curtis-tarver-ii"
     }
    ],
    "writeIn": true
@@ -1714,7 +1897,13 @@
       "spent": 491297,
       "cash": 314098,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "x": "https://twitter.com/RepKamBuckner",
+      "facebook": "https://www.facebook.com/RepKamBuckner",
+      "instagram": "https://www.instagram.com/repkam_buckner"
+     },
+     "website": "https://www.illinois26.com"
     }
    ],
    "writeIn": false
@@ -1741,7 +1930,12 @@
       "spent": 104835,
       "cash": 125608,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/justin.q.slaughter",
+      "x": "https://twitter.com/repjslaughter"
+     },
+     "website": "https://repslaughter27.com/"
     }
    ],
    "writeIn": false
@@ -1768,7 +1962,8 @@
       "spent": 728122,
       "cash": 377752,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://justfacts.votesmart.org/candidate/biography/33351/bob-rita"
     }
    ],
    "writeIn": false
@@ -1795,7 +1990,12 @@
       "spent": 374988,
       "cash": 39477,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/repjones29",
+      "x": "https://twitter.com/repthadeusjones"
+     },
+     "website": "https://www.repthaddeusjones.com/"
     }
    ],
    "writeIn": true
@@ -1822,7 +2022,8 @@
       "spent": 63455,
       "cash": 19773,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://justfacts.votesmart.org/candidate/biography/166391/michael-crawford"
     }
    ],
    "writeIn": false
@@ -1849,7 +2050,8 @@
       "spent": 210934,
       "cash": 63361,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://justfacts.votesmart.org/candidate/biography/213068/lisa-davis"
     }
    ],
    "writeIn": false
@@ -1876,7 +2078,8 @@
       "spent": 435247,
       "cash": 882041,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://www.repevans.com/"
     }
    ],
    "writeIn": false
@@ -1935,7 +2138,8 @@
       "spent": 79186,
       "cash": 105766,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repmarygill.com/"
     }
    ],
    "writeIn": false
@@ -1975,7 +2179,8 @@
       "spent": 47545,
       "cash": 95630,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://justfacts.votesmart.org/candidate/biography/33833/rick-ryan"
     }
    ],
    "writeIn": false
@@ -2007,7 +2212,14 @@
       "spent": 150692,
       "cash": 216626,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "instagram": "https://www.instagram.com/rep.willguzzardi",
+      "facebook": "https://www.facebook.com/RepGuzzardi39",
+      "bluesky": "https://bsky.app/profile/repguzzardi39.bsky.social",
+      "x": "https://twitter.com/willguzzardi"
+     },
+     "website": "https://www.repguzzardi.com/"
     }
    ],
    "writeIn": false
@@ -2034,6 +2246,10 @@
       "spent": 295709,
       "cash": 22502,
       "through": "09/30/2026"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/miguelfor40",
+      "instagram": "https://www.instagram.com/miguelfor40"
      }
     }
    ],
@@ -2074,7 +2290,12 @@
       "spent": 11192,
       "cash": 7859,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/repjustincochran",
+      "instagram": "https://instagram.com/repcochran"
+     },
+     "website": "https://www.repjustincochran.com/"
     }
    ],
    "writeIn": false
@@ -2106,7 +2327,12 @@
       "spent": 64287,
       "cash": 256047,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/replilly78",
+      "x": "https://twitter.com/replilly78"
+     },
+     "website": "https://state-representative-camille-y-lilly.webflow.io/"
     }
    ],
    "writeIn": false
@@ -2958,6 +3184,9 @@
       "spent": 79654,
       "cash": 0,
       "through": "03/23/2026"
+     },
+     "social": {
+      "instagram": "https://www.instagram.com/radiancewardforjudge"
      }
     }
    ],
@@ -2985,6 +3214,9 @@
       "spent": 59873,
       "cash": 345,
       "through": "06/30/2026"
+     },
+     "social": {
+      "instagram": "https://www.instagram.com/ashleygreershambleyforjudge"
      }
     }
    ],
@@ -3134,6 +3366,9 @@
       "spent": 37619,
       "cash": 320,
       "through": "09/30/2026"
+     },
+     "social": {
+      "instagram": "https://www.instagram.com/jarrettknoxforjudge"
      }
     }
    ],
@@ -4294,7 +4529,8 @@
       "spent": 119345,
       "cash": 462621,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://www.repmbc.com/"
     },
     {
      "party": "Republican",
@@ -4340,7 +4576,8 @@
       "spent": 140830,
       "cash": 42570,
       "through": "09/30/2026"
-     }
+     },
+     "website": "https://repschmidt.com/"
     }
    ],
    "writeIn": false,
@@ -4369,7 +4606,13 @@
       "spent": 363023,
       "cash": 539895,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/SenatorJulieMorrison",
+      "x": "https://twitter.com/SenatorMorrison",
+      "instagram": "https://www.instagram.com/senatormorrisonil"
+     },
+     "website": "https://www.senatorjuliemorrison.com/"
     },
     {
      "party": "Republican",
@@ -4423,7 +4666,12 @@
       "spent": 184194,
       "cash": 79612,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/senatordavesyverson",
+      "x": "https://twitter.com/Sen1Dave"
+     },
+     "website": "https://senatordavesyverson.com/"
     }
    ],
    "writeIn": false,
@@ -4452,7 +4700,11 @@
       "spent": 133823,
       "cash": 183113,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/SenatorJilTracy"
+     },
+     "website": "https://senatorjiltracy.com/"
     }
    ],
    "writeIn": false,
@@ -4482,6 +4734,11 @@
       "spent": 130265,
       "cash": 1213807,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/doris.turner.395",
+      "linkedin": "https://www.linkedin.com/in/doris-turner-aa03125a",
+      "x": "https://twitter.com/VoteforDoris"
      }
     },
     {
@@ -4524,7 +4781,11 @@
       "spent": 96967,
       "cash": 118943,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/SenatorMcClure"
+     },
+     "website": "https://senatormcclure.com/"
     }
    ],
    "writeIn": false,
@@ -4553,7 +4814,11 @@
       "spent": 117807,
       "cash": 115355,
       "through": "09/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/SenNeilAnderson"
+     },
+     "website": "https://senatorneilanderson.com"
     }
    ],
    "writeIn": false,
@@ -4595,7 +4860,13 @@
       "spent": 245745,
       "cash": 1054343,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "x": "https://twitter.com/SenatorRezin",
+      "facebook": "https://www.facebook.com/statesenatorsuerezin",
+      "tiktok": "https://www.tiktok.com/@state.senator.sue"
+     },
+     "website": "https://senatorrezin.com/"
     }
    ],
    "writeIn": false,
@@ -4624,7 +4895,8 @@
       "spent": 310673,
       "cash": 1116823,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://www.senatorbelt.com/"
     },
     {
      "party": "Republican",
@@ -4666,7 +4938,11 @@
       "spent": 125003,
       "cash": 1164503,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/DeLucaForIllinois"
+     },
+     "website": "https://anthonydeluca.org/"
     },
     {
      "party": "Republican",
@@ -4707,6 +4983,11 @@
       "spent": 258917,
       "cash": 43766,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/SabaDist84",
+      "instagram": "https://www.instagram.com/sabahaiderdist84",
+      "tiktok": "https://www.tiktok.com/@sabahaiderdist84"
      }
     },
     {
@@ -4749,7 +5030,11 @@
       "spent": 29940,
       "cash": 44494,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/staterepmatthanson"
+     },
+     "website": "https://repmatthanson.com/"
     },
     {
      "party": "Republican",
@@ -4791,7 +5076,8 @@
       "spent": 373420,
       "cash": 484458,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://justfacts.votesmart.org/candidate/biography/135077/natalie-manley"
     },
     {
      "party": "Republican",
@@ -4846,7 +5132,8 @@
       "spent": 98555,
       "cash": 115232,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repswanson.com/"
     }
    ],
    "writeIn": false,
@@ -4875,7 +5162,13 @@
       "spent": 95793,
       "cash": 72679,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://facebook.com/StateRepCrespo",
+      "instagram": "https://instagram.com/staterepcrespo",
+      "x": "https://twitter.com/StateRepCrespo"
+     },
+     "website": "https://fredcrespo.com/"
     },
     {
      "party": "Republican",
@@ -4916,7 +5209,11 @@
       "spent": 91968,
       "cash": 522911,
       "through": "09/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/GongGershowitz"
+     },
+     "website": "https://www.gonggershowitz.com/"
     },
     {
      "party": "Republican",
@@ -4957,7 +5254,11 @@
       "spent": 109695,
       "cash": 2322,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/repjoycemason"
+     },
+     "website": "https://www.repjoycemason.com/"
     },
     {
      "party": "Republican",
@@ -4999,7 +5300,13 @@
       "spent": 101513,
       "cash": 110705,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://Facebook.com/repdagmara",
+      "instagram": "https://instagram.com/repdagmara",
+      "x": "https://twitter.com/repdagmara"
+     },
+     "website": "https://www.repdagmara.org/"
     },
     {
      "party": "Republican",
@@ -5033,7 +5340,11 @@
       "spent": 19422,
       "cash": 130668,
       "through": "09/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/RepBlairSherlock"
+     },
+     "website": "https://www.repblair-sherlock.com/"
     },
     {
      "party": "Republican",
@@ -5075,7 +5386,11 @@
       "spent": 26000,
       "cash": 232395,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "instagram": "https://www.instagram.com/staterep.grasse"
+     },
+     "website": "https://www.staterepgrasse.com/"
     },
     {
      "party": "Republican",
@@ -5199,7 +5514,8 @@
       "spent": 131173,
       "cash": 183089,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://cddavidsmeyer.org/"
     }
    ],
    "writeIn": false,
@@ -5228,7 +5544,8 @@
       "spent": 133136,
       "cash": 34474,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://www.linkedin.com/in/margaret-delarosa-8271b513"
     },
     {
      "party": "Republican",
@@ -5310,7 +5627,8 @@
       "spent": 739412,
       "cash": 466762,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://www.staterepresentativebarbarahernandez.com/"
     },
     {
      "party": "Republican",
@@ -5343,7 +5661,8 @@
       "spent": 80765,
       "cash": 20341,
       "through": "09/30/2026"
-     }
+     },
+     "website": "https://repbunting.com/"
     }
    ],
    "writeIn": false,
@@ -5372,7 +5691,13 @@
       "spent": 136614,
       "cash": 36054,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/repsnessil66",
+      "instagram": "https://www.instagram.com/repsuzanneness",
+      "youtube": "https://www.youtube.com/@ILStateRepSuzanneNess"
+     },
+     "website": "https://repsnessil66.com/"
     },
     {
      "party": "Republican",
@@ -5427,7 +5752,8 @@
       "spent": 17620,
       "cash": 19649,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repcmiller.com/"
     }
    ],
    "writeIn": false,
@@ -5469,7 +5795,11 @@
       "spent": 108053,
       "cash": 28766,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/State-Representative-Paul-Jacobs-104061098295558"
+     },
+     "website": "https://reppauljacobs.com/"
     }
    ],
    "writeIn": false,
@@ -5499,6 +5829,11 @@
       "spent": 82139,
       "cash": 426265,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/suzyglowiakhilton",
+      "youtube": "https://www.youtube.com/@suzyglowiak3857",
+      "x": "https://x.com/SuzyGlowiak"
      }
     },
     {
@@ -5581,6 +5916,11 @@
       "spent": 147265,
       "cash": 307023,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/EllmanforIL",
+      "x": "https://twitter.com/EllmanForIL",
+      "instagram": "https://www.instagram.com/statesenatorlauraellman"
      }
     },
     {
@@ -5636,7 +5976,12 @@
       "spent": 66519,
       "cash": 81162,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/senatorwilcox",
+      "x": "https://twitter.com/SenatorWilcox"
+     },
+     "website": "https://senatorwilcox.com/"
     }
    ],
    "writeIn": false,
@@ -5666,7 +6011,12 @@
       "cash": 1699007,
       "through": "06/30/2026"
      },
-     "incumbent": true
+     "incumbent": true,
+     "social": {
+      "x": "https://x.com/RepSchneider",
+      "facebook": "https://www.facebook.com/CongressmanBradSchneider",
+      "instagram": "https://www.instagram.com/repschneider"
+     }
     },
     {
      "party": "Republican",
@@ -5712,7 +6062,8 @@
       "spent": 627983,
       "cash": 390262,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repryanspain.com/"
     }
    ],
    "writeIn": false,
@@ -5754,7 +6105,11 @@
       "spent": 57082,
       "cash": 45476,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "x": "https://twitter.com/RepSchweizer"
+     },
+     "website": "https://repschweizer.com/"
     }
    ],
    "writeIn": false,
@@ -5784,6 +6139,11 @@
       "spent": 32433,
       "cash": 215614,
       "through": "06/30/2026"
+     },
+     "social": {
+      "x": "https://twitter.com/votemaura",
+      "instagram": "https://www.instagram.com/votemaura",
+      "facebook": "https://www.facebook.com/vote4maura"
      }
     },
     {
@@ -5838,7 +6198,8 @@
       "spent": 128818,
       "cash": 17201,
       "through": "09/30/2026"
-     }
+     },
+     "website": "https://repfritts.com/"
     }
    ],
    "writeIn": false,
@@ -5867,6 +6228,9 @@
       "spent": 3459,
       "cash": 542,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/votemccree"
      }
     },
     {
@@ -5882,6 +6246,11 @@
       "spent": 101597,
       "cash": 629,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://facebook.com/jedforfreedom",
+      "x": "https://twitter.com/jedforfreedom",
+      "instagram": "https://instagram.com/jedforfreedom"
      }
     }
    ],
@@ -5911,7 +6280,8 @@
       "spent": 192082,
       "cash": 90487,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repnormahernandez.com/"
     },
     {
      "party": "Republican",
@@ -5953,7 +6323,13 @@
       "cash": 1325642,
       "through": "06/30/2026"
      },
-     "incumbent": true
+     "incumbent": true,
+     "social": {
+      "x": "https://x.com/RepEricSorensen",
+      "instagram": "https://www.instagram.com/repericsorensen",
+      "facebook": "https://facebook.com/EricForIllinois",
+      "bluesky": "https://bsky.app/profile/ericsorensen.bsky.social"
+     }
     },
     {
      "party": "Republican",
@@ -5996,6 +6372,9 @@
       "spent": 17126,
       "cash": 14685,
       "through": "09/30/2026"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/berningforillinois"
      }
     },
     {
@@ -6010,7 +6389,11 @@
       "spent": 609241,
       "cash": 69359,
       "through": "09/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/SenChesney"
+     },
+     "website": "https://senatorchesney.com/"
     }
    ],
    "writeIn": false,
@@ -6039,7 +6422,8 @@
       "spent": 9346,
       "cash": 5851,
       "through": "09/30/2026"
-     }
+     },
+     "website": "https://repwilhour.com/"
     }
    ],
    "writeIn": false,
@@ -6082,7 +6466,11 @@
       "spent": 52102,
       "cash": 17380,
       "through": "09/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/State-Representative-Tom-Weber-1097352810439053"
+     },
+     "website": "https://repweber.com/"
     }
    ],
    "writeIn": false,
@@ -6124,7 +6512,8 @@
       "spent": 65884,
       "cash": 193213,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repmclaughlin.com/"
     }
    ],
    "writeIn": false,
@@ -6167,6 +6556,10 @@
       "spent": 64770,
       "cash": 4378,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/joesosnowski",
+      "x": "https://twitter.com/repsosnowski"
      }
     }
    ],
@@ -6209,7 +6602,12 @@
       "cash": 810427,
       "through": "06/30/2026"
      },
-     "incumbent": true
+     "incumbent": true,
+     "social": {
+      "x": "https://x.com/RepMaryMiller",
+      "facebook": "https://www.facebook.com/RepMaryMiller"
+     },
+     "website": "https://marymiller.house.gov"
     }
    ],
    "writeIn": false,
@@ -6238,7 +6636,8 @@
       "spent": 31453,
       "cash": 16609,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repstevenreick.com/"
     }
    ],
    "writeIn": false,
@@ -6267,7 +6666,13 @@
       "spent": 274587,
       "cash": 11229,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "instagram": "https://www.instagram.com/staterepwest",
+      "x": "https://www.twitter.com/StateRepWEST",
+      "facebook": "https://www.facebook.com/staterepwest"
+     },
+     "website": "https://www.staterepwest.com/"
     }
    ],
    "writeIn": false,
@@ -6296,7 +6701,13 @@
       "spent": 76110,
       "cash": 58141,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "instagram": "https://www.instagram.com/staterepammons",
+      "facebook": "https://www.facebook.com/staterepammons",
+      "linkedin": "https://www.linkedin.com/in/staterepammons"
+     },
+     "website": "https://www.staterepcarolammons.com/"
     }
    ],
    "writeIn": false,
@@ -6338,7 +6749,8 @@
       "spent": 241113,
       "cash": 115455,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repkeicher.com/"
     }
    ],
    "writeIn": false,
@@ -6380,7 +6792,13 @@
       "cash": 789999,
       "through": "06/30/2026"
      },
-     "incumbent": true
+     "incumbent": true,
+     "social": {
+      "x": "https://x.com/RepBost",
+      "facebook": "https://www.facebook.com/RepBost",
+      "youtube": "https://www.youtube.com/channel/UCYA1psY06vSf3QadHuCrmjQ"
+     },
+     "website": "https://bost.house.gov"
     }
    ],
    "writeIn": false,
@@ -6409,7 +6827,14 @@
       "spent": 581510,
       "cash": 55582,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/repbobmorgan",
+      "x": "https://x.com/RepBobMorgan",
+      "instagram": "https://www.instagram.com/RepBobMorgan",
+      "linkedin": "https://www.linkedin.com/company/repbobmorgan"
+     },
+     "website": "https://repbobmorgan.com/"
     }
    ],
    "writeIn": false,
@@ -6437,7 +6862,12 @@
       "spent": 303049,
       "cash": 189763,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/repdidech",
+      "x": "https://www.twitter.com/RepDidech"
+     },
+     "website": "https://www.repdidech.com/"
     }
    ],
    "writeIn": false,
@@ -6465,7 +6895,13 @@
       "cash": 2625565,
       "through": "06/30/2026"
      },
-     "incumbent": true
+     "incumbent": true,
+     "social": {
+      "x": "https://x.com/RepNikkiB",
+      "facebook": "https://www.facebook.com/RepNikkiBudzinski",
+      "instagram": "https://www.instagram.com/repnikki"
+     },
+     "website": "https://budzinski.house.gov"
     },
     {
      "party": "Republican",
@@ -6479,6 +6915,10 @@
       "spent": 335996,
       "cash": 12241,
       "through": "06/30/2026"
+     },
+     "social": {
+      "x": "https://x.com/WilsonforIL13",
+      "instagram": "https://www.instagram.com/wilsonforcongress"
      }
     }
    ],
@@ -6522,7 +6962,12 @@
       "spent": 30265,
       "cash": 173941,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/senharriss",
+      "instagram": "https://www.instagram.com/senatorericaharriss"
+     },
+     "website": "https://senatorericaharriss.com/"
     }
    ],
    "writeIn": false,
@@ -6551,7 +6996,13 @@
       "spent": 34830,
       "cash": 60847,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/StateSenatorChrisBalkema",
+      "instagram": "https://www.instagram.com/senatorchrisbalkema",
+      "tiktok": "https://www.tiktok.com/@senatorchrisbalkema"
+     },
+     "website": "https://www.senatorchrisbalkema.com/"
     }
    ],
    "writeIn": false,
@@ -6580,7 +7031,13 @@
       "spent": 88524,
       "cash": 241177,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/RepresentativeChung",
+      "instagram": "https://instagram.com/RepresentativeChung",
+      "linkedin": "https://www.linkedin.com/company/office-of-state-representative-sharon-chung"
+     },
+     "website": "https://www.repchung.com/"
     }
    ],
    "writeIn": false,
@@ -6609,7 +7066,11 @@
       "spent": 354871,
       "cash": 526014,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/repjgordon"
+     },
+     "website": "https://www.repgordonbooth.com/"
     }
    ],
    "writeIn": false,
@@ -6638,7 +7099,8 @@
       "spent": 368104,
       "cash": 10834,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repweaver.com/"
     }
    ],
    "writeIn": false,
@@ -6696,7 +7158,11 @@
       "spent": 203243,
       "cash": 126193,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "instagram": "https://www.instagram.com/rep.mikecoffey"
+     },
+     "website": "https://repcoffey.com/"
     }
    ],
    "writeIn": false,
@@ -6725,7 +7191,8 @@
       "spent": 123529,
       "cash": 100996,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://justfacts.votesmart.org/candidate/biography/135086/sue-scherer"
     }
    ],
    "writeIn": false,
@@ -6754,7 +7221,8 @@
       "spent": 58303,
       "cash": 172970,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://staterepbriel.com/"
     },
     {
      "party": "Republican",
@@ -6796,7 +7264,8 @@
       "spent": 167185,
       "cash": 30569,
       "through": "09/30/2026"
-     }
+     },
+     "website": "https://repcabello.com/"
     }
    ],
    "writeIn": false,
@@ -6826,6 +7295,10 @@
       "spent": 153466,
       "cash": 25289,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/jackiehaasforrep",
+      "instagram": "https://www.instagram.com/jackiehaasforstaterep"
      }
     }
    ],
@@ -6948,7 +7421,13 @@
       "spent": 130127,
       "cash": 222773,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/SenSethLewis",
+      "instagram": "https://www.instagram.com/senatorsethlewis",
+      "x": "https://x.com/SenatorLewis24"
+     },
+     "website": "https://senatorlewis.com/"
     }
    ],
    "writeIn": false,
@@ -6976,6 +7455,12 @@
       "spent": 289071,
       "cash": 280490,
       "through": "06/30/2026"
+     },
+     "social": {
+      "x": "https://twitter.com/nabeelaforil",
+      "linkedin": "https://www.linkedin.com/in/nabeela-syed",
+      "facebook": "https://www.facebook.com/Nabeela4Illinois",
+      "instagram": "https://www.instagram.com/nabeelasyed"
      }
     },
     {
@@ -6990,7 +7475,14 @@
       "spent": 352945,
       "cash": 641142,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/senatordarbyhills",
+      "instagram": "https://www.instagram.com/senatordarbyhills",
+      "tiktok": "https://www.tiktok.com/@senatordarbyhills",
+      "linkedin": "https://www.linkedin.com/in/state-senator-darby-hills-a19b6413"
+     },
+     "website": "https://www.senatordarbyhills.com/"
     }
    ],
    "writeIn": false,
@@ -7018,7 +7510,13 @@
       "cash": 2505288,
       "through": "06/30/2026"
      },
-     "incumbent": true
+     "incumbent": true,
+     "social": {
+      "x": "https://x.com/RepBillFoster",
+      "facebook": "https://www.facebook.com/CongressmanBillFoster",
+      "youtube": "https://www.youtube.com/channel/UCicixINQr_-3cFHI2bJzFpQ"
+     },
+     "website": "https://foster.house.gov"
     },
     {
      "party": "Republican",
@@ -7032,6 +7530,11 @@
       "spent": 288674,
       "cash": 22765,
       "through": "06/30/2026"
+     },
+     "social": {
+      "instagram": "https://www.instagram.com/jeffwalterforcongress",
+      "facebook": "https://www.facebook.com/JeffWalterIL",
+      "x": "https://x.com/jeffwalteril"
      }
     }
    ],
@@ -7060,7 +7563,8 @@
       "spent": 274422,
       "cash": 88730,
       "through": "09/30/2026"
-     }
+     },
+     "website": "https://charliemeier.net/"
     }
    ],
    "writeIn": false,
@@ -7089,6 +7593,12 @@
       "spent": 185607,
       "cash": 230141,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://facebook.com/nolleyforcongress",
+      "instagram": "https://instagram.com/nolleyforcongress",
+      "x": "https://x.com/paulnolley",
+      "bluesky": "https://bsky.app/profile/nolleyforcongress.bsky.social"
      }
     },
     {
@@ -7103,7 +7613,13 @@
       "cash": 6748621,
       "through": "06/30/2026"
      },
-     "incumbent": true
+     "incumbent": true,
+     "social": {
+      "x": "https://x.com/RepLaHood",
+      "facebook": "https://www.facebook.com/replahood",
+      "youtube": "https://www.youtube.com/channel/UCVRbtFwaBGcixZIkygtalRw"
+     },
+     "website": "https://lahood.house.gov"
     }
    ],
    "writeIn": false,
@@ -7132,7 +7648,8 @@
       "spent": 112596,
       "cash": 143624,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://www.staterepresentativebarbarahernandez.com/"
     }
    ],
    "writeIn": false,
@@ -7161,7 +7678,13 @@
       "spent": 53721,
       "cash": 115636,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/senchapinrose",
+      "instagram": "https://www.instagram.com/ilsenatorchapinrose",
+      "tiktok": "https://www.tiktok.com/@senchapinrose"
+     },
+     "website": "https://senchapinrose.com/"
     }
    ],
    "writeIn": false,
@@ -7232,7 +7755,11 @@
       "spent": 122971,
       "cash": 40563,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/RepDanUgaste"
+     },
+     "website": "https://repugaste.com/"
     }
    ],
    "writeIn": false,
@@ -7261,7 +7788,13 @@
       "spent": 135161,
       "cash": 116689,
       "through": "09/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/RepRitaMayfield",
+      "linkedin": "https://www.linkedin.com/in/rita-mayfield-40ab32",
+      "x": "https://twitter.com/ritamayfield"
+     },
+     "website": "https://www.ritamayfield60.com/"
     }
    ],
    "writeIn": false,
@@ -7290,7 +7823,8 @@
       "spent": 502018,
       "cash": 875350,
       "through": "09/30/2026"
-     }
+     },
+     "website": "https://senatorhalpin.com/"
     },
     {
      "party": "Republican",
@@ -7332,7 +7866,8 @@
       "spent": 113206,
       "cash": 136648,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repsheehan.com/"
     }
    ],
    "writeIn": false,
@@ -7360,7 +7895,11 @@
       "spent": 94867,
       "cash": 3105,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "instagram": "https://www.instagram.com/repdebbiemeyersmartin"
+     },
+     "website": "https://www.repdebbiemeyersmartin.com/"
     }
    ],
    "writeIn": false,
@@ -7415,7 +7954,8 @@
       "spent": 152895,
       "cash": 64534,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://justfacts.votesmart.org/candidate/biography/33782/will-davis"
     }
    ],
    "writeIn": false,
@@ -7443,7 +7983,13 @@
       "spent": 250518,
       "cash": 108948,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/SenAlJohnson",
+      "x": "https://twitter.com/SenALJohnson",
+      "instagram": "https://www.instagram.com/senaljohnson"
+     },
+     "website": "https://www.senatoradrianejohnson.com/"
     }
    ],
    "writeIn": false,
@@ -7485,7 +8031,8 @@
       "spent": 71187,
       "cash": 146690,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repelik.com/"
     }
    ],
    "writeIn": false,
@@ -7514,7 +8061,8 @@
       "spent": 108715,
       "cash": 417483,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repstuart.com/"
     },
     {
      "party": "Republican",
@@ -7569,7 +8117,8 @@
       "spent": 136909,
       "cash": 105422,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repsanalitro.com/"
     }
    ],
    "writeIn": false,
@@ -7597,6 +8146,11 @@
       "spent": 27570,
       "cash": 70238,
       "through": "06/30/2026"
+     },
+     "social": {
+      "x": "https://x.com/ericaforil47",
+      "tiktok": "https://www.tiktok.com/@ericaforil47",
+      "instagram": "https://www.instagram.com/ericaforil47"
      }
     },
     {
@@ -7639,6 +8193,10 @@
       "spent": 33202,
       "cash": 80481,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/friendsofmicheleclark",
+      "instagram": "https://instagram.com/friendsofmicheleclark"
      }
     },
     {
@@ -7653,6 +8211,10 @@
       "spent": 50949,
       "cash": 8719,
       "through": "06/30/2026"
+     },
+     "social": {
+      "instagram": "https://www.instagram.com/DaniellePenmanforIllinois",
+      "youtube": "https://www.youtube.com/@DaniellePenmanforIllinois"
      }
     }
    ],
@@ -7682,7 +8244,12 @@
       "spent": 783555,
       "cash": 3059627,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "x": "https://twitter.com/SenJohnCurran",
+      "facebook": "https://www.facebook.com/senatorjohncurran"
+     },
+     "website": "https://senatorcurran.com/"
     }
    ],
    "writeIn": false,
@@ -7710,7 +8277,11 @@
       "spent": 146628,
       "cash": 79018,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/SenatorSallyTurner"
+     },
+     "website": "https://senatorsallyturner.com/"
     }
    ],
    "writeIn": false,
@@ -7739,7 +8310,12 @@
       "spent": 13424,
       "cash": 67286,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "instagram": "https://www.instagram.com/repmartideuter",
+      "linkedin": "https://www.linkedin.com/in/martha-marti-wiles-deuter-33104b18a"
+     },
+     "website": "https://www.repmartideuter.com/"
     },
     {
      "party": "Republican",
@@ -7780,7 +8356,13 @@
       "spent": 243371,
       "cash": 450343,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/State-Representative-Dave-Vella-102353038470082",
+      "instagram": "https://www.instagram.com/staterepdavevella",
+      "x": "https://twitter.com/StateRepVella"
+     },
+     "website": "https://www.staterepdavevella.com/"
     },
     {
      "party": "Republican",
@@ -7822,7 +8404,12 @@
       "cash": 1106564,
       "through": "06/30/2026"
      },
-     "incumbent": true
+     "incumbent": true,
+     "social": {
+      "x": "https://x.com/RepUnderwood",
+      "facebook": "https://www.facebook.com/repunderwood"
+     },
+     "website": "https://underwood.house.gov"
     },
     {
      "party": "Republican",
@@ -7836,6 +8423,13 @@
       "spent": 112994,
       "cash": 31898,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://facebook.com/JamesMarter4Congress",
+      "x": "https://twitter.com/Marter4Congress",
+      "instagram": "https://www.instagram.com/marter4congress",
+      "tiktok": "https://www.tiktok.com/@jim_marter",
+      "youtube": "https://www.youtube.com/@marter4congress"
      }
     }
    ],
@@ -7865,7 +8459,8 @@
       "spent": 829871,
       "cash": 1860304,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://justfacts.votesmart.org/candidate/biography/6334/jay-hoffman"
     }
    ],
    "writeIn": false,
@@ -7894,7 +8489,8 @@
       "spent": 55087,
       "cash": 13388,
       "through": "09/30/2026"
-     }
+     },
+     "website": "https://repfriess.com/"
     }
    ],
    "writeIn": false,
@@ -7923,7 +8519,8 @@
       "spent": 257163,
       "cash": 52991,
       "through": "09/30/2026"
-     }
+     },
+     "website": "https://repseverin.com/"
     }
    ],
    "writeIn": false,
@@ -7952,7 +8549,8 @@
       "spent": 124573,
       "cash": 123305,
       "through": "09/30/2026"
-     }
+     },
+     "website": "https://repwindhorst.com/"
     }
    ],
    "writeIn": false,
@@ -8023,7 +8621,8 @@
       "spent": 81754,
       "cash": 55407,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repmoore.com/"
     }
    ],
    "writeIn": false,
@@ -8079,6 +8678,9 @@
       "spent": 24797,
       "cash": 32361,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/Juan4Judge"
      }
     }
    ],
@@ -8107,7 +8709,13 @@
       "spent": 148866,
       "cash": 62752,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/staterepresentativeannamoeller",
+      "instagram": "https://www.instagram.com/staterepmoeller",
+      "x": "https://twitter.com/staterepmoeller"
+     },
+     "website": "https://staterepmoeller.com/"
     }
    ],
    "writeIn": false,
@@ -8135,7 +8743,8 @@
       "spent": 108989,
       "cash": 174914,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repgreggjohnson.com/"
     }
    ],
    "writeIn": false,
@@ -8164,7 +8773,14 @@
       "spent": 3258214,
       "cash": 11440633,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/SpeakerWelchIL",
+      "instagram": "https://www.instagram.com/speakerwelchil",
+      "x": "https://twitter.com/speakerwelchil",
+      "linkedin": "https://www.linkedin.com/in/emanuelchriswelch"
+     },
+     "website": "https://www.emanuelchriswelch.com/"
     }
    ],
    "writeIn": false,
@@ -8192,7 +8808,12 @@
       "spent": 31384,
       "cash": 62450,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/repstavamurray",
+      "x": "https://x.com/RepStava_Murray"
+     },
+     "website": "https://www.repstava.com/"
     },
     {
      "party": "Republican",
@@ -8262,7 +8883,8 @@
       "spent": 376527,
       "cash": 375099,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://justfacts.votesmart.org/candidate/biography/149703/lawrence-walsh-jr"
     }
    ],
    "writeIn": false,
@@ -8291,7 +8913,8 @@
       "spent": 58863,
       "cash": 88594,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://rephauter.com/"
     }
    ],
    "writeIn": false,
@@ -8320,7 +8943,8 @@
       "spent": 116592,
       "cash": 51264,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repdeering.com/"
     }
    ],
    "writeIn": false,
@@ -8349,7 +8973,8 @@
       "spent": 791328,
       "cash": 1285444,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repmccombie.com/"
     }
    ],
    "writeIn": false,
@@ -8378,7 +9003,8 @@
       "spent": 20442,
       "cash": 27747,
       "through": "06/30/2026"
-     }
+     },
+     "website": "https://repniemerg.com/"
     }
    ],
    "writeIn": false,
@@ -8464,7 +9090,8 @@
       "spent": 131669,
       "cash": 46745,
       "through": "09/30/2026"
-     }
+     },
+     "website": "https://reprosenthal.com/"
     }
    ],
    "writeIn": false,

@@ -78,10 +78,14 @@ interface BallotChange {
   added: string[];
 }
 
+// In the order the Board of Elections lists them.
 const DISTRICT_CHIPS: [keyof Districts, string][] = [
-  ['ward', 'Ward'], ['cd', 'Congress'], ['sldu', 'State Senate'], ['sldl', 'State House'],
-  ['commissioner', 'County Board'], ['subcircuit', 'Subcircuit'], ['school', 'School'], ['police', 'Police district'],
+  ['precinct', 'Precinct'], ['ward', 'Ward'], ['cd', 'Congress'], ['sldu', 'State Senate'], ['sldl', 'State House'],
+  ['subcircuit', 'Judicial subcircuit'], ['commissioner', 'County Board'], ['bor', 'Board of Review'],
+  ['police', 'Police district'], ['school', 'School board'],
 ];
+/** A district's number as people know it: precincts are stored "ward-precinct". */
+const districtNumber = (k: keyof Districts, v: string) => (k === 'precinct' ? v.split('-')[1] : v);
 
 function Ring({ pct, size = 64 }: { pct: number; size?: number }) {
   const r = size / 2 - 6;
@@ -293,7 +297,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
     const oldIds = old ? ballotIds(old) : null;
     const report: BallotChange = {
       districts: old
-        ? DISTRICT_CHIPS.filter(([k]) => old[k] !== d[k]).map(([k, label]) => ({ label, from: old[k], to: d[k] }))
+        ? DISTRICT_CHIPS.filter(([k]) => old[k] !== d[k]).map(([k, label]) => ({ label, from: old[k] && districtNumber(k, old[k]), to: d[k] && districtNumber(k, d[k]) }))
         : [],
       kept: decided.filter(([id]) => onBallot.has(id)).map(([id, c]) => describePick(id, c)),
       cleared: decided.filter(([id]) => !onBallot.has(id)).map(([id, c]) => describePick(id, c)),
@@ -424,7 +428,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
               <div className="mt-3 grid grid-cols-3 gap-2" role="tablist" aria-label="Views">
                 {([['ballot', 'My Ballot'], ['plan', 'Plan to vote'], ['share', 'Save & share']] as const).map(([id, label]) => (
                   <button key={id} type="button" role="tab" aria-selected={tab === id} onClick={() => { setTab(id); window.scrollTo({ top: 0 }); }}
-                    className={`min-h-[44px] rounded-xl font-bold border-2 ${tab === id ? 'bg-[var(--gb-text)] text-[var(--gb-bg)] border-[var(--gb-text)]' : 'border-[var(--gb-border)] text-[var(--gb-text)] hover:border-[var(--gb-text)]'}`}>
+                    className={`min-h-[44px] rounded-xl font-bold border-2 border-[var(--gb-text)] ${tab === id ? 'bg-[var(--gb-text)] text-[var(--gb-bg)]' : 'text-[var(--gb-text)]'}`}>
                     {label}
                   </button>
                 ))}
@@ -749,7 +753,7 @@ function WhereYouVote({ districts, chicago, cook, onChange }: { districts: Distr
           <p className="font-black">Your districts</p>
           <ul className="flex flex-wrap gap-2">
             {DISTRICT_CHIPS.filter(([k]) => districts[k]).map(([k, label]) => (
-              <li key={k} className="rounded-full border-[3px] border-[var(--gb-primary)] bg-[var(--kyb-chip)] px-3 py-1 text-sm font-bold">{label} {districts[k]}</li>
+              <li key={k} className="rounded-full border-[3px] border-[var(--gb-primary)] bg-[var(--kyb-chip)] px-3 py-1 text-sm font-bold">{label} {districtNumber(k, districts[k]!)}</li>
             ))}
           </ul>
           {!cook && (
@@ -790,8 +794,11 @@ function Sources() {
     { emoji: '💵', title: 'Campaign money', status: 'Live · when a committee matches',
       body: 'Raised, spent and cash on hand from each campaign’s latest report: FEC for federal races, State Board D-2 reports for the rest. Attached only on a confident match.',
       links: [['FEC data', s.money.url], ['State Board files', s.stateMoney.url]] },
+    { emoji: '📣', title: 'Social media & websites', status: 'Live · daily',
+      body: 'Only accounts that are the candidate’s own: Congress’s official list, Wikidata (through their exact Wikipedia page), and the links on their own campaign site when the account carries their name.',
+      links: [['Congress list', 'https://github.com/unitedstates/congress-legislators'], ['Open States', 'https://openstates.org/il/']] },
     { emoji: '🗺️', title: 'District maps', status: 'Live',
-      body: 'Census (Congress, Springfield), Cook County (County Board, Board of Review, judicial subcircuits), City of Chicago (wards, precincts, police districts) and the Illinois Senate (school board).',
+      body: 'Census (Congress, Springfield), Cook County (County Board, Board of Review, judicial subcircuits), City of Chicago (wards, police districts, and your precinct, looked up live) and the Illinois Senate (school board).',
       links: [['data.cityofchicago.org', 'https://data.cityofchicago.org/']] },
     { emoji: '📜', title: 'Springfield bills & 2027 races', status: 'Live · from govbot',
       body: 'Illinois bills on elections and schools, ILGA hearings, and Chicago’s Feb 23, 2027 races with sitting alderpersons, from govbot’s open data.',

@@ -18,15 +18,15 @@ interface Props {
 function List({ sections, current, isDone, labelOf, onSection, onRace }: Props) {
   return (
     <nav aria-label="Ballot contents" className="text-[15px]">
-      <ol className="space-y-2.5 p-2.5">
+      <ol className="space-y-4 p-4">
         {sections.map((s, i) => {
           const open = s.id === current;
           // Each section framed in its colour; the one you're on pulses.
           return (
-            <li key={s.id} className={`rounded-xl border-[3px] overflow-hidden ${open ? 'kyb-pulse' : ''}`}
+            <li key={s.id} className={`rounded-xl border-[3px] ${open ? 'kyb-pulse' : ''}`}
               style={{ borderColor: s.color, ['--pulse' as string]: s.color }}>
               <button type="button" onClick={() => onSection(s.id)} aria-expanded={open} aria-current={open ? 'step' : undefined}
-                className={`w-full flex items-center gap-2 px-3 py-3 text-left font-bold hover:bg-[var(--kyb-chip)] ${open ? 'bg-[var(--kyb-chip)]' : ''}`}>
+                className={`w-full flex items-center gap-2 px-3 py-3 text-left font-bold hover:bg-[var(--kyb-chip)] ${open ? 'bg-[var(--kyb-chip)] rounded-t-[9px]' : 'rounded-[9px]'}`}>
                 <span aria-hidden="true">{s.emoji}</span>
                 <span className="flex-1 leading-snug">{i + 1}. {s.title}</span>
                 <span className="text-sm font-black">{s.done === s.ids.length ? <Check className="w-4 h-4 text-[var(--gb-primary)]" strokeWidth={3} aria-label="done" /> : `${s.done}/${s.ids.length}`}</span>

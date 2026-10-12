@@ -1,9 +1,9 @@
-import { Check, ExternalLink, Info, Scale, X } from 'lucide-react';
+import { AtSign, Check, ExternalLink, Facebook, Info, Instagram, Linkedin, Music2, Scale, Twitter, X, Youtube, type LucideIcon } from 'lucide-react';
 import { memo, useEffect, useRef, type ReactNode } from 'react';
 import { explainOffice } from './offices';
 import { researchLinks } from './research';
 import { money, type Choice } from './store';
-import type { Candidate, Measure, Race, Retention } from './types';
+import type { Candidate, Measure, Race, Retention, SocialPlatform } from './types';
 
 const AREA_LABEL: Record<string, string> = {
   cd: 'Congressional District', sldu: 'State Senate District', sldl: 'State House District',
@@ -33,7 +33,7 @@ function Dialog({ title, onClose, children }: { title: string; onClose: () => vo
     return () => { window.removeEventListener('keydown', onKey); document.body.style.overflow = ''; prev?.focus(); };
   }, [onClose]);
   return (
-    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/70 backdrop-blur-sm" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/75" onClick={onClose}>
       <div
         ref={ref}
         role="dialog"
@@ -201,6 +201,32 @@ export const RaceCard = memo(function RaceCard({ race, color, ink, numbered, cho
 
 // ---- candidate sheet ---------------------------------------------------------
 
+// Their accounts, in the order most people look for them.
+const SOCIAL: [SocialPlatform, string, LucideIcon][] = [
+  ['x', 'X (Twitter)', Twitter], ['facebook', 'Facebook', Facebook], ['instagram', 'Instagram', Instagram],
+  ['youtube', 'YouTube', Youtube], ['tiktok', 'TikTok', Music2], ['bluesky', 'Bluesky', AtSign],
+  ['threads', 'Threads', AtSign], ['linkedin', 'LinkedIn', Linkedin],
+];
+
+function Follow({ c }: { c: Candidate }) {
+  const links = SOCIAL.filter(([k]) => /^https:\/\//.test(c.social?.[k] ?? ''));
+  if (!links.length) return null;
+  return (
+    <section className="space-y-3">
+      <h3 className="text-sm font-black uppercase tracking-widest text-[var(--gb-text)]">📣 Follow them</h3>
+      <ul className="flex flex-wrap gap-2">
+        {links.map(([k, label, Icon]) => (
+          <li key={k}>
+            <a href={c.social![k]} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-2 min-h-[44px] rounded-full border-2 border-[var(--gb-text)] px-4 font-bold text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]">
+              <Icon className="w-4 h-4" aria-hidden="true" /> {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, onClose }: { race: Race; c: Candidate; color: string; ink: string; numbered: boolean; picked: boolean; onPick: () => void; onClose: () => void }) {
   return (
     <Dialog title={c.name} onClose={onClose}>
@@ -211,6 +237,8 @@ export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, 
           {numbered && <Badge>Ballot #{c.ballot}</Badge>}
           {c.incumbent && <Badge tone="var(--gb-text)" ink="var(--gb-bg)">Incumbent</Badge>}
         </div>
+
+        <Follow c={c} />
 
         <section className="space-y-3">
           <h3 className="text-sm font-black uppercase tracking-widest text-[var(--gb-text)]">💰 Campaign money</h3>

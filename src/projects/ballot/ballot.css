@@ -40,12 +40,17 @@
    govbot's sticky header, not under it. */
 :root:has(.gb-header) { scroll-padding-top: calc(var(--kyb-top) + 16px); }
 
-/* The contents section you're on: its coloured frame pulses gently. */
-@keyframes kyb-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--pulse) 55%, transparent); }
-  50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--pulse) 0%, transparent), 0 0 18px 2px color-mix(in srgb, var(--pulse) 45%, transparent); }
+/* The contents section you're on: a glow around its coloured frame pulses.
+   Only the glow layer's opacity animates, which the compositor does on its
+   own: animating the shadow itself repainted the page every frame, and made
+   anything blurred or layered over it (dialogs) crawl. */
+.kyb-pulse { position: relative; }
+.kyb-pulse::after {
+  content: ""; position: absolute; inset: -3px; border-radius: inherit; pointer-events: none;
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--pulse) 50%, transparent), 0 0 20px 6px color-mix(in srgb, var(--pulse) 60%, transparent);
+  opacity: 0; animation: kyb-pulse 1.4s ease-in-out infinite; will-change: opacity;
 }
-.kyb-pulse { animation: kyb-pulse 1.8s ease-in-out infinite; }
+@keyframes kyb-pulse { 50% { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) {
-  .kyb-pulse { animation: none; box-shadow: 0 0 0 3px color-mix(in srgb, var(--pulse) 40%, transparent); }
+  .kyb-pulse::after { animation: none; opacity: .7; }
 }
