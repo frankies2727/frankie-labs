@@ -33,9 +33,11 @@ const METHODS: { id: Method; label: string; emoji: string }[] = [
 interface Props {
   plan: Record<string, boolean | string>;
   setPlan: (key: string, value: boolean | string) => void;
-  /** Chicago voters get the Chicago Board's specifics; suburban Cook, the statewide rules + the Clerk. */
+  /** Chicago voters get the Chicago Board's specifics; everyone else, the statewide rules + their county clerk. */
   chicago: boolean;
   clerk: string;
+  /** "the Cook County Clerk", or "your county clerk" elsewhere in Illinois. */
+  clerkName: string;
   ward?: string;
   wardSite?: EarlyVotingSite;
   ballotDone: boolean;
@@ -72,7 +74,7 @@ const Out = ({ href, children }: { href: string; children: ReactNode }) => (
 
 const byId = (id: string) => NOV_3.find((d) => d.id === id)!;
 
-export function PlanToVote({ plan, setPlan, chicago, clerk, ward, wardSite, ballotDone }: Props) {
+export function PlanToVote({ plan, setPlan, chicago, clerk, clerkName, ward, wardSite, ballotDone }: Props) {
   const method = (plan.method as Method) || null;
   // Suburban early-voting sites and hours are the Clerk's, so suburban early
   // voters get the last day, which Illinois law fixes everywhere.
@@ -83,7 +85,7 @@ export function PlanToVote({ plan, setPlan, chicago, clerk, ward, wardSite, ball
       <Step n={1} done={!!plan.registered} title="Make sure you’re registered" onToggle={() => setPlan('registered', !plan.registered)}>
         {chicago
           ? <p>Check your registration, sample ballot and polling place on the <Out href={LINKS.myInfo}>Board of Elections site</Out>.</p>
-          : <p>Check your registration and polling place with the <Out href={LINKS.stateLookup}>State Board of Elections</Out>; your sample ballot is on the <Out href={clerk}>Cook County Clerk’s site</Out>.</p>}
+          : <p>Check your registration and polling place with the <Out href={LINKS.stateLookup}>State Board of Elections</Out>; your sample ballot is on <Out href={clerk}>{clerkName}’s site</Out>.</p>}
         <p><strong className="text-[#FFB900]">Not registered or moved?</strong> Register online through <strong>Sun, Oct 18</strong> at <Out href={LINKS.registerOnline}>ova.elections.il.gov</Out>. After that, register in person when you vote early or on Election Day. Bring two IDs, one showing your current address{chicago ? <> (<Out href={LINKS.id}>which IDs count</Out>)</> : null}.</p>
       </Step>
 
@@ -104,12 +106,12 @@ export function PlanToVote({ plan, setPlan, chicago, clerk, ward, wardSite, ball
         </div>
         {method === 'early' && !chicago && (
           <div className="space-y-2">
-            <p><strong>Early voting runs through Mon, Nov 2.</strong> In suburban Cook, the County Clerk sets the sites and hours. <Out href={clerk}>Find a site</Out></p>
+            <p><strong>Early voting runs through Mon, Nov 2.</strong> Your county clerk sets the sites and hours. <Out href={clerk}>Find a site</Out></p>
           </div>
         )}
         {method === 'mail' && !chicago && (
           <div className="space-y-2">
-            <p><strong>Apply by Thu, Oct 29</strong> through the <Out href={clerk}>Cook County Clerk</Out>, then return your ballot by mail or at a drop box.</p>
+            <p><strong>Apply by Thu, Oct 29</strong> through <Out href={clerk}>{clerkName}</Out>, then return your ballot by mail or at a drop box.</p>
           </div>
         )}
         {method === 'day' && !chicago && (

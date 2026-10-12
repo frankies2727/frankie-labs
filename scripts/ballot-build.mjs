@@ -26,7 +26,7 @@ import { parseCandidateList } from './ballot/candidates.mjs';
 import { parseWeball, addFederalMoney } from './ballot/fec.mjs';
 import { ISBE_BASE, ISBE_FILES, addStateMoney } from './ballot/isbe.mjs';
 import { addStateList, fetchCertifiedList } from './ballot/statewide.mjs';
-import { buildDistricts, touchesCook } from './ballot/districts.mjs';
+import { buildDistricts, buildStateDistricts, touchesCook } from './ballot/districts.mjs';
 
 const OUT = 'src/projects/ballot/data';
 const CANDIDATES_PAGE = 'https://chicagoelections.gov/getting-ballot/candidates';
@@ -122,7 +122,8 @@ async function main() {
   const certified = await fetchCertifiedList();
   const merged = addStateList(certified.text, ballot.races, districts.layers, touchesCook);
   ballot.races = merged.races;
-  console.log(`State list: +${merged.added} suburban contests, ${merged.withSite} candidate websites`);
+  console.log(`State list: +${merged.added} contests (suburban Cook and the rest of Illinois), ${merged.withSite} candidate websites`);
+  const stateDistricts = await buildStateDistricts();
 
   await download(FEC_WEBALL, join(work, 'weball.zip'));
   execFileSync('unzip', ['-o', '-q', join(work, 'weball.zip'), '-d', work]);
@@ -140,7 +141,8 @@ async function main() {
   // A race whose district isn't on the map would silently vanish from every
   // ballot, so treat that as a broken build.
   // (`city` isn't a map: it's "has a Chicago ward".)
-  const missing = ballot.races.filter((r) => r.area && r.area.type !== 'city' && !districts.layers[r.area.type]?.some((f) => f.id === r.area.id));
+  const mapFor = (r) => (r.outsideCook ? stateDistricts : districts).layers[r.area.type];
+  const missing = ballot.races.filter((r) => r.area && r.area.type !== 'city' && !mapFor(r)?.some((f) => f.id === r.area.id));
   if (missing.length) throw new Error('No map for: ' + missing.map((r) => r.office).join('; '));
 
   let prev = null;
@@ -171,6 +173,7 @@ async function main() {
     govbot,
   }, null, 1) + '\n');
   writeFileSync(join(OUT, 'districts.json'), JSON.stringify(districts) + '\n');
+  writeFileSync(join(OUT, 'districts-il.json'), JSON.stringify(stateDistricts) + '\n');
   console.log(`Wrote ${ballot.races.length} races, ${ballot.retentions.length} retentions, ${ballot.measures.length} measures.`);
 }
 

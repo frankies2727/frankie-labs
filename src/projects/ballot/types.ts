@@ -44,6 +44,8 @@ export interface Race {
    * ballot positions; their `ballot` numbers only identify picks.
    */
   numbered?: boolean;
+  /** A congressional or legislative district with no part in Cook County. */
+  outsideCook?: boolean;
 }
 
 export interface Retention { id: string; court: string; judge: string }

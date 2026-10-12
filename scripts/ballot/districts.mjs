@@ -22,8 +22,9 @@ import { join } from 'node:path';
 
 // All of Cook County (Chicago plus the suburbs).
 const COOK_BBOX = '-88.27,41.46,-87.52,42.16';
-const tiger = (layer, field) =>
-  `https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Legislative/MapServer/${layer}/query?where=STATE%3D%2717%27&geometry=${COOK_BBOX}&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=${field}&returnGeometry=true&outSR=4326&f=geojson`;
+// Illinois districts, all of them or (with a bbox) those touching one.
+const tiger = (layer, field, bbox = COOK_BBOX) =>
+  `https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Legislative/MapServer/${layer}/query?where=STATE%3D%2717%27${bbox ? `&geometry=${bbox}&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects` : ''}&outFields=${field}&returnGeometry=true&outSR=4326&f=geojson`;
 const cook = (layer) =>
   `https://gis.cookcountyil.gov/traditional/rest/services/politicalBoundary/MapServer/${layer}/query?where=1%3D1&outFields=*&outSR=4326&f=geojson`;
 
@@ -45,6 +46,9 @@ const PRECINCTS = 'https://data.cityofchicago.org/resource/i8fv-xe4b.geojson?$li
 
 // ~3 m: far below a geocoder's own error, and it shrinks the file ~10x.
 const TOLERANCE = 0.00003;
+// ~10 m for the statewide maps, which cover 40x the area and only decide
+// congressional and legislative districts outside Cook.
+const STATE_TOLERANCE = 0.0001;
 
 async function getJson(url) {
   for (let attempt = 1; ; attempt++) {
@@ -60,7 +64,7 @@ async function getJson(url) {
 }
 
 // Douglas–Peucker on one ring of [lng, lat] points.
-function simplify(points) {
+function simplify(points, tolerance = TOLERANCE) {
   if (points.length < 5) return points;
   const keep = new Uint8Array(points.length);
   keep[0] = keep[points.length - 1] = 1;
@@ -80,7 +84,7 @@ function simplify(points) {
       const d = len ? Math.abs(dy * px - dx * py + bx * ay - by * ax) / len : Math.hypot(px - ax, py - ay);
       if (d > worst) { worst = d; at = i; }
     }
-    if (worst > TOLERANCE) { keep[at] = 1; stack.push([a, at], [at, b]); }
+    if (worst > tolerance) { keep[at] = 1; stack.push([a, at], [at, b]); }
   }
   return points.filter((_, i) => keep[i]);
 }
@@ -120,15 +124,16 @@ function cut(a, b, axis, value) {
 const ringsOf = (geometry) =>
   geometry.type === 'Polygon' ? geometry.coordinates : geometry.type === 'MultiPolygon' ? geometry.coordinates.flat() : [];
 
-const pack = (rings) =>
-  rings.map(clip).map(simplify).filter((r) => r.length >= 4).map((r) => r.flatMap(([x, y]) => [+x.toFixed(5), +y.toFixed(5)]));
+const pack = (rings, statewide) =>
+  rings.map(statewide ? (r) => r : clip).map((r) => simplify(r, statewide ? STATE_TOLERANCE : TOLERANCE))
+    .filter((r) => r.length >= 4).map((r) => r.flatMap(([x, y]) => [+x.toFixed(5), +y.toFixed(5)]));
 
 // "001" / 1 / "1" -> "1": the candidate list numbers districts without zeros.
 const normalizeId = (v) => String(v).trim().replace(/^0+(?=\d)/, '');
 
-function fromGeoJson(fc, idOf) {
+function fromGeoJson(fc, idOf, statewide = false) {
   return fc.features
-    .map((f) => ({ id: normalizeId(idOf(f.properties)), rings: pack(ringsOf(f.geometry)) }))
+    .map((f) => ({ id: normalizeId(idOf(f.properties)), rings: pack(ringsOf(f.geometry), statewide) }))
     .filter((f) => f.rings.length && !/^Z+$/.test(f.id)); // TIGER's "not defined" filler
 }
 
@@ -217,6 +222,19 @@ export function touchesCook(layers, type, id) {
  * @param {string[]} precinctKeys "ward-precinct" keys that have a referendum;
  *   only those precincts are kept (all 1,291 would be most of the file).
  */
+/**
+ * Congressional and legislative maps for all of Illinois, for addresses
+ * outside Cook County (loaded by the app only for those).
+ */
+export async function buildStateDistricts() {
+  const layers = {};
+  for (const [type, layer, field, count] of [['cd', 0, 'CD120', 17], ['sldu', 1, 'SLDU', 59], ['sldl', 2, 'SLDL', 118]]) {
+    layers[type] = fromGeoJson(await getJson(tiger(layer, field, null)), (p) => p[field], true);
+    if (new Set(layers[type].map((f) => f.id)).size !== count) throw new Error(`statewide ${type}: expected ${count} districts, got ${layers[type].length}`);
+  }
+  return { layers };
+}
+
 /** One of the layers above, downloaded and packed. */
 export async function sourceLayer(type) {
   const { url, id } = SOURCES[type];
