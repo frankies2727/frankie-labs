@@ -14,6 +14,10 @@ const PlaceTimelapse = lazy(() =>
   })),
 );
 
+const KnowYourBallot = lazy(() =>
+  import('./ballot/KnowYourBallot').then((m) => ({ default: m.KnowYourBallot })),
+);
+
 const AIArt = lazy(() =>
   import('./aiart/AIArt').then((m) => ({ default: m.AIArt })),
 );
@@ -21,6 +25,16 @@ const AIArt = lazy(() =>
 // Frankie's personal projects — awesome things being built, one card each.
 // VibeCheck is the first; add more here as they ship.
 export const PROJECTS: ProjectDefinition[] = [
+  {
+    id: 'know-your-ballot',
+    name: 'Know Your Ballot',
+    tagline: 'Every name on your Chicago ballot, explained.',
+    description:
+      'Enter your Chicago address to see every race on your Nov 3 ballot, from U.S. Senate to judges and school board: what each job does, who’s running, who’s funding them. Build your picks, plan your vote, take it to the booth. Official data, nonpartisan.',
+    emoji: '🗳️',
+    gradient: 'from-[#009CDF] via-[#973999] to-[#0a0a0a]',
+    Component: KnowYourBallot,
+  },
   {
     id: 'vibecheck',
     name: 'VibeCheck',

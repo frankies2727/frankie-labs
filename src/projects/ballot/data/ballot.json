@@ -1,0 +1,3648 @@
+{
+ "election": {
+  "name": "General Election",
+  "date": "2026-11-03"
+ },
+ "sources": {
+  "candidates": {
+   "url": "https://cboeprod.blob.core.usgovcloudapi.net/prod/2026-09/Candidate%20List_20260911-1.pdf",
+   "page": "https://chicagoelections.gov/getting-ballot/candidates",
+   "asOf": "9/11/2026 3:47:15 PM"
+  },
+  "money": {
+   "url": "https://www.fec.gov/data/",
+   "file": "https://www.fec.gov/files/bulk-downloads/2026/weball26.zip"
+  },
+  "earlyVoting": {
+   "page": "https://chicagoelections.gov/voting/early-votingvote-centers"
+  }
+ },
+ "races": [
+  {
+   "id": "united-states-senator",
+   "office": "United States Senator",
+   "section": "federal",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Don Tracy",
+     "party": "Republican",
+     "money": {
+      "fecId": "S6IL00615",
+      "incumbent": false,
+      "raised": 2459890,
+      "spent": 947466,
+      "cash": 1512424,
+      "fromIndividuals": 401920,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "ballot": 2,
+     "name": "Juliana Stratton",
+     "party": "Democratic",
+     "money": {
+      "fecId": "S6IL00458",
+      "incumbent": false,
+      "raised": 5906599,
+      "spent": 4798641,
+      "cash": 1107958,
+      "fromIndividuals": 4860706,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "ballot": 3,
+     "name": "Whitfield Harrington Jr",
+     "party": "American Center Party",
+     "money": {
+      "fecId": "S6IL00680",
+      "incumbent": false,
+      "raised": 100702,
+      "spent": 96951,
+      "cash": 3751,
+      "fromIndividuals": 33953,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "governor-lieutenant-governor",
+   "office": "Governor & Lieutenant Governor",
+   "section": "state",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 4,
+     "name": "Darren Bailey & Aaron B. Del Mar",
+     "party": "Republican"
+    },
+    {
+     "ballot": 5,
+     "name": "JB Pritzker & Christian Mitchell",
+     "party": "Democratic"
+    },
+    {
+     "ballot": 6,
+     "name": "Collin Corbett & Carolyn Schofield",
+     "party": "Independent"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "attorney-general",
+   "office": "Attorney General",
+   "section": "state",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 7,
+     "name": "Robert W. Fioretti",
+     "party": "Republican"
+    },
+    {
+     "ballot": 8,
+     "name": "Kwame Raoul",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "secretary-of-state",
+   "office": "Secretary of State",
+   "section": "state",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 9,
+     "name": "Diane M. Harris",
+     "party": "Republican"
+    },
+    {
+     "ballot": 10,
+     "name": "Alexi Giannoulias",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "comptroller",
+   "office": "Comptroller",
+   "section": "state",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 11,
+     "name": "Bryan Drew",
+     "party": "Republican"
+    },
+    {
+     "ballot": 12,
+     "name": "Margaret Croke",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "treasurer",
+   "office": "Treasurer",
+   "section": "state",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 13,
+     "name": "Max Solomon",
+     "party": "Republican"
+    },
+    {
+     "ballot": 14,
+     "name": "Michael W. Frerichs",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "u-s-representative-1st-district",
+   "office": "U.S. Representative, 1st District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "1"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 21,
+     "name": "Christian Maxwell",
+     "party": "Republican",
+     "money": {
+      "fecId": "H6IL01191",
+      "incumbent": false,
+      "raised": 63316,
+      "spent": 36042,
+      "cash": 33832,
+      "fromIndividuals": 63316,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "ballot": 22,
+     "name": "Jonathan L. Jackson",
+     "party": "Democratic",
+     "money": {
+      "fecId": "H2IL01349",
+      "incumbent": true,
+      "raised": 418350,
+      "spent": 424875,
+      "cash": 47163,
+      "fromIndividuals": 269361,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "u-s-representative-2nd-district",
+   "office": "U.S. Representative, 2nd District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "2"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 21,
+     "name": "Michael Scott Noack",
+     "party": "Republican"
+    },
+    {
+     "ballot": 22,
+     "name": "Donna Miller",
+     "party": "Democratic",
+     "money": {
+      "fecId": "H6IL02355",
+      "incumbent": false,
+      "raised": 2452894,
+      "spent": 2412349,
+      "cash": 40546,
+      "fromIndividuals": 2315378,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "u-s-representative-3rd-district",
+   "office": "U.S. Representative, 3rd District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "3"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 21,
+     "name": "Angel Oakley",
+     "party": "Republican",
+     "money": {
+      "fecId": "H6IL03163",
+      "incumbent": false,
+      "raised": 8080,
+      "spent": 4341,
+      "cash": 3738,
+      "fromIndividuals": 8080,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "ballot": 22,
+     "name": "Delia Ramirez",
+     "party": "Democratic",
+     "money": {
+      "fecId": "H2IL03162",
+      "incumbent": true,
+      "raised": 1465280,
+      "spent": 986630,
+      "cash": 946222,
+      "fromIndividuals": 1037673,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "u-s-representative-4th-district",
+   "office": "U.S. Representative, 4th District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "4"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 21,
+     "name": "Lupe Castillo",
+     "party": "Republican"
+    },
+    {
+     "ballot": 22,
+     "name": "Patty Garcia",
+     "party": "Democratic",
+     "money": {
+      "fecId": "H6IL04153",
+      "incumbent": false,
+      "raised": 358667,
+      "spent": 173168,
+      "cash": 185499,
+      "fromIndividuals": 177910,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "ballot": 23,
+     "name": "Ed Hershey",
+     "party": "Working Class Party"
+    },
+    {
+     "ballot": 24,
+     "name": "Chris Getty",
+     "party": "Independent",
+     "money": {
+      "fecId": "H6IL04195",
+      "incumbent": false,
+      "raised": 188170,
+      "spent": 56523,
+      "cash": 131647,
+      "fromIndividuals": 188170,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "u-s-representative-5th-district",
+   "office": "U.S. Representative, 5th District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "5"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 21,
+     "name": "Tommy Hanson",
+     "party": "Republican"
+    },
+    {
+     "ballot": 22,
+     "name": "Mike Quigley",
+     "party": "Democratic",
+     "money": {
+      "fecId": "H0IL05096",
+      "incumbent": true,
+      "raised": 725695,
+      "spent": 719060,
+      "cash": 1187818,
+      "fromIndividuals": 244577,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "u-s-representative-6th-district",
+   "office": "U.S. Representative, 6th District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "6"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 21,
+     "name": "Niki Conforti",
+     "party": "Republican",
+     "money": {
+      "fecId": "H2IL06090",
+      "incumbent": false,
+      "raised": 313038,
+      "spent": 295578,
+      "cash": 22661,
+      "fromIndividuals": 308088,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "ballot": 22,
+     "name": "Sean Casten",
+     "party": "Democratic",
+     "money": {
+      "fecId": "H8IL06139",
+      "incumbent": true,
+      "raised": 2108920,
+      "spent": 1518045,
+      "cash": 1285018,
+      "fromIndividuals": 1336291,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "u-s-representative-7th-district",
+   "office": "U.S. Representative, 7th District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "7"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 21,
+     "name": "Chad Koppie",
+     "party": "Republican",
+     "money": {
+      "fecId": "H2IL08203",
+      "incumbent": false,
+      "raised": 58215,
+      "spent": 58173,
+      "cash": 42,
+      "fromIndividuals": 0,
+      "through": "09/30/2026"
+     }
+    },
+    {
+     "ballot": 22,
+     "name": "La Shawn K. Ford",
+     "party": "Democratic",
+     "money": {
+      "fecId": "H6IL07354",
+      "incumbent": false,
+      "raised": 722009,
+      "spent": 609421,
+      "cash": 112588,
+      "fromIndividuals": 480392,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "u-s-representative-8th-district",
+   "office": "U.S. Representative, 8th District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "8"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 21,
+     "name": "Jennifer Davis",
+     "party": "Republican",
+     "money": {
+      "fecId": "H6IL08311",
+      "incumbent": false,
+      "raised": 1476009,
+      "spent": 745608,
+      "cash": 730401,
+      "fromIndividuals": 462009,
+      "through": "06/30/2026"
+     }
+    },
+    {
+     "ballot": 22,
+     "name": "Melissa L. Bean",
+     "party": "Democratic",
+     "money": {
+      "fecId": "H6IL08329",
+      "incumbent": false,
+      "raised": 2071076,
+      "spent": 1926546,
+      "cash": 144530,
+      "fromIndividuals": 1451374,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "u-s-representative-9th-district",
+   "office": "U.S. Representative, 9th District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "9"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 21,
+     "name": "John Elleson",
+     "party": "Republican"
+    },
+    {
+     "ballot": 22,
+     "name": "Daniel Biss",
+     "party": "Democratic",
+     "money": {
+      "fecId": "H6IL09228",
+      "incumbent": false,
+      "raised": 2946675,
+      "spent": 2684545,
+      "cash": 262130,
+      "fromIndividuals": 2733768,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-senator-2nd-district",
+   "office": "State Senator, 2nd District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "2"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 32,
+     "name": "Omar Aquino",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-senator-3rd-district",
+   "office": "State Senator, 3rd District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "3"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 32,
+     "name": "Mattie Hunter",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-senator-5th-district",
+   "office": "State Senator, 5th District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "5"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 32,
+     "name": "Lakesia Collins",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-senator-6th-district",
+   "office": "State Senator, 6th District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "6"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 32,
+     "name": "Sara Feigenholtz",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-senator-8th-district",
+   "office": "State Senator, 8th District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "8"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 31,
+     "name": "Vince Romano",
+     "party": "Republican"
+    },
+    {
+     "ballot": 32,
+     "name": "Ram Villivalam",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "state-senator-9th-district",
+   "office": "State Senator, 9th District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "9"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 31,
+     "name": "Tom Lally",
+     "party": "Republican"
+    },
+    {
+     "ballot": 32,
+     "name": "Patrick Hanley",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-senator-11th-district",
+   "office": "State Senator, 11th District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "11"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 32,
+     "name": "Mike Porfirio",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-senator-12th-district",
+   "office": "State Senator, 12th District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "12"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 32,
+     "name": "Celina Villanueva",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "state-senator-14th-district",
+   "office": "State Senator, 14th District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "14"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 31,
+     "name": "Brian Skala",
+     "party": "Republican"
+    },
+    {
+     "ballot": 32,
+     "name": "Emil Jones, III",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "state-senator-15th-district",
+   "office": "State Senator, 15th District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "15"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 32,
+     "name": "Napoleon B. Harris III",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-senator-17th-district",
+   "office": "State Senator, 17th District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "17"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 31,
+     "name": "Frederick L. Walls",
+     "party": "Republican"
+    },
+    {
+     "ballot": 32,
+     "name": "Elgie R. Sims, Jr.",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-senator-18th-district",
+   "office": "State Senator, 18th District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "18"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 31,
+     "name": "Christine McGovern",
+     "party": "Republican"
+    },
+    {
+     "ballot": 32,
+     "name": "Frances Ann Hurley",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-senator-20th-district",
+   "office": "State Senator, 20th District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "20"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 32,
+     "name": "Graciela Guzman",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-senator-39th-district",
+   "office": "State Senator, 39th District",
+   "section": "state",
+   "area": {
+    "type": "sldu",
+    "id": "39"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 32,
+     "name": "Don Harmon",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-1st-district",
+   "office": "State Representative, 1st District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "1"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Aaron M. Ortiz",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-3rd-district",
+   "office": "State Representative, 3rd District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "3"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Eva-Dina Delgado",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-4th-district",
+   "office": "State Representative, 4th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "4"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Lilian Jimenez",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-5th-district",
+   "office": "State Representative, 5th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "5"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Kimberly Neely DuBuclet",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-6th-district",
+   "office": "State Representative, 6th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "6"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Sonya Marie Harper",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-8th-district",
+   "office": "State Representative, 8th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "8"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Shantel Franklin",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-9th-district",
+   "office": "State Representative, 9th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "9"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Yolonda Morris",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "state-representative-10th-district",
+   "office": "State Representative, 10th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "10"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Jawaharial \"Omar\" Williams",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-11th-district",
+   "office": "State Representative, 11th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "11"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Ann M. Williams",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-12th-district",
+   "office": "State Representative, 12th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "12"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 41,
+     "name": "Justin J. Kumar",
+     "party": "Republican"
+    },
+    {
+     "ballot": 42,
+     "name": "Paul Kendrick",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "state-representative-13th-district",
+   "office": "State Representative, 13th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "13"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 41,
+     "name": "Terry Nguyen Le",
+     "party": "Republican"
+    },
+    {
+     "ballot": 42,
+     "name": "Demerike \"Demi\" Palecek",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "state-representative-14th-district",
+   "office": "State Representative, 14th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "14"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Kelly M. Cassidy",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-15th-district",
+   "office": "State Representative, 15th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "15"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Michael J. Kelly",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-16th-district",
+   "office": "State Representative, 16th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "16"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Kevin John Olickal",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-18th-district",
+   "office": "State Representative, 18th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "18"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 41,
+     "name": "Pete Donaghue",
+     "party": "Republican"
+    },
+    {
+     "ballot": 42,
+     "name": "Robyn Gabel",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-19th-district",
+   "office": "State Representative, 19th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "19"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 41,
+     "name": "John \"JZ\" Zimmers",
+     "party": "Republican"
+    },
+    {
+     "ballot": 42,
+     "name": "Lindsey LaPointe",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-20th-district",
+   "office": "State Representative, 20th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "20"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 41,
+     "name": "Brad Stephens",
+     "party": "Republican"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-21st-district",
+   "office": "State Representative, 21st District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "21"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 41,
+     "name": "Eric Su",
+     "party": "Republican"
+    },
+    {
+     "ballot": 42,
+     "name": "Abdelnasser Rashid",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-22nd-district",
+   "office": "State Representative, 22nd District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "22"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Angie Guerrero-Cuellar",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-23rd-district",
+   "office": "State Representative, 23rd District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "23"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Edgar Gonzalez, Jr.",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-24th-district",
+   "office": "State Representative, 24th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "24"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Theresa Mah",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-25th-district",
+   "office": "State Representative, 25th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "25"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 41,
+     "name": "Antoinette Jewel Simmons",
+     "party": "Republican"
+    },
+    {
+     "ballot": 42,
+     "name": "Curtis J. Tarver II",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "state-representative-26th-district",
+   "office": "State Representative, 26th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "26"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Kam Buckner",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-27th-district",
+   "office": "State Representative, 27th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "27"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Justin Q. Slaughter",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-28th-district",
+   "office": "State Representative, 28th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "28"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Robert \"Bob\" Rita",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-29th-district",
+   "office": "State Representative, 29th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "29"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Thaddeus Jones",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "state-representative-31st-district",
+   "office": "State Representative, 31st District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "31"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Michael \"Mike\" Crawford",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-32nd-district",
+   "office": "State Representative, 32nd District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "32"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Lisa J. Davis",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-33rd-district",
+   "office": "State Representative, 33rd District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "33"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Marcus C. Evans, Jr.",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-34th-district",
+   "office": "State Representative, 34th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "34"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Cleopatra \"Cleo\" Cowley",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-35th-district",
+   "office": "State Representative, 35th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "35"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 41,
+     "name": "David A. Dewar",
+     "party": "Republican"
+    },
+    {
+     "ballot": 42,
+     "name": "Mary Gill",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-36th-district",
+   "office": "State Representative, 36th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "36"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 41,
+     "name": "David Sheppard",
+     "party": "Republican"
+    },
+    {
+     "ballot": 42,
+     "name": "Rick Ryan",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-39th-district",
+   "office": "State Representative, 39th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "39"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 41,
+     "name": "Cesar A. Guillen",
+     "party": "Republican"
+    },
+    {
+     "ballot": 42,
+     "name": "Will Guzzardi",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-40th-district",
+   "office": "State Representative, 40th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "40"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 42,
+     "name": "Miguel Alvelo-Rivera",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-55th-district",
+   "office": "State Representative, 55th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "55"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 41,
+     "name": "Joseph Johnson",
+     "party": "Republican"
+    },
+    {
+     "ballot": 42,
+     "name": "Justin Cochran",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "state-representative-78th-district",
+   "office": "State Representative, 78th District",
+   "section": "state",
+   "area": {
+    "type": "sldl",
+    "id": "78"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 41,
+     "name": "Julian-Jahleel Randolph Jemison",
+     "party": "Republican"
+    },
+    {
+     "ballot": 42,
+     "name": "Camille Lilly",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "metropolitan-water-reclamation-district-commissioners-full-6-year-term",
+   "office": "Metropolitan Water Reclamation District Commissioners Full 6-Year Term",
+   "section": "county",
+   "area": null,
+   "voteFor": 3,
+   "candidates": [
+    {
+     "ballot": 51,
+     "name": "Michelle Pennington",
+     "party": "Republican"
+    },
+    {
+     "ballot": 52,
+     "name": "Timothy E. Rueckert",
+     "party": "Republican"
+    },
+    {
+     "ballot": 53,
+     "name": "Jill B. Shestokas",
+     "party": "Republican"
+    },
+    {
+     "ballot": 54,
+     "name": "Precious Brady-Davis",
+     "party": "Democratic"
+    },
+    {
+     "ballot": 55,
+     "name": "Eira Lizeth Corral Sepúlveda",
+     "party": "Democratic"
+    },
+    {
+     "ballot": 56,
+     "name": "Beth McElroy Kirkwood",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "metropolitan-water-reclamation-district-commissioners-unexpired-2-year-term",
+   "office": "Metropolitan Water Reclamation District Commissioners Unexpired 2-Year Term",
+   "section": "county",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 57,
+     "name": "Cameron \"Cam\" Davis",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "president-of-county-board",
+   "office": "President of County Board",
+   "section": "county",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 62,
+     "name": "Toni Preckwinkle",
+     "party": "Democratic"
+    },
+    {
+     "ballot": 63,
+     "name": "Michael Murphy",
+     "party": "Libertarian"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "county-clerk",
+   "office": "County Clerk",
+   "section": "county",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 64,
+     "name": "Monica Gordon",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "county-sheriff",
+   "office": "County Sheriff",
+   "section": "county",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 65,
+     "name": "Thomas J. Dart",
+     "party": "Democratic"
+    },
+    {
+     "ballot": 66,
+     "name": "Brad Sandefur",
+     "party": "Libertarian"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "county-treasurer",
+   "office": "County Treasurer",
+   "section": "county",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 67,
+     "name": "Maria Pappas",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "county-assessor",
+   "office": "County Assessor",
+   "section": "county",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 68,
+     "name": "Pat Hynes",
+     "party": "Democratic"
+    },
+    {
+     "ballot": 69,
+     "name": "Nico Tsatsoulis",
+     "party": "Libertarian"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "county-commissioner-1st-district",
+   "office": "County Commissioner, 1st District",
+   "section": "county",
+   "area": {
+    "type": "commissioner",
+    "id": "1"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 72,
+     "name": "Tara Stamps",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "county-commissioner-2nd-district",
+   "office": "County Commissioner, 2nd District",
+   "section": "county",
+   "area": {
+    "type": "commissioner",
+    "id": "2"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 72,
+     "name": "Michael Scott, Jr.",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "county-commissioner-3rd-district",
+   "office": "County Commissioner, 3rd District",
+   "section": "county",
+   "area": {
+    "type": "commissioner",
+    "id": "3"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 72,
+     "name": "Bill Lowry",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "county-commissioner-4th-district",
+   "office": "County Commissioner, 4th District",
+   "section": "county",
+   "area": {
+    "type": "commissioner",
+    "id": "4"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 72,
+     "name": "Stanley S. Moore",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "county-commissioner-5th-district",
+   "office": "County Commissioner, 5th District",
+   "section": "county",
+   "area": {
+    "type": "commissioner",
+    "id": "5"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 71,
+     "name": "Richard Nolan",
+     "party": "Republican"
+    },
+    {
+     "ballot": 72,
+     "name": "Kisha E. McCaskill",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "county-commissioner-7th-district",
+   "office": "County Commissioner, 7th District",
+   "section": "county",
+   "area": {
+    "type": "commissioner",
+    "id": "7"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 72,
+     "name": "Alma E. Anaya",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "county-commissioner-8th-district",
+   "office": "County Commissioner, 8th District",
+   "section": "county",
+   "area": {
+    "type": "commissioner",
+    "id": "8"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 71,
+     "name": "Ramona Bonilla-Anaiel",
+     "party": "Republican"
+    },
+    {
+     "ballot": 72,
+     "name": "Jessica Vasquez",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "county-commissioner-9th-district",
+   "office": "County Commissioner, 9th District",
+   "section": "county",
+   "area": {
+    "type": "commissioner",
+    "id": "9"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 71,
+     "name": "Jon Luers",
+     "party": "Republican"
+    },
+    {
+     "ballot": 72,
+     "name": "Maggie Trevor",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "county-commissioner-10th-district",
+   "office": "County Commissioner, 10th District",
+   "section": "county",
+   "area": {
+    "type": "commissioner",
+    "id": "10"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 72,
+     "name": "Drake Warren",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "county-commissioner-11th-district",
+   "office": "County Commissioner, 11th District",
+   "section": "county",
+   "area": {
+    "type": "commissioner",
+    "id": "11"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 71,
+     "name": "Charles Spizzirri",
+     "party": "Republican"
+    },
+    {
+     "ballot": 72,
+     "name": "John P. Daley",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "county-commissioner-12th-district",
+   "office": "County Commissioner, 12th District",
+   "section": "county",
+   "area": {
+    "type": "commissioner",
+    "id": "12"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 71,
+     "name": "Xiaoli \"Alice\" Hu",
+     "party": "Republican"
+    },
+    {
+     "ballot": 72,
+     "name": "Elizabeth Granato",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "county-commissioner-13th-district",
+   "office": "County Commissioner, 13th District",
+   "section": "county",
+   "area": {
+    "type": "commissioner",
+    "id": "13"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 71,
+     "name": "Aasi Siddique",
+     "party": "Republican"
+    },
+    {
+     "ballot": 72,
+     "name": "Josina Morita",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "county-commissioner-16th-district",
+   "office": "County Commissioner, 16th District",
+   "section": "county",
+   "area": {
+    "type": "commissioner",
+    "id": "16"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 72,
+     "name": "Miranda E. Hernandez",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "board-of-review-1st-district",
+   "office": "Board of Review, 1st District",
+   "section": "county",
+   "area": {
+    "type": "bor",
+    "id": "1"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 82,
+     "name": "George A. Cardenas",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "board-of-review-2nd-district",
+   "office": "Board of Review, 2nd District",
+   "section": "county",
+   "area": {
+    "type": "bor",
+    "id": "2"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 82,
+     "name": "Elizabeth \"Liz\" Nicholson",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-of-the-appellate-court-vacancy-of-hoffman",
+   "office": "Judge of the Appellate Court (Vacancy of Hoffman)",
+   "section": "judicial",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 102,
+     "name": "Judith C. Rice",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-of-the-circuit-court-vacancy-of-burke",
+   "office": "Judge of the Circuit Court (Vacancy of Burke)",
+   "section": "judicial",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 103,
+     "name": "Steven Q. McKenzie",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-of-the-circuit-court-vacancy-of-cobbs",
+   "office": "Judge of the Circuit Court (Vacancy of Cobbs)",
+   "section": "judicial",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 104,
+     "name": "Luz Maria Toledo",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-of-the-circuit-court-vacancy-of-coghlan",
+   "office": "Judge of the Circuit Court (Vacancy of Coghlan)",
+   "section": "judicial",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 105,
+     "name": "Ashonta C. Rice",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-of-the-circuit-court-vacancy-of-hooks",
+   "office": "Judge of the Circuit Court (Vacancy of Hooks)",
+   "section": "judicial",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 106,
+     "name": "Ava George Stewart",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-of-the-circuit-court-vacancy-of-karkula",
+   "office": "Judge of the Circuit Court (Vacancy of Karkula)",
+   "section": "judicial",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 107,
+     "name": "D'Anthony \"Tony\" Thedford",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-1st-subcircuit-vacancy-of-balanoff",
+   "office": "Judge, 1st Subcircuit (Vacancy of Balanoff)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "1"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 112,
+     "name": "Radiance Ward",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-1st-subcircuit-vacancy-of-walker",
+   "office": "Judge, 1st Subcircuit (Vacancy of Walker)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "1"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 114,
+     "name": "Ashley Greer Shambley",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-3rd-subcircuit-vacancy-of-murphy",
+   "office": "Judge, 3rd Subcircuit (Vacancy of Murphy)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "3"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 112,
+     "name": "John Carroll",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-3rd-subcircuit-vacancy-of-sherlock",
+   "office": "Judge, 3rd Subcircuit (Vacancy of Sherlock)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "3"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 114,
+     "name": "Rachel Marrello",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-5th-subcircuit-vacancy-of-ross",
+   "office": "Judge, 5th Subcircuit (Vacancy of Ross)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "5"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 112,
+     "name": "Stephanie S. Kelly",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-8th-subcircuit-vacancy-of-gamrath",
+   "office": "Judge, 8th Subcircuit (Vacancy of Gamrath)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "8"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 112,
+     "name": "Kathleen Cunniff Ori",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-8th-subcircuit-vacancy-of-mikva",
+   "office": "Judge, 8th Subcircuit (Vacancy of Mikva)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "8"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 114,
+     "name": "Lester Finkle",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-11th-subcircuit-vacancy-of-mclean-meyerson",
+   "office": "Judge, 11th Subcircuit (Vacancy of McLean Meyerson)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "11"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 112,
+     "name": "Jarrett Knox",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-11th-subcircuit-vacancy-of-roberts",
+   "office": "Judge, 11th Subcircuit (Vacancy of Roberts)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "11"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 114,
+     "name": "Kim Przekota",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-16th-subcircuit-converted-from-associate-judgeship-of-baird",
+   "office": "Judge, 16th Subcircuit (Converted from Associate Judgeship of Baird)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "16"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 112,
+     "name": "Julian Sanchez Crozier",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-16th-subcircuit-converted-from-associate-judgeship-of-mendoza",
+   "office": "Judge, 16th Subcircuit (Converted from Associate Judgeship of Mendoza)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "16"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 114,
+     "name": "Jessica Karina Velez",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-17th-subcircuit-converted-from-associate-judgeship-of-brooks",
+   "office": "Judge, 17th Subcircuit (Converted from Associate Judgeship of Brooks)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "17"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 112,
+     "name": "Natalia Moore",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-17th-subcircuit-converted-from-associate-judgeship-of-carroll",
+   "office": "Judge, 17th Subcircuit (Converted from Associate Judgeship of Carroll)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "17"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 114,
+     "name": "Bianca B. Brown",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-19th-subcircuit-converted-from-associate-judgeship-of-fairman",
+   "office": "Judge, 19th Subcircuit (Converted from Associate Judgeship of Fairman)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "19"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 112,
+     "name": "Sara McGann",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-19th-subcircuit-converted-from-associate-judgeship-of-kane",
+   "office": "Judge, 19th Subcircuit (Converted from Associate Judgeship of Kane)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "19"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 114,
+     "name": "Monica Somerville",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-20th-subcircuit-converted-from-associate-judgeship-of-haracz",
+   "office": "Judge, 20th Subcircuit (Converted from Associate Judgeship of Haracz)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "20"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 112,
+     "name": "Michael J. Zink",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "judge-20th-subcircuit-converted-from-associate-judgeship-of-miller",
+   "office": "Judge, 20th Subcircuit (Converted from Associate Judgeship of Miller)",
+   "section": "judicial",
+   "area": {
+    "type": "subcircuit",
+    "id": "20"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 114,
+     "name": "Jon Stromsta",
+     "party": "Democratic"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "president-of-the-chicago-board-of-education",
+   "office": "President of the Chicago Board of Education",
+   "section": "school",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 121,
+     "name": "Victor P. Henderson",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 122,
+     "name": "Jessica Biggs",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 123,
+     "name": "Sendhil Revuluri",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 124,
+     "name": "Hilario Dominguez",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-1a",
+   "office": "Member of the Chicago Board of Education, Subdistrict 1A",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "1A"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "Ed Bannon",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 132,
+     "name": "Margie B. Luczak",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-1b",
+   "office": "Member of the Chicago Board of Education, Subdistrict 1B",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "1B"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "Claudia Peralta",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 132,
+     "name": "Michelle N. Pierre",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-2a",
+   "office": "Member of the Chicago Board of Education, Subdistrict 2A",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "2A"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "Ebony DeBerry",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 132,
+     "name": "Hector Morales",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-2b",
+   "office": "Member of the Chicago Board of Education, Subdistrict 2B",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "2B"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "Deborah \"Debby\" Pope",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 132,
+     "name": "Kyna Lenhof",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 133,
+     "name": "Daniel Basco",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-3a",
+   "office": "Member of the Chicago Board of Education, Subdistrict 3A",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "3A"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "Norma Rios Sierra",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 132,
+     "name": "Peter Gonzales",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-3b",
+   "office": "Member of the Chicago Board of Education, Subdistrict 3B",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "3B"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "Jason Dónes",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 132,
+     "name": "Carlos A. Rivas Jr.",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-4a",
+   "office": "Member of the Chicago Board of Education, Subdistrict 4A",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "4A"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "Ellen Sherratt",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 132,
+     "name": "Karen Zaccor",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 133,
+     "name": "Angel Alvarez",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-4b",
+   "office": "Member of the Chicago Board of Education, Subdistrict 4B",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "4B"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "Ellen Rosenfeld",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-5a",
+   "office": "Member of the Chicago Board of Education, Subdistrict 5A",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "5A"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "LaPamela Williams",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 132,
+     "name": "Aaron \"Jitu\" Brown",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-5b",
+   "office": "Member of the Chicago Board of Education, Subdistrict 5B",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "5B"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "Michilla \"Kyla\" Blaise",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 132,
+     "name": "Anthony Hargrove",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-6a",
+   "office": "Member of the Chicago Board of Education, Subdistrict 6A",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "6A"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "Anusha Thotakura",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 132,
+     "name": "Isaiah White",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 133,
+     "name": "Brenda Lee Anderson",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-6b",
+   "office": "Member of the Chicago Board of Education, Subdistrict 6B",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "6B"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "Michael L. Neal",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 132,
+     "name": "Brittany B. Kimble",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-7a",
+   "office": "Member of the Chicago Board of Education, Subdistrict 7A",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "7A"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "Emma Lozano",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 132,
+     "name": "Jesus Ayala Jr.",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-7b",
+   "office": "Member of the Chicago Board of Education, Subdistrict 7B",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "7B"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "Yesenia Lopez",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 132,
+     "name": "Erika E. Diaz-Chavez",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-8a",
+   "office": "Member of the Chicago Board of Education, Subdistrict 8A",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "8A"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "Angel Gutierrez",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-8b",
+   "office": "Member of the Chicago Board of Education, Subdistrict 8B",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "8B"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "Juan Ignacio Gonzalez",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-9a",
+   "office": "Member of the Chicago Board of Education, Subdistrict 9A",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "9A"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "Brittany R. Bailey Preston",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-9b",
+   "office": "Member of the Chicago Board of Education, Subdistrict 9B",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "9B"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "Therese Boyle",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 132,
+     "name": "Katherine S. Dunneback",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": false
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-10a",
+   "office": "Member of the Chicago Board of Education, Subdistrict 10A",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "10A"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "Che \"Rhymefest\" Smith",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": true
+  },
+  {
+   "id": "member-of-the-chicago-board-of-education-subdistrict-10b",
+   "office": "Member of the Chicago Board of Education, Subdistrict 10B",
+   "section": "school",
+   "area": {
+    "type": "school",
+    "id": "10B"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 131,
+     "name": "Connie Anderson",
+     "party": "Nonpartisan"
+    },
+    {
+     "ballot": 132,
+     "name": "Patrick C. Watson",
+     "party": "Nonpartisan"
+    }
+   ],
+   "writeIn": true
+  }
+ ],
+ "retentions": [
+  {
+   "id": "retain-bertina-e-lampkin",
+   "court": "Appellate Court",
+   "judge": "Bertina E. Lampkin"
+  },
+  {
+   "id": "retain-lewis-nixon",
+   "court": "Circuit Court",
+   "judge": "Lewis Nixon"
+  },
+  {
+   "id": "retain-kerry-m-kennedy",
+   "court": "Circuit Court",
+   "judge": "Kerry M. Kennedy"
+  },
+  {
+   "id": "retain-joan-e-powell",
+   "court": "Circuit Court",
+   "judge": "Joan E. Powell"
+  },
+  {
+   "id": "retain-maureen-ward-kirby",
+   "court": "Circuit Court",
+   "judge": "Maureen Ward Kirby"
+  },
+  {
+   "id": "retain-edward-a-arce",
+   "court": "Circuit Court",
+   "judge": "Edward A. Arce"
+  },
+  {
+   "id": "retain-thomas-j-byrne",
+   "court": "Circuit Court",
+   "judge": "Thomas J. Byrne"
+  },
+  {
+   "id": "retain-diana-l-kenworthy",
+   "court": "Circuit Court",
+   "judge": "Diana L. Kenworthy"
+  },
+  {
+   "id": "retain-kristyna-colleen-ryan",
+   "court": "Circuit Court",
+   "judge": "Kristyna Colleen Ryan"
+  },
+  {
+   "id": "retain-ursula-walowski",
+   "court": "Circuit Court",
+   "judge": "Ursula Walowski"
+  },
+  {
+   "id": "retain-anthony-c-tony-kyriakopoulos",
+   "court": "Circuit Court",
+   "judge": "Anthony C. \"Tony\" Kyriakopoulos"
+  },
+  {
+   "id": "retain-caroline-kate-moreland",
+   "court": "Circuit Court",
+   "judge": "Caroline Kate Moreland"
+  },
+  {
+   "id": "retain-thomas-j-carroll",
+   "court": "Circuit Court",
+   "judge": "Thomas J. Carroll"
+  },
+  {
+   "id": "retain-andrea-m-buford",
+   "court": "Circuit Court",
+   "judge": "Andrea M. Buford"
+  },
+  {
+   "id": "retain-john-michael-allegretti",
+   "court": "Circuit Court",
+   "judge": "John Michael Allegretti"
+  },
+  {
+   "id": "retain-kristal-r-rivers",
+   "court": "Circuit Court",
+   "judge": "Kristal R. Rivers"
+  },
+  {
+   "id": "retain-steven-g-watkins",
+   "court": "Circuit Court",
+   "judge": "Steven G. Watkins"
+  },
+  {
+   "id": "retain-abbey-fishman-romanek",
+   "court": "Circuit Court",
+   "judge": "Abbey Fishman Romanek"
+  },
+  {
+   "id": "retain-judith-c-rice",
+   "court": "Circuit Court",
+   "judge": "Judith C. Rice"
+  },
+  {
+   "id": "retain-patrick-kevin-coughlin",
+   "court": "Circuit Court",
+   "judge": "Patrick Kevin Coughlin"
+  },
+  {
+   "id": "retain-megan-elizabeth-goldish",
+   "court": "Circuit Court",
+   "judge": "Megan Elizabeth Goldish"
+  },
+  {
+   "id": "retain-anjana-m-j-hansen",
+   "court": "Circuit Court",
+   "judge": "Anjana M.J. Hansen"
+  },
+  {
+   "id": "retain-robert-d-kuzas",
+   "court": "Circuit Court",
+   "judge": "Robert D. Kuzas"
+  },
+  {
+   "id": "retain-maritza-martinez",
+   "court": "Circuit Court",
+   "judge": "Maritza Martinez"
+  },
+  {
+   "id": "retain-terrence-j-mcguire",
+   "court": "Circuit Court",
+   "judge": "Terrence J. McGuire"
+  },
+  {
+   "id": "retain-bridget-anne-mitchell",
+   "court": "Circuit Court",
+   "judge": "Bridget Anne Mitchell"
+  },
+  {
+   "id": "retain-james-p-pieczonka",
+   "court": "Circuit Court",
+   "judge": "James P. Pieczonka"
+  },
+  {
+   "id": "retain-patricia-o-brien-sheahan",
+   "court": "Circuit Court",
+   "judge": "Patricia O'Brien Sheahan"
+  },
+  {
+   "id": "retain-michael-a-forti",
+   "court": "Circuit Court",
+   "judge": "Michael A. Forti"
+  },
+  {
+   "id": "retain-nichole-c-patton",
+   "court": "Circuit Court",
+   "judge": "Nichole C. Patton"
+  },
+  {
+   "id": "retain-sondra-n-denmark",
+   "court": "Circuit Court",
+   "judge": "Sondra N. Denmark"
+  },
+  {
+   "id": "retain-gerardo-tristan-jr",
+   "court": "Circuit Court",
+   "judge": "Gerardo Tristan, Jr."
+  },
+  {
+   "id": "retain-lynn-weaver-boyle",
+   "court": "Circuit Court",
+   "judge": "Lynn Weaver Boyle"
+  },
+  {
+   "id": "retain-daniel-edward-maloney",
+   "court": "Circuit Court",
+   "judge": "Daniel Edward Maloney"
+  },
+  {
+   "id": "retain-thomas-m-cushing",
+   "court": "Circuit Court",
+   "judge": "Thomas M. Cushing"
+  },
+  {
+   "id": "retain-john-g-mulroe",
+   "court": "Circuit Court",
+   "judge": "John G. Mulroe"
+  },
+  {
+   "id": "retain-tyria-b-walton",
+   "court": "Circuit Court",
+   "judge": "Tyria B. Walton"
+  },
+  {
+   "id": "retain-erin-haggerty-antonietti",
+   "court": "Circuit Court",
+   "judge": "Erin Haggerty Antonietti"
+  },
+  {
+   "id": "retain-teresa-molina-gonzalez",
+   "court": "Circuit Court",
+   "judge": "Teresa Molina-Gonzalez"
+  },
+  {
+   "id": "retain-patricia-maria-fallon",
+   "court": "Circuit Court",
+   "judge": "Patricia Maria Fallon"
+  },
+  {
+   "id": "retain-sheree-d-henry",
+   "court": "Circuit Court",
+   "judge": "Sheree D. Henry"
+  },
+  {
+   "id": "retain-celestia-l-mays",
+   "court": "Circuit Court",
+   "judge": "Celestia L. Mays"
+  },
+  {
+   "id": "retain-levander-smith-jr",
+   "court": "Circuit Court",
+   "judge": "Levander Smith, Jr."
+  },
+  {
+   "id": "retain-julie-bess-aimen",
+   "court": "Circuit Court",
+   "judge": "Julie Bess Aimen"
+  },
+  {
+   "id": "retain-laura-ayala-gonzalez",
+   "court": "Circuit Court",
+   "judge": "Laura Ayala-Gonzalez"
+  },
+  {
+   "id": "retain-krista-d-butler",
+   "court": "Circuit Court",
+   "judge": "Krista D. Butler"
+  },
+  {
+   "id": "retain-marie-aileen-dempsey",
+   "court": "Circuit Court",
+   "judge": "Marie Aileen Dempsey"
+  },
+  {
+   "id": "retain-jamie-guerra-dickler",
+   "court": "Circuit Court",
+   "judge": "Jamie Guerra Dickler"
+  },
+  {
+   "id": "retain-jonathan-clark-green",
+   "court": "Circuit Court",
+   "judge": "Jonathan Clark Green"
+  },
+  {
+   "id": "retain-mary-catherine-marubio",
+   "court": "Circuit Court",
+   "judge": "Mary Catherine Marubio"
+  },
+  {
+   "id": "retain-regina-a-mescall",
+   "court": "Circuit Court",
+   "judge": "Regina A. Mescall"
+  },
+  {
+   "id": "retain-lorraine-mary-murphy",
+   "court": "Circuit Court",
+   "judge": "Lorraine Mary Murphy"
+  },
+  {
+   "id": "retain-eileen-marie-o-connor",
+   "court": "Circuit Court",
+   "judge": "Eileen Marie O'Connor"
+  },
+  {
+   "id": "retain-jill-rose-quinn",
+   "court": "Circuit Court",
+   "judge": "Jill Rose Quinn"
+  },
+  {
+   "id": "retain-pamela-reaves-harris",
+   "court": "Circuit Court",
+   "judge": "Pamela Reaves-Harris"
+  },
+  {
+   "id": "retain-tiesha-l-smith",
+   "court": "Circuit Court",
+   "judge": "Tiesha L. Smith"
+  },
+  {
+   "id": "retain-chris-stacey",
+   "court": "Circuit Court",
+   "judge": "Chris Stacey"
+  },
+  {
+   "id": "retain-perla-tirado",
+   "court": "Circuit Court",
+   "judge": "Perla Tirado"
+  },
+  {
+   "id": "retain-elizabeth-anne-walsh",
+   "court": "Circuit Court",
+   "judge": "Elizabeth Anne Walsh"
+  },
+  {
+   "id": "retain-maura-mcmahon-zeller",
+   "court": "Circuit Court",
+   "judge": "Maura McMahon Zeller"
+  }
+ ],
+ "measures": [
+  {
+   "id": "county-the-cook-county-millionaire-amendment-for-property-tax-relief-and-education",
+   "title": "The Cook County Millionaire Amendment for Property Tax Relief and Education",
+   "question": "Shall Illinois adopt the Millionaire Amendment for Property Tax Relief and Education, which would enact a 3% income tax surcharge only on millionaires and use 50% of this new revenue to provide property tax relief for residential and commercial taxpayers and 50% to improve state funding for public education?",
+   "scope": {
+    "type": "county"
+   }
+  },
+  {
+   "id": "city-restart-chicago-gunshot-detection",
+   "title": "Restart Chicago Gunshot Detection",
+   "question": "Should the City of Chicago restart the use of gunshot detection technology that informs first responders when gunshots are detected?",
+   "scope": {
+    "type": "city"
+   }
+  },
+  {
+   "id": "city-permanent-chicago-festival-space",
+   "title": "Permanent Chicago Festival Space",
+   "question": "Should Chicago develop a permanent festival and outdoor event space for large-scale events?",
+   "scope": {
+    "type": "city"
+   }
+  },
+  {
+   "id": "city-chicago-cost-recovery-from-midway-blitz",
+   "title": "Chicago Cost Recovery from Midway Blitz",
+   "question": "Shall the City of Chicago pursue all lawful means to recover financial compensation from the federal government for the costs and economic harm caused by the Donald Trump administration's violent, militarized ICE operations, including the Midway Blitz operation led by Greg Bovino, to recover lost tax revenue, public safety response costs, and services provided to residents and families affected by those operations?",
+   "scope": {
+    "type": "city"
+   }
+  },
+  {
+   "id": "city-advisory-question-regarding-millionaires-surcharge",
+   "title": "ADVISORY QUESTION REGARDING MILLIONAIRES SURCHARGE",
+   "question": "Shall Illinois use revenue from a surcharge on millionaires to increase funding to public schools?",
+   "scope": {
+    "type": "city"
+   }
+  },
+  {
+   "id": "city-advisory-question-regarding-chicago-land-owners",
+   "title": "ADVISORY QUESTION REGARDING CHICAGO LAND OWNERS",
+   "question": "Should the City of Chicago require owners of long-term vacant or undeveloped commercial or investment properties to pay an additional annual charge that would support Chicago Public Schools?",
+   "scope": {
+    "type": "city"
+   }
+  },
+  {
+   "id": "named-mid-northside-expanded-mental-health-services",
+   "title": "Mid-Northside Expanded Mental Health Services",
+   "question": "Shall there be established, to serve the territory commonly described on this ballot or notice of this question, a Mid- Northside Expanded Mental Health Services Program, to provide direct free mental health services for any resident of the territory who needs assistance in overcoming or coping with mental or emotional disorders, where such program will be funded through an increase of not more than .025% of the equalized assessed valuation of all properties within the boundaries of the territory?",
+   "scope": {
+    "type": "named",
+    "name": "Mid-Northside Expanded Mental Health Services Program Area"
+   }
+  },
+  {
+   "id": "named-2027-property-tax-extension-mid-northside-expanded-mental-health-services",
+   "title": "2027 Property Tax Extension - Mid-Northside Expanded Mental Health Services",
+   "question": "Under the Property Tax Extension Limitation Law, may an aggregate extension not to exceed $1,300,000 be made for the Mid-Northside Expanded Mental Health Services Program for the 2027 levy year?",
+   "scope": {
+    "type": "named",
+    "name": "Mid-Northside Expanded Mental Health Services Program Area"
+   }
+  },
+  {
+   "id": "named-far-southwest-side-expanded-mental-health-services",
+   "title": "Far Southwest Side Expanded Mental Health Services",
+   "question": "Shall there be established, to serve the territory commonly described on this ballot or notice of this question, an Far Southwest Side Expanded Mental Health Services Program, to provide direct free mental health services for any resident of the territory who needs assistance in overcoming or coping with mental or emotional disorders, where such program will be funded through an increase of not more than .025% of the equalized assessed valuation of all properties within the boundaries of the territory?",
+   "scope": {
+    "type": "named",
+    "name": "Far Southwest Side Expanded Mental Health Services Program Area"
+   }
+  },
+  {
+   "id": "named-2027-property-tax-extension-far-southwest-side-expanded-mental-health-services",
+   "title": "2027 Property Tax Extension - Far Southwest Side Expanded Mental Health Services",
+   "question": "Under the Property Tax Extension Limitation Law, may an aggregate extension not to exceed $900,000 be made for the Far Southwest Side Expanded Mental Health Services Program for the 2027 levy year?",
+   "scope": {
+    "type": "named",
+    "name": "Far Southwest Side Expanded Mental Health Services Program Area"
+   }
+  },
+  {
+   "id": "ward-4-jesse-jackson-monument-statue",
+   "title": "Jesse Jackson Monument Statue",
+   "question": "through referendum that to become a city ordinance supported by the city do hereby petition that the question, should at least a life-size statue of the likeness of Jesse Lewis Jackson Sr. sitting on a monument to be placed in the median at approximately 4946 South Drexel, Chicago Illinois be a public policy to place on the ballot and submitted to the voters of the fourth (4th) ward for their approval or disapproval by referendum at the General Election to be held on November 3rd 2026. This initiative is to become realized by November 2027. This proposal should give homage to a great American Patriot and a token symbol of America's appreciation.",
+   "scope": {
+    "type": "ward",
+    "id": "4"
+   }
+  },
+  {
+   "id": "ward-26-shared-housing-limits-in-26th-ward",
+   "title": "Shared Housing Limits in 26th Ward",
+   "question": "Shall new shared housing units be limited in the 26th Ward to help address Chicago’s severe rental housing shortage?",
+   "scope": {
+    "type": "ward",
+    "id": "26"
+   }
+  },
+  {
+   "id": "precinct-7-13-chicago-lakefront-national-park",
+   "title": "Chicago Lakefront National Park",
+   "question": "Shall the City of Chicago support the nomination of a Chicago Lakefront National Park, consisting of all of Chicago's park and public lands adjacent to Lake Michigan including their harbors, lagoons, and inlets?",
+   "scope": {
+    "type": "precinct",
+    "ward": "7",
+    "precinct": "13"
+   }
+  },
+  {
+   "id": "precinct-7-14-ensure-remediation-of-former-south-works-site",
+   "title": "Ensure Remediation of Former South Works Site",
+   "question": "Shall governmental bodies in Illinois ensure the complete and transparent remediation of the former South Works site?",
+   "scope": {
+    "type": "precinct",
+    "ward": "7",
+    "precinct": "14"
+   }
+  },
+  {
+   "id": "precinct-7-14-government-support-for-quantum-facility-and-data-center-at-former-south-work",
+   "title": "Government support for Quantum Facility and Data Center at Former South Works Site",
+   "question": "Shall governmental bodies in Illinois spend an estimated $1 billion of taxpayer money to support a quantum facility and data center on the former South Works site?",
+   "scope": {
+    "type": "precinct",
+    "ward": "7",
+    "precinct": "14"
+   }
+  },
+  {
+   "id": "precinct-10-2-ensure-remediation-of-former-south-works-site",
+   "title": "Ensure Remediation of Former South Works Site",
+   "question": "Shall governmental bodies in Illinois ensure the complete and transparent remediation of the former South Works site?",
+   "scope": {
+    "type": "precinct",
+    "ward": "10",
+    "precinct": "2"
+   }
+  },
+  {
+   "id": "precinct-10-2-government-support-for-quantum-facility-and-data-center-at-former-south-work",
+   "title": "Government support for Quantum Facility and Data Center at Former South Works Site",
+   "question": "Shall governmental bodies in Illinois spend an estimated $1 billion of taxpayer money to support a quantum facility and data center on the former South Works site?",
+   "scope": {
+    "type": "precinct",
+    "ward": "10",
+    "precinct": "2"
+   }
+  },
+  {
+   "id": "precinct-10-4-ensure-remediation-of-former-south-works-site",
+   "title": "Ensure Remediation of Former South Works Site",
+   "question": "Shall governmental bodies in Illinois ensure the complete and transparent remediation of the former South Works site?",
+   "scope": {
+    "type": "precinct",
+    "ward": "10",
+    "precinct": "4"
+   }
+  },
+  {
+   "id": "precinct-10-4-government-support-for-quantum-facility-and-data-center-at-former-south-work",
+   "title": "Government support for Quantum Facility and Data Center at Former South Works Site",
+   "question": "Shall governmental bodies in Illinois spend an estimated $1 billion of taxpayer money to support a quantum facility and data center on the former South Works site?",
+   "scope": {
+    "type": "precinct",
+    "ward": "10",
+    "precinct": "4"
+   }
+  },
+  {
+   "id": "precinct-5-1-500-employee-corporate-tax-for-youth-jobs-and-social-services",
+   "title": "500+ employee Corporate Tax for Youth Jobs and Social Services",
+   "question": "Shall our Alderperson vote to pass a tax on big corporations that have 500 or more employees (would not apply to grocery stores or non profits), in order to fund youth jobs, public mental healthcare, and violence prevention services.",
+   "scope": {
+    "type": "precinct",
+    "ward": "5",
+    "precinct": "1"
+   }
+  },
+  {
+   "id": "precinct-5-14-500-employee-corporate-tax-for-youth-jobs-and-social-services",
+   "title": "500+ employee Corporate Tax for Youth Jobs and Social Services",
+   "question": "Shall our Alderperson vote to pass a tax on big corporations that have 500 or more employees (would not apply to grocery stores or non profits), in order to fund youth jobs, public mental healthcare, and violence prevention services.",
+   "scope": {
+    "type": "precinct",
+    "ward": "5",
+    "precinct": "14"
+   }
+  },
+  {
+   "id": "precinct-8-23-500-employee-corporate-tax-for-youth-jobs-and-social-services",
+   "title": "500+ employee Corporate Tax for Youth Jobs and Social Services",
+   "question": "Shall our Alderperson vote to pass a tax on big corporations that have 500 or more employees (would not apply to grocery stores or non profits), in order to fund youth jobs, public mental healthcare, and violence prevention services.",
+   "scope": {
+    "type": "precinct",
+    "ward": "8",
+    "precinct": "23"
+   }
+  },
+  {
+   "id": "precinct-8-26-500-employee-corporate-tax-for-youth-jobs-and-social-services",
+   "title": "500+ employee Corporate Tax for Youth Jobs and Social Services",
+   "question": "Shall our Alderperson vote to pass a tax on big corporations that have 500 or more employees (would not apply to grocery stores or non profits), in order to fund youth jobs, public mental healthcare, and violence prevention services.",
+   "scope": {
+    "type": "precinct",
+    "ward": "8",
+    "precinct": "26"
+   }
+  },
+  {
+   "id": "precinct-8-27-500-employee-corporate-tax-for-youth-jobs-and-social-services",
+   "title": "500+ employee Corporate Tax for Youth Jobs and Social Services",
+   "question": "Shall our Alderperson vote to pass a tax on big corporations that have 500 or more employees (would not apply to grocery stores or non profits), in order to fund youth jobs, public mental healthcare, and violence prevention services.",
+   "scope": {
+    "type": "precinct",
+    "ward": "8",
+    "precinct": "27"
+   }
+  },
+  {
+   "id": "precinct-21-25-500-employee-corporate-tax-for-youth-jobs-and-social-services",
+   "title": "500+ employee Corporate Tax for Youth Jobs and Social Services",
+   "question": "Shall our Alderperson vote to pass a tax on big corporations that have 500 or more employees (would not apply to grocery stores or non profits), in order to fund youth jobs, public mental healthcare, and violence prevention services.",
+   "scope": {
+    "type": "precinct",
+    "ward": "21",
+    "precinct": "25"
+   }
+  },
+  {
+   "id": "precinct-24-5-500-employee-corporate-tax-for-youth-jobs-and-social-services",
+   "title": "500+ employee Corporate Tax for Youth Jobs and Social Services",
+   "question": "Shall our Alderperson vote to pass a tax on big corporations that have 500 or more employees (would not apply to grocery stores or non profits), in order to fund youth jobs, public mental healthcare, and violence prevention services.",
+   "scope": {
+    "type": "precinct",
+    "ward": "24",
+    "precinct": "5"
+   }
+  },
+  {
+   "id": "precinct-24-6-500-employee-corporate-tax-for-youth-jobs-and-social-services",
+   "title": "500+ employee Corporate Tax for Youth Jobs and Social Services",
+   "question": "Shall our Alderperson vote to pass a tax on big corporations that have 500 or more employees (would not apply to grocery stores or non profits), in order to fund youth jobs, public mental healthcare, and violence prevention services.",
+   "scope": {
+    "type": "precinct",
+    "ward": "24",
+    "precinct": "6"
+   }
+  },
+  {
+   "id": "precinct-24-12-500-employee-corporate-tax-for-youth-jobs-and-social-services",
+   "title": "500+ employee Corporate Tax for Youth Jobs and Social Services",
+   "question": "Shall our Alderperson vote to pass a tax on big corporations that have 500 or more employees (would not apply to grocery stores or non profits), in order to fund youth jobs, public mental healthcare, and violence prevention services.",
+   "scope": {
+    "type": "precinct",
+    "ward": "24",
+    "precinct": "12"
+   }
+  },
+  {
+   "id": "precinct-21-10-continue-to-prohibit-status-of-retail-alcohol-sales-in-ward-21-precinct-10",
+   "title": "Continue to prohibit Status of retail alcohol sales in Ward 21 Precinct 10",
+   "question": "Shall the prohibition of the sale at retail of alcoholic liquor be continued in the 10th Precinct of the 21st Ward of the City of Chicago (as such precinct existed as of the last general election)?",
+   "scope": {
+    "type": "precinct",
+    "ward": "21",
+    "precinct": "10"
+   }
+  }
+ ],
+ "earlyVotingSites": {
+  "1": {
+   "site": "Goldblatts Building",
+   "address": "1615 W. Chicago Ave.",
+   "language": "Spanish"
+  },
+  "2": {
+   "site": "Near North Library",
+   "address": "310 W. Division St.",
+   "language": "Spanish"
+  },
+  "3": {
+   "site": "Dawson Technical Institute",
+   "address": "3901 S. State St."
+  },
+  "4": {
+   "site": "Dr. Martin Luther King Center",
+   "address": "4314 S. Cottage Grove Ave."
+  },
+  "5": {
+   "site": "Southside YMCA",
+   "address": "6330 S. Stony Island Ave."
+  },
+  "6": {
+   "site": "Whitney Young Library",
+   "address": "415 E. 79th St."
+  },
+  "7": {
+   "site": "Trumball Park",
+   "address": "2400 E. 105th St."
+  },
+  "8": {
+   "site": "Olive Harvey College",
+   "address": "10001 S. Woodlawn Ave."
+  },
+  "9": {
+   "site": "Palmer Park",
+   "address": "201 E. 111th St."
+  },
+  "10": {
+   "site": "Vodak East-Side Library",
+   "address": "3710 E. 106th St.",
+   "language": "Spanish"
+  },
+  "11": {
+   "site": "McGuane Park",
+   "address": "2901 S. Poplar Ave.",
+   "language": "Chinese (Cantonese/Mandarin)"
+  },
+  "12": {
+   "site": "McKinley Park Library",
+   "address": "1915 W. 35th St.",
+   "language": "Spanish and Chinese (Cantonese/Mandarin)"
+  },
+  "13": {
+   "site": "Clearing Library",
+   "address": "6423 W. 63rd Pl.",
+   "language": "Polish"
+  },
+  "14": {
+   "site": "Archer Heights Library",
+   "address": "5055 S. Archer Ave.",
+   "language": "Spanish and Polish"
+  },
+  "15": {
+   "site": "Brighton Park Community Campus (Park No. 596)",
+   "address": "4830 S. Western Ave.",
+   "language": "Spanish"
+  },
+  "16": {
+   "site": "Lindblom Park",
+   "address": "6054 S. Damen Ave.",
+   "language": "Spanish"
+  },
+  "17": {
+   "site": "Thurgood Marshall Library",
+   "address": "7506 S. Racine Ave."
+  },
+  "18": {
+   "site": "Wrightwood Ashburn Library",
+   "address": "8530 S. Kedzie Ave."
+  },
+  "19": {
+   "site": "Mt. Greenwood Park",
+   "address": "3721 W. 111th St."
+  },
+  "20": {
+   "site": "Bessie Coleman Library",
+   "address": "731 E. 63rd St."
+  },
+  "21": {
+   "site": "West Pullman Library",
+   "address": "830 W. 119th St."
+  },
+  "22": {
+   "site": "Toman Library",
+   "address": "2708 S. Pulaski Rd.",
+   "language": "Spanish"
+  },
+  "23": {
+   "site": "St. Faustina Kowalska Parish",
+   "address": "5157 S. McVicker Ave.",
+   "language": "Spanish and Polish"
+  },
+  "24": {
+   "site": "St. Agatha Catholic Parish",
+   "address": "3151 W. Douglas Bv."
+  },
+  "25": {
+   "site": "Rudy Lozano Library",
+   "address": "1805 S. Loomis St.",
+   "language": "Spanish"
+  },
+  "26": {
+   "site": "Humboldt Park Library",
+   "address": "1605 N. Troy St.",
+   "language": "Spanish"
+  },
+  "27": {
+   "site": "Union Park",
+   "address": "1501 W. Randolph St."
+  },
+  "28": {
+   "site": "Malcolm X College - West Campus",
+   "address": "4624 W. Madison St.",
+   "language": "Spanish"
+  },
+  "29": {
+   "site": "Amundsen Park",
+   "address": "6200 W. Bloomingdale Ave."
+  },
+  "30": {
+   "site": "Kilbourn Park",
+   "address": "3501 N. Kilbourn Ave.",
+   "language": "Spanish"
+  },
+  "31": {
+   "site": "Portage Cragin Library",
+   "address": "5108 W. Belmont Ave.",
+   "language": "Spanish and Polish"
+  },
+  "32": {
+   "site": "Bucktown-Wicker Park Library",
+   "address": "1701 N. Milwaukee Ave."
+  },
+  "33": {
+   "site": "American Indian Center",
+   "address": "3401 W. Ainslie St.",
+   "language": "Spanish and Hindi/Urdu"
+  },
+  "34": {
+   "site": "UIC Student Center East",
+   "address": "750 S. Halsted St.",
+   "language": "Spanish and Hindi/Urdu"
+  },
+  "35": {
+   "site": "Northeastern IL University El Centro",
+   "address": "3390 N. Avondale Ave.",
+   "language": "Spanish"
+  },
+  "36": {
+   "site": "West Belmont Library",
+   "address": "3104 N. Narragansett Ave.",
+   "language": "Spanish and Polish"
+  },
+  "37": {
+   "site": "West Chicago Library",
+   "address": "4856 W. Chicago Ave."
+  },
+  "38": {
+   "site": "Hiawatha Park",
+   "address": "8029 W. Forest Preserve Dr.",
+   "language": "Polish"
+  },
+  "39": {
+   "site": "North Park Village Admin Building",
+   "address": "5801 N. Pulaski Rd.",
+   "language": "Spanish, Chinese (Cantonese), Hindi/Urdu and Korean"
+  },
+  "40": {
+   "site": "Budlong Woods Library",
+   "address": "5630 N. Lincoln Ave.",
+   "language": "Hindi/Gujarati/Urdu"
+  },
+  "41": {
+   "site": "Roden Library",
+   "address": "6083 N. Northwest Hw.",
+   "language": "Spanish and Polish"
+  },
+  "42": {
+   "site": "Historic Lawson House",
+   "address": "803 N. Dearborn St.",
+   "language": "Chinese (Cantonese) and Polish"
+  },
+  "43": {
+   "site": "Lincoln Park Library",
+   "address": "1150 W. Fullerton Ave.",
+   "language": "Spanish and Polish"
+  },
+  "44": {
+   "site": "Merlo Library",
+   "address": "644 W. Belmont Ave.",
+   "language": "Spanish"
+  },
+  "45": {
+   "site": "Kolping Society of Chicago",
+   "address": "5826 N. Elston Ave.",
+   "language": "Spanish and Polish"
+  },
+  "46": {
+   "site": "Truman College",
+   "address": "1145 W. Wilson Ave.",
+   "language": "Chinese (Mandarin)"
+  },
+  "47": {
+   "site": "Welles Park",
+   "address": "2333 W. Sunnyside Ave.",
+   "language": "Chinese (Cantonese/Mandarin)"
+  },
+  "48": {
+   "site": "Broadway Armory",
+   "address": "5917 N. Broadway St.",
+   "language": "Chinese (Cantonese) and Hindi/Urdu"
+  },
+  "49": {
+   "site": "Willye B White Park",
+   "address": "1610 W. Howard St.",
+   "language": "Hindi/Gujarati/Urdu"
+  },
+  "50": {
+   "site": "Northtown Library",
+   "address": "6800 N. Western Ave.",
+   "language": "Hindi/Gujarati/Urdu and Polish"
+  },
+  "52": {
+   "site": "Supersite",
+   "address": "137 S. State St.",
+   "language": "Spanish, Chinese (Mandarin/Cantonese), and Hindi/Gujarati/Urdu"
+  }
+ }
+}

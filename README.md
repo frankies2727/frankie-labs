@@ -17,7 +17,7 @@ No accounts. No installs. No server. Just open the link.
 
 | | |
 |---|---|
-| 🎮 **What** | 13 browser games + 4 projects in one site |
+| 🎮 **What** | 13 browser games + 5 projects in one site |
 | 👥 **Who** | You + friends over a room code, or solo vs bots |
 | 🌍 **Where** | Any browser, phone or desktop, any network |
 | 💸 **Cost** | Free. Runs entirely on GitHub Pages |
@@ -160,6 +160,7 @@ The home screen is the projects gallery. Tap the **Games** button (top right) to
 
 | Project | What it does |
 |---|---|
+| 🗳️ **Know Your Ballot** | Enter a Chicago address, see every race on your Nov 3 ballot explained. Pick, plan, print, share |
 | ⚡ **VibeCheck** | Type any company, get a scrollable visual story: rundown, fast facts, timeline |
 | 🌍 **Place Timelapse** | Watch a place change over time, from NASA satellite imagery to Street View history |
 | 🎨 **AI Art** | 112 AI images with the exact prompts behind them. Tap to copy a prompt |
@@ -171,6 +172,17 @@ The home screen is the projects gallery. Tap the **Games** button (top right) to
 - **Featured profiles** for companies Wikipedia doesn't cover are **pre-generated offline** by a GitHub Action (Ollama + Gemma, grounded from the web) and saved as JSON in `src/projects/vibecheck/data/`. See [docs/VIBECHECK_FEATURED.md](docs/VIBECHECK_FEATURED.md).
 - **Everything else** comes from Wikipedia's public API.
 - A matching featured profile wins; otherwise it falls back to Wikipedia.
+
+</details>
+
+<details>
+<summary><b>🗳️ How Know Your Ballot works</b> (official data, no keys)</summary>
+
+- **Who's on the ballot:** the Chicago Board of Elections candidate list (every contest on any Chicago ballot, in ballot order, plus judicial retentions and referenda), parsed from its PDF.
+- **Campaign money:** FEC bulk filings for federal candidates. State and local candidates link to Illinois Sunshine.
+- **Your districts:** your address goes once to Cook County's address locator; district maps (Census, Cook County, City of Chicago, Illinois Senate) are pre-baked, so matching happens on your device.
+- **Your picks and plan** stay in your browser only. The share card shows progress, never picks.
+- **Fresh daily:** `.github/workflows/ballot-refresh.yml` reruns `scripts/ballot-build.mjs` every morning and redeploys if anything changed. Needs `pdftotext` (poppler-utils) to run locally.
 
 </details>
 
