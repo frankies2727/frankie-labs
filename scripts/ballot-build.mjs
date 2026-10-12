@@ -21,11 +21,12 @@ import { pipeline } from 'node:stream/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { changeLog } from './ballot/changes.mjs';
+import { govbotSlices } from './ballot/govbot.mjs';
 import { parseCandidateList } from './ballot/candidates.mjs';
 import { parseWeball, addFederalMoney } from './ballot/fec.mjs';
 import { ISBE_BASE, ISBE_FILES, addStateMoney } from './ballot/isbe.mjs';
 import { addStateList, fetchCertifiedList } from './ballot/statewide.mjs';
-import { buildDistricts, touchesCook } from './ballot/districts.mjs';
+import { buildDistricts, buildStateDistricts, touchesCook } from './ballot/districts.mjs';
 
 const OUT = 'src/projects/ballot/data';
 const CANDIDATES_PAGE = 'https://chicagoelections.gov/getting-ballot/candidates';
@@ -121,7 +122,8 @@ async function main() {
   const certified = await fetchCertifiedList();
   const merged = addStateList(certified.text, ballot.races, districts.layers, touchesCook);
   ballot.races = merged.races;
-  console.log(`State list: +${merged.added} suburban contests, ${merged.withSite} candidate websites`);
+  console.log(`State list: +${merged.added} contests (suburban Cook and the rest of Illinois), ${merged.withSite} candidate websites`);
+  const stateDistricts = await buildStateDistricts();
 
   await download(FEC_WEBALL, join(work, 'weball.zip'));
   execFileSync('unzip', ['-o', '-q', join(work, 'weball.zip'), '-d', work]);
@@ -139,13 +141,19 @@ async function main() {
   // A race whose district isn't on the map would silently vanish from every
   // ballot, so treat that as a broken build.
   // (`city` isn't a map: it's "has a Chicago ward".)
-  const missing = ballot.races.filter((r) => r.area && r.area.type !== 'city' && !districts.layers[r.area.type]?.some((f) => f.id === r.area.id));
+  const mapFor = (r) => (r.outsideCook ? stateDistricts : districts).layers[r.area.type];
+  const missing = ballot.races.filter((r) => r.area && r.area.type !== 'city' && !mapFor(r)?.some((f) => f.id === r.area.id));
   if (missing.length) throw new Error('No map for: ' + missing.map((r) => r.office).join('; '));
 
   let prev = null;
   try { prev = JSON.parse(readFileSync(join(OUT, 'ballot.json'), 'utf8')); } catch { /* first build */ }
   const next = { races: ballot.races, retentions: ballot.retentions, measures: ballot.measures };
   const changes = changeLog(prev, next, new Date().toISOString());
+  // govbot being briefly down shouldn't hold up the ballot: keep yesterday's.
+  let govbot = prev?.govbot ?? null;
+  try { govbot = await govbotSlices(); } catch (e) { console.warn(`govbot: ${e.message}; keeping the last copy`); }
+  if (!govbot) throw new Error('No govbot data (Springfield bills, 2027 races) and no earlier copy');
+  console.log(`govbot: ${govbot.laws.length} bills, ${govbot.city.length} 2027 races (as of ${govbot.asOf})`);
   console.log(`Changes since last refresh: ${changes.length - (prev?.changes?.length ?? 0)} new, ${changes.length} kept`);
 
   writeFileSync(join(OUT, 'ballot.json'), JSON.stringify({
@@ -162,8 +170,10 @@ async function main() {
     measures: ballot.measures,
     earlyVotingSites: sites,
     changes,
+    govbot,
   }, null, 1) + '\n');
   writeFileSync(join(OUT, 'districts.json'), JSON.stringify(districts) + '\n');
+  writeFileSync(join(OUT, 'districts-il.json'), JSON.stringify(stateDistricts) + '\n');
   console.log(`Wrote ${ballot.races.length} races, ${ballot.retentions.length} retentions, ${ballot.measures.length} measures.`);
 }
 

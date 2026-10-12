@@ -1,7 +1,8 @@
 // The Illinois State Board of Elections' certified candidate list for the
 // Nov 3, 2026 general election (federal, state, legislative and judicial
 // contests statewide). It fills in the suburban Cook districts the Chicago
-// list doesn't cover, and gives candidates' websites from their filings.
+// list doesn't cover, the congressional and legislative races everywhere
+// else in Illinois, and candidates' websites from their filings.
 //
 // The download is an ASP.NET postback: GET the page for its form state,
 // then POST it back with the "Text" link as the event target.
@@ -49,8 +50,9 @@ const key = (name) => name.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''
 const website = (w) => (w ? (/^https?:\/\//i.test(w) ? w : `https://${w}`) : undefined);
 
 /**
- * Add contests from the state list whose district appears on the (Cook)
- * maps and isn't already on the Chicago list, and attach official websites.
+ * Add the state list's congressional, legislative and Cook subcircuit
+ * contests that aren't already on the Chicago list (those with no part in
+ * Cook are marked `outsideCook`), and attach official websites.
  */
 export function addStateList(text, races, layers, inCook) {
   const lines = text.split(/\r?\n/).filter(Boolean);
@@ -59,15 +61,16 @@ export function addStateList(text, races, layers, inCook) {
     .filter((r) => r.CandidateStatus === 'Active');
 
   const have = new Set(races.filter((r) => r.area).map((r) => `${r.area.type}:${r.area.id}`));
-  // Statewide file: keep only districts that actually reach into Cook.
   const onMap = (a) => inCook(layers, a.type, a.id);
   const added = new Map();
   for (const r of rows) {
     const o = officeOf(unescapeSql(r.OfficeName));
-    if (!o || have.has(`${o.area.type}:${o.area.id}`) || !onMap(o.area)) continue;
+    if (!o || have.has(`${o.area.type}:${o.area.id}`)) continue;
+    const cook = onMap(o.area);
+    if (!cook && o.area.type === 'subcircuit') continue;
     const id = `${o.area.type}-${o.area.id}-${key(o.office)}`.slice(0, 90);
     if (!added.has(id)) {
-      added.set(id, { id, office: o.office, section: o.section, area: o.area, voteFor: 1, candidates: [], writeIn: false, numbered: false });
+      added.set(id, { id, office: o.office, section: o.section, area: o.area, voteFor: 1, candidates: [], writeIn: false, numbered: false, ...(cook ? {} : { outsideCook: true }) });
     }
     added.get(id).candidates.push({ party: r.PartyName ? title(r.PartyName) : 'Independent', seq: +r.PartySequence || 99, name: `${r.FirstName} ${r.LastName}`.replace(/\s+/g, ' ') });
   }

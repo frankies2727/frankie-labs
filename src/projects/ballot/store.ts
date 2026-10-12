@@ -13,6 +13,13 @@ export interface Saved {
   browsing?: boolean;
   /** When this device last opened the guide (ISO), for "since your last visit". */
   seen?: string;
+  // Progress game, kept on this device only (not in resume links):
+  /** Days (YYYY-MM-DD, Chicago) this device opened the guide, latest 30. */
+  days?: string[];
+  /** Candidate profiles and comparisons opened. */
+  looked?: number;
+  /** Decisions made on one day, for the daily goal. */
+  goal?: { day: string; n: number };
 }
 
 const KEY = 'know-your-ballot:2026-11-03';
@@ -50,8 +57,12 @@ function sanitize(raw: unknown): Saved {
     }
     place = { label: shortStr(raw.place.label, 120) ?? 'Your saved ballot', districts };
   }
+  const days = Array.isArray(raw.days) ? raw.days.filter((d): d is string => typeof d === 'string' && /^\d{4}-\d\d-\d\d$/.test(d)).slice(-30) : undefined;
+  const looked = Number.isInteger(raw.looked) && (raw.looked as number) >= 0 ? Math.min(raw.looked as number, 1e6) : undefined;
+  const g = isObj(raw.goal) ? raw.goal : null;
+  const goal = g && typeof g.day === 'string' && /^\d{4}-\d\d-\d\d$/.test(g.day) && Number.isInteger(g.n) && (g.n as number) >= 0 ? { day: g.day, n: Math.min(g.n as number, 1000) } : undefined;
   const seen = typeof raw.seen === 'string' && /^\d{4}-\d\d-\d\dT[\d:.]{8,12}Z$/.test(raw.seen) ? raw.seen : undefined;
-  return { place, picks, plan, browsing: raw.browsing === true || undefined, seen };
+  return { place, picks, plan, browsing: raw.browsing === true || undefined, seen, days, looked, goal };
 }
 
 function load(): Saved {
@@ -138,8 +149,10 @@ export function useNow(): Date {
   return now;
 }
 
+/** Today's date in Chicago, YYYY-MM-DD. */
+export const today = (now = new Date()) => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Chicago' }).format(now);
+
 /** Whole days from today (Chicago time) until a YYYY-MM-DD date. */
 export function daysUntil(isoDate: string, now = new Date()): number {
-  const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Chicago' }).format(now); // YYYY-MM-DD
-  return Math.round((Date.parse(isoDate) - Date.parse(today)) / 86_400_000);
+  return Math.round((Date.parse(isoDate) - Date.parse(today(now))) / 86_400_000);
 }

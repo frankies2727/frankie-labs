@@ -2,11 +2,12 @@ import type { BallotData, Districts, Measure, Race } from './types';
 
 // Address -> coordinates. Cook County's own address locator is official,
 // key-free, built from the county's address points (building-level) and
-// allows browser requests. OpenStreetMap's Nominatim is the fallback; its
-// policy caps a whole app at ~1 request/second, too little to lean on.
+// allows browser requests. OpenStreetMap's Nominatim covers the rest of
+// Illinois and stands in when the county's is down; its policy caps a whole
+// app at ~1 request/second, too little to lean on for Cook.
 const COOK_LOCATOR = 'https://gis.cookcountyil.gov/traditional/rest/services/AddressLocator/CookAddressComposite/GeocodeServer/findAddressCandidates';
 const NOMINATIM = 'https://nominatim.openstreetmap.org/search';
-const COOK_VIEWBOX = '-88.27,42.16,-87.52,41.46';
+const ILLINOIS_VIEWBOX = '-91.52,42.51,-87.02,36.97';
 const MIN_SCORE = 85; // below this the locator is guessing (e.g. wrong N/S)
 // A lookup that hangs would leave the voter staring at a spinner.
 const TIMEOUT_MS = 10_000;
@@ -29,7 +30,7 @@ async function cookCounty(address: string): Promise<Place | null> {
 }
 
 async function openStreetMap(address: string): Promise<Place | null> {
-  const url = `${NOMINATIM}?format=jsonv2&limit=1&countrycodes=us&viewbox=${COOK_VIEWBOX}&bounded=1&q=${encodeURIComponent(withCity(address))}`;
+  const url = `${NOMINATIM}?format=jsonv2&limit=1&countrycodes=us&viewbox=${ILLINOIS_VIEWBOX}&bounded=1&q=${encodeURIComponent(withCity(address))}`;
   const res = await fetch(url, { headers: { Accept: 'application/json' }, signal: AbortSignal.timeout(TIMEOUT_MS) });
   if (!res.ok) throw new Error(`Nominatim: ${res.status}`);
   const [hit] = (await res.json()) as { lat: string; lon: string; display_name: string }[];
@@ -57,19 +58,34 @@ function inRing(x: number, y: number, ring: number[]): boolean {
   return inside;
 }
 
-let maps: Promise<{ default: unknown }> | null = null;
+type Maps = Promise<{ default: unknown }>;
+let maps: Maps | null = null;
+let stateMaps: Maps | null = null;
 // A failed download (flaky connection) is forgotten so the next lookup retries.
 export const prefetchDistricts = () =>
   (maps ??= import('./data/districts.json').catch((e) => { maps = null; throw e; }));
+// Congressional and legislative maps for all of Illinois, only fetched for
+// addresses outside Cook.
+const stateDistricts = () =>
+  (stateMaps ??= import('./data/districts-il.json').catch((e) => { stateMaps = null; throw e; }));
 
-export async function districtsAt(lat: number, lng: number): Promise<Districts> {
-  const { layers } = (await prefetchDistricts()).default as { layers: Record<string, Layer> };
+async function lookIn(maps: Maps, lat: number, lng: number): Promise<Districts> {
+  const { layers } = (await maps).default as { layers: Record<string, Layer> };
   const out: Districts = {};
   for (const [type, features] of Object.entries(layers)) {
     // Odd number of rings containing the point = inside (handles holes).
     const hit = features.find((f) => f.rings.filter((r) => inRing(lng, lat, r)).length % 2 === 1);
     if (hit) out[type as keyof Districts] = hit.id;
   }
+  return out;
+}
+
+/** The voter's districts; empty outside Illinois. */
+export async function districtsAt(lat: number, lng: number): Promise<Districts> {
+  const out = await lookIn(prefetchDistricts(), lat, lng);
+  // The Cook maps are clipped to a box around the county, so outside Cook
+  // only the statewide maps can be trusted.
+  if (!inCook(out)) return lookIn(stateDistricts(), lat, lng);
   if (out.ward) out.city = 'chicago'; // Chicago-only contests key off this
   return out;
 }
@@ -77,6 +93,8 @@ export async function districtsAt(lat: number, lng: number): Promise<Districts> 
 /** Every Chicago address is in a ward; every Cook address in a County Board district. */
 export const inChicago = (d: Districts) => Boolean(d.ward);
 export const inCook = (d: Districts) => Boolean(d.commissioner);
+/** Every Illinois address is in a state House district. */
+export const inIllinois = (d: Districts) => Boolean(d.sldl);
 
 // Districts -> the contests on this voter's ballot.
 const raceApplies = (race: Race, d: Districts | null) =>
@@ -99,8 +117,17 @@ export function ballotIdsFor(data: BallotData, d: Districts | null): Set<string>
 }
 
 export function ballotFor(data: BallotData, d: Districts | null) {
+  // Outside Cook: statewide offices and the voter's own U.S. House and
+  // legislative races. Everything else we carry is a Cook County contest.
+  if (d && !inCook(d)) {
+    return {
+      races: data.races.filter((r) => (r.area ? d[r.area.type] === r.area.id : r.section === 'federal' || r.section === 'state')),
+      retentions: [],
+      measures: [],
+    };
+  }
   return {
-    races: data.races.filter((r) => raceApplies(r, d)),
+    races: data.races.filter((r) => !r.outsideCook && raceApplies(r, d)),
     retentions: data.retentions,
     measures: data.measures.filter((m) => measureApplies(m, d)),
   };

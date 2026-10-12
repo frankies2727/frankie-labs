@@ -1,0 +1,41 @@
+/* Know Your Ballot on govbot's design tokens (govbot/govbot.css): every
+   colour follows govbot's light and dark themes. */
+:root {
+  /* True gold for judges (govbot's --gb-gold is its green). */
+  --kyb-gold: #E5B94E;
+  /* Chips and hovers: a tint of the text colour, so they show in both themes. */
+  --kyb-chip: color-mix(in srgb, var(--gb-text) 9%, transparent);
+  --kyb-chip-hi: color-mix(in srgb, var(--gb-text) 16%, transparent);
+  /* Under govbot's sticky header. */
+  --kyb-top: 66px;
+}
+:root[data-theme="light"] { --kyb-gold: #8A6100; }
+@media (prefers-color-scheme: light) { :root:not([data-theme]) { --kyb-gold: #8A6100; } }
+
+.kyb h1, .kyb h2, .kyb h3 { font-family: var(--gb-font-display); font-weight: 600; letter-spacing: -0.01em; }
+
+/* County orange: not in govbot's set, tuned the same way (page-background ink reads on it). */
+:root { --kyb-orange: #F59E54; }
+:root[data-theme="light"] { --kyb-orange: #A04A0C; }
+@media (prefers-color-scheme: light) { :root:not([data-theme]) { --kyb-orange: #A04A0C; } }
+
+/* The Capitol hero: govbot's line-art building with its Illinois flag waving
+   on the pole (same art and motion as govbot's elections page). */
+.kyb-capitol { position: relative; filter: drop-shadow(0 0 26px var(--gb-glow-primary)); }
+.kyb-capitol > img { display: block; width: 100%; height: auto; }
+:root[data-theme="light"] .kyb-capitol > img { filter: brightness(.58) saturate(1.5); }
+@media (prefers-color-scheme: light) { :root:not([data-theme]) .kyb-capitol > img { filter: brightness(.58) saturate(1.5); } }
+.kyb-capitol .kyb-flag { position: absolute; left: 50.3%; top: 2.4%; width: 13.8%; }
+.kyb-capitol .kyb-flag svg { display: block; width: 100%; height: auto; overflow: visible; }
+.kyb-wave { transform-box: fill-box; transform-origin: left center; animation: kyb-wave 3.2s ease-in-out infinite; }
+@keyframes kyb-wave {
+  0%, 100% { transform: rotate(0deg) skewX(0deg) scaleX(1); }
+  22% { transform: rotate(-1.2deg) skewX(5deg) scaleX(1.03); }
+  48% { transform: rotate(0.6deg) skewX(-3deg) scaleX(0.99); }
+  72% { transform: rotate(-0.8deg) skewX(3deg) scaleX(1.01); }
+}
+@media (prefers-reduced-motion: reduce) { .kyb-wave { animation: none; } }
+
+/* Anything scrolled to (a focused field, a jumped-to card) lands below
+   govbot's sticky header, not under it. */
+:root:has(.gb-header) { scroll-padding-top: calc(var(--kyb-top) + 16px); }

@@ -33,9 +33,11 @@ const METHODS: { id: Method; label: string; emoji: string }[] = [
 interface Props {
   plan: Record<string, boolean | string>;
   setPlan: (key: string, value: boolean | string) => void;
-  /** Chicago voters get the Chicago Board's specifics; suburban Cook, the statewide rules + the Clerk. */
+  /** Chicago voters get the Chicago Board's specifics; everyone else, the statewide rules + their county clerk. */
   chicago: boolean;
   clerk: string;
+  /** "the Cook County Clerk", or "your county clerk" elsewhere in Illinois. */
+  clerkName: string;
   ward?: string;
   wardSite?: EarlyVotingSite;
   ballotDone: boolean;
@@ -43,7 +45,7 @@ interface Props {
 
 function Step({ n, done, title, children, onToggle }: { n: number; done: boolean; title: string; children: ReactNode; onToggle?: () => void }) {
   return (
-    <li className="rounded-2xl border-2 border-[#2E343F] bg-[#1A1D24] p-5">
+    <li className="rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] p-5">
       <div className="flex items-start gap-4">
         <button
           type="button"
@@ -51,13 +53,13 @@ function Step({ n, done, title, children, onToggle }: { n: number; done: boolean
           disabled={!onToggle}
           aria-pressed={done}
           aria-label={done ? `Step ${n} done` : `Mark step ${n} done`}
-          className={`shrink-0 w-11 h-11 rounded-full border-2 flex items-center justify-center font-black text-lg transition-colors ${done ? 'bg-[#5EBD3E] border-[#5EBD3E] text-[#0F1117]' : 'border-[#F5F6F7] text-[#F5F6F7]'}`}
+          className={`shrink-0 w-11 h-11 rounded-full border-2 flex items-center justify-center font-black text-lg transition-colors ${done ? 'bg-[var(--gb-primary)] border-[var(--gb-primary)] text-[var(--gb-bg)]' : 'border-[var(--gb-text)] text-[var(--gb-text)]'}`}
         >
           {done ? <Check className="w-6 h-6" strokeWidth={3} /> : n}
         </button>
         <div className="min-w-0 flex-1 space-y-3">
-          <h3 className="text-lg font-black leading-tight text-[#F5F6F7]">{title}</h3>
-          <div className="space-y-3 text-[15px] leading-relaxed text-[#E2E4E8]">{children}</div>
+          <h3 className="text-lg font-black leading-tight text-[var(--gb-text)]">{title}</h3>
+          <div className="space-y-3 text-[15px] leading-relaxed text-[var(--gb-text)]">{children}</div>
         </div>
       </div>
     </li>
@@ -65,14 +67,14 @@ function Step({ n, done, title, children, onToggle }: { n: number; done: boolean
 }
 
 const Out = ({ href, children }: { href: string; children: ReactNode }) => (
-  <a href={href} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 font-bold text-[#009CDF] underline underline-offset-2 hover:text-[#F5F6F7]">
+  <a href={href} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 font-bold text-[var(--gb-link)] underline underline-offset-2 hover:text-[var(--gb-text)]">
     {children}<ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
   </a>
 );
 
 const byId = (id: string) => NOV_3.find((d) => d.id === id)!;
 
-export function PlanToVote({ plan, setPlan, chicago, clerk, ward, wardSite, ballotDone }: Props) {
+export function PlanToVote({ plan, setPlan, chicago, clerk, clerkName, ward, wardSite, ballotDone }: Props) {
   const method = (plan.method as Method) || null;
   // Suburban early-voting sites and hours are the Clerk's, so suburban early
   // voters get the last day, which Illinois law fixes everywhere.
@@ -83,8 +85,8 @@ export function PlanToVote({ plan, setPlan, chicago, clerk, ward, wardSite, ball
       <Step n={1} done={!!plan.registered} title="Make sure you’re registered" onToggle={() => setPlan('registered', !plan.registered)}>
         {chicago
           ? <p>Check your registration, sample ballot and polling place on the <Out href={LINKS.myInfo}>Board of Elections site</Out>.</p>
-          : <p>Check your registration and polling place with the <Out href={LINKS.stateLookup}>State Board of Elections</Out>; your sample ballot is on the <Out href={clerk}>Cook County Clerk’s site</Out>.</p>}
-        <p><strong className="text-[#FFB900]">Not registered or moved?</strong> Register online through <strong>Sun, Oct 18</strong> at <Out href={LINKS.registerOnline}>ova.elections.il.gov</Out>. After that, register in person when you vote early or on Election Day. Bring two IDs, one showing your current address{chicago ? <> (<Out href={LINKS.id}>which IDs count</Out>)</> : null}.</p>
+          : <p>Check your registration and polling place with the <Out href={LINKS.stateLookup}>State Board of Elections</Out>; your sample ballot is on <Out href={clerk}>{clerkName}’s site</Out>.</p>}
+        <p><strong className="text-[var(--gb-amber-hi)]">Not registered or moved?</strong> Register online through <strong>Sun, Oct 18</strong> at <Out href={LINKS.registerOnline}>ova.elections.il.gov</Out>. After that, register in person when you vote early or on Election Day. Bring two IDs, one showing your current address{chicago ? <> (<Out href={LINKS.id}>which IDs count</Out>)</> : null}.</p>
       </Step>
 
       <Step n={2} done={!!method} title="Pick how you’ll vote">
@@ -96,7 +98,7 @@ export function PlanToVote({ plan, setPlan, chicago, clerk, ward, wardSite, ball
               role="radio"
               aria-checked={method === m.id}
               onClick={() => setPlan('method', m.id)}
-              className={`min-h-[64px] rounded-xl border-2 px-2 py-2 font-bold text-sm leading-tight transition-colors ${method === m.id ? 'border-[#5EBD3E] bg-[#5EBD3E] text-[#0F1117]' : 'border-[#2E343F] bg-[#262B34] text-[#F5F6F7] hover:border-[#F5F6F7]'}`}
+              className={`min-h-[64px] rounded-xl border-2 px-2 py-2 font-bold text-sm leading-tight transition-colors ${method === m.id ? 'border-[var(--gb-primary)] bg-[var(--gb-primary)] text-[var(--gb-bg)]' : 'border-[var(--gb-border)] bg-[var(--kyb-chip)] text-[var(--gb-text)] hover:border-[var(--gb-text)]'}`}
             >
               <span className="block text-xl" aria-hidden="true">{m.emoji}</span>{m.label}
             </button>
@@ -104,12 +106,12 @@ export function PlanToVote({ plan, setPlan, chicago, clerk, ward, wardSite, ball
         </div>
         {method === 'early' && !chicago && (
           <div className="space-y-2">
-            <p><strong>Early voting runs through Mon, Nov 2.</strong> In suburban Cook, the County Clerk sets the sites and hours. <Out href={clerk}>Find a site</Out></p>
+            <p><strong>Early voting runs through Mon, Nov 2.</strong> Your county clerk sets the sites and hours. <Out href={clerk}>Find a site</Out></p>
           </div>
         )}
         {method === 'mail' && !chicago && (
           <div className="space-y-2">
-            <p><strong>Apply by Thu, Oct 29</strong> through the <Out href={clerk}>Cook County Clerk</Out>, then return your ballot by mail or at a drop box.</p>
+            <p><strong>Apply by Thu, Oct 29</strong> through <Out href={clerk}>{clerkName}</Out>, then return your ballot by mail or at a drop box.</p>
           </div>
         )}
         {method === 'day' && !chicago && (
@@ -121,7 +123,7 @@ export function PlanToVote({ plan, setPlan, chicago, clerk, ward, wardSite, ball
         {method === 'early' && chicago && (
           <div className="space-y-2">
             {wardSite ? (
-              <p><strong className="text-[#5EBD3E]">Your Ward {ward} site:</strong> {wardSite.site}, {wardSite.address}.{wardSite.language ? ` Bilingual help: ${wardSite.language}.` : ''}</p>
+              <p><strong className="text-[var(--gb-primary)]">Your Ward {ward} site:</strong> {wardSite.site}, {wardSite.address}.{wardSite.language ? ` Bilingual help: ${wardSite.language}.` : ''}</p>
             ) : null}
             <p><strong>All 50 ward sites, from Mon, Oct 19:</strong> Mon–Fri 9am–6pm, Sat 9am–5pm, Sun 10am–4pm, through Mon, Nov 2.</p>
             <p><strong>Downtown, open now:</strong> Voting Supersite at 137 S. State St. Mon–Fri 9am–6pm (7pm from Oct 26), Sat 9am–5pm, Sun 10am–4pm.</p>
@@ -147,7 +149,7 @@ export function PlanToVote({ plan, setPlan, chicago, clerk, ward, wardSite, ball
           type="button"
           disabled={!method || method === 'mail'}
           onClick={() => { downloadReminder(reminder, reminderInfo); setPlan('reminder', true); }}
-          className="inline-flex items-center gap-2 min-h-[44px] rounded-xl border-2 border-[#F5F6F7] bg-[#262B34] px-4 font-bold text-[#F5F6F7] hover:bg-[#323A47] disabled:cursor-not-allowed disabled:border-[#2E343F]"
+          className="inline-flex items-center gap-2 min-h-[44px] rounded-xl border-2 border-[var(--gb-text)] bg-[var(--kyb-chip)] px-4 font-bold text-[var(--gb-text)] hover:bg-[var(--kyb-chip-hi)] disabled:cursor-not-allowed disabled:border-[var(--gb-border)]"
         >
           <CalendarPlus className="w-5 h-5" aria-hidden="true" />
           Remind me {dayLabel(reminder.date).replace(/^\w+, /, '')}

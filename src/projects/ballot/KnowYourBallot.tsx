@@ -1,17 +1,22 @@
 import { ArrowLeft, ChevronDown, Crosshair, MapPin, Printer, Search, Share2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import rawData from './data/ballot.json';
-import { ballotFor, ballotIdsFor, districtsAt, geocode, inChicago, inCook, prefetchDistricts } from './lookup';
+import { ballotFor, ballotIdsFor, districtsAt, geocode, inChicago, inCook, inIllinois, prefetchDistricts } from './lookup';
 import { RETENTION_EXPLAINER } from './offices';
 import { BallotSearch, type Hit } from './Search';
+import { GovbotChrome } from './GovbotChrome';
+import { Capitol } from './Hero';
+import { BADGES, DAILY_GOAL, earnedBadges, ProgressCard, streak } from './Progress';
+import './ballot.css';
 import { ClearButton } from '../../components/ClearButton';
 import { SinceLastVisit } from './Updates';
 import { KeyDates, NextElectionNote } from './Calendar';
+import { Laws } from './Laws';
 import { LINKS, PlanToVote } from './PlanToVote';
 import { CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard } from './Race';
 import { JUDGE_RATINGS } from './research';
 import { drawShareCard, shareCard } from './share';
-import { daysUntil, hasProgress, isDecided, readResumeLink, resumeLink, useSaved, type Choice, type Saved } from './store';
+import { daysUntil, hasProgress, isDecided, today, readResumeLink, resumeLink, useSaved, type Choice, type Saved } from './store';
 import type { BallotData, Candidate, Districts, Race } from './types';
 
 const data = rawData as unknown as BallotData;
@@ -20,18 +25,33 @@ const everything = ballotFor(data, null);
 const SHARE_URL = `https://frankies2727.github.io${import.meta.env.BASE_URL}projects/know-your-ballot`;
 // Runs elections in suburban Cook (the Chicago Board runs Chicago's).
 const COOK_CLERK = 'https://www.cookcountyclerkil.gov/';
+// Elsewhere in Illinois each county clerk (or city board) runs elections.
+const ELECTION_AUTHORITIES = 'https://www.elections.il.gov/ElectionOperations/ElectionAuthorities.aspx';
+// govbot's list of every Illinois race, for browsing beyond Cook. When this
+// guide takes over govbot's elections.html, point this at the old page's new
+// name (elections-classic.html).
+const GOVBOT_ALL_RACES = 'https://chihacknight.github.io/govbot/dashboard/elections.html';
 
-// Ballot order. Section colours are the lab's six; party never gets a colour.
+// Ballot order. Section colours are govbot's accents (ballot.css, govbot.css);
+// each reads with the page background as its ink in both themes. Party never
+// gets a colour.
+const INK = 'var(--gb-bg)';
 const SECTIONS = [
-  { id: 'federal', title: 'Federal', color: '#009CDF', ink: '#0F1117', emoji: '🏛️' },
-  { id: 'state', title: 'Illinois', color: '#973999', ink: '#FFFFFF', emoji: '⭐' },
-  { id: 'county', title: 'Cook County', color: '#F78200', ink: '#0F1117', emoji: '🏙️' },
-  { id: 'judicial', title: 'Judges', color: '#FFB900', ink: '#0F1117', emoji: '⚖️' },
-  { id: 'retention', title: 'Keep these judges?', color: '#FFB900', ink: '#0F1117', emoji: '🧑‍⚖️' },
-  { id: 'school', title: 'Chicago school board', color: '#5EBD3E', ink: '#0F1117', emoji: '🍎' },
-  { id: 'measures', title: 'Ballot questions', color: '#E23838', ink: '#FFFFFF', emoji: '🗳️' },
+  { id: 'federal', title: 'Federal', color: 'var(--gb-blue-hi)', ink: INK, emoji: '🏛️' },
+  { id: 'state', title: 'Illinois', color: 'var(--gb-purple)', ink: INK, emoji: '⭐' },
+  { id: 'county', title: 'Cook County', color: 'var(--kyb-orange)', ink: INK, emoji: '🏙️' },
+  { id: 'judicial', title: 'Judges', color: 'var(--kyb-gold)', ink: INK, emoji: '⚖️' },
+  { id: 'retention', title: 'Keep these judges?', color: 'var(--kyb-gold)', ink: INK, emoji: '🧑‍⚖️' },
+  { id: 'school', title: 'Chicago school board', color: 'var(--gb-primary)', ink: INK, emoji: '🍎' },
+  { id: 'measures', title: 'Ballot questions', color: 'var(--gb-red)', ink: INK, emoji: '🗳️' },
 ] as const;
 type SectionId = (typeof SECTIONS)[number]['id'];
+
+/** A section colour as a real colour (the share card is drawn on a canvas, which can't read CSS variables). */
+const cssColor = (v: string) => {
+  const m = v.match(/^var\((--[\w-]+)\)$/);
+  return m ? getComputedStyle(document.documentElement).getPropertyValue(m[1]).trim() || '#3DDC84' : v;
+};
 
 /** A pick in words: what the contest is and what the voter chose. */
 function describePick(id: string, c: Choice | undefined, numbered = false): { what: string; pick: string } {
@@ -59,7 +79,7 @@ interface BallotChange {
 
 const DISTRICT_CHIPS: [keyof Districts, string][] = [
   ['ward', 'Ward'], ['cd', 'Congress'], ['sldu', 'State Senate'], ['sldl', 'State House'],
-  ['commissioner', 'County Board'], ['subcircuit', 'Subcircuit'], ['school', 'School'],
+  ['commissioner', 'County Board'], ['subcircuit', 'Subcircuit'], ['school', 'School'], ['police', 'Police district'],
 ];
 
 function Ring({ pct, size = 64 }: { pct: number; size?: number }) {
@@ -67,10 +87,10 @@ function Ring({ pct, size = 64 }: { pct: number; size?: number }) {
   const c = 2 * Math.PI * r;
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} role="img" aria-label={`${Math.round(pct * 100)}% of your ballot decided`}>
-      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="#262B34" strokeWidth="8" />
-      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="#5EBD3E" strokeWidth="8" strokeLinecap="round"
+      <circle cx={size / 2} cy={size / 2} r={r} fill="none" style={{ stroke: 'var(--kyb-chip-hi)' }} strokeWidth="8" />
+      <circle cx={size / 2} cy={size / 2} r={r} fill="none" style={{ stroke: 'var(--gb-primary)' }} strokeWidth="8" strokeLinecap="round"
         strokeDasharray={`${c * pct} ${c}`} transform={`rotate(-90 ${size / 2} ${size / 2})`} className="motion-safe:transition-[stroke-dasharray] motion-safe:duration-500" />
-      <text x="50%" y="50%" dominantBaseline="central" textAnchor="middle" fill="#F5F6F7" fontSize={size * 0.26} fontWeight="900">{Math.round(pct * 100)}%</text>
+      <text x="50%" y="50%" dominantBaseline="central" textAnchor="middle" style={{ fill: 'var(--gb-text)' }} fontSize={size * 0.26} fontWeight="900">{Math.round(pct * 100)}%</text>
     </svg>
   );
 }
@@ -114,12 +134,20 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   const [shareMsg, setShareMsg] = useState('');
   // When this device last opened the guide; this visit becomes the new mark.
   const [lastSeen, setLastSeen] = useState(saved.seen);
-  useEffect(() => { setSaved((s) => ({ ...s, seen: new Date().toISOString() })); }, [setSaved]);
+  // ...and a day on the streak.
+  useEffect(() => {
+    const d = today();
+    setSaved((s) => ({ ...s, seen: new Date().toISOString(), days: s.days?.includes(d) ? s.days : [...(s.days ?? []), d].slice(-30) }));
+  }, [setSaved]);
 
   const districts = saved.place?.districts ?? null;
   // Ballot numbers come from the Chicago Board's list and only match Chicago
   // ballots; suburban ballots number candidates differently.
   const chicago = districts ? inChicago(districts) : true;
+  // Outside Cook we carry only statewide, congressional and legislative races.
+  const cook = districts ? inCook(districts) : true;
+  const clerk = cook ? COOK_CLERK : ELECTION_AUTHORITIES;
+  const region = chicago ? 'Chicago' : cook ? 'Cook County' : 'Illinois';
   const showBallot = !!saved.place || browsing;
   const daysLeft = daysUntil(data.election.date);
 
@@ -142,8 +170,16 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   const done = sections.reduce((n, s) => n + s.done, 0);
   const allDone = total > 0 && done === total;
 
-  const choose = useCallback((id: string, c: Choice) => setSaved((s) => ({ ...s, picks: { ...s.picks, [id]: c } })), [setSaved]);
-  const openSheet = useCallback((race: Race, c: Candidate) => setSheet({ race, c }), []);
+  const choose = useCallback((id: string, c: Choice) => setSaved((s) => {
+    // A newly decided race counts toward today's goal.
+    const d = today();
+    const goal = !isDecided(s.picks[id]) && isDecided(c) ? { day: d, n: (s.goal?.day === d ? s.goal.n : 0) + 1 } : s.goal;
+    return { ...s, picks: { ...s.picks, [id]: c }, goal };
+  }), [setSaved]);
+  // Reading up on candidates counts toward the Researcher badge.
+  const lookedUp = useCallback(() => setSaved((s) => ({ ...s, looked: (s.looked ?? 0) + 1 })), [setSaved]);
+  const openSheet = useCallback((race: Race, c: Candidate) => { setSheet({ race, c }); lookedUp(); }, [lookedUp]);
+  const openCompare = useCallback((race: Race) => { setComparing(race); lookedUp(); }, [lookedUp]);
   const setPlan = useCallback((k: string, v: boolean | string) => setSaved((s) => ({ ...s, plan: { ...s.plan, [k]: v } })), [setSaved]);
 
   // Cheer each section as it's finished, and the whole ballot once.
@@ -165,6 +201,26 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
       setToast(`✅ ${finished.title}: done! ${left} section${left === 1 ? '' : 's'} to go.`);
     }
   }, [sections, allDone, saved.place]);
+
+  // The progress game: today's goal, streak and badges.
+  const day = today();
+  const todayCount = saved.goal?.day === day ? saved.goal.n : 0;
+  const streakDays = streak(saved.days, day);
+  const gameCtx = { done, allDone, looked: saved.looked ?? 0, plan: saved.plan, visits: saved.days?.length ?? 0 };
+  const earned = earnedBadges(gameCtx).join();
+  const prevEarned = useRef<string | null>(null);
+  const prevGoal = useRef(todayCount);
+  useEffect(() => {
+    const before = prevEarned.current;
+    prevEarned.current = earned;
+    const goalJustHit = prevGoal.current < DAILY_GOAL && todayCount >= DAILY_GOAL;
+    prevGoal.current = todayCount;
+    if (before === null) return;
+    // "Ballot ready" has its own confetti.
+    const fresh = BADGES.find((b) => b.id !== 'ready' && earned.split(',').includes(b.id) && !before.split(',').includes(b.id));
+    if (fresh) setToast(`${fresh.emoji} Badge unlocked: ${fresh.name}!`);
+    else if (goalJustHit && !allDone) setToast(`🎯 Today’s goal done: ${DAILY_GOAL} races! Come back tomorrow to keep your streak going.`);
+  }, [earned, todayCount, allDone]);
   useEffect(() => { if (!toast) return; const t = setTimeout(() => setToast(''), 3500); return () => clearTimeout(t); }, [toast]);
 
   // Opened from a resume link (or one pasted into this already-open tab, which
@@ -216,7 +272,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   // ---- address -> districts --------------------------------------------------
   const place = async (lat: number, lng: number, label: string) => {
     const d = await districtsAt(lat, lng);
-    if (!inCook(d)) { setStatus({ busy: false, error: '', outside: true }); return; }
+    if (!inIllinois(d)) { setStatus({ busy: false, error: '', outside: true }); return; }
     // A new address means a new ballot. Statewide and countywide contests are
     // the same race at both addresses, so those picks still stand; picks for
     // races that aren't on this ballot (old districts, old ward) are dropped
@@ -246,7 +302,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
     setStatus({ busy: true, error: '', outside: false });
     try {
       const hit = await geocode(address.trim());
-      if (!hit) { setStatus({ busy: false, error: 'We couldn’t find that address in Cook County. Try the street number, name and town, like “1501 Sherman Ave, Evanston”.', outside: false }); return; }
+      if (!hit) { setStatus({ busy: false, error: 'We couldn’t find that address in Illinois. Try the street number, name and town, like “1501 Sherman Ave, Evanston”.', outside: false }); return; }
       await place(hit.lat, hit.lng, hit.label);
     } catch {
       setStatus({ busy: false, error: 'The address search didn’t answer. Check your connection, or use your location instead.', outside: false });
@@ -267,9 +323,10 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
     // Same site the voter is on (also right for previews and local runs).
     const url = await resumeLink(saved, `${location.origin}${import.meta.env.BASE_URL}projects/know-your-ballot`);
     try {
-      if (send && navigator.share) { await navigator.share({ title: 'My ballot progress', url }); return; }
+      if (send && navigator.share) { await navigator.share({ title: 'My ballot progress', url }); setPlan('shared', true); return; }
       await navigator.clipboard.writeText(url);
       setLinkMsg('Link copied. Paste it somewhere safe, like a note or a text to yourself.');
+      setPlan('shared', true);
     } catch (e) {
       if ((e as Error).name !== 'AbortError') setLinkMsg('Couldn’t copy automatically on this device. Try “Send it to myself”.');
     }
@@ -290,9 +347,10 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
     setShareMsg('');
     try {
       const blob = await drawShareCard({
-        done, total, daysLeft, url: SHARE_URL, place: chicago ? 'Chicago' : 'Cook County',
-        sections: sections.map((s) => ({ title: s.title, color: s.color, done: s.done, total: s.ids.length })),
+        done, total, daysLeft, url: SHARE_URL, place: region,
+        sections: sections.map((s) => ({ title: s.title, color: cssColor(s.color), done: s.done, total: s.ids.length })),
       });
+      setPlan('shared', true);
       setShareMsg((await shareCard(blob, SHARE_URL)) === 'downloaded' ? 'Saved the image: post it anywhere.' : 'Thanks for spreading the word!');
     } catch {
       setShareMsg('Couldn’t make the image on this device.');
@@ -305,19 +363,15 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
 
   // ---- screens ------------------------------------------------------------------
   return (
-    <div className="min-h-[100dvh] bg-[#0F1117] text-[#F5F6F7] font-sans selection:bg-[#009CDF] selection:text-[#0F1117]">
-      <div className="h-1.5 flex print:hidden" aria-hidden="true">
-        {['#5EBD3E', '#FFB900', '#F78200', '#E23838', '#973999', '#009CDF'].map((c) => <span key={c} className="flex-1" style={{ background: c }} />)}
-      </div>
+    <GovbotChrome>
+    <div className="kyb min-h-[100dvh] bg-[var(--gb-bg)] text-[var(--gb-text)] selection:bg-[var(--gb-blue-hi)] selection:text-[var(--gb-bg)]">
 
-      <div className="max-w-2xl mx-auto px-4 pb-24 print:hidden">
-        <nav className="flex items-center justify-between py-4">
-          <button type="button" onClick={onExit} className="inline-flex items-center gap-2 min-h-[44px] font-bold text-[#F5F6F7] hover:text-[#FFB900]">
-            <ArrowLeft className="w-5 h-5" /> Frankie Labs
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pb-24 print:hidden">
+        {/* The lab's way home (not part of govbot's page). */}
+        <nav className="pt-3 text-sm">
+          <button type="button" onClick={onExit} className="inline-flex items-center gap-1.5 min-h-[44px] font-bold text-[var(--gb-text)] underline underline-offset-2">
+            <ArrowLeft className="w-4 h-4" aria-hidden="true" /> Frankie Labs preview
           </button>
-          <span className="rounded-full bg-[#262B34] px-3 py-1 text-sm font-bold">
-            {daysLeft > 0 ? `${daysLeft} days to Nov 3` : daysLeft === 0 ? 'Election Day!' : 'Nov 3, 2026'}
-          </span>
         </nav>
 
         {!showBallot ? (
@@ -330,29 +384,30 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
           />
         ) : (
           <>
-            {/* Sticky progress bar: the thing that keeps you going. */}
-            <div className="sticky top-0 z-30 -mx-4 px-4 pt-2 pb-3 bg-[#0F1117]/95 backdrop-blur border-b-2 border-[#262B34]">
+            <div className="max-w-3xl mx-auto">
+            {/* Sticky progress bar, under govbot's header: the thing that keeps you going. */}
+            <div className="sticky top-[var(--kyb-top)] z-30 -mx-4 px-4 pt-3 pb-3 bg-[color-mix(in_srgb,var(--gb-bg)_92%,transparent)] backdrop-blur border-b border-[var(--gb-border)]">
               <div className="flex items-center gap-2 sm:gap-4">
                 <Ring pct={total ? done / total : 0} />
                 <div className="min-w-0 flex-1">
                   <p className="font-black text-lg leading-tight">{allDone ? 'Ballot ready 🎉' : `${done} of ${total} decided`}</p>
-                  <button type="button" onClick={changeAddress} className="flex max-w-full items-center gap-1.5 text-sm text-[#E2E4E8] hover:text-[#F5F6F7]">
+                  <button type="button" onClick={changeAddress} className="flex max-w-full items-center gap-1.5 text-sm text-[var(--gb-text)] hover:text-[var(--gb-text)]">
                     <span className="truncate">{saved.place ? `📍 ${saved.place.label}` : 'Browsing every race'}</span>
-                    <span className="shrink-0 font-bold text-[#F5F6F7] underline underline-offset-2">{saved.place ? 'Change' : 'Add address'}</span>
+                    <span className="shrink-0 font-bold text-[var(--gb-text)] underline underline-offset-2">{saved.place ? 'Change' : 'Add address'}</span>
                   </button>
                 </div>
                 <button type="button" onClick={openSearch} aria-label="Search races and candidates"
-                  className="shrink-0 w-11 h-11 rounded-xl border-2 border-[#2E343F] flex items-center justify-center text-[#F5F6F7] hover:border-[#F5F6F7]">
+                  className="shrink-0 w-11 h-11 rounded-xl border-2 border-[var(--gb-border)] flex items-center justify-center text-[var(--gb-text)] hover:border-[var(--gb-text)]">
                   <Search className="w-5 h-5" aria-hidden="true" />
                 </button>
                 {!allDone && (
-                  <button type="button" onClick={nextUp} className="shrink-0 min-h-[44px] rounded-xl bg-[#5EBD3E] px-3 sm:px-4 font-black text-[#0F1117]">Next up →</button>
+                  <button type="button" onClick={nextUp} className="shrink-0 min-h-[44px] rounded-xl bg-[var(--gb-primary)] px-3 sm:px-4 font-black text-[var(--gb-bg)]">Next up →</button>
                 )}
               </div>
               <div className="mt-3 grid grid-cols-3 gap-2" role="tablist" aria-label="Views">
                 {([['ballot', 'My Ballot'], ['plan', 'Plan to vote'], ['share', 'Save & share']] as const).map(([id, label]) => (
                   <button key={id} type="button" role="tab" aria-selected={tab === id} onClick={() => { setTab(id); window.scrollTo({ top: 0 }); }}
-                    className={`min-h-[44px] rounded-xl font-bold border-2 ${tab === id ? 'bg-[#F5F6F7] text-[#0F1117] border-[#F5F6F7]' : 'border-[#2E343F] text-[#F5F6F7] hover:border-[#F5F6F7]'}`}>
+                    className={`min-h-[44px] rounded-xl font-bold border-2 ${tab === id ? 'bg-[var(--gb-text)] text-[var(--gb-bg)] border-[var(--gb-text)]' : 'border-[var(--gb-border)] text-[var(--gb-text)] hover:border-[var(--gb-text)]'}`}>
                     {label}
                   </button>
                 ))}
@@ -363,27 +418,31 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
               <div className="space-y-8 pt-6">
                 <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} onJump={(h) => jumpTo(h.section, h.id)} />
                 {incoming && (
-                  <div role="alertdialog" aria-label="Load saved progress?" className="rounded-2xl border-2 border-[#009CDF] bg-[#1A1D24] p-4 space-y-3">
+                  <div role="alertdialog" aria-label="Load saved progress?" className="rounded-2xl border-2 border-[var(--gb-blue-hi)] bg-[var(--gb-surface)] p-4 space-y-3">
                     <p className="font-black">Load progress from your saved link?</p>
-                    <p className="text-[15px] text-[#E2E4E8]">It has {Object.keys(incoming.picks).length} decisions. This device has {Object.keys(saved.picks).length}. Loading replaces what’s here.</p>
+                    <p className="text-[15px] text-[var(--gb-text)]">It has {Object.keys(incoming.picks).length} decisions. This device has {Object.keys(saved.picks).length}. Loading replaces what’s here.</p>
                     <div className="flex flex-wrap gap-2">
-                      <button type="button" onClick={() => { setSaved(incoming); setIncoming(null); setWelcomeBack(true); }} className="min-h-[44px] rounded-xl bg-[#009CDF] px-4 font-black text-[#0F1117]">Load my saved link</button>
-                      <button type="button" onClick={() => setIncoming(null)} className="min-h-[44px] rounded-xl border-2 border-[#F5F6F7] px-4 font-bold">Keep this device’s</button>
+                      <button type="button" onClick={() => { setSaved(incoming); setIncoming(null); setWelcomeBack(true); }} className="min-h-[44px] rounded-xl bg-[var(--gb-blue-hi)] px-4 font-black text-[var(--gb-bg)]">Load my saved link</button>
+                      <button type="button" onClick={() => setIncoming(null)} className="min-h-[44px] rounded-xl border-2 border-[var(--gb-text)] px-4 font-bold">Keep this device’s</button>
                     </div>
                   </div>
                 )}
                 {change && <ChangeReport change={change} onDismiss={() => setChange(null)} onNext={() => { setChange(null); nextUp(); }} />}
                 {welcomeBack && !change && !allDone && done > 0 && (
-                  <div className="rounded-2xl bg-[#5EBD3E] p-4 text-[#0F1117] space-y-3">
+                  <div className="rounded-2xl bg-[var(--gb-primary)] p-4 text-[var(--gb-bg)] space-y-3">
                     <p className="text-lg font-black leading-snug">Welcome back! You’re {done} of {total} done.</p>
                     <div className="flex flex-wrap gap-2">
-                      <button type="button" onClick={() => { setWelcomeBack(false); nextUp(); }} className="min-h-[44px] rounded-xl bg-[#0F1117] px-4 font-black text-[#F5F6F7]">Pick up where I left off →</button>
-                      <button type="button" onClick={() => setWelcomeBack(false)} className="min-h-[44px] rounded-xl border-2 border-[#0F1117] px-4 font-bold">Dismiss</button>
+                      <button type="button" onClick={() => { setWelcomeBack(false); nextUp(); }} className="min-h-[44px] rounded-xl bg-[var(--gb-bg)] px-4 font-black text-[var(--gb-text)]">Pick up where I left off →</button>
+                      <button type="button" onClick={() => setWelcomeBack(false)} className="min-h-[44px] rounded-xl border-2 border-[var(--gb-bg)] px-4 font-bold">Dismiss</button>
                     </div>
                   </div>
                 )}
                 {updates.length > 0 && <SinceLastVisit changes={updates} since={lastSeen!} picks={saved.picks} onJump={(id) => jumpTo(sectionFor(id), id)} onDismiss={() => setLastSeen(undefined)} />}
-                <WhereYouVote districts={districts} chicago={chicago} onChange={changeAddress} />
+                {total > 0 && (
+                  <ProgressCard levels={sections} done={done} total={total} ctx={gameCtx} todayCount={todayCount} streakDays={streakDays}
+                    onLevel={(id) => { const s = sections.find((x) => x.id === id)!; jumpTo(id, s.ids.find((i) => !isDecided(saved.picks[i])) ?? s.ids[0]); }} />
+                )}
+                <WhereYouVote districts={districts} chicago={chicago} cook={cook} onChange={changeAddress} />
 
                 {sections.map((s) => {
                   const open = !collapsed[s.id];
@@ -393,15 +452,15 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                         className="w-full flex items-center gap-3 rounded-2xl px-4 py-3 text-left" style={{ background: s.color, color: s.ink }}>
                         <span className="text-2xl" aria-hidden="true">{s.emoji}</span>
                         <span id={`sec-${s.id}`} className="flex-1 text-xl font-black">{s.title}</span>
-                        <span className="rounded-full bg-[#0F1117] px-3 py-1 text-sm font-black text-[#F5F6F7]">{s.done}/{s.ids.length}</span>
+                        <span className="rounded-full bg-[var(--gb-bg)] px-3 py-1 text-sm font-black text-[var(--gb-text)]">{s.done}/{s.ids.length}</span>
                         <ChevronDown className={`w-6 h-6 motion-safe:transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
                       </button>
 
                       {open && s.id === 'retention' && (
                         <div className="space-y-3">
-                          <p className="text-[15px] leading-relaxed text-[#E2E4E8]">{RETENTION_EXPLAINER} Chicago-area bar associations rate every judge: <a className="font-bold text-[#FFB900] underline underline-offset-2" href={JUDGE_RATINGS} target="_blank" rel="noreferrer noopener">see the ratings ↗</a></p>
+                          <p className="text-[15px] leading-relaxed text-[var(--gb-text)]">{RETENTION_EXPLAINER} Chicago-area bar associations rate every judge: <a className="font-bold text-[var(--gb-amber-hi)] underline underline-offset-2" href={JUDGE_RATINGS} target="_blank" rel="noreferrer noopener">see the ratings ↗</a></p>
                           <button type="button" onClick={() => setSaved((sv) => ({ ...sv, picks: { ...sv.picks, ...Object.fromEntries(s.ids.filter((id) => !isDecided(sv.picks[id])).map((id) => [id, 'skip' as Choice])) } }))}
-                            className="min-h-[44px] rounded-xl border-2 border-[#2E343F] px-4 font-bold text-[#F5F6F7] hover:border-[#F5F6F7]">
+                            className="min-h-[44px] rounded-xl border-2 border-[var(--gb-border)] px-4 font-bold text-[var(--gb-text)] hover:border-[var(--gb-text)]">
                             Skip the ones I haven’t answered
                           </button>
                           <div className="grid gap-3 sm:grid-cols-2">
@@ -414,25 +473,26 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                         const race = raceById.get(id)!;
                         return (
                           <RaceCard key={id} race={race} color={s.color} ink={s.ink} numbered={chicago && race.numbered !== false} choice={saved.picks[id]}
-                            onChoose={choose} onInfo={openSheet} onCompare={setComparing} />
+                            onChoose={choose} onInfo={openSheet} onCompare={openCompare} />
                         );
                       })}
                     </section>
                   );
                 })}
 
-                <NextElectionNote chicago={districts ? chicago : undefined} />
+                <Laws laws={data.govbot.laws} asOf={data.govbot.asOf} />
+                <NextElectionNote chicago={districts ? chicago : undefined} city={data.govbot.city} districts={districts} />
                 <Sources />
               </div>
             )}
 
             {tab === 'plan' && (
               <div className="pt-6 space-y-6">
-                <PlanToVote plan={saved.plan} setPlan={setPlan} chicago={chicago} clerk={COOK_CLERK} ward={districts?.ward}
+                <PlanToVote plan={saved.plan} setPlan={setPlan} chicago={chicago} clerk={clerk} clerkName={cook ? 'the Cook County Clerk' : 'your county clerk'} ward={districts?.ward}
                   wardSite={districts?.ward ? data.earlyVotingSites[districts.ward] : undefined}
                   ballotDone={allDone} />
-                <KeyDates chicago={chicago} info={chicago ? LINKS.myInfo : COOK_CLERK} />
-                <button type="button" onClick={() => window.print()} className="w-full inline-flex items-center justify-center gap-2 min-h-[52px] rounded-xl border-2 border-[#F5F6F7] font-black text-[#F5F6F7] hover:bg-[#262B34]">
+                <KeyDates chicago={chicago} info={chicago ? LINKS.myInfo : clerk} />
+                <button type="button" onClick={() => window.print()} className="w-full inline-flex items-center justify-center gap-2 min-h-[52px] rounded-xl border-2 border-[var(--gb-text)] font-black text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]">
                   <Printer className="w-5 h-5" aria-hidden="true" /> Print My Ballot
                 </button>
               </div>
@@ -440,40 +500,41 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
 
             {tab === 'share' && (
               <div className="pt-6 space-y-5">
-                <section className="rounded-2xl border-2 border-[#009CDF] bg-[#1A1D24] p-5 space-y-3" aria-labelledby="kyb-keep">
+                <section className="rounded-2xl border-2 border-[var(--gb-blue-hi)] bg-[var(--gb-surface)] p-5 space-y-3" aria-labelledby="kyb-keep">
                   <h2 id="kyb-keep" className="text-2xl font-black leading-tight">💾 Keep your progress</h2>
-                  <p className="text-[15px] leading-relaxed text-[#E2E4E8]">Your picks save on this device automatically. To pick up on another phone or computer, or in case your browser clears its data, save a link: opening it brings everything back.</p>
+                  <p className="text-[15px] leading-relaxed text-[var(--gb-text)]">Your picks save on this device automatically. To pick up on another phone or computer, or in case your browser clears its data, save a link: opening it brings everything back.</p>
                   <div className="flex flex-wrap gap-2">
                     {typeof navigator !== 'undefined' && 'share' in navigator && (
-                      <button type="button" onClick={() => saveLink(true)} className="min-h-[48px] rounded-xl bg-[#009CDF] px-4 font-black text-[#0F1117]">Send it to myself</button>
+                      <button type="button" onClick={() => saveLink(true)} className="min-h-[48px] rounded-xl bg-[var(--gb-blue-hi)] px-4 font-black text-[var(--gb-bg)]">Send it to myself</button>
                     )}
-                    <button type="button" onClick={() => saveLink(false)} className="min-h-[48px] rounded-xl border-2 border-[#F5F6F7] px-4 font-bold">Copy my link</button>
+                    <button type="button" onClick={() => saveLink(false)} className="min-h-[48px] rounded-xl border-2 border-[var(--gb-text)] px-4 font-bold">Copy my link</button>
                   </div>
                   {linkMsg && <p role="status" className="font-bold">{linkMsg}</p>}
-                  <p className="text-sm text-[#E2E4E8]">🔒 The link holds your picks and districts, not your street address. Keep it to yourself.</p>
+                  <p className="text-sm text-[var(--gb-text)]">🔒 The link holds your picks and districts, not your street address. Keep it to yourself.</p>
                 </section>
                 <h2 className="text-2xl font-black leading-tight">Get your people to look up theirs</h2>
-                <p className="text-[15px] leading-relaxed text-[#E2E4E8]">Share a card with your progress: how many races you’ve researched, section by section. <strong className="text-[#F5F6F7]">It never shows who you picked.</strong></p>
-                <div className="rounded-2xl border-2 border-[#2E343F] bg-[#1A1D24] p-5 space-y-3">
+                <p className="text-[15px] leading-relaxed text-[var(--gb-text)]">Share a card with your progress: how many races you’ve researched, section by section. <strong className="text-[var(--gb-text)]">It never shows who you picked.</strong></p>
+                <div className="rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] p-5 space-y-3">
                   {sections.map((s) => (
                     <div key={s.id}>
                       <div className="flex justify-between font-bold"><span>{s.title}</span><span>{s.done}/{s.ids.length}</span></div>
-                      <div className="h-3 rounded-full bg-[#262B34] overflow-hidden"><div className="h-full rounded-full" style={{ width: `${(s.done / s.ids.length) * 100}%`, background: s.color }} /></div>
+                      <div className="h-3 rounded-full bg-[var(--kyb-chip)] overflow-hidden"><div className="h-full rounded-full" style={{ width: `${(s.done / s.ids.length) * 100}%`, background: s.color }} /></div>
                     </div>
                   ))}
                 </div>
-                <button type="button" onClick={doShare} className="w-full inline-flex items-center justify-center gap-2 min-h-[56px] rounded-xl bg-[#FFB900] font-black text-lg text-[#0F1117]">
+                <button type="button" onClick={doShare} className="w-full inline-flex items-center justify-center gap-2 min-h-[56px] rounded-xl bg-[var(--gb-amber-hi)] font-black text-lg text-[var(--gb-bg)]">
                   <Share2 className="w-5 h-5" aria-hidden="true" /> Share my progress
                 </button>
                 {shareMsg && <p role="status" className="font-bold text-center">{shareMsg}</p>}
               </div>
             )}
+            </div>
           </>
         )}
       </div>
 
       {/* Print view: the voter's picks, in ballot order, to take into the booth. */}
-      <PrintBallot sections={sections} picks={saved.picks} label={saved.place?.label} numbered={chicago} />
+      <PrintBallot sections={sections} picks={saved.picks} label={saved.place?.label} numbered={chicago} region={region} />
 
       {sheet && (
         <CandidateSheet race={sheet.race} c={sheet.c} color={sectionOf(sheet.race.section).color} ink={sectionOf(sheet.race.section).ink} numbered={chicago && sheet.race.numbered !== false}
@@ -495,10 +556,11 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
           onClose={() => setComparing(null)} />
       )}
       {toast && (
-        <div role="status" className="fixed bottom-6 inset-x-4 z-[55] mx-auto max-w-md rounded-2xl bg-[#F5F6F7] px-5 py-4 text-center font-black text-[#0F1117] shadow-2xl print:hidden">{toast}</div>
+        <div role="status" className="fixed bottom-6 inset-x-4 z-[55] mx-auto max-w-md rounded-2xl bg-[var(--gb-text)] px-5 py-4 text-center font-black text-[var(--gb-bg)] shadow-2xl print:hidden">{toast}</div>
       )}
       {party && <Confetti onDone={() => setParty(false)} />}
     </div>
+    </GovbotChrome>
   );
 }
 
@@ -517,68 +579,75 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
   // ballot" doesn't wait on a download.
   useEffect(() => { prefetchDistricts(); }, []);
   return (
-    <div className="space-y-8 pt-6">
-      <header className="space-y-4">
-        {daysLeft > 0 && (
-          <p className="inline-flex items-baseline gap-2 rounded-2xl bg-[#FFB900] px-4 py-2 text-[#0F1117]">
-            <span className="text-4xl font-black leading-none">{daysLeft}</span>
-            <span className="font-black">days until Election Day</span>
+    <div className="space-y-8 pt-2 [&>*:not(header)]:max-w-3xl">
+      {/* govbot's elections hero: overline, serif title, the Capitol. */}
+      <header className="flex flex-col-reverse md:flex-row md:items-center gap-4 md:gap-10">
+        <div className="min-w-0 flex-1 space-y-3">
+          <p className="text-[13px] font-bold uppercase tracking-[0.18em]">Chicago &amp; Illinois · 2026–2027</p>
+          <h1 className="text-[40px] sm:text-5xl leading-[1.02]">Illinois Elections</h1>
+          <p className="font-[family-name:var(--gb-font-display)] text-xl">Know who’s on your ballot before you vote.</p>
+          <p className="font-semibold">
+            Next election: Tue, Nov 3, 2026{daysLeft > 0 ? <> · <span className="rounded-full bg-[var(--gb-primary)] px-2.5 py-0.5 font-bold text-[var(--gb-on-primary)]">{daysLeft} days to go</span></> : daysLeft === 0 ? ' · Today!' : ''}
           </p>
-        )}
-        <h1 className="text-4xl sm:text-5xl font-black leading-[1.05] tracking-tight">Every name on your ballot, explained.</h1>
-        <p className="text-lg leading-relaxed text-[#E2E4E8]">For Chicago and suburban Cook County. The Nov 3 ballot runs from U.S. Senate down to judges (and, in Chicago, your school board). Enter your address to see exactly what’s on yours, what each job does, who’s running and who’s funding them. Then make your picks and bring them to the booth.</p>
+          <p className="flex items-start gap-2 text-[15px] leading-relaxed max-w-[62ch]">
+            <span className="mt-2 w-2 h-2 shrink-0 rounded-full bg-[var(--gb-green)] shadow-[0_0_8px_var(--gb-green)]" aria-hidden="true" />
+            <span><strong>Live now:</strong> every race on every Chicago and Cook County ballot, down to judges and ballot questions, plus the statewide, congressional and legislative races everywhere else in Illinois.</span>
+          </p>
+          <p className="text-[15px] leading-relaxed max-w-[62ch]">Enter your address to see exactly what’s on yours: what each job does, who’s running and who’s funding them. Make your picks, then bring them to the booth.</p>
+        </div>
+        <div className="w-[260px] md:w-[400px] md:max-w-[45%] shrink-0"><Capitol /></div>
       </header>
 
       <form onSubmit={onSubmit} className="space-y-3">
-        <label htmlFor="kyb-address" className="block font-black text-lg">Your address in Cook County</label>
+        <label htmlFor="kyb-address" className="block font-black text-lg">Your address in Illinois</label>
         <div className="flex gap-2">
           <div className="relative flex-1 min-w-0">
-            <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#F5F6F7] pointer-events-none" aria-hidden="true" />
+            <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--gb-text)] pointer-events-none" aria-hidden="true" />
             <input id="kyb-address" type="text" autoComplete="street-address" value={address} onChange={(e) => setAddress(e.target.value)}
               placeholder="e.g. 121 N LaSalle St or 1501 Sherman Ave, Evanston"
-              className="w-full min-h-[56px] rounded-2xl border-2 border-[#2E343F] bg-[#1A1D24] pl-12 pr-12 text-lg font-bold text-[#F5F6F7] focus:border-[#009CDF] focus:outline-none" />
-            {address && <ClearButton onClear={() => setAddress('')} className="right-2 text-[#F5F6F7] hover:bg-[#262B34]" />}
+              className="w-full min-h-[56px] rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] pl-12 pr-12 text-lg font-bold text-[var(--gb-text)] focus:border-[var(--gb-blue-hi)] focus:outline-none" />
+            {address && <ClearButton onClear={() => setAddress('')} className="right-2 text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]" />}
           </div>
-          <button type="submit" disabled={status.busy} className="shrink-0 min-h-[56px] rounded-2xl bg-[#009CDF] px-5 font-black text-[#0F1117] disabled:cursor-wait inline-flex items-center gap-2">
+          <button type="submit" disabled={status.busy} className="shrink-0 min-h-[56px] rounded-2xl bg-[var(--gb-blue-hi)] px-5 font-black text-[var(--gb-bg)] disabled:cursor-wait inline-flex items-center gap-2">
             <Search className="w-5 h-5" aria-hidden="true" /><span className="hidden sm:inline">{status.busy ? 'Finding…' : 'Find my ballot'}</span><span className="sm:hidden">{status.busy ? '…' : 'Go'}</span>
           </button>
         </div>
-        <button type="button" onClick={onLocate} disabled={status.busy} className="inline-flex items-center gap-2 min-h-[44px] font-bold text-[#F5F6F7] underline underline-offset-4 disabled:cursor-wait">
+        <button type="button" onClick={onLocate} disabled={status.busy} className="inline-flex items-center gap-2 min-h-[44px] font-bold text-[var(--gb-text)] underline underline-offset-4 disabled:cursor-wait">
           <Crosshair className="w-5 h-5" aria-hidden="true" /> Use my current location
         </button>
-        {status.error && <p role="alert" className="rounded-xl bg-[#E23838] px-4 py-3 font-bold text-white">{status.error}</p>}
+        {status.error && <p role="alert" className="rounded-xl bg-[var(--gb-red)] px-4 py-3 font-bold text-white">{status.error}</p>}
         {status.outside && (
-          <p role="alert" className="rounded-xl bg-[#262B34] border-2 border-[#FFB900] px-4 py-3 font-bold">
-            That address is outside Cook County. This guide covers Chicago and suburban Cook for now. Anywhere else in Illinois, look up your registration and polling place with the <a className="underline text-[#FFB900]" href={LINKS.stateLookup} target="_blank" rel="noreferrer noopener">State Board of Elections ↗</a>.
+          <p role="alert" className="rounded-xl bg-[var(--kyb-chip)] border-2 border-[var(--gb-amber-hi)] px-4 py-3 font-bold">
+            That address is outside Illinois. This guide covers Illinois voters. Illinois voters away from home can look up their registration and polling place with the <a className="underline text-[var(--gb-amber-hi)]" href={LINKS.stateLookup} target="_blank" rel="noreferrer noopener">State Board of Elections ↗</a>.
           </p>
         )}
         {saved > 0 && (
-          <div className="rounded-xl border-2 border-[#2E343F] bg-[#1A1D24] p-3 space-y-2">
+          <div className="rounded-xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] p-3 space-y-2">
             <p className="text-[15px]">You have <strong>{saved} pick{saved === 1 ? '' : 's'}</strong> saved. Same voter, new address? Races on both ballots keep their picks. Looking up someone else’s ballot? Start fresh.</p>
             <button type="button" onClick={() => { if (confirming) { onStartFresh(); setConfirming(false); } else setConfirming(true); }}
-              className={`min-h-[44px] rounded-xl border-2 px-4 font-bold ${confirming ? 'border-[#E23838] bg-[#E23838] text-white' : 'border-[#F5F6F7] text-[#F5F6F7]'}`}>
+              className={`min-h-[44px] rounded-xl border-2 px-4 font-bold ${confirming ? 'border-[var(--gb-red)] bg-[var(--gb-red)] text-white' : 'border-[var(--gb-text)] text-[var(--gb-text)]'}`}>
               {confirming ? `Tap again to clear ${saved} pick${saved === 1 ? '' : 's'} and your plan` : 'Start fresh'}
             </button>
           </div>
         )}
-        <p className="text-sm leading-relaxed text-[#E2E4E8]">🔒 Your address goes once to Cook County’s address lookup (or OpenStreetMap, if the county’s is down) to find your districts. It’s saved only on this device, like your picks, and never shared.</p>
+        <p className="text-sm leading-relaxed text-[var(--gb-text)]">🔒 Your address goes once to Cook County’s address lookup (or OpenStreetMap, for the rest of Illinois or if the county’s is down) to find your districts. It’s saved only on this device, like your picks, and never shared.</p>
       </form>
 
       <BallotSearch ballot={everything} onJump={onSearchJump} label="Or look up any race, candidate, judge or question" />
 
       <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {[
-          [data.races.length, 'races across Cook'], [candidates, 'candidates'],
+          [data.races.length, 'races in Illinois'], [candidates, 'candidates'],
           [data.retentions.length, 'judges up for retention'], [data.measures.length, 'ballot questions'],
         ].map(([n, label]) => (
-          <li key={label} className="rounded-2xl border-2 border-[#2E343F] bg-[#1A1D24] p-4">
+          <li key={label} className="rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] p-4">
             <span className="block text-3xl font-black">{n}</span>
-            <span className="block text-sm font-bold text-[#E2E4E8]">{label}</span>
+            <span className="block text-sm font-bold text-[var(--gb-text)]">{label}</span>
           </li>
         ))}
       </ul>
 
-      <button type="button" onClick={onBrowse} className="min-h-[44px] font-bold text-[#F5F6F7] underline underline-offset-4">
+      <button type="button" onClick={onBrowse} className="min-h-[44px] font-bold text-[var(--gb-text)] underline underline-offset-4">
         Or browse every race in Cook County →
       </button>
       <NextElectionNote />
@@ -601,36 +670,36 @@ function suburbanGaps(d: Districts): string[] {
 
 function ChangeReport({ change, onDismiss, onNext }: { change: BallotChange; onDismiss: () => void; onNext: () => void }) {
   const row = (x: { what: string; pick: string }) => (
-    <li key={x.what} className="flex flex-wrap justify-between gap-x-3"><span>{x.what}</span><strong className="text-[#F5F6F7]">{x.pick}</strong></li>
+    <li key={x.what} className="flex flex-wrap justify-between gap-x-3"><span>{x.what}</span><strong className="text-[var(--gb-text)]">{x.pick}</strong></li>
   );
   return (
-    <section aria-labelledby="kyb-change" className="rounded-2xl border-2 border-[#009CDF] bg-[#1A1D24] p-4 space-y-4 text-[15px] leading-relaxed text-[#E2E4E8]">
-      <h2 id="kyb-change" className="text-lg font-black text-[#F5F6F7]">📍 Your ballot changed with your address</h2>
+    <section aria-labelledby="kyb-change" className="rounded-2xl border-2 border-[var(--gb-blue-hi)] bg-[var(--gb-surface)] p-4 space-y-4 text-[15px] leading-relaxed text-[var(--gb-text)]">
+      <h2 id="kyb-change" className="text-lg font-black text-[var(--gb-text)]">📍 Your ballot changed with your address</h2>
       {change.districts.length > 0 && (
         <div>
-          <p className="font-black text-[#F5F6F7]">Your districts</p>
+          <p className="font-black text-[var(--gb-text)]">Your districts</p>
           <ul className="space-y-0.5">
             {change.districts.map((x) => (
-              <li key={x.label}>{x.label}: {x.from ?? 'none'} → <strong className="text-[#F5F6F7]">{x.to ?? (x.label === 'Ward' ? 'none (outside Chicago)' : 'none')}</strong></li>
+              <li key={x.label}>{x.label}: {x.from ?? 'none'} → <strong className="text-[var(--gb-text)]">{x.to ?? (x.label === 'Ward' ? 'none (outside Chicago)' : 'none')}</strong></li>
             ))}
           </ul>
         </div>
       )}
       {change.kept.length > 0 && (
         <div>
-          <p className="font-black text-[#5EBD3E]">✓ Kept {change.kept.length} pick{change.kept.length === 1 ? '' : 's'}: same race on both ballots</p>
+          <p className="font-black text-[var(--gb-primary)]">✓ Kept {change.kept.length} pick{change.kept.length === 1 ? '' : 's'}: same race on both ballots</p>
           <ul className="space-y-0.5">{change.kept.map(row)}</ul>
         </div>
       )}
       {change.cleared.length > 0 && (
         <div>
-          <p className="font-black text-[#FF6B6B]">✕ Cleared {change.cleared.length} pick{change.cleared.length === 1 ? '' : 's'}: not on your new ballot</p>
+          <p className="font-black text-[var(--gb-red)]">✕ Cleared {change.cleared.length} pick{change.cleared.length === 1 ? '' : 's'}: not on your new ballot</p>
           <ul className="space-y-0.5">{change.cleared.map(row)}</ul>
         </div>
       )}
       {change.added.length > 0 && (
         <div>
-          <p className="font-black text-[#FFB900]">＋ New on this ballot: {change.added.length} race{change.added.length === 1 ? '' : 's'} to decide</p>
+          <p className="font-black text-[var(--gb-amber-hi)]">＋ New on this ballot: {change.added.length} race{change.added.length === 1 ? '' : 's'} to decide</p>
           <ul className="space-y-0.5">
             {change.added.slice(0, 6).map((what) => <li key={what}>{what}</li>)}
             {change.added.length > 6 && <li>and {change.added.length - 6} more</li>}
@@ -638,33 +707,39 @@ function ChangeReport({ change, onDismiss, onNext }: { change: BallotChange; onD
         </div>
       )}
       <div className="flex flex-wrap gap-2">
-        <button type="button" onClick={onNext} className="min-h-[44px] rounded-xl bg-[#009CDF] px-4 font-black text-[#0F1117]">Go to what’s left →</button>
-        <button type="button" onClick={onDismiss} className="min-h-[44px] rounded-xl border-2 border-[#F5F6F7] px-4 font-bold text-[#F5F6F7]">Got it</button>
+        <button type="button" onClick={onNext} className="min-h-[44px] rounded-xl bg-[var(--gb-blue-hi)] px-4 font-black text-[var(--gb-bg)]">Go to what’s left →</button>
+        <button type="button" onClick={onDismiss} className="min-h-[44px] rounded-xl border-2 border-[var(--gb-text)] px-4 font-bold text-[var(--gb-text)]">Got it</button>
       </div>
     </section>
   );
 }
 
-function WhereYouVote({ districts, chicago, onChange }: { districts: Districts | null; chicago: boolean; onChange: () => void }) {
+function WhereYouVote({ districts, chicago, cook, onChange }: { districts: Districts | null; chicago: boolean; cook: boolean; onChange: () => void }) {
   return (
-    <div className="rounded-2xl border-2 border-[#2E343F] bg-[#1A1D24] p-4 space-y-3">
+    <div className="rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] p-4 space-y-3">
       {districts ? (
         <>
           <p className="font-black">Your districts</p>
           <ul className="flex flex-wrap gap-2">
             {DISTRICT_CHIPS.filter(([k]) => districts[k]).map(([k, label]) => (
-              <li key={k} className="rounded-full bg-[#262B34] px-3 py-1 text-sm font-bold">{label} {districts[k]}</li>
+              <li key={k} className="rounded-full bg-[var(--kyb-chip)] px-3 py-1 text-sm font-bold">{label} {districts[k]}</li>
             ))}
           </ul>
-          {!chicago && (
-            <div className="rounded-xl border-2 border-[#FFB900] bg-[#262B34] p-3 text-[15px] leading-relaxed">
-              <p className="font-black text-[#FFB900]">Suburban Cook: a few things aren’t in here yet</p>
-              <p>Not included: {suburbanGaps(districts).join(' and ')}. Ballot numbers aren’t shown because suburban ballots order candidates differently. See your full sample ballot at the <a className="font-bold underline text-[#F5F6F7]" href={COOK_CLERK} target="_blank" rel="noreferrer noopener">Cook County Clerk ↗</a>.</p>
+          {!cook && (
+            <div className="rounded-xl border-2 border-[var(--gb-amber-hi)] bg-[var(--kyb-chip)] p-3 text-[15px] leading-relaxed">
+              <p className="font-black text-[var(--gb-amber-hi)]">Outside Cook County: the races everyone in Illinois shares, plus yours in Congress and Springfield</p>
+              <p>Your county’s offices, judges and ballot questions aren’t in here. Ballot numbers aren’t shown because each county orders candidates its own way. Your county clerk has your full sample ballot: <a className="font-bold underline text-[var(--gb-text)]" href={ELECTION_AUTHORITIES} target="_blank" rel="noreferrer noopener">find your county clerk ↗</a>. You can also <a className="font-bold underline text-[var(--gb-text)]" href={GOVBOT_ALL_RACES} target="_blank" rel="noreferrer noopener">browse every Illinois race on govbot ↗</a>.</p>
             </div>
           )}
-          <p className="text-sm text-[#E2E4E8]">
-            Not right? Check the <a className="font-bold underline text-[#F5F6F7]" href={chicago ? LINKS.addressLookup : LINKS.stateLookup} target="_blank" rel="noreferrer noopener">official address lookup ↗</a> or{' '}
-            <button type="button" onClick={onChange} className="font-bold underline text-[#F5F6F7]">change your address</button>.
+          {cook && !chicago && (
+            <div className="rounded-xl border-2 border-[var(--gb-amber-hi)] bg-[var(--kyb-chip)] p-3 text-[15px] leading-relaxed">
+              <p className="font-black text-[var(--gb-amber-hi)]">Suburban Cook: a few things aren’t in here yet</p>
+              <p>Not included: {suburbanGaps(districts).join(' and ')}. Ballot numbers aren’t shown because suburban ballots order candidates differently. See your full sample ballot at the <a className="font-bold underline text-[var(--gb-text)]" href={COOK_CLERK} target="_blank" rel="noreferrer noopener">Cook County Clerk ↗</a>.</p>
+            </div>
+          )}
+          <p className="text-sm text-[var(--gb-text)]">
+            Not right? Check the <a className="font-bold underline text-[var(--gb-text)]" href={chicago ? LINKS.addressLookup : LINKS.stateLookup} target="_blank" rel="noreferrer noopener">official address lookup ↗</a> or{' '}
+            <button type="button" onClick={onChange} className="font-bold underline text-[var(--gb-text)]">change your address</button>.
           </p>
         </>
       ) : (
@@ -677,18 +752,18 @@ function WhereYouVote({ districts, chicago, onChange }: { districts: Districts |
 function Sources() {
   const s = data.sources;
   return (
-    <footer className="rounded-2xl border-2 border-[#2E343F] p-5 space-y-2 text-sm leading-relaxed text-[#E2E4E8]">
-      <p className="font-black text-[#F5F6F7]">Where this comes from</p>
-      <p>Candidates and ballot questions: <a className="underline font-bold text-[#F5F6F7]" href={s.candidates.url} target="_blank" rel="noreferrer noopener">Chicago Board of Elections candidate list</a>{s.candidates.asOf ? `, as of ${s.candidates.asOf}` : ''}, in official ballot order; suburban contests from the <a className="underline font-bold text-[#F5F6F7]" href={s.stateCandidates.url} target="_blank" rel="noreferrer noopener">State Board of Elections certified list</a>. Campaign money and incumbency: <a className="underline font-bold text-[#F5F6F7]" href={s.money.url} target="_blank" rel="noreferrer noopener">Federal Election Commission</a> and <a className="underline font-bold text-[#F5F6F7]" href={s.stateMoney.url} target="_blank" rel="noreferrer noopener">Illinois State Board of Elections</a>. District maps: U.S. Census Bureau, Cook County, City of Chicago and the Illinois Senate.</p>
-      <p>Nonpartisan and independent: not affiliated with any campaign, party or election authority. Always double-check your <a className="underline font-bold text-[#F5F6F7]" href={LINKS.myInfo} target="_blank" rel="noreferrer noopener">official sample ballot</a>.</p>
+    <footer className="rounded-2xl border-2 border-[var(--gb-border)] p-5 space-y-2 text-sm leading-relaxed text-[var(--gb-text)]">
+      <p className="font-black text-[var(--gb-text)]">Where this comes from</p>
+      <p>Candidates and ballot questions: <a className="underline font-bold text-[var(--gb-text)]" href={s.candidates.url} target="_blank" rel="noreferrer noopener">Chicago Board of Elections candidate list</a>{s.candidates.asOf ? `, as of ${s.candidates.asOf}` : ''}, in official ballot order; contests outside Chicago from the <a className="underline font-bold text-[var(--gb-text)]" href={s.stateCandidates.url} target="_blank" rel="noreferrer noopener">State Board of Elections certified list</a>. Campaign money and incumbency: <a className="underline font-bold text-[var(--gb-text)]" href={s.money.url} target="_blank" rel="noreferrer noopener">Federal Election Commission</a> and <a className="underline font-bold text-[var(--gb-text)]" href={s.stateMoney.url} target="_blank" rel="noreferrer noopener">Illinois State Board of Elections</a>. District maps: U.S. Census Bureau, Cook County, City of Chicago (wards, precincts, police districts) and the Illinois Senate. Springfield bills and Chicago’s 2027 races: <a className="underline font-bold text-[var(--gb-text)]" href="https://github.com/chihacknight/govbot" target="_blank" rel="noreferrer noopener">govbot</a> (Chi Hack Night), with alderpersons from the City’s data portal.</p>
+      <p>Nonpartisan and independent: not affiliated with any campaign, party or election authority. Always double-check your <a className="underline font-bold text-[var(--gb-text)]" href={LINKS.myInfo} target="_blank" rel="noreferrer noopener">official sample ballot</a>.</p>
     </footer>
   );
 }
 
-function PrintBallot({ sections, picks, label, numbered }: { sections: { id: SectionId; title: string; ids: string[] }[]; picks: Record<string, Choice>; label?: string; numbered: boolean }) {
+function PrintBallot({ sections, picks, label, numbered, region }: { sections: { id: SectionId; title: string; ids: string[] }[]; picks: Record<string, Choice>; label?: string; numbered: boolean; region: string }) {
   return (
     <div className="hidden print:block p-6 text-black bg-white text-[11pt]">
-      <h1 className="text-xl font-black">My Ballot · {numbered ? 'Chicago' : 'Cook County'} · Nov 3, 2026</h1>
+      <h1 className="text-xl font-black">My Ballot · {region} · Nov 3, 2026</h1>
       {label && <p>{label}</p>}
       {sections.map((s) => (
         <section key={s.id} className="mt-4 break-inside-avoid-page">

@@ -29,29 +29,29 @@ export function SinceLastVisit({ changes, since, picks, onJump, onDismiss }: Pro
   for (const c of changes) byContest.set(c.id, [...(byContest.get(c.id) ?? []), c]);
   const contests = [...byContest.values()];
   return (
-    <section aria-labelledby="kyb-updates" className="rounded-2xl border-2 border-[#009CDF] bg-[#1A1D24] p-4 space-y-3">
+    <section aria-labelledby="kyb-updates" className="rounded-2xl border-2 border-[var(--gb-blue-hi)] bg-[var(--gb-surface)] p-4 space-y-3">
       <h2 id="kyb-updates" className="font-black text-lg">Since your last visit ({sinceLabel.format(new Date(since))})</h2>
       <ul className="space-y-3">
         {contests.slice(0, MAX_CONTESTS).map((list) => {
           const { id, what, kind } = list[0];
           const pick = picks[id];
           return (
-            <li key={id} className="text-[15px] leading-relaxed text-[#E2E4E8]">
+            <li key={id} className="text-[15px] leading-relaxed text-[var(--gb-text)]">
               {kind === 'contest-removed'
-                ? <strong className="text-[#F5F6F7]">{what}</strong>
-                : <button type="button" onClick={() => onJump(id)} className="font-bold text-[#F5F6F7] underline underline-offset-2 text-left">{what}</button>}
+                ? <strong className="text-[var(--gb-text)]">{what}</strong>
+                : <button type="button" onClick={() => onJump(id)} className="font-bold text-[var(--gb-text)] underline underline-offset-2 text-left">{what}</button>}
               <ul className="mt-1 space-y-1">
                 {list.map((c, i) => {
                   const picked = c.kind === 'candidate-removed' && Array.isArray(pick) && c.ballot !== undefined && pick.includes(c.ballot);
-                  return <li key={i} className={picked ? 'font-bold text-[#FFB900]' : undefined}>{line(c, picked)}</li>;
+                  return <li key={i} className={picked ? 'font-bold text-[var(--gb-amber-hi)]' : undefined}>{line(c, picked)}</li>;
                 })}
               </ul>
             </li>
           );
         })}
       </ul>
-      {contests.length > MAX_CONTESTS && <p className="text-[15px] text-[#E2E4E8]">And changes to {contests.length - MAX_CONTESTS} more contests.</p>}
-      <button type="button" onClick={onDismiss} className="min-h-[44px] rounded-xl border-2 border-[#F5F6F7] px-4 font-bold text-[#F5F6F7]">Got it</button>
+      {contests.length > MAX_CONTESTS && <p className="text-[15px] text-[var(--gb-text)]">And changes to {contests.length - MAX_CONTESTS} more contests.</p>}
+      <button type="button" onClick={onDismiss} className="min-h-[44px] rounded-xl border-2 border-[var(--gb-text)] px-4 font-bold text-[var(--gb-text)]">Got it</button>
     </section>
   );
 }
