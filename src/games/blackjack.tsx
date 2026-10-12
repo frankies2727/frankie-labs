@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { BaseState, BoardProps, GameAction, GameDefinition } from '../types';
 import { cn } from '../lib/utils';
+import { gameCard } from './catalog';
 
 // A neon, suit-less take on Blackjack for 2–5 players (mix friends and bots).
 // Each hand everyone builds toward 21; the best non-bust hand takes the round.
@@ -598,11 +599,7 @@ function ModePicker({ state, myId, dispatch }: BoardProps<BlackjackState>) {
 }
 
 export const blackjack: GameDefinition<BlackjackState> = {
-  id: 'blackjack',
-  name: 'Blackjack 21',
-  tagline: 'Neon, suit-free 21 for 2–5 — casino chips or a 15-round match, with friends & bots.',
-  accent: '#F72585',
-  emoji: '🃏',
+  ...gameCard('blackjack'),
   minPlayers: 2,
   maxPlayers: 5,
   createInitialState,

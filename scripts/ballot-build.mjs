@@ -20,6 +20,7 @@ import { Readable } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { changeLog } from './ballot/changes.mjs';
 import { parseCandidateList } from './ballot/candidates.mjs';
 import { parseWeball, addFederalMoney } from './ballot/fec.mjs';
 import { ISBE_BASE, ISBE_FILES, addStateMoney } from './ballot/isbe.mjs';
@@ -141,6 +142,12 @@ async function main() {
   const missing = ballot.races.filter((r) => r.area && r.area.type !== 'city' && !districts.layers[r.area.type]?.some((f) => f.id === r.area.id));
   if (missing.length) throw new Error('No map for: ' + missing.map((r) => r.office).join('; '));
 
+  let prev = null;
+  try { prev = JSON.parse(readFileSync(join(OUT, 'ballot.json'), 'utf8')); } catch { /* first build */ }
+  const next = { races: ballot.races, retentions: ballot.retentions, measures: ballot.measures };
+  const changes = changeLog(prev, next, new Date().toISOString());
+  console.log(`Changes since last refresh: ${changes.length - (prev?.changes?.length ?? 0)} new, ${changes.length} kept`);
+
   writeFileSync(join(OUT, 'ballot.json'), JSON.stringify({
     election: { name: 'General Election', date: '2026-11-03' },
     sources: {
@@ -154,6 +161,7 @@ async function main() {
     retentions: ballot.retentions,
     measures: ballot.measures,
     earlyVotingSites: sites,
+    changes,
   }, null, 1) + '\n');
   writeFileSync(join(OUT, 'districts.json'), JSON.stringify(districts) + '\n');
   console.log(`Wrote ${ballot.races.length} races, ${ballot.retentions.length} retentions, ${ballot.measures.length} measures.`);

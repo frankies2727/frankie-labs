@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { BaseState, BoardProps, GameAction, GameDefinition } from '../types';
 import { cn } from '../lib/utils';
+import { gameCard } from './catalog';
 
 // Classic pencil-and-paper Dots & Boxes on a dots×dots lattice. Players take
 // turns drawing one edge between adjacent dots; closing the 4th side of a box
@@ -364,11 +365,7 @@ function Board({ state, myId, dispatch }: BoardProps<DotsAndBoxesState>) {
 }
 
 export const dotsAndBoxes: GameDefinition<DotsAndBoxesState> = {
-  id: 'dots-and-boxes',
-  name: 'Dots & Boxes',
-  tagline: 'Draw lines, close boxes, claim the most. Pick a quick or long game.',
-  accent: '#E76F51',
-  emoji: '🔳',
+  ...gameCard('dots-and-boxes'),
   createInitialState,
   start,
   reducer,

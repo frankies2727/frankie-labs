@@ -1,6 +1,7 @@
 import { BoardProps, GameAction, GameDefinition } from '../../types';
 import { cn } from '../../lib/utils';
 import { RoadState, SubGame, Difficulty } from './types';
+import { gameCard } from '../catalog';
 import {
   triviaStart,
   triviaReducer,
@@ -217,11 +218,7 @@ function Board({ state, myId, dispatch }: BoardProps<RoadState>) {
 }
 
 export const roadToCitizenship: GameDefinition<RoadState> = {
-  id: 'road-to-citizenship',
-  name: 'Road to Citizenship',
-  tagline: 'Study for the U.S. citizenship test together — pick a game after you join: fast-paced Trivia or the strategic Civic Path. Solo or 1–6 friends, with bots.',
-  accent: '#B22234',
-  emoji: '🗽',
+  ...gameCard('road-to-citizenship'),
   minPlayers: 1,
   maxPlayers: 6,
   createInitialState,

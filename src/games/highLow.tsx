@@ -1,5 +1,6 @@
 import { BaseState, BoardProps, GameAction, GameDefinition } from '../types';
 import { cn } from '../lib/utils';
+import { gameCard } from './catalog';
 
 const CARD_MIN = 1;
 const CARD_MAX = 12;
@@ -211,11 +212,7 @@ function Board({ state, myId, dispatch }: BoardProps<HighLowState>) {
 }
 
 export const highLow: GameDefinition<HighLowState> = {
-  id: 'high-low',
-  name: 'High-Low',
-  tagline: 'Secretly call higher or lower — your rival deals the card blind. First to 6.',
-  accent: '#9D4EDD',
-  emoji: '🃏',
+  ...gameCard('high-low'),
   createInitialState,
   start,
   reducer,

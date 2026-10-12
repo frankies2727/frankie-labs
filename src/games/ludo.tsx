@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { BaseState, BoardProps, GameAction, GameDefinition } from '../types';
 import { cn } from '../lib/utils';
+import { gameCard } from './catalog';
 
 // Ludo (the "Sorry!"-style race game) on the classic 15×15 cross board with
 // 2–4 players. Roll the die, bring tokens out on a 6, race clockwise around the
@@ -669,11 +670,7 @@ function LobbyColorPicker({ state, myId, dispatch }: BoardProps<LudoState>) {
 }
 
 export const ludo: GameDefinition<LudoState> = {
-  id: 'ludo',
-  name: 'Sorry',
-  tagline: 'A 2–4 player race with wildcard tiles. Roll, chase, capture, get all four home.',
-  accent: '#2A9D8F',
-  emoji: '🤷',
+  ...gameCard('ludo'),
   minPlayers: 2,
   maxPlayers: 4,
   createInitialState,

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { BaseState, BoardProps, GameAction, GameDefinition } from '../types';
 import { cn } from '../lib/utils';
+import { gameCard } from './catalog';
 
 // A bigger ocean and a six-ship fleet, for 2–5 admirals.
 const SIZE = 12;
@@ -616,11 +617,7 @@ function Board({ state, myId, dispatch }: BoardProps<BattleshipState>) {
 }
 
 export const battleship: GameDefinition<BattleshipState> = {
-  id: 'battleship',
-  name: 'Battleship',
-  tagline: 'Hide your fleet, then hunt down the enemy ships — now 2–5 admirals on a bigger ocean.',
-  accent: '#264653',
-  emoji: '🚢',
+  ...gameCard('battleship'),
   minPlayers: 2,
   maxPlayers: 5,
   createInitialState,

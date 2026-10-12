@@ -1,5 +1,6 @@
 import { BaseState, BoardProps, GameAction, GameDefinition } from '../types';
 import { cn } from '../lib/utils';
+import { gameCard } from './catalog';
 
 // ---------------------------------------------------------------------------
 // Lotería Millennial — a dark-mode take on the Mexican bingo of images.
@@ -289,7 +290,7 @@ function redact(state: LoteriaState, _viewerId: string): LoteriaState {
 
 // ---------------------------------------------------------------------------
 
-const ACCENT = '#F72585';   // rosa mexicano
+const ACCENT = gameCard('loteria').accent; // rosa mexicano
 const GOLD = '#FFD60A';
 const JADE = '#06D6A0';
 
@@ -589,11 +590,7 @@ function Board({ state, myId, dispatch }: BoardProps<LoteriaState>) {
 }
 
 export const loteria: GameDefinition<LoteriaState> = {
-  id: 'loteria',
-  name: 'Lotería Millennial',
-  tagline: 'Mexican bingo of images with a millennial twist — 2–5 players spot cartas & fill the tabla. Frenzy mode drops surprise mystery power-ups.',
-  accent: ACCENT,
-  emoji: '🎴',
+  ...gameCard('loteria'),
   minPlayers: 2,
   maxPlayers: 5,
   createInitialState,

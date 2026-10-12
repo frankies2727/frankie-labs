@@ -1,5 +1,6 @@
 import { CalendarPlus, Check, ExternalLink } from 'lucide-react';
 import type { ReactNode } from 'react';
+import { dayLabel, downloadReminder, NOV_3 } from './dates';
 import type { EarlyVotingSite } from './types';
 
 // Chicago dates, hours and rules are from the Chicago Board of Elections
@@ -69,35 +70,13 @@ const Out = ({ href, children }: { href: string; children: ReactNode }) => (
   </a>
 );
 
-// Suburban Cook early-voting sites and hours are set by the County Clerk; we
-// only state what Illinois law fixes everywhere (it ends the day before).
-const REMINDERS = {
-  wardSites: { when: ['20261019T090000', '20261019T100000'], what: 'Vote early (ward sites open today)', label: 'Remind me Oct 19' },
-  lastEarly: { when: ['20261102T090000', '20261102T100000'], what: 'Last day of early voting', label: 'Remind me Nov 2' },
-  day: { when: ['20261103T060000', '20261103T070000'], what: 'Vote! Polls open 6am–7pm', label: 'Remind me Nov 3' },
-};
-
-// A plain .ics so the reminder lands in whatever calendar the voter uses.
-// Floating local times: everyone using this is in Cook County.
-function downloadReminder(r: (typeof REMINDERS)[keyof typeof REMINDERS], info: string) {
-  const { when, what } = r;
-  const ics = [
-    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Frankie Labs//Know Your Ballot//EN',
-    'BEGIN:VEVENT', `UID:kyb-${when[0]}@frankie-labs`, `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').slice(0, 15)}Z`,
-    `DTSTART:${when[0]}`, `DTEND:${when[1]}`, `SUMMARY:${what}`,
-    `DESCRIPTION:Bring your My Ballot notes. Info: ${info}`,
-    'BEGIN:VALARM', 'TRIGGER:-PT12H', 'ACTION:DISPLAY', `DESCRIPTION:${what}`, 'END:VALARM',
-    'END:VEVENT', 'END:VCALENDAR',
-  ].join('\r\n');
-  const url = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
-  const a = Object.assign(document.createElement('a'), { href: url, download: 'vote-reminder.ics' });
-  a.click();
-  URL.revokeObjectURL(url);
-}
+const byId = (id: string) => NOV_3.find((d) => d.id === id)!;
 
 export function PlanToVote({ plan, setPlan, chicago, clerk, ward, wardSite, ballotDone }: Props) {
   const method = (plan.method as Method) || null;
-  const reminder = method === 'early' ? (chicago ? REMINDERS.wardSites : REMINDERS.lastEarly) : REMINDERS.day;
+  // Suburban early-voting sites and hours are the Clerk's, so suburban early
+  // voters get the last day, which Illinois law fixes everywhere.
+  const reminder = byId(method === 'early' ? (chicago ? 'ward-sites' : 'last-early') : 'election');
   const reminderInfo = chicago ? (method === 'early' ? LINKS.early : LINKS.electionDay) : clerk;
   return (
     <ol className="space-y-4">
@@ -171,7 +150,7 @@ export function PlanToVote({ plan, setPlan, chicago, clerk, ward, wardSite, ball
           className="inline-flex items-center gap-2 min-h-[44px] rounded-xl border-2 border-[#F5F6F7] bg-[#262B34] px-4 font-bold text-[#F5F6F7] hover:bg-[#323A47] disabled:cursor-not-allowed disabled:border-[#2E343F]"
         >
           <CalendarPlus className="w-5 h-5" aria-hidden="true" />
-          {reminder.label}
+          Remind me {dayLabel(reminder.date).replace(/^\w+, /, '')}
         </button>
         {method === 'mail' && <p>Voting by mail? Set your own reminder to send it back as soon as it arrives.</p>}
         {!method && <p>Pick how you’ll vote first.</p>}

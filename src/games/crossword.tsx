@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { BaseState, BoardProps, GameAction, GameDefinition } from '../types';
 import { cn } from '../lib/utils';
+import { gameCard } from './catalog';
 
 // ---------------------------------------------------------------------------
 // Crossword Clash — a real-time brain-teaser race for 2–5 players (friends and
@@ -690,11 +691,7 @@ function Board({ state, myId, dispatch }: BoardProps<CrosswordState>) {
 }
 
 export const crossword: GameDefinition<CrosswordState> = {
-  id: 'crossword',
-  name: 'Crossword Clash',
-  tagline: 'A 2–5 player brain-teaser race — claim words in a shared crossword for points. Normal & Hard modes, plus 3× 🔍 hints each.',
-  accent: '#4CC9F0',
-  emoji: '🧩',
+  ...gameCard('crossword'),
   minPlayers: 2,
   maxPlayers: 5,
   createInitialState,

@@ -1,21 +1,30 @@
 import { ExternalGameDefinition, GameDefinition } from '../types';
-import { paperNumbers } from './paperNumbers';
-import { ticTacToe } from './ticTacToe';
-import { connectFour } from './connectFour';
-import { highLow } from './highLow';
-import { battleship } from './battleship';
-import { dotsAndBoxes } from './dotsAndBoxes';
-import { ludo } from './ludo';
-import { uno } from './uno';
-import { blackjack } from './blackjack';
-import { loteria } from './loteria';
-import { crossword } from './crossword';
-import { roadToCitizenship } from './road';
+import { GAME_CARDS } from './catalog';
 
 // The gallery of available games (most are 2-player; Ludo, Lotería, Crossword &
-// Road to Citizenship seat more).
+// Road to Citizenship seat more). The gallery only needs the cards; each game's
+// code is a separate chunk loaded when it's opened.
+export const GAMES = GAME_CARDS;
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const GAMES: GameDefinition<any>[] = [paperNumbers, ticTacToe, connectFour, highLow, battleship, dotsAndBoxes, ludo, uno, blackjack, loteria, crossword, roadToCitizenship];
+const LOADERS: Record<string, () => Promise<GameDefinition<any>>> = {
+  'paper-numbers': () => import('./paperNumbers').then((m) => m.paperNumbers),
+  'tic-tac-toe': () => import('./ticTacToe').then((m) => m.ticTacToe),
+  'connect-four': () => import('./connectFour').then((m) => m.connectFour),
+  'high-low': () => import('./highLow').then((m) => m.highLow),
+  'battleship': () => import('./battleship').then((m) => m.battleship),
+  'dots-and-boxes': () => import('./dotsAndBoxes').then((m) => m.dotsAndBoxes),
+  'ludo': () => import('./ludo').then((m) => m.ludo),
+  'uno-frenzy': () => import('./uno').then((m) => m.uno),
+  'blackjack': () => import('./blackjack').then((m) => m.blackjack),
+  'loteria': () => import('./loteria').then((m) => m.loteria),
+  'crossword': () => import('./crossword').then((m) => m.crossword),
+  'road-to-citizenship': () => import('./road/index').then((m) => m.roadToCitizenship),
+};
+
+export const hasGame = (id: string) => id in LOADERS;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const loadGame = (id: string): Promise<GameDefinition<any>> => LOADERS[id]();
 
 // Games hosted on their own site. They have no in-app state/reducer/board, so
 // they live here rather than in GAMES — the gallery renders the same card but
@@ -30,10 +39,6 @@ export const EXTERNAL_GAMES: ExternalGameDefinition[] = [
     href: 'https://pepper-apex-brave-coral.grok.me/',
   },
 ];
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const gameById = (id: string): GameDefinition<any> | undefined =>
-  GAMES.find((g) => g.id === id);
 
 export const externalGameById = (id: string): ExternalGameDefinition | undefined =>
   EXTERNAL_GAMES.find((g) => g.id === id);

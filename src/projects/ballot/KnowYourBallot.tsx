@@ -1,8 +1,11 @@
 import { ArrowLeft, ChevronDown, Crosshair, MapPin, Printer, Search, Share2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import rawData from './data/ballot.json';
-import { ballotFor, districtsAt, geocode, inChicago, inCook } from './lookup';
+import { ballotFor, ballotIdsFor, districtsAt, geocode, inChicago, inCook, prefetchDistricts } from './lookup';
 import { RETENTION_EXPLAINER } from './offices';
+import { BallotSearch } from './Search';
+import { SinceLastVisit } from './Updates';
+import { KeyDates, NextElectionNote } from './Calendar';
 import { LINKS, PlanToVote } from './PlanToVote';
 import { CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard } from './Race';
 import { JUDGE_RATINGS } from './research';
@@ -11,6 +14,8 @@ import { daysUntil, hasProgress, isDecided, readResumeLink, resumeLink, useSaved
 import type { BallotData, Candidate, Districts, Race } from './types';
 
 const data = rawData as unknown as BallotData;
+const ballotIds = (d: Districts) => ballotIdsFor(data, d);
+const everything = ballotFor(data, null);
 const SHARE_URL = `https://frankies2727.github.io${import.meta.env.BASE_URL}projects/know-your-ballot`;
 // Runs elections in suburban Cook (the Chicago Board runs Chicago's).
 const COOK_CLERK = 'https://www.cookcountyclerkil.gov/';
@@ -26,6 +31,30 @@ const SECTIONS = [
   { id: 'measures', title: 'Ballot questions', color: '#E23838', ink: '#FFFFFF', emoji: '🗳️' },
 ] as const;
 type SectionId = (typeof SECTIONS)[number]['id'];
+
+/** A pick in words: what the contest is and what the voter chose. */
+function describePick(id: string, c: Choice | undefined, numbered = false): { what: string; pick: string } {
+  const race = data.races.find((r) => r.id === id);
+  if (race) {
+    const chosen = Array.isArray(c)
+      ? race.candidates.filter((x) => c.includes(x.ballot)).map((x) => (numbered && race.numbered !== false ? `#${x.ballot} ${x.name}` : x.name)).join(', ')
+      : '';
+    return { what: race.office, pick: chosen || (c === 'skip' ? 'Skip' : '—') };
+  }
+  const ret = data.retentions.find((r) => r.id === id);
+  const m = data.measures.find((x) => x.id === id);
+  const answer = c === 'yes' ? 'Yes' : c === 'no' ? 'No' : c === 'skip' ? 'Skip' : '—';
+  return { what: ret ? `Retain ${ret.judge}?` : m?.title ?? id, pick: answer };
+}
+
+/** What a new address did to the voter's ballot, shown once after the lookup. */
+interface BallotChange {
+  districts: { label: string; from?: string; to?: string }[];
+  kept: { what: string; pick: string }[];
+  cleared: { what: string; pick: string }[];
+  /** Contests on the new ballot that weren't on the old one. */
+  added: string[];
+}
 
 const DISTRICT_CHIPS: [keyof Districts, string][] = [
   ['ward', 'Ward'], ['cd', 'Congress'], ['sldu', 'State Senate'], ['sldl', 'State House'],
@@ -71,6 +100,9 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   // Progress arriving in a #resume link while this device has its own: ask first.
   const [incoming, setIncoming] = useState<Saved | null>(null);
   const [linkMsg, setLinkMsg] = useState('');
+  // The ballot before "Change" was tapped, to say exactly what the new address changed.
+  const previousPlace = useRef<Saved['place']>(null);
+  const [change, setChange] = useState<BallotChange | null>(null);
   const [address, setAddress] = useState('');
   const [status, setStatus] = useState<{ busy: boolean; error: string; outside: boolean }>({ busy: false, error: '', outside: false });
   const [sheet, setSheet] = useState<{ race: Race; c: Candidate } | null>(null);
@@ -79,6 +111,9 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   const [toast, setToast] = useState('');
   const [party, setParty] = useState(false);
   const [shareMsg, setShareMsg] = useState('');
+  // When this device last opened the guide; this visit becomes the new mark.
+  const [lastSeen, setLastSeen] = useState(saved.seen);
+  useEffect(() => { setSaved((s) => ({ ...s, seen: new Date().toISOString() })); }, [setSaved]);
 
   const districts = saved.place?.districts ?? null;
   // Ballot numbers come from the Chicago Board's list and only match Chicago
@@ -95,20 +130,33 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
       : ballot.races.filter((r) => r.section === s.id).map((r) => r.id);
     return { ...s, ids, done: ids.filter((id) => isDecided(saved.picks[id])).length };
   }).filter((s) => s.ids.length), [ballot, saved.picks]);
+  // What the daily refresh changed on this ballot since the last visit.
+  const updates = useMemo(() => {
+    if (!lastSeen) return [];
+    const ids = new Set(sections.flatMap((s) => s.ids));
+    return (data.changes ?? []).filter((c) => c.at > lastSeen && (ids.has(c.id) || c.id in saved.picks));
+  }, [lastSeen, sections, saved.picks]);
+  const sectionFor = (id: string) => data.races.find((r) => r.id === id)?.section ?? (data.retentions.some((r) => r.id === id) ? 'retention' : 'measures');
   const total = sections.reduce((n, s) => n + s.ids.length, 0);
   const done = sections.reduce((n, s) => n + s.done, 0);
   const allDone = total > 0 && done === total;
 
   const choose = useCallback((id: string, c: Choice) => setSaved((s) => ({ ...s, picks: { ...s.picks, [id]: c } })), [setSaved]);
+  const openSheet = useCallback((race: Race, c: Candidate) => setSheet({ race, c }), []);
   const setPlan = useCallback((k: string, v: boolean | string) => setSaved((s) => ({ ...s, plan: { ...s.plan, [k]: v } })), [setSaved]);
 
   // Cheer each section as it's finished, and the whole ballot once.
   const prevDone = useRef<Record<string, boolean> | null>(null);
+  const prevDistricts = useRef(districts);
   useEffect(() => {
     const now = Object.fromEntries(sections.map((s) => [s.id, s.done === s.ids.length]));
     const before = prevDone.current;
     prevDone.current = now;
-    if (!before || !saved.place) return;
+    // A different address is a different ballot: comparing the two would
+    // "finish" sections nobody touched.
+    const sameBallot = prevDistricts.current === districts;
+    prevDistricts.current = districts;
+    if (!before || !saved.place || !sameBallot) return;
     if (allDone && !Object.values(before).every(Boolean)) { setParty(true); setToast('🎉 Your whole ballot is ready! Print it or share your progress.'); return; }
     const finished = sections.find((s) => now[s.id] && !before[s.id]);
     if (finished) {
@@ -140,24 +188,45 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
     return () => window.removeEventListener('hashchange', take);
   }, [setSaved]);
 
-  const nextUp = () => {
-    const s = sections.find((sec) => sec.done < sec.ids.length);
-    const id = s?.ids.find((i) => !isDecided(saved.picks[i]));
-    if (!s || !id) return;
+  /** Open a contest's section and bring its card into view. */
+  const jumpTo = (sectionId: string, id: string) => {
     setTab('ballot');
-    setCollapsed((c) => ({ ...c, [s.id]: false }));
+    setCollapsed((c) => ({ ...c, [sectionId]: false }));
     requestAnimationFrame(() => {
       const el = document.getElementById(`race-${id}`);
       el?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
       el?.querySelector<HTMLElement>('button')?.focus({ preventScroll: true });
     });
   };
+  const nextUp = () => {
+    const s = sections.find((sec) => sec.done < sec.ids.length);
+    const id = s?.ids.find((i) => !isDecided(saved.picks[i]));
+    if (s && id) jumpTo(s.id, id);
+  };
 
   // ---- address -> districts --------------------------------------------------
   const place = async (lat: number, lng: number, label: string) => {
     const d = await districtsAt(lat, lng);
     if (!inCook(d)) { setStatus({ busy: false, error: '', outside: true }); return; }
-    setSaved((s) => ({ ...s, place: { label, districts: d } }));
+    // A new address means a new ballot. Statewide and countywide contests are
+    // the same race at both addresses, so those picks still stand; picks for
+    // races that aren't on this ballot (old districts, old ward) are dropped
+    // rather than lingering hidden in storage and save links.
+    const onBallot = ballotIds(d);
+    const decided = (Object.entries(saved.picks) as [string, Choice][]).filter(([, c]) => isDecided(c));
+    const old = previousPlace.current?.districts ?? null;
+    const oldIds = old ? ballotIds(old) : null;
+    const report: BallotChange = {
+      districts: old
+        ? DISTRICT_CHIPS.filter(([k]) => old[k] !== d[k]).map(([k, label]) => ({ label, from: old[k], to: d[k] }))
+        : [],
+      kept: decided.filter(([id]) => onBallot.has(id)).map(([id, c]) => describePick(id, c)),
+      cleared: decided.filter(([id]) => !onBallot.has(id)).map(([id, c]) => describePick(id, c)),
+      added: old ? [...onBallot].filter((id) => !oldIds?.has(id)).map((id) => describePick(id, undefined).what) : [],
+    };
+    previousPlace.current = null;
+    setSaved((s) => ({ ...s, place: { label, districts: d }, picks: Object.fromEntries(Object.entries(s.picks).filter(([id]) => onBallot.has(id))) }));
+    setChange(report.districts.length || report.cleared.length || report.kept.length ? report : null);
     setStatus({ busy: false, error: '', outside: false });
     setBrowsing(false);
     window.scrollTo({ top: 0 });
@@ -195,6 +264,17 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
     } catch (e) {
       if ((e as Error).name !== 'AbortError') setLinkMsg('Couldn’t copy automatically on this device. Try “Send it to myself”.');
     }
+  };
+
+  // Back to the address screen. Picks stay saved; races that are on both the
+  // old and new ballot keep their picks.
+  const changeAddress = () => {
+    previousPlace.current = saved.place;
+    setChange(null);
+    setSaved((s) => ({ ...s, place: null, browsing: undefined }));
+    setTab('ballot');
+    setWelcomeBack(false);
+    window.scrollTo({ top: 0 });
   };
 
   const doShare = async () => {
@@ -235,6 +315,8 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
           <Landing
             address={address} setAddress={setAddress} status={status} onSubmit={lookUp} onLocate={useLocation}
             onBrowse={() => setBrowsing(true)} daysLeft={daysLeft}
+            saved={Object.keys(saved.picks).length}
+            onStartFresh={() => { setSaved((s) => ({ ...s, picks: {}, plan: {} })); setToast('Cleared. Starting fresh.'); }}
           />
         ) : (
           <>
@@ -244,7 +326,10 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                 <Ring pct={total ? done / total : 0} />
                 <div className="min-w-0 flex-1">
                   <p className="font-black text-lg leading-tight">{allDone ? 'Ballot ready 🎉' : `${done} of ${total} decided`}</p>
-                  <p className="text-sm text-[#E2E4E8] truncate">{saved.place ? `📍 ${saved.place.label}` : 'Browsing every race in Cook County'}</p>
+                  <button type="button" onClick={changeAddress} className="flex max-w-full items-center gap-1.5 text-sm text-[#E2E4E8] hover:text-[#F5F6F7]">
+                    <span className="truncate">{saved.place ? `📍 ${saved.place.label}` : 'Browsing every race'}</span>
+                    <span className="shrink-0 font-bold text-[#F5F6F7] underline underline-offset-2">{saved.place ? 'Change' : 'Add address'}</span>
+                  </button>
                 </div>
                 {!allDone && (
                   <button type="button" onClick={nextUp} className="shrink-0 min-h-[44px] rounded-xl bg-[#5EBD3E] px-4 font-black text-[#0F1117]">Next up →</button>
@@ -272,7 +357,8 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                     </div>
                   </div>
                 )}
-                {welcomeBack && !allDone && done > 0 && (
+                {change && <ChangeReport change={change} onDismiss={() => setChange(null)} onNext={() => { setChange(null); nextUp(); }} />}
+                {welcomeBack && !change && !allDone && done > 0 && (
                   <div className="rounded-2xl bg-[#5EBD3E] p-4 text-[#0F1117] space-y-3">
                     <p className="text-lg font-black leading-snug">Welcome back! You’re {done} of {total} done.</p>
                     <div className="flex flex-wrap gap-2">
@@ -281,7 +367,9 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                     </div>
                   </div>
                 )}
-                <WhereYouVote districts={districts} chicago={chicago} onChange={() => { setSaved((s) => ({ ...s, place: null })); setBrowsing(false); }} />
+                {updates.length > 0 && <SinceLastVisit changes={updates} since={lastSeen!} picks={saved.picks} onJump={(id) => jumpTo(sectionFor(id), id)} onDismiss={() => setLastSeen(undefined)} />}
+                <WhereYouVote districts={districts} chicago={chicago} onChange={changeAddress} />
+                <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} onJump={(h) => jumpTo(h.section, h.id)} />
 
                 {sections.map((s) => {
                   const open = !collapsed[s.id];
@@ -303,22 +391,23 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                             Skip the ones I haven’t answered
                           </button>
                           <div className="grid gap-3 sm:grid-cols-2">
-                            {ballot.retentions.map((r) => <RetentionCard key={r.id} r={r} choice={saved.picks[r.id]} onChoose={(c) => choose(r.id, c)} />)}
+                            {ballot.retentions.map((r) => <RetentionCard key={r.id} r={r} choice={saved.picks[r.id]} onChoose={choose} />)}
                           </div>
                         </div>
                       )}
-                      {open && s.id === 'measures' && ballot.measures.map((m) => <MeasureCard key={m.id} m={m} choice={saved.picks[m.id]} onChoose={(c) => choose(m.id, c)} />)}
+                      {open && s.id === 'measures' && ballot.measures.map((m) => <MeasureCard key={m.id} m={m} choice={saved.picks[m.id]} onChoose={choose} />)}
                       {open && s.id !== 'retention' && s.id !== 'measures' && s.ids.map((id) => {
                         const race = raceById.get(id)!;
                         return (
                           <RaceCard key={id} race={race} color={s.color} ink={s.ink} numbered={chicago && race.numbered !== false} choice={saved.picks[id]}
-                            onChoose={(c) => choose(id, c)} onInfo={(c) => setSheet({ race, c })} onCompare={() => setComparing(race)} />
+                            onChoose={choose} onInfo={openSheet} onCompare={setComparing} />
                         );
                       })}
                     </section>
                   );
                 })}
 
+                <NextElectionNote chicago={districts ? chicago : undefined} />
                 <Sources />
               </div>
             )}
@@ -328,6 +417,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                 <PlanToVote plan={saved.plan} setPlan={setPlan} chicago={chicago} clerk={COOK_CLERK} ward={districts?.ward}
                   wardSite={districts?.ward ? data.earlyVotingSites[districts.ward] : undefined}
                   ballotDone={allDone} />
+                <KeyDates chicago={chicago} info={chicago ? LINKS.myInfo : COOK_CLERK} />
                 <button type="button" onClick={() => window.print()} className="w-full inline-flex items-center justify-center gap-2 min-h-[52px] rounded-xl border-2 border-[#F5F6F7] font-black text-[#F5F6F7] hover:bg-[#262B34]">
                   <Printer className="w-5 h-5" aria-hidden="true" /> Print My Ballot
                 </button>
@@ -400,11 +490,18 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
 
 // ---- pieces ------------------------------------------------------------------------
 
-function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, daysLeft }: {
+function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, daysLeft, saved, onStartFresh }: {
   address: string; setAddress: (s: string) => void; status: { busy: boolean; error: string; outside: boolean };
   onSubmit: (e: FormEvent) => void; onLocate: () => void; onBrowse: () => void; daysLeft: number;
+  /** Picks already saved on this device. */
+  saved: number; onStartFresh: () => void;
 }) {
+  // Two taps: wiping someone's picks shouldn't be one slip of the thumb.
+  const [confirming, setConfirming] = useState(false);
   const candidates = data.races.reduce((n, r) => n + r.candidates.length, 0);
+  // Start fetching the district maps while the voter types, so "Find my
+  // ballot" doesn't wait on a download.
+  useEffect(() => { prefetchDistricts(); }, []);
   return (
     <div className="space-y-8 pt-6">
       <header className="space-y-4">
@@ -440,6 +537,15 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, da
             That address is outside Cook County. This guide covers Chicago and suburban Cook for now. Anywhere else in Illinois, look up your registration and polling place with the <a className="underline text-[#FFB900]" href={LINKS.stateLookup} target="_blank" rel="noreferrer noopener">State Board of Elections ↗</a>.
           </p>
         )}
+        {saved > 0 && (
+          <div className="rounded-xl border-2 border-[#2E343F] bg-[#1A1D24] p-3 space-y-2">
+            <p className="text-[15px]">You have <strong>{saved} pick{saved === 1 ? '' : 's'}</strong> saved. Same voter, new address? Races on both ballots keep their picks. Looking up someone else’s ballot? Start fresh.</p>
+            <button type="button" onClick={() => { if (confirming) { onStartFresh(); setConfirming(false); } else setConfirming(true); }}
+              className={`min-h-[44px] rounded-xl border-2 px-4 font-bold ${confirming ? 'border-[#E23838] bg-[#E23838] text-white' : 'border-[#F5F6F7] text-[#F5F6F7]'}`}>
+              {confirming ? `Tap again to clear ${saved} pick${saved === 1 ? '' : 's'} and your plan` : 'Start fresh'}
+            </button>
+          </div>
+        )}
         <p className="text-sm leading-relaxed text-[#E2E4E8]">🔒 Your address goes once to Cook County’s address lookup (or OpenStreetMap, if the county’s is down) to find your districts. It’s saved only on this device, like your picks, and never shared.</p>
       </form>
 
@@ -458,6 +564,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, da
       <button type="button" onClick={onBrowse} className="min-h-[44px] font-bold text-[#F5F6F7] underline underline-offset-4">
         Or browse every race in Cook County →
       </button>
+      <NextElectionNote />
       <Sources />
     </div>
   );
@@ -473,6 +580,52 @@ function suburbanGaps(d: Districts): string[] {
   }
   gaps.push('local referenda (school, village, township and park questions)');
   return gaps;
+}
+
+function ChangeReport({ change, onDismiss, onNext }: { change: BallotChange; onDismiss: () => void; onNext: () => void }) {
+  const row = (x: { what: string; pick: string }) => (
+    <li key={x.what} className="flex flex-wrap justify-between gap-x-3"><span>{x.what}</span><strong className="text-[#F5F6F7]">{x.pick}</strong></li>
+  );
+  return (
+    <section aria-labelledby="kyb-change" className="rounded-2xl border-2 border-[#009CDF] bg-[#1A1D24] p-4 space-y-4 text-[15px] leading-relaxed text-[#E2E4E8]">
+      <h2 id="kyb-change" className="text-lg font-black text-[#F5F6F7]">📍 Your ballot changed with your address</h2>
+      {change.districts.length > 0 && (
+        <div>
+          <p className="font-black text-[#F5F6F7]">Your districts</p>
+          <ul className="space-y-0.5">
+            {change.districts.map((x) => (
+              <li key={x.label}>{x.label}: {x.from ?? 'none'} → <strong className="text-[#F5F6F7]">{x.to ?? (x.label === 'Ward' ? 'none (outside Chicago)' : 'none')}</strong></li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {change.kept.length > 0 && (
+        <div>
+          <p className="font-black text-[#5EBD3E]">✓ Kept {change.kept.length} pick{change.kept.length === 1 ? '' : 's'}: same race on both ballots</p>
+          <ul className="space-y-0.5">{change.kept.map(row)}</ul>
+        </div>
+      )}
+      {change.cleared.length > 0 && (
+        <div>
+          <p className="font-black text-[#FF6B6B]">✕ Cleared {change.cleared.length} pick{change.cleared.length === 1 ? '' : 's'}: not on your new ballot</p>
+          <ul className="space-y-0.5">{change.cleared.map(row)}</ul>
+        </div>
+      )}
+      {change.added.length > 0 && (
+        <div>
+          <p className="font-black text-[#FFB900]">＋ New on this ballot: {change.added.length} race{change.added.length === 1 ? '' : 's'} to decide</p>
+          <ul className="space-y-0.5">
+            {change.added.slice(0, 6).map((what) => <li key={what}>{what}</li>)}
+            {change.added.length > 6 && <li>and {change.added.length - 6} more</li>}
+          </ul>
+        </div>
+      )}
+      <div className="flex flex-wrap gap-2">
+        <button type="button" onClick={onNext} className="min-h-[44px] rounded-xl bg-[#009CDF] px-4 font-black text-[#0F1117]">Go to what’s left →</button>
+        <button type="button" onClick={onDismiss} className="min-h-[44px] rounded-xl border-2 border-[#F5F6F7] px-4 font-bold text-[#F5F6F7]">Got it</button>
+      </div>
+    </section>
+  );
 }
 
 function WhereYouVote({ districts, chicago, onChange }: { districts: Districts | null; chicago: boolean; onChange: () => void }) {
@@ -516,19 +669,6 @@ function Sources() {
 }
 
 function PrintBallot({ sections, picks, label, numbered }: { sections: { id: SectionId; title: string; ids: string[] }[]; picks: Record<string, Choice>; label?: string; numbered: boolean }) {
-  const raceById = new Map(data.races.map((r) => [r.id, r]));
-  const name = (id: string): [string, string] => {
-    const race = raceById.get(id);
-    const c = picks[id];
-    if (race) {
-      const chosen = Array.isArray(c) ? race.candidates.filter((x) => c.includes(x.ballot)).map((x) => (numbered && race.numbered !== false ? `#${x.ballot} ${x.name}` : x.name)).join(', ') : '';
-      return [race.office, chosen || (c === 'skip' ? 'Skip' : '—')];
-    }
-    const ret = data.retentions.find((r) => r.id === id);
-    const m = data.measures.find((x) => x.id === id);
-    const answer = c === 'yes' ? 'Yes' : c === 'no' ? 'No' : c === 'skip' ? 'Skip' : '—';
-    return [ret ? `Retain ${ret.judge}?` : m?.title ?? id, answer];
-  };
   return (
     <div className="hidden print:block p-6 text-black bg-white text-[11pt]">
       <h1 className="text-xl font-black">My Ballot · {numbered ? 'Chicago' : 'Cook County'} · Nov 3, 2026</h1>
@@ -538,7 +678,7 @@ function PrintBallot({ sections, picks, label, numbered }: { sections: { id: Sec
           <h2 className="font-black border-b border-black">{s.title}</h2>
           <table className="w-full table-fixed">
             <tbody>
-              {s.ids.map((id) => { const [what, pick] = name(id); return (
+              {s.ids.map((id) => { const { what, pick } = describePick(id, picks[id], numbered); return (
                 <tr key={id} className="align-top"><td className="w-3/5 py-0.5 pr-4">{what}</td><td className="py-0.5 font-bold">{pick}</td></tr>
               ); })}
             </tbody>

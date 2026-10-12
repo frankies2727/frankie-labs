@@ -1,9 +1,8 @@
-import { Suspense, useEffect } from 'react';
-import { EXTERNAL_GAMES, GAMES, externalGameById, gameById } from './games';
+import { lazy, Suspense, useEffect, useState } from 'react';
+import { EXTERNAL_GAMES, GAMES, externalGameById, hasGame, loadGame } from './games';
 import { PROJECTS, projectById } from './projects';
 import { Gallery } from './components/Gallery';
 import { ProjectsGallery } from './components/ProjectsGallery';
-import { GameShell } from './components/GameShell';
 import { navigate, useRoute } from './lib/router';
 
 // Sends the visitor to a separately-hosted project or game (used when its
@@ -16,6 +15,44 @@ function ExternalRedirect({ href }: { href: string }) {
       <div className="w-16 h-16 border-4 border-white/10 border-t-[#ccff00] rounded-full animate-spin" />
       <p className="text-gray-100 font-mono text-sm uppercase tracking-widest">Opening…</p>
     </div>
+  );
+}
+
+// The game shell (lobby, networking) and each game load only when a game is
+// opened, so the home page and galleries stay light.
+const GameShell = lazy(() => import('./components/GameShell').then((m) => ({ default: m.GameShell })));
+
+function Loading({ what }: { what: string }) {
+  return (
+    <div className="min-h-screen bg-[#0a0a0a] flex flex-col items-center justify-center gap-6">
+      <div className="w-16 h-16 border-4 border-white/10 border-t-[#ccff00] rounded-full animate-spin" />
+      <p className="text-gray-100 font-mono text-sm uppercase tracking-widest">Loading {what}…</p>
+    </div>
+  );
+}
+
+function PlayGame({ id }: { key?: string; id: string }) {
+  const [def, setDef] = useState<Awaited<ReturnType<typeof loadGame>> | null>(null);
+  const [failed, setFailed] = useState(false);
+  useEffect(() => {
+    let live = true;
+    loadGame(id).then((d) => { if (live) setDef(d); }, () => { if (live) setFailed(true); });
+    return () => { live = false; };
+  }, [id]);
+  if (failed) {
+    return (
+      <div className="min-h-screen bg-[#0a0a0a] flex flex-col items-center justify-center gap-4 px-6 text-center">
+        <p className="text-gray-100 font-bold">Couldn’t load the game. Check your connection.</p>
+        <button type="button" onClick={() => location.reload()} className="min-h-[44px] rounded-xl border-2 border-white px-4 font-bold text-white">Try again</button>
+      </div>
+    );
+  }
+  const name = GAMES.find((g) => g.id === id)?.name ?? 'game';
+  if (!def) return <Loading what={name} />;
+  return (
+    <Suspense fallback={<Loading what={name} />}>
+      <GameShell def={def} onExit={() => navigate('games')} />
+    </Suspense>
   );
 }
 
@@ -40,10 +77,9 @@ export default function App() {
 
   // /play/<gameId>
   if (seg[0] === 'play' && seg[1]) {
-    const def = gameById(seg[1]);
-    if (def) {
+    if (hasGame(seg[1])) {
       // Keyed by id so each game (re)mounts fresh — a new peer session per visit.
-      return <GameShell key={seg[1]} def={def} onExit={() => navigate('games')} />;
+      return <PlayGame key={seg[1]} id={seg[1]} />;
     }
     // A separately-hosted game reached by a direct URL / shared link → send the
     // visitor to its real site instead of an empty in-app screen.
@@ -63,16 +99,7 @@ export default function App() {
     if (project?.Component) {
       const Project = project.Component;
       return (
-        <Suspense
-          fallback={
-            <div className="min-h-screen bg-[#0a0a0a] flex flex-col items-center justify-center gap-6">
-              <div className="w-16 h-16 border-4 border-white/10 border-t-[#ccff00] rounded-full animate-spin" />
-              <p className="text-gray-100 font-mono text-sm uppercase tracking-widest">
-                Loading {project.name}…
-              </p>
-            </div>
-          }
-        >
+        <Suspense fallback={<Loading what={project.name} />}>
           <Project key={seg[1]} onExit={() => navigate('')} />
         </Suspense>
       );
