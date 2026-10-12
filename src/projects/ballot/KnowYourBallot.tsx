@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } fro
 import rawData from './data/ballot.json';
 import { ballotFor, ballotIdsFor, districtsAt, geocode, inChicago, inCook, prefetchDistricts } from './lookup';
 import { RETENTION_EXPLAINER } from './offices';
+import { BallotSearch } from './Search';
 import { LINKS, PlanToVote } from './PlanToVote';
 import { CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard } from './Race';
 import { JUDGE_RATINGS } from './research';
@@ -12,6 +13,7 @@ import type { BallotData, Candidate, Districts, Race } from './types';
 
 const data = rawData as unknown as BallotData;
 const ballotIds = (d: Districts) => ballotIdsFor(data, d);
+const everything = ballotFor(data, null);
 const SHARE_URL = `https://frankies2727.github.io${import.meta.env.BASE_URL}projects/know-your-ballot`;
 // Runs elections in suburban Cook (the Chicago Board runs Chicago's).
 const COOK_CLERK = 'https://www.cookcountyclerkil.gov/';
@@ -174,17 +176,20 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
     return () => window.removeEventListener('hashchange', take);
   }, [setSaved]);
 
-  const nextUp = () => {
-    const s = sections.find((sec) => sec.done < sec.ids.length);
-    const id = s?.ids.find((i) => !isDecided(saved.picks[i]));
-    if (!s || !id) return;
+  /** Open a contest's section and bring its card into view. */
+  const jumpTo = (sectionId: string, id: string) => {
     setTab('ballot');
-    setCollapsed((c) => ({ ...c, [s.id]: false }));
+    setCollapsed((c) => ({ ...c, [sectionId]: false }));
     requestAnimationFrame(() => {
       const el = document.getElementById(`race-${id}`);
       el?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
       el?.querySelector<HTMLElement>('button')?.focus({ preventScroll: true });
     });
+  };
+  const nextUp = () => {
+    const s = sections.find((sec) => sec.done < sec.ids.length);
+    const id = s?.ids.find((i) => !isDecided(saved.picks[i]));
+    if (s && id) jumpTo(s.id, id);
   };
 
   // ---- address -> districts --------------------------------------------------
@@ -351,6 +356,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                   </div>
                 )}
                 <WhereYouVote districts={districts} chicago={chicago} onChange={changeAddress} />
+                <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} onJump={(h) => jumpTo(h.section, h.id)} />
 
                 {sections.map((s) => {
                   const open = !collapsed[s.id];
