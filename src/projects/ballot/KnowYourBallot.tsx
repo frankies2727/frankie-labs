@@ -28,6 +28,30 @@ const SECTIONS = [
 ] as const;
 type SectionId = (typeof SECTIONS)[number]['id'];
 
+/** A pick in words: what the contest is and what the voter chose. */
+function describePick(id: string, c: Choice | undefined, numbered = false): { what: string; pick: string } {
+  const race = data.races.find((r) => r.id === id);
+  if (race) {
+    const chosen = Array.isArray(c)
+      ? race.candidates.filter((x) => c.includes(x.ballot)).map((x) => (numbered && race.numbered !== false ? `#${x.ballot} ${x.name}` : x.name)).join(', ')
+      : '';
+    return { what: race.office, pick: chosen || (c === 'skip' ? 'Skip' : '—') };
+  }
+  const ret = data.retentions.find((r) => r.id === id);
+  const m = data.measures.find((x) => x.id === id);
+  const answer = c === 'yes' ? 'Yes' : c === 'no' ? 'No' : c === 'skip' ? 'Skip' : '—';
+  return { what: ret ? `Retain ${ret.judge}?` : m?.title ?? id, pick: answer };
+}
+
+/** What a new address did to the voter's ballot, shown once after the lookup. */
+interface BallotChange {
+  districts: { label: string; from?: string; to?: string }[];
+  kept: { what: string; pick: string }[];
+  cleared: { what: string; pick: string }[];
+  /** Contests on the new ballot that weren't on the old one. */
+  added: string[];
+}
+
 const DISTRICT_CHIPS: [keyof Districts, string][] = [
   ['ward', 'Ward'], ['cd', 'Congress'], ['sldu', 'State Senate'], ['sldl', 'State House'],
   ['commissioner', 'County Board'], ['subcircuit', 'Subcircuit'], ['school', 'School'],
@@ -72,6 +96,9 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   // Progress arriving in a #resume link while this device has its own: ask first.
   const [incoming, setIncoming] = useState<Saved | null>(null);
   const [linkMsg, setLinkMsg] = useState('');
+  // The ballot before "Change" was tapped, to say exactly what the new address changed.
+  const previousPlace = useRef<Saved['place']>(null);
+  const [change, setChange] = useState<BallotChange | null>(null);
   const [address, setAddress] = useState('');
   const [status, setStatus] = useState<{ busy: boolean; error: string; outside: boolean }>({ busy: false, error: '', outside: false });
   const [sheet, setSheet] = useState<{ race: Race; c: Candidate } | null>(null);
@@ -106,11 +133,16 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
 
   // Cheer each section as it's finished, and the whole ballot once.
   const prevDone = useRef<Record<string, boolean> | null>(null);
+  const prevDistricts = useRef(districts);
   useEffect(() => {
     const now = Object.fromEntries(sections.map((s) => [s.id, s.done === s.ids.length]));
     const before = prevDone.current;
     prevDone.current = now;
-    if (!before || !saved.place) return;
+    // A different address is a different ballot: comparing the two would
+    // "finish" sections nobody touched.
+    const sameBallot = prevDistricts.current === districts;
+    prevDistricts.current = districts;
+    if (!before || !saved.place || !sameBallot) return;
     if (allDone && !Object.values(before).every(Boolean)) { setParty(true); setToast('🎉 Your whole ballot is ready! Print it or share your progress.'); return; }
     const finished = sections.find((s) => now[s.id] && !before[s.id]);
     if (finished) {
@@ -164,15 +196,20 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
     // races that aren't on this ballot (old districts, old ward) are dropped
     // rather than lingering hidden in storage and save links.
     const onBallot = ballotIds(d);
-    const before = Object.keys(saved.picks);
-    const kept = before.filter((id) => onBallot.has(id));
+    const decided = (Object.entries(saved.picks) as [string, Choice][]).filter(([, c]) => isDecided(c));
+    const old = previousPlace.current?.districts ?? null;
+    const oldIds = old ? ballotIds(old) : null;
+    const report: BallotChange = {
+      districts: old
+        ? DISTRICT_CHIPS.filter(([k]) => old[k] !== d[k]).map(([k, label]) => ({ label, from: old[k], to: d[k] }))
+        : [],
+      kept: decided.filter(([id]) => onBallot.has(id)).map(([id, c]) => describePick(id, c)),
+      cleared: decided.filter(([id]) => !onBallot.has(id)).map(([id, c]) => describePick(id, c)),
+      added: old ? [...onBallot].filter((id) => !oldIds?.has(id)).map((id) => describePick(id, undefined).what) : [],
+    };
+    previousPlace.current = null;
     setSaved((s) => ({ ...s, place: { label, districts: d }, picks: Object.fromEntries(Object.entries(s.picks).filter(([id]) => onBallot.has(id))) }));
-    if (before.length) {
-      const dropped = before.length - kept.length;
-      setToast(dropped
-        ? `New ballot: kept ${kept.length} pick${kept.length === 1 ? '' : 's'} for races on both ballots, cleared ${dropped} that aren’t on this one.`
-        : `New ballot: all ${kept.length} of your picks are for races on this ballot too.`);
-    }
+    setChange(report.districts.length || report.cleared.length || report.kept.length ? report : null);
     setStatus({ busy: false, error: '', outside: false });
     setBrowsing(false);
     window.scrollTo({ top: 0 });
@@ -215,6 +252,8 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   // Back to the address screen. Picks stay saved; races that are on both the
   // old and new ballot keep their picks.
   const changeAddress = () => {
+    previousPlace.current = saved.place;
+    setChange(null);
     setSaved((s) => ({ ...s, place: null, browsing: undefined }));
     setTab('ballot');
     setWelcomeBack(false);
@@ -301,7 +340,8 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                     </div>
                   </div>
                 )}
-                {welcomeBack && !allDone && done > 0 && (
+                {change && <ChangeReport change={change} onDismiss={() => setChange(null)} onNext={() => { setChange(null); nextUp(); }} />}
+                {welcomeBack && !change && !allDone && done > 0 && (
                   <div className="rounded-2xl bg-[#5EBD3E] p-4 text-[#0F1117] space-y-3">
                     <p className="text-lg font-black leading-snug">Welcome back! You’re {done} of {total} done.</p>
                     <div className="flex flex-wrap gap-2">
@@ -520,6 +560,52 @@ function suburbanGaps(d: Districts): string[] {
   return gaps;
 }
 
+function ChangeReport({ change, onDismiss, onNext }: { change: BallotChange; onDismiss: () => void; onNext: () => void }) {
+  const row = (x: { what: string; pick: string }) => (
+    <li key={x.what} className="flex flex-wrap justify-between gap-x-3"><span>{x.what}</span><strong className="text-[#F5F6F7]">{x.pick}</strong></li>
+  );
+  return (
+    <section aria-labelledby="kyb-change" className="rounded-2xl border-2 border-[#009CDF] bg-[#1A1D24] p-4 space-y-4 text-[15px] leading-relaxed text-[#E2E4E8]">
+      <h2 id="kyb-change" className="text-lg font-black text-[#F5F6F7]">📍 Your ballot changed with your address</h2>
+      {change.districts.length > 0 && (
+        <div>
+          <p className="font-black text-[#F5F6F7]">Your districts</p>
+          <ul className="space-y-0.5">
+            {change.districts.map((x) => (
+              <li key={x.label}>{x.label}: {x.from ?? 'none'} → <strong className="text-[#F5F6F7]">{x.to ?? (x.label === 'Ward' ? 'none (outside Chicago)' : 'none')}</strong></li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {change.kept.length > 0 && (
+        <div>
+          <p className="font-black text-[#5EBD3E]">✓ Kept {change.kept.length} pick{change.kept.length === 1 ? '' : 's'}: same race on both ballots</p>
+          <ul className="space-y-0.5">{change.kept.map(row)}</ul>
+        </div>
+      )}
+      {change.cleared.length > 0 && (
+        <div>
+          <p className="font-black text-[#FF6B6B]">✕ Cleared {change.cleared.length} pick{change.cleared.length === 1 ? '' : 's'}: not on your new ballot</p>
+          <ul className="space-y-0.5">{change.cleared.map(row)}</ul>
+        </div>
+      )}
+      {change.added.length > 0 && (
+        <div>
+          <p className="font-black text-[#FFB900]">＋ New on this ballot: {change.added.length} race{change.added.length === 1 ? '' : 's'} to decide</p>
+          <ul className="space-y-0.5">
+            {change.added.slice(0, 6).map((what) => <li key={what}>{what}</li>)}
+            {change.added.length > 6 && <li>and {change.added.length - 6} more</li>}
+          </ul>
+        </div>
+      )}
+      <div className="flex flex-wrap gap-2">
+        <button type="button" onClick={onNext} className="min-h-[44px] rounded-xl bg-[#009CDF] px-4 font-black text-[#0F1117]">Go to what’s left →</button>
+        <button type="button" onClick={onDismiss} className="min-h-[44px] rounded-xl border-2 border-[#F5F6F7] px-4 font-bold text-[#F5F6F7]">Got it</button>
+      </div>
+    </section>
+  );
+}
+
 function WhereYouVote({ districts, chicago, onChange }: { districts: Districts | null; chicago: boolean; onChange: () => void }) {
   return (
     <div className="rounded-2xl border-2 border-[#2E343F] bg-[#1A1D24] p-4 space-y-3">
@@ -561,19 +647,6 @@ function Sources() {
 }
 
 function PrintBallot({ sections, picks, label, numbered }: { sections: { id: SectionId; title: string; ids: string[] }[]; picks: Record<string, Choice>; label?: string; numbered: boolean }) {
-  const raceById = new Map(data.races.map((r) => [r.id, r]));
-  const name = (id: string): [string, string] => {
-    const race = raceById.get(id);
-    const c = picks[id];
-    if (race) {
-      const chosen = Array.isArray(c) ? race.candidates.filter((x) => c.includes(x.ballot)).map((x) => (numbered && race.numbered !== false ? `#${x.ballot} ${x.name}` : x.name)).join(', ') : '';
-      return [race.office, chosen || (c === 'skip' ? 'Skip' : '—')];
-    }
-    const ret = data.retentions.find((r) => r.id === id);
-    const m = data.measures.find((x) => x.id === id);
-    const answer = c === 'yes' ? 'Yes' : c === 'no' ? 'No' : c === 'skip' ? 'Skip' : '—';
-    return [ret ? `Retain ${ret.judge}?` : m?.title ?? id, answer];
-  };
   return (
     <div className="hidden print:block p-6 text-black bg-white text-[11pt]">
       <h1 className="text-xl font-black">My Ballot · {numbered ? 'Chicago' : 'Cook County'} · Nov 3, 2026</h1>
@@ -583,7 +656,7 @@ function PrintBallot({ sections, picks, label, numbered }: { sections: { id: Sec
           <h2 className="font-black border-b border-black">{s.title}</h2>
           <table className="w-full table-fixed">
             <tbody>
-              {s.ids.map((id) => { const [what, pick] = name(id); return (
+              {s.ids.map((id) => { const { what, pick } = describePick(id, picks[id], numbered); return (
                 <tr key={id} className="align-top"><td className="w-3/5 py-0.5 pr-4">{what}</td><td className="py-0.5 font-bold">{pick}</td></tr>
               ); })}
             </tbody>
