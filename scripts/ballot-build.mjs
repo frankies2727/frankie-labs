@@ -8,6 +8,8 @@
 //   2. FEC bulk "all candidates" summary          -> money for federal candidates
 //   3. District maps (Census TIGERweb, Cook County, City of Chicago)
 //                                                 -> address -> your contests
+//   4. Injustice Watch's judicial guide          -> judges' bar ratings and profiles
+//   5. Chicago community areas, Census places    -> the neighborhoods a district covers
 //
 // Needs `pdftotext` (poppler-utils) and `unzip` on PATH. Run by
 // .github/workflows/ballot-refresh.yml; locally: `node scripts/ballot-build.mjs`.
@@ -22,12 +24,13 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { changeLog } from './ballot/changes.mjs';
 import { govbotSlices } from './ballot/govbot.mjs';
+import { addJudges } from './ballot/judges.mjs';
 import { addSocial } from './ballot/social.mjs';
 import { parseCandidateList } from './ballot/candidates.mjs';
 import { parseWeball, addFederalMoney } from './ballot/fec.mjs';
 import { ISBE_BASE, ISBE_FILES, addStateMoney } from './ballot/isbe.mjs';
 import { addStateList, fetchCertifiedList } from './ballot/statewide.mjs';
-import { buildDistricts, buildStateDistricts, touchesCook } from './ballot/districts.mjs';
+import { buildDistricts, buildStateDistricts, placesIn, touchesCook } from './ballot/districts.mjs';
 
 const OUT = 'src/projects/ballot/data';
 const CANDIDATES_PAGE = 'https://chicagoelections.gov/getting-ballot/candidates';
@@ -102,6 +105,8 @@ async function earlyVotingSites() {
 
 async function main() {
   mkdirSync(OUT, { recursive: true });
+  let prev = null;
+  try { prev = JSON.parse(readFileSync(join(OUT, 'ballot.json'), 'utf8')); } catch { /* first build */ }
 
   const pdfUrl = await findCandidatePdf();
   console.log('Candidate list:', pdfUrl);
@@ -116,6 +121,10 @@ async function main() {
   // Maps first: the suburban contests are kept only if their district is in Cook.
   const precinctKeys = ballot.measures.filter((m) => m.scope.type === 'precinct').map((m) => `${m.scope.ward}-${m.scope.precinct}`);
   const districts = await buildDistricts([...new Set(precinctKeys)]);
+  // Where each district is, for search results on other ballots. Nice to
+  // have: if a source is down, keep yesterday's.
+  let places = prev?.places ?? {};
+  try { places = await placesIn(districts.layers); } catch (e) { console.warn(`places: ${e.message}; keeping the last copy`); }
 
   // Suburban Cook: the State Board's certified list adds the congressional,
   // legislative and subcircuit contests outside Chicago (countywide contests
@@ -139,6 +148,9 @@ async function main() {
   console.log(`Social accounts: ${social.withSocial}/${social.total} candidates`);
   for (const line of social.log) console.log('  ' + line);
 
+  const judges = await addJudges(ballot, prev);
+  for (const line of judges.log) console.log(line);
+
   const sites = await earlyVotingSites();
   await browser?.close();
 
@@ -149,8 +161,6 @@ async function main() {
   const missing = ballot.races.filter((r) => r.area && r.area.type !== 'city' && !mapFor(r)?.some((f) => f.id === r.area.id));
   if (missing.length) throw new Error('No map for: ' + missing.map((r) => r.office).join('; '));
 
-  let prev = null;
-  try { prev = JSON.parse(readFileSync(join(OUT, 'ballot.json'), 'utf8')); } catch { /* first build */ }
   const next = { races: ballot.races, retentions: ballot.retentions, measures: ballot.measures };
   const changes = changeLog(prev, next, new Date().toISOString());
   // govbot being briefly down shouldn't hold up the ballot: keep yesterday's.
@@ -175,6 +185,7 @@ async function main() {
     earlyVotingSites: sites,
     changes,
     govbot,
+    places,
   }, null, 1) + '\n');
   writeFileSync(join(OUT, 'districts.json'), JSON.stringify(districts) + '\n');
   writeFileSync(join(OUT, 'districts-il.json'), JSON.stringify(stateDistricts) + '\n');

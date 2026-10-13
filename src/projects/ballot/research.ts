@@ -22,6 +22,9 @@ export function researchLinks(c: Candidate, race: Race): ResearchLink[] {
     // Illinois Sunshine indexes the State Board of Elections filings by name.
     links.push({ label: 'Every donor', href: `https://illinoissunshine.org/search/?term=${q(who)}`, note: 'Itemized state & local donors (Illinois Sunshine)' });
   }
+  if (c.profile) {
+    links.push({ label: 'Injustice Watch profile', href: c.profile, note: 'Their background and experience, researched by reporters' });
+  }
   if (race.section === 'judicial') {
     links.push({ label: 'Bar association ratings', href: 'https://voteforjudges.org/', note: 'Chicago-area bar groups rate every judicial candidate' });
   }

@@ -15,7 +15,8 @@ const TABS = [
   { id: 'education', label: 'Education' },
   { id: 'other', label: 'Other' },
 ] as const;
-const PAGE = 9;
+// The most recent few per topic; govbot's catalog has the rest.
+const SHOWN = 9;
 
 const safeUrl = (u?: string) => (u && /^https:\/\//.test(u) ? u : undefined);
 const dateLabel = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
@@ -63,26 +64,24 @@ function Bill({ b }: { key?: string; b: Law }) {
 export function Laws({ laws }: { laws: Law[] }) {
   const [tab, setTab] = useState<string>(TABS[0].id);
   const [q, setQ] = useState('');
-  const [shown, setShown] = useState(PAGE);
   const list = useMemo(() => {
     const words = q.toLowerCase().split(/\s+/).filter(Boolean);
     return laws.filter((b) => inTab(b, tab) && words.every((w) => `${b.id} ${b.title} ${b.latest_action_desc ?? ''} ${b.tags.join(' ')}`.toLowerCase().includes(w)));
   }, [laws, tab, q]);
   if (!laws.length) return null;
-  const pick = (id: string) => { setTab(id); setShown(PAGE); };
   return (
     <section aria-labelledby="kyb-laws" className="rounded-2xl border-[3px] border-[var(--kyb-gold)] bg-[var(--gb-surface)] p-4 sm:p-5 space-y-4">
       <div className="space-y-1">
         <h2 id="kyb-laws" className="text-2xl">🏛️ The laws that shape your ballot, from Springfield</h2>
-        <p className="text-[15px] leading-relaxed max-w-[75ch]">The Illinois bills that shape how elections and schools work, from campaign finance and voting rules to ward boundaries and school governance, with action in the last six months. “Other” is the rest of Illinois’ recent legislative activity. From <a href="https://github.com/chihacknight/govbot" target="_blank" rel="noreferrer noopener" className="font-bold text-[var(--gb-link)] underline">govbot</a>.</p>
+        <p className="text-[15px] leading-relaxed max-w-[75ch]">The Illinois bills that shape how elections and schools work, from campaign finance and voting rules to ward boundaries and school governance, with action in the last six months.<br /><br />“Other” is the rest of Illinois’ recent legislative activity.</p>
       </div>
 
       <div className="flex flex-wrap items-center gap-2">
         <div className="flex flex-wrap gap-2" role="tablist" aria-label="Bill topics">
           {TABS.map((t) => (
-            <button key={t.id} type="button" role="tab" aria-selected={tab === t.id} onClick={() => pick(t.id)}
+            <button key={t.id} type="button" role="tab" aria-selected={tab === t.id} onClick={() => setTab(t.id)}
               className={`min-h-[40px] rounded-full border-2 border-[var(--kyb-gold)] px-4 text-sm font-bold ${tab === t.id ? 'bg-[var(--kyb-gold)] text-[var(--gb-bg)]' : ''}`}>
-              {t.label} ({laws.filter((b) => inTab(b, t.id)).length})
+              {t.label}
             </button>
           ))}
         </div>
@@ -92,7 +91,7 @@ export function Laws({ laws }: { laws: Law[] }) {
         <div className="relative w-full sm:w-auto sm:min-w-[22rem] sm:flex-1 lg:flex-none lg:w-[24rem]">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none" aria-hidden="true" />
           <label htmlFor="kyb-law-search" className="sr-only">Search Illinois bills</label>
-          <input id="kyb-law-search" type="text" inputMode="search" value={q} onChange={(e) => { setQ(e.target.value); setShown(PAGE); }}
+          <input id="kyb-law-search" type="text" inputMode="search" value={q} onChange={(e) => setQ(e.target.value)}
             placeholder="Search Illinois bills by number, title or topic…"
             className="w-full min-h-[40px] rounded-full border-2 border-[var(--kyb-gold)] bg-[var(--gb-bg)] pl-9 pr-10 text-sm text-[var(--gb-text)] focus:outline-none" />
           {q && <ClearButton onClear={() => setQ('')} className="right-0 w-9 h-9" />}
@@ -101,17 +100,11 @@ export function Laws({ laws }: { laws: Law[] }) {
 
       {list.length ? (
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {list.slice(0, shown).map((b) => <Bill key={b.id} b={b} />)}
+          {list.slice(0, SHOWN).map((b) => <Bill key={b.id} b={b} />)}
         </ul>
       ) : <p className="text-[15px]">{q ? 'No bills match that search.' : 'No bills in this category in the last 6 months.'}</p>}
 
-      {list.length > shown && (
-        <button type="button" onClick={() => setShown(shown + PAGE)} className="min-h-[44px] rounded-xl border-2 border-[var(--kyb-gold)] px-4 font-bold">
-          Show more ({list.length - shown} left)
-        </button>
-      )}
-
-      <a href={`${GOVBOT}legislation.html`} target="_blank" rel="noreferrer noopener"
+      <a href={`${GOVBOT}legislation.html#state=il`} target="_blank" rel="noreferrer noopener"
         className="flex items-center justify-center gap-2 min-h-[56px] rounded-xl border-[3px] border-[var(--kyb-gold)] bg-[var(--gb-primary)] px-4 text-lg font-black text-[var(--gb-on-primary)] hover:brightness-105">
         Explore entire catalog of IL bills <ArrowUpRight className="w-5 h-5" aria-hidden="true" />
       </a>

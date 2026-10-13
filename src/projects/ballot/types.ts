@@ -31,6 +31,8 @@ export interface Candidate {
   money?: Money;
   /** Their social media accounts (scripts/ballot/social.mjs says where each comes from). */
   social?: Partial<Record<SocialPlatform, string>>;
+  /** Judicial candidates: Injustice Watch's profile. */
+  profile?: string;
 }
 
 export type SocialPlatform = 'x' | 'facebook' | 'instagram' | 'youtube' | 'tiktok' | 'bluesky' | 'threads' | 'linkedin';
@@ -52,7 +54,15 @@ export interface Race {
   outsideCook?: boolean;
 }
 
-export interface Retention { id: string; court: string; judge: string }
+export interface Retention {
+  id: string; court: string; judge: string;
+  /** Withdrew after the ballots were printed: still on the ballot, votes not counted. */
+  withdrawn?: boolean;
+  /** Injustice Watch's profile of the judge. */
+  profile?: string;
+  /** Bar groups that rated the judge (`of`) and found them qualified (`yes`). */
+  bar?: { yes: number; of: number };
+}
 
 export type MeasureScope =
   | { type: 'county' | 'city' }
@@ -79,6 +89,8 @@ export interface BallotData {
   /** What the daily refresh found different, newest last (about 60 days kept). */
   changes?: Change[];
   govbot: Govbot;
+  /** The neighborhoods and suburbs covering most of each district, by "type:id" ("cd:6"). */
+  places?: Record<string, string[]>;
 }
 
 /** From govbot's election data (github.com/chihacknight/govbot), refreshed daily. */

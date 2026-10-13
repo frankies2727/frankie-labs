@@ -47,6 +47,7 @@ const SECTIONS = [
   { id: 'measures', title: 'Ballot questions', color: 'var(--gb-red)', ink: INK, emoji: '🗳️' },
 ] as const;
 type SectionId = (typeof SECTIONS)[number]['id'];
+const SECTION_TITLES: Record<string, string> = Object.fromEntries(SECTIONS.map((s) => [s.id, s.title]));
 
 /** A section colour as a real colour (the share card is drawn on a canvas, which can't read CSS variables). */
 const cssColor = (v: string) => {
@@ -169,7 +170,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   // ---- the voter's ballot and their progress through it --------------------
   const ballot = useMemo(() => ballotFor(data, districts), [districts]);
   const sections = useMemo(() => SECTIONS.map((s) => {
-    const ids = s.id === 'retention' ? ballot.retentions.map((r) => r.id)
+    const ids = s.id === 'retention' ? ballot.retentions.filter((r) => !r.withdrawn).map((r) => r.id)
       : s.id === 'measures' ? ballot.measures.map((m) => m.id)
       : ballot.races.filter((r) => r.section === s.id).map((r) => r.id);
     return { ...s, ids, done: ids.filter((id) => isDecided(saved.picks[id])).length };
@@ -446,7 +447,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
               </div>
               {/* Search stays in reach while scrolling. */}
               <div className="mt-3">
-                <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} onJump={(h) => jumpTo(h.section, h.id)} />
+                <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} sections={SECTION_TITLES} places={data.places} onJump={(h) => jumpTo(h.section, h.id)} />
               </div>
             </div>
             </div>
@@ -689,12 +690,12 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
         <p className="text-sm leading-relaxed text-[var(--gb-text)]">🔒 Your address goes once to Cook County’s address lookup (or OpenStreetMap, for the rest of Illinois or if the county’s is down) to find your districts. It’s saved only on this device, like your picks, and never shared.</p>
       </form>
 
-      <BallotSearch ballot={everything} onJump={onSearchJump} />
+      <BallotSearch ballot={everything} sections={SECTION_TITLES} onJump={onSearchJump} />
 
       <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {[
           [data.races.length, 'races in Illinois'], [candidates, 'candidates'],
-          [data.retentions.length, 'judges up for retention'], [data.measures.length, 'ballot questions'],
+          [data.retentions.filter((r) => !r.withdrawn).length, 'judges up for retention'], [data.measures.length, 'ballot questions'],
         ].map(([n, label]) => (
           <li key={label} className="rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] p-4">
             <span className="block text-3xl font-black">{n}</span>
@@ -816,6 +817,9 @@ function Sources() {
     { emoji: '📣', title: 'Social media & websites', status: 'Live · daily',
       body: 'Only accounts that are the candidate’s own: Congress’s official list, Wikidata (through their exact Wikipedia page), and the links on their own campaign site when the account carries their name.',
       links: [['Congress list', 'https://github.com/unitedstates/congress-legislators'], ['Open States', 'https://openstates.org/il/']] },
+    { emoji: '⚖️', title: 'Judges', status: 'Live · daily',
+      body: 'Each judge’s bar association ratings and a link to their profile, from Injustice Watch’s Cook County judicial guide, which also tells us when a judge withdraws after the ballot is printed.',
+      links: [['Injustice Watch guide', 'https://2026retention.injusticewatch.org/']] },
     { emoji: '🗺️', title: 'District maps', status: 'Live',
       body: 'Census (Congress, Springfield), Cook County (County Board, Board of Review, judicial subcircuits), City of Chicago (wards, police districts, and your precinct, looked up live) and the Illinois Senate (school board).',
       links: [['data.cityofchicago.org', 'https://data.cityofchicago.org/']] },
