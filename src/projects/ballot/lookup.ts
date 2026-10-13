@@ -1,3 +1,5 @@
+import cookMapsUrl from './data/districts.json?url';
+import stateMapsUrl from './data/districts-il.json?url';
 import type { BallotData, Districts, Measure, Race } from './types';
 
 // Address -> coordinates. Cook County's own address locator is official,
@@ -58,19 +60,26 @@ function inRing(x: number, y: number, ring: number[]): boolean {
   return inside;
 }
 
-type Maps = Promise<{ default: unknown }>;
+// The maps ship as plain JSON files, not code: the browser reads JSON several
+// times faster than a script of the same size, and a phone feels the
+// difference (the Cook maps are 1.1 MB).
+type Maps = Promise<{ layers: Record<string, Layer> }>;
 let maps: Maps | null = null;
 let stateMaps: Maps | null = null;
+const getMaps = (url: string): Maps => fetch(url).then((r) => {
+  if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
+  return r.json();
+});
 // A failed download (flaky connection) is forgotten so the next lookup retries.
 export const prefetchDistricts = () =>
-  (maps ??= import('./data/districts.json').catch((e) => { maps = null; throw e; }));
+  (maps ??= getMaps(cookMapsUrl).catch((e) => { maps = null; throw e; }));
 // Congressional and legislative maps for all of Illinois, only fetched for
 // addresses outside Cook.
 const stateDistricts = () =>
-  (stateMaps ??= import('./data/districts-il.json').catch((e) => { stateMaps = null; throw e; }));
+  (stateMaps ??= getMaps(stateMapsUrl).catch((e) => { stateMaps = null; throw e; }));
 
 async function lookIn(maps: Maps, lat: number, lng: number): Promise<Districts> {
-  const { layers } = (await maps).default as { layers: Record<string, Layer> };
+  const { layers } = await maps;
   const out: Districts = {};
   for (const [type, features] of Object.entries(layers)) {
     // Odd number of rings containing the point = inside (handles holes).

@@ -63,7 +63,15 @@ const GOVBOT_STYLE = `${FONT_IMPORT}\n@layer base {\n${govbotCss.replace(FONT_IM
 
 export function GovbotChrome({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(startTheme);
-  useEffect(() => { document.documentElement.setAttribute('data-theme', theme); }, [theme]);
+  useEffect(() => {
+    // Switch colours in one go: with transitions on, hundreds of elements
+    // would each animate to the new colour, restyling the page every frame.
+    const root = document.documentElement;
+    root.classList.add('kyb-theme-switch');
+    root.setAttribute('data-theme', theme);
+    const id = requestAnimationFrame(() => requestAnimationFrame(() => root.classList.remove('kyb-theme-switch')));
+    return () => { cancelAnimationFrame(id); root.classList.remove('kyb-theme-switch'); };
+  }, [theme]);
   const toggleTheme = () => setTheme((t) => {
     const next = t === 'dark' ? 'light' : 'dark';
     try { localStorage.setItem(THEME_KEY, next); } catch { /* not remembered */ }
@@ -79,8 +87,11 @@ export function GovbotChrome({ children }: { children: ReactNode }) {
     const root = document.documentElement;
     const style = Object.assign(document.createElement('style'), { textContent: GOVBOT_STYLE });
     document.head.append(style);
+    // A class for page-wide rules (ballot.css), cheaper than :has(.gb-header),
+    // which the browser rechecks on every change to the page.
+    root.classList.add('kyb-govbot');
     setStyled(true);
-    return () => { style.remove(); root.removeAttribute('data-theme'); };
+    return () => { style.remove(); root.classList.remove('kyb-govbot'); root.removeAttribute('data-theme'); };
   }, []);
   // The script wires the menus and drawer to the header in the page, so it
   // runs again each time this page opens (a module import would run only the

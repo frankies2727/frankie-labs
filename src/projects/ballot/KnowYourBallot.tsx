@@ -6,6 +6,7 @@ import { RETENTION_EXPLAINER } from './offices';
 import { BallotSearch, type Hit } from './Search';
 import { GovbotChrome } from './GovbotChrome';
 import { Capitol } from './Hero';
+import { GaugeDefs } from './BarRatings';
 import { ContentsColumn, ContentsDrawer } from './Contents';
 import { earnedTrophies, streak, Trophies } from './Progress';
 import './ballot.css';
@@ -141,7 +142,14 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
     barObserver.current?.disconnect();
     const root = document.documentElement;
     if (!bar) { root.style.removeProperty('--kyb-bar'); return; }
-    barObserver.current = new ResizeObserver(() => root.style.setProperty('--kyb-bar', `${bar.offsetHeight}px`));
+    // Setting a variable on the page root makes the browser recheck every
+    // element's style, so only when the height really changed (resizing the
+    // window or zooming changes the width far more often).
+    let last = '';
+    barObserver.current = new ResizeObserver(([entry]) => {
+      const h = `${Math.round(entry.borderBoxSize?.[0]?.blockSize ?? bar.offsetHeight)}px`;
+      if (h !== last) root.style.setProperty('--kyb-bar', (last = h));
+    });
     barObserver.current.observe(bar);
   }, []);
   const [toast, setToast] = useState('');
@@ -398,6 +406,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   return (
     <GovbotChrome>
     <div className="kyb min-h-[100dvh] bg-[var(--gb-bg)] text-[var(--gb-text)] selection:bg-[var(--gb-blue-hi)] selection:text-[var(--gb-bg)]">
+      <GaugeDefs />
 
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pb-24 print:hidden">
         {/* The lab's way home (not part of govbot's page). */}
@@ -420,7 +429,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
             {/* Progress, views and search, pinned under govbot's header all the
                 way down the page (its height feeds --kyb-bar, so the contents
                 column and jumped-to races sit just below it). */}
-            <div ref={barRef} className="sticky top-[var(--kyb-top)] z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 pt-3 pb-3 bg-[color-mix(in_srgb,var(--gb-bg)_92%,transparent)] backdrop-blur border-b border-[var(--gb-border)]">
+            <div ref={barRef} className="sticky top-[var(--kyb-top)] z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 pt-3 pb-3 bg-[var(--gb-bg)] border-b border-[var(--gb-border)]">
             <div className="max-w-[1100px] mx-auto">
               <div className="flex items-center gap-2 sm:gap-4">
                 <Ring pct={total ? done / total : 0} />
@@ -630,9 +639,14 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
   // Two taps: wiping someone's picks shouldn't be one slip of the thumb.
   const [confirming, setConfirming] = useState(false);
   const candidates = data.races.reduce((n, r) => n + r.candidates.length, 0);
-  // Start fetching the district maps while the voter types, so "Find my
-  // ballot" doesn't wait on a download.
-  useEffect(() => { prefetchDistricts(); }, []);
+  // Fetch the district maps while the voter types, so "Find my ballot"
+  // doesn't wait on a download, but once the page is idle, so reading them
+  // doesn't stall the first taps.
+  useEffect(() => {
+    if (!('requestIdleCallback' in window)) { const t = setTimeout(prefetchDistricts, 1500); return () => clearTimeout(t); }
+    const id = requestIdleCallback(() => { prefetchDistricts(); }, { timeout: 3000 });
+    return () => cancelIdleCallback(id);
+  }, []);
   return (
     <div className="space-y-8 pt-2 [&>*:not(header)]:max-w-3xl">
       {/* govbot's elections hero: overline, serif title, the Capitol. */}

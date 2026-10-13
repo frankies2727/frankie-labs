@@ -1,4 +1,5 @@
 import { Check, Minus, X } from 'lucide-react';
+import { useState } from 'react';
 
 // Chicago-area bar groups' ratings of a judge or judicial candidate, drawn
 // here: a gauge for the overall picture, then each group's own word. From the
@@ -36,20 +37,35 @@ const headline = (share: number) =>
   share === 1 ? 'All positive ratings' : share >= 0.75 ? 'Mostly positive ratings' : share >= 0.5 ? 'Mixed ratings' : 'Mostly negative ratings';
 
 /** A half-dial of red-to-green ticks with a needle at the share of positive ratings. */
+const TICKS = 25;
+const at = (t: number, r: number) => [50 + r * Math.cos(Math.PI * (1 - t)), 52 - r * Math.sin(Math.PI * (1 - t))];
+
+/**
+ * The dial's ticks, drawn once for the whole page; each gauge reuses them, so
+ * 60 judges' gauges cost 3 elements each instead of 27. Mount once.
+ */
+export function GaugeDefs() {
+  return (
+    <svg width="0" height="0" className="absolute" aria-hidden="true">
+      <symbol id="kyb-gauge-ticks" viewBox="0 0 100 56">
+        {Array.from({ length: TICKS }, (_, i) => {
+          const t = i / (TICKS - 1);
+          const [x1, y1] = at(t, 36);
+          const [x2, y2] = at(t, 46);
+          return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke={`hsl(${t * 120} 85% 50%)`} strokeWidth={3.4} strokeLinecap="round" />;
+        })}
+      </symbol>
+    </svg>
+  );
+}
+
 function Gauge({ share, size }: { share: number; size: number }) {
-  const TICKS = 25;
-  const at = (t: number, r: number) => [50 + r * Math.cos(Math.PI * (1 - t)), 52 - r * Math.sin(Math.PI * (1 - t))];
   const [nx, ny] = at(share, 30);
   const [bx1, by1] = at(share + 0.5, 3.2);
   const [bx2, by2] = at(share - 0.5, 3.2);
   return (
     <svg viewBox="0 0 100 56" width={size} height={size * 0.56} aria-hidden="true">
-      {Array.from({ length: TICKS }, (_, i) => {
-        const t = i / (TICKS - 1);
-        const [x1, y1] = at(t, 36);
-        const [x2, y2] = at(t, 46);
-        return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke={`hsl(${t * 120} 85% 50%)`} strokeWidth={3.4} strokeLinecap="round" />;
-      })}
+      <use href="#kyb-gauge-ticks" />
       <path d={`M${bx1} ${by1} L${nx} ${ny} L${bx2} ${by2} Z`} fill="var(--gb-text)" />
       <circle cx={50} cy={52} r={3.6} fill="var(--gb-text)" />
     </svg>
@@ -62,6 +78,9 @@ function Gauge({ share, size }: { share: number; size: number }) {
  */
 export function BarRatings({ bar, source, compact = false }: { bar: Record<string, string>; /** This person's ratings on the Alliance's site. */ source?: string; compact?: boolean }) {
   const { yes, of } = tally(bar);
+  // On a retention card the list is built only once opened: 60 cards' worth
+  // of closed lists were thousands of elements nobody sees.
+  const [open, setOpen] = useState(false);
   if (!of) return null;
   const share = yes / of;
   const groups = Object.entries(bar).sort(([a], [b]) => (GROUPS[a] ?? a).localeCompare(GROUPS[b] ?? b));
@@ -98,9 +117,9 @@ export function BarRatings({ bar, source, compact = false }: { bar: Record<strin
   return compact ? (
     <div className="space-y-2 text-[var(--gb-text)]">
       {summary}
-      <details>
+      <details onToggle={(e) => setOpen(e.currentTarget.open)}>
         <summary className="cursor-pointer text-sm font-bold underline underline-offset-2">Each group’s rating</summary>
-        <div className="mt-2 space-y-2">{list}{link}</div>
+        {open && <div className="mt-2 space-y-2">{list}{link}</div>}
       </details>
     </div>
   ) : (
