@@ -89,6 +89,8 @@ export interface BallotData {
   /** What the daily refresh found different, newest last (about 60 days kept). */
   changes?: Change[];
   govbot: Govbot;
+  /** The neighborhoods and suburbs covering most of each district, by "type:id" ("cd:6"). */
+  places?: Record<string, string[]>;
 }
 
 /** From govbot's election data (github.com/chihacknight/govbot), refreshed daily. */

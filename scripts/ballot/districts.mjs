@@ -43,6 +43,10 @@ const SOURCES = {
 };
 const SCHOOL_SHP = 'https://ilsenateredistricting.com/images/shape-files/ERSB_20_Sub_District_Map_FA1_SB_15.zip';
 const PRECINCTS = 'https://data.cityofchicago.org/resource/i8fv-xe4b.geojson?$limit=5000';
+// For describing where a district is: Chicago's 77 community areas, and the
+// towns (Census incorporated places) around them.
+const COMMUNITY_AREAS = 'https://data.cityofchicago.org/resource/igwz-8jzy.geojson?$limit=100';
+const TOWNS = `https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Places_CouSub_ConCity_SubMCD/MapServer/4/query?where=STATE%3D%2717%27&geometry=${COOK_BBOX}&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=BASENAME&returnGeometry=true&outSR=4326&f=geojson`;
 
 // ~3 m: far below a geocoder's own error, and it shrinks the file ~10x.
 const TOLERANCE = 0.00003;
@@ -216,6 +220,49 @@ export function touchesCook(layers, type, id) {
     }
   }
   return false;
+}
+
+/**
+ * The Chicago neighborhoods and suburbs covering most of each district's Cook County
+ * part, biggest first: { "cd:6": ["Park Ridge", "Des Plaines", ...] }. Measured
+ * on a grid of points, which is plenty for "roughly where is this".
+ */
+const PLACES_GRID = 40;
+export async function placesIn(layers) {
+  const title = (s) => (s === 'OHARE' ? 'O’Hare' : s.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase()).replace(/\bMc(\w)/g, (_, c) => `Mc${c.toUpperCase()}`));
+  const withBox = (f) => {
+    const xs = f.rings.flatMap((r) => r.filter((_, i) => i % 2 === 0));
+    const ys = f.rings.flatMap((r) => r.filter((_, i) => i % 2 === 1));
+    return { ...f, box: [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)] };
+  };
+  const inside = (x, y, f) => x >= f.box[0] && x <= f.box[1] && y >= f.box[2] && y <= f.box[3] && f.rings.filter((r) => inRing(x, y, r)).length % 2 === 1;
+  const areas = fromGeoJson(await getJson(COMMUNITY_AREAS), (p) => title(p.community)).map(withBox);
+  const towns = fromGeoJson(await getJson(TOWNS), (p) => p.BASENAME).filter((f) => f.id !== 'Chicago').map(withBox);
+  if (areas.length !== 77 || towns.length < 100) throw new Error(`places: ${areas.length} community areas, ${towns.length} towns`);
+  const cook = layers.commissioner.map(withBox);
+
+  const out = {};
+  // The water district is all of Cook: nothing to narrow down.
+  for (const [type, feats] of Object.entries(layers).filter(([t]) => t !== 'mwrd')) {
+    for (const f of feats.map(withBox)) {
+      const [x0, x1, y0, y1] = f.box;
+      const count = new Map();
+      for (let i = 0.5; i < PLACES_GRID; i++) {
+        for (let j = 0.5; j < PLACES_GRID; j++) {
+          const x = x0 + ((x1 - x0) * i) / PLACES_GRID;
+          const y = y0 + ((y1 - y0) * j) / PLACES_GRID;
+          if (!inside(x, y, f) || !cook.some((c) => inside(x, y, c))) continue;
+          // Unincorporated land is mostly forest preserve: not a place anyone names.
+          const name = (areas.find((a) => inside(x, y, a)) ?? towns.find((t) => inside(x, y, t)))?.id;
+          if (name) count.set(name, (count.get(name) ?? 0) + 1);
+        }
+      }
+      const total = [...count.values()].reduce((a, b) => a + b, 0);
+      const top = [...count].filter(([, n]) => n >= total * 0.03).sort((a, b) => b[1] - a[1]).slice(0, 4).map(([name]) => name);
+      if (top.length) out[`${type}:${f.id}`] = top;
+    }
+  }
+  return out;
 }
 
 /**

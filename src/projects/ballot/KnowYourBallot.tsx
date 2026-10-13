@@ -47,6 +47,7 @@ const SECTIONS = [
   { id: 'measures', title: 'Ballot questions', color: 'var(--gb-red)', ink: INK, emoji: '🗳️' },
 ] as const;
 type SectionId = (typeof SECTIONS)[number]['id'];
+const SECTION_TITLES: Record<string, string> = Object.fromEntries(SECTIONS.map((s) => [s.id, s.title]));
 
 /** A section colour as a real colour (the share card is drawn on a canvas, which can't read CSS variables). */
 const cssColor = (v: string) => {
@@ -446,7 +447,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
               </div>
               {/* Search stays in reach while scrolling. */}
               <div className="mt-3">
-                <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} onJump={(h) => jumpTo(h.section, h.id)} />
+                <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} sections={SECTION_TITLES} places={data.places} onJump={(h) => jumpTo(h.section, h.id)} />
               </div>
             </div>
             </div>
@@ -689,7 +690,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
         <p className="text-sm leading-relaxed text-[var(--gb-text)]">🔒 Your address goes once to Cook County’s address lookup (or OpenStreetMap, for the rest of Illinois or if the county’s is down) to find your districts. It’s saved only on this device, like your picks, and never shared.</p>
       </form>
 
-      <BallotSearch ballot={everything} onJump={onSearchJump} />
+      <BallotSearch ballot={everything} sections={SECTION_TITLES} onJump={onSearchJump} />
 
       <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {[

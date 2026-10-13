@@ -9,7 +9,7 @@ const AREA_LABEL: Record<string, string> = {
   cd: 'Congressional District', sldu: 'State Senate District', sldl: 'State House District',
   commissioner: 'County Board District', bor: 'Board of Review District', subcircuit: 'Judicial Subcircuit', school: 'School Subdistrict',
 };
-const areaLabel = (r: Race) => {
+export const areaLabel = (r: Race) => {
   if (r.area?.type === 'city') return 'Everyone in Chicago';
   if (r.area?.type === 'mwrd') return 'Water Reclamation District';
   if (r.area) return `${AREA_LABEL[r.area.type]} ${r.area.id}`;
@@ -350,7 +350,7 @@ export const RetentionCard = memo(function RetentionCard({ color, r, choice, onC
   );
 });
 
-const SCOPE: Record<Measure['scope']['type'], (m: Measure) => string> = {
+export const SCOPE: Record<Measure['scope']['type'], (m: Measure) => string> = {
   county: () => 'All of Cook County',
   city: () => 'All of Chicago',
   ward: (m) => `Ward ${(m.scope as { id: string }).id} only`,

@@ -13593,5 +13593,1395 @@
     "candidates": []
    }
   ]
+ },
+ "places": {
+  "cd:9": [
+   "Glenview",
+   "Skokie",
+   "Evanston",
+   "Morton Grove"
+  ],
+  "cd:3": [
+   "Elgin",
+   "Bartlett",
+   "Dunning",
+   "Elk Grove Village"
+  ],
+  "cd:1": [
+   "Ashburn",
+   "Roseland",
+   "Tinley Park",
+   "Oak Forest"
+  ],
+  "cd:8": [
+   "Schaumburg",
+   "Hoffman Estates",
+   "Elk Grove Village",
+   "Des Plaines"
+  ],
+  "cd:5": [
+   "Barrington Hills",
+   "Arlington Heights",
+   "Palatine",
+   "O’Hare"
+  ],
+  "cd:6": [
+   "Orland Park",
+   "Tinley Park",
+   "Oak Lawn",
+   "Palos Heights"
+  ],
+  "cd:2": [
+   "South Deering",
+   "Chicago Heights",
+   "Matteson",
+   "Lansing"
+  ],
+  "cd:10": [
+   "Northbrook",
+   "Wheeling",
+   "Winnetka",
+   "Glencoe"
+  ],
+  "cd:4": [
+   "Cicero",
+   "South Lawndale",
+   "Burbank",
+   "Melrose Park"
+  ],
+  "cd:7": [
+   "Near West Side",
+   "Austin",
+   "Oak Park",
+   "Westchester"
+  ],
+  "cd:11": [
+   "Lemont",
+   "Palos Park",
+   "Willow Springs"
+  ],
+  "sldu:1": [
+   "Cicero",
+   "Lyons",
+   "Archer Heights",
+   "Brookfield"
+  ],
+  "sldu:2": [
+   "Belmont Cragin",
+   "West Town",
+   "Humboldt Park",
+   "Logan Square"
+  ],
+  "sldu:4": [
+   "Austin",
+   "Hillside",
+   "Westchester",
+   "Maywood"
+  ],
+  "sldu:5": [
+   "Near West Side",
+   "North Lawndale",
+   "West Town",
+   "East Garfield Park"
+  ],
+  "sldu:6": [
+   "Lake View",
+   "Lincoln Park",
+   "North Center",
+   "Near North Side"
+  ],
+  "sldu:7": [
+   "Uptown",
+   "Lincoln Square",
+   "Rogers Park",
+   "Edgewater"
+  ],
+  "sldu:9": [
+   "Glenview",
+   "Evanston",
+   "Skokie",
+   "Wilmette"
+  ],
+  "sldu:11": [
+   "Bedford Park",
+   "Garfield Ridge",
+   "West Lawn",
+   "Clearing"
+  ],
+  "sldu:13": [
+   "South Chicago",
+   "South Shore",
+   "East Side",
+   "Hyde Park"
+  ],
+  "sldu:15": [
+   "South Holland",
+   "Harvey",
+   "Homewood",
+   "Dolton"
+  ],
+  "sldu:17": [
+   "South Deering",
+   "Lansing",
+   "Lynwood",
+   "Hegewisch"
+  ],
+  "sldu:19": [
+   "Matteson",
+   "Tinley Park",
+   "Country Club Hills",
+   "Orland Park"
+  ],
+  "sldu:22": [
+   "Hoffman Estates",
+   "Streamwood",
+   "Elgin",
+   "Schaumburg"
+  ],
+  "sldu:23": [
+   "Western Springs",
+   "Hinsdale"
+  ],
+  "sldu:24": [
+   "Elk Grove Village",
+   "Roselle"
+  ],
+  "sldu:25": [
+   "Bartlett",
+   "Elgin",
+   "Streamwood"
+  ],
+  "sldu:26": [
+   "Barrington Hills",
+   "Palatine",
+   "South Barrington",
+   "Hoffman Estates"
+  ],
+  "sldu:28": [
+   "Schaumburg",
+   "Des Plaines",
+   "Park Ridge",
+   "Elk Grove Village"
+  ],
+  "sldu:29": [
+   "Northbrook",
+   "Wheeling",
+   "Glencoe",
+   "Northfield"
+  ],
+  "sldu:39": [
+   "O’Hare",
+   "Oak Park",
+   "Franklin Park",
+   "Melrose Park"
+  ],
+  "sldu:40": [
+   "Chicago Heights",
+   "Park Forest",
+   "South Chicago Heights",
+   "Richton Park"
+  ],
+  "sldu:41": [
+   "Lemont",
+   "Willow Springs",
+   "Burr Ridge",
+   "Palos Park"
+  ],
+  "sldu:27": [
+   "Arlington Heights",
+   "Mount Prospect",
+   "Palatine",
+   "Rolling Meadows"
+  ],
+  "sldu:20": [
+   "Logan Square",
+   "Avondale",
+   "Irving Park",
+   "Belmont Cragin"
+  ],
+  "sldu:3": [
+   "New City",
+   "Englewood",
+   "West Englewood",
+   "Greater Grand Crossing"
+  ],
+  "sldu:12": [
+   "South Lawndale",
+   "Lower West Side",
+   "Brighton Park",
+   "Bridgeport"
+  ],
+  "sldu:8": [
+   "Skokie",
+   "Niles",
+   "Morton Grove",
+   "Forest Glen"
+  ],
+  "sldu:30": [
+   "Wheeling"
+  ],
+  "sldu:16": [
+   "Ashburn",
+   "Auburn Gresham",
+   "Oak Lawn",
+   "Hickory Hills"
+  ],
+  "sldu:18": [
+   "Oak Lawn",
+   "Orland Park",
+   "Alsip",
+   "Palos Heights"
+  ],
+  "sldu:14": [
+   "Orland Park",
+   "Tinley Park",
+   "Blue Island",
+   "Riverdale"
+  ],
+  "sldu:10": [
+   "Norwood Park",
+   "Dunning",
+   "O’Hare",
+   "Schiller Park"
+  ],
+  "sldl:82": [
+   "Lemont",
+   "Willow Springs",
+   "Palos Park",
+   "Burr Ridge"
+  ],
+  "sldl:29": [
+   "South Holland",
+   "Glenwood",
+   "Chicago Heights",
+   "Dolton"
+  ],
+  "sldl:58": [
+   "Glencoe",
+   "Northbrook",
+   "Deerfield"
+  ],
+  "sldl:77": [
+   "O’Hare",
+   "Franklin Park",
+   "Northlake",
+   "Melrose Park"
+  ],
+  "sldl:19": [
+   "Portage Park",
+   "Jefferson Park",
+   "Dunning",
+   "Irving Park"
+  ],
+  "sldl:25": [
+   "East Side",
+   "South Chicago",
+   "South Shore",
+   "Hyde Park"
+  ],
+  "sldl:2": [
+   "Cicero",
+   "Lyons",
+   "Brookfield",
+   "Stickney"
+  ],
+  "sldl:3": [
+   "Belmont Cragin",
+   "Logan Square",
+   "Montclare",
+   "West Town"
+  ],
+  "sldl:1": [
+   "Archer Heights",
+   "Gage Park",
+   "Garfield Ridge",
+   "New City"
+  ],
+  "sldl:4": [
+   "Humboldt Park",
+   "West Town",
+   "Belmont Cragin",
+   "Hermosa"
+  ],
+  "sldl:5": [
+   "Grand Boulevard",
+   "Washington Park",
+   "Greater Grand Crossing",
+   "Woodlawn"
+  ],
+  "sldl:6": [
+   "New City",
+   "West Englewood",
+   "Englewood",
+   "Chicago Lawn"
+  ],
+  "sldl:10": [
+   "West Town",
+   "East Garfield Park",
+   "Near West Side",
+   "Humboldt Park"
+  ],
+  "sldl:28": [
+   "Tinley Park",
+   "Riverdale",
+   "Blue Island",
+   "Oak Forest"
+  ],
+  "sldl:45": [
+   "Western Springs",
+   "Hinsdale"
+  ],
+  "sldl:18": [
+   "Evanston",
+   "Winnetka",
+   "Wilmette",
+   "Kenilworth"
+  ],
+  "sldl:43": [
+   "Elgin",
+   "Hoffman Estates",
+   "Streamwood"
+  ],
+  "sldl:11": [
+   "Lake View",
+   "North Center",
+   "Lincoln Park",
+   "Lincoln Square"
+  ],
+  "sldl:37": [
+   "Orland Park",
+   "Tinley Park",
+   "Orland Hills"
+  ],
+  "sldl:7": [
+   "Westchester",
+   "Hillside",
+   "Bellwood",
+   "Maywood"
+  ],
+  "sldl:8": [
+   "Austin",
+   "Countryside",
+   "La Grange",
+   "Western Springs"
+  ],
+  "sldl:17": [
+   "Glenview",
+   "Skokie",
+   "Wilmette",
+   "Northbrook"
+  ],
+  "sldl:9": [
+   "Near West Side",
+   "North Lawndale",
+   "Near North Side",
+   "East Garfield Park"
+  ],
+  "sldl:40": [
+   "Avondale",
+   "Irving Park",
+   "Albany Park",
+   "North Center"
+  ],
+  "sldl:32": [
+   "Ashburn",
+   "Chicago Lawn",
+   "Burbank",
+   "Greater Grand Crossing"
+  ],
+  "sldl:57": [
+   "Northbrook",
+   "Wheeling",
+   "Northfield",
+   "Glenview"
+  ],
+  "sldl:49": [
+   "Bartlett",
+   "Elgin",
+   "Streamwood"
+  ],
+  "sldl:23": [
+   "South Lawndale",
+   "Brighton Park",
+   "Cicero"
+  ],
+  "sldl:12": [
+   "Lincoln Park",
+   "Near North Side",
+   "Lake View"
+  ],
+  "sldl:36": [
+   "Oak Lawn",
+   "Palos Hills",
+   "Evergreen Park",
+   "Chicago Ridge"
+  ],
+  "sldl:24": [
+   "Lower West Side",
+   "Bridgeport",
+   "New City",
+   "McKinley Park"
+  ],
+  "sldl:34": [
+   "South Deering",
+   "Lynwood",
+   "Lansing",
+   "Sauk Village"
+  ],
+  "sldl:35": [
+   "Orland Park",
+   "Alsip",
+   "Palos Heights",
+   "Palos Park"
+  ],
+  "sldl:38": [
+   "Matteson",
+   "Tinley Park",
+   "Country Club Hills",
+   "Richton Park"
+  ],
+  "sldl:14": [
+   "Rogers Park",
+   "Edgewater",
+   "West Ridge"
+  ],
+  "sldl:31": [
+   "Auburn Gresham",
+   "Oak Lawn",
+   "Ashburn",
+   "Hickory Hills"
+  ],
+  "sldl:15": [
+   "Niles",
+   "Morton Grove",
+   "Forest Glen",
+   "North Park"
+  ],
+  "sldl:16": [
+   "Skokie",
+   "Lincolnwood",
+   "West Ridge",
+   "Lincoln Square"
+  ],
+  "sldl:20": [
+   "O’Hare",
+   "Norwood Park",
+   "Schiller Park",
+   "Norridge"
+  ],
+  "sldl:21": [
+   "Summit",
+   "Bedford Park",
+   "Berwyn",
+   "McCook"
+  ],
+  "sldl:22": [
+   "Bedford Park",
+   "West Lawn",
+   "Clearing",
+   "Burbank"
+  ],
+  "sldl:26": [
+   "South Shore",
+   "Near North Side",
+   "Near South Side",
+   "Grand Boulevard"
+  ],
+  "sldl:27": [
+   "Orland Park",
+   "Washington Heights",
+   "Alsip",
+   "Morgan Park"
+  ],
+  "sldl:30": [
+   "Harvey",
+   "Markham",
+   "Homewood",
+   "Flossmoor"
+  ],
+  "sldl:33": [
+   "Lansing",
+   "South Deering",
+   "Hegewisch",
+   "Calumet City"
+  ],
+  "sldl:39": [
+   "Logan Square",
+   "Belmont Cragin",
+   "Portage Park",
+   "Hermosa"
+  ],
+  "sldl:44": [
+   "Hoffman Estates",
+   "Streamwood",
+   "Schaumburg",
+   "Hanover Park"
+  ],
+  "sldl:13": [
+   "Uptown",
+   "Lincoln Square",
+   "Lake View",
+   "West Ridge"
+  ],
+  "sldl:48": [
+   "Elk Grove Village",
+   "Roselle"
+  ],
+  "sldl:51": [
+   "Palatine",
+   "Inverness",
+   "Hoffman Estates",
+   "Barrington"
+  ],
+  "sldl:52": [
+   "Barrington Hills",
+   "South Barrington",
+   "Hoffman Estates",
+   "Barrington"
+  ],
+  "sldl:53": [
+   "Mount Prospect",
+   "Arlington Heights",
+   "Rolling Meadows",
+   "Des Plaines"
+  ],
+  "sldl:54": [
+   "Arlington Heights",
+   "Palatine",
+   "Prospect Heights",
+   "Buffalo Grove"
+  ],
+  "sldl:55": [
+   "Park Ridge",
+   "Des Plaines",
+   "Niles",
+   "Morton Grove"
+  ],
+  "sldl:56": [
+   "Schaumburg",
+   "Des Plaines",
+   "Elk Grove Village"
+  ],
+  "sldl:59": [
+   "Wheeling"
+  ],
+  "sldl:78": [
+   "Oak Park",
+   "Austin",
+   "River Forest",
+   "Elmwood Park"
+  ],
+  "sldl:79": [
+   "Park Forest",
+   "Richton Park"
+  ],
+  "sldl:80": [
+   "Chicago Heights",
+   "Park Forest",
+   "South Chicago Heights",
+   "Richton Park"
+  ],
+  "commissioner:1": [
+   "Austin",
+   "Oak Park",
+   "Maywood",
+   "Forest Park"
+  ],
+  "commissioner:2": [
+   "Near West Side",
+   "West Englewood",
+   "North Lawndale",
+   "Englewood"
+  ],
+  "commissioner:3": [
+   "Ashburn",
+   "Greater Grand Crossing",
+   "Hyde Park",
+   "South Shore"
+  ],
+  "commissioner:4": [
+   "South Deering",
+   "Calumet City",
+   "Lansing",
+   "Hegewisch"
+  ],
+  "commissioner:5": [
+   "Chicago Heights",
+   "Harvey",
+   "Riverdale",
+   "Markham"
+  ],
+  "commissioner:6": [
+   "Matteson",
+   "Tinley Park",
+   "Lynwood",
+   "South Holland"
+  ],
+  "commissioner:7": [
+   "South Lawndale",
+   "Lower West Side",
+   "Brighton Park",
+   "Archer Heights"
+  ],
+  "commissioner:8": [
+   "Belmont Cragin",
+   "Logan Square",
+   "Portage Park",
+   "Irving Park"
+  ],
+  "commissioner:9": [
+   "Mount Prospect",
+   "Arlington Heights",
+   "Park Ridge",
+   "Rolling Meadows"
+  ],
+  "commissioner:10": [
+   "Forest Glen",
+   "Norwood Park",
+   "Uptown",
+   "Lake View"
+  ],
+  "commissioner:11": [
+   "Oak Lawn",
+   "Bedford Park",
+   "Burbank",
+   "Beverly"
+  ],
+  "commissioner:12": [
+   "Lincoln Park",
+   "Portage Park",
+   "North Center",
+   "Albany Park"
+  ],
+  "commissioner:13": [
+   "Skokie",
+   "Evanston",
+   "Morton Grove",
+   "Niles"
+  ],
+  "commissioner:14": [
+   "Northbrook",
+   "Glenview",
+   "Palatine",
+   "Wheeling"
+  ],
+  "commissioner:15": [
+   "Hoffman Estates",
+   "Barrington Hills",
+   "Schaumburg",
+   "Streamwood"
+  ],
+  "commissioner:16": [
+   "Cicero",
+   "Berwyn",
+   "Melrose Park",
+   "Brookfield"
+  ],
+  "commissioner:17": [
+   "Orland Park",
+   "Lemont",
+   "O’Hare",
+   "Des Plaines"
+  ],
+  "bor:1": [
+   "Hoffman Estates",
+   "Schaumburg",
+   "Barrington Hills",
+   "Arlington Heights"
+  ],
+  "bor:2": [
+   "Des Plaines",
+   "Northbrook",
+   "Glenview",
+   "Skokie"
+  ],
+  "bor:3": [
+   "Orland Park",
+   "Tinley Park",
+   "Chicago Heights",
+   "South Deering"
+  ],
+  "subcircuit:1": [
+   "South Shore",
+   "Greater Grand Crossing",
+   "Chatham",
+   "Hyde Park"
+  ],
+  "subcircuit:2": [
+   "Riverdale",
+   "Orland Park",
+   "West Pullman",
+   "Oak Forest"
+  ],
+  "subcircuit:3": [
+   "Cicero",
+   "Berwyn",
+   "Garfield Ridge",
+   "West Lawn"
+  ],
+  "subcircuit:4": [
+   "Bedford Park",
+   "Franklin Park",
+   "Westchester",
+   "Burbank"
+  ],
+  "subcircuit:5": [
+   "Ashburn",
+   "Englewood",
+   "New City",
+   "West Englewood"
+  ],
+  "subcircuit:6": [
+   "Irving Park",
+   "Belmont Cragin",
+   "Portage Park",
+   "Avondale"
+  ],
+  "subcircuit:7": [
+   "Austin",
+   "Melrose Park",
+   "North Lawndale",
+   "Maywood"
+  ],
+  "subcircuit:8": [
+   "Lincoln Park",
+   "Near West Side",
+   "Bridgeport",
+   "West Town"
+  ],
+  "subcircuit:9": [
+   "Evanston",
+   "Wilmette",
+   "Winnetka",
+   "Glencoe"
+  ],
+  "subcircuit:10": [
+   "Skokie",
+   "Glenview",
+   "Morton Grove",
+   "Niles"
+  ],
+  "subcircuit:11": [
+   "O’Hare",
+   "Oak Park",
+   "Norwood Park",
+   "Dunning"
+  ],
+  "subcircuit:12": [
+   "Arlington Heights",
+   "Palatine",
+   "Northbrook",
+   "Wheeling"
+  ],
+  "subcircuit:13": [
+   "Hoffman Estates",
+   "Schaumburg",
+   "Barrington Hills",
+   "Streamwood"
+  ],
+  "subcircuit:14": [
+   "Lower West Side",
+   "Logan Square",
+   "New City",
+   "Humboldt Park"
+  ],
+  "subcircuit:15": [
+   "Orland Park",
+   "Tinley Park",
+   "Matteson",
+   "Chicago Heights"
+  ],
+  "subcircuit:16": [
+   "South Lawndale",
+   "Near West Side",
+   "Brighton Park",
+   "Gage Park"
+  ],
+  "subcircuit:17": [
+   "South Deering",
+   "Calumet City",
+   "Lansing",
+   "South Holland"
+  ],
+  "subcircuit:18": [
+   "Des Plaines",
+   "Mount Prospect",
+   "Elk Grove Village",
+   "Glenview"
+  ],
+  "subcircuit:19": [
+   "Oak Lawn",
+   "Alsip",
+   "Palos Park",
+   "Palos Hills"
+  ],
+  "subcircuit:20": [
+   "Lake View",
+   "Uptown",
+   "Edgewater",
+   "Lincoln Park"
+  ],
+  "ward:1": [
+   "West Town",
+   "Logan Square"
+  ],
+  "ward:2": [
+   "Near North Side",
+   "Lincoln Park"
+  ],
+  "ward:3": [
+   "Grand Boulevard",
+   "Near South Side",
+   "Douglas",
+   "Washington Park"
+  ],
+  "ward:4": [
+   "Douglas",
+   "Kenwood",
+   "Near South Side",
+   "Oakland"
+  ],
+  "ward:5": [
+   "Hyde Park",
+   "Woodlawn",
+   "South Shore",
+   "Greater Grand Crossing"
+  ],
+  "ward:6": [
+   "Greater Grand Crossing",
+   "Chatham",
+   "Englewood",
+   "Roseland"
+  ],
+  "ward:7": [
+   "South Deering",
+   "South Chicago",
+   "South Shore",
+   "Calumet Heights"
+  ],
+  "ward:8": [
+   "Avalon Park",
+   "Pullman",
+   "Chatham",
+   "Calumet Heights"
+  ],
+  "ward:9": [
+   "Roseland",
+   "West Pullman",
+   "Riverdale",
+   "Pullman"
+  ],
+  "ward:10": [
+   "South Deering",
+   "Hegewisch",
+   "East Side",
+   "Riverdale"
+  ],
+  "ward:11": [
+   "Bridgeport",
+   "New City",
+   "Armour Square",
+   "McKinley Park"
+  ],
+  "ward:12": [
+   "Brighton Park",
+   "McKinley Park",
+   "New City",
+   "Lower West Side"
+  ],
+  "ward:13": [
+   "Clearing",
+   "Garfield Ridge",
+   "West Lawn",
+   "West Elsdon"
+  ],
+  "ward:14": [
+   "Archer Heights",
+   "Gage Park",
+   "Chicago Lawn",
+   "Brighton Park"
+  ],
+  "ward:15": [
+   "New City",
+   "Gage Park",
+   "West Englewood",
+   "Chicago Lawn"
+  ],
+  "ward:16": [
+   "West Englewood",
+   "Englewood",
+   "Chicago Lawn",
+   "New City"
+  ],
+  "ward:17": [
+   "Auburn Gresham",
+   "West Englewood",
+   "Chicago Lawn",
+   "Englewood"
+  ],
+  "ward:18": [
+   "Ashburn",
+   "Auburn Gresham",
+   "West Lawn",
+   "Chicago Lawn"
+  ],
+  "ward:19": [
+   "Beverly",
+   "Mount Greenwood",
+   "Morgan Park"
+  ],
+  "ward:20": [
+   "New City",
+   "Washington Park",
+   "Woodlawn",
+   "Englewood"
+  ],
+  "ward:21": [
+   "Washington Heights",
+   "West Pullman",
+   "Morgan Park",
+   "Roseland"
+  ],
+  "ward:22": [
+   "South Lawndale",
+   "Garfield Ridge",
+   "North Lawndale"
+  ],
+  "ward:23": [
+   "Garfield Ridge",
+   "West Lawn",
+   "West Elsdon",
+   "Archer Heights"
+  ],
+  "ward:24": [
+   "North Lawndale",
+   "South Lawndale",
+   "Austin",
+   "West Garfield Park"
+  ],
+  "ward:25": [
+   "Lower West Side",
+   "South Lawndale",
+   "Near West Side"
+  ],
+  "ward:26": [
+   "Humboldt Park",
+   "West Town",
+   "Logan Square",
+   "Hermosa"
+  ],
+  "ward:27": [
+   "Near West Side",
+   "West Town",
+   "Humboldt Park",
+   "Near North Side"
+  ],
+  "ward:28": [
+   "Near West Side",
+   "East Garfield Park",
+   "West Garfield Park",
+   "Austin"
+  ],
+  "ward:29": [
+   "Austin",
+   "Montclare",
+   "Dunning"
+  ],
+  "ward:30": [
+   "Portage Park",
+   "Belmont Cragin",
+   "Irving Park",
+   "Dunning"
+  ],
+  "ward:31": [
+   "Belmont Cragin",
+   "Hermosa",
+   "Portage Park",
+   "Avondale"
+  ],
+  "ward:32": [
+   "Logan Square",
+   "Lincoln Park",
+   "North Center",
+   "Lake View"
+  ],
+  "ward:33": [
+   "Albany Park",
+   "Irving Park",
+   "Avondale"
+  ],
+  "ward:34": [
+   "Near West Side",
+   "Loop"
+  ],
+  "ward:35": [
+   "Avondale",
+   "Logan Square",
+   "Irving Park",
+   "Hermosa"
+  ],
+  "ward:36": [
+   "Belmont Cragin",
+   "West Town",
+   "Montclare",
+   "Humboldt Park"
+  ],
+  "ward:37": [
+   "Austin",
+   "Humboldt Park"
+  ],
+  "ward:38": [
+   "Dunning",
+   "O’Hare",
+   "Portage Park"
+  ],
+  "ward:39": [
+   "North Park",
+   "Forest Glen",
+   "Albany Park",
+   "Irving Park"
+  ],
+  "ward:40": [
+   "Lincoln Square",
+   "West Ridge",
+   "Edgewater",
+   "Rogers Park"
+  ],
+  "ward:41": [
+   "O’Hare",
+   "Norwood Park",
+   "Edison Park"
+  ],
+  "ward:42": [
+   "Near North Side",
+   "Loop",
+   "Near West Side"
+  ],
+  "ward:43": [
+   "Lincoln Park",
+   "Near North Side"
+  ],
+  "ward:44": [
+   "Lake View"
+  ],
+  "ward:45": [
+   "Jefferson Park",
+   "Forest Glen",
+   "Portage Park",
+   "Norwood Park"
+  ],
+  "ward:46": [
+   "Uptown",
+   "Lake View"
+  ],
+  "ward:47": [
+   "North Center",
+   "Lincoln Square",
+   "Uptown",
+   "Lake View"
+  ],
+  "ward:48": [
+   "Edgewater",
+   "Uptown"
+  ],
+  "ward:49": [
+   "Rogers Park",
+   "West Ridge"
+  ],
+  "ward:50": [
+   "West Ridge",
+   "North Park"
+  ],
+  "police:17": [
+   "Irving Park",
+   "North Park",
+   "Albany Park",
+   "Avondale"
+  ],
+  "police:20": [
+   "Lincoln Square",
+   "Edgewater",
+   "Uptown",
+   "West Ridge"
+  ],
+  "police:31": [
+   "Mount Greenwood",
+   "Morgan Park"
+  ],
+  "police:19": [
+   "Lake View",
+   "North Center",
+   "Uptown",
+   "Lincoln Park"
+  ],
+  "police:25": [
+   "Belmont Cragin",
+   "Austin",
+   "Hermosa",
+   "Humboldt Park"
+  ],
+  "police:14": [
+   "Logan Square",
+   "West Town",
+   "Avondale",
+   "Humboldt Park"
+  ],
+  "police:22": [
+   "Morgan Park",
+   "Beverly",
+   "Washington Heights",
+   "Mount Greenwood"
+  ],
+  "police:5": [
+   "Riverdale",
+   "West Pullman",
+   "Roseland",
+   "Pullman"
+  ],
+  "police:24": [
+   "West Ridge",
+   "Rogers Park",
+   "Edgewater"
+  ],
+  "police:16": [
+   "O’Hare",
+   "Norwood Park",
+   "Dunning",
+   "Portage Park"
+  ],
+  "police:8": [
+   "Ashburn",
+   "Garfield Ridge",
+   "Chicago Lawn",
+   "West Lawn"
+  ],
+  "police:18": [
+   "Near North Side",
+   "Lincoln Park"
+  ],
+  "police:12": [
+   "Near West Side",
+   "West Town",
+   "Lower West Side",
+   "Humboldt Park"
+  ],
+  "police:11": [
+   "Humboldt Park",
+   "East Garfield Park",
+   "West Garfield Park",
+   "Austin"
+  ],
+  "police:7": [
+   "West Englewood",
+   "Englewood",
+   "Greater Grand Crossing"
+  ],
+  "police:3": [
+   "Woodlawn",
+   "Greater Grand Crossing",
+   "South Shore",
+   "Hyde Park"
+  ],
+  "police:4": [
+   "South Deering",
+   "Hegewisch",
+   "South Chicago",
+   "East Side"
+  ],
+  "police:6": [
+   "Auburn Gresham",
+   "Chatham",
+   "Greater Grand Crossing",
+   "Roseland"
+  ],
+  "police:10": [
+   "South Lawndale",
+   "North Lawndale",
+   "Lower West Side"
+  ],
+  "police:1": [
+   "Near South Side",
+   "Loop",
+   "Near West Side",
+   "Douglas"
+  ],
+  "police:9": [
+   "New City",
+   "Bridgeport",
+   "Brighton Park",
+   "McKinley Park"
+  ],
+  "police:2": [
+   "Grand Boulevard",
+   "Hyde Park",
+   "Washington Park",
+   "Douglas"
+  ],
+  "police:15": [
+   "Austin"
+  ],
+  "school:1A": [
+   "O’Hare",
+   "Norwood Park",
+   "Forest Glen",
+   "Jefferson Park"
+  ],
+  "school:1B": [
+   "Portage Park",
+   "Dunning",
+   "Irving Park",
+   "Belmont Cragin"
+  ],
+  "school:2A": [
+   "West Ridge",
+   "Rogers Park",
+   "North Park"
+  ],
+  "school:2B": [
+   "Lincoln Square",
+   "Edgewater",
+   "Albany Park",
+   "Uptown"
+  ],
+  "school:3A": [
+   "Avondale",
+   "Irving Park",
+   "Logan Square",
+   "Belmont Cragin"
+  ],
+  "school:3B": [
+   "Humboldt Park",
+   "Logan Square",
+   "Belmont Cragin",
+   "West Town"
+  ],
+  "school:4A": [
+   "Lake View",
+   "Uptown",
+   "North Center",
+   "Edgewater"
+  ],
+  "school:4B": [
+   "Lincoln Park",
+   "North Center",
+   "Lake View",
+   "Logan Square"
+  ],
+  "school:5A": [
+   "Austin",
+   "Humboldt Park",
+   "West Town",
+   "Belmont Cragin"
+  ],
+  "school:5B": [
+   "North Lawndale",
+   "Near West Side",
+   "East Garfield Park",
+   "West Garfield Park"
+  ],
+  "school:6A": [
+   "Near North Side",
+   "West Town",
+   "Logan Square"
+  ],
+  "school:6B": [
+   "Greater Grand Crossing",
+   "Washington Park",
+   "Near South Side",
+   "Grand Boulevard"
+  ],
+  "school:7A": [
+   "South Lawndale",
+   "Near West Side",
+   "Lower West Side",
+   "Garfield Ridge"
+  ],
+  "school:7B": [
+   "Brighton Park",
+   "Lower West Side",
+   "Bridgeport",
+   "Archer Heights"
+  ],
+  "school:8A": [
+   "Ashburn",
+   "Garfield Ridge",
+   "Clearing",
+   "West Lawn"
+  ],
+  "school:8B": [
+   "New City",
+   "Chicago Lawn",
+   "Gage Park",
+   "McKinley Park"
+  ],
+  "school:9A": [
+   "Auburn Gresham",
+   "West Englewood",
+   "Englewood",
+   "New City"
+  ],
+  "school:9B": [
+   "Roseland",
+   "West Pullman",
+   "Morgan Park",
+   "Beverly"
+  ],
+  "school:10A": [
+   "South Shore",
+   "Woodlawn",
+   "Greater Grand Crossing",
+   "Hyde Park"
+  ],
+  "school:10B": [
+   "South Deering",
+   "Hegewisch",
+   "Riverdale",
+   "East Side"
+  ],
+  "precinct:5-1": [
+   "South Shore"
+  ],
+  "precinct:5-14": [
+   "Woodlawn"
+  ],
+  "precinct:7-13": [
+   "South Chicago"
+  ],
+  "precinct:7-14": [
+   "South Chicago"
+  ],
+  "precinct:8-23": [
+   "Pullman"
+  ],
+  "precinct:8-26": [
+   "Chatham"
+  ],
+  "precinct:8-27": [
+   "Avalon Park"
+  ],
+  "precinct:10-2": [
+   "South Chicago"
+  ],
+  "precinct:10-4": [
+   "South Chicago",
+   "Calumet Heights"
+  ],
+  "precinct:21-10": [
+   "Washington Heights"
+  ],
+  "precinct:21-25": [
+   "Auburn Gresham",
+   "Washington Heights"
+  ],
+  "precinct:24-5": [
+   "North Lawndale"
+  ],
+  "precinct:24-6": [
+   "West Garfield Park",
+   "North Lawndale"
+  ],
+  "precinct:24-12": [
+   "North Lawndale"
+  ]
  }
 }

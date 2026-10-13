@@ -1,11 +1,13 @@
 import { Search as SearchIcon } from 'lucide-react';
 import { ClearButton } from '../../components/ClearButton';
 import { useMemo, useState } from 'react';
+import { areaLabel, SCOPE } from './Race';
 import type { Measure, Race, Retention } from './types';
 
 // One box for "where's my alderperson / that judge / the gunshot question?".
 // Searches the ballot on screen; if the voter's ballot has no match but some
-// other Cook County ballot does, says so instead of a dead end.
+// other Cook County ballot does, says what and where it is instead of a dead
+// end (searching a neighborhood or suburb finds the contests covering it).
 
 export interface Hit {
   /** Contest id: the card to jump to. */
@@ -13,49 +15,75 @@ export interface Hit {
   section: string;
   title: string;
   detail: string;
+  /** What and where it is, for contests on other ballots: "Federal · Congressional District 6 · 3 candidates". */
+  about: string;
+  /** Its district, as a key into the places list ("cd:6"). */
+  area?: string;
 }
 
 interface Ballot { races: Race[]; retentions: Retention[]; measures: Measure[] }
 
 const fold = (s: string) => s.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '');
 
-function index(b: Ballot): (Hit & { text: string })[] {
-  return [
+const count = (n: number, one: string) => `${n} ${one}${n === 1 ? '' : 's'}`;
+
+/** With `places`, a contest also matches the neighborhoods and suburbs it covers. */
+type Entry = Hit & { text: string; places?: string[] };
+
+function index(b: Ballot, sections: Record<string, string>, places?: Record<string, string[]>): Entry[] {
+  const entries: Entry[] = [
     ...b.races.map((r) => ({
       id: r.id, section: r.section, title: r.office,
       detail: r.candidates.map((c) => c.name).join(' · '),
+      about: [sections[r.section], areaLabel(r), r.candidates.length ? count(r.candidates.length, 'candidate') : 'write-in only'].join(' · '),
+      area: r.area ? `${r.area.type}:${r.area.id}` : undefined,
       text: fold(`${r.office} ${r.candidates.map((c) => `${c.name} ${c.party}`).join(' ')}`),
     })),
     ...b.retentions.map((r) => ({
       id: r.id, section: 'retention', title: `Retain ${r.judge}?`, detail: `${r.court} · ${r.withdrawn ? 'withdrew, votes won’t count' : 'judicial retention'}`,
+      about: `${sections.retention} · All of Cook County · yes or no`,
       text: fold(`${r.judge} ${r.court} retention judge`),
     })),
     ...b.measures.map((m) => ({
       id: m.id, section: 'measures', title: m.title, detail: 'Ballot question',
+      about: `${sections.measures} · ${SCOPE[m.scope.type](m)} · yes or no`,
+      area: m.scope.type === 'ward' ? `ward:${m.scope.id}` : m.scope.type === 'precinct' ? `precinct:${m.scope.ward}-${m.scope.precinct}` : undefined,
       text: fold(`${m.title} ${m.question} referendum question`),
     })),
   ];
+  if (places) for (const e of entries) if (e.area && places[e.area]) e.places = places[e.area].map(fold);
+  return entries;
 }
 
-// Every word must appear somewhere ("ford 7th" finds IL-7's La Shawn Ford).
-const find = (idx: (Hit & { text: string })[], q: string) => {
-  const words = fold(q).split(/\s+/).filter(Boolean);
-  return words.length ? idx.filter((h) => words.every((w) => h.text.includes(w))) : [];
+// Every word must appear somewhere ("ford 7th" finds IL-7's La Shawn Ford),
+// or the whole search must start a place's name ("oak park", not "Oak Forest").
+const find = (idx: Entry[], q: string) => {
+  const phrase = fold(q).trim().replace(/\s+/g, ' ');
+  const words = phrase.split(' ').filter(Boolean);
+  return words.length ? idx.filter((h) => words.every((w) => h.text.includes(w)) || h.places?.some((p) => p.startsWith(phrase))) : [];
 };
 
 interface Props {
   ballot: Ballot;
   /** Every contest in Cook County, to tell "not on yours" from "not anywhere". Omit when browsing them all. */
   everywhere?: Ballot;
+  /** Section titles by id, for describing contests on other ballots. */
+  sections: Record<string, string>;
+  /** The neighborhoods and suburbs each district covers, by "type:id". */
+  places?: Record<string, string[]>;
   onJump: (hit: Hit) => void;
 }
 
-export function BallotSearch({ ballot, everywhere, onJump }: Props) {
+const SHOWN_ELSEWHERE = 5;
+const list = (xs: string[]) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs.at(-1)}`);
+
+export function BallotSearch({ ballot, everywhere, sections, places, onJump }: Props) {
   const [q, setQ] = useState('');
-  const mine = useMemo(() => index(ballot), [ballot]);
+  const mine = useMemo(() => index(ballot, sections), [ballot, sections]);
   const hits = useMemo(() => find(mine, q), [mine, q]);
   // Only built the first time a search comes up empty.
-  const elsewhere = useMemo(() => (everywhere && q && !hits.length ? find(index(everywhere), q).length : 0), [everywhere, q, hits.length]);
+  const all = useMemo(() => (everywhere && q && !hits.length ? index(everywhere, sections, places) : null), [everywhere, sections, places, q, hits.length]);
+  const elsewhere = useMemo(() => (all ? find(all, q) : []), [all, q]);
   const go = (h: Hit) => { setQ(''); onJump(h); };
 
   return (
@@ -90,7 +118,25 @@ export function BallotSearch({ ballot, everywhere, onJump }: Props) {
           ) : (
             <div className="px-4 py-3 text-[15px] text-[var(--gb-text)] space-y-2">
               <p>Nothing on {everywhere ? 'your ballot' : 'any Cook County ballot'} matches “{q}”.</p>
-              {elsewhere > 0 && <p>{elsewhere === 1 ? 'One contest matches' : `${elsewhere} contests match`} on other ballots in Cook County, just not at your address.</p>}
+              {elsewhere.length > 0 && (
+                <>
+                  <p>{elsewhere.length === 1 ? 'One contest matches' : `${elsewhere.length} contests match`} on other ballots in Cook County, just not at your address:</p>
+                  <ul className="space-y-2">
+                    {elsewhere.slice(0, SHOWN_ELSEWHERE).map((h) => {
+                      const where = h.area ? places?.[h.area] : undefined;
+                      return (
+                        <li key={h.id} className="rounded-xl border-2 border-[var(--gb-border)] px-3 py-2">
+                          <span className="block font-bold">{h.title}</span>
+                          <span className="block text-sm">{h.about}</span>
+                          {where?.length ? <span className="block text-sm">📍 Covers {h.area?.startsWith('precinct:') ? '' : 'parts of '}{list(where)}</span> : null}
+                          {h.detail && h.section !== 'measures' && <span className="block text-sm">{h.detail}</span>}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  {elsewhere.length > SHOWN_ELSEWHERE && <p className="text-sm">{elsewhere.length - SHOWN_ELSEWHERE} more: keep typing to narrow it down.</p>}
+                </>
+              )}
             </div>
           )}
         </div>
