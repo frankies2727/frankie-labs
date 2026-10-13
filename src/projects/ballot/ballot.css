@@ -65,5 +65,8 @@
   overflow-y: auto; padding-right: 6px; scrollbar-gutter: stable;
   scroll-margin-top: calc(var(--kyb-top) + var(--kyb-bar, 260px) + 12px);
 }
+/* Cards keep their height and the box scrolls (in a column flexbox they'd
+   otherwise shrink to fit and clip their own buttons). */
+.kyb-scroll > * { flex-shrink: 0; }
 .kyb-scroll [id^="race-"] { scroll-margin-top: 8px; }
 .kyb-scroll, .kyb-scroll-bar { scrollbar-width: thin; scrollbar-color: var(--scroll) color-mix(in srgb, var(--scroll) 18%, transparent); }

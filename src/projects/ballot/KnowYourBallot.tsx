@@ -271,17 +271,22 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   const jumpTo = (sectionId: string, id: string) => {
     setTab('ballot');
     setChosenSection(sectionId);
-    requestAnimationFrame(() => {
+    // Two frames: the new section has to render, and the pinned bar has to
+    // settle (a search just closed its results list) before --kyb-bar, and so
+    // where things land, is right.
+    requestAnimationFrame(() => requestAnimationFrame(() => {
       const el = document.getElementById(`race-${id}`);
       // Races sit in their section's own scroll box: bring the whole box into
       // view under the pinned bar, then scroll the race to the top of the box.
       const box = el?.closest<HTMLElement>('.kyb-scroll');
       if (el && box) {
+        // The box jumps straight there (two smooth scrolls at once can cancel
+        // each other); the page glides.
+        box.scrollTop = el.offsetTop - 8;
         scrollTo(box);
-        box.scrollTo({ top: el.offsetTop - 8, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
       } else scrollTo(el);
       el?.querySelector<HTMLElement>('button')?.focus({ preventScroll: true });
-    });
+    }));
   };
   const nextUp = () => {
     const s = sections.find((sec) => sec.done < sec.ids.length);
