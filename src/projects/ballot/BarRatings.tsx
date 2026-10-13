@@ -60,7 +60,7 @@ function Gauge({ share, size }: { share: number; size: number }) {
  * `compact` (on a retention card): small gauge and the count, with each
  * group's rating a tap away. Otherwise (a candidate's details): everything open.
  */
-export function BarRatings({ bar, compact = false }: { bar: Record<string, string>; compact?: boolean }) {
+export function BarRatings({ bar, source, compact = false }: { bar: Record<string, string>; /** This person's ratings on the Alliance's site. */ source?: string; compact?: boolean }) {
   const { yes, of } = tally(bar);
   if (!of) return null;
   const share = yes / of;
@@ -81,6 +81,11 @@ export function BarRatings({ bar, compact = false }: { bar: Record<string, strin
       })}
     </ul>
   );
+  const link = source && (
+    <a href={source} target="_blank" rel="noreferrer noopener" className="block w-fit text-sm font-bold text-[var(--gb-link)] underline underline-offset-2">
+      See these ratings at the source (VoteForJudges.org) ↗
+    </a>
+  );
   const summary = (
     <div className={`flex items-center gap-3 ${compact ? '' : 'flex-col text-center'}`} role="img" aria-label={`${headline(share)}: ${yes} of ${of} bar groups rate ${compact ? 'this judge' : 'them'} positively`}>
       <Gauge share={share} size={compact ? 84 : 200} />
@@ -95,15 +100,16 @@ export function BarRatings({ bar, compact = false }: { bar: Record<string, strin
       {summary}
       <details>
         <summary className="cursor-pointer text-sm font-bold underline underline-offset-2">Each group’s rating</summary>
-        <div className="mt-2">{list}</div>
+        <div className="mt-2 space-y-2">{list}{link}</div>
       </details>
     </div>
   ) : (
-    <section className="space-y-3 text-[var(--gb-text)]">
-      <h3 className="text-sm font-black uppercase tracking-widest">⚖️ Bar association ratings</h3>
+    <div className="space-y-3 rounded-xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] p-3 text-[var(--gb-text)]">
+      <h4 className="font-black">⚖️ Bar association ratings</h4>
       {summary}
       {list}
       <p className="text-sm">Chicago-area bar groups screen judicial candidates with questionnaires, background checks and interviews. Candidates who don’t take part are rated “Not recommended.”</p>
-    </section>
+      {link}
+    </div>
   );
 }

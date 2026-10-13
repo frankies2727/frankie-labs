@@ -63,12 +63,20 @@ async function fetchAlliance() {
   const seats = [];
   const retained = [];
   const groups = new Set();
-  for (const table of html.split(/<table\b/i).slice(1)) {
-    const rows = table.split(/<\/table>/i)[0].split(/<tr\b/i).slice(1)
+  // The tables sit in fold-out panels; a link ending in a panel's id opens it
+  // and scrolls to it (their accordion script reads the address on load), and
+  // a text fragment points at the name.
+  const panels = [...html.matchAll(/class="vc_tta-panel[^"]*" id="([^"]+)"/g)].map((m) => [m.index, m[1]]);
+  const sourceFor = (at, name) => {
+    const panel = panels.filter(([i]) => i < at).at(-1)?.[1];
+    return `${ALLIANCE}${panel ? `#${panel}` : ''}:~:text=${encodeURIComponent(name).replace(/-/g, '%2D')}`;
+  };
+  for (const { 0: table, index: at } of html.matchAll(/<table\b[\s\S]*?<\/table>/gi)) {
+    const rows = table.split(/<tr\b/i).slice(1)
       .map((tr) => tr.split(/<td\b/i).slice(1).map((td) => cellText(`<td${td}`)));
     for (const [name, verdict] of rows) {
       if (name && /\bsays? (no|yes)\b/i.test(verdict ?? '')) {
-        retained.push({ name, no: /\bsays? no\b/i.test(verdict) ? verdict.split(/\bsays? no\b/i)[0].split(/,\s*(?:and\s+)?|\s+and\s+/).map((g) => g.trim()).filter(Boolean) : [] });
+        retained.push({ name, source: sourceFor(at, name), no: /\bsays? no\b/i.test(verdict) ? verdict.split(/\bsays? no\b/i)[0].split(/,\s*(?:and\s+)?|\s+and\s+/).map((g) => g.trim()).filter(Boolean) : [] });
       }
     }
     const [header, ...people] = rows;
@@ -77,7 +85,7 @@ async function fetchAlliance() {
     const columns = header.slice(1).map((g) => g.replace(/\s+/g, ''));
     for (const g of columns) if (g) groups.add(g);
     const candidates = people.filter((r) => r[0]).map(([name, ...codes]) => ({
-      name,
+      name, source: sourceFor(at, name),
       bar: Object.fromEntries(codes.map((c, i) => [columns[i], CODES[c.trim()]]).filter(([g, r]) => g && r)),
     }));
     seats.push({ seat: seat(vacated), candidates });
@@ -128,22 +136,26 @@ function fromGuide(guide, alliance, races) {
   }
   for (const j of judges) {
     const said = alliance.retained.find((r) => sameJudge(r.name, j.judge));
-    if (said && j.bar) j.bar = withAlliance(j.bar, said.no, alliance.groups);
+    if (said && j.bar) { j.bar = withAlliance(j.bar, said.no, alliance.groups); j.barSource = said.source; }
   }
   // The Alliance names the whole judge ("Kathleen Marie Burke"); the Board, the last name.
   for (const s of alliance.seats) {
     const race = judicial.find((r) => vacatedSeat(r.office) && s.seat.endsWith(vacatedSeat(r.office)));
     for (const c of s.candidates) {
       const cand = race?.candidates.find((x) => key(x.name) === key(c.name) || key(x.name).endsWith(key(c.name.split(' ').at(-1))));
-      if (cand && Object.keys(c.bar).length) bars.set(`${race.id}|${cand.name}`, c.bar);
+      if (cand && Object.keys(c.bar).length) bars.set(`${race.id}|${cand.name}`, { bar: c.bar, source: c.source });
     }
   }
   return { judges, profiles, bars };
 }
 
 /** The same, from the last build, for when a source can't be read. */
-const byCandidate = (prev, field) => new Map((prev?.races ?? []).flatMap((r) => r.candidates.filter((c) => c[field]).map((c) => [`${r.id}|${c.name}`, c[field]])));
-const fromPrev = (prev) => ({ judges: prev?.retentions ?? [], profiles: byCandidate(prev, 'profile'), bars: byCandidate(prev, 'bar') });
+const byCandidate = (prev, field, value = (c) => c[field]) => new Map((prev?.races ?? []).flatMap((r) => r.candidates.filter((c) => c[field]).map((c) => [`${r.id}|${c.name}`, value(c)])));
+const fromPrev = (prev) => ({
+  judges: prev?.retentions ?? [],
+  profiles: byCandidate(prev, 'profile'),
+  bars: byCandidate(prev, 'bar', (c) => ({ bar: c.bar, source: c.barSource })),
+});
 
 /**
  * Adds `profile` and `bar` to `ballot.retentions` and to judicial candidates,
@@ -157,7 +169,7 @@ export async function addJudges(ballot, prev) {
   const details = new Map(judges.map((j) => [key(j.judge), j]));
   const retentions = ballot.retentions.map((r) => {
     const j = details.get(key(r.judge));
-    return j ? { ...r, profile: j.profile, bar: j.bar } : r;
+    return j ? { ...r, profile: j.profile, bar: j.bar, barSource: j.barSource } : r;
   });
   // A withdrawn judge goes back in after the judge they followed in the guide.
   judges.forEach((j, i) => {
@@ -171,8 +183,8 @@ export async function addJudges(ballot, prev) {
   for (const r of ballot.races) for (const c of r.candidates) {
     const url = profiles.get(`${r.id}|${c.name}`);
     if (url) { c.profile = url; linked++; } else delete c.profile;
-    const bar = bars.get(`${r.id}|${c.name}`);
-    if (bar) { c.bar = bar; rated++; } else delete c.bar;
+    const rating = bars.get(`${r.id}|${c.name}`);
+    if (rating) { c.bar = rating.bar; c.barSource = rating.source; rated++; } else { delete c.bar; delete c.barSource; }
     if (/^Judge/.test(r.office)) total++;
   }
   return { log: [`judges: ${retentions.filter((r) => r.bar).length}/${retentions.length} retentions rated, ${retentions.filter((r) => r.withdrawn).length} withdrawn, ${linked}/${total} judicial candidates linked, ${rated}/${total} rated${note}`] };
