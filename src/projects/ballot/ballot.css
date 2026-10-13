@@ -54,3 +54,16 @@
 @media (prefers-reduced-motion: reduce) {
   .kyb-pulse::after { animation: none; opacity: .7; }
 }
+
+/* A section's races scroll in their own box, sized to what's left of the
+   screen under the pinned bar; the scrollbar wears the section's colour.
+   Races inside it only need a small scroll margin (the page around the box
+   is scrolled separately). */
+.kyb-scroll {
+  position: relative; display: flex; flex-direction: column; gap: 1rem;
+  max-height: max(340px, calc(100dvh - var(--kyb-top) - var(--kyb-bar, 260px) - 96px));
+  overflow-y: auto; padding-right: 6px; scrollbar-gutter: stable;
+  scroll-margin-top: calc(var(--kyb-top) + var(--kyb-bar, 260px) + 12px);
+}
+.kyb-scroll [id^="race-"] { scroll-margin-top: 8px; }
+.kyb-scroll, .kyb-scroll-bar { scrollbar-width: thin; scrollbar-color: var(--scroll) color-mix(in srgb, var(--scroll) 18%, transparent); }
