@@ -25,10 +25,5 @@ export function researchLinks(c: Candidate, race: Race): ResearchLink[] {
   if (c.profile) {
     links.push({ label: 'Injustice Watch profile', href: c.profile, note: 'Their background and experience, researched by reporters' });
   }
-  if (race.section === 'judicial') {
-    links.push({ label: 'Bar association ratings', href: 'https://voteforjudges.org/', note: 'Chicago-area bar groups rate every judicial candidate' });
-  }
   return links;
 }
-
-export const JUDGE_RATINGS = 'https://voteforjudges.org/';

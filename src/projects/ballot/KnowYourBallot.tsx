@@ -15,7 +15,6 @@ import { KeyDates, NextElectionNote } from './Calendar';
 import { Laws } from './Laws';
 import { LINKS, PlanToVote } from './PlanToVote';
 import { CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard } from './Race';
-import { JUDGE_RATINGS } from './research';
 import { drawShareCard, shareCard } from './share';
 import { daysUntil, hasProgress, isDecided, today, readResumeLink, resumeLink, useSaved, type Choice, type Saved } from './store';
 import type { BallotData, Candidate, Districts, Race } from './types';
@@ -490,7 +489,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
 
                       {s.id === 'retention' && (
                         <div className="space-y-3">
-                          <p className="text-[15px] leading-relaxed text-[var(--gb-text)]">{RETENTION_EXPLAINER} Chicago-area bar associations rate every judge: <a className="font-bold text-[var(--gb-amber-hi)] underline underline-offset-2" href={JUDGE_RATINGS} target="_blank" rel="noreferrer noopener">see the ratings ↗</a></p>
+                          <p className="text-[15px] leading-relaxed text-[var(--gb-text)]">{RETENTION_EXPLAINER} Each card shows how Chicago-area bar associations rate that judge.</p>
                           <button type="button" onClick={() => setSaved((sv) => ({ ...sv, picks: { ...sv.picks, ...Object.fromEntries(s.ids.filter((id) => !isDecided(sv.picks[id])).map((id) => [id, 'skip' as Choice])) } }))}
                             className="min-h-[44px] rounded-xl border-2 border-[var(--gb-border)] px-4 font-bold text-[var(--gb-text)] hover:border-[var(--gb-text)]">
                             Skip the ones I haven’t answered
@@ -818,8 +817,8 @@ function Sources() {
       body: 'Only accounts that are the candidate’s own: Congress’s official list, Wikidata (through their exact Wikipedia page), and the links on their own campaign site when the account carries their name.',
       links: [['Congress list', 'https://github.com/unitedstates/congress-legislators'], ['Open States', 'https://openstates.org/il/']] },
     { emoji: '⚖️', title: 'Judges', status: 'Live · daily',
-      body: 'Each judge’s bar association ratings and a link to their profile, from Injustice Watch’s Cook County judicial guide, which also tells us when a judge withdraws after the ballot is printed.',
-      links: [['Injustice Watch guide', 'https://2026retention.injusticewatch.org/']] },
+      body: 'Each bar group’s rating of every judge and judicial candidate, from the Alliance of Bar Associations for Judicial Screening (and the Chicago Bar Association’s, via Injustice Watch), plus a link to each judge’s Injustice Watch profile. The guide also tells us when a judge withdraws after the ballot is printed.',
+      links: [['Bar ratings', 'https://www.voteforjudges.org/'], ['Injustice Watch guide', 'https://2026retention.injusticewatch.org/']] },
     { emoji: '🗺️', title: 'District maps', status: 'Live',
       body: 'Census (Congress, Springfield), Cook County (County Board, Board of Review, judicial subcircuits), City of Chicago (wards, police districts, and your precinct, looked up live) and the Illinois Senate (school board).',
       links: [['data.cityofchicago.org', 'https://data.cityofchicago.org/']] },
