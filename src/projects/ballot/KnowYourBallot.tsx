@@ -271,11 +271,22 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   const jumpTo = (sectionId: string, id: string) => {
     setTab('ballot');
     setChosenSection(sectionId);
-    requestAnimationFrame(() => {
+    // Two frames: the new section has to render, and the pinned bar has to
+    // settle (a search just closed its results list) before --kyb-bar, and so
+    // where things land, is right.
+    requestAnimationFrame(() => requestAnimationFrame(() => {
       const el = document.getElementById(`race-${id}`);
-      scrollTo(el);
+      // Races sit in their section's own scroll box: bring the whole box into
+      // view under the pinned bar, then scroll the race to the top of the box.
+      const box = el?.closest<HTMLElement>('.kyb-scroll');
+      if (el && box) {
+        // The box jumps straight there (two smooth scrolls at once can cancel
+        // each other); the page glides.
+        box.scrollTop = el.offsetTop - 8;
+        scrollTo(box);
+      } else scrollTo(el);
       el?.querySelector<HTMLElement>('button')?.focus({ preventScroll: true });
-    });
+    }));
   };
   const nextUp = () => {
     const s = sections.find((sec) => sec.done < sec.ids.length);
@@ -483,19 +494,25 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
                             className="min-h-[44px] rounded-xl border-2 border-[var(--gb-border)] px-4 font-bold text-[var(--gb-text)] hover:border-[var(--gb-text)]">
                             Skip the ones I haven’t answered
                           </button>
+                        </div>
+                      )}
+                      {/* The section's races scroll in their own box (scrollbar in the
+                          section's colour), so a long section doesn't stretch the page. */}
+                      <div className="kyb-scroll" style={{ ['--scroll' as string]: s.color }}>
+                        {s.id === 'retention' && (
                           <div className="grid gap-3 sm:grid-cols-2">
                             {ballot.retentions.map((r) => <RetentionCard key={r.id} color={s.color} r={r} choice={saved.picks[r.id]} onChoose={choose} />)}
                           </div>
-                        </div>
-                      )}
-                      {s.id === 'measures' && ballot.measures.map((m) => <MeasureCard key={m.id} color={s.color} m={m} choice={saved.picks[m.id]} onChoose={choose} />)}
-                      {s.id !== 'retention' && s.id !== 'measures' && s.ids.map((id) => {
-                        const race = raceById.get(id)!;
-                        return (
-                          <RaceCard key={id} race={race} color={s.color} ink={s.ink} numbered={chicago && race.numbered !== false} choice={saved.picks[id]}
-                            onChoose={choose} onInfo={openSheet} onCompare={openCompare} />
-                        );
-                      })}
+                        )}
+                        {s.id === 'measures' && ballot.measures.map((m) => <MeasureCard key={m.id} color={s.color} m={m} choice={saved.picks[m.id]} onChoose={choose} />)}
+                        {s.id !== 'retention' && s.id !== 'measures' && s.ids.map((id) => {
+                          const race = raceById.get(id)!;
+                          return (
+                            <RaceCard key={id} race={race} color={s.color} ink={s.ink} numbered={chicago && race.numbered !== false} choice={saved.picks[id]}
+                              onChoose={choose} onInfo={openSheet} onCompare={openCompare} />
+                          );
+                        })}
+                      </div>
 
                       {next ? (
                         <button type="button" onClick={() => openSection(next.id)} className="w-full flex items-center justify-between gap-3 min-h-[56px] rounded-2xl px-5 font-black text-lg" style={{ background: next.color, color: next.ink }}>
@@ -559,7 +576,12 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
 
         {/* Always last, above the footer, on every screen. */}
         <div className="max-w-[1100px] mx-auto mt-12 space-y-8">
-          <Laws laws={data.govbot.laws} asOf={data.govbot.asOf} />
+          <div role="separator" aria-label="Beyond your ballot" className="flex items-center gap-4">
+            <span className="h-[3px] flex-1 rounded-full bg-[var(--gb-text)]" />
+            <span className="text-sm font-black uppercase tracking-[0.18em]">Beyond your ballot</span>
+            <span className="h-[3px] flex-1 rounded-full bg-[var(--gb-text)]" />
+          </div>
+          <Laws laws={data.govbot.laws} />
           <Sources />
           <NextElectionNote chicago={districts ? chicago : undefined} city={data.govbot.city} districts={districts} />
         </div>
@@ -622,10 +644,6 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
           <p className="font-semibold">
             Next election: Tue, Nov 3, 2026{daysLeft > 0 ? <> · <span className="rounded-full bg-[var(--gb-primary)] px-2.5 py-0.5 font-bold text-[var(--gb-on-primary)]">{daysLeft} days to go</span></> : daysLeft === 0 ? ' · Today!' : ''}
           </p>
-          <p className="flex items-start gap-2 text-[15px] leading-relaxed max-w-[62ch]">
-            <span className="mt-2 w-2 h-2 shrink-0 rounded-full bg-[var(--gb-green)] shadow-[0_0_8px_var(--gb-green)]" aria-hidden="true" />
-            <span><strong>Live now:</strong> every race on every Chicago and Cook County ballot, down to judges and ballot questions, plus the statewide, congressional and legislative races everywhere else in Illinois.</span>
-          </p>
           <p className="text-[15px] leading-relaxed max-w-[62ch]">Enter your address to see exactly what’s on yours: what each job does, who’s running and who’s funding them. Make your picks, then bring them to the booth.</p>
         </div>
         <div className="w-[260px] md:w-[400px] md:max-w-[45%] shrink-0"><Capitol /></div>
@@ -648,6 +666,11 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
         <button type="button" onClick={onLocate} disabled={status.busy} className="inline-flex items-center gap-2 min-h-[44px] font-bold text-[var(--gb-text)] underline underline-offset-4 disabled:cursor-wait">
           <Crosshair className="w-5 h-5" aria-hidden="true" /> Use my current location
         </button>
+        <div>
+          <button type="button" onClick={onBrowse} className="min-h-[44px] font-bold text-[var(--gb-text)] underline underline-offset-4">
+            Or browse entire race in Cook County →
+          </button>
+        </div>
         {status.error && <p role="alert" className="rounded-xl bg-[var(--gb-red)] px-4 py-3 font-bold text-white">{status.error}</p>}
         {status.outside && (
           <p role="alert" className="rounded-xl bg-[var(--kyb-chip)] border-2 border-[var(--gb-amber-hi)] px-4 py-3 font-bold">
@@ -666,7 +689,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
         <p className="text-sm leading-relaxed text-[var(--gb-text)]">🔒 Your address goes once to Cook County’s address lookup (or OpenStreetMap, for the rest of Illinois or if the county’s is down) to find your districts. It’s saved only on this device, like your picks, and never shared.</p>
       </form>
 
-      <BallotSearch ballot={everything} onJump={onSearchJump} label="Or look up any race, candidate, judge or question" />
+      <BallotSearch ballot={everything} onJump={onSearchJump} />
 
       <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {[
@@ -679,10 +702,6 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
           </li>
         ))}
       </ul>
-
-      <button type="button" onClick={onBrowse} className="min-h-[44px] font-bold text-[var(--gb-text)] underline underline-offset-4">
-        Or browse every race in Cook County →
-      </button>
     </div>
   );
 }

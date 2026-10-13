@@ -1,35 +1,57 @@
-import { ExternalLink } from 'lucide-react';
-import { useState } from 'react';
+import { ArrowUpRight, Rss, Search } from 'lucide-react';
+import { useMemo, useState } from 'react';
+import { ClearButton } from '../../components/ClearButton';
 import type { Law } from './types';
 
 // Illinois bills that change how elections and schools work, from govbot's
-// legislation data. Text comes from outside, so it's only ever rendered as
-// text, and links are kept only if they're plain https.
+// legislation data, laid out like govbot's own elections page. Text comes from
+// outside, so it's only ever rendered as text, and links are kept only if
+// they're plain https.
 
-const TOPICS = [
-  { tag: 'elections & voting', label: 'Elections & voting' },
-  { tag: 'education', label: 'Schools' },
+const GOVBOT = 'https://chihacknight.github.io/govbot/dashboard/';
+const TOPICS = ['elections & voting', 'education'];
+const TABS = [
+  { id: 'elections & voting', label: 'Elections & voting' },
+  { id: 'education', label: 'Education' },
+  { id: 'other', label: 'Other' },
 ] as const;
-const FIRST = 5;
+const PAGE = 9;
 
 const safeUrl = (u?: string) => (u && /^https:\/\//.test(u) ? u : undefined);
 const dateLabel = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 const day = (iso: string) => dateLabel.format(new Date(`${iso.slice(0, 10)}T00:00:00Z`));
+const inTab = (b: Law, tab: string) => (tab === 'other' ? !b.tags.some((t) => TOPICS.includes(t)) : b.tags.includes(tab));
+const dot = (t: string) => (t === 'elections & voting' ? 'var(--gb-blue-hi)' : t === 'education' ? 'var(--kyb-gold)' : 'var(--gb-primary)');
 
 function Bill({ b }: { key?: string; b: Law }) {
   const url = safeUrl(b.url);
   const slip = safeUrl(b.hearing?.witness_slip_url);
+  const body = (
+    <>
+      <div className="flex items-start gap-2">
+        <span className="shrink-0 rounded-md bg-[var(--kyb-gold)] px-1.5 text-xs font-black text-[var(--gb-bg)]">IL</span>
+        <span className="font-black leading-tight">{b.id}</span>
+        <span className="flex min-w-0 flex-1 flex-wrap gap-1">
+          {b.tags.map((t) => (
+            <span key={t} className="inline-flex items-center gap-1 rounded-full border border-[var(--gb-border-strong)] px-2 text-[11px] font-bold leading-5">
+              <span className="w-1.5 h-1.5 rounded-full" style={{ background: dot(t) }} aria-hidden="true" />{t}
+            </span>
+          ))}
+        </span>
+        {url && <ArrowUpRight className="w-4 h-4 shrink-0" aria-hidden="true" />}
+      </div>
+      <p className="font-bold leading-snug">{b.title}</p>
+      {b.latest_action && <p className="text-sm leading-snug">{day(b.latest_action)} · {b.latest_action_desc}</p>}
+    </>
+  );
+  const card = 'flex h-full flex-col gap-2 rounded-xl border-2 border-[var(--kyb-gold)] bg-[var(--gb-bg)] p-3 text-[var(--gb-text)]';
   return (
-    <li className="px-4 py-3 space-y-1">
-      <p className="font-bold text-[var(--gb-text)] leading-snug">
-        <span className="font-black">{b.id}</span>{' '}
-        {url
-          ? <a href={url} target="_blank" rel="noreferrer noopener" className="underline underline-offset-2 hover:text-[var(--gb-link)]">{b.title}<ExternalLink className="inline w-3.5 h-3.5 ml-1 align-[-2px]" aria-hidden="true" /></a>
-          : b.title}
-      </p>
-      {b.latest_action && <p className="text-sm text-[var(--gb-text)]">Latest, {day(b.latest_action)}: {b.latest_action_desc}</p>}
+    <li>
+      {url
+        ? <a href={url} target="_blank" rel="noreferrer noopener" className={`${card} hover:bg-[var(--kyb-chip)]`}>{body}</a>
+        : <div className={card}>{body}</div>}
       {b.hearing && (
-        <p className="text-sm font-bold text-[var(--gb-amber-hi)]">
+        <p className="mt-1 px-1 text-sm font-bold text-[var(--gb-amber-hi)]">
           Up for a hearing{b.hearing.committee ? ` in ${b.hearing.committee}` : ''}{b.hearing.scheduled_display ? `, ${b.hearing.scheduled_display}` : ''}.
           {slip && <> <a href={slip} target="_blank" rel="noreferrer noopener" className="underline">Have your say (witness slip)</a></>}
         </p>
@@ -38,34 +60,61 @@ function Bill({ b }: { key?: string; b: Law }) {
   );
 }
 
-export function Laws({ laws, asOf }: { laws: Law[]; asOf: string }) {
-  const counts = TOPICS.map((t) => laws.filter((b) => b.tags.includes(t.tag)).length);
-  const [topic, setTopic] = useState(() => Math.max(0, counts.findIndex((n) => n > 0)));
-  const [all, setAll] = useState(false);
+export function Laws({ laws }: { laws: Law[] }) {
+  const [tab, setTab] = useState<string>(TABS[0].id);
+  const [q, setQ] = useState('');
+  const [shown, setShown] = useState(PAGE);
+  const list = useMemo(() => {
+    const words = q.toLowerCase().split(/\s+/).filter(Boolean);
+    return laws.filter((b) => inTab(b, tab) && words.every((w) => `${b.id} ${b.title} ${b.latest_action_desc ?? ''} ${b.tags.join(' ')}`.toLowerCase().includes(w)));
+  }, [laws, tab, q]);
   if (!laws.length) return null;
-  const list = laws.filter((b) => b.tags.includes(TOPICS[topic].tag));
+  const pick = (id: string) => { setTab(id); setShown(PAGE); };
   return (
-    <section aria-labelledby="kyb-laws" className="space-y-3">
-      <h2 id="kyb-laws" className="text-2xl font-black">🏛️ Laws that shape your ballot</h2>
-      <p className="text-[15px] leading-relaxed text-[var(--gb-text)]">Bills in Springfield that change how Illinois votes and runs its schools, newest action first. From <a href="https://github.com/chihacknight/govbot" target="_blank" rel="noreferrer noopener" className="font-bold text-[var(--gb-text)] underline">govbot</a>, updated {day(asOf)}.</p>
-      <div className="flex flex-wrap gap-2" role="tablist" aria-label="Bill topics">
-        {TOPICS.map((t, i) => (
-          <button key={t.tag} type="button" role="tab" aria-selected={topic === i} onClick={() => { setTopic(i); setAll(false); }}
-            className={`min-h-[44px] rounded-full border-2 px-4 font-bold ${topic === i ? 'border-[var(--gb-text)] bg-[var(--gb-text)] text-[var(--gb-bg)]' : 'border-[var(--gb-border)] text-[var(--gb-text)] hover:border-[var(--gb-text)]'}`}>
-            {t.label} ({counts[i]})
-          </button>
-        ))}
+    <section aria-labelledby="kyb-laws" className="rounded-2xl border-[3px] border-[var(--kyb-gold)] bg-[var(--gb-surface)] p-4 sm:p-5 space-y-4">
+      <div className="space-y-1">
+        <h2 id="kyb-laws" className="text-2xl">🏛️ The laws that shape your ballot, from Springfield</h2>
+        <p className="text-[15px] leading-relaxed max-w-[75ch]">The Illinois bills that shape how elections and schools work, from campaign finance and voting rules to ward boundaries and school governance, with action in the last six months. “Other” is the rest of Illinois’ recent legislative activity. From <a href="https://github.com/chihacknight/govbot" target="_blank" rel="noreferrer noopener" className="font-bold text-[var(--gb-link)] underline">govbot</a>.</p>
       </div>
+
+      <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap gap-2" role="tablist" aria-label="Bill topics">
+          {TABS.map((t) => (
+            <button key={t.id} type="button" role="tab" aria-selected={tab === t.id} onClick={() => pick(t.id)}
+              className={`min-h-[40px] rounded-full border-2 border-[var(--kyb-gold)] px-4 text-sm font-bold ${tab === t.id ? 'bg-[var(--kyb-gold)] text-[var(--gb-bg)]' : ''}`}>
+              {t.label} ({laws.filter((b) => inTab(b, t.id)).length})
+            </button>
+          ))}
+        </div>
+        <a href={`${GOVBOT}elections/springfield.xml`} target="_blank" rel="noreferrer noopener" className="ml-auto inline-flex items-center gap-1.5 min-h-[40px] rounded-full border-2 border-[var(--kyb-gold)] px-3 text-sm font-bold">
+          <Rss className="w-4 h-4" aria-hidden="true" /> Follow (RSS)
+        </a>
+        <div className="relative w-full sm:w-auto sm:min-w-[22rem] sm:flex-1 lg:flex-none lg:w-[24rem]">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none" aria-hidden="true" />
+          <label htmlFor="kyb-law-search" className="sr-only">Search Illinois bills</label>
+          <input id="kyb-law-search" type="text" inputMode="search" value={q} onChange={(e) => { setQ(e.target.value); setShown(PAGE); }}
+            placeholder="Search Illinois bills by number, title or topic…"
+            className="w-full min-h-[40px] rounded-full border-2 border-[var(--kyb-gold)] bg-[var(--gb-bg)] pl-9 pr-10 text-sm text-[var(--gb-text)] focus:outline-none" />
+          {q && <ClearButton onClear={() => setQ('')} className="right-0 w-9 h-9" />}
+        </div>
+      </div>
+
       {list.length ? (
-        <ul className="rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] divide-y divide-[var(--kyb-chip)]">
-          {(all ? list : list.slice(0, FIRST)).map((b) => <Bill key={b.id} b={b} />)}
+        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {list.slice(0, shown).map((b) => <Bill key={b.id} b={b} />)}
         </ul>
-      ) : <p className="text-[15px] text-[var(--gb-text)]">No recent bills on this topic.</p>}
-      {list.length > FIRST && (
-        <button type="button" onClick={() => setAll(!all)} className="min-h-[44px] rounded-xl border-2 border-[var(--gb-text)] px-4 font-bold text-[var(--gb-text)]">
-          {all ? 'Show fewer' : `Show all ${list.length}`}
+      ) : <p className="text-[15px]">{q ? 'No bills match that search.' : 'No bills in this category in the last 6 months.'}</p>}
+
+      {list.length > shown && (
+        <button type="button" onClick={() => setShown(shown + PAGE)} className="min-h-[44px] rounded-xl border-2 border-[var(--kyb-gold)] px-4 font-bold">
+          Show more ({list.length - shown} left)
         </button>
       )}
+
+      <a href={`${GOVBOT}legislation.html`} target="_blank" rel="noreferrer noopener"
+        className="flex items-center justify-center gap-2 min-h-[56px] rounded-xl border-[3px] border-[var(--kyb-gold)] bg-[var(--gb-primary)] px-4 text-lg font-black text-[var(--gb-on-primary)] hover:brightness-105">
+        Explore entire catalog of IL bills <ArrowUpRight className="w-5 h-5" aria-hidden="true" />
+      </a>
     </section>
   );
 }
