@@ -1261,6 +1261,9 @@
       "spent": 120893,
       "cash": 55450,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/KimberlyNeelyduBuclet"
      }
     }
    ],
@@ -2138,6 +2141,10 @@
       "spent": 79186,
       "cash": 105766,
       "through": "06/30/2026"
+     },
+     "social": {
+      "instagram": "https://www.instagram.com/repmarygill",
+      "x": "https://x.com/RepMaryGill"
      },
      "website": "https://repmarygill.com/"
     }
@@ -5936,6 +5943,9 @@
       "cash": 34474,
       "through": "06/30/2026"
      },
+     "social": {
+      "linkedin": "https://www.linkedin.com/in/margaret-delarosa-8271b513"
+     },
      "website": "https://www.linkedin.com/in/margaret-delarosa-8271b513"
     },
     {
@@ -7058,11 +7068,6 @@
       "cash": 11229,
       "through": "06/30/2026"
      },
-     "social": {
-      "instagram": "https://www.instagram.com/staterepwest",
-      "x": "https://www.twitter.com/StateRepWEST",
-      "facebook": "https://www.facebook.com/staterepwest"
-     },
      "website": "https://www.staterepwest.com/"
     }
    ],
@@ -7339,6 +7344,9 @@
       "spent": 27734,
       "cash": 27667,
       "through": "06/30/2026"
+     },
+     "social": {
+      "linkedin": "https://www.linkedin.com/in/marsiageldertmurphey"
      }
     },
     {
@@ -10126,23 +10134,7 @@
    "court": "Circuit Court",
    "judge": "John J. Mahoney",
    "withdrawn": true,
-   "profile": "https://2026retention.injusticewatch.org/candidate/john-j-mahoney-35845",
-   "bar": {
-    "AABAR": "Yes",
-    "CCL": "Qualified",
-    "BMLA": "Yes",
-    "HBA": "Yes",
-    "ISBA": "Yes",
-    "PRBA": "Yes",
-    "BWLA": "Yes",
-    "CCBA": "Yes",
-    "CBA": "Qualified",
-    "LAGBAC": "Yes",
-    "HLAI": "Yes",
-    "WBAI": "Yes",
-    "DSL": "Yes",
-    "AABA": "Yes"
-   }
+   "profile": "https://2026retention.injusticewatch.org/candidate/john-j-mahoney-35845"
   },
   {
    "id": "retain-maritza-martinez",
@@ -11509,7 +11501,7 @@
  },
  "changes": [],
  "govbot": {
-  "asOf": "2026-10-13T02:27:55Z",
+  "asOf": "2026-10-13T16:18:28Z",
   "laws": [
    {
     "id": "HB5816",
