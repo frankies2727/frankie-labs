@@ -38,7 +38,7 @@
 
 /* Anything scrolled to (a focused field, a jumped-to card) lands below
    govbot's sticky header, not under it. */
-:root:has(.gb-header) { scroll-padding-top: calc(var(--kyb-top) + 16px); }
+.kyb-govbot { scroll-padding-top: calc(var(--kyb-top) + 16px); }
 
 /* The contents section you're on: a glow around its coloured frame pulses.
    Only the glow layer's opacity animates, which the compositor does on its
@@ -74,4 +74,8 @@
 /* While govbot's shell is on the page, its theme sets the page's base text,
    background and font (the lab's own body colours would otherwise win, and
    leave footer text light-on-light in the light theme). */
-:root:has(.gb-header) body { background: var(--gb-bg); color: var(--gb-text); font: 15px/1.55 var(--gb-font-sans); }
+.kyb-govbot body { background: var(--gb-bg); color: var(--gb-text); font: 15px/1.55 var(--gb-font-sans); }
+
+/* While the theme flips, nothing transitions (GovbotChrome): one restyle, not
+   an animation per element. */
+.kyb-theme-switch *, .kyb-theme-switch *::before, .kyb-theme-switch *::after { transition: none !important; }

@@ -87,7 +87,10 @@ export function BallotSearch({ ballot, everywhere, sections, places, onJump }: P
   const go = (h: Hit) => { setQ(''); onJump(h); };
 
   return (
-    <div className="space-y-2">
+    // The results float over the page rather than push it down: the search sits
+    // in the pinned bar, and a bar changing height on every keystroke makes
+    // the browser restyle the whole page.
+    <div className="relative">
       <label htmlFor="kyb-search" className="sr-only">Search races, candidates, judges or questions</label>
       <div className="relative">
         <SearchIcon className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--gb-text)] pointer-events-none" aria-hidden="true" />
@@ -102,7 +105,7 @@ export function BallotSearch({ ballot, everywhere, sections, places, onJump }: P
       </div>
 
       {q && (
-        <div role="region" aria-live="polite" aria-label="Search results" className="rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] max-h-[50vh] overflow-y-auto">
+        <div role="region" aria-live="polite" aria-label="Search results" className="absolute inset-x-0 top-full z-40 mt-2 rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] shadow-[0_12px_32px_rgba(0,0,0,0.35)] max-h-[50vh] overflow-y-auto">
           {hits.length > 0 ? (
             <ul>
               {hits.slice(0, 8).map((h) => (
