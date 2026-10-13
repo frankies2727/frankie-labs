@@ -33,8 +33,9 @@ export interface Candidate {
   social?: Partial<Record<SocialPlatform, string>>;
   /** Judicial candidates: Injustice Watch's profile. */
   profile?: string;
-  /** Judicial candidates: each bar group's rating, by its short name. */
+  /** Judicial candidates: each bar group's rating, by its short name, and where the Alliance publishes it. */
   bar?: Record<string, string>;
+  barSource?: string;
 }
 
 export type SocialPlatform = 'x' | 'facebook' | 'instagram' | 'youtube' | 'tiktok' | 'bluesky' | 'threads' | 'linkedin';
@@ -64,6 +65,8 @@ export interface Retention {
   profile?: string;
   /** Each bar group's rating, by its short name ({ CCL: "Yes", ... }). */
   bar?: Record<string, string>;
+  /** Where the Alliance publishes this judge's ratings. */
+  barSource?: string;
 }
 
 export type MeasureScope =
