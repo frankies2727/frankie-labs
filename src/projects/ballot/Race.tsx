@@ -335,9 +335,17 @@ export const RetentionCard = memo(function RetentionCard({ color, r, choice, onC
     <div id={`race-${r.id}`} className="scroll-mt-[calc(var(--kyb-top)+var(--kyb-bar,260px)+16px)] rounded-2xl border-[3px] bg-[var(--gb-surface)] p-4 space-y-3" style={{ borderColor: color }}>
       <div>
         <p className="font-black text-[var(--gb-text)] leading-snug">{r.judge}</p>
-        <p className="text-sm text-[var(--gb-text)]">{r.court} · keep this judge?</p>
+        <p className="text-sm text-[var(--gb-text)]">{r.court} · {r.withdrawn ? 'withdrew' : 'keep this judge?'}</p>
       </div>
-      <YesNo value={choice} onChange={onChoose} label={`Retain ${r.judge}?`} />
+      {(r.bar || r.profile) && (
+        <div className="space-y-1 text-sm text-[var(--gb-text)]">
+          {r.bar && <p>Rated qualified by <b>{r.bar.yes} of {r.bar.of}</b> bar groups.</p>}
+          {r.profile && <a href={r.profile} target="_blank" rel="noreferrer noopener" className="block w-fit font-bold text-[var(--gb-link)] underline underline-offset-2">Injustice Watch profile ↗</a>}
+        </div>
+      )}
+      {r.withdrawn
+        ? <p className="text-[15px] font-bold text-[var(--gb-amber-hi)]">Withdrew after the ballot was finalized. This name is still on your ballot, but votes for or against this judge won’t count.</p>
+        : <YesNo value={choice} onChange={onChoose} label={`Retain ${r.judge}?`} />}
     </div>
   );
 });

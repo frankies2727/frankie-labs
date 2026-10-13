@@ -27,7 +27,7 @@ function index(b: Ballot): (Hit & { text: string })[] {
       text: fold(`${r.office} ${r.candidates.map((c) => `${c.name} ${c.party}`).join(' ')}`),
     })),
     ...b.retentions.map((r) => ({
-      id: r.id, section: 'retention', title: `Retain ${r.judge}?`, detail: `${r.court} · judicial retention`,
+      id: r.id, section: 'retention', title: `Retain ${r.judge}?`, detail: `${r.court} · ${r.withdrawn ? 'withdrew, votes won’t count' : 'judicial retention'}`,
       text: fold(`${r.judge} ${r.court} retention judge`),
     })),
     ...b.measures.map((m) => ({

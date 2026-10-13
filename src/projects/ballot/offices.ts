@@ -30,4 +30,4 @@ export const explainOffice = (office: string): string =>
   EXPLAINERS.find(([re]) => re.test(office))?.[1] ?? '';
 
 export const RETENTION_EXPLAINER =
-  'Should this sitting judge keep the job for another term? There’s no opponent: a judge needs at least 60% “Yes” votes to stay.';
+  'Should this sitting judge keep the job for another term? There’s no opponent: a judge needs at least 60% “Yes” votes to stay. Appellate judges who stay serve 10 more years, circuit judges 6. Circuit judges are listed by how long they’ve served.';

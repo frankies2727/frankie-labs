@@ -6,7 +6,8 @@ const KEEP_DAYS = 60;
 function contests(b) {
   return new Map([
     ...b.races.map((r) => [r.id, { what: r.office, candidates: r.candidates }]),
-    ...b.retentions.map((r) => [r.id, { what: `Retain ${r.judge}?` }]),
+    // A withdrawn judge isn't a new contest: their votes won't count.
+    ...b.retentions.filter((r) => !r.withdrawn).map((r) => [r.id, { what: `Retain ${r.judge}?` }]),
     ...b.measures.map((m) => [m.id, { what: m.title }]),
   ]);
 }

@@ -8,6 +8,7 @@
 //   2. FEC bulk "all candidates" summary          -> money for federal candidates
 //   3. District maps (Census TIGERweb, Cook County, City of Chicago)
 //                                                 -> address -> your contests
+//   4. Injustice Watch's judicial guide          -> judges' bar ratings and profiles
 //
 // Needs `pdftotext` (poppler-utils) and `unzip` on PATH. Run by
 // .github/workflows/ballot-refresh.yml; locally: `node scripts/ballot-build.mjs`.
@@ -22,6 +23,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { changeLog } from './ballot/changes.mjs';
 import { govbotSlices } from './ballot/govbot.mjs';
+import { addJudges } from './ballot/judges.mjs';
 import { addSocial } from './ballot/social.mjs';
 import { parseCandidateList } from './ballot/candidates.mjs';
 import { parseWeball, addFederalMoney } from './ballot/fec.mjs';
@@ -139,6 +141,11 @@ async function main() {
   console.log(`Social accounts: ${social.withSocial}/${social.total} candidates`);
   for (const line of social.log) console.log('  ' + line);
 
+  let prev = null;
+  try { prev = JSON.parse(readFileSync(join(OUT, 'ballot.json'), 'utf8')); } catch { /* first build */ }
+  const judges = await addJudges(ballot, prev);
+  for (const line of judges.log) console.log(line);
+
   const sites = await earlyVotingSites();
   await browser?.close();
 
@@ -149,8 +156,6 @@ async function main() {
   const missing = ballot.races.filter((r) => r.area && r.area.type !== 'city' && !mapFor(r)?.some((f) => f.id === r.area.id));
   if (missing.length) throw new Error('No map for: ' + missing.map((r) => r.office).join('; '));
 
-  let prev = null;
-  try { prev = JSON.parse(readFileSync(join(OUT, 'ballot.json'), 'utf8')); } catch { /* first build */ }
   const next = { races: ballot.races, retentions: ballot.retentions, measures: ballot.measures };
   const changes = changeLog(prev, next, new Date().toISOString());
   // govbot being briefly down shouldn't hold up the ballot: keep yesterday's.
