@@ -1,5 +1,6 @@
 import { AtSign, Check, ExternalLink, Facebook, Info, Instagram, Linkedin, Music2, Scale, Twitter, X, Youtube, type LucideIcon } from 'lucide-react';
 import { memo, useEffect, useRef, type ReactNode } from 'react';
+import { BarRatings } from './BarRatings';
 import { explainOffice } from './offices';
 import { researchLinks } from './research';
 import { money, type Choice } from './store';
@@ -238,6 +239,8 @@ export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, 
           {c.incumbent && <Badge tone="var(--gb-text)" ink="var(--gb-bg)">Incumbent</Badge>}
         </div>
 
+        {c.bar && <BarRatings bar={c.bar} />}
+
         <Follow c={c} />
 
         <section className="space-y-3">
@@ -337,12 +340,8 @@ export const RetentionCard = memo(function RetentionCard({ color, r, choice, onC
         <p className="font-black text-[var(--gb-text)] leading-snug">{r.judge}</p>
         <p className="text-sm text-[var(--gb-text)]">{r.court} · {r.withdrawn ? 'withdrew' : 'keep this judge?'}</p>
       </div>
-      {(r.bar || r.profile) && (
-        <div className="space-y-1 text-sm text-[var(--gb-text)]">
-          {r.bar && <p>Rated qualified by <b>{r.bar.yes} of {r.bar.of}</b> bar groups.</p>}
-          {r.profile && <a href={r.profile} target="_blank" rel="noreferrer noopener" className="block w-fit font-bold text-[var(--gb-link)] underline underline-offset-2">Injustice Watch profile ↗</a>}
-        </div>
-      )}
+      {r.bar && !r.withdrawn && <BarRatings bar={r.bar} compact />}
+      {r.profile && <a href={r.profile} target="_blank" rel="noreferrer noopener" className="block w-fit text-sm font-bold text-[var(--gb-link)] underline underline-offset-2">Injustice Watch profile ↗</a>}
       {r.withdrawn
         ? <p className="text-[15px] font-bold text-[var(--gb-amber-hi)]">Withdrew after the ballot was finalized. This name is still on your ballot, but votes for or against this judge won’t count.</p>
         : <YesNo value={choice} onChange={onChoose} label={`Retain ${r.judge}?`} />}
