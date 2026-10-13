@@ -3,7 +3,7 @@ import { memo, useEffect, useState, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import footer from './govbot/footer.html?raw';
 import header from './govbot/header.html?raw';
-import govbotCss from './govbot/govbot.css?url';
+import govbotCss from './govbot/govbot.css?raw';
 import govbotJs from './govbot/govbot-shell.js?url';
 
 // govbot's own site shell (header, mobile drawer, footer, stylesheet and
@@ -53,6 +53,14 @@ function ThemeToggle({ theme, onToggle }: { theme: Theme; onToggle: () => void }
   );
 }
 
+// govbot's stylesheet goes into Tailwind's base layer, so it styles the page
+// but never outranks the guide's own utility classes (unlayered, its plain
+// `a { color }` turned every link blue whatever colour the guide asked for).
+// Its one @import (fonts) has to stay outside the layer, at the top.
+// (Its URL has semicolons of its own, so match through the closing paren.)
+const FONT_IMPORT = govbotCss.match(/^@import url\([^)]*\);/m)?.[0] ?? '';
+const GOVBOT_STYLE = `${FONT_IMPORT}\n@layer base {\n${govbotCss.replace(FONT_IMPORT, '')}\n}`;
+
 export function GovbotChrome({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(startTheme);
   useEffect(() => { document.documentElement.setAttribute('data-theme', theme); }, [theme]);
@@ -65,15 +73,14 @@ export function GovbotChrome({ children }: { children: ReactNode }) {
   const [themeSlot, setThemeSlot] = useState<Element | null>(null);
 
   // govbot's stylesheet styles the whole page, so it's attached only while
-  // this page is open (the rest of the lab has its own look), and the page
-  // waits for it rather than flash an unstyled header.
+  // this page is open (the rest of the lab has its own look).
   const [styled, setStyled] = useState(false);
   useEffect(() => {
     const root = document.documentElement;
-    const link = Object.assign(document.createElement('link'), { rel: 'stylesheet', href: govbotCss });
-    link.onload = link.onerror = () => setStyled(true);
-    document.head.append(link);
-    return () => { link.remove(); root.removeAttribute('data-theme'); };
+    const style = Object.assign(document.createElement('style'), { textContent: GOVBOT_STYLE });
+    document.head.append(style);
+    setStyled(true);
+    return () => { style.remove(); root.removeAttribute('data-theme'); };
   }, []);
   // The script wires the menus and drawer to the header in the page, so it
   // runs again each time this page opens (a module import would run only the

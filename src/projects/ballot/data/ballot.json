@@ -9917,8 +9917,139 @@
  },
  "changes": [],
  "govbot": {
-  "asOf": "2026-10-12T18:03:46Z",
+  "asOf": "2026-10-13T02:27:55Z",
   "laws": [
+   {
+    "id": "HB5816",
+    "title": "FIRE PROT DIST-TRUSTEE REMOVAL",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5816&GAID=18&DocTypeID=HB&LegId=168916&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-24",
+    "latest_action_desc": "Filed with the Clerk by Rep. John M. Cabello"
+   },
+   {
+    "id": "HR1035",
+    "title": "MEMORIAL-DR. MARK MCCONNELL",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1035&GAID=18&DocTypeID=HR&LegId=168914&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-24",
+    "latest_action_desc": "Filed with the Clerk by Rep. Jehan Gordon-Booth"
+   },
+   {
+    "id": "HR1036",
+    "title": "CONGRATS-MICHAEL KRELOFF",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1036&GAID=18&DocTypeID=HR&LegId=168915&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-24",
+    "latest_action_desc": "Filed with the Clerk by Rep. Jennifer Gong-Gershowitz"
+   },
+   {
+    "id": "HB1208",
+    "title": "CRIM PRO-REVOKE PRETRIAL REL",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1208&GAID=18&DocTypeID=HB&LegId=156996&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-23",
+    "latest_action_desc": "Added Co-Sponsor Rep. Adam M. Niemerg"
+   },
+   {
+    "id": "HB4907",
+    "title": "CRIM PRO-PRETRIAL RELEASE",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4907&GAID=18&DocTypeID=HB&LegId=166205&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-23",
+    "latest_action_desc": "Added Co-Sponsor Rep. Adam M. Niemerg"
+   },
+   {
+    "id": "HB5798",
+    "title": "DIGITAL ASSET TAX ACT-REPEAL",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5798&GAID=18&DocTypeID=HB&LegId=168767&SessionID=114",
+    "tags": [
+     "budget & taxes",
+     "technology & AI"
+    ],
+    "latest_action": "2026-09-23",
+    "latest_action_desc": "Added Co-Sponsor Rep. Joe C. Sosnowski"
+   },
+   {
+    "id": "HB5806",
+    "title": "SOCIAL MEDIA TAX-REPEAL",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5806&GAID=18&DocTypeID=HB&LegId=168834&SessionID=114",
+    "tags": [
+     "budget & taxes"
+    ],
+    "latest_action": "2026-09-23",
+    "latest_action_desc": "Added Chief Co-Sponsor Rep. Steven Reick"
+   },
+   {
+    "id": "HB5807",
+    "title": "TARGETED AD TAX-REPEAL",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5807&GAID=18&DocTypeID=HB&LegId=168835&SessionID=114",
+    "tags": [
+     "budget & taxes"
+    ],
+    "latest_action": "2026-09-23",
+    "latest_action_desc": "Added Chief Co-Sponsor Rep. Steven Reick"
+   },
+   {
+    "id": "HB5811",
+    "title": "SPORTS WAGERING-EXCHANGE TAX",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5811&GAID=18&DocTypeID=HB&LegId=168884&SessionID=114",
+    "tags": [
+     "budget & taxes"
+    ],
+    "latest_action": "2026-09-23",
+    "latest_action_desc": "Added Chief Co-Sponsor Rep. Steven Reick"
+   },
+   {
+    "id": "HB5814",
+    "title": "SPORTS WAGERING-FANTASY MKT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5814&GAID=18&DocTypeID=HB&LegId=168901&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-23",
+    "latest_action_desc": "Added Co-Sponsor Rep. Jennifer Sanalitro"
+   },
+   {
+    "id": "HR1033",
+    "title": "URGES-NOMINATE CENSUS DIRECTOR",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1033&GAID=18&DocTypeID=HR&LegId=168910&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-23",
+    "latest_action_desc": "Added Co-Sponsor Rep. David Friess"
+   },
+   {
+    "id": "SB2020",
+    "title": "LINE-OF-DUTY DISABILITY",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2020&GAID=18&DocTypeID=SB&LegId=161431&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-23",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Mary Edly-Allen"
+   },
+   {
+    "id": "SB3082",
+    "title": "POLICE-LINE-OF-DUTY DISABILITY",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3082&GAID=18&DocTypeID=SB&LegId=165663&SessionID=114",
+    "tags": [
+     "criminal justice"
+    ],
+    "latest_action": "2026-09-23",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Mary Edly-Allen"
+   },
+   {
+    "id": "HB5287",
+    "title": "CD CORR-SENTENCE CREDITS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5287&GAID=18&DocTypeID=HB&LegId=167009&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-22",
+    "latest_action_desc": "Added Co-Sponsor Rep. Michael Crawford"
+   },
+   {
+    "id": "HR1034",
+    "title": "MEMORIAL-MICHAEL R. WEHMAN SR.",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1034&GAID=18&DocTypeID=HR&LegId=168913&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-22",
+    "latest_action_desc": "Filed with the Clerk by Rep. Joyce Mason"
+   },
    {
     "id": "HB5808",
     "title": "STUDENT ATHLETE-TRANSFER RULES",
@@ -9930,6 +10061,285 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Michelle Mussman"
    },
    {
+    "id": "HB12",
+    "title": "ESTATE TX-EXCLUSION AMOUNT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=12&GAID=18&DocTypeID=HB&LegId=155667&SessionID=114",
+    "tags": [
+     "budget & taxes"
+    ],
+    "latest_action": "2026-09-21",
+    "latest_action_desc": "Added Co-Sponsor Rep. Regan Deering"
+   },
+   {
+    "id": "HB1479",
+    "title": "CRIM PRO-REVOKE PRETRIAL REL",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1479&GAID=18&DocTypeID=HB&LegId=157548&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-21",
+    "latest_action_desc": "Added Co-Sponsor Rep. Brandun Schweizer"
+   },
+   {
+    "id": "HB1482",
+    "title": "CRIM PRO-PRETRIAL DETENTION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1482&GAID=18&DocTypeID=HB&LegId=157551&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-21",
+    "latest_action_desc": "Added Co-Sponsor Rep. Brandun Schweizer"
+   },
+   {
+    "id": "HB1483",
+    "title": "CRIM CD-PRETRIAL RELEASE",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1483&GAID=18&DocTypeID=HB&LegId=157552&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-21",
+    "latest_action_desc": "Added Co-Sponsor Rep. Brandun Schweizer"
+   },
+   {
+    "id": "HB5568",
+    "title": "LOC GOV TORT IMMUNITY",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5568&GAID=18&DocTypeID=HB&LegId=167610&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-21",
+    "latest_action_desc": "Added Co-Sponsor Rep. Aarón M. Ortíz"
+   },
+   {
+    "id": "HR1027",
+    "title": "CONDEMNS SOCIALISM",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1027&GAID=18&DocTypeID=HR&LegId=168891&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-21",
+    "latest_action_desc": "Added Co-Sponsor Rep. Brad Halbrook"
+   },
+   {
+    "id": "HR1032",
+    "title": "CONGRATS-ST. FRANCIS PARISH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1032&GAID=18&DocTypeID=HR&LegId=168909&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-21",
+    "latest_action_desc": "Filed with the Clerk by Rep. Adam M. Niemerg"
+   },
+   {
+    "id": "SB2715",
+    "title": "OPEN MTGS-STATEWIDE ASSOC",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2715&GAID=18&DocTypeID=SB&LegId=164394&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-21",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Adriane L. Johnson"
+   },
+   {
+    "id": "SB3848",
+    "title": "INC TX-INSURANCE DEDUCTION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3848&GAID=18&DocTypeID=SB&LegId=167265&SessionID=114",
+    "tags": [
+     "budget & taxes",
+     "health care"
+    ],
+    "latest_action": "2026-09-21",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Donald P. DeWitte"
+   },
+   {
+    "id": "SB3849",
+    "title": "PROP TX-GENERAL HOMESTEAD-CPI",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3849&GAID=18&DocTypeID=SB&LegId=167266&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-21",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Donald P. DeWitte"
+   },
+   {
+    "id": "SB3868",
+    "title": "INC TAX-PROP TAX CREDIT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3868&GAID=18&DocTypeID=SB&LegId=167298&SessionID=114",
+    "tags": [
+     "budget & taxes"
+    ],
+    "latest_action": "2026-09-21",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Donald P. DeWitte"
+   },
+   {
+    "id": "SB4029",
+    "title": "PROP TX-SENIOR FREEZE",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4029&GAID=18&DocTypeID=SB&LegId=167586&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-21",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Seth Lewis"
+   },
+   {
+    "id": "SB2878",
+    "title": "INS-DENTAL COVERAGE REIMBURSE",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2878&GAID=18&DocTypeID=SB&LegId=165140&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-18",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Sue Rezin"
+   },
+   {
+    "id": "HB5815",
+    "title": "CANNABIS-IL FREEDOM FUND",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5815&GAID=18&DocTypeID=HB&LegId=168907&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-17",
+    "latest_action_desc": "Filed with the Clerk by Rep. La Shawn K. Ford"
+   },
+   {
+    "id": "HR1031",
+    "title": "CONGRATS-CHARLIE SCHLENKER",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1031&GAID=18&DocTypeID=HR&LegId=168906&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-17",
+    "latest_action_desc": "Filed with the Clerk by Rep. Sharon Chung"
+   },
+   {
+    "id": "HB4443",
+    "title": "ILLINOIS FUTURE FUND",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4443&GAID=18&DocTypeID=HB&LegId=165148&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-15",
+    "latest_action_desc": "Added Co-Sponsor Rep. Anne Stava"
+   },
+   {
+    "id": "HR1030",
+    "title": "CONGRATS-MARIA E. JONAS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1030&GAID=18&DocTypeID=HR&LegId=168903&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-15",
+    "latest_action_desc": "Filed with the Clerk by Rep. Laura Faver Dias"
+   },
+   {
+    "id": "HB5813",
+    "title": "EVICTION-NONPAYMENT OF RENT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5813&GAID=18&DocTypeID=HB&LegId=168900&SessionID=114",
+    "tags": [
+     "housing"
+    ],
+    "latest_action": "2026-09-14",
+    "latest_action_desc": "Filed with the Clerk by Rep. Tony M. McCombie"
+   },
+   {
+    "id": "HR1029",
+    "title": "MEMORIAL-REV. DR. WILLIAMS JR.",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1029&GAID=18&DocTypeID=HR&LegId=168897&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-14",
+    "latest_action_desc": "Filed with the Clerk by Rep. Michael Crawford"
+   },
+   {
+    "id": "SB3821",
+    "title": "MINIMUM WAGE-VARIOUS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3821&GAID=18&DocTypeID=SB&LegId=167227&SessionID=114",
+    "tags": [
+     "labor & workers"
+    ],
+    "latest_action": "2026-09-11",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Mike Simmons"
+   },
+   {
+    "id": "HB5786",
+    "title": "CO2 PIPELINES-EMINENT DOMAIN",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5786&GAID=18&DocTypeID=HB&LegId=168604&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-10",
+    "latest_action_desc": "Added Co-Sponsor Rep. Anna Moeller"
+   },
+   {
+    "id": "HB5812",
+    "title": "$SOS-COSMETOLOGY CIVICS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5812&GAID=18&DocTypeID=HB&LegId=168892&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-10",
+    "latest_action_desc": "Filed with the Clerk by Rep. La Shawn K. Ford"
+   },
+   {
+    "id": "HR1028",
+    "title": "MEMORIAL-MICHEAL WILLIAMS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1028&GAID=18&DocTypeID=HR&LegId=168893&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-10",
+    "latest_action_desc": "Filed with the Clerk by Rep. Jehan Gordon-Booth"
+   },
+   {
+    "id": "SB3175",
+    "title": "INC TX-OVERTIME WAGES",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3175&GAID=18&DocTypeID=SB&LegId=165822&SessionID=114",
+    "tags": [
+     "labor & workers"
+    ],
+    "latest_action": "2026-09-10",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Darby A. Hills"
+   },
+   {
+    "id": "HB1382",
+    "title": "ETHICS COMM-INVESTIGATIONS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1382&GAID=18&DocTypeID=HB&LegId=157328&SessionID=114",
+    "tags": [
+     "government operations"
+    ],
+    "latest_action": "2026-09-09",
+    "latest_action_desc": "Added Co-Sponsor Rep. Brandun Schweizer"
+   },
+   {
+    "id": "HB1385",
+    "title": "ETHICS-LOBBYING RESTRICTION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1385&GAID=18&DocTypeID=HB&LegId=157331&SessionID=114",
+    "tags": [
+     "government operations"
+    ],
+    "latest_action": "2026-09-09",
+    "latest_action_desc": "Added Co-Sponsor Rep. Brandun Schweizer"
+   },
+   {
+    "id": "HB1554",
+    "title": "ELEC CD-USE OF FUNDS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1554&GAID=18&DocTypeID=HB&LegId=157646&SessionID=114",
+    "tags": [
+     "budget & taxes"
+    ],
+    "latest_action": "2026-09-09",
+    "latest_action_desc": "Added Co-Sponsor Rep. Brandun Schweizer"
+   },
+   {
+    "id": "HB1727",
+    "title": "PEN CD-FELONY-SUSPEND BENEFITS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1727&GAID=18&DocTypeID=HB&LegId=158909&SessionID=114",
+    "tags": [
+     "criminal justice"
+    ],
+    "latest_action": "2026-09-09",
+    "latest_action_desc": "Added Co-Sponsor Rep. Brandun Schweizer"
+   },
+   {
+    "id": "HB2413",
+    "title": "LOBBYING PROHIBITION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2413&GAID=18&DocTypeID=HB&LegId=160153&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-09",
+    "latest_action_desc": "Added Co-Sponsor Rep. Brandun Schweizer"
+   },
+   {
+    "id": "HR1026",
+    "title": "AUDIT-GROW YOUR OWN ILLINOIS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1026&GAID=18&DocTypeID=HR&LegId=168890&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-09",
+    "latest_action_desc": "Filed with the Clerk by Rep. Tony M. McCombie"
+   },
+   {
+    "id": "SB2981",
+    "title": "CLIMATE CHANGE SUPERFUND",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2981&GAID=18&DocTypeID=SB&LegId=165475&SessionID=114",
+    "tags": [
+     "environment & climate"
+    ],
+    "latest_action": "2026-09-09",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Robert Peters"
+   },
+   {
+    "id": "HB2563",
+    "title": "CONDO-RESERVE STUDY",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2563&GAID=18&DocTypeID=HB&LegId=160431&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-08",
+    "latest_action_desc": "Added Co-Sponsor Rep. Diane Blair-Sherlock"
+   },
+   {
     "id": "SB3776",
     "title": "EDUCATION CHOICE FOR CHILD ACT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3776&GAID=18&DocTypeID=SB&LegId=167091&SessionID=114",
@@ -9938,6 +10348,120 @@
     ],
     "latest_action": "2026-09-04",
     "latest_action_desc": "Added as Co-Sponsor Sen. Dave Syverson"
+   },
+   {
+    "id": "HB4523",
+    "title": "PFAS-CONTAINING PESTICIDES",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4523&GAID=18&DocTypeID=HB&LegId=165334&SessionID=114",
+    "tags": [
+     "environment & climate"
+    ],
+    "latest_action": "2026-09-04",
+    "latest_action_desc": "Added Co-Sponsor Rep. Laura Faver Dias"
+   },
+   {
+    "id": "HB5151",
+    "title": "AUTO LICENSE PLATE RECOGNITION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5151&GAID=18&DocTypeID=HB&LegId=166766&SessionID=114",
+    "tags": [
+     "government operations"
+    ],
+    "latest_action": "2026-09-04",
+    "latest_action_desc": "Added Co-Sponsor Rep. Laura Faver Dias"
+   },
+   {
+    "id": "HB5804",
+    "title": "MEDICAID-MCO RX PAYMENTS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5804&GAID=18&DocTypeID=HB&LegId=168815&SessionID=114",
+    "tags": [
+     "health care"
+    ],
+    "latest_action": "2026-09-04",
+    "latest_action_desc": "Added Co-Sponsor Rep. Maurice A. West, II"
+   },
+   {
+    "id": "HB4701",
+    "title": "LIMITATIONS FACILITY FEES ACT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4701&GAID=18&DocTypeID=HB&LegId=165720&SessionID=114",
+    "tags": [
+     "budget & taxes"
+    ],
+    "latest_action": "2026-09-03",
+    "latest_action_desc": "Added Co-Sponsor Rep. Gregg Johnson"
+   },
+   {
+    "id": "HR1025",
+    "title": "CONGRATS-CAPT. A. F. CIGANEK",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1025&GAID=18&DocTypeID=HR&LegId=168880&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-02",
+    "latest_action_desc": "Filed with the Clerk by Rep. John M. Cabello"
+   },
+   {
+    "id": "SB1050",
+    "title": "LOCAL GOVERNMENT-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1050&GAID=18&DocTypeID=SB&LegId=158838&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-02",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Paul Jacobs"
+   },
+   {
+    "id": "SB2687",
+    "title": "HOME UTILITY RELIEF ACT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2687&GAID=18&DocTypeID=SB&LegId=164069&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-02",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Paul Jacobs"
+   },
+   {
+    "id": "SB2745",
+    "title": "PROP TX-DISABLED PERSONS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2745&GAID=18&DocTypeID=SB&LegId=164600&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-02",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Paul Jacobs"
+   },
+   {
+    "id": "SB3008",
+    "title": "DHS-ABLE PROGRAM INFO MATERIAL",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3008&GAID=18&DocTypeID=SB&LegId=165512&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-02",
+    "latest_action_desc": "Alternate Chief Sponsor Changed to Rep. Dagmara Avelar"
+   },
+   {
+    "id": "SB3540",
+    "title": "PROP TX-ASSESSMENT LIMIT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3540&GAID=18&DocTypeID=SB&LegId=166580&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-02",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Paul Jacobs"
+   },
+   {
+    "id": "SB3580",
+    "title": "ENERGY-GENERATION TASK FORCE",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3580&GAID=18&DocTypeID=SB&LegId=166654&SessionID=114",
+    "tags": [
+     "environment & climate"
+    ],
+    "latest_action": "2026-09-02",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Paul Jacobs"
+   },
+   {
+    "id": "SB3581",
+    "title": "EPA-GREENHOUSE GASES",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3581&GAID=18&DocTypeID=SB&LegId=166655&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-02",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Paul Jacobs"
+   },
+   {
+    "id": "SB3582",
+    "title": "DCEO-BUSINESS ASSIST REFORM",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3582&GAID=18&DocTypeID=SB&LegId=166656&SessionID=114",
+    "tags": [],
+    "latest_action": "2026-09-02",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Paul Jacobs"
    },
    {
     "id": "HB5809",
@@ -10318,6 +10842,1667 @@
     ],
     "latest_action": "2026-07-02",
     "latest_action_desc": "Pursuant to Senate Rule 3-9(b) / Referred to Assignments"
+   },
+   {
+    "id": "SB2350",
+    "title": "$ISBE-COORDINATED STRATEGY",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2350&GAID=18&DocTypeID=SB&LegId=162313&SessionID=114",
+    "tags": [
+     "budget & taxes",
+     "education"
+    ],
+    "latest_action": "2026-07-02",
+    "latest_action_desc": "Pursuant to Senate Rule 3-9(b) / Referred to Assignments"
+   },
+   {
+    "id": "SB2797",
+    "title": "MEDICAID-SCHOOL DENTAL PGRAM",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2797&GAID=18&DocTypeID=SB&LegId=164873&SessionID=114",
+    "tags": [
+     "education",
+     "health care"
+    ],
+    "latest_action": "2026-07-02",
+    "latest_action_desc": "Senate Floor Amendment No. 1 Pursuant to Senate Rule 3-9(b) / Referred to Assignments"
+   },
+   {
+    "id": "SB2975",
+    "title": "$ISBE-TRANSPORT/SP ED TUITION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2975&GAID=18&DocTypeID=SB&LegId=165466&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-02",
+    "latest_action_desc": "Pursuant to Senate Rule 3-9(b) / Referred to Assignments"
+   },
+   {
+    "id": "HB1943",
+    "title": "$BD ELECTIONS-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1943&GAID=18&DocTypeID=HB&LegId=159587&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-07-01",
+    "latest_action_desc": "Rule 19(b) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2365",
+    "title": "$ISBE-HEALTHY SCHOOL MEALS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2365&GAID=18&DocTypeID=HB&LegId=160078&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-07-01",
+    "latest_action_desc": "Rule 19(b) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB4507",
+    "title": "$SECURE ELECTIONS FUND",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4507&GAID=18&DocTypeID=HB&LegId=165292&SessionID=114",
+    "tags": [
+     "budget & taxes",
+     "elections & voting"
+    ],
+    "latest_action": "2026-07-01",
+    "latest_action_desc": "Rule 19(b) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB4525",
+    "title": "$ISBE-LAKE COUNTY TECH CAMPUS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4525&GAID=18&DocTypeID=HB&LegId=165352&SessionID=114",
+    "tags": [
+     "budget & taxes",
+     "education"
+    ],
+    "latest_action": "2026-07-01",
+    "latest_action_desc": "Rule 19(b) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB4795",
+    "title": "SCH-CD-LICENSE-EARLY CHILDHOOD",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4795&GAID=18&DocTypeID=HB&LegId=165954&SessionID=114",
+    "tags": [
+     "education",
+     "government operations"
+    ],
+    "latest_action": "2026-07-01",
+    "latest_action_desc": "Senate Floor Amendment No. 1 Rule 19(b) / Motion Referred to Rules Committee"
+   },
+   {
+    "id": "HB5573",
+    "title": "$ICCB-COM COL ECONOMIC EMPOWER",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5573&GAID=18&DocTypeID=HB&LegId=167615&SessionID=114",
+    "tags": [
+     "budget & taxes",
+     "education"
+    ],
+    "latest_action": "2026-07-01",
+    "latest_action_desc": "Rule 19(b) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HJR50",
+    "title": "PRP & ISBE AI ANALYSIS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=50&GAID=18&DocTypeID=HJR&LegId=165093&SessionID=114",
+    "tags": [
+     "budget & taxes",
+     "education"
+    ],
+    "latest_action": "2026-07-01",
+    "latest_action_desc": "Rule 19(b) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HJRCA27",
+    "title": "CONAMEND-REDISTRICTING",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=27&GAID=18&DocTypeID=HJRCA&LegId=168319&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-07-01",
+    "latest_action_desc": "Rule 19(b) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "SR542",
+    "title": "SERVICE ANIMALS IN SCHOOLS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=542&GAID=18&DocTypeID=SR&LegId=164690&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-06-30",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Mary Edly-Allen"
+   },
+   {
+    "id": "HB4247",
+    "title": "SCH CD-ASTHMA MEDICATION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4247&GAID=18&DocTypeID=HB&LegId=164719&SessionID=114",
+    "tags": [
+     "education",
+     "government operations"
+    ],
+    "latest_action": "2026-06-26",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB4420",
+    "title": "COLLEGE PRESS ACT-PUBLIC MEDIA",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4420&GAID=18&DocTypeID=HB&LegId=165094&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-06-26",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB4575",
+    "title": "PEN CD-CTPF-TRUSTEE ELECTION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4575&GAID=18&DocTypeID=HB&LegId=165435&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-06-26",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB4754",
+    "title": "PRIVATE EDUCATION LOANS-REPORT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4754&GAID=18&DocTypeID=HB&LegId=165886&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-06-26",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB5093",
+    "title": "HIGHER ED-IN-STATE TUITION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5093&GAID=18&DocTypeID=HB&LegId=166637&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-06-26",
+    "latest_action_desc": "Governor Approved"
+   },
+   {
+    "id": "HB2918",
+    "title": "SCH CD-DYSLEXIA SCREENING",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2918&GAID=18&DocTypeID=HB&LegId=161121&SessionID=114",
+    "tags": [
+     "education",
+     "government operations"
+    ],
+    "latest_action": "2026-06-23",
+    "latest_action_desc": "Added Co-Sponsor Rep. Tony M. McCombie"
+   },
+   {
+    "id": "SB1647",
+    "title": "INC TX-EDUCATION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1647&GAID=18&DocTypeID=SB&LegId=160500&SessionID=114",
+    "tags": [
+     "budget & taxes",
+     "education"
+    ],
+    "latest_action": "2026-06-17",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Erica Harriss"
+   },
+   {
+    "id": "HB4435",
+    "title": "CORPORATE ELECTION ACTIVITIES",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4435&GAID=18&DocTypeID=HB&LegId=165138&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-06-15",
+    "latest_action_desc": "Added Co-Sponsor Rep. Lindsey LaPointe"
+   },
+   {
+    "id": "HB5611",
+    "title": "EDUCATION PROPERTY TAX RELIEF",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5611&GAID=18&DocTypeID=HB&LegId=167665&SessionID=114",
+    "tags": [
+     "budget & taxes",
+     "education"
+    ],
+    "latest_action": "2026-06-04",
+    "latest_action_desc": "Added Co-Sponsor Rep. Brandun Schweizer"
+   },
+   {
+    "id": "SB13",
+    "title": "EQUITABLE UNIVERSITY FUNDING",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=13&GAID=18&DocTypeID=SB&LegId=157103&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-06-01",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3907",
+    "title": "CHILD CARE-TERMINOLOGY",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3907&GAID=18&DocTypeID=SB&LegId=167358&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-06-01",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB412",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=412&GAID=18&DocTypeID=SB&LegId=158046&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-06-01",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB417",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=417&GAID=18&DocTypeID=SB&LegId=158069&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-06-01",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB418",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=418&GAID=18&DocTypeID=SB&LegId=158073&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-06-01",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB419",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=419&GAID=18&DocTypeID=SB&LegId=158078&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-06-01",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB938",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=938&GAID=18&DocTypeID=SB&LegId=158670&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-06-01",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "HR923",
+    "title": "IDEC-STUDY-DAY CARE LICENSURE",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=923&GAID=18&DocTypeID=HR&LegId=168603&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-31",
+    "latest_action_desc": "House Floor Amendment No. 2 Adopted"
+   },
+   {
+    "id": "SB3391",
+    "title": "SCH CD-CHARTER SCHOOL-CLOSURE",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3391&GAID=18&DocTypeID=SB&LegId=166297&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-31",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "SB415",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=415&GAID=18&DocTypeID=SB&LegId=158060&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-31",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "SB416",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=416&GAID=18&DocTypeID=SB&LegId=158064&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-31",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HR957",
+    "title": "CONGRATS-ST. MARY SCHOOL",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=957&GAID=18&DocTypeID=HR&LegId=168679&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-30",
+    "latest_action_desc": "Placed on Calendar Agreed Resolutions"
+   },
+   {
+    "id": "SJR50",
+    "title": "SCH. DISTS.-ARABIC FL OPTION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=50&GAID=18&DocTypeID=SJR&LegId=165816&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-30",
+    "latest_action_desc": "Resolution Adopted"
+   },
+   {
+    "id": "HR678",
+    "title": "ARCH. DEGREE RECLASSIFICATION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=678&GAID=18&DocTypeID=HR&LegId=167739&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-29",
+    "latest_action_desc": "Resolution Adopted 075-028-000"
+   },
+   {
+    "id": "HR783",
+    "title": "529 COLLEGE SAVINGS DAY",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=783&GAID=18&DocTypeID=HR&LegId=168227&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-29",
+    "latest_action_desc": "Resolution Adopted"
+   },
+   {
+    "id": "HR652",
+    "title": "ICE-ELECTIONS/POLLING PLACES",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=652&GAID=18&DocTypeID=HR&LegId=167366&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-28",
+    "latest_action_desc": "Resolution Adopted 074-037-000"
+   },
+   {
+    "id": "HR660",
+    "title": "SCHOOL START TIMES",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=660&GAID=18&DocTypeID=HR&LegId=167689&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-28",
+    "latest_action_desc": "Resolution Adopted 071-031-000"
+   },
+   {
+    "id": "SB2726",
+    "title": "ELEC CD-POLLING PLACES",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2726&GAID=18&DocTypeID=SB&LegId=164483&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-26",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Javier L. Cervantes"
+   },
+   {
+    "id": "SB3170",
+    "title": "VOTING RIGHTS ACT OF 2026",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3170&GAID=18&DocTypeID=SB&LegId=165815&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-26",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Javier L. Cervantes"
+   },
+   {
+    "id": "HB4739",
+    "title": "SCH CD-SCHOOL VENTILATION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4739&GAID=18&DocTypeID=HB&LegId=165856&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-25",
+    "latest_action_desc": "Added as Alternate Co-Sponsor Sen. Mary Edly-Allen"
+   },
+   {
+    "id": "SB143",
+    "title": "JUDICIAL CAMPAIGN REFORM",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=143&GAID=18&DocTypeID=SB&LegId=157357&SessionID=114",
+    "tags": [
+     "criminal justice",
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB1577",
+    "title": "TOBACCO STORES NEAR SCHOOL ACT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1577&GAID=18&DocTypeID=SB&LegId=160323&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB1786",
+    "title": "SCH CD-HIGH SCH-REGISTER VOTER",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1786&GAID=18&DocTypeID=SB&LegId=160934&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB1813",
+    "title": "INC TX-EDUCATION EXPENSE",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1813&GAID=18&DocTypeID=SB&LegId=160962&SessionID=114",
+    "tags": [
+     "budget & taxes",
+     "education"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB2089",
+    "title": "USE/OCC TX-SCHOOLS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2089&GAID=18&DocTypeID=SB&LegId=161597&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB2158",
+    "title": "ELEC CD-OPEN PRIMARY ELECTIONS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2158&GAID=18&DocTypeID=SB&LegId=161844&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB2193",
+    "title": "SCH CD-SCHOOL VENTILATION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2193&GAID=18&DocTypeID=SB&LegId=161916&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB2714",
+    "title": "ELECTION CODE-VACANCY",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2714&GAID=18&DocTypeID=SB&LegId=164314&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB2764",
+    "title": "ELECTION CODE-VACANCY",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2764&GAID=18&DocTypeID=SB&LegId=164701&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB2893",
+    "title": "HIGHER ED-MAP GRANT-TEACHER",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2893&GAID=18&DocTypeID=SB&LegId=165195&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB2905",
+    "title": "SCH CD-SPECIAL ED WORKLOAD",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2905&GAID=18&DocTypeID=SB&LegId=165249&SessionID=114",
+    "tags": [
+     "budget & taxes",
+     "education"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB2930",
+    "title": "DRAINAGE DISTRICT ELECTIONS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2930&GAID=18&DocTypeID=SB&LegId=165308&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB2963",
+    "title": "INC TX-STUDENT LOAN REPAYMENT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2963&GAID=18&DocTypeID=SB&LegId=165393&SessionID=114",
+    "tags": [
+     "budget & taxes",
+     "education"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB2983",
+    "title": "VOTING RIGHTS-RELEASE CORR INS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2983&GAID=18&DocTypeID=SB&LegId=165477&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3025",
+    "title": "IL CLEAN ELECTIONS ACT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3025&GAID=18&DocTypeID=SB&LegId=165563&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3059",
+    "title": "ELECTION CODE POLL ACCESS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3059&GAID=18&DocTypeID=SB&LegId=165608&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3060",
+    "title": "ELECTION CODE EQUIPMENT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3060&GAID=18&DocTypeID=SB&LegId=165609&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3088",
+    "title": "ELEC CD-POLLING PLACES",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3088&GAID=18&DocTypeID=SB&LegId=165669&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3110",
+    "title": "SCH CD-SCHOOL VENTILATION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3110&GAID=18&DocTypeID=SB&LegId=165729&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3151",
+    "title": "COMM COLLEGE ECON EMPOWERMENT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3151&GAID=18&DocTypeID=SB&LegId=165792&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3252",
+    "title": "DIRECT RECORDING ELEC VOTING",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3252&GAID=18&DocTypeID=SB&LegId=166011&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3284",
+    "title": "SCH CD-E-LEARNING DAY-ELECTION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3284&GAID=18&DocTypeID=SB&LegId=166068&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3297",
+    "title": "ELEC CD-POLLING PLACES",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3297&GAID=18&DocTypeID=SB&LegId=166093&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3299",
+    "title": "ELEC CD-VOTERS PER PRECINCT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3299&GAID=18&DocTypeID=SB&LegId=166095&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3673",
+    "title": "ELEC CD-VOTER EDUCATION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3673&GAID=18&DocTypeID=SB&LegId=166868&SessionID=114",
+    "tags": [
+     "education",
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3701",
+    "title": "SCH CD-FULL FUNDING LEVELS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3701&GAID=18&DocTypeID=SB&LegId=166918&SessionID=114",
+    "tags": [
+     "budget & taxes",
+     "education"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB60",
+    "title": "ELEC CD-VOTE BY MAIL TRACKER",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=60&GAID=18&DocTypeID=SB&LegId=157165&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-22",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "HB4200",
+    "title": "EDUCATIONAL CHOICE ACT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4200&GAID=18&DocTypeID=HB&LegId=164564&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-21",
+    "latest_action_desc": "Added Co-Sponsor Rep. Tom Weber"
+   },
+   {
+    "id": "HB5037",
+    "title": "FIXING HIGHER ED FUNDING ACT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5037&GAID=18&DocTypeID=HB&LegId=166515&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-20",
+    "latest_action_desc": "Added Chief Co-Sponsor Rep. La Shawn K. Ford"
+   },
+   {
+    "id": "HB5414",
+    "title": "VOTING RIGHTS-RELEASE CORR INS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5414&GAID=18&DocTypeID=HB&LegId=167223&SessionID=114",
+    "tags": [
+     "elections & voting",
+     "government operations"
+    ],
+    "latest_action": "2026-05-20",
+    "latest_action_desc": "Added Co-Sponsor Rep. Carol Ammons"
+   },
+   {
+    "id": "SB4199",
+    "title": "VOTER PARTICIPATION TASK FORCE",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4199&GAID=18&DocTypeID=SB&LegId=168468&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-20",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Rachel Ventura"
+   },
+   {
+    "id": "HB5778",
+    "title": "FOIA-STUDENT COMMS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5778&GAID=18&DocTypeID=HB&LegId=168561&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-19",
+    "latest_action_desc": "First Reading"
+   },
+   {
+    "id": "SB2004",
+    "title": "ELEC CD-RANKED-CHOICE VOTING",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2004&GAID=18&DocTypeID=SB&LegId=161409&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-19",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Mattie Hunter"
+   },
+   {
+    "id": "SB2393",
+    "title": "NICOTINE SALES NEAR SCHOOLS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2393&GAID=18&DocTypeID=SB&LegId=162406&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-15",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "SB2818",
+    "title": "PEN CD-CTPF-TRUSTEE ELECTION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2818&GAID=18&DocTypeID=SB&LegId=164946&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-15",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "SB939",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=939&GAID=18&DocTypeID=SB&LegId=158671&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-15",
+    "latest_action_desc": "Added Alternate Co-Sponsor Rep. Tony M. McCombie"
+   },
+   {
+    "id": "HB5363",
+    "title": "SCH CD-ACT NOW",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5363&GAID=18&DocTypeID=HB&LegId=167151&SessionID=114",
+    "tags": [
+     "budget & taxes",
+     "education"
+    ],
+    "latest_action": "2026-05-13",
+    "latest_action_desc": "Added Co-Sponsor Rep. Lisa Davis"
+   },
+   {
+    "id": "HB34",
+    "title": "ELEC CD-FIREARMS POLLING PLACE",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=34&GAID=18&DocTypeID=HB&LegId=155692&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-05-08",
+    "latest_action_desc": "Added Co-Sponsor Rep. Martha Deuter"
+   },
+   {
+    "id": "SB3669",
+    "title": "SCH-MULTI-TIER SYSTEM SUPPORT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3669&GAID=18&DocTypeID=SB&LegId=166853&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-08",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "HB5319",
+    "title": "COMM COLLEGE-BA DEGREE PROGRAM",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5319&GAID=18&DocTypeID=HB&LegId=167075&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-07",
+    "latest_action_desc": "Added Co-Sponsor Rep. Charles Meier"
+   },
+   {
+    "id": "HB9",
+    "title": "SCHOOL CD-PROPERTY TAX RELIEF",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=9&GAID=18&DocTypeID=HB&LegId=155661&SessionID=114",
+    "tags": [
+     "budget & taxes",
+     "education"
+    ],
+    "latest_action": "2026-05-07",
+    "latest_action_desc": "Added Co-Sponsor Rep. Travis Weaver"
+   },
+   {
+    "id": "SR728",
+    "title": "CONGRATS-AQSA SCHOOL",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=728&GAID=18&DocTypeID=SR&LegId=168313&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-07",
+    "latest_action_desc": "Added as Chief Co-Sponsor Sen. Mike Porfirio"
+   },
+   {
+    "id": "SB4034",
+    "title": "COMM COLLEGE-BA DEGREE PRORGAM",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4034&GAID=18&DocTypeID=SB&LegId=167594&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-06",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Rachel Ventura"
+   },
+   {
+    "id": "HR837",
+    "title": "COMMENDS-CARL SANDBURG COLLEGE",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=837&GAID=18&DocTypeID=HR&LegId=168354&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-05-05",
+    "latest_action_desc": "Placed on Calendar Agreed Resolutions"
+   },
+   {
+    "id": "SB2438",
+    "title": "SCH CD-RADON TESTING",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2438&GAID=18&DocTypeID=SB&LegId=162489&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-30",
+    "latest_action_desc": "Added as Co-Sponsor Sen. Mark L. Walker"
+   },
+   {
+    "id": "HJRCA28",
+    "title": "CONAMEND-REDISTRICTING",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=28&GAID=18&DocTypeID=HJRCA&LegId=168325&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-04-28",
+    "latest_action_desc": "Arrive in Senate"
+   },
+   {
+    "id": "HB4792",
+    "title": "SCH CD-TEACH EXCELLENC PROGRAM",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4792&GAID=18&DocTypeID=HB&LegId=165949&SessionID=114",
+    "tags": [
+     "education",
+     "government operations"
+    ],
+    "latest_action": "2026-04-27",
+    "latest_action_desc": "Added as Alternate Chief Co-Sponsor Sen. Christopher Belt"
+   },
+   {
+    "id": "SB3112",
+    "title": "SCH CD-SPECIAL ED-SPEECH-LANG",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3112&GAID=18&DocTypeID=SB&LegId=165731&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-24",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3330",
+    "title": "SCH CD-TEACHER DISMISSAL",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3330&GAID=18&DocTypeID=SB&LegId=166166&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-24",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3451",
+    "title": "SCH CD-SUPERINTENDENT AGREEMNT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3451&GAID=18&DocTypeID=SB&LegId=166409&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-24",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3559",
+    "title": "SCH CD-COMPLIANCE COMPLAINT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3559&GAID=18&DocTypeID=SB&LegId=166609&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-24",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3757",
+    "title": "SAFE SPORTS SCHOOL SEAL",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3757&GAID=18&DocTypeID=SB&LegId=167064&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-24",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "HB1498",
+    "title": "ELEC CODE-DECEASED VOTER",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1498&GAID=18&DocTypeID=HB&LegId=157569&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-04-23",
+    "latest_action_desc": "Added Co-Sponsor Rep. Kevin Schmidt"
+   },
+   {
+    "id": "HB4068",
+    "title": "SCH CD-ACCOMODATIONS-TIMELINE",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4068&GAID=18&DocTypeID=HB&LegId=163899&SessionID=114",
+    "tags": [
+     "education",
+     "government operations"
+    ],
+    "latest_action": "2026-04-22",
+    "latest_action_desc": "Added as Alternate Co-Sponsor Sen. Karina Villa"
+   },
+   {
+    "id": "HB476",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=476&GAID=18&DocTypeID=HB&LegId=156154&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-21",
+    "latest_action_desc": "Arrive in Senate"
+   },
+   {
+    "id": "HB1596",
+    "title": "PESTICIDE-NOTICE-SCHOOLS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1596&GAID=18&DocTypeID=HB&LegId=157725&SessionID=114",
+    "tags": [
+     "education",
+     "environment & climate"
+    ],
+    "latest_action": "2026-04-20",
+    "latest_action_desc": "Added Co-Sponsor Rep. Ann M. Williams"
+   },
+   {
+    "id": "HB4343",
+    "title": "HIGHER ED-ADMISSION & TUITION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4343&GAID=18&DocTypeID=HB&LegId=164875&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-20",
+    "latest_action_desc": "Added Co-Sponsor Rep. Nicolle Grasse"
+   },
+   {
+    "id": "HB5462",
+    "title": "HIGHER ED-HUMAN SERVICES LOAN",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5462&GAID=18&DocTypeID=HB&LegId=167361&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-20",
+    "latest_action_desc": "Added Chief Co-Sponsor Rep. Carol Ammons"
+   },
+   {
+    "id": "HB5463",
+    "title": "SOCIAL WORK/SCH COUNSEL LOAN",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5463&GAID=18&DocTypeID=HB&LegId=167362&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-20",
+    "latest_action_desc": "Added Chief Co-Sponsor Rep. Carol Ammons"
+   },
+   {
+    "id": "HB1130",
+    "title": "ELEC CD-VOTER REGISTRATION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1130&GAID=18&DocTypeID=HB&LegId=156866&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Added Co-Sponsor Rep. Tony M. McCombie"
+   },
+   {
+    "id": "HB2056",
+    "title": "ELECTIONS-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2056&GAID=18&DocTypeID=HB&LegId=159704&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2057",
+    "title": "ELECTIONS-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2057&GAID=18&DocTypeID=HB&LegId=159705&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2058",
+    "title": "ELECTIONS-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2058&GAID=18&DocTypeID=HB&LegId=159706&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2059",
+    "title": "ELECTIONS-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2059&GAID=18&DocTypeID=HB&LegId=159707&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2060",
+    "title": "ELECTIONS-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2060&GAID=18&DocTypeID=HB&LegId=159708&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2061",
+    "title": "ELECTIONS-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2061&GAID=18&DocTypeID=HB&LegId=159709&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2062",
+    "title": "ELECTIONS-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2062&GAID=18&DocTypeID=HB&LegId=159710&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2063",
+    "title": "ELECTIONS-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2063&GAID=18&DocTypeID=HB&LegId=159711&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2064",
+    "title": "ELECTIONS-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2064&GAID=18&DocTypeID=HB&LegId=159712&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2144",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2144&GAID=18&DocTypeID=HB&LegId=159792&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2145",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2145&GAID=18&DocTypeID=HB&LegId=159793&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2146",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2146&GAID=18&DocTypeID=HB&LegId=159794&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2147",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2147&GAID=18&DocTypeID=HB&LegId=159795&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2148",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2148&GAID=18&DocTypeID=HB&LegId=159796&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2149",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2149&GAID=18&DocTypeID=HB&LegId=159797&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2150",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2150&GAID=18&DocTypeID=HB&LegId=159798&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2151",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2151&GAID=18&DocTypeID=HB&LegId=159799&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2152",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2152&GAID=18&DocTypeID=HB&LegId=159800&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2153",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2153&GAID=18&DocTypeID=HB&LegId=159801&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2154",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2154&GAID=18&DocTypeID=HB&LegId=159802&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2156",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2156&GAID=18&DocTypeID=HB&LegId=159804&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2157",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2157&GAID=18&DocTypeID=HB&LegId=159805&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2158",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2158&GAID=18&DocTypeID=HB&LegId=159806&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2159",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2159&GAID=18&DocTypeID=HB&LegId=159807&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2160",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2160&GAID=18&DocTypeID=HB&LegId=159808&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2161",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2161&GAID=18&DocTypeID=HB&LegId=159809&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2162",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2162&GAID=18&DocTypeID=HB&LegId=159810&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2163",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2163&GAID=18&DocTypeID=HB&LegId=159811&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2164",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2164&GAID=18&DocTypeID=HB&LegId=159812&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2165",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2165&GAID=18&DocTypeID=HB&LegId=159813&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2166",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2166&GAID=18&DocTypeID=HB&LegId=159814&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2167",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2167&GAID=18&DocTypeID=HB&LegId=159815&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2168",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2168&GAID=18&DocTypeID=HB&LegId=159816&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2169",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2169&GAID=18&DocTypeID=HB&LegId=159817&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2170",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2170&GAID=18&DocTypeID=HB&LegId=159818&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2171",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2171&GAID=18&DocTypeID=HB&LegId=159819&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2172",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2172&GAID=18&DocTypeID=HB&LegId=159820&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2173",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2173&GAID=18&DocTypeID=HB&LegId=159821&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2174",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2174&GAID=18&DocTypeID=HB&LegId=159822&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2175",
+    "title": "EDUCATION-TECH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2175&GAID=18&DocTypeID=HB&LegId=159823&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB2960",
+    "title": "SCH CD-MENTAL HEALTH ED REQ",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2960&GAID=18&DocTypeID=HB&LegId=161179&SessionID=114",
+    "tags": [
+     "education",
+     "health care"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB3730",
+    "title": "DESIGN BUILD-HIGHER EDUCATION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3730&GAID=18&DocTypeID=HB&LegId=162575&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB4164",
+    "title": "HIGHER ED-COMPACT SIGNING BAN",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4164&GAID=18&DocTypeID=HB&LegId=164412&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB4423",
+    "title": "SCH CD-LICENSE ENDORSEMENT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4423&GAID=18&DocTypeID=HB&LegId=165109&SessionID=114",
+    "tags": [
+     "education",
+     "government operations"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB4440",
+    "title": "SCH CD-LICENSURE-PARAPROFESS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4440&GAID=18&DocTypeID=HB&LegId=165145&SessionID=114",
+    "tags": [
+     "education",
+     "government operations"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB4582",
+    "title": "SCHCD-TWICE-EXCEPTIONAL STUDNT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4582&GAID=18&DocTypeID=HB&LegId=165442&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB4780",
+    "title": "ILLINOIS SCHOOL FOR THE BLIND",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4780&GAID=18&DocTypeID=HB&LegId=165929&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB5051",
+    "title": "HIGHER ED-REVERSE TRANSFER",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5051&GAID=18&DocTypeID=HB&LegId=166536&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB5207",
+    "title": "SCH CD-AG ED PROGRAM REPORT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5207&GAID=18&DocTypeID=HB&LegId=166864&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB5216",
+    "title": "SCH CD-TEACHING EXCELLENCE",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5216&GAID=18&DocTypeID=HB&LegId=166889&SessionID=114",
+    "tags": [
+     "budget & taxes",
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB5373",
+    "title": "CHILD CARE-TERMINOLOGY",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5373&GAID=18&DocTypeID=HB&LegId=167161&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB5375",
+    "title": "VEH CD-SCHOOL TRANSPORTATION",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5375&GAID=18&DocTypeID=HB&LegId=167163&SessionID=114",
+    "tags": [
+     "education",
+     "transportation"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB5503",
+    "title": "SCH CD-ADULT WORKFORCE DIPLOMA",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5503&GAID=18&DocTypeID=HB&LegId=167477&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
+   },
+   {
+    "id": "HB5507",
+    "title": "FOOD REFORM-STUDENT HEALTH",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5507&GAID=18&DocTypeID=HB&LegId=167481&SessionID=114",
+    "tags": [
+     "education",
+     "health care"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Added Co-Sponsor Rep. Barbara Hernandez"
+   },
+   {
+    "id": "SB3106",
+    "title": "PRIVATE EDUCATION LOANS-REPORT",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3106&GAID=18&DocTypeID=SB&LegId=165714&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3320",
+    "title": "DHFS-INSPECTOR GENERAL",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3320&GAID=18&DocTypeID=SB&LegId=166125&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3641",
+    "title": "DEC-DAY CARE CRIMINAL CHECKS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3641&GAID=18&DocTypeID=SB&LegId=166818&SessionID=114",
+    "tags": [
+     "criminal justice",
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "SB3698",
+    "title": "ADULT EDUCATION PROGRAMS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3698&GAID=18&DocTypeID=SB&LegId=166915&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-17",
+    "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
+   },
+   {
+    "id": "HR807",
+    "title": "CONGRATS-PARKLAND COLLEGE",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=807&GAID=18&DocTypeID=HR&LegId=168262&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-15",
+    "latest_action_desc": "Resolution Adopted"
+   },
+   {
+    "id": "SB4187",
+    "title": "PLANNING COMM-SCHOOLS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4187&GAID=18&DocTypeID=SB&LegId=168296&SessionID=114",
+    "tags": [
+     "education"
+    ],
+    "latest_action": "2026-04-15",
+    "latest_action_desc": "Filed with Secretary by Sen. Darby A. Hills"
+   },
+   {
+    "id": "HB3047",
+    "title": "VOTING RIGHTS ACT OF 2025",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3047&GAID=18&DocTypeID=HB&LegId=161324&SessionID=114",
+    "tags": [
+     "elections & voting"
+    ],
+    "latest_action": "2026-04-14",
+    "latest_action_desc": "Added Co-Sponsor Rep. Katie Stuart"
+   },
+   {
+    "id": "HB5417",
+    "title": "SCH CD-FOOD SERVICE CONTRACTS",
+    "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5417&GAID=18&DocTypeID=HB&LegId=167229&SessionID=114",
+    "tags": [
+     "education",
+     "government operations"
+    ],
+    "latest_action": "2026-04-13",
+    "latest_action_desc": "Added Co-Sponsor Rep. Kevin John Olickal"
    }
   ],
   "city": [

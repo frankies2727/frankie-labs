@@ -70,3 +70,8 @@
 .kyb-scroll > * { flex-shrink: 0; }
 .kyb-scroll [id^="race-"] { scroll-margin-top: 8px; }
 .kyb-scroll, .kyb-scroll-bar { scrollbar-width: thin; scrollbar-color: var(--scroll) color-mix(in srgb, var(--scroll) 18%, transparent); }
+
+/* While govbot's shell is on the page, its theme sets the page's base text,
+   background and font (the lab's own body colours would otherwise win, and
+   leave footer text light-on-light in the light theme). */
+:root:has(.gb-header) body { background: var(--gb-bg); color: var(--gb-text); font: 15px/1.55 var(--gb-font-sans); }

@@ -576,7 +576,12 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
 
         {/* Always last, above the footer, on every screen. */}
         <div className="max-w-[1100px] mx-auto mt-12 space-y-8">
-          <Laws laws={data.govbot.laws} asOf={data.govbot.asOf} />
+          <div role="separator" aria-label="Beyond your ballot" className="flex items-center gap-4">
+            <span className="h-[3px] flex-1 rounded-full bg-[var(--gb-text)]" />
+            <span className="text-sm font-black uppercase tracking-[0.18em]">Beyond your ballot</span>
+            <span className="h-[3px] flex-1 rounded-full bg-[var(--gb-text)]" />
+          </div>
+          <Laws laws={data.govbot.laws} />
           <Sources />
           <NextElectionNote chicago={districts ? chicago : undefined} city={data.govbot.city} districts={districts} />
         </div>

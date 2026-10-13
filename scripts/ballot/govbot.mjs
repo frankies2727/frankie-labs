@@ -4,14 +4,40 @@
 // https://github.com/chihacknight/govbot
 
 export const GOVBOT_ELECTIONS = 'https://chihacknight.github.io/govbot/dashboard/elections.json';
+// Every Illinois bill with recent activity (govbot's legislation data, ~1.5 MB).
+const GOVBOT_IL_RECENT = 'https://chihacknight.github.io/govbot/dashboard/bills/il_recent.json';
+// Like govbot's elections page: bills with action in the last 6 months, the
+// curated elections/education list merged with every IL bill tagged that way,
+// and an 'Other' tab of everything else (newest OTHER_MAX; the rest are on
+// govbot's legislation page).
+const RECENT_DAYS = 183;
+const OTHER_MAX = 60;
+const TOPICS = ['elections & voting', 'education'];
 
 const keep = (o, keys) => Object.fromEntries(keys.filter((k) => o[k] != null).map((k) => [k, o[k]]));
+
+const LAW_FIELDS = ['id', 'title', 'url', 'tags', 'latest_action', 'latest_action_desc', 'hearing'];
+
+async function springfieldBills(curated) {
+  const res = await fetch(GOVBOT_IL_RECENT);
+  if (!res.ok) throw new Error(`govbot il_recent.json: HTTP ${res.status}`);
+  const all = (await res.json()).bills ?? [];
+  const since = new Date(Date.now() - RECENT_DAYS * 86_400_000).toISOString().slice(0, 10);
+  const recent = (b) => (b.latest_action ?? '').slice(0, 10) >= since;
+  const newest = (a, b) => (b.latest_action ?? '').localeCompare(a.latest_action ?? '');
+  // The curated list carries upcoming hearings, so it wins when a bill is in both.
+  const byId = new Map(curated.map((b) => [b.id, b]));
+  for (const b of all) if (!byId.has(b.id) && b.tags?.some((t) => TOPICS.includes(t))) byId.set(b.id, b);
+  const topical = [...byId.values()].filter(recent);
+  const other = all.filter((b) => !byId.has(b.id) && recent(b)).sort(newest).slice(0, OTHER_MAX);
+  return [...topical, ...other].sort(newest).map((b) => keep(b, LAW_FIELDS));
+}
 
 export async function govbotSlices() {
   const res = await fetch(GOVBOT_ELECTIONS);
   if (!res.ok) throw new Error(`govbot elections.json: HTTP ${res.status}`);
   const d = await res.json();
-  const laws = d.springfield.map((b) => keep(b, ['id', 'title', 'url', 'tags', 'latest_action', 'latest_action_desc', 'hearing']));
+  const laws = await springfieldBills(d.springfield);
   const city = d.races
     .filter((r) => r.jurisdiction === 'chicago' && r.ballot_date === '2027-02-23')
     .map((r) => ({
