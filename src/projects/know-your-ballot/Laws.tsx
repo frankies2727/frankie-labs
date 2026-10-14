@@ -20,13 +20,18 @@ const TABS = [
 const SHOWN = 9;
 
 const safeUrl = (u?: string) => (u && /^https:\/\//.test(u) ? u : undefined);
+// The bill's own card in govbot's catalog (its state's catalog opens underneath),
+// else the legislature's page.
+const billUrl = (b: Law) => (b.state && b.session
+  ? `${GOVBOT}legislation.html#bill=${[b.state, b.session, b.id].map(encodeURIComponent).join('~')}`
+  : safeUrl(b.url));
 const dateLabel = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 const day = (iso: string) => dateLabel.format(new Date(`${iso.slice(0, 10)}T00:00:00Z`));
 const inTab = (b: Law, tab: string) => (tab === 'other' ? !b.tags.some((t) => TOPICS.includes(t)) : b.tags.includes(tab));
 const dot = (t: string) => (t === 'elections & voting' ? 'var(--gb-blue-hi)' : t === 'education' ? 'var(--kyb-gold)' : 'var(--gb-primary)');
 
 function Bill({ b }: { key?: string; b: Law }) {
-  const url = safeUrl(b.url);
+  const url = billUrl(b);
   const slip = safeUrl(b.hearing?.witness_slip_url);
   const body = (
     <>
