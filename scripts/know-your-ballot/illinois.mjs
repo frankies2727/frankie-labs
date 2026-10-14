@@ -26,6 +26,7 @@ import { changeLog } from './illinois/changes.mjs';
 import { govbotSlices } from './illinois/govbot.mjs';
 import { addJudges } from './illinois/judges.mjs';
 import { addSocial } from './illinois/social.mjs';
+import { addPhotos } from './illinois/photos.mjs';
 import { parseCandidateList } from './illinois/candidates.mjs';
 import { parseWeball, addFederalMoney } from './illinois/fec.mjs';
 import { ISBE_BASE, ISBE_FILES, addStateMoney } from './illinois/isbe.mjs';
@@ -33,6 +34,7 @@ import { addStateList, fetchCertifiedList } from './illinois/statewide.mjs';
 import { buildDistricts, buildStateDistricts, placesIn, touchesCook } from './illinois/districts.mjs';
 
 const OUT = 'src/projects/know-your-ballot/data/illinois';
+const PHOTOS_DIR = 'public/kyb-photos/illinois';
 const CANDIDATES_PAGE = 'https://chicagoelections.gov/getting-ballot/candidates';
 const EARLY_VOTING_PAGE = 'https://chicagoelections.gov/voting/early-votingvote-centers';
 const FEC_WEBALL = 'https://www.fec.gov/files/bulk-downloads/2026/weball26.zip';
@@ -148,6 +150,10 @@ async function main() {
   const social = await addSocial(ballot.races, work, (url) => fetchPage(url, (h) => h.length > 3000 && !/just a moment|cf-chl|attention required|captcha/i.test(h.slice(0, 20_000))), prev);
   console.log(`Social accounts: ${social.withSocial}/${social.total} candidates`);
   for (const line of social.log) console.log('  ' + line);
+  // Photos for the candidates matched above, saved with the site.
+  const photos = await addPhotos(ballot.races, { dir: PHOTOS_DIR, publicPath: 'kyb-photos/illinois', prev });
+  console.log(`Photos: ${photos.withPhoto}/${photos.total} candidates`);
+  for (const line of photos.log) console.log('  ' + line);
 
   const judges = await addJudges(ballot, prev);
   for (const line of judges.log) console.log(line);

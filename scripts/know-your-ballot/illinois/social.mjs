@@ -15,6 +15,11 @@
 //      vendor. Sites that turn away plain requests are read in a real browser.
 //      Vote Smart / Ballotpedia profile pages aren't campaign sites.
 // Earlier sources win when two disagree.
+//
+// The same matches give each candidate a photo source (`photoFrom`, turned into
+// a saved photo by ./photos.mjs): Congress's official portrait, the General
+// Assembly's member photo (listed by Open States), or the Wikidata entry's
+// image on Wikimedia Commons. Only ever for a candidate matched above.
 
 import { execFileSync } from 'node:child_process';
 import { readdirSync, readFileSync } from 'node:fs';
@@ -66,6 +71,8 @@ async function congress() {
       last: fold(p.name.last), type: term.type, district: term.district != null ? String(term.district) : null,
       social: { x: s.twitter && PLATFORMS.x(s.twitter), facebook: s.facebook && PLATFORMS.facebook(s.facebook), instagram: s.instagram && PLATFORMS.instagram(s.instagram), youtube: s.youtube_id && PLATFORMS.youtube(s.youtube_id) },
       website: term.url,
+      // Official portraits, public domain (via the @unitedstates project).
+      photo: { url: `https://unitedstates.github.io/images/congress/450x550/${p.id.bioguide}.jpg`, credit: 'Official portrait, U.S. Congress (public domain)', link: `https://bioguide.congress.gov/search/bio/${p.id.bioguide}` },
     });
   }
   return out;
@@ -83,6 +90,11 @@ function readPerson(text) {
     chamber: role?.[1], district: role?.[2],
     website: links.find((u) => !/ilga\.gov|wikipedia|ballotpedia|openstates/i.test(u)),
     wiki: links.find((u) => /en\.wikipedia\.org\/wiki\//.test(u))?.split('/wiki/')[1],
+    photo: (() => {
+      // Only the General Assembly's own photos: a few point at news sites' photos, which we can't reuse.
+      const url = text.match(/^image: (https:\/\/cdn\.ilga\.gov\/\S+)/m)?.[1];
+      return url ? { url, credit: 'Illinois General Assembly', link: 'https://www.ilga.gov/' } : undefined;
+    })(),
   };
 }
 
@@ -109,7 +121,12 @@ function accountsOf(e) {
     if (typeof v === 'string' && /^[\w.@-]+$/.test(v)) social[key] = PLATFORMS[key](v);
   }
   const site = claim(e, 'P856');
-  return { social, website: typeof site === 'string' && /^https?:\/\//.test(site) ? site : undefined };
+  const image = claim(e, 'P18'); // a Wikimedia Commons file name
+  return {
+    social,
+    website: typeof site === 'string' && /^https?:\/\//.test(site) ? site : undefined,
+    photo: typeof image === 'string' ? { commons: image } : undefined,
+  };
 }
 
 /** Accounts by Wikipedia title (from Open States' links: already the right person). */
@@ -284,6 +301,8 @@ export async function addSocial(races, work, render, prev) {
     const m = Object.fromEntries(Object.entries(merged[i]).filter(([, v]) => seen.get(v.toLowerCase()) === 1));
     if (Object.keys(m).length) { e.c.social = m; withSocial++; } else delete e.c.social;
     if (!e.c.website && e.website) e.c.website = e.website;
+    const photo = e.member?.photo ?? e.legislator?.photo ?? e.wiki?.photo;
+    if (photo) e.c.photoFrom = photo; else delete e.c.photoFrom;
   });
   return { withSocial, total: entries.length, log };
 }

@@ -14,6 +14,7 @@ import { ClearButton } from '../../components/ClearButton';
 import { SinceLastVisit } from './Updates';
 import { KeyDates, NextElectionNote } from './Calendar';
 import { Laws } from './Laws';
+import { MeetCandidates } from './MeetCandidates';
 import { LINKS, PlanToVote } from './PlanToVote';
 import { CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard } from './Race';
 import { drawShareCard, shareCard } from './share';
@@ -308,7 +309,7 @@ export function KnowYourBallot() {
     const id = m[1] === 'race' ? (data.govbot.legacy?.[asked] ?? asked) : null;
     const race = id ? data.races.find((r) => r.id === id) : undefined;
     if (race && districts && !ballotIds(districts).has(race.id)) {
-      setToast(`${race.office} isn’t on the ballot at your address. Search or browse to see it.`);
+      setToast(`${race.office} isn’t on the ballot at your address. Use the search to see it.`);
       return;
     }
     // Browsing shows Cook County's races; the rest of Illinois needs an address there.
@@ -442,7 +443,7 @@ export function KnowYourBallot() {
         {!showBallot ? (
           <Landing
             address={address} setAddress={setAddress} status={status} onSubmit={lookUp} onLocate={useLocation}
-            onBrowse={() => setBrowsing(true)} daysLeft={daysLeft}
+            daysLeft={daysLeft}
             onSearchJump={(h) => { setBrowsing(true); jumpTo(h.section, h.id); }}
             saved={Object.keys(saved.picks).length}
             onStartFresh={() => { setSaved((s) => ({ ...s, picks: {}, plan: {} })); setToast('Cleared. Starting fresh.'); }}
@@ -606,6 +607,14 @@ export function KnowYourBallot() {
           </>
         )}
 
+        {/* The landing page only: once someone is going through races (contents
+            panel, trophies), the faces would just repeat what's on screen. */}
+        {!showBallot && (
+          <div className="max-w-[1100px] mx-auto mt-12">
+            <MeetCandidates races={everything.races} onOpen={openSheet} />
+          </div>
+        )}
+
         {/* Always last, above the footer, on every screen. */}
         <div className="max-w-[1100px] mx-auto mt-12 space-y-8">
           <div role="separator" aria-label="Beyond your ballot" className="flex items-center gap-4">
@@ -631,6 +640,7 @@ export function KnowYourBallot() {
             const next = has ? cur.filter((b) => b !== sheet.c.ballot) : sheet.race.voteFor === 1 ? [sheet.c.ballot] : [...cur, sheet.c.ballot].slice(-sheet.race.voteFor);
             choose(sheet.race.id, next);
           }}
+          onShowRace={showBallot ? undefined : () => { const race = sheet.race; setSheet(null); setBrowsing(true); jumpTo(race.section, race.id); }}
           onClose={() => setSheet(null)} />
       )}
       {comparing && (
@@ -653,9 +663,9 @@ export function KnowYourBallot() {
 
 // ---- pieces ------------------------------------------------------------------------
 
-function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, onSearchJump, daysLeft, saved, onStartFresh }: {
+function Landing({ address, setAddress, status, onSubmit, onLocate, onSearchJump, daysLeft, saved, onStartFresh }: {
   address: string; setAddress: (s: string) => void; status: { busy: boolean; error: string; outside: boolean };
-  onSubmit: (e: FormEvent) => void; onLocate: () => void; onBrowse: () => void; onSearchJump: (h: Hit) => void; daysLeft: number;
+  onSubmit: (e: FormEvent) => void; onLocate: () => void; onSearchJump: (h: Hit) => void; daysLeft: number;
   /** Picks already saved on this device. */
   saved: number; onStartFresh: () => void;
 }) {
@@ -703,11 +713,6 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
         <button type="button" onClick={onLocate} disabled={status.busy} className="inline-flex items-center gap-2 min-h-[44px] font-bold text-[var(--gb-text)] underline underline-offset-4 disabled:cursor-wait">
           <Crosshair className="w-5 h-5" aria-hidden="true" /> Use my current location
         </button>
-        <div>
-          <button type="button" onClick={onBrowse} className="min-h-[44px] font-bold text-[var(--gb-text)] underline underline-offset-4">
-            Or browse entire race in Cook County →
-          </button>
-        </div>
         {status.error && <p role="alert" className="rounded-xl bg-[var(--gb-red)] px-4 py-3 font-bold text-white">{status.error}</p>}
         {status.outside && (
           <p role="alert" className="rounded-xl bg-[var(--kyb-chip)] border-2 border-[var(--gb-amber-hi)] px-4 py-3 font-bold">

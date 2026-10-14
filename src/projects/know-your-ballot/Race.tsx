@@ -1,6 +1,7 @@
 import { AtSign, Check, ExternalLink, Facebook, Info, Instagram, Linkedin, Music2, Scale, Twitter, X, Youtube, type LucideIcon } from 'lucide-react';
 import { memo, useEffect, useRef, type ReactNode } from 'react';
 import { BarRatings } from './BarRatings';
+import { Face } from './MeetCandidates';
 import { explainOffice } from './offices';
 import { researchLinks } from './research';
 import { money, type Choice } from './store';
@@ -228,10 +229,20 @@ function Follow({ c }: { c: Candidate }) {
   );
 }
 
-export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, onClose }: { race: Race; c: Candidate; color: string; ink: string; numbered: boolean; picked: boolean; onPick: () => void; onClose: () => void }) {
+export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, onShowRace, onClose }: { race: Race; c: Candidate; color: string; ink: string; numbered: boolean; picked: boolean; onPick: () => void; /** From the landing page: open their race on the ballot. */ onShowRace?: () => void; onClose: () => void }) {
   return (
     <Dialog title={c.name} onClose={onClose}>
       <div className="space-y-6">
+        <figure className="flex items-center gap-4">
+          <Face c={c} className="w-24 h-24 text-3xl" />
+          {c.photo && (
+            <figcaption className="text-xs leading-snug text-[var(--gb-text)]">
+              Photo: {c.photo.link
+                ? <a href={c.photo.link} target="_blank" rel="noreferrer noopener" className="underline underline-offset-2">{c.photo.credit}</a>
+                : c.photo.credit}
+            </figcaption>
+          )}
+        </figure>
         <div className="flex flex-wrap gap-2">
           <Badge tone={color} ink={ink}>{race.office}</Badge>
           <Badge>{c.party}</Badge>
@@ -279,6 +290,12 @@ export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, 
         >
           {picked ? 'Remove from My Ballot' : 'Add to My Ballot'}
         </button>
+        {onShowRace && (
+          <button type="button" onClick={onShowRace}
+            className="-mt-3 w-full min-h-[48px] rounded-xl border-2 border-[var(--gb-text)] font-bold text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]">
+            See everyone in this race
+          </button>
+        )}
       </div>
     </Dialog>
   );

@@ -33,6 +33,8 @@ export interface Candidate {
   social?: Partial<Record<SocialPlatform, string>>;
   /** Judicial candidates: Injustice Watch's profile. */
   profile?: string;
+  /** Their photo, saved with the site (scripts/know-your-ballot/illinois/photos.mjs): `file` under the site root, with its credit. */
+  photo?: { file: string; credit: string; link?: string; from?: string };
   /** Judicial candidates: each bar group's rating, by its short name, and where the Alliance publishes it. */
   bar?: Record<string, string>;
   barSource?: string;
