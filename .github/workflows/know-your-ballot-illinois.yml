@@ -1,9 +1,9 @@
-name: Know Your Ballot – refresh data
+name: Know Your Ballot Illinois – refresh data
 
-# Rebuilds src/projects/ballot/data from official sources (Chicago Board of
+# Rebuilds src/projects/know-your-ballot/data/illinois from official sources (Chicago Board of
 # Elections candidate list, FEC filings, district maps) and redeploys when
 # anything changed. Daily through Election Day: the candidate list can change
-# and new FEC reports land. See scripts/ballot-build.mjs.
+# and new FEC reports land. See scripts/know-your-ballot/illinois.mjs.
 
 on:
   workflow_dispatch:
@@ -15,7 +15,7 @@ permissions:
   actions: write
 
 concurrency:
-  group: ballot-refresh
+  group: know-your-ballot-illinois
   cancel-in-progress: false
 
 jobs:
@@ -38,19 +38,19 @@ jobs:
           npx playwright install --with-deps chromium
 
       - name: Build ballot data
-        run: node scripts/ballot-build.mjs
+        run: node scripts/know-your-ballot/illinois.mjs
 
       - name: Commit any changes
         id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/projects/ballot/data
+          git add src/projects/know-your-ballot/data/illinois
           if git diff --staged --quiet; then
             echo "No ballot data changes."
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
-            git commit -m "Know Your Ballot: refresh data [skip ci]"
+            git commit -m "Know Your Ballot Illinois: refresh data [skip ci]"
             git push
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi

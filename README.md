@@ -160,7 +160,7 @@ The home screen is the projects gallery. Tap the **Games** button (top right) to
 
 | Project | What it does |
 |---|---|
-| 🗳️ **Know Your Ballot** | Enter a Chicago or suburban Cook address, see every race on your Nov 3 ballot explained. Pick, plan, print, share |
+| 🗳️ **Know Your Ballot: Illinois** | Enter a Chicago or suburban Cook address, see every race on your Nov 3 ballot explained. Pick, plan, print, share |
 | ⚡ **VibeCheck** | Type any company, get a scrollable visual story: rundown, fast facts, timeline |
 | 🌍 **Place Timelapse** | Watch a place change over time, from NASA satellite imagery to Street View history |
 | 🎨 **AI Art** | 112 AI images with the exact prompts behind them. Tap to copy a prompt |
@@ -176,14 +176,16 @@ The home screen is the projects gallery. Tap the **Games** button (top right) to
 </details>
 
 <details>
-<summary><b>🗳️ How Know Your Ballot works</b> (official data, no keys)</summary>
+<summary><b>🗳️ How Know Your Ballot: Illinois works</b> (official data, no keys)</summary>
 
 - **Who's on the ballot:** the Chicago Board of Elections candidate list (every contest on any Chicago ballot, in ballot order, plus judicial retentions and referenda), parsed from its PDF. Suburban Cook adds the State Board of Elections' certified list for the congressional, legislative and judicial districts outside Chicago (countywide contests are the same everywhere in Cook).
 - **Not yet for suburban Cook:** the four all-suburban County Board districts, suburban referenda and suburban ballot numbers. Those come from the Cook County Clerk, whose site blocks automated downloads; the app tells suburban voters exactly what's missing for their address.
 - **Campaign money & incumbency:** FEC bulk filings for federal candidates; the Illinois State Board of Elections' bulk disclosure files for state and local ones (raised and spent since Jan 2025, cash on hand). A name only gets numbers when it matches one person running for the same kind of office.
 - **Your districts:** your address goes once to Cook County's address locator; district maps (Census, Cook County, City of Chicago, Illinois Senate) are pre-baked, so matching happens on your device.
 - **Your picks and plan** stay in your browser only. The share card shows progress, never picks.
-- **Fresh daily:** `.github/workflows/ballot-refresh.yml` reruns `scripts/ballot-build.mjs` every morning and redeploys if anything changed. Needs `pdftotext` (poppler-utils) to run locally.
+- **Fresh daily:** `.github/workflows/know-your-ballot-illinois.yml` reruns `scripts/know-your-ballot/illinois.mjs` every morning and redeploys if anything changed. Needs `pdftotext` (poppler-utils) to run locally.
+- **Built on [govbot](https://chihacknight.github.io/govbot/):** govbot's homepage links here for "What's on my ballot?", and its old `dashboard/elections.html` (now `illinois-elections.html`) forwards here; links to a race, `#race=<govbot race id>`, open that race.
+- **More states, one naming pattern:** project id `know-your-ballot-<state>` (URL `/projects/know-your-ballot-<state>`), name "Know Your Ballot: <State>", data in `src/projects/know-your-ballot/data/<state>/`, build `scripts/know-your-ballot/<state>.mjs` (+ its modules in `scripts/know-your-ballot/<state>/`), refresh workflow `.github/workflows/know-your-ballot-<state>.yml`, saved picks under `know-your-ballot:<state>:<election date>` (Illinois keeps its original key so nobody's picks are lost). On govbot: `dashboard/<state>-elections.html`, archives as `<state>-elections-v<N>.html`.
 
 </details>
 

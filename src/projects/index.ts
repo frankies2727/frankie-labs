@@ -15,7 +15,7 @@ const PlaceTimelapse = lazy(() =>
 );
 
 const KnowYourBallot = lazy(() =>
-  import('./ballot/KnowYourBallot').then((m) => ({ default: m.KnowYourBallot })),
+  import('./know-your-ballot/KnowYourBallot').then((m) => ({ default: m.KnowYourBallot })),
 );
 
 const AIArt = lazy(() =>
@@ -26,8 +26,8 @@ const AIArt = lazy(() =>
 // VibeCheck is the first; add more here as they ship.
 export const PROJECTS: ProjectDefinition[] = [
   {
-    id: 'know-your-ballot',
-    name: 'Know Your Ballot',
+    id: 'know-your-ballot-illinois',
+    name: 'Know Your Ballot: Illinois',
     tagline: 'Every name on your Cook County ballot, explained.',
     description:
       'Enter your Chicago or suburban Cook address to see every race on your Nov 3 ballot, from U.S. Senate to judges: what each job does, who’s running, who’s funding them. Build your picks, plan your vote, take it to the booth. Official data, nonpartisan.',
@@ -76,6 +76,11 @@ export const PROJECTS: ProjectDefinition[] = [
     href: 'https://frankies2727.github.io/CHN-SocialMedia-Govbot-Main/',
   },
 ];
+
+// Old project ids that still resolve, so links shared before a rename (with
+// their ?query and #hash, like Know Your Ballot's resume links) keep working.
+// Know Your Ballot projects are named know-your-ballot-<state>.
+export const PROJECT_ALIASES: Record<string, string> = { 'know-your-ballot': 'know-your-ballot-illinois' };
 
 export const projectById = (id: string): ProjectDefinition | undefined =>
   PROJECTS.find((p) => p.id === id);

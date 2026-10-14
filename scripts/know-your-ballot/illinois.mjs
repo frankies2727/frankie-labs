@@ -12,7 +12,7 @@
 //   5. Chicago community areas, Census places    -> the neighborhoods a district covers
 //
 // Needs `pdftotext` (poppler-utils) and `unzip` on PATH. Run by
-// .github/workflows/ballot-refresh.yml; locally: `node scripts/ballot-build.mjs`.
+// .github/workflows/know-your-ballot-illinois.yml; locally: `node scripts/know-your-ballot/illinois.mjs`.
 // CANDIDATE_PDF=<url or path> skips the page lookup (handy if the Board's site
 // is blocking automated requests).
 
@@ -22,17 +22,17 @@ import { Readable } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { changeLog } from './ballot/changes.mjs';
-import { govbotSlices } from './ballot/govbot.mjs';
-import { addJudges } from './ballot/judges.mjs';
-import { addSocial } from './ballot/social.mjs';
-import { parseCandidateList } from './ballot/candidates.mjs';
-import { parseWeball, addFederalMoney } from './ballot/fec.mjs';
-import { ISBE_BASE, ISBE_FILES, addStateMoney } from './ballot/isbe.mjs';
-import { addStateList, fetchCertifiedList } from './ballot/statewide.mjs';
-import { buildDistricts, buildStateDistricts, placesIn, touchesCook } from './ballot/districts.mjs';
+import { changeLog } from './illinois/changes.mjs';
+import { govbotSlices } from './illinois/govbot.mjs';
+import { addJudges } from './illinois/judges.mjs';
+import { addSocial } from './illinois/social.mjs';
+import { parseCandidateList } from './illinois/candidates.mjs';
+import { parseWeball, addFederalMoney } from './illinois/fec.mjs';
+import { ISBE_BASE, ISBE_FILES, addStateMoney } from './illinois/isbe.mjs';
+import { addStateList, fetchCertifiedList } from './illinois/statewide.mjs';
+import { buildDistricts, buildStateDistricts, placesIn, touchesCook } from './illinois/districts.mjs';
 
-const OUT = 'src/projects/ballot/data';
+const OUT = 'src/projects/know-your-ballot/data/illinois';
 const CANDIDATES_PAGE = 'https://chicagoelections.gov/getting-ballot/candidates';
 const EARLY_VOTING_PAGE = 'https://chicagoelections.gov/voting/early-votingvote-centers';
 const FEC_WEBALL = 'https://www.fec.gov/files/bulk-downloads/2026/weball26.zip';
@@ -165,7 +165,7 @@ async function main() {
   const changes = changeLog(prev, next, new Date().toISOString());
   // govbot being briefly down shouldn't hold up the ballot: keep yesterday's.
   let govbot = prev?.govbot ?? null;
-  try { govbot = await govbotSlices(); } catch (e) { console.warn(`govbot: ${e.message}; keeping the last copy`); }
+  try { govbot = await govbotSlices(ballot.races); } catch (e) { console.warn(`govbot: ${e.message}; keeping the last copy`); }
   if (!govbot) throw new Error('No govbot data (Springfield bills, 2027 races) and no earlier copy');
   console.log(`govbot: ${govbot.laws.length} bills, ${govbot.city.length} 2027 races (as of ${govbot.asOf})`);
   console.log(`Changes since last refresh: ${changes.length - (prev?.changes?.length ?? 0)} new, ${changes.length} kept`);
