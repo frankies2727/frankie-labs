@@ -144,7 +144,8 @@ async function main() {
   const state = await addStateMoney(ballot.races, work);
   console.log(`Illinois: matched ${state.matched}/${state.total} state & local candidates`);
   for (const line of state.log) console.log('  ' + line);
-  const social = await addSocial(ballot.races, work);
+  // Campaign sites behind a bot check are read in the browser, like the Board's pages.
+  const social = await addSocial(ballot.races, work, (url) => fetchPage(url, (h) => h.length > 3000 && !/just a moment|cf-chl|attention required|captcha/i.test(h.slice(0, 20_000))), prev);
   console.log(`Social accounts: ${social.withSocial}/${social.total} candidates`);
   for (const line of social.log) console.log('  ' + line);
 
