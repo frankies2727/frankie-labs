@@ -79,3 +79,6 @@
 /* While the theme flips, nothing transitions (GovbotChrome): one restyle, not
    an animation per element. */
 .kyb-theme-switch *, .kyb-theme-switch *::before, .kyb-theme-switch *::after { transition: none !important; }
+
+/* Meet the candidates: the row of faces scrolls sideways; its bar wears the brand colour. */
+.kyb-faces { scrollbar-width: thin; scrollbar-color: var(--gb-primary) transparent; }

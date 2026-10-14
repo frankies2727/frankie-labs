@@ -45,7 +45,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/projects/know-your-ballot/data/illinois
+          git add src/projects/know-your-ballot/data/illinois public/kyb-photos/illinois
           if git diff --staged --quiet; then
             echo "No ballot data changes."
             echo "changed=false" >> "$GITHUB_OUTPUT"
