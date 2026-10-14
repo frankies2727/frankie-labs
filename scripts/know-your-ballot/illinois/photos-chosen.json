@@ -1,0 +1,682 @@
+{
+ "cd-11-usrepresentativethdistrict|Jeff Walter": {
+  "url": "https://images.squarespace-cdn.com/content/v1/6862a998f72d105f9d938b41/b163a071-e297-4345-9ad9-1909800dd2a8/Jeffrey-Walter-17.PNG?format=1000w",
+  "page": "https://www.jeffwalterforcongress.com/about",
+  "credit": "Jeff Walter for Congress (campaign site)"
+ },
+ "cd-12-usrepresentativethdistrict|Julie Fortier": {
+  "url": "https://irp.cdn-website.com/16e9fcce/dms3rep/multi/opt/Copy-of-Julie-Fortier-Web-4-f0935e74-720h.png",
+  "page": "https://www.juliefortier.org/about",
+  "credit": "Julie Fortier for Congress (campaign site)"
+ },
+ "cd-13-usrepresentativethdistrict|Jeff Wilson": {
+  "url": "https://static.wixstatic.com/media/b8cc96_4bbe37a4a7a44371b7adf119f023a8c4~mv2.png/v1/crop/x_7,y_354,w_1971,h_2166/fill/w_546,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Wilson%20Cutout%20with%20arm_edited.png",
+  "page": "https://www.wilsonforcongress.com/",
+  "credit": "Jeff Wilson for Congress (campaign site)"
+ },
+ "cd-14-usrepresentativethdistrict|James T. \"Jim\" Marter": {
+  "url": "https://marter4congress.us/wp-content/uploads/2026/08/750Jim-Marter-Saving-the-American-Dream-Headshot.png",
+  "page": "https://marter4congress.us/",
+  "credit": "James Marter for Congress (campaign site)"
+ },
+ "cd-15-usrepresentativethdistrict|Jennifer Todd": {
+  "url": "https://run.imgix.net/16a5a315-4995-45ff-a019-875599787b5c/d2d3484c-7632-477c-9cda-ad577f30c4e1/d2d3484c-7632-477c-9cda-ad577f30c4e1.jpg?w=800",
+  "page": "https://www.jentodd2026.us/",
+  "credit": "Jennifer Todd for Congress (campaign site)"
+ },
+ "cd-16-usrepresentativethdistrict|Paul Nolley": {
+  "url": "https://run.imgix.net/f55b3c6c-a3e4-4574-b22c-b7d33def2cb5/05da15d8-df5e-4d82-a05f-946fdbb5dda0/05da15d8-df5e-4d82-a05f-946fdbb5dda0.jpg?w=600",
+  "page": "https://nolleyforcongress.com/",
+  "credit": "Paul Nolley for Congress (campaign site)"
+ },
+ "comptroller|Bryan Drew": {
+  "url": "https://static.wixstatic.com/media/66181f_774840a85c234cc795dd7dc2cd39cba4~mv2.png/v1/fill/w_893,h_1085,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Bryan_Headshot.png",
+  "page": "https://www.drewforillinois.com/about",
+  "credit": "Bryan Drew for Illinois Comptroller (campaign site)",
+  "crop": "300x300+292+20"
+ },
+ "comptroller|Margaret Croke": {
+  "url": "https://cdn.ilga.gov/assets/img/members/%7B1719759C-D601-4575-A753-1244D0FE550A%7D.jpg",
+  "page": "https://www.ilga.gov/House/Members/Details/3384",
+  "credit": "Illinois General Assembly"
+ },
+ "county-assessor|Pat Hynes": {
+  "url": "https://lyonstownshipil.gov/wp-content/uploads/2018/03/Assessor-Hynes.png",
+  "page": "https://lyonstownshipil.gov/offices/assessors-office/",
+  "credit": "Township of Lyons, Assessor's Office"
+ },
+ "county-clerk|Monica Gordon": {
+  "url": "https://www.cookcountyil.gov/sites/g/files/ywwepo161/files/styles/crop_profile_photo/public/images/portraits/2024-12/IMG_9719.JPG?h=a789e1ce&itok=pctQscx4",
+  "page": "https://www.cookcountyil.gov/all-people/monica-gordon",
+  "credit": "Cook County Clerk (cookcountyil.gov)"
+ },
+ "county-commissioner-10th-district|Drake Warren": {
+  "url": "https://drakefor10.com/wp-content/uploads/2025/05/Drake-Train-Properly-Sized-926x1024.jpg",
+  "page": "https://drakefor10.com/",
+  "credit": "Drake Warren for Cook County Commissioner (campaign site)"
+ },
+ "county-commissioner-13th-district|Josina Morita": {
+  "url": "https://www.cookcountyil.gov/sites/g/files/ywwepo161/files/images/portraits/2023-06/MORITA%2C%20JOSINA_9654_ppfinal%28resized%29.jpg",
+  "page": "https://www.cookcountyil.gov/all-people/josina-morita",
+  "credit": "Cook County Board of Commissioners"
+ },
+ "county-commissioner-1st-district|Tara Stamps": {
+  "url": "https://www.cookcountyil.gov/sites/g/files/ywwepo161/files/styles/crop_profile_photo/public/images/portraits/2023-08/STAMPS_SEAL_4821_pp_0.jpg?h=09c124b6&itok=rq-YWluM",
+  "page": "https://www.cookcountyil.gov/all-people/tara-stamps",
+  "credit": "Cook County Board of Commissioners"
+ },
+ "county-commissioner-2nd-district|Michael Scott, Jr.": {
+  "url": "https://www.cookcountyil.gov/sites/g/files/ywwepo161/files/styles/crop_profile_photo/public/images/portraits/2024-08/COMM%20SCOTT_9627%20copy_pp_0.jpg?itok=JB7Zzlvb",
+  "page": "https://www.cookcountyil.gov/all-people/michael-scott-jr",
+  "credit": "Cook County Board of Commissioners"
+ },
+ "county-commissioner-4th-district|Stanley S. Moore": {
+  "url": "https://www.cookcountyil.gov/sites/g/files/ywwepo161/files/styles/crop_profile_photo/public/images/portraits/2021-09/stanley_moore_4th_district_1.jpg?h=9326d3c7&itok=8-sGYoNY",
+  "page": "https://www.cookcountyil.gov/all-people/stanley-moore",
+  "credit": "Cook County Board of Commissioners"
+ },
+ "county-commissioner-5th-district|Kisha E. McCaskill": {
+  "url": "https://www.cookcountyil.gov/sites/g/files/ywwepo161/files/styles/crop_profile_photo/public/images/portraits/2025-01/thumbnail_COMM%20MCCASKILL%208X10.jpg?h=f883ad86&itok=bUux8gRB",
+  "page": "https://www.cookcountyil.gov/person/deborah-sims-0",
+  "credit": "Cook County Board of Commissioners"
+ },
+ "county-commissioner-7th-district|Alma E. Anaya": {
+  "url": "https://www.cookcountyil.gov/sites/g/files/ywwepo161/files/images/portraits/2021-09/alma_e._anaya_7th_district.jpg",
+  "page": "https://www.cookcountyil.gov/all-people/alma-anaya",
+  "credit": "Cook County Board of Commissioners"
+ },
+ "county-commissioner-8th-district|Jessica Vasquez": {
+  "url": "https://www.cookcountyil.gov/sites/g/files/ywwepo161/files/styles/crop_profile_photo/public/images/portraits/2025-05/Com.%20Vasquez%20Seal%20Headshot.jpg?itok=xX-X4DuV",
+  "page": "https://www.cookcountyil.gov/person/luis-arroyo-jr",
+  "credit": "Cook County Board of Commissioners"
+ },
+ "county-commissioner-9th-district|Maggie Trevor": {
+  "url": "https://www.cookcountyil.gov/sites/g/files/ywwepo161/files/images/portraits/2023-06/TREVOR%2C%20MAGGIE_9770_pp%20%281%29final%28resized%29.jpg",
+  "page": "https://www.cookcountyil.gov/all-people/maggie-trevor",
+  "credit": "Cook County Board of Commissioners"
+ },
+ "county-sheriff|Thomas J. Dart": {
+  "url": "https://www.cookcountyil.gov/sites/g/files/ywwepo161/files/images/portraits/2023-11/Sheriff_Tom_Dart_20nov2023.jpg",
+  "page": "https://www.cookcountyil.gov/all-people/thomas-dart",
+  "credit": "Cook County Sheriff (cookcountyil.gov)",
+  "crop": "220x220+130+30"
+ },
+ "county-treasurer|Maria Pappas": {
+  "url": "https://www.cookcountyil.gov/sites/g/files/ywwepo161/files/styles/crop_profile_photo/public/images/portraits/2025-05/Cook%20County%20Treasurer%20Maria%20Pappas.jpg?h=e6e0de68&itok=kp94P073",
+  "page": "https://www.cookcountyil.gov/all-people/maria-pappas",
+  "credit": "Cook County Treasurer (cookcountyil.gov)"
+ },
+ "judge-11th-subcircuit-vacancy-of-mclean-meyerson|Jarrett Knox": {
+  "url": "https://www.knoxforjudge.com/wp-content/uploads/2025/11/Jarrett-Headshot-Edited-819x1024.png",
+  "page": "https://www.knoxforjudge.com/",
+  "credit": "Jarrett Knox for Judge (campaign site)"
+ },
+ "judge-16th-subcircuit-converted-from-associate-judgeship-of-mendoza|Jessica Karina Velez": {
+  "url": "https://static.wixstatic.com/media/cd7905_62f504ca15ba43799c6981aa61f010fa~mv2.jpg/v1/fill/w_667,h_1000,al_c,q_85/cd7905_62f504ca15ba43799c6981aa61f010fa~mv2.jpg",
+  "page": "https://www.jessicavelezforjudge.com/",
+  "credit": "Jessica Velez for Cook County Judge (campaign site)"
+ },
+ "judge-17th-subcircuit-converted-from-associate-judgeship-of-carroll|Bianca B. Brown": {
+  "url": "https://content.campaignpartner.net/images/142060/IMG_1860.jpeg",
+  "page": "https://www.biancabrownforjudge.com/issues",
+  "credit": "Bianca Brown for Judge (campaign site)"
+ },
+ "judge-1st-subcircuit-vacancy-of-balanoff|Radiance Ward": {
+  "url": "https://images.squarespace-cdn.com/content/v1/67cdf08e455fe25a879f03f7/f042c53d-d628-4b4c-8fe6-74caad24dc78/aragonai-243ac064-c95b-489b-99fd-6377cf1aacaa-2.jpg?format=1000w",
+  "page": "https://www.radiancewardforjudge.com/about",
+  "credit": "Radiance Ward for Judge (campaign site)"
+ },
+ "judge-1st-subcircuit-vacancy-of-walker|Ashley Greer Shambley": {
+  "url": "https://static.wixstatic.com/media/ba075b_72a5863f83b44ec6b6c499f835294258~mv2.jpg/v1/fill/w_920,h_1000,al_c,q_85/ba075b_72a5863f83b44ec6b6c499f835294258~mv2.jpg",
+  "page": "https://www.ashleygreershambleyforjudge.com/",
+  "credit": "Ashley Greer Shambley for Judge (campaign site)"
+ },
+ "judge-3rd-subcircuit-vacancy-of-sherlock|Rachel Marrello": {
+  "url": "https://images.squarespace-cdn.com/content/v1/692b842484f7e5163213bbe0/e9ee1e09-c54f-495f-9cf3-f04050229418/Rachel+Website+pic.jpg?format=1000w",
+  "page": "https://www.rachelmarrelloforjudge.com/",
+  "credit": "Rachel Marrello for Cook County Judge (campaign site)"
+ },
+ "judge-of-the-circuit-court-vacancy-of-coghlan|Ashonta C. Rice": {
+  "url": "https://www.ashontaforjudge.com/UserFiles/image/Ashonta-Rice-for-Cook-County-Circuit-Court-Judge.webp",
+  "page": "https://www.ashontaforjudge.com/about.html",
+  "credit": "Ashonta C. Rice for Judge (campaign site)"
+ },
+ "judge-of-the-circuit-court-vacancy-of-hooks|Ava George Stewart": {
+  "url": "https://static.wixstatic.com/media/c5f985_f00035d9dc19422aa64a6a736f35bcfe~mv2.png",
+  "page": "https://www.avageorgestewart.com/",
+  "credit": "Ava George Stewart for Judge (campaign site)"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-10a|Che \"Rhymefest\" Smith": {
+  "url": "https://www.cpsboe.org/content/images/person/che_smith_photo_2.jpg/image-full;max$800,0.ImageHandler",
+  "page": "https://www.cpsboe.org/about/bios/2042",
+  "credit": "Chicago Board of Education"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-10b|Connie Anderson": {
+  "url": "https://www.cpsboe.org/content/images/person/connie_l_anderson_4419_crop.jpg/image-full;max$800,0.ImageHandler",
+  "page": "https://www.cpsboe.org/about/bios/2051",
+  "credit": "Chicago Board of Education"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-1a|Ed Bannon": {
+  "url": "https://www.cpsboe.org/content/images/person/ed_bannon_photo_1.jpg/image-full;max$800,0.ImageHandler",
+  "page": "https://www.cpsboe.org/about/bios/2034",
+  "credit": "Chicago Board of Education"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-1b|Claudia Peralta": {
+  "url": "https://static.wixstatic.com/media/c1aad4_83f5f482303141c8b7ec43c6f6995ab0~mv2.jpg/v1/fill/w_671,h_1000,al_c,q_85/c1aad4_83f5f482303141c8b7ec43c6f6995ab0~mv2.jpg",
+  "page": "https://www.communityforclaudia.com/",
+  "credit": "Claudia Peralta for Chicago School Board Dist. 1B (campaign site; photo by Elaine Melko)"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-1b|Michelle N. Pierre": {
+  "url": "https://images.squarespace-cdn.com/content/v1/6646b403421c1357e7e38036/81b56aef-2e8b-4e36-b5f5-f7e5587304b9/_DSC3444+Large.jpeg?format=1000w",
+  "page": "https://www.votemichellepierre.com/",
+  "credit": "Michelle Pierre for School Board (campaign site)",
+  "crop": "480x480+178+280"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-2a|Ebony DeBerry": {
+  "url": "https://www.cpsboe.org/content/images/person/ebony_deberry_photo_1.jpg/image-full;max$800,0.ImageHandler",
+  "page": "https://www.cpsboe.org/about/bios/2036",
+  "credit": "Chicago Board of Education"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-2a|Hector Morales": {
+  "url": "https://www.hectorforcpsboard2a.org/wp-content/uploads/2026/09/HM_Headshot-683x1024.jpg",
+  "page": "https://www.hectorforcpsboard2a.org/",
+  "credit": "Hector Morales for CPS School Board 2A (campaign site)"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-2b|Daniel Basco": {
+  "url": "https://images.squarespace-cdn.com/content/v1/69f972b8bd51de249657ba25/86f03d85-036e-4594-b9c5-4cdb77e85c30/Dan-+Headshot.jpg?format=1000w",
+  "page": "https://www.votedanielbasco.com/",
+  "credit": "Basco for Chicago Board of Education, Dist. 2B (campaign site)"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-2b|Deborah \"Debby\" Pope": {
+  "url": "https://www.cpsboe.org/content/images/person/debbypope-cropped.jpg/image-full;max$800,0.ImageHandler",
+  "page": "https://www.cpsboe.org/about/bios/2030",
+  "credit": "Chicago Board of Education"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-3a|Norma Rios Sierra": {
+  "url": "https://www.cpsboe.org/content/images/person/norma_rios-sierra_photo_1.jpg/image-full;max$800,0.ImageHandler",
+  "page": "https://www.cpsboe.org/about/bios/2037",
+  "credit": "Chicago Board of Education"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-3a|Peter Gonzales": {
+  "url": "https://petefor3a.com/assets/img/gen/A2c_ecrsGs-900.jpeg",
+  "page": "https://petefor3a.com/media/",
+  "credit": "Pete Gonzales for Chicago Board of Education, District 3A (campaign site)"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-3b|Carlos A. Rivas Jr.": {
+  "url": "https://www.cpsboe.org/content/images/person/carlos_rivas_jr_2_edit.jpg/image-full;max$800,0.ImageHandler",
+  "page": "https://www.cpsboe.org/about/bios/2043",
+  "credit": "Chicago Board of Education"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-3b|Jason Dónes": {
+  "url": "https://images.squarespace-cdn.com/content/v1/662fc672711cd811e2d77f51/ac5b9a47-feb1-489d-9ea8-2179a646853c/1.png?format=1000w",
+  "page": "https://www.donesforschoolboard.com/",
+  "credit": "Jason Dónes for Chicago School Board District 3B (campaign site)",
+  "crop": "320x320+570+110"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-4a|Ellen Sherratt": {
+  "url": "https://static.wixstatic.com/media/267e42_be07a032f4644fdfa9df2bf57677ad97~mv2.jpeg/v1/fit/w_1000,h_1000,al_c,q_85/267e42_be07a032f4644fdfa9df2bf57677ad97~mv2.jpeg",
+  "page": "https://www.electellensherratt.org/",
+  "credit": "Ellen Sherratt for Chicago School Board District 4A (campaign site)",
+  "crop": "360x360+330+40"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-4a|Karen Zaccor": {
+  "url": "https://www.cpsboe.org/content/images/person/karen_zaccor_photo_1.jpg/image-full;max$800,0.ImageHandler",
+  "page": "https://www.cpsboe.org/about/bios/2038",
+  "credit": "Chicago Board of Education"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-4b|Ellen Rosenfeld": {
+  "url": "https://www.cpsboe.org/content/images/person/ellen_rosenfeld_photo_2.jpg/image-full;max$800,0.ImageHandler",
+  "page": "https://www.cpsboe.org/about/bios/2044",
+  "credit": "Chicago Board of Education"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-5a|Aaron \"Jitu\" Brown": {
+  "url": "https://www.cpsboe.org/content/images/person/jitubrown_1.jpg/image-full;max$800,0.ImageHandler",
+  "page": "https://www.cpsboe.org/about/bios/2046",
+  "credit": "Chicago Board of Education"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-5b|Anthony Hargrove": {
+  "url": "https://hargroveforcps.com/_image?href=%2F_astro%2Fanthony-hargrove-official.Bn7md8RK.png&w=768&h=512&q=80&f=webp",
+  "page": "https://hargroveforcps.com/",
+  "credit": "Anthony Hargrove for Chicago Board of Education District 5B (campaign site)"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-5b|Michilla \"Kyla\" Blaise": {
+  "url": "https://www.cpsboe.org/content/images/person/michilla_blaise-6_resized.jpg/image-full;max$800,0.ImageHandler",
+  "page": "https://www.cpsboe.org/about/bios/2029",
+  "credit": "Chicago Board of Education"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-6a|Anusha Thotakura": {
+  "url": "https://www.cpsboe.org/content/images/person/anusha_thotakura_photo_1.jpg/image-full;max$800,0.ImageHandler",
+  "page": "https://www.cpsboe.org/about/bios/2039",
+  "credit": "Chicago Board of Education"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-6a|Brenda Lee Anderson": {
+  "url": "https://images.squarespace-cdn.com/content/v1/69f4eca361fc4e51925fee42/496c19c7-c5b2-4541-9ad2-318e87a86d3a/DrBrendaHeadshot.png?format=1000w",
+  "page": "https://www.drbrendaforcps.com/",
+  "credit": "Dr. Brenda for Chicago Public Schools District 6A (campaign site)"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-6a|Isaiah White": {
+  "url": "https://isaiahwhite.org/wp-content/uploads/2025/05/Untitled-1-842x1024.jpg",
+  "page": "https://isaiahwhite.org/",
+  "credit": "Isaiah White for Chicago Board of Education - District 6A (campaign site)"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-6b|Michael L. Neal": {
+  "url": "https://www.friendsofmichaelneal.com/uploads/1/5/5/9/155950500/59b1a56b-6ed2-4ebb-a8be-4e31da79a31a_orig.png",
+  "page": "https://www.friendsofmichaelneal.com/",
+  "credit": "Michael for District 6B (Friends of Michael Neal campaign site)"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-7a|Emma Lozano": {
+  "url": "https://www.cpsboe.org/content/images/person/emma_lozano_photo_2.jpg/image-full;max$800,0.ImageHandler",
+  "page": "https://www.cpsboe.org/about/bios/2040",
+  "credit": "Chicago Board of Education"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-7a|Jesus Ayala Jr.": {
+  "url": "https://images.squarespace-cdn.com/content/v1/6a8cdf69fc76956dc52988db/44f216de-3775-454b-a080-ba93d817b54e/GPphoto-Jesus-02328.jpg?format=1000w",
+  "page": "https://www.ayalajrforstudents.com/",
+  "credit": "Jesus Ayala Jr. for Chicago School Board 7A (campaign site)",
+  "crop": "340x340+353+30"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-7b|Yesenia Lopez": {
+  "url": "https://www.cpsboe.org/content/images/person/yesenia_lopez_photo_2.jpg/image-full;max$800,0.ImageHandler",
+  "page": "https://www.cpsboe.org/about/bios/2048",
+  "credit": "Chicago Board of Education"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-8a|Angel Gutierrez": {
+  "url": "https://www.cpsboe.org/content/images/person/angel_gutierrez_photo_2.jpg/image-full;max$800,0.ImageHandler",
+  "page": "https://www.cpsboe.org/about/bios/2041",
+  "credit": "Chicago Board of Education"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-9b|Katherine S. Dunneback": {
+  "url": "https://static.wixstatic.com/media/1fcffc_74714d058f2f4c2fb4be0f28dc96b930~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_85/1fcffc_74714d058f2f4c2fb4be0f28dc96b930~mv2.jpg",
+  "page": "https://www.kateforcps.com/",
+  "credit": "Kate for CPS, Katherine Dunneback for Chicago School Board District 9B (campaign site)"
+ },
+ "member-of-the-chicago-board-of-education-subdistrict-9b|Therese Boyle": {
+  "url": "https://www.cpsboe.org/content/images/person/theresa_boyle_photo_1.jpg/image-full;max$800,0.ImageHandler",
+  "page": "https://www.cpsboe.org/about/bios/2045",
+  "credit": "Chicago Board of Education"
+ },
+ "metropolitan-water-reclamation-district-commissioners-full-6-year-term|Beth McElroy Kirkwood": {
+  "url": "https://mwrd.org/sites/default/files/styles/tile/public/images/2024-12/Kirkwood_Beth_089-sq.jpg?h=8a7fc05e",
+  "page": "https://mwrd.org/board-commissioners/beth-mcelroy-kirkwood",
+  "credit": "Metropolitan Water Reclamation District of Greater Chicago"
+ },
+ "metropolitan-water-reclamation-district-commissioners-full-6-year-term|Eira Lizeth Corral Sepúlveda": {
+  "url": "https://mwrd.org/sites/default/files/styles/tile/public/images/2023-10/BOC-Headshot-Eira%20L%20Corral%20Sepu%CC%81lveda.jpg?h=7919d791",
+  "page": "https://mwrd.org/board-commissioners/eira-l-corral-sepulveda",
+  "credit": "Metropolitan Water Reclamation District of Greater Chicago"
+ },
+ "metropolitan-water-reclamation-district-commissioners-unexpired-2-year-term|Cameron \"Cam\" Davis": {
+  "url": "https://mwrd.org/sites/default/files/styles/tile/public/images/2023-10/BOC-Headshot-Cameron%20Davis.jpg?h=4ae355d9",
+  "page": "https://mwrd.org/board-commissioners/cameron-davis",
+  "credit": "Metropolitan Water Reclamation District of Greater Chicago"
+ },
+ "president-of-the-chicago-board-of-education|Hilario Dominguez": {
+  "url": "https://hilarioforcps.com/wp-content/uploads/2026/08/Hilario_cropped.png",
+  "page": "https://hilarioforcps.com/chicago-school-board-candidate-look-up/",
+  "credit": "Hilario Dominguez for Chicago School Board President (campaign site)"
+ },
+ "president-of-the-chicago-board-of-education|Jessica Biggs": {
+  "url": "https://www.cpsboe.org/content/images/person/jessica_biggs_photo_1.jpg/image-full;max$800,0.ImageHandler",
+  "page": "https://www.cpsboe.org/about/bios/2047",
+  "credit": "Chicago Board of Education"
+ },
+ "president-of-the-chicago-board-of-education|Sendhil Revuluri": {
+  "url": "https://run.imgix.net/8a00b92c-6a0c-4c41-836e-12c054881383/609a7f98-21bd-4805-8488-31ba0a17173a/609a7f98-21bd-4805-8488-31ba0a17173a.avif?ixlib=js-3.8.0&bri=0&con=0&sat=0&high=0&shad=0&usm=0&rect=459%2C207%2C1320%2C691",
+  "page": "https://www.sendhilforcps.com/",
+  "credit": "Sendhil Revuluri for CPS (campaign site)"
+ },
+ "president-of-the-chicago-board-of-education|Victor P. Henderson": {
+  "url": "https://images.squarespace-cdn.com/content/v1/69ee9d4a77e44149ce58a5b9/1777245515745-RHPTRGWWSP2I5NXUQFCQ/Victor+P.+Henderson_0384+-+Current+Headshot.jpg?format=1000w",
+  "page": "https://victorforthefuture.org/",
+  "credit": "Victor For The Future (Victor P. Henderson campaign site)"
+ },
+ "secretary-of-state|Diane M. Harris": {
+  "url": "https://content.campaignpartner.net/images/142110/image0_17.jpeg",
+  "page": "https://www.harrisforsos.com/meet_diane",
+  "credit": "Diane Harris for Illinois Secretary of State (campaign site)"
+ },
+ "sldl-105-staterepresentativethdistrict|Tim Ruestman": {
+  "url": "https://static.wixstatic.com/media/5b4615_c3d6aadb074049fb98aad63176b8a8fa~mv2.jpg/v1/fit/w_1000,h_1000,q_90/5b4615_c3d6aadb074049fb98aad63176b8a8fa~mv2.jpg",
+  "page": "https://www.timruestman.com/",
+  "credit": "Friends of Tim Ruestman (campaign site)"
+ },
+ "sldl-106-staterepresentativethdistrict|Jason R. Bunting": {
+  "url": "https://repbunting.com/wp-content/uploads/sites/74/2025/01/JRB-headshot-731x1024.jpg",
+  "page": "https://repbunting.com/about/",
+  "credit": "State Rep. Jason Bunting legislative office site (repbunting.com)"
+ },
+ "sldl-111-staterepresentativethdistrict|Rosetta \"Rosie\" Brown": {
+  "url": "https://images.squarespace-cdn.com/content/v1/68d70d43e935ff5e7be407f4/8c9b9560-8a69-4842-827d-7ec35498f6ee/IZ5A7910.png?format=1000w",
+  "page": "https://www.rosiebrownforillinoisstaterep111.com/",
+  "credit": "Friends of Rosetta Brown (campaign site)"
+ },
+ "sldl-118-staterepresentativethdistrict|Scott Doody": {
+  "url": "https://repdoody.com/wp-content/uploads/sites/83/2026/07/Doody-Scott-Headshot-1-731x1024.jpg",
+  "page": "https://repdoody.com/about/",
+  "credit": "State Rep. Scott Doody legislative office site (repdoody.com)"
+ },
+ "sldl-42-staterepresentativenddistrict|Margaret A. DeLarosa": {
+  "url": "https://www.staterepdelarosa.com/wp-content/uploads/2026/10/hs_main.jpg",
+  "page": "https://www.staterepdelarosa.com/",
+  "credit": "State Rep. Margaret DeLaRosa office website (staterepdelarosa.com)"
+ },
+ "sldl-45-staterepresentativethdistrict|Gina Parrilli": {
+  "url": "https://gina4illinois.com/wp-content/uploads/2026/01/Gina-arms-crossed-glasses-no-background-674x1024.png",
+  "page": "https://gina4illinois.com/",
+  "credit": "Citizens for Parrilli (campaign site)"
+ },
+ "sldl-47-staterepresentativethdistrict|Erica Bray-Parker": {
+  "url": "https://ericaforil47.com/wp-content/uploads/2025/09/Erica-Green-Headshot-edited-1024x1024.jpg",
+  "page": "https://ericaforil47.com/",
+  "credit": "Erica Bray-Parker for State Representative (campaign site)"
+ },
+ "sldl-48-staterepresentativethdistrict|Amanda Zahorak": {
+  "url": "https://images.squarespace-cdn.com/content/v1/68c34a4cc9fe6858752eabde/008f7422-8ff9-4887-b574-6a2097dbcef5/Headshot+2024.jpg?format=1000w",
+  "page": "https://www.zahorakforil48.com/home",
+  "credit": "Amanda Zahorak for IL48 (campaign site)"
+ },
+ "sldl-49-staterepresentativethdistrict|John Paul Augustynowicz": {
+  "url": "https://img1.wsimg.com/isteam/ip/4b8089ef-9862-4a10-ab32-15574b297098/IMG_1357.jpg/:/rs=w:800,cg:true,m",
+  "page": "https://jp4il.com/",
+  "credit": "JP for Illinois (campaign site)"
+ },
+ "sldl-51-staterepresentativestdistrict|Jenny Levin": {
+  "url": "https://jennylevin.com/_assets/media/3568069379dbeb653b929a4b83b5eeb2.jpg",
+  "page": "https://jennylevin.com/",
+  "credit": "Supporters of Jenny Levin (campaign site)"
+ },
+ "sldl-51-staterepresentativestdistrict|Lori Smith": {
+  "url": "https://images.squarespace-cdn.com/content/v1/68c06e70a04ced17d08a95de/ac9dd9e8-0a89-4e52-8e21-fcf5b0c4e4ed/Lori+Smith+Branding+Kit.png",
+  "page": "https://www.loriforillinois.com/",
+  "credit": "Lori Smith for Illinois (campaign site)"
+ },
+ "sldl-52-staterepresentativenddistrict|Maria Peterson": {
+  "url": "https://www.mariafor52.com/wp-content/uploads/2023/06/IMG_5731-2.jpeg",
+  "page": "https://www.mariafor52.com/",
+  "credit": "Maria for 52 (campaign site)",
+  "crop": "440x440+115+20"
+ },
+ "sldl-53-staterepresentativerddistrict|Elizabeth Bauer": {
+  "url": "https://www.bauerfor53.com/images/bauer-headshot-hero-800.webp",
+  "page": "https://www.bauerfor53.com/",
+  "credit": "Citizens for Elizabeth Bauer (campaign site)"
+ },
+ "sldl-57-staterepresentativethdistrict|Daniel T. Behr": {
+  "url": "https://behrforillinois.com/wp-content/uploads/2026/10/Dr.-Dan-Behr-Photo2.jpg",
+  "page": "https://behrforillinois.com/",
+  "credit": "Behr for 57 (campaign site)"
+ },
+ "sldl-62-staterepresentativenddistrict|Laura Faver Dias": {
+  "url": "https://images.squarespace-cdn.com/content/v1/63ff891bf17d014c181da478/4d699cb9-feee-4191-88f1-a2445d51908f/Dias+Family-285.jpg?format=1000w",
+  "page": "https://www.repfaverdias.com/",
+  "credit": "State Rep. Laura Faver Dias office website (repfaverdias.com)"
+ },
+ "sldl-64-staterepresentativethdistrict|AJ Johnson": {
+  "url": "https://content.app-sources.com/s/421409513854574561/uploads/Images/IMG_6601-9404808.png?format=webp",
+  "page": "https://ajforstaterep.com/",
+  "credit": "Friends of AJ Johnson (campaign site)"
+ },
+ "sldl-65-staterepresentativethdistrict|Ricky Rivard": {
+  "url": "https://images.squarespace-cdn.com/content/v1/6493ab4d5ee636044940219b/b4c3bb86-a772-4c8d-9b77-69606dfb20d5/Ricky+Rivard7408102-e.jpg?format=1000w",
+  "page": "https://www.votericky.com/",
+  "credit": "Ricky Rivard for State Rep (campaign site)"
+ },
+ "sldl-66-staterepresentativethdistrict|Laurie Parman": {
+  "url": "https://static.wixstatic.com/media/65af8c_a064a7bdae09496485f20e6295cf256d~mv2.jpg/v1/fit/w_1000,h_1000,q_90/65af8c_a064a7bdae09496485f20e6295cf256d~mv2.jpg",
+  "page": "https://www.laurieparman.info/meet-laurie",
+  "credit": "Elect Laurie Parman for Illinois State Rep District 66 (campaign site)"
+ },
+ "sldl-69-staterepresentativethdistrict|Peter Janko": {
+  "url": "https://pete4illinois.com/wp-content/uploads/2025/09/RUFU24ZPFJBZZDMGXBJ5AJYRCY.jpg",
+  "page": "https://pete4illinois.com/",
+  "credit": "Peter Janko for Illinois (campaign site)"
+ },
+ "sldl-70-staterepresentativethdistrict|Veronica Garcia-Martinez": {
+  "url": "https://veronica4il.com/_assets/media/ed46b9def29d6a779cace50aa61b2fbe.jpg",
+  "page": "https://veronica4il.com/",
+  "credit": "Friends for Veronica (campaign site)"
+ },
+ "sldl-71-staterepresentativestdistrict|Dan Swanson": {
+  "url": "https://cdn.ilga.gov/assets/img/members/%7BF7512D74-4694-4272-9A1E-6935F4AD4F1D%7D.jpg",
+  "page": "https://www.ilga.gov/House/Members/Details/3327",
+  "credit": "Illinois General Assembly"
+ },
+ "sldl-73-staterepresentativerddistrict|Nicole Dopler": {
+  "url": "https://static.wixstatic.com/media/1d4b38_99939c3f7eab4485be971ed1adc715c5~mv2.webp/v1/fit/w_1000,h_1000,q_90/1d4b38_99939c3f7eab4485be971ed1adc715c5~mv2.webp",
+  "page": "https://www.doplerforillinois.com/",
+  "credit": "Friends of Nicole Dopler (campaign site)"
+ },
+ "sldl-75-staterepresentativethdistrict|Caroline McCree": {
+  "url": "https://img1.wsimg.com/isteam/ip/1aa6effa-d0c7-44af-a8be-397aa0a1d905/Caroline%20McCree.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:79.72%25/rs=w:800,h:800,cg:true",
+  "page": "https://votemccree.com",
+  "credit": "McCree Fortitudine / Caroline McCree for State Representative (campaign site)"
+ },
+ "sldl-76-staterepresentativethdistrict|Liz Bishop": {
+  "url": "https://electlizbishop.com/wp-content/uploads/2023/09/Liz-Thinker-flag-768x1024.jpeg",
+  "page": "https://electlizbishop.com/",
+  "credit": "Friends of Liz Bishop (campaign site)"
+ },
+ "sldl-81-staterepresentativestdistrict|Laura Hois": {
+  "url": "https://img1.wsimg.com/isteam/ip/c6b708d4-ade4-407b-9540-768453be45a9/IMG_1540.jpeg/:/rs=h:1000,cg:true,m",
+  "page": "https://hois4staterep.com/",
+  "credit": "Hois for State Rep D-81 (campaign site)"
+ },
+ "sldl-82-staterepresentativenddistrict|Nicole La Ha": {
+  "url": "https://img1.wsimg.com/isteam/ip/7c8da976-5624-4956-83e9-0a162d6a1c1c/blob-d030c3f.png/:/rs=w:1000",
+  "page": "https://nicoleforillinois.org/",
+  "credit": "Nicole for Illinois (campaign site)"
+ },
+ "sldl-84-staterepresentativethdistrict|Brian Scopa": {
+  "url": "https://scopaforillinois.com/images/hero-headshot.jpg",
+  "page": "https://scopaforillinois.com/",
+  "credit": "Brian Scopa for Illinois State Representative, District 84 (campaign site)"
+ },
+ "sldl-84-staterepresentativethdistrict|Saba Haider": {
+  "url": "https://images.squarespace-cdn.com/content/v1/689e55f241bb925bba46ce42/235fc278-e041-4d03-87d1-de40cc4a1849/IMG_20260220_162720.png?format=1000w",
+  "page": "https://www.sabahaider.com/",
+  "credit": "Saba Haider for Illinois (campaign site)"
+ },
+ "sldl-97-staterepresentativethdistrict|Jessica Dixon Heitman": {
+  "url": "https://cdn.ilga.gov/assets/img/members/%7B780B6EBE-AED7-4C20-8FAB-16DFAFD53B81%7D.jpg",
+  "page": "https://www.ilga.gov/House/Members/Details/3465",
+  "credit": "Illinois General Assembly"
+ },
+ "sldl-98-staterepresentativethdistrict|Nona Parker": {
+  "url": "https://static.wixstatic.com/media/e90e01_00fb6b6ec20d49c486a1abb6b1af377f~mv2.jpg/v1/fill/w_600,h_892,al_c,q_85/e90e01_00fb6b6ec20d49c486a1abb6b1af377f~mv2.jpg",
+  "page": "https://www.nonaparker4staterep.com/",
+  "credit": "Nona Parker 4 State Representative (campaign site)"
+ },
+ "sldu-21-statesenatorstdistrict|Julie Berkowicz": {
+  "url": "https://www.julieberkowicz.net/assets/images/julie-headshot.jpg",
+  "page": "https://www.julieberkowicz.net/",
+  "credit": "Committee to Elect Julie Berkowicz (campaign site)"
+ },
+ "sldu-23-statesenatorrddistrict|Linda Z. Polacek": {
+  "url": "https://lindaforillinois.com/wp-content/uploads/2026/03/Linda-at-the-park.jpg",
+  "page": "https://lindaforillinois.com/",
+  "credit": "Linda Z. Polacek for State Senate (campaign site)"
+ },
+ "sldu-23-statesenatorrddistrict|Suzanne \"Suzy\" Glowiak Hilton": {
+  "url": "https://suzyforsenate.com/wp-content/uploads/2026/02/Hero.jpg",
+  "page": "https://suzyforsenate.com/",
+  "credit": "Friends of Suzy Glowiak (campaign site)",
+  "crop": "560x560+1088+60"
+ },
+ "sldu-24-statesenatorthdistrict|Benjamin \"Ben\" McAdams": {
+  "url": "https://images.squarespace-cdn.com/content/v1/6918ed1ca252cd1fe0ecccde/f68f07ca-3d3c-4a53-982d-b1f561ba9973/11.13.25_Ben+McAdams+Photoshoot-14-3_FINAL.jpg?format=1000w",
+  "page": "https://www.mcadamsforil.com/",
+  "credit": "Citizens for Ben McAdams (campaign site)"
+ },
+ "sldu-26-statesenatorthdistrict|Darby Hills": {
+  "url": "https://www.senatordarbyhills.com/wp-content/uploads/2025/03/Senator-Hills_IMG_2229-5x7-1-731x1024.jpg",
+  "page": "https://www.senatordarbyhills.com/about/",
+  "credit": "State Sen. Darby Hills legislative office site (Illinois Senate Republicans)"
+ },
+ "sldu-27-statesenatorthdistrict|Carina Santa Maria": {
+  "url": "https://images.squarespace-cdn.com/content/v1/66feb33dd4917c5192e52a3e/7d254a45-9666-452a-8a8e-fb28ac01b814/Carina-Senate-Springfield-85-CutOut.png?format=1000w",
+  "page": "https://www.carinaforsenate.com/about-carina",
+  "credit": "Citizens for Carina (campaign site)"
+ },
+ "sldu-32-statesenatornddistrict|Karen Battaglia": {
+  "url": "https://karenforil32.com/wp-content/uploads/2026/01/Home-About-1024x955.png",
+  "page": "https://karenforil32.com/",
+  "credit": "Friends for Karen Battaglia (campaign site)"
+ },
+ "sldu-33-statesenatorrddistrict|Danielle Penman": {
+  "url": "https://images.squarespace-cdn.com/content/v1/68bf80c5f5a59a4daca73d4e/e1469e27-914f-4d33-a859-52864b5b7f37/social+photo.png?format=1000w",
+  "page": "https://www.daniellepenman.com/meet-danielle",
+  "credit": "Danielle Penman for State Senator (campaign site)"
+ },
+ "sldu-33-statesenatorrddistrict|Michele Clark": {
+  "url": "https://images.squarespace-cdn.com/content/v1/68d091853d14ce0a44be04ea/36765c48-c855-41c0-93f3-2e75e7a4f74f/Clark+Headshot.png?format=1000w",
+  "page": "https://micheleforilsenate.com/",
+  "credit": "Friends of Michele Clark (campaign site)"
+ },
+ "sldu-36-statesenatorthdistrict|Brad Beekman": {
+  "url": "https://www.beekmanforsenate.com/img/brad-cutout.png",
+  "page": "https://www.beekmanforsenate.com/",
+  "credit": "Beekman for Senate (campaign site)"
+ },
+ "sldu-48-statesenatorthdistrict|Frank Lesko": {
+  "url": "https://friendsoffranklesko.com/picts/frank_transparent_new.png",
+  "page": "https://friendsoffranklesko.com/",
+  "credit": "Friends of Frank Lesko / Frank Lesko for Illinois Senate (campaign site)"
+ },
+ "sldu-59-statesenatorthdistrict|Tamiko \"T.C.\" Mueller": {
+  "url": "https://tcmueller.com/wp-content/uploads/2025/11/TC-Jackson-Photo.jpeg",
+  "page": "https://tcmueller.com/about/",
+  "credit": "Committee to Elect TC Mueller (campaign site)"
+ },
+ "state-representative-12th-district|Paul Kendrick": {
+  "url": "https://images.squarespace-cdn.com/content/v1/68801793e41543270d3eaa3e/f41c81ee-5898-4a0a-ac1a-afd319bd0037/IMG_2654.jpeg?format=1000w",
+  "page": "https://www.paulforillinois.com/meet-paul",
+  "credit": "Paul For Illinois (campaign site)"
+ },
+ "state-representative-13th-district|Demerike \"Demi\" Palecek": {
+  "url": "https://static.wixstatic.com/media/e62ce9_23ef01dd793642db93e0a5511675abfd~mv2.png/v1/crop/x_1138,y_0,w_5257,h_3956/fill/w_905,h_681,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design%20(5).png",
+  "page": "https://www.demiforillinois.com/",
+  "credit": "Demi for Illinois (campaign site)"
+ },
+ "state-representative-32nd-district|Lisa J. Davis": {
+  "url": "https://cdn.ilga.gov/assets/img/members/%7BA61D2D11-9A19-483B-9C3E-C99CCC4CF5F4%7D.jpg",
+  "page": "https://www.ilga.gov/House/Members/Details/3458",
+  "credit": "Illinois General Assembly"
+ },
+ "state-representative-34th-district|Cleopatra \"Cleo\" Cowley": {
+  "url": "https://static.wixstatic.com/media/dbf777_d5bfac8859ee429e8551e84ff579cc58~mv2.png/v1/crop/x_6,y_0,w_1247,h_1200/fill/w_800,h_770,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Cleo-Crop-2---orange-suit.png",
+  "page": "https://www.cleopatracowley34.com/",
+  "credit": "Citizens to Elect Cleopatra Cowley / Cleo for 34 (campaign site)"
+ },
+ "state-representative-35th-district|David A. Dewar": {
+  "url": "https://content.campaignpartner.net/images/128200/David_Dewar2.jpg",
+  "page": "https://repdaviddewar.com/",
+  "credit": "David Dewar for 35th District State Representative (campaign site)"
+ },
+ "state-representative-36th-district|David Sheppard": {
+  "url": "https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_3/v1752767025/d124org/hlhjqsnfdvaiklmcp1l1/Sheppard.jpg",
+  "page": "https://www.d124.org/about-d124/board-of-education",
+  "credit": "Evergreen Park Elementary School District 124"
+ },
+ "state-representative-40th-district|Miguel Alvelo-Rivera": {
+  "url": "https://images.solidarity.tech/fit-in/1200x0/filters:no_upscale()/ryhd563c83zgy8dnw99f7zci5m5b",
+  "page": "https://www.miguelfor40.org/",
+  "credit": "Miguel for State Rep 40th District (campaign site)"
+ },
+ "state-representative-5th-district|Kimberly Neely DuBuclet": {
+  "url": "https://cdn.ilga.gov/assets/img/members/%7B4858CB21-EEE1-409B-9A4C-FA760BB6905E%7D.jpg",
+  "page": "https://www.ilga.gov/House/Members/Details/3441",
+  "credit": "Illinois General Assembly"
+ },
+ "state-representative-8th-district|Shantel Franklin": {
+  "url": "https://shantelforstaterep.com/wp-content/uploads/2026/01/HEADSHOT-Red-Suit-scaled.png",
+  "page": "https://shantelforstaterep.com/",
+  "credit": "Shantel Franklin for 8th District State Representative (campaign site)"
+ },
+ "state-senator-14th-district|Brian Skala": {
+  "url": "https://crestwood.illinois.gov/content/elected/brian%20skala%20trustee.jpg",
+  "page": "https://crestwood.illinois.gov/content/elected/",
+  "credit": "Village of Crestwood"
+ },
+ "state-senator-17th-district|Frederick L. Walls": {
+  "url": "https://wallsforsenate.com/wp-content/uploads/2026/07/A7405707-112-1024x683.jpg",
+  "page": "https://wallsforsenate.com/",
+  "credit": "Fred Walls for Illinois State Senate (campaign site)"
+ },
+ "state-senator-18th-district|Christine McGovern": {
+  "url": "https://content.campaignpartner.net/images/98300/Untitled_design-3.png",
+  "page": "https://shanahanmcgovern.com/",
+  "credit": "Christine McGovern for Illinois State Senate District 18 (campaign site)"
+ },
+ "state-senator-18th-district|Frances Ann Hurley": {
+  "url": "https://franhurley.com/wp-content/uploads/fran-hurley-about.webp",
+  "page": "https://franhurley.com/meet-fran/fran-hurley-about/",
+  "credit": "Fran Hurley for 18th Senate District (campaign site)",
+  "crop": "300x300+150+20"
+ },
+ "state-senator-9th-district|Patrick Hanley": {
+  "url": "https://run.imgix.net/5a6e4937-4dc5-49dd-8131-711b1cfad119/84a855ff-20d1-4542-b2df-07daadf3f2a0/84a855ff-20d1-4542-b2df-07daadf3f2a0.png?w=1000",
+  "page": "https://www.hanleyforillinois.com/meet-patrick",
+  "credit": "Hanley for Illinois (campaign site)"
+ },
+ "subcircuit-18-judgethsubcircuitvacancyofchrones|Juan Ponce de Leon": {
+  "url": "https://images.squarespace-cdn.com/content/v1/688c1457be7f52433d407e33/3b6989e7-fd42-4cd2-82c9-2323b05bc6d7/juan-ponce-de-leon-headshot.JPG?format=1000w",
+  "page": "https://www.juan4judge.com/about-juan",
+  "credit": "Juan Ponce de Leon for Judge (campaign site)"
+ },
+ "treasurer|Max Solomon": {
+  "url": "https://media.base44.com/images/public/6a51b60ba01cdf1b02d86d3c/3d254d8d5_04e35e48-a087-4936-87d6-dccf3ce63069.png",
+  "page": "https://www.maxsolomon.info",
+  "credit": "Max Solomon for Illinois State Treasurer (campaign site)"
+ },
+ "treasurer|Michael W. Frerichs": {
+  "url": "https://www.illinoistreasurer.gov/wp-content/uploads/2026/08/Treasurer-Frerichs-photo.jpg",
+  "page": "https://www.illinoistreasurer.gov/news/treasurer-frerichs-makes-1-45-billion-in-investment-earnings-on-state-portfolio/",
+  "credit": "Illinois State Treasurer's Office"
+ },
+ "u-s-representative-1st-district|Christian Maxwell": {
+  "url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/692fbfac2645ab6867a836cf/4b3bf01da_ChristianMaxwellheadshot.png",
+  "page": "https://christianmaxwellforcongress.com/",
+  "credit": "Christian Maxwell for Congress (campaign site)"
+ },
+ "u-s-representative-4th-district|Chris Getty": {
+  "url": "https://run.imgix.net/d3ff4e65-4939-4777-a36d-83865d17f4db/a18405c4-db17-4470-be9a-97be3fb1ec2a/a18405c4-db17-4470-be9a-97be3fb1ec2a.jpg?w=800",
+  "page": "https://www.chrisgettyforcongress.com/about",
+  "credit": "Chris Getty for Congress (campaign site)"
+ },
+ "u-s-representative-5th-district|Tommy Hanson": {
+  "url": "https://votetommyhanson.com/wp-content/uploads/2022/07/tommy-hanson-1-480x771.jpg",
+  "page": "https://votetommyhanson.com/",
+  "credit": "Tommy Hanson for Congress (campaign site)"
+ },
+ "u-s-representative-6th-district|Niki Conforti": {
+  "url": "https://conforti4congress.com/wp-content/uploads/bb-plugin/cache/image-circle.png",
+  "page": "https://conforti4congress.com/meet-niki/",
+  "credit": "Niki Conforti for Congress (campaign site)"
+ },
+ "u-s-representative-7th-district|Chad Koppie": {
+  "url": "http://www.chadkoppie.com/img/profile-pic.jpg",
+  "page": "https://koppieforcongress.com/",
+  "credit": "Chad Koppie for U.S. House (campaign site)"
+ },
+ "u-s-representative-8th-district|Jennifer Davis": {
+  "url": "https://static.wixstatic.com/media/acaba8_2a5c202d028e48fdad468e3d9e01f681~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_85/acaba8_2a5c202d028e48fdad468e3d9e01f681~mv2.jpg",
+  "page": "https://www.votejenniferdavis.com/",
+  "credit": "Jennifer Davis for Congress (campaign site)",
+  "crop": "340x340+563+0"
+ },
+ "u-s-representative-9th-district|John Elleson": {
+  "url": "https://johnelleson.com/__static/production-networksolutions-4/344/2006344/SN1RAi5h/9824c27bcb2e4b4fb690d0d27c6248b1",
+  "page": "https://johnelleson.com/",
+  "credit": "John Elleson for Congress (campaign site)"
+ },
+ "united-states-senator|Don Tracy": {
+  "url": "https://dontracyforil.com/wp-content/uploads/2026/07/tracy-headshot-final.jpg",
+  "page": "https://dontracyforil.com/about/",
+  "credit": "Don Tracy for Illinois Senate (campaign site)"
+ },
+ "united-states-senator|Juliana Stratton": {
+  "url": "https://s7d1.scene7.com/is/image/isp/lg-web-about-portrait-smaller",
+  "page": "https://ltgov.illinois.gov/about.html",
+  "credit": "Office of the Illinois Lieutenant Governor"
+ }
+}

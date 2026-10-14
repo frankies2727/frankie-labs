@@ -69,7 +69,7 @@ export const MeetCandidates = memo(function MeetCandidates({ races, onOpen }: { 
         <div className="space-y-2 max-w-[42rem]">
           <p className="text-[13px] font-bold uppercase tracking-[0.16em] text-[var(--gb-primary)]">On the Nov 3 ballot</p>
           <h2 id="kyb-meet" className="text-4xl sm:text-5xl leading-[1.05]">Meet the candidates</h2>
-          <p className="text-[16px] sm:text-[17px] leading-relaxed">Everyone running on a Cook County ballot, with the race they’re in. Pick a letter to see everyone whose name starts with it, and tap a face for their details.</p>
+          <p className="text-[16px] sm:text-[17px] leading-relaxed">Tap a candidate to learn more about them.</p>
         </div>
         <div className="hidden sm:flex gap-3">
           <button type="button" onClick={() => scroll(-1)} aria-label="Scroll the candidates left" className="w-12 h-12 rounded-full border-2 border-[var(--gb-border-strong)] flex items-center justify-center hover:border-[var(--gb-text)]">

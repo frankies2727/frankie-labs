@@ -859,6 +859,9 @@ function Sources() {
     { emoji: '📣', title: 'Social media & websites', status: 'Live · daily',
       body: 'Only accounts that are the candidate’s own: Congress’s official list, Wikidata (through their exact Wikipedia page), and the links on their own campaign site when the account carries their name.',
       links: [['Congress list', 'https://github.com/unitedstates/congress-legislators'], ['Open States', 'https://openstates.org/il/']] },
+    { emoji: '📷', title: 'Candidate photos', status: 'Live · daily',
+      body: 'Official photos from government sites (Congress, the General Assembly, Cook County, the school board and more), freely licensed Wikimedia Commons photos, and the headshot on a candidate’s own campaign site. Each is checked to be that person and credited on their card; everyone else shows their initials.',
+      links: [['Congress portraits', 'https://github.com/unitedstates/images'], ['Wikimedia Commons', 'https://commons.wikimedia.org/']] },
     { emoji: '⚖️', title: 'Judges', status: 'Live · daily',
       body: 'Each bar group’s rating of every judge and judicial candidate, from the Alliance of Bar Associations for Judicial Screening (and the Chicago Bar Association’s, via Injustice Watch), plus a link to each judge’s Injustice Watch profile. The guide also tells us when a judge withdraws after the ballot is printed.',
       links: [['Bar ratings', 'https://www.voteforjudges.org/'], ['Injustice Watch guide', 'https://2026retention.injusticewatch.org/']] },
@@ -888,7 +891,6 @@ function Sources() {
         </button>
       </h2>
       {open && <div id="kyb-sources-body">
-      <p className="mt-3 text-[15px] leading-relaxed max-w-[70ch]">This isn’t the official ballot. It puts the official sources in one place so you can ask “who’s running where I live, who funds them, and when do I vote?” Here’s what each source covers and how fresh it is.</p>
       <ul className="mt-4 grid gap-3 sm:grid-cols-2">
         {cards.map((c) => (
           <li key={c.title} className="flex flex-col gap-2 rounded-xl border border-[var(--gb-border-strong)] bg-[var(--gb-bg)] p-4">
