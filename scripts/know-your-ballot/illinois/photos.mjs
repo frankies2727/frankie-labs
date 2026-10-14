@@ -5,7 +5,7 @@
 // and its credit. Wikimedia Commons files carry their author and license.
 //
 // Re-downloads only when the source changes; a candidate whose source can't be
-// read (or wasn't matched) today keeps the photo the last build saved; files
+// read in time (or wasn't matched) today keeps the photo the last build saved; files
 // nobody uses any more are deleted.
 
 import { existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
@@ -18,6 +18,7 @@ const UA_PLAIN = 'KnowYourBallot/1.0';
 const COMMONS = 'https://commons.wikimedia.org/w/api.php';
 const MAX_BYTES = 1_500_000;
 const WIDTH = 360; // a thumbnail size from Commons: twice the 176 px circle
+const BUDGET_MS = 5 * 60_000; // a slow or blocking image server can't hold up the daily build
 
 const slug = (s) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const stripHtml = (s) => s.replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#0?39;/g, "'").replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
@@ -71,9 +72,11 @@ export async function addPhotos(races, { dir, publicPath, prev }) {
   const saved = (p) => p && existsSync(join(dir, p.file.split('/').pop()));
   const entries = races.flatMap((race) => race.candidates.map((c) => ({ race, c, key: `${race.id}|${c.name}` })));
   const used = new Set();
-  let fetched = 0, kept = 0, failed = 0;
+  let fetched = 0, kept = 0, failed = 0, late = 0;
+  const deadline = Date.now() + BUDGET_MS;
 
   await pool(entries.filter((e) => e.c.photoFrom), 4, async (e) => {
+    if (Date.now() > deadline) { late++; return; }
     const from = e.c.photoFrom;
     try {
       const src = from.commons ? await fromCommons(from.commons) : from;
@@ -101,5 +104,5 @@ export async function addPhotos(races, { dir, publicPath, prev }) {
   }
   // A photo nobody uses any more (a candidate who left the race) goes too.
   for (const f of readdirSync(dir)) if (!used.has(f)) rmSync(join(dir, f));
-  return { withPhoto: used.size, total: entries.length, log: [`photos: ${fetched} fetched, ${kept} unchanged, ${failed} couldn't be fetched`] };
+  return { withPhoto: used.size, total: entries.length, log: [`photos: ${fetched} fetched, ${kept} unchanged, ${failed} couldn't be fetched, ${late} skipped (time limit)`] };
 }

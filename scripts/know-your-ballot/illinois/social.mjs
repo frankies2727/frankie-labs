@@ -72,7 +72,7 @@ async function congress() {
       social: { x: s.twitter && PLATFORMS.x(s.twitter), facebook: s.facebook && PLATFORMS.facebook(s.facebook), instagram: s.instagram && PLATFORMS.instagram(s.instagram), youtube: s.youtube_id && PLATFORMS.youtube(s.youtube_id) },
       website: term.url,
       // Official portraits, public domain (via the @unitedstates project).
-      photo: { url: `https://theunitedstates.io/images/congress/450x550/${p.id.bioguide}.jpg`, credit: 'Official portrait, U.S. Congress (public domain)', link: `https://bioguide.congress.gov/search/bio/${p.id.bioguide}` },
+      photo: { url: `https://unitedstates.github.io/images/congress/450x550/${p.id.bioguide}.jpg`, credit: 'Official portrait, U.S. Congress (public domain)', link: `https://bioguide.congress.gov/search/bio/${p.id.bioguide}` },
     });
   }
   return out;
@@ -91,7 +91,8 @@ function readPerson(text) {
     website: links.find((u) => !/ilga\.gov|wikipedia|ballotpedia|openstates/i.test(u)),
     wiki: links.find((u) => /en\.wikipedia\.org\/wiki\//.test(u))?.split('/wiki/')[1],
     photo: (() => {
-      const url = text.match(/^image: (https:\/\/\S+)/m)?.[1];
+      // Only the General Assembly's own photos: a few point at news sites' photos, which we can't reuse.
+      const url = text.match(/^image: (https:\/\/cdn\.ilga\.gov\/\S+)/m)?.[1];
       return url ? { url, credit: 'Illinois General Assembly', link: 'https://www.ilga.gov/' } : undefined;
     })(),
   };
