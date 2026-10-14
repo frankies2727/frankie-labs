@@ -820,11 +820,11 @@
       "cash": 114224,
       "through": "06/30/2026"
      },
-     "website": "https://www.senatoraquino.com/",
      "social": {
       "facebook": "https://www.facebook.com/State-Senator-Omar-Aquino-166233740452421",
       "x": "https://twitter.com/SenatorAquino"
-     }
+     },
+     "website": "https://www.senatoraquino.com/"
     }
    ],
    "writeIn": false
@@ -2063,10 +2063,10 @@
       "cash": 377752,
       "through": "06/30/2026"
      },
-     "website": "http://robertbobrita.com/",
      "social": {
       "facebook": "https://www.facebook.com/RepBobRita"
-     }
+     },
+     "website": "http://robertbobrita.com/"
     }
    ],
    "writeIn": false
@@ -2180,12 +2180,12 @@
       "cash": 882041,
       "through": "06/30/2026"
      },
-     "website": "https://www.repevans.com/",
      "social": {
       "facebook": "https://www.facebook.com/repevans",
       "instagram": "https://instagram.com/repevans33",
       "x": "https://twitter.com/Repevans33"
-     }
+     },
+     "website": "https://www.repevans.com/"
     }
    ],
    "writeIn": false
@@ -3825,6 +3825,10 @@
       "cash": 12036,
       "through": "06/30/2026"
      },
+     "social": {
+      "instagram": "https://instagram.com/jscforjudge",
+      "facebook": "https://facebook.com/jscforjudge"
+     },
      "profile": "https://2026retention.injusticewatch.org/candidate/julian-sanchez-crozier-35629",
      "bar": {
       "AABAR": "Recommended",
@@ -3841,11 +3845,7 @@
       "PRBA": "Recommended",
       "WBAI": "Recommended"
      },
-     "barSource": "https://www.voteforjudges.org/#1790663185702-b5306af9-9f8a:~:text=Julian%20Sanchez%20Crozier",
-     "social": {
-      "instagram": "https://instagram.com/jscforjudge",
-      "facebook": "https://facebook.com/jscforjudge"
-     }
+     "barSource": "https://www.voteforjudges.org/#1790663185702-b5306af9-9f8a:~:text=Julian%20Sanchez%20Crozier"
     }
    ],
    "writeIn": false
@@ -5072,13 +5072,13 @@
       "cash": 462621,
       "through": "06/30/2026"
      },
-     "website": "https://www.repmbc.com/",
      "social": {
       "facebook": "https://facebook.com/repmbc",
       "instagram": "https://www.instagram.com/rep.mbc",
       "x": "https://x.com/RepMBC",
       "youtube": "https://www.youtube.com/@RepMBC"
-     }
+     },
+     "website": "https://www.repmbc.com/"
     },
     {
      "party": "Republican",
@@ -6992,6 +6992,9 @@
       "cash": 5851,
       "through": "09/30/2026"
      },
+     "social": {
+      "facebook": "https://www.facebook.com/State-Representative-Blaine-Wilhour-204021587171349"
+     },
      "website": "https://repwilhour.com/"
     }
    ],
@@ -7081,6 +7084,9 @@
       "spent": 65884,
       "cash": 193213,
       "through": "06/30/2026"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/State-Representative-Martin-McLaughlin-104454978254981"
      },
      "website": "https://repmclaughlin.com/"
     }
@@ -7213,6 +7219,9 @@
       "cash": 16609,
       "through": "06/30/2026"
      },
+     "social": {
+      "facebook": "https://www.facebook.com/RepSteveReick"
+     },
      "website": "https://repstevenreick.com/"
     }
    ],
@@ -7321,6 +7330,9 @@
       "cash": 115455,
       "through": "06/30/2026"
      },
+     "social": {
+      "facebook": "https://www.facebook.com/repkeicher"
+     },
      "website": "https://repkeicher.com/"
     }
    ],
@@ -7346,8 +7358,8 @@
       "source": "FEC",
       "id": "H6IL12131",
       "raised": 145608,
-      "spent": 103473,
-      "cash": 42135,
+      "spent": 103493,
+      "cash": 42115,
       "through": "09/30/2026"
      }
     },
@@ -7780,10 +7792,10 @@
       "cash": 100996,
       "through": "06/30/2026"
      },
-     "website": "http://sueschererforstaterep.com/",
      "social": {
       "instagram": "https://www.instagram.com/staterepsue96"
-     }
+     },
+     "website": "http://sueschererforstaterep.com/"
     }
    ],
    "writeIn": false,
@@ -9177,6 +9189,9 @@
       "cash": 13388,
       "through": "09/30/2026"
      },
+     "social": {
+      "facebook": "https://www.facebook.com/State-Representative-David-Friess-103168288386561"
+     },
      "website": "https://repfriess.com/"
     }
    ],
@@ -9237,10 +9252,10 @@
       "cash": 123305,
       "through": "09/30/2026"
      },
-     "website": "https://repwindhorst.com/",
      "social": {
       "facebook": "https://www.facebook.com/StateRepWindhorst"
-     }
+     },
+     "website": "https://repwindhorst.com/"
     }
    ],
    "writeIn": false,
@@ -9728,10 +9743,10 @@
       "cash": 27747,
       "through": "06/30/2026"
      },
-     "website": "https://repniemerg.com/",
      "social": {
       "facebook": "https://www.facebook.com/State-Representative-Adam-Niemerg-101445711896839"
-     }
+     },
+     "website": "https://repniemerg.com/"
     }
    ],
    "writeIn": false,
@@ -11730,7 +11745,7 @@
  },
  "changes": [],
  "govbot": {
-  "asOf": "2026-10-14T00:14:52Z",
+  "asOf": "2026-10-14T14:01:49Z",
   "laws": [
    {
     "state": "il",
