@@ -439,12 +439,6 @@ export function KnowYourBallot() {
       <GaugeDefs />
 
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pb-24 print:hidden">
-        <nav className="pt-3 text-sm">
-          <a href="https://chihacknight.github.io/govbot/" className="inline-flex items-center min-h-[44px] font-bold text-[var(--gb-text)]">
-            A Frankie Labs project, built on&nbsp;<span className="underline underline-offset-2">govbot</span>&nbsp;↗
-          </a>
-        </nav>
-
         {!showBallot ? (
           <Landing
             address={address} setAddress={setAddress} status={status} onSubmit={lookUp} onLocate={useLocation}
