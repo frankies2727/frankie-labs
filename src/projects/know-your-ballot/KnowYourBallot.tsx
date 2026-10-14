@@ -614,8 +614,8 @@ export function KnowYourBallot() {
             <span className="h-[3px] flex-1 rounded-full bg-[var(--gb-text)]" />
           </div>
           <Laws laws={data.govbot.laws} />
-          <Sources />
           <NextElectionNote chicago={districts ? chicago : undefined} city={data.govbot.city} districts={districts} />
+          <Sources />
         </div>
       </div>
 
@@ -877,7 +877,7 @@ function Sources() {
     <section id="kyb-sources" aria-labelledby="kyb-sources-h" className="scroll-mt-[calc(var(--kyb-top)+var(--kyb-bar,260px)+16px)] rounded-2xl border-[3px] border-[var(--gb-primary)] bg-[var(--gb-surface)] p-4 sm:p-5 text-[var(--gb-text)]">
       <h2 id="kyb-sources-h" className="text-2xl">
         <button type="button" onClick={toggle} aria-expanded={open} aria-controls="kyb-sources-body" className="inline-flex min-h-[44px] items-center gap-2 text-left">
-          📂 Where the data comes from
+          📂 Sources
           <ChevronDown className={`w-6 h-6 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
           <span className="sr-only">{open ? '(hide)' : '(show)'}</span>
         </button>

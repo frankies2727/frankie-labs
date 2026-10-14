@@ -122,7 +122,7 @@ export function Laws({ laws }: { laws: Law[] }) {
       ) : <p className="text-[15px]">{q ? 'No bills match that search.' : 'No bills in this category in the last 6 months.'}</p>}
 
       <a href={`${GOVBOT}legislation.html#state=il`} target="_blank" rel="noreferrer noopener"
-        className="flex items-center justify-center gap-2 min-h-[56px] rounded-xl border-[3px] border-[var(--kyb-gold)] bg-[var(--gb-primary)] px-4 text-lg font-black text-[var(--gb-on-primary)] hover:brightness-105">
+        className="flex items-center justify-center gap-2 min-h-[56px] rounded-xl border-[3px] border-[var(--kyb-gold)] px-4 text-lg font-black text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]">
         Explore entire catalog of IL bills <ArrowUpRight className="w-5 h-5" aria-hidden="true" />
       </a>
       </div>}
