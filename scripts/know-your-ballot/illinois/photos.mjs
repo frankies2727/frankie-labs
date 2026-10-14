@@ -5,9 +5,11 @@
 // and its credit. Wikimedia Commons files carry their author and license.
 //
 // Candidates no official source covers can have a photo picked by hand in
-// photos-chosen.json ({ "<race id>|<name>": { url, page, credit } }): only a
+// photos-chosen.json ({ "<race id>|<name>": { url, page, credit, crop? } }): only a
 // government page about that person or their own campaign site, checked to be
-// a photo of that one person. An automatic source always wins over it.
+// a photo of that one person. `crop` (ImageMagick geometry, e.g. "300x300+150+20")
+// cuts a full-length or wide photo down to head and shoulders. An automatic
+// source always wins over it.
 //
 // Re-downloads only when the source changes; a candidate whose source can't be
 // read in time (or wasn't matched) today keeps the photo the last build saved; files
@@ -25,7 +27,7 @@ import tls from 'node:tls';
 const UA_WIKIMEDIA = 'KnowYourBallot/1.0 (https://github.com/frankies2727/frankie-labs)';
 const UA_PLAIN = 'KnowYourBallot/1.0';
 const COMMONS = 'https://commons.wikimedia.org/w/api.php';
-const MAX_BYTES = 1_500_000;
+const MAX_BYTES = 5_000_000; // before shrinking; campaign sites often serve 2–3 MB originals
 const WIDTH = 360; // a thumbnail size from Commons: twice the 176 px circle
 const CHOSEN = JSON.parse(readFileSync(new URL('./photos-chosen.json', import.meta.url), 'utf8'));
 const BUDGET_MS = 5 * 60_000; // a slow or blocking image server can't hold up the daily build
@@ -42,9 +44,10 @@ function imageType(buf) {
 }
 
 // An image is asked for the way a web page asks for one (an image Accept and the
-// site's own address as Referer), as govbot does for the same hosts.
+// site's own address as Referer), as govbot does for the same hosts. AVIF isn't
+// asked for: image CDNs like Wix send it when allowed, and it isn't one we take.
 const headersFor = (url, ua, image) => image
-  ? { 'User-Agent': ua, Accept: 'image/avif,image/webp,image/png,image/jpeg,image/*,*/*;q=0.8', Referer: `${new URL(url).origin}/` }
+  ? { 'User-Agent': ua, Accept: 'image/jpeg,image/png,image/webp;q=0.9,image/*;q=0.5', Referer: `${new URL(url).origin}/` }
   : { 'User-Agent': ua, Accept: 'application/json' };
 
 async function get(url, ua, image = false) {
@@ -120,18 +123,21 @@ async function download(url, ua) {
 }
 
 /**
- * Shrink a photo to WIDTH px wide (the official ones arrive at 500×700, ~275 KB,
- * for a circle at most 176 px across), with ImageMagick. The input format is
- * named explicitly, so ImageMagick never guesses it from the bytes. If it can't
- * run, the photo is kept as it came.
+ * Shrink a photo to a WIDTH px wide JPEG (official ones arrive at 500×700,
+ * ~275 KB, and campaign sites often send multi-MB PNGs, for a circle at most
+ * 176 px across), with ImageMagick. A see-through background becomes the
+ * circle's own grey. The input format is named explicitly, so ImageMagick never
+ * guesses it from the bytes. If it can't run, the photo is kept as it came.
+ * Returns the bytes and their type.
  */
-function shrink(buf, type) {
+function shrink(buf, type, crop) {
+  const cut = /^\d+x\d+\+\d+\+\d+$/.test(crop ?? '') ? ['-crop', crop, '+repage'] : [];
   try {
-    const out = execFileSync('convert', [`${type}:-`, '-resize', `${WIDTH}x>`, '-strip', '-quality', '82', `${type}:-`], { input: buf, maxBuffer: MAX_BYTES * 2, stdio: ['pipe', 'pipe', 'ignore'] });
-    return out.length && out.length < buf.length ? out : buf;
-  } catch {
-    return buf;
-  }
+    const out = execFileSync('convert', [`${type}:-`, ...cut, '-resize', `${WIDTH}x>`, '-background', '#E9EAEE', '-flatten', '-strip', '-quality', '82', 'jpg:-'],
+      { input: buf, maxBuffer: MAX_BYTES * 2, stdio: ['pipe', 'pipe', 'ignore'] });
+    if (imageType(out) === 'jpg') return { bytes: out, type: 'jpg' };
+  } catch { /* no ImageMagick: keep the photo as it came */ }
+  return { bytes: buf, type };
 }
 
 /** A Commons file's thumbnail, author and license. */
@@ -163,7 +169,7 @@ export async function addPhotos(races, { dir, publicPath, prev }) {
   const entries = races.flatMap((race) => race.candidates.map((c) => ({ race, c, key: `${race.id}|${c.name}` })));
   for (const e of entries) {
     const pick = CHOSEN[e.key];
-    if (!e.c.photoFrom && pick) e.c.photoFrom = { url: pick.url, credit: pick.credit, link: pick.page };
+    if (!e.c.photoFrom && pick) e.c.photoFrom = { url: pick.url, credit: pick.credit, link: pick.page, crop: pick.crop };
   }
   // A hand-picked photo whose candidate isn't on the ballot any more (or was renamed) is flagged, not lost silently.
   const onBallot = new Set(entries.map((e) => e.key));
@@ -180,13 +186,15 @@ export async function addPhotos(races, { dir, publicPath, prev }) {
       const src = from.commons ? await fromCommons(from.commons) : from;
       if (!src) throw new Error(`no Commons file ${from.commons}`);
       const old = before.get(e.key);
-      if (old?.from === src.url && saved(old)) { e.c.photo = old; kept++; return; }
+      const fromKey = from.crop ? `${src.url}#crop=${from.crop}` : src.url; // a new crop re-cuts the photo
+      if (old?.from === fromKey && saved(old)) { e.c.photo = old; kept++; return; }
       const buf = await download(src.url, /wikimedia\.org/.test(src.url) ? UA_WIKIMEDIA : UA_PLAIN);
       const type = imageType(buf);
       if (!type || buf.length > MAX_BYTES) throw new Error(`${src.url}: not a usable image`);
-      const name = `${slug(e.c.name.split(' & ')[0])}-${slug(e.race.id).slice(0, 40)}.${type}`;
-      writeFileSync(join(dir, name), shrink(buf, type));
-      e.c.photo = { file: `${publicPath}/${name}`, credit: src.credit, link: src.link, from: src.url };
+      const small = shrink(buf, type, from.crop);
+      const name = `${slug(e.c.name.split(' & ')[0])}-${slug(e.race.id).slice(0, 40)}.${small.type}`;
+      writeFileSync(join(dir, name), small.bytes);
+      e.c.photo = { file: `${publicPath}/${name}`, credit: src.credit, link: src.link, from: fromKey };
       fetched++;
     } catch (err) {
       failed++;

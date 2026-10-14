@@ -860,7 +860,7 @@ function Sources() {
       body: 'Only accounts that are the candidate’s own: Congress’s official list, Wikidata (through their exact Wikipedia page), and the links on their own campaign site when the account carries their name.',
       links: [['Congress list', 'https://github.com/unitedstates/congress-legislators'], ['Open States', 'https://openstates.org/il/']] },
     { emoji: '📷', title: 'Candidate photos', status: 'Live · daily',
-      body: 'Official U.S. Congress portraits, the General Assembly’s legislator photos, and freely licensed Wikimedia Commons photos, each credited on the candidate’s card. Used only for a candidate already matched to that person; everyone else shows their initials.',
+      body: 'Official photos from government sites (Congress, the General Assembly, Cook County, the school board and more), freely licensed Wikimedia Commons photos, and the headshot on a candidate’s own campaign site. Each is checked to be that person and credited on their card; everyone else shows their initials.',
       links: [['Congress portraits', 'https://github.com/unitedstates/images'], ['Wikimedia Commons', 'https://commons.wikimedia.org/']] },
     { emoji: '⚖️', title: 'Judges', status: 'Live · daily',
       body: 'Each bar group’s rating of every judge and judicial candidate, from the Alliance of Bar Associations for Judicial Screening (and the Chicago Bar Association’s, via Injustice Watch), plus a link to each judge’s Injustice Watch profile. The guide also tells us when a judge withdraws after the ballot is printed.',
