@@ -8,6 +8,7 @@
 // read in time (or wasn't matched) today keeps the photo the last build saved; files
 // nobody uses any more are deleted.
 
+import { execFileSync } from 'node:child_process';
 import { X509Certificate } from 'node:crypto';
 import { existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import https from 'node:https';
@@ -112,6 +113,21 @@ async function download(url, ua) {
   }
 }
 
+/**
+ * Shrink a photo to WIDTH px wide (the official ones arrive at 500×700, ~275 KB,
+ * for a circle at most 176 px across), with ImageMagick. The input format is
+ * named explicitly, so ImageMagick never guesses it from the bytes. If it can't
+ * run, the photo is kept as it came.
+ */
+function shrink(buf, type) {
+  try {
+    const out = execFileSync('convert', [`${type}:-`, '-resize', `${WIDTH}x>`, '-strip', '-quality', '82', `${type}:-`], { input: buf, maxBuffer: MAX_BYTES * 2, stdio: ['pipe', 'pipe', 'ignore'] });
+    return out.length && out.length < buf.length ? out : buf;
+  } catch {
+    return buf;
+  }
+}
+
 /** A Commons file's thumbnail, author and license. */
 async function fromCommons(file) {
   const q = new URLSearchParams({ action: 'query', titles: `File:${file}`, prop: 'imageinfo', iiprop: 'url|extmetadata', iiurlwidth: String(WIDTH), format: 'json' });
@@ -156,7 +172,7 @@ export async function addPhotos(races, { dir, publicPath, prev }) {
       const type = imageType(buf);
       if (!type || buf.length > MAX_BYTES) throw new Error(`${src.url}: not a usable image`);
       const name = `${slug(e.c.name.split(' & ')[0])}-${slug(e.race.id).slice(0, 40)}.${type}`;
-      writeFileSync(join(dir, name), buf);
+      writeFileSync(join(dir, name), shrink(buf, type));
       e.c.photo = { file: `${publicPath}/${name}`, credit: src.credit, link: src.link, from: src.url };
       fetched++;
     } catch (err) {

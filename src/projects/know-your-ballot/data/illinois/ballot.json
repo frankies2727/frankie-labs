@@ -824,7 +824,13 @@
       "facebook": "https://www.facebook.com/State-Senator-Omar-Aquino-166233740452421",
       "x": "https://twitter.com/SenatorAquino"
      },
-     "website": "https://www.senatoraquino.com/"
+     "website": "https://www.senatoraquino.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/omar-aquino-state-senator-2nd-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{79A5CDE2-DD9F-423E-83F0-4643FDB13ABB}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -847,12 +853,18 @@
      "money": {
       "source": "ISBE",
       "id": "17385",
-      "raised": 381790,
-      "spent": 333213,
-      "cash": 282256,
-      "through": "09/30/2026"
+      "raised": 237638,
+      "spent": 255036,
+      "cash": 216281,
+      "through": "06/30/2026"
      },
-     "website": "https://www.senatorhunter.com/"
+     "website": "https://www.senatorhunter.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/mattie-hunter-state-senator-3rd-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{F4630DDB-11F0-417E-8C0A-B4ED6426116F}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -884,6 +896,12 @@
      "social": {
       "facebook": "https://www.facebook.com/sencollins5",
       "instagram": "https://www.instagram.com/senlakesiacollins"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/lakesia-collins-state-senator-5th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{07674912-6AF6-4045-B60C-094B530D9FDB}.jpg"
      }
     }
    ],
@@ -916,6 +934,12 @@
      "social": {
       "facebook": "https://www.facebook.com/sarafeigenholtzforstatesenator",
       "instagram": "https://www.instagram.com/feigenholtzforsenate"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/sara-feigenholtz-state-senator-6th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{E77394AE-D896-4FEB-A325-B33A553554EB}.jpg"
      }
     }
    ],
@@ -940,7 +964,13 @@
      "ballot": 32,
      "name": "Ram Villivalam",
      "party": "Democratic",
-     "website": "https://www.senatorram.com/"
+     "website": "https://www.senatorram.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/ram-villivalam-state-senator-8th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{DBF0BBF0-0E16-4C5F-894A-16C4A14CAF51}.jpg"
+     }
     }
    ],
    "writeIn": true
@@ -999,7 +1029,13 @@
       "cash": 49928,
       "through": "06/30/2026"
      },
-     "website": "https://www.senatorporfirio.com/"
+     "website": "https://www.senatorporfirio.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/mike-porfirio-state-senator-11th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{0824C110-5C93-4CBA-92E2-C330BBD6FE02}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -1032,7 +1068,13 @@
       "x": "https://twitter.com/SenatorCelina",
       "instagram": "https://www.instagram.com/senatorcelina"
      },
-     "website": "https://www.senatorvillanueva.com/"
+     "website": "https://www.senatorvillanueva.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/celina-villanueva-state-senator-12th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{F8A21A81-5453-4E94-AC51-E644E1B0C00B}.jpg"
+     }
     }
    ],
    "writeIn": true
@@ -1054,10 +1096,10 @@
      "money": {
       "source": "ISBE",
       "id": "41006",
-      "raised": 28122,
-      "spent": 6877,
-      "cash": 21246,
-      "through": "09/30/2026"
+      "raised": 20318,
+      "spent": 2252,
+      "cash": 18066,
+      "through": "06/30/2026"
      }
     },
     {
@@ -1076,7 +1118,13 @@
      "social": {
       "facebook": "https://www.facebook.com/senatoremiljones"
      },
-     "website": "https://www.senatoremiljones.com/"
+     "website": "https://www.senatoremiljones.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/emil-jones-iii-state-senator-14th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{2C0EE719-E9D8-4625-990D-69FCE146BC0F}.jpg"
+     }
     }
    ],
    "writeIn": true
@@ -1108,7 +1156,13 @@
       "facebook": "https://www.facebook.com/SenatorNapoleonBHarrisIII",
       "x": "https://twitter.com/SenHarrisIL"
      },
-     "website": "https://www.senatornapoleonharris.com/"
+     "website": "https://www.senatornapoleonharris.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/napoleon-b-harris-iii-state-senator-15th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{87402198-6E85-4CFE-BDD2-B9DC58948869}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -1149,7 +1203,13 @@
       "cash": 451285,
       "through": "06/30/2026"
      },
-     "website": "https://www.senatorelgiesims.com/"
+     "website": "https://www.senatorelgiesims.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/elgie-r-sims-jr-state-senator-17th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{1EAF7721-A189-4CD1-B31D-CD39F79DBD04}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -1176,10 +1236,10 @@
      "money": {
       "source": "ISBE",
       "id": "23955",
-      "raised": 301185,
-      "spent": 126944,
-      "cash": 211691,
-      "through": "09/30/2026"
+      "raised": 222952,
+      "spent": 74609,
+      "cash": 185793,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -1214,6 +1274,12 @@
       "x": "https://x.com/graciela4senate",
       "instagram": "https://www.instagram.com/gracielaforsenate",
       "bluesky": "https://bsky.app/profile/gracielaforsenate.bsky.social"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/graciela-guzman-state-senator-20th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{5790FB4D-5540-4784-A354-6172684368C9}.jpg"
      }
     }
    ],
@@ -1248,6 +1314,12 @@
       "instagram": "https://www.instagram.com/donharmon39",
       "x": "https://twitter.com/DonHarmonIL",
       "linkedin": "https://www.linkedin.com/in/don-harmon-77b88966"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/don-harmon-state-senator-39th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{CF3F6473-4E6D-4E84-A0A4-4FF7335132E2}.jpg"
      }
     }
    ],
@@ -1276,7 +1348,13 @@
       "cash": 159231,
       "through": "06/30/2026"
      },
-     "website": "https://repaaronortiz.com/"
+     "website": "https://repaaronortiz.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/aaron-m-ortiz-state-representative-1st-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{D96B0DF9-0E06-487B-825C-AB0BE8C3CA1E}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -1310,7 +1388,13 @@
       "linkedin": "https://www.linkedin.com/in/eva-dina-delgado-a64b594",
       "facebook": "https://www.facebook.com/RepDelgado"
      },
-     "website": "https://www.staterepdelgado.com/"
+     "website": "https://www.staterepdelgado.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/eva-dina-delgado-state-representative-3rd-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{D02A93E7-7D84-4429-92AB-60B61084EBA1}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -1342,7 +1426,13 @@
       "facebook": "https://www.facebook.com/rep.jimenez4th",
       "instagram": "https://www.instagram.com/rep.lilianjimenez"
      },
-     "website": "https://www.replilianjimenez.com/"
+     "website": "https://www.replilianjimenez.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/lilian-jimenez-state-representative-4th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{6C475229-0B41-4F93-A2C7-5B1396A1D1FA}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -1407,7 +1497,13 @@
       "x": "https://x.com/RepSonyaHarper",
       "linkedin": "https://www.linkedin.com/in/sonyamarieharper"
      },
-     "website": "https://www.repsonyaharper.com/"
+     "website": "https://www.repsonyaharper.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/sonya-marie-harper-state-representative-6th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{04C99384-69F8-4ACE-9E43-11E21CC5F820}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -1464,7 +1560,13 @@
      "social": {
       "instagram": "https://www.instagram.com/9thdistrictstaterepyolondam"
      },
-     "website": "https://www.repmorrisil9th.com/"
+     "website": "https://www.repmorrisil9th.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/yolonda-morris-state-representative-9th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{2EDE65F3-F463-4E44-B703-6B06D2ECB787}.jpg"
+     }
     }
    ],
    "writeIn": true
@@ -1491,6 +1593,12 @@
       "spent": 48561,
       "cash": 247891,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/jawaharial-omar-williams-state-representative-10th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{32750D93-496F-42CA-9CCE-93C3451713A1}.jpg"
      }
     }
    ],
@@ -1519,7 +1627,13 @@
       "cash": 318305,
       "through": "06/30/2026"
      },
-     "website": "https://www.repannwilliams.com/"
+     "website": "https://www.repannwilliams.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/ann-m-williams-state-representative-11th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{C45B418C-4848-4467-ADC2-739B2D1E4418}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -1544,7 +1658,7 @@
       "raised": 100,
       "spent": 0,
       "cash": 200,
-      "through": "09/30/2026"
+      "through": "06/30/2026"
      }
     },
     {
@@ -1637,7 +1751,13 @@
       "facebook": "https://www.facebook.com/repcassidy",
       "x": "https://twitter.com/ILRepCassidy"
      },
-     "website": "https://www.repcassidy.com/"
+     "website": "https://www.repcassidy.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/kelly-m-cassidy-state-representative-14th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{3EFBDD50-41FF-4677-AA47-FB35B70C4667}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -1665,7 +1785,13 @@
       "cash": 62512,
       "through": "06/30/2026"
      },
-     "website": "https://repkelly.com/"
+     "website": "https://repkelly.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/michael-j-kelly-state-representative-15th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{90B28E06-84A0-47EB-A80B-403DF4CDA607}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -1698,7 +1824,13 @@
       "tiktok": "https://tiktok.com/@staterepkevinolickal",
       "facebook": "https://www.facebook.com/StateRepKevinOlickal"
      },
-     "website": "https://staterepkevinolickal.com/"
+     "website": "https://staterepkevinolickal.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/kevin-john-olickal-state-representative-16th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{23C3BBA7-3179-41B5-A3EF-A372F88DD9C9}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -1736,7 +1868,13 @@
       "x": "https://x.com/RobynGabel",
       "linkedin": "https://www.linkedin.com/in/robyn-gabel-7794b017"
      },
-     "website": "https://robyngabel.com/"
+     "website": "https://robyngabel.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/robyn-gabel-state-representative-18th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{739CC8F9-E9E4-40A1-AB86-883EF9A5E313}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -1774,7 +1912,13 @@
       "linkedin": "https://www.linkedin.com/in/lindsey-lapointe-18236110",
       "instagram": "https://www.instagram.com/replapointe"
      },
-     "website": "https://www.replapointe.com/"
+     "website": "https://www.replapointe.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/lindsey-lapointe-state-representative-19th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{7447C9D9-48D0-457E-BDC9-847FB8D35DB5}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -1802,7 +1946,13 @@
       "cash": 121862,
       "through": "09/30/2026"
      },
-     "website": "https://repstephens.com/"
+     "website": "https://repstephens.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/brad-stephens-state-representative-20th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{BD3836AC-CD0C-4E20-AD4C-1F2AEA56A8A2}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -1848,7 +1998,13 @@
       "x": "https://twitter.com/reprashidil",
       "linkedin": "https://www.linkedin.com/company/reprashid"
      },
-     "website": "https://www.reprashid.com/"
+     "website": "https://www.reprashid.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/abdelnasser-rashid-state-representative-21st-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{48E00B1D-C5BE-4210-A9A8-F68739D935D6}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -1875,6 +2031,12 @@
       "spent": 9356,
       "cash": 114437,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/angie-guerrero-cuellar-state-representative-22nd-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{22FBB36E-8A65-4E83-81F1-A20247A6B8F2}.jpg"
      }
     }
    ],
@@ -1902,6 +2064,12 @@
       "spent": 132224,
       "cash": 216245,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/edgar-gonzalez-jr-state-representative-23rd-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{370B1494-7F8F-48BC-BD66-4756E15442E1}.jpg"
      }
     }
    ],
@@ -1930,7 +2098,13 @@
       "cash": 28153,
       "through": "06/30/2026"
      },
-     "website": "https://www.reptheresamah.com/"
+     "website": "https://www.reptheresamah.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/theresa-mah-state-representative-24th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{808BAA30-BB82-437A-9A76-386F9A65A073}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -1970,6 +2144,12 @@
       "spent": 123731,
       "cash": 254166,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/curtis-j-tarver-ii-state-representative-25th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{E9404756-F108-41DB-A7A8-87C36BBF763D}.jpg"
      }
     }
    ],
@@ -2003,7 +2183,13 @@
       "facebook": "https://www.facebook.com/RepKamBuckner",
       "instagram": "https://www.instagram.com/repkam_buckner"
      },
-     "website": "https://www.illinois26.com"
+     "website": "https://www.illinois26.com",
+     "photo": {
+      "file": "kyb-photos/illinois/kam-buckner-state-representative-26th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{37E72FD2-6318-45FD-9FF1-C750EB26137D}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -2035,7 +2221,13 @@
       "facebook": "https://www.facebook.com/repjustinslaughter",
       "x": "https://x.com/RepJSlaughter"
      },
-     "website": "https://repslaughter27.com/"
+     "website": "https://repslaughter27.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/justin-q-slaughter-state-representative-27th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{170C17F3-38A1-42E5-B222-020B43077D53}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -2066,7 +2258,13 @@
      "social": {
       "facebook": "https://www.facebook.com/RepBobRita"
      },
-     "website": "http://robertbobrita.com/"
+     "website": "http://robertbobrita.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/robert-bob-rita-state-representative-28th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{AC16F1E8-0988-4A08-A2E5-EF4D06371A24}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -2098,7 +2296,13 @@
       "facebook": "https://www.facebook.com/repjones29",
       "x": "https://twitter.com/repthadeusjones"
      },
-     "website": "https://www.repthaddeusjones.com/"
+     "website": "https://www.repthaddeusjones.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/thaddeus-jones-state-representative-29th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{6EE82A11-2CC6-48E9-9DE6-61D83EBCAB6B}.jpg"
+     }
     }
    ],
    "writeIn": true
@@ -2125,6 +2329,12 @@
       "spent": 63455,
       "cash": 19773,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/michael-mike-crawford-state-representative-31st-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{C79CCD19-74A9-494F-BE14-E0D1E0A9D326}.jpg"
      }
     }
    ],
@@ -2185,7 +2395,13 @@
       "instagram": "https://instagram.com/repevans33",
       "x": "https://twitter.com/Repevans33"
      },
-     "website": "https://www.repevans.com/"
+     "website": "https://www.repevans.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/marcus-c-evans-jr-state-representative-33rd-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{BFD8B13A-CD65-452C-8F20-9D32C3A013BF}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -2249,7 +2465,13 @@
       "instagram": "https://www.instagram.com/repmarygill",
       "x": "https://x.com/RepMaryGill"
      },
-     "website": "https://repmarygill.com/"
+     "website": "https://repmarygill.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/mary-gill-state-representative-35th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{28C54907-9CC9-428D-BD6B-361B91A10441}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -2289,6 +2511,12 @@
       "spent": 47545,
       "cash": 95630,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/rick-ryan-state-representative-36th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{D636B7BF-6A7A-4F82-8429-018FF5E1CE36}.jpg"
      }
     }
    ],
@@ -2328,7 +2556,13 @@
       "bluesky": "https://bsky.app/profile/repguzzardi39.bsky.social",
       "x": "https://twitter.com/willguzzardi"
      },
-     "website": "https://www.repguzzardi.com/"
+     "website": "https://www.repguzzardi.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/will-guzzardi-state-representative-39th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{C127AF36-0EAE-48B6-8C31-86AAE3935790}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -2404,7 +2638,13 @@
       "facebook": "https://www.facebook.com/repjustincochran",
       "instagram": "https://instagram.com/repcochran"
      },
-     "website": "https://www.repjustincochran.com/"
+     "website": "https://www.repjustincochran.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/justin-cochran-state-representative-55th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{54FFB767-E6F6-4F20-951A-2CBCD1B06211}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -2441,7 +2681,13 @@
       "facebook": "https://www.facebook.com/replilly78",
       "x": "https://twitter.com/replilly78"
      },
-     "website": "https://state-representative-camille-y-lilly.webflow.io/"
+     "website": "https://state-representative-camille-y-lilly.webflow.io/",
+     "photo": {
+      "file": "kyb-photos/illinois/camille-lilly-state-representative-78th-district.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{84D8FB64-9F82-405A-9376-A69ADFB46E53}.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -2502,10 +2748,10 @@
      "money": {
       "source": "ISBE",
       "id": "32778",
-      "raised": 124219,
-      "spent": 116548,
-      "cash": 40413,
-      "through": "09/30/2026"
+      "raised": 123743,
+      "spent": 113825,
+      "cash": 42660,
+      "through": "06/30/2026"
      }
     },
     {
@@ -2590,10 +2836,10 @@
      "money": {
       "source": "ISBE",
       "id": "40838",
-      "raised": 574,
-      "spent": 79,
-      "cash": 495,
-      "through": "09/30/2026"
+      "raised": 554,
+      "spent": 78,
+      "cash": 476,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -2651,10 +2897,10 @@
      "money": {
       "source": "ISBE",
       "id": "37056",
-      "raised": 7967,
-      "spent": 3307,
-      "cash": 4660,
-      "through": "09/30/2026"
+      "raised": 3795,
+      "spent": 2780,
+      "cash": 1015,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -2940,10 +3186,10 @@
      "money": {
       "source": "ISBE",
       "id": "34078",
-      "raised": 36730,
-      "spent": 16413,
-      "cash": 35450,
-      "through": "09/30/2026"
+      "raised": 29560,
+      "spent": 12471,
+      "cash": 32222,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -2966,10 +3212,10 @@
      "money": {
       "source": "ISBE",
       "id": "40649",
-      "raised": 187366,
-      "spent": 179403,
-      "cash": 7963,
-      "through": "09/30/2026"
+      "raised": 174616,
+      "spent": 169050,
+      "cash": 5565,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -3306,9 +3552,9 @@
       "source": "ISBE",
       "id": "39572",
       "raised": 69062,
-      "spent": 69555,
-      "cash": 8,
-      "through": "09/30/2026"
+      "spent": 68480,
+      "cash": 1083,
+      "through": "06/30/2026"
      },
      "profile": "https://2026retention.injusticewatch.org/candidate/ashonta-c-rice-35600",
      "bar": {
@@ -3646,7 +3892,7 @@
       "raised": 77860,
       "spent": 71063,
       "cash": 6797,
-      "through": "09/30/2026"
+      "through": "06/30/2026"
      },
      "profile": "https://2026retention.injusticewatch.org/candidate/kathleen-cunniff-ori-35605",
      "bar": {
@@ -3913,9 +4159,9 @@
       "source": "ISBE",
       "id": "40731",
       "raised": 24381,
-      "spent": 24381,
-      "cash": 0,
-      "through": "10/13/2026"
+      "spent": 24264,
+      "cash": 117,
+      "through": "06/30/2026"
      },
      "profile": "https://2026retention.injusticewatch.org/candidate/natalia-moore-35291",
      "bar": {
@@ -4044,7 +4290,7 @@
       "raised": 4691,
       "spent": 3941,
       "cash": 766,
-      "through": "09/30/2026"
+      "through": "06/30/2026"
      },
      "profile": "https://2026retention.injusticewatch.org/candidate/monica-somerville-35567",
      "bar": {
@@ -4316,10 +4562,10 @@
      "money": {
       "source": "ISBE",
       "id": "39821",
-      "raised": 8498,
-      "spent": 3423,
-      "cash": 5890,
-      "through": "09/30/2026"
+      "raised": 4035,
+      "spent": 1050,
+      "cash": 3800,
+      "through": "06/30/2026"
      }
     },
     {
@@ -4738,10 +4984,10 @@
      "money": {
       "source": "ISBE",
       "id": "39789",
-      "raised": 50899,
-      "spent": 9827,
-      "cash": 41117,
-      "through": "09/30/2026"
+      "raised": 5575,
+      "spent": 5087,
+      "cash": 533,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -4971,6 +5217,12 @@
       "spent": 53406,
       "cash": 102848,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/michelle-mussman-sldl-56-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{63BBD5DE-333E-4015-8658-4F7B2D45E1B7}.jpg"
      }
     },
     {
@@ -5038,10 +5290,10 @@
      "money": {
       "source": "ISBE",
       "id": "40754",
-      "raised": 3830,
-      "spent": 1871,
-      "cash": 1959,
-      "through": "09/30/2026"
+      "raised": 2740,
+      "spent": 871,
+      "cash": 1869,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -5067,10 +5319,10 @@
      "money": {
       "source": "ISBE",
       "id": "36915",
-      "raised": 537906,
-      "spent": 376656,
-      "cash": 331946,
-      "through": "09/30/2026"
+      "raised": 411270,
+      "spent": 119345,
+      "cash": 462621,
+      "through": "06/30/2026"
      },
      "social": {
       "facebook": "https://facebook.com/repmbc",
@@ -5078,7 +5330,13 @@
       "x": "https://x.com/RepMBC",
       "youtube": "https://www.youtube.com/@RepMBC"
      },
-     "website": "https://www.repmbc.com/"
+     "website": "https://www.repmbc.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/mary-beth-canty-sldl-54-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{1A73F23E-9C8D-4392-B6BD-154AB570C66E}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -5106,10 +5364,10 @@
      "money": {
       "source": "ISBE",
       "id": "41080",
-      "raised": 75436,
-      "spent": 29876,
-      "cash": 38060,
-      "through": "09/30/2026"
+      "raised": 48701,
+      "spent": 7267,
+      "cash": 33934,
+      "through": "06/30/2026"
      }
     },
     {
@@ -5125,7 +5383,13 @@
       "cash": 42570,
       "through": "09/30/2026"
      },
-     "website": "https://repschmidt.com/"
+     "website": "https://repschmidt.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/kevin-schmidt-sldl-114-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{385A4AC4-BA7A-42A3-987F-85EA620B1F2B}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -5160,7 +5424,13 @@
       "x": "https://twitter.com/SenatorMorrison",
       "instagram": "https://www.instagram.com/senatormorrisonil"
      },
-     "website": "https://www.senatorjuliemorrison.com/"
+     "website": "https://www.senatorjuliemorrison.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/julie-a-morrison-sldu-29-statesenatorthdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{0E6BF8A6-C5C8-4F54-977B-D5FD11707FA5}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -5169,10 +5439,10 @@
      "money": {
       "source": "ISBE",
       "id": "40796",
-      "raised": 17726,
-      "spent": 5208,
-      "cash": 12518,
-      "through": "09/30/2026"
+      "raised": 9400,
+      "spent": 2195,
+      "cash": 7205,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -5219,7 +5489,13 @@
       "facebook": "https://www.facebook.com/senatordavesyverson",
       "x": "https://x.com/Sen1Dave"
      },
-     "website": "https://senatordavesyverson.com/"
+     "website": "https://senatordavesyverson.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/dave-syverson-sldu-35-statesenatorthdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{6FD168B8-C34B-4399-8E39-7373F7600882}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -5244,15 +5520,21 @@
      "money": {
       "source": "ISBE",
       "id": "31703",
-      "raised": 220367,
-      "spent": 181687,
-      "cash": 164600,
-      "through": "09/30/2026"
+      "raised": 191016,
+      "spent": 133823,
+      "cash": 183113,
+      "through": "06/30/2026"
      },
      "social": {
       "facebook": "https://www.facebook.com/SenatorJilTracy"
      },
-     "website": "https://senatorjiltracy.com/"
+     "website": "https://senatorjiltracy.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/jil-tracy-sldu-50-statesenatorthdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{21C0F860-E9DD-4215-A3AA-703E275C8526}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -5287,6 +5569,12 @@
       "facebook": "https://www.facebook.com/doris.turner.395",
       "linkedin": "https://www.linkedin.com/in/doris-turner-aa03125a",
       "x": "https://twitter.com/VoteforDoris"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/doris-turner-sldu-48-statesenatorthdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{D114C73A-2295-431C-8250-38AC3353A20E}.jpg"
      }
     },
     {
@@ -5296,10 +5584,10 @@
      "money": {
       "source": "ISBE",
       "id": "12713",
-      "raised": 173590,
-      "spent": 175962,
-      "cash": 4695,
-      "through": "09/30/2026"
+      "raised": 43780,
+      "spent": 32695,
+      "cash": 18152,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -5333,7 +5621,13 @@
      "social": {
       "facebook": "https://www.facebook.com/SenatorMcClure"
      },
-     "website": "https://senatormcclure.com/"
+     "website": "https://senatormcclure.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/steve-mcclure-sldu-54-statesenatorthdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{EB86B3C4-3F25-4D5C-8944-7B4CBCA7CACE}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -5366,7 +5660,13 @@
      "social": {
       "facebook": "https://www.facebook.com/SenNeilAnderson"
      },
-     "website": "https://senatorneilanderson.com"
+     "website": "https://senatorneilanderson.com",
+     "photo": {
+      "file": "kyb-photos/illinois/neil-anderson-sldu-47-statesenatorthdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{90CDA259-1DEA-4D18-AE97-30051E03D154}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -5414,7 +5714,13 @@
       "x": "https://x.com/SenatorRezin",
       "tiktok": "https://www.tiktok.com/@state.senator.sue"
      },
-     "website": "https://senatorrezin.com/"
+     "website": "https://senatorrezin.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/sue-rezin-sldu-38-statesenatorthdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{45666230-B77D-4162-A45E-6AC5587C4E56}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -5444,7 +5750,13 @@
       "cash": 1116823,
       "through": "06/30/2026"
      },
-     "website": "https://www.senatorbelt.com/"
+     "website": "https://www.senatorbelt.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/christopher-belt-sldu-57-statesenatorthdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{EFE7513C-260C-46DE-BAB3-A12F250B2937}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -5453,10 +5765,10 @@
      "money": {
       "source": "ISBE",
       "id": "40845",
-      "raised": 13714,
-      "spent": 7835,
-      "cash": 5879,
-      "through": "09/30/2026"
+      "raised": 11397,
+      "spent": 5378,
+      "cash": 6019,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -5490,7 +5802,13 @@
      "social": {
       "facebook": "https://www.facebook.com/DeLucaForIllinois"
      },
-     "website": "https://anthonydeluca.org/"
+     "website": "https://anthonydeluca.org/",
+     "photo": {
+      "file": "kyb-photos/illinois/anthony-deluca-sldl-80-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{64399002-8B14-4D8E-80A4-54A77F25421C}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -5545,10 +5863,10 @@
      "money": {
       "source": "ISBE",
       "id": "40824",
-      "raised": 79943,
-      "spent": 55324,
-      "cash": 24619,
-      "through": "09/30/2026"
+      "raised": 39494,
+      "spent": 19287,
+      "cash": 20207,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -5582,7 +5900,13 @@
      "social": {
       "facebook": "https://www.facebook.com/staterepmatthanson"
      },
-     "website": "https://repmatthanson.com/"
+     "website": "https://repmatthanson.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/matt-hanson-sldl-83-staterepresentativerddistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{457B8F0B-1DF6-4107-A5FC-9B2BFAAE1008}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -5624,6 +5948,12 @@
       "spent": 373420,
       "cash": 484458,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/natalie-a-manley-sldl-98-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{F3781CCA-4285-44C3-8E60-811B9229EA1B}.jpg"
      }
     },
     {
@@ -5633,10 +5963,10 @@
      "money": {
       "source": "ISBE",
       "id": "40755",
-      "raised": 14788,
-      "spent": 14102,
-      "cash": 786,
-      "through": "09/30/2026"
+      "raised": 8033,
+      "spent": 5435,
+      "cash": 2699,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -5675,10 +6005,10 @@
      "money": {
       "source": "ISBE",
       "id": "31906",
-      "raised": 180291,
-      "spent": 130912,
-      "cash": 133705,
-      "through": "09/30/2026"
+      "raised": 129460,
+      "spent": 98555,
+      "cash": 115232,
+      "through": "06/30/2026"
      },
      "website": "https://repswanson.com/"
     }
@@ -5715,7 +6045,13 @@
       "instagram": "https://instagram.com/staterepcrespo",
       "x": "https://twitter.com/StateRepCrespo"
      },
-     "website": "https://fredcrespo.com/"
+     "website": "https://fredcrespo.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/fred-crespo-sldl-44-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{B92F7A2F-6517-4A3F-87B3-56FAA240285F}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -5724,10 +6060,10 @@
      "money": {
       "source": "ISBE",
       "id": "40820",
-      "raised": 19306,
-      "spent": 14271,
-      "cash": 5135,
-      "through": "09/30/2026"
+      "raised": 10002,
+      "spent": 6483,
+      "cash": 3619,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -5760,7 +6096,13 @@
      "social": {
       "facebook": "https://www.facebook.com/GongGershowitz"
      },
-     "website": "https://www.gonggershowitz.com/"
+     "website": "https://www.gonggershowitz.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/jennifer-gong-gershowitz-sldl-17-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{395E8140-10ED-4C70-81B9-2673676BF467}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -5805,7 +6147,13 @@
      "social": {
       "facebook": "https://www.facebook.com/repjoycemason"
      },
-     "website": "https://www.repjoycemason.com/"
+     "website": "https://www.repjoycemason.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/joyce-mason-sldl-61-staterepresentativestdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{26C52E17-9395-4BF8-B6E6-3E1CE6234032}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -5853,7 +6201,13 @@
       "instagram": "https://instagram.com/repdagmara",
       "x": "https://twitter.com/repdagmara"
      },
-     "website": "https://www.repdagmara.org/"
+     "website": "https://www.repdagmara.org/",
+     "photo": {
+      "file": "kyb-photos/illinois/dagmara-dee-avelar-sldl-85-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{EFDA6EE7-57E6-4ACA-BE60-02A042FF5D5D}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -5891,7 +6245,13 @@
      "social": {
       "facebook": "https://www.facebook.com/RepBlairSherlock"
      },
-     "website": "https://www.repblair-sherlock.com/"
+     "website": "https://www.repblair-sherlock.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/diane-blair-sherlock-sldl-46-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{C9D7B27E-2484-4917-A5CA-F85BA458950A}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -5929,15 +6289,21 @@
      "money": {
       "source": "ISBE",
       "id": "39885",
-      "raised": 392180,
-      "spent": 166739,
-      "cash": 248773,
-      "through": "09/30/2026"
+      "raised": 235063,
+      "spent": 26000,
+      "cash": 232395,
+      "through": "06/30/2026"
      },
      "social": {
       "instagram": "https://www.instagram.com/staterep.grasse"
      },
-     "website": "https://www.staterepgrasse.com/"
+     "website": "https://www.staterepgrasse.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/nicolle-grasse-sldl-53-staterepresentativerddistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{D2D7C6E1-5147-4488-90CD-D4FC0982A738}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -6068,7 +6434,13 @@
       "cash": 183089,
       "through": "06/30/2026"
      },
-     "website": "https://cddavidsmeyer.org/"
+     "website": "https://cddavidsmeyer.org/",
+     "photo": {
+      "file": "kyb-photos/illinois/christopher-c-d-davidsmeyer-sldl-100-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{E54250D5-EB1C-4CB6-9CF9-CA95CAA2F269}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -6093,10 +6465,10 @@
      "money": {
       "source": "ISBE",
       "id": "40924",
-      "raised": 215229,
-      "spent": 146454,
-      "cash": 68775,
-      "through": "09/30/2026"
+      "raised": 167609,
+      "spent": 133136,
+      "cash": 34474,
+      "through": "06/30/2026"
      },
      "social": {
       "linkedin": "https://www.linkedin.com/in/margaret-delarosa-8271b513"
@@ -6184,7 +6556,13 @@
       "cash": 466762,
       "through": "06/30/2026"
      },
-     "website": "https://www.staterepresentativebarbarahernandez.com/"
+     "website": "https://www.staterepresentativebarbarahernandez.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/elizabeth-lisa-hernandez-sldl-2-staterepresentativenddistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{4E4C2A21-FDC2-48CA-9BA8-462A62E7A33B}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -6243,17 +6621,23 @@
      "money": {
       "source": "ISBE",
       "id": "34216",
-      "raised": 269098,
-      "spent": 241689,
-      "cash": 83991,
-      "through": "09/30/2026"
+      "raised": 116086,
+      "spent": 136614,
+      "cash": 36054,
+      "through": "06/30/2026"
      },
      "social": {
       "facebook": "https://www.facebook.com/repsnessil66",
       "instagram": "https://www.instagram.com/repsuzanneness",
       "youtube": "https://www.youtube.com/@ILStateRepSuzanneNess"
      },
-     "website": "https://repsnessil66.com/"
+     "website": "https://repsnessil66.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/suzanne-ness-sldl-66-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{735B1C5A-1929-4EC8-92B4-72E58D74E743}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -6262,10 +6646,10 @@
      "money": {
       "source": "ISBE",
       "id": "39645",
-      "raised": 32700,
-      "spent": 30862,
-      "cash": 2261,
-      "through": "09/30/2026"
+      "raised": 31800,
+      "spent": 22804,
+      "cash": 9419,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -6312,7 +6696,13 @@
      "social": {
       "facebook": "https://www.facebook.com/State-Representative-Chris-Miller-921606161377222"
      },
-     "website": "https://repcmiller.com/"
+     "website": "https://repcmiller.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/chris-g-miller-sldl-101-staterepresentativestdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{2A519012-9070-494B-9FFC-C2646374202E}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -6358,7 +6748,13 @@
      "social": {
       "facebook": "https://www.facebook.com/State-Representative-Paul-Jacobs-104061098295558"
      },
-     "website": "https://reppauljacobs.com/"
+     "website": "https://reppauljacobs.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/paul-jacobs-sldu-59-statesenatorthdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{0E151A06-57C8-4261-9577-278F5DD4B717}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -6480,6 +6876,12 @@
       "facebook": "https://www.facebook.com/EllmanforIL",
       "x": "https://twitter.com/EllmanForIL",
       "instagram": "https://www.instagram.com/statesenatorlauraellman"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/laura-ellman-sldu-21-statesenatorstdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{423E6DDE-1AFB-4F10-A767-C869B0E51483}.jpg"
      }
     },
     {
@@ -6489,10 +6891,10 @@
      "money": {
       "source": "ISBE",
       "id": "32434",
-      "raised": 13522,
-      "spent": 140,
-      "cash": 18220,
-      "through": "09/30/2026"
+      "raised": 7736,
+      "spent": 47,
+      "cash": 12527,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -6540,7 +6942,13 @@
       "facebook": "https://www.facebook.com/senatorwilcox",
       "x": "https://twitter.com/SenatorWilcox"
      },
-     "website": "https://senatorwilcox.com/"
+     "website": "https://senatorwilcox.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/craig-wilcox-sldu-32-statesenatornddistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{E397F861-68AA-4CC2-9A23-50B9A8E13031}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -6623,12 +7031,18 @@
      "money": {
       "source": "ISBE",
       "id": "20086",
-      "raised": 801371,
-      "spent": 735756,
-      "cash": 484183,
-      "through": "09/30/2026"
+      "raised": 599677,
+      "spent": 627983,
+      "cash": 390262,
+      "through": "06/30/2026"
      },
-     "website": "https://repryanspain.com/"
+     "website": "https://repryanspain.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/ryan-spain-sldl-73-staterepresentativerddistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{4C25C70B-0E39-406B-9318-A899C2A6D1B0}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -6666,15 +7080,21 @@
      "money": {
       "source": "ISBE",
       "id": "39648",
-      "raised": 143815,
-      "spent": 142655,
-      "cash": 28401,
-      "through": "09/30/2026"
+      "raised": 75317,
+      "spent": 57082,
+      "cash": 45476,
+      "through": "06/30/2026"
      },
      "social": {
       "x": "https://twitter.com/RepSchweizer"
      },
-     "website": "https://repschweizer.com/"
+     "website": "https://repschweizer.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/brandun-schweizer-sldl-104-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{7520D666-0725-4963-B643-C1106551E922}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -6709,6 +7129,12 @@
       "x": "https://twitter.com/votemaura",
       "instagram": "https://www.instagram.com/votemaura",
       "facebook": "https://www.facebook.com/vote4maura"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/maura-hirschauer-sldl-49-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{F62525B8-2C23-49B7-AAB8-EFA6AE575F68}.jpg"
      }
     },
     {
@@ -6764,7 +7190,13 @@
       "cash": 17201,
       "through": "09/30/2026"
      },
-     "website": "https://repfritts.com/"
+     "website": "https://repfritts.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/bradley-j-fritts-sldl-74-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{3A924147-7119-4921-BDF6-14B5D5BA4B8D}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -6789,10 +7221,10 @@
      "money": {
       "source": "ISBE",
       "id": "40847",
-      "raised": 6785,
-      "spent": 6459,
-      "cash": 327,
-      "through": "09/30/2026"
+      "raised": 4001,
+      "spent": 3459,
+      "cash": 542,
+      "through": "06/30/2026"
      },
      "social": {
       "facebook": "https://www.facebook.com/votemccree"
@@ -6817,6 +7249,12 @@
       "x": "https://x.com/jedforfreedom",
       "instagram": "https://instagram.com/jedforfreedom",
       "tiktok": "https://tiktok.com/@jedforfreedom"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/jed-davis-sldl-75-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{AFBDE3F1-DE4D-419A-A7AB-D27678B015BE}.jpg"
      }
     }
    ],
@@ -6847,7 +7285,13 @@
       "cash": 90487,
       "through": "06/30/2026"
      },
-     "website": "https://repnormahernandez.com/"
+     "website": "https://repnormahernandez.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/norma-hernandez-sldl-77-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{3E520E2E-5D7A-491B-9744-0F0137816162}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -6856,10 +7300,10 @@
      "money": {
       "source": "ISBE",
       "id": "23533",
-      "raised": 721,
-      "spent": 100,
-      "cash": 8460,
-      "through": "09/30/2026"
+      "raised": 0,
+      "spent": 0,
+      "cash": 7839,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -6965,7 +7409,13 @@
      "social": {
       "facebook": "https://www.facebook.com/SenChesney"
      },
-     "website": "https://senatorchesney.com/"
+     "website": "https://senatorchesney.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/andrew-s-chesney-sldu-45-statesenatorthdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{D79AFB6D-F47C-47F7-988D-A3E99A0100E5}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -6998,7 +7448,13 @@
      "social": {
       "facebook": "https://www.facebook.com/State-Representative-Blaine-Wilhour-204021587171349"
      },
-     "website": "https://repwilhour.com/"
+     "website": "https://repwilhour.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/blaine-wilhour-sldl-110-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{66C5580C-A414-41BB-B3AC-638925AC34CD}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -7045,7 +7501,13 @@
      "social": {
       "facebook": "https://www.facebook.com/State-Representative-Tom-Weber-1097352810439053"
      },
-     "website": "https://repweber.com/"
+     "website": "https://repweber.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/tom-weber-sldl-64-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{4C80DF49-91D2-4C24-981E-BBE946A671D2}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -7083,15 +7545,21 @@
      "money": {
       "source": "ISBE",
       "id": "35707",
-      "raised": 245535,
-      "spent": 94811,
-      "cash": 229704,
-      "through": "09/30/2026"
+      "raised": 180115,
+      "spent": 65884,
+      "cash": 193213,
+      "through": "06/30/2026"
      },
      "social": {
       "facebook": "https://www.facebook.com/State-Representative-Martin-McLaughlin-104454978254981"
      },
-     "website": "https://repmclaughlin.com/"
+     "website": "https://repmclaughlin.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/martin-mclaughlin-sldl-52-staterepresentativenddistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{F90CD638-AB1B-4A73-A003-02D9A911B599}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -7115,10 +7583,10 @@
      "money": {
       "source": "ISBE",
       "id": "38693",
-      "raised": 2098,
-      "spent": 1929,
-      "cash": 1434,
-      "through": "09/30/2026"
+      "raised": 431,
+      "spent": 1152,
+      "cash": 542,
+      "through": "06/30/2026"
      }
     },
     {
@@ -7130,14 +7598,20 @@
      "money": {
       "source": "ISBE",
       "id": "19040",
-      "raised": 61559,
-      "spent": 77083,
-      "cash": 5690,
-      "through": "09/30/2026"
+      "raised": 47934,
+      "spent": 64770,
+      "cash": 4378,
+      "through": "06/30/2026"
      },
      "social": {
       "facebook": "https://www.facebook.com/joesosnowski",
       "x": "https://twitter.com/repsosnowski"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/joe-c-sosnowski-sldl-69-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{7DEBF89C-D2BA-4952-94A2-40F564A00144}.jpg"
      }
     }
    ],
@@ -7225,7 +7699,13 @@
      "social": {
       "facebook": "https://www.facebook.com/RepSteveReick"
      },
-     "website": "https://repstevenreick.com/"
+     "website": "https://repstevenreick.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/steven-reick-sldl-63-staterepresentativerddistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{D4845B6E-9A2E-4F0E-9F70-503B2E5891CA}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -7255,7 +7735,13 @@
       "cash": 11229,
       "through": "06/30/2026"
      },
-     "website": "https://www.staterepwest.com/"
+     "website": "https://www.staterepwest.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/maurice-a-west-ii-sldl-67-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{AFB160BE-629B-4C70-8541-877D6FCDE529}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -7290,7 +7776,13 @@
       "facebook": "https://www.facebook.com/staterepammons",
       "linkedin": "https://www.linkedin.com/in/staterepammons"
      },
-     "website": "https://www.staterepcarolammons.com/"
+     "website": "https://www.staterepcarolammons.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/carol-ammons-sldl-103-staterepresentativerddistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{BD4B7A5C-6D24-4E82-9C18-D5A0F3C42F6C}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -7328,15 +7820,21 @@
      "money": {
       "source": "ISBE",
       "id": "34033",
-      "raised": 280345,
-      "spent": 345559,
-      "cash": 87387,
-      "through": "09/30/2026"
+      "raised": 203968,
+      "spent": 241113,
+      "cash": 115455,
+      "through": "06/30/2026"
      },
      "social": {
       "facebook": "https://www.facebook.com/repkeicher"
      },
-     "website": "https://repkeicher.com/"
+     "website": "https://repkeicher.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/jeff-keicher-sldl-70-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{FD009EA6-624D-45C7-A093-BC66B8B3C090}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -7426,7 +7924,13 @@
       "instagram": "https://www.instagram.com/RepBobMorgan",
       "linkedin": "https://www.linkedin.com/company/repbobmorgan"
      },
-     "website": "https://repbobmorgan.com/"
+     "website": "https://repbobmorgan.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/bob-morgan-sldl-58-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{A3460802-617C-4097-B043-6D63A11278AC}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -7450,16 +7954,22 @@
      "money": {
       "source": "ISBE",
       "id": "34241",
-      "raised": 519223,
-      "spent": 552282,
-      "cash": 126108,
-      "through": "09/30/2026"
+      "raised": 333644,
+      "spent": 303049,
+      "cash": 189763,
+      "through": "06/30/2026"
      },
      "social": {
       "facebook": "https://www.facebook.com/repdidech",
       "x": "https://www.twitter.com/RepDidech"
      },
-     "website": "https://www.repdidech.com/"
+     "website": "https://www.repdidech.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/daniel-didech-sldl-59-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{1EA869A9-B93D-4E72-824B-E14992452581}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -7570,7 +8080,13 @@
       "facebook": "https://www.facebook.com/senharriss",
       "instagram": "https://www.instagram.com/senatorericaharriss"
      },
-     "website": "https://senatorericaharriss.com/"
+     "website": "https://senatorericaharriss.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/erica-harriss-sldu-56-statesenatorthdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{7762DCAD-269B-472B-BDD4-5F5A28D47817}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -7595,17 +8111,23 @@
      "money": {
       "source": "ISBE",
       "id": "39503",
-      "raised": 110533,
-      "spent": 86221,
-      "cash": 38776,
-      "through": "09/30/2026"
+      "raised": 81213,
+      "spent": 34830,
+      "cash": 60847,
+      "through": "06/30/2026"
      },
      "social": {
       "facebook": "https://www.facebook.com/StateSenatorChrisBalkema",
       "instagram": "https://www.instagram.com/senatorchrisbalkema",
       "tiktok": "https://www.tiktok.com/@senatorchrisbalkema"
      },
-     "website": "https://www.senatorchrisbalkema.com/"
+     "website": "https://www.senatorchrisbalkema.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/chris-balkema-sldu-53-statesenatorrddistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{29C38AB6-DBAB-4E53-A4B1-9DA8D64AD699}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -7640,7 +8162,13 @@
       "instagram": "https://instagram.com/RepresentativeChung",
       "linkedin": "https://www.linkedin.com/company/office-of-state-representative-sharon-chung"
      },
-     "website": "https://www.repchung.com/"
+     "website": "https://www.repchung.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/sharon-chung-sldl-91-staterepresentativestdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{0555ECBC-C0A4-4E09-ABA2-F8D6E8E03246}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -7673,7 +8201,13 @@
      "social": {
       "facebook": "https://www.facebook.com/repjgordon"
      },
-     "website": "https://www.repgordonbooth.com/"
+     "website": "https://www.repgordonbooth.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/jehan-gordon-booth-sldl-92-staterepresentativenddistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{A81D0C01-0A50-446D-B796-3A5A6D046EB1}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -7698,12 +8232,18 @@
      "money": {
       "source": "ISBE",
       "id": "37153",
-      "raised": 529115,
-      "spent": 620256,
-      "cash": 15896,
-      "through": "09/30/2026"
+      "raised": 271902,
+      "spent": 368104,
+      "cash": 10834,
+      "through": "06/30/2026"
      },
-     "website": "https://repweaver.com/"
+     "website": "https://repweaver.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/travis-weaver-sldl-93-staterepresentativerddistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{0A077509-6D57-4C96-8525-0480C8338827}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -7757,15 +8297,21 @@
      "money": {
       "source": "ISBE",
       "id": "39044",
-      "raised": 344000,
-      "spent": 236077,
-      "cash": 176241,
-      "through": "09/30/2026"
+      "raised": 261117,
+      "spent": 203243,
+      "cash": 126193,
+      "through": "06/30/2026"
      },
      "social": {
       "instagram": "https://www.instagram.com/rep.mikecoffey"
      },
-     "website": "https://repcoffey.com/"
+     "website": "https://repcoffey.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/mike-coffey-sldl-95-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{EA682659-0B02-4A60-8244-1D5D2ABCD620}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -7798,7 +8344,13 @@
      "social": {
       "instagram": "https://www.instagram.com/staterepsue96"
      },
-     "website": "http://sueschererforstaterep.com/"
+     "website": "http://sueschererforstaterep.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/sue-scherer-sldl-96-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{A0B92E66-B4F7-4B85-A7F2-14C0153B426F}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -7828,7 +8380,13 @@
       "cash": 172970,
       "through": "06/30/2026"
      },
-     "website": "https://staterepbriel.com/"
+     "website": "https://staterepbriel.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/amy-murri-briel-sldl-76-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{E820664D-DF76-4A22-88DC-736A218A001E}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -7837,10 +8395,10 @@
      "money": {
       "source": "ISBE",
       "id": "39550",
-      "raised": 688917,
-      "spent": 450593,
-      "cash": 255359,
-      "through": "09/30/2026"
+      "raised": 132315,
+      "spent": 71306,
+      "cash": 78044,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -7871,7 +8429,13 @@
       "cash": 30569,
       "through": "09/30/2026"
      },
-     "website": "https://repcabello.com/"
+     "website": "https://repcabello.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/john-m-cabello-sldl-90-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{9E64DAD4-4264-42B1-AFDA-AB8F652472A3}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -7897,14 +8461,20 @@
      "money": {
       "source": "ISBE",
       "id": "35843",
-      "raised": 175846,
-      "spent": 177247,
-      "cash": 37285,
-      "through": "09/30/2026"
+      "raised": 140068,
+      "spent": 153466,
+      "cash": 25289,
+      "through": "06/30/2026"
      },
      "social": {
       "facebook": "https://www.facebook.com/jackiehaasforrep",
       "instagram": "https://www.instagram.com/jackiehaasforstaterep"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/jackie-haas-sldl-79-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{9E211C98-BCB9-43CF-8A78-57D295FB9D78}.jpg"
      }
     }
    ],
@@ -8084,7 +8654,13 @@
       "instagram": "https://www.instagram.com/senatorsethlewis",
       "x": "https://x.com/SenatorLewis24"
      },
-     "website": "https://senatorlewis.com/"
+     "website": "https://senatorlewis.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/seth-lewis-sldu-24-statesenatorthdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{E714499E-C9C6-4A01-AE84-6CB703AFB9B7}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -8235,7 +8811,13 @@
       "cash": 88730,
       "through": "09/30/2026"
      },
-     "website": "https://charliemeier.net/"
+     "website": "https://charliemeier.net/",
+     "photo": {
+      "file": "kyb-photos/illinois/charlie-meier-sldl-109-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{9D43D019-A58A-47EC-B769-A7050C4B49DB}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -8326,7 +8908,13 @@
       "cash": 143624,
       "through": "06/30/2026"
      },
-     "website": "https://www.staterepresentativebarbarahernandez.com/"
+     "website": "https://www.staterepresentativebarbarahernandez.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/barbara-hernandez-sldl-50-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{E3518E4F-7AAF-4D93-8985-336197D96094}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -8362,7 +8950,13 @@
       "instagram": "https://www.instagram.com/ilsenatorchapinrose",
       "tiktok": "https://www.tiktok.com/@senchapinrose"
      },
-     "website": "https://senchapinrose.com/"
+     "website": "https://senchapinrose.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/chapin-rose-sldu-51-statesenatorstdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{BA95E1D1-0570-4492-B739-D1F593F183FD}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -8437,7 +9031,13 @@
      "social": {
       "facebook": "https://www.facebook.com/RepDanUgaste"
      },
-     "website": "https://repugaste.com/"
+     "website": "https://repugaste.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/dan-ugaste-sldl-65-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{2552FBE4-D977-4283-B00C-78FC085BD955}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -8472,7 +9072,13 @@
       "x": "https://twitter.com/ritamayfield",
       "linkedin": "https://www.linkedin.com/in/rita-mayfield-40ab32"
      },
-     "website": "https://www.ritamayfield60.com/"
+     "website": "https://www.ritamayfield60.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/rita-mayfield-sldl-60-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{3A2DAB8B-B5F8-48EE-85D3-05894ED42A5D}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -8502,7 +9108,13 @@
       "cash": 875350,
       "through": "09/30/2026"
      },
-     "website": "https://senatorhalpin.com/"
+     "website": "https://senatorhalpin.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/michael-w-halpin-sldu-36-statesenatorthdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{35F1D456-C798-4A8B-9180-4608CB0FDB78}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -8545,7 +9157,13 @@
       "cash": 136648,
       "through": "06/30/2026"
      },
-     "website": "https://repsheehan.com/"
+     "website": "https://repsheehan.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/patrick-sheehan-sldl-37-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{4F33CDD4-F7DD-40AC-B11E-DA5066173803}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -8578,7 +9196,13 @@
       "facebook": "https://www.facebook.com/StateRepDMM",
       "instagram": "https://www.instagram.com/repdebbiemeyersmartin"
      },
-     "website": "https://www.repdebbiemeyersmartin.com/"
+     "website": "https://www.repdebbiemeyersmartin.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/debbie-meyers-martin-sldl-38-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{E3E2099C-AB6A-442B-B191-3A83D6D3A1E2}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -8601,10 +9225,10 @@
      "money": {
       "source": "ISBE",
       "id": "40704",
-      "raised": 350019,
+      "raised": 350018,
       "spent": 349371,
-      "cash": 648,
-      "through": "09/30/2026"
+      "cash": 647,
+      "through": "06/30/2026"
      },
      "profile": "https://2026retention.injusticewatch.org/candidate/robert-bob-groebner-35628",
      "bar": {
@@ -8650,6 +9274,12 @@
       "spent": 152895,
       "cash": 64534,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/william-will-davis-sldl-30-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{6012DCA8-7486-49F9-A387-8703A2CF469C}.jpg"
      }
     }
    ],
@@ -8684,7 +9314,13 @@
       "x": "https://twitter.com/SenALJohnson",
       "instagram": "https://www.instagram.com/senaljohnson"
      },
-     "website": "https://www.senatoradrianejohnson.com/"
+     "website": "https://www.senatoradrianejohnson.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/adriane-l-johnson-sldu-30-statesenatorthdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{991EBDF6-BC13-4260-A2B8-E10751629780}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -8727,7 +9363,13 @@
       "cash": 146690,
       "through": "06/30/2026"
      },
-     "website": "https://repelik.com/"
+     "website": "https://repelik.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/amy-elik-sldl-111-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{D070CEE6-55DF-4D51-961B-CCA4A0E49A8C}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -8757,7 +9399,13 @@
       "cash": 417483,
       "through": "06/30/2026"
      },
-     "website": "https://repstuart.com/"
+     "website": "https://repstuart.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/katie-stuart-sldl-112-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{D6DC8152-9760-4BEA-ACF5-C41785E6F6C4}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -8808,12 +9456,18 @@
      "money": {
       "source": "ISBE",
       "id": "37202",
-      "raised": 301411,
-      "spent": 242982,
-      "cash": 146183,
-      "through": "09/30/2026"
+      "raised": 154578,
+      "spent": 136909,
+      "cash": 105422,
+      "through": "06/30/2026"
      },
-     "website": "https://repsanalitro.com/"
+     "website": "https://repsanalitro.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/jennifer-sanalitro-sldl-48-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{07C35999-DEF2-49BA-8A46-7D9D8204BCEA}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -8944,7 +9598,13 @@
       "facebook": "https://www.facebook.com/senatorjohncurran",
       "x": "https://x.com/SenJohnCurran"
      },
-     "website": "https://senatorcurran.com/"
+     "website": "https://senatorcurran.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/john-curran-sldu-41-statesenatorstdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{7FC724D0-C297-4D20-AC25-3D879DE286B8}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -8976,7 +9636,13 @@
      "social": {
       "facebook": "https://www.facebook.com/SenatorSallyTurner"
      },
-     "website": "https://senatorsallyturner.com/"
+     "website": "https://senatorsallyturner.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/sally-j-turner-sldu-44-statesenatorthdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{C47C199A-2C77-4A73-BAE5-AB139ED85CAC}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -9010,7 +9676,13 @@
       "instagram": "https://www.instagram.com/repmartideuter",
       "linkedin": "https://www.linkedin.com/in/martha-marti-wiles-deuter-33104b18a"
      },
-     "website": "https://www.repmartideuter.com/"
+     "website": "https://www.repmartideuter.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/martha-marti-deuter-sldl-45-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{345BE0B5-CE9C-4A36-B292-6190B845C34B}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -9019,10 +9691,10 @@
      "money": {
       "source": "ISBE",
       "id": "41116",
-      "raised": 4808,
-      "spent": 1946,
-      "cash": 7810,
-      "through": "09/30/2026"
+      "raised": 3585,
+      "spent": 1274,
+      "cash": 7258,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -9057,7 +9729,13 @@
       "instagram": "https://www.instagram.com/staterepdavevella",
       "x": "https://twitter.com/StateRepVella"
      },
-     "website": "https://www.staterepdavevella.com/"
+     "website": "https://www.staterepdavevella.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/dave-vella-sldl-68-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{E0F72B4C-2737-483E-84FE-E596DB8F2DCF}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -9066,10 +9744,10 @@
      "money": {
       "source": "ISBE",
       "id": "40831",
-      "raised": 37408,
-      "spent": 14719,
-      "cash": 25690,
-      "through": "09/30/2026"
+      "raised": 14678,
+      "spent": 8960,
+      "cash": 8718,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -9162,6 +9840,12 @@
       "spent": 829871,
       "cash": 1860304,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/jay-c-hoffman-sldl-113-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{FCD7EF06-36D9-46A7-8085-4B5A5ED81A80}.jpg"
      }
     }
    ],
@@ -9195,7 +9879,13 @@
      "social": {
       "facebook": "https://www.facebook.com/State-Representative-David-Friess-103168288386561"
      },
-     "website": "https://repfriess.com/"
+     "website": "https://repfriess.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/david-h-friess-sldl-115-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{C1F3982E-6DA7-4AE6-96B9-77E9FBC87A2A}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -9225,7 +9915,13 @@
       "cash": 52991,
       "through": "09/30/2026"
      },
-     "website": "https://repseverin.com/"
+     "website": "https://repseverin.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/dave-severin-sldl-116-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{FC792043-4CE1-4796-BA38-E68B39A9847A}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -9258,7 +9954,13 @@
      "social": {
       "facebook": "https://www.facebook.com/StateRepWindhorst"
      },
-     "website": "https://repwindhorst.com/"
+     "website": "https://repwindhorst.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/patrick-windhorst-sldl-117-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{547F9C92-7368-4390-B625-5BB795568D50}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -9330,7 +10032,13 @@
       "cash": 55407,
       "through": "06/30/2026"
      },
-     "website": "https://repmoore.com/"
+     "website": "https://repmoore.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/kyle-a-moore-sldl-99-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/%7BBB70A39A-DE8F-4EF5-A923-0EE51834A45F%7D.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -9457,7 +10165,13 @@
       "instagram": "https://www.instagram.com/staterepmoeller",
       "x": "https://twitter.com/staterepmoeller"
      },
-     "website": "https://staterepmoeller.com/"
+     "website": "https://staterepmoeller.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/anna-moeller-sldl-43-staterepresentativerddistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{DCE9D682-0582-49BD-AD67-98C2502D89C2}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -9486,7 +10200,13 @@
       "cash": 174914,
       "through": "06/30/2026"
      },
-     "website": "https://repgreggjohnson.com/"
+     "website": "https://repgreggjohnson.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/gregg-johnson-sldl-72-staterepresentativenddistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{8746A238-F14D-428E-A0AD-E3D3F28F80F5}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -9522,7 +10242,13 @@
       "x": "https://twitter.com/speakerwelchil",
       "linkedin": "https://www.linkedin.com/in/emanuelchriswelch"
      },
-     "website": "https://www.emanuelchriswelch.com/"
+     "website": "https://www.emanuelchriswelch.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/emanuel-chris-welch-sldl-7-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{5D419B94-66B4-4F3B-86F1-BFF37B3FA55C}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -9555,7 +10281,13 @@
       "facebook": "https://www.facebook.com/repstavamurray",
       "x": "https://x.com/RepStava_Murray"
      },
-     "website": "https://www.repstava.com/"
+     "website": "https://www.repstava.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/anne-stava-sldl-81-staterepresentativestdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{0322F94E-013C-4237-9808-4462138AC595}.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -9564,10 +10296,10 @@
      "money": {
       "source": "ISBE",
       "id": "40727",
-      "raised": 41022,
-      "spent": 16351,
-      "cash": 24671,
-      "through": "09/30/2026"
+      "raised": 31309,
+      "spent": 11789,
+      "cash": 19520,
+      "through": "06/30/2026"
      }
     }
    ],
@@ -9621,12 +10353,18 @@
      "money": {
       "source": "ISBE",
       "id": "24392",
-      "raised": 531237,
-      "spent": 509014,
-      "cash": 389694,
-      "through": "09/30/2026"
+      "raised": 384155,
+      "spent": 376527,
+      "cash": 375099,
+      "through": "06/30/2026"
      },
-     "website": "http://larrywalshjr.com/"
+     "website": "http://larrywalshjr.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/lawrence-larry-m-walsh-jr-sldl-86-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{F11DA3BE-D8FF-48F0-8450-43231B4DD28F}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -9656,7 +10394,13 @@
       "cash": 88594,
       "through": "06/30/2026"
      },
-     "website": "https://rephauter.com/"
+     "website": "https://rephauter.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/william-e-hauter-sldl-87-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{999C86E0-F35D-4F02-81BE-F4FEBF930114}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -9686,7 +10430,13 @@
       "cash": 51264,
       "through": "06/30/2026"
      },
-     "website": "https://repdeering.com/"
+     "website": "https://repdeering.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/regan-deering-sldl-88-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{57C9E73B-E152-4B7D-B42B-6EA67289504E}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -9716,7 +10466,13 @@
       "cash": 1285444,
       "through": "06/30/2026"
      },
-     "website": "https://repmccombie.com/"
+     "website": "https://repmccombie.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/tony-m-mccombie-sldl-89-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{0766A6E9-981F-491B-B3A1-12DF91F1DBDA}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -9741,15 +10497,21 @@
      "money": {
       "source": "ISBE",
       "id": "35699",
-      "raised": 28596,
-      "spent": 22840,
-      "cash": 27532,
-      "through": "09/30/2026"
+      "raised": 26413,
+      "spent": 20442,
+      "cash": 27747,
+      "through": "06/30/2026"
      },
      "social": {
       "facebook": "https://www.facebook.com/State-Representative-Adam-Niemerg-101445711896839"
      },
-     "website": "https://repniemerg.com/"
+     "website": "https://repniemerg.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/adam-m-niemerg-sldl-102-staterepresentativenddistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{EDDABDD8-51A3-413F-B2A0-FA5953D29598}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -9809,6 +10571,12 @@
      },
      "social": {
       "x": "https://x.com/bradhalbrook"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/brad-halbrook-sldl-107-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{3F3C3739-E087-440D-B006-33043A8F5083}.jpg"
      }
     }
    ],
@@ -9839,7 +10607,13 @@
       "cash": 46745,
       "through": "09/30/2026"
      },
-     "website": "https://reprosenthal.com/"
+     "website": "https://reprosenthal.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/wayne-a-rosenthal-sldl-108-staterepresentativethdistrict.jpg",
+      "credit": "Illinois General Assembly",
+      "link": "https://www.ilga.gov/",
+      "from": "https://cdn.ilga.gov/assets/img/members/{43DB5751-834C-4CA0-B8A4-6D1016E3CB28}.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -12162,6 +12936,422 @@
    "kind": "money",
    "name": "Adam M. Niemerg",
    "raised": 28596
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "state-senator-3rd-district",
+   "what": "State Senator, 3rd District",
+   "kind": "money",
+   "name": "Mattie Hunter",
+   "raised": 237638
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "state-senator-14th-district",
+   "what": "State Senator, 14th District",
+   "kind": "money",
+   "name": "Brian Skala",
+   "raised": 20318
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "state-senator-18th-district",
+   "what": "State Senator, 18th District",
+   "kind": "money",
+   "name": "Frances Ann Hurley",
+   "raised": 222952
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "state-representative-12th-district",
+   "what": "State Representative, 12th District",
+   "kind": "money",
+   "name": "Justin J. Kumar",
+   "raised": 100
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "metropolitan-water-reclamation-district-commissioners-full-6-year-term",
+   "what": "Metropolitan Water Reclamation District Commissioners Full 6-Year Term",
+   "kind": "money",
+   "name": "Eira Lizeth Corral Sepúlveda",
+   "raised": 123743
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "president-of-county-board",
+   "what": "President of County Board",
+   "kind": "money",
+   "name": "Michael Murphy",
+   "raised": 554
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "county-sheriff",
+   "what": "County Sheriff",
+   "kind": "money",
+   "name": "Brad Sandefur",
+   "raised": 3795
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "county-commissioner-9th-district",
+   "what": "County Commissioner, 9th District",
+   "kind": "money",
+   "name": "Maggie Trevor",
+   "raised": 29560
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "county-commissioner-10th-district",
+   "what": "County Commissioner, 10th District",
+   "kind": "money",
+   "name": "Drake Warren",
+   "raised": 174616
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "judge-of-the-circuit-court-vacancy-of-coghlan",
+   "what": "Judge of the Circuit Court (Vacancy of Coghlan)",
+   "kind": "money",
+   "name": "Ashonta C. Rice",
+   "raised": 69062
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "judge-8th-subcircuit-vacancy-of-gamrath",
+   "what": "Judge, 8th Subcircuit (Vacancy of Gamrath)",
+   "kind": "money",
+   "name": "Kathleen Cunniff Ori",
+   "raised": 77860
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "judge-17th-subcircuit-converted-from-associate-judgeship-of-brooks",
+   "what": "Judge, 17th Subcircuit (Converted from Associate Judgeship of Brooks)",
+   "kind": "money",
+   "name": "Natalia Moore",
+   "raised": 24381
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "judge-19th-subcircuit-converted-from-associate-judgeship-of-kane",
+   "what": "Judge, 19th Subcircuit (Converted from Associate Judgeship of Kane)",
+   "kind": "money",
+   "name": "Monica Somerville",
+   "raised": 4691
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "member-of-the-chicago-board-of-education-subdistrict-2a",
+   "what": "Member of the Chicago Board of Education, Subdistrict 2A",
+   "kind": "money",
+   "name": "Ebony DeBerry",
+   "raised": 4035
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "member-of-the-chicago-board-of-education-subdistrict-7a",
+   "what": "Member of the Chicago Board of Education, Subdistrict 7A",
+   "kind": "money",
+   "name": "Jesus Ayala Jr.",
+   "raised": 5575
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldu-42-statesenatornddistrict",
+   "what": "State Senator, 42nd District",
+   "kind": "money",
+   "name": "Edgardo \"Eddie\" Perez",
+   "raised": 2740
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-54-staterepresentativethdistrict",
+   "what": "State Representative, 54th District",
+   "kind": "money",
+   "name": "Mary Beth Canty",
+   "raised": 411270
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-114-staterepresentativethdistrict",
+   "what": "State Representative, 114th District",
+   "kind": "money",
+   "name": "George McClellan, Jr.",
+   "raised": 48701
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldu-29-statesenatorthdistrict",
+   "what": "State Senator, 29th District",
+   "kind": "money",
+   "name": "Kate McGrath",
+   "raised": 9400
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldu-50-statesenatorthdistrict",
+   "what": "State Senator, 50th District",
+   "kind": "money",
+   "name": "Jil Tracy",
+   "raised": 191016
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldu-48-statesenatorthdistrict",
+   "what": "State Senator, 48th District",
+   "kind": "money",
+   "name": "Frank Lesko",
+   "raised": 43780
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldu-57-statesenatorthdistrict",
+   "what": "State Senator, 57th District",
+   "kind": "money",
+   "name": "Daniel Rhyne",
+   "raised": 11397
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-84-staterepresentativethdistrict",
+   "what": "State Representative, 84th District",
+   "kind": "money",
+   "name": "Brian Scopa",
+   "raised": 39494
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-98-staterepresentativethdistrict",
+   "what": "State Representative, 98th District",
+   "kind": "money",
+   "name": "Nona Parker",
+   "raised": 8033
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-71-staterepresentativestdistrict",
+   "what": "State Representative, 71st District",
+   "kind": "money",
+   "name": "Dan Swanson",
+   "raised": 129460
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-44-staterepresentativethdistrict",
+   "what": "State Representative, 44th District",
+   "kind": "money",
+   "name": "Ralph Black",
+   "raised": 10002
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-53-staterepresentativerddistrict",
+   "what": "State Representative, 53rd District",
+   "kind": "money",
+   "name": "Nicolle Grasse",
+   "raised": 235063
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-42-staterepresentativenddistrict",
+   "what": "State Representative, 42nd District",
+   "kind": "money",
+   "name": "Margaret A. DeLarosa",
+   "raised": 167609
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-66-staterepresentativethdistrict",
+   "what": "State Representative, 66th District",
+   "kind": "money",
+   "name": "Suzanne Ness",
+   "raised": 116086
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-66-staterepresentativethdistrict",
+   "what": "State Representative, 66th District",
+   "kind": "money",
+   "name": "Laurie Parman",
+   "raised": 31800
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldu-21-statesenatorstdistrict",
+   "what": "State Senator, 21st District",
+   "kind": "money",
+   "name": "Julie Berkowicz",
+   "raised": 7736
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-73-staterepresentativerddistrict",
+   "what": "State Representative, 73rd District",
+   "kind": "money",
+   "name": "Ryan Spain",
+   "raised": 599677
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-104-staterepresentativethdistrict",
+   "what": "State Representative, 104th District",
+   "kind": "money",
+   "name": "Brandun Schweizer",
+   "raised": 75317
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-75-staterepresentativethdistrict",
+   "what": "State Representative, 75th District",
+   "kind": "money",
+   "name": "Caroline McCree",
+   "raised": 4001
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-77-staterepresentativethdistrict",
+   "what": "State Representative, 77th District",
+   "kind": "money",
+   "name": "Anthony Airdo",
+   "raised": 0
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-52-staterepresentativenddistrict",
+   "what": "State Representative, 52nd District",
+   "kind": "money",
+   "name": "Martin McLaughlin",
+   "raised": 180115
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-69-staterepresentativethdistrict",
+   "what": "State Representative, 69th District",
+   "kind": "money",
+   "name": "Peter Janko",
+   "raised": 431
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-69-staterepresentativethdistrict",
+   "what": "State Representative, 69th District",
+   "kind": "money",
+   "name": "Joe C. Sosnowski",
+   "raised": 47934
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-70-staterepresentativethdistrict",
+   "what": "State Representative, 70th District",
+   "kind": "money",
+   "name": "Jeff Keicher",
+   "raised": 203968
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-59-staterepresentativethdistrict",
+   "what": "State Representative, 59th District",
+   "kind": "money",
+   "name": "Daniel Didech",
+   "raised": 333644
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldu-53-statesenatorrddistrict",
+   "what": "State Senator, 53rd District",
+   "kind": "money",
+   "name": "Chris Balkema",
+   "raised": 81213
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-93-staterepresentativerddistrict",
+   "what": "State Representative, 93rd District",
+   "kind": "money",
+   "name": "Travis Weaver",
+   "raised": 271902
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-95-staterepresentativethdistrict",
+   "what": "State Representative, 95th District",
+   "kind": "money",
+   "name": "Mike Coffey",
+   "raised": 261117
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-76-staterepresentativethdistrict",
+   "what": "State Representative, 76th District",
+   "kind": "money",
+   "name": "Liz Bishop",
+   "raised": 132315
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-79-staterepresentativethdistrict",
+   "what": "State Representative, 79th District",
+   "kind": "money",
+   "name": "Jackie Haas",
+   "raised": 140068
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "subcircuit-13-judgethsubcircuitvacancyofcurryjr",
+   "what": "Judge, 13th Subcircuit (Vacancy of Curry, Jr.)",
+   "kind": "money",
+   "name": "Robert \"Bob\" Groebner",
+   "raised": 350018
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-48-staterepresentativethdistrict",
+   "what": "State Representative, 48th District",
+   "kind": "money",
+   "name": "Jennifer Sanalitro",
+   "raised": 154578
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-45-staterepresentativethdistrict",
+   "what": "State Representative, 45th District",
+   "kind": "money",
+   "name": "Gina Parrilli",
+   "raised": 3585
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-68-staterepresentativethdistrict",
+   "what": "State Representative, 68th District",
+   "kind": "money",
+   "name": "Kathy Easton",
+   "raised": 14678
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-81-staterepresentativestdistrict",
+   "what": "State Representative, 81st District",
+   "kind": "money",
+   "name": "Laura Hois",
+   "raised": 31309
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-86-staterepresentativethdistrict",
+   "what": "State Representative, 86th District",
+   "kind": "money",
+   "name": "Lawrence \"Larry\" M. Walsh, Jr.",
+   "raised": 384155
+  },
+  {
+   "at": "2026-10-14T21:57:39.678Z",
+   "id": "sldl-102-staterepresentativenddistrict",
+   "what": "State Representative, 102nd District",
+   "kind": "money",
+   "name": "Adam M. Niemerg",
+   "raised": 26413
   }
  ],
  "govbot": {

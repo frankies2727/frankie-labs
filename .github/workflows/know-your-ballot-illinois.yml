@@ -29,11 +29,12 @@ jobs:
         with:
           node-version: 20
 
-      # pdftotext reads the candidate-list PDF; a headless browser gets past the
-      # Board of Elections' bot check when a plain request is turned away.
+      # pdftotext reads the candidate-list PDF; ImageMagick shrinks candidates'
+      # photos; a headless browser gets past the Board of Elections' bot check
+      # when a plain request is turned away.
       - name: Install tools
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils imagemagick
           npm install --no-save playwright@1.56.0
           npx playwright install --with-deps chromium
 
