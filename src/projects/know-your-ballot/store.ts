@@ -159,3 +159,10 @@ export const today = (now = new Date()) => new Intl.DateTimeFormat('en-CA', { ti
 export function daysUntil(isoDate: string, now = new Date()): number {
   return Math.round((Date.parse(isoDate) - Date.parse(today(now))) / 86_400_000);
 }
+
+/** Whether a fold-away section is open, remembered on this device (closed at first). */
+export function useOpen(key: string): [boolean, () => void] {
+  const [open, setOpen] = useState(() => { try { return localStorage.getItem(key) === '1'; } catch { return false; } });
+  const toggle = () => setOpen((o) => { try { localStorage.setItem(key, o ? '0' : '1'); } catch { /* not remembered */ } return !o; });
+  return [open, toggle];
+}

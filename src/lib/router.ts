@@ -25,9 +25,10 @@ export function currentRoute(): string {
 // `replace` swaps the current history entry instead of adding one — use it when
 // canonicalising a legacy URL, so the Back button skips the old path rather than
 // bouncing the visitor straight back into the redirect.
-export function navigate(route: string, opts?: { replace?: boolean }): void {
+/** `keepQuery` carries the current ?search and #hash over (for renamed paths). */
+export function navigate(route: string, opts?: { replace?: boolean; keepQuery?: boolean }): void {
   const clean = route.replace(/^\/+|\/+$/g, '');
-  const url = clean ? BASE + clean : BASE;
+  const url = (clean ? BASE + clean : BASE) + (opts?.keepQuery ? window.location.search + window.location.hash : '');
   if (url !== window.location.pathname) {
     if (opts?.replace) window.history.replaceState({}, '', url);
     else window.history.pushState({}, '', url);

@@ -1,5 +1,6 @@
-import { Info } from 'lucide-react';
+import { ChevronDown, Info } from 'lucide-react';
 import { useState } from 'react';
+import { useOpen } from './store';
 
 // The ballot as a game: a streak of visits and trophies for the habits that
 // make a good voter (reading up, planning, finishing). All counted on this
@@ -73,6 +74,7 @@ const SHOW_FIRST = 6;
 
 /** Trophies: earned ones first (tap ⓘ for what each was for), then the closest to earning. */
 export function Trophies({ ctx }: { ctx: Ctx }) {
+  const [open, toggle] = useOpen('kyb-trophies-open');
   const [showAll, setShowAll] = useState(false);
   const [opened, setOpened] = useState<string | null>(null);
   const list = trophies(ctx.levels)
@@ -82,10 +84,17 @@ export function Trophies({ ctx }: { ctx: Ctx }) {
   return (
     <section aria-labelledby="kyb-trophies" className="rounded-2xl border border-[var(--gb-border)] bg-[var(--gb-surface)] p-4 sm:p-5 space-y-3">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 id="kyb-trophies" className="text-xl">🏆 Trophies <span className="font-[family-name:var(--gb-font-sans)] text-sm font-bold">· {earnedCount} of {list.length} earned</span></h2>
+        <h2 id="kyb-trophies" className="text-xl">
+          <button type="button" onClick={toggle} aria-expanded={open} aria-controls="kyb-trophy-list" className="inline-flex min-h-[44px] items-center gap-2 text-left">
+            🏆 Trophies <span className="font-[family-name:var(--gb-font-sans)] text-sm font-bold">· {earnedCount} of {list.length} earned</span>
+            <ChevronDown className={`w-5 h-5 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
+            <span className="sr-only">{open ? '(hide)' : '(show)'}</span>
+          </button>
+        </h2>
         {ctx.streak >= 2 && <span className="rounded-full bg-[var(--kyb-chip)] px-3 py-1 text-sm font-bold">🔥 {ctx.streak}-day streak</span>}
       </div>
-      <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2" aria-label="Trophies">
+      {open && <>
+      <ul id="kyb-trophy-list" className="grid grid-cols-2 sm:grid-cols-3 gap-2" aria-label="Trophies">
         {(showAll ? list : list.slice(0, SHOW_FIRST)).map(({ t, have, need, got }) => (
           <li key={t.id} className={`rounded-xl border-2 px-3 py-2 ${got ? 'border-[var(--gb-primary)] bg-[color-mix(in_srgb,var(--gb-primary)_16%,transparent)]' : 'border-[var(--gb-border-strong)]'}`}>
             <div className="flex items-center gap-2">
@@ -112,6 +121,7 @@ export function Trophies({ ctx }: { ctx: Ctx }) {
           {showAll ? 'Show fewer' : `Show all ${list.length} trophies`}
         </button>
       )}
+      </>}
     </section>
   );
 }

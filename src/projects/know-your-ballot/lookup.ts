@@ -1,5 +1,5 @@
-import cookMapsUrl from './data/districts.json?url';
-import stateMapsUrl from './data/districts-il.json?url';
+import cookMapsUrl from './data/illinois/districts.json?url';
+import stateMapsUrl from './data/illinois/districts-il.json?url';
 import type { BallotData, Districts, Measure, Race } from './types';
 
 // Address -> coordinates. Cook County's own address locator is official,

@@ -4,7 +4,7 @@ import { useState } from 'react';
 // Chicago-area bar groups' ratings of a judge or judicial candidate, drawn
 // here: a gauge for the overall picture, then each group's own word. From the
 // Alliance of Bar Associations for Judicial Screening (and, for retentions,
-// the Chicago Bar Association via Injustice Watch; scripts/ballot/judges.mjs).
+// the Chicago Bar Association via Injustice Watch; scripts/know-your-ballot/illinois/judges.mjs).
 
 const GROUPS: Record<string, string> = {
   AABAR: 'Arab American Bar Association of Illinois',

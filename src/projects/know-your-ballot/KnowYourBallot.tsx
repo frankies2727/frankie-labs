@@ -1,6 +1,6 @@
-import { ArrowLeft, Crosshair, ListChecks, MapPin, Printer, Search, Share2 } from 'lucide-react';
+import { Crosshair, ListChecks, MapPin, Printer, Search, Share2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
-import rawData from './data/ballot.json';
+import rawData from './data/illinois/ballot.json';
 import { ballotFor, ballotIdsFor, districtsAt, geocode, inChicago, inCook, inIllinois, prefetchDistricts } from './lookup';
 import { RETENTION_EXPLAINER } from './offices';
 import { BallotSearch, type Hit } from './Search';
@@ -23,7 +23,7 @@ import type { BallotData, Candidate, Districts, Race } from './types';
 const data = rawData as unknown as BallotData;
 const ballotIds = (d: Districts) => ballotIdsFor(data, d);
 const everything = ballotFor(data, null);
-const SHARE_URL = `https://frankies2727.github.io${import.meta.env.BASE_URL}projects/know-your-ballot`;
+const SHARE_URL = `https://frankies2727.github.io${import.meta.env.BASE_URL}projects/know-your-ballot-illinois`;
 // Runs elections in suburban Cook (the Chicago Board runs Chicago's).
 const COOK_CLERK = 'https://www.cookcountyclerkil.gov/';
 // Elsewhere in Illinois each county clerk (or city board) runs elections.
@@ -117,7 +117,7 @@ function Confetti({ onDone }: { onDone: () => void }) {
   );
 }
 
-export function KnowYourBallot({ onExit }: { onExit: () => void }) {
+export function KnowYourBallot() {
   const [saved, setSaved] = useSaved();
   const browsing = !!saved.browsing;
   const setBrowsing = (on: boolean) => setSaved((s) => ({ ...s, browsing: on || undefined }));
@@ -296,6 +296,36 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
       el?.querySelector<HTMLElement>('button')?.focus({ preventScroll: true });
     }));
   };
+  // Links from govbot (its search, RSS, the old elections page) name a race
+  // by govbot's id: #race=us-house-il-07. Open that race; Feb 2027 races open
+  // the 2027 note. Our own ids work too. Then tidy the address bar.
+  const raceLink = useRef<() => void>(() => {});
+  raceLink.current = () => {
+    const m = location.hash.match(/^#(race|office)=([^&]+)/);
+    if (!m) return;
+    history.replaceState(null, '', location.pathname + location.search);
+    const asked = decodeURIComponent(m[2]);
+    const id = m[1] === 'race' ? (data.govbot.legacy?.[asked] ?? asked) : null;
+    const race = id ? data.races.find((r) => r.id === id) : undefined;
+    if (race && districts && !ballotIds(districts).has(race.id)) {
+      setToast(`${race.office} isn’t on the ballot at your address. Search or browse to see it.`);
+      return;
+    }
+    // Browsing shows Cook County's races; the rest of Illinois needs an address there.
+    if (race?.outsideCook && !districts) {
+      setToast(`${race.office} is outside Cook County. Enter an address in that district to see it.`);
+      return;
+    }
+    if (!showBallot) setBrowsing(true);
+    if (race) jumpTo(race.section, race.id);
+    else if (id === '2027') requestAnimationFrame(() => requestAnimationFrame(() => scrollTo(document.getElementById('kyb-next'))));
+  };
+  useEffect(() => {
+    const take = () => raceLink.current();
+    take();
+    window.addEventListener('hashchange', take);
+    return () => window.removeEventListener('hashchange', take);
+  }, []);
   const nextUp = () => {
     const s = sections.find((sec) => sec.done < sec.ids.length);
     const id = s?.ids.find((i) => !isDecided(saved.picks[i]));
@@ -354,7 +384,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
   const saveLink = async (send: boolean) => {
     setLinkMsg('');
     // Same site the voter is on (also right for previews and local runs).
-    const url = await resumeLink(saved, `${location.origin}${import.meta.env.BASE_URL}projects/know-your-ballot`);
+    const url = await resumeLink(saved, `${location.origin}${import.meta.env.BASE_URL}projects/know-your-ballot-illinois`);
     try {
       if (send && navigator.share) { await navigator.share({ title: 'My ballot progress', url }); setPlan('shared', true); return; }
       await navigator.clipboard.writeText(url);
@@ -409,13 +439,6 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
       <GaugeDefs />
 
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pb-24 print:hidden">
-        {/* The lab's way home (not part of govbot's page). */}
-        <nav className="pt-3 text-sm">
-          <button type="button" onClick={onExit} className="inline-flex items-center gap-1.5 min-h-[44px] font-bold text-[var(--gb-text)] underline underline-offset-2">
-            <ArrowLeft className="w-4 h-4" aria-hidden="true" /> Frankie Labs preview
-          </button>
-        </nav>
-
         {!showBallot ? (
           <Landing
             address={address} setAddress={setAddress} status={status} onSubmit={lookUp} onLocate={useLocation}

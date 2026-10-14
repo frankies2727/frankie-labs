@@ -7,7 +7,7 @@ import govbotCss from './govbot/govbot.css?raw';
 import govbotJs from './govbot/govbot-shell.js?url';
 
 // govbot's own site shell (header, mobile drawer, footer, stylesheet and
-// script), copied from chihacknight/govbot by scripts/ballot/govbot-shell.mjs,
+// script), copied from chihacknight/govbot by scripts/know-your-ballot/govbot-shell.mjs,
 // so this guide looks and works like the rest of govbot. Here its links point
 // at the live govbot site; on govbot itself the page carries the shell
 // directly and govbot keeps it in sync.

@@ -1,4 +1,4 @@
-// Shapes of the static data built by scripts/ballot-build.mjs.
+// Shapes of the static data built by scripts/know-your-ballot/illinois.mjs.
 
 export type Section = 'federal' | 'state' | 'county' | 'judicial' | 'school';
 
@@ -29,7 +29,7 @@ export interface Candidate {
   /** Campaign website: their State Board filing, else their official homepage. */
   website?: string;
   money?: Money;
-  /** Their social media accounts (scripts/ballot/social.mjs says where each comes from). */
+  /** Their social media accounts (scripts/know-your-ballot/illinois/social.mjs says where each comes from). */
   social?: Partial<Record<SocialPlatform, string>>;
   /** Judicial candidates: Injustice Watch's profile. */
   profile?: string;
@@ -105,6 +105,8 @@ export interface Govbot {
   laws: Law[];
   /** Chicago's Feb 23, 2027 city races. */
   city: CityRace[];
+  /** govbot's race ids (its search and old #race= links) -> ours, or "2027" for Feb 2027 races. */
+  legacy?: Record<string, string>;
 }
 
 export interface Law {

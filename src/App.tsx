@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { EXTERNAL_GAMES, GAMES, externalGameById, hasGame, loadGame } from './games';
-import { PROJECTS, projectById } from './projects';
+import { PROJECTS, PROJECT_ALIASES, projectById } from './projects';
 import { BackToTop } from './components/BackToTop';
 import { Gallery } from './components/Gallery';
 import { ProjectsGallery } from './components/ProjectsGallery';
@@ -78,9 +78,13 @@ function Screen() {
 
   // Legacy /projects → home, which is the same screen now. Replace rather than
   // push so Back doesn't land on the old path and immediately redirect again.
+  // A renamed project's old path → its new one, query and hash included.
+  const alias = seg[0] === 'projects' && seg[1] ? PROJECT_ALIASES[seg[1]] : undefined;
   useEffect(() => {
     if (route === 'projects') navigate('', { replace: true });
-  }, [route]);
+    else if (alias) navigate(`projects/${alias}`, { replace: true, keepQuery: true });
+  }, [route, alias]);
+  if (alias) return null;
 
   // /play/<gameId>
   if (seg[0] === 'play' && seg[1]) {
