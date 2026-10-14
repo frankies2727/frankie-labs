@@ -16,7 +16,8 @@ const TOPICS = ['elections & voting', 'education'];
 
 const keep = (o, keys) => Object.fromEntries(keys.filter((k) => o[k] != null).map((k) => [k, o[k]]));
 
-const LAW_FIELDS = ['id', 'title', 'url', 'tags', 'latest_action', 'latest_action_desc', 'hearing'];
+// state + session + id is the bill's key in govbot's catalog (legislation.html#bill=…).
+const LAW_FIELDS = ['state', 'session', 'id', 'title', 'url', 'tags', 'latest_action', 'latest_action_desc', 'hearing'];
 
 async function springfieldBills(curated) {
   const res = await fetch(GOVBOT_IL_RECENT);
@@ -30,7 +31,7 @@ async function springfieldBills(curated) {
   for (const b of all) if (!byId.has(b.id) && b.tags?.some((t) => TOPICS.includes(t))) byId.set(b.id, b);
   const topical = [...byId.values()].filter(recent);
   const other = all.filter((b) => !byId.has(b.id) && recent(b)).sort(newest).slice(0, OTHER_MAX);
-  return [...topical, ...other].sort(newest).map((b) => keep(b, LAW_FIELDS));
+  return [...topical, ...other].sort(newest).map((b) => keep({ state: 'il', ...b }, LAW_FIELDS));
 }
 
 // govbot's race ids, which its search, RSS and old links use

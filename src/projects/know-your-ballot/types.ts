@@ -110,6 +110,9 @@ export interface Govbot {
 }
 
 export interface Law {
+  /** With session and id, the bill's key in govbot's catalog. */
+  state?: string;
+  session?: string;
   id: string;
   title: string;
   url?: string;

@@ -1,4 +1,4 @@
-import { Crosshair, ListChecks, MapPin, Printer, Search, Share2 } from 'lucide-react';
+import { ChevronDown, Crosshair, ListChecks, MapPin, Printer, Search, Share2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import rawData from './data/illinois/ballot.json';
 import { ballotFor, ballotIdsFor, districtsAt, geocode, inChicago, inCook, inIllinois, prefetchDistricts } from './lookup';
@@ -17,7 +17,7 @@ import { Laws } from './Laws';
 import { LINKS, PlanToVote } from './PlanToVote';
 import { CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard } from './Race';
 import { drawShareCard, shareCard } from './share';
-import { daysUntil, hasProgress, isDecided, today, readResumeLink, resumeLink, useSaved, type Choice, type Saved } from './store';
+import { daysUntil, hasProgress, isDecided, today, readResumeLink, resumeLink, useOpen, useSaved, type Choice, type Saved } from './store';
 import type { BallotData, Candidate, Districts, Race } from './types';
 
 const data = rawData as unknown as BallotData;
@@ -614,8 +614,8 @@ export function KnowYourBallot() {
             <span className="h-[3px] flex-1 rounded-full bg-[var(--gb-text)]" />
           </div>
           <Laws laws={data.govbot.laws} />
-          <Sources />
           <NextElectionNote chicago={districts ? chicago : undefined} city={data.govbot.city} districts={districts} />
+          <Sources />
         </div>
       </div>
 
@@ -840,6 +840,7 @@ function WhereYouVote({ districts, chicago, cook, onChange }: { districts: Distr
 // how fresh it is, and a link to check it.
 function Sources() {
   const s = data.sources;
+  const [open, toggle] = useOpen('kyb-sources-open');
   const cards: { emoji: string; title: string; status: string; planned?: boolean; body: string; links: [string, string][] }[] = [
     { emoji: '🗳️', title: 'Chicago candidates & questions', status: 'Live · official ballot order',
       body: `Every Chicago contest, candidate and ballot question from the Board of Elections’ certified list${s.candidates.asOf ? `, as of ${s.candidates.asOf}` : ''}.`,
@@ -873,11 +874,15 @@ function Sources() {
       links: [['Find your county clerk', ELECTION_AUTHORITIES]] },
   ];
   return (
-    <details id="kyb-sources" open className="group scroll-mt-[calc(var(--kyb-top)+var(--kyb-bar,260px)+16px)] rounded-2xl border-[3px] border-[var(--gb-primary)] bg-[var(--gb-surface)] p-4 sm:p-5 text-[var(--gb-text)]">
-      <summary className="flex cursor-pointer list-none items-center gap-2 text-lg font-black [&::-webkit-details-marker]:hidden">
-        <span aria-hidden="true" className="text-sm motion-safe:transition-transform group-open:rotate-90">▶</span>
-        <span aria-hidden="true">📂</span> Where the data comes from
-      </summary>
+    <section id="kyb-sources" aria-labelledby="kyb-sources-h" className="scroll-mt-[calc(var(--kyb-top)+var(--kyb-bar,260px)+16px)] rounded-2xl border-[3px] border-[var(--gb-primary)] bg-[var(--gb-surface)] p-4 sm:p-5 text-[var(--gb-text)]">
+      <h2 id="kyb-sources-h" className="text-2xl">
+        <button type="button" onClick={toggle} aria-expanded={open} aria-controls="kyb-sources-body" className="inline-flex min-h-[44px] items-center gap-2 text-left">
+          📂 Sources
+          <ChevronDown className={`w-6 h-6 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
+          <span className="sr-only">{open ? '(hide)' : '(show)'}</span>
+        </button>
+      </h2>
+      {open && <div id="kyb-sources-body">
       <p className="mt-3 text-[15px] leading-relaxed max-w-[70ch]">This isn’t the official ballot. It puts the official sources in one place so you can ask “who’s running where I live, who funds them, and when do I vote?” Here’s what each source covers and how fresh it is.</p>
       <ul className="mt-4 grid gap-3 sm:grid-cols-2">
         {cards.map((c) => (
@@ -894,7 +899,8 @@ function Sources() {
         ))}
       </ul>
       <p className="mt-4 text-sm leading-relaxed">Nonpartisan and independent: not affiliated with any campaign, party or election authority. Always double-check your <a className="font-bold text-[var(--gb-link)] underline" href={LINKS.myInfo} target="_blank" rel="noreferrer noopener">official sample ballot</a>.</p>
-    </details>
+      </div>}
+    </section>
   );
 }
 

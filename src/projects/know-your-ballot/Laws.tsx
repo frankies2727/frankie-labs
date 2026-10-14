@@ -20,13 +20,18 @@ const TABS = [
 const SHOWN = 9;
 
 const safeUrl = (u?: string) => (u && /^https:\/\//.test(u) ? u : undefined);
+// The bill's own card in govbot's catalog (its state's catalog opens underneath),
+// else the legislature's page.
+const billUrl = (b: Law) => (b.state && b.session
+  ? `${GOVBOT}legislation.html#bill=${[b.state, b.session, b.id].map(encodeURIComponent).join('~')}`
+  : safeUrl(b.url));
 const dateLabel = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 const day = (iso: string) => dateLabel.format(new Date(`${iso.slice(0, 10)}T00:00:00Z`));
 const inTab = (b: Law, tab: string) => (tab === 'other' ? !b.tags.some((t) => TOPICS.includes(t)) : b.tags.includes(tab));
 const dot = (t: string) => (t === 'elections & voting' ? 'var(--gb-blue-hi)' : t === 'education' ? 'var(--kyb-gold)' : 'var(--gb-primary)');
 
 function Bill({ b }: { key?: string; b: Law }) {
-  const url = safeUrl(b.url);
+  const url = billUrl(b);
   const slip = safeUrl(b.hearing?.witness_slip_url);
   const body = (
     <>
@@ -117,7 +122,7 @@ export function Laws({ laws }: { laws: Law[] }) {
       ) : <p className="text-[15px]">{q ? 'No bills match that search.' : 'No bills in this category in the last 6 months.'}</p>}
 
       <a href={`${GOVBOT}legislation.html#state=il`} target="_blank" rel="noreferrer noopener"
-        className="flex items-center justify-center gap-2 min-h-[56px] rounded-xl border-[3px] border-[var(--kyb-gold)] bg-[var(--gb-primary)] px-4 text-lg font-black text-[var(--gb-on-primary)] hover:brightness-105">
+        className="flex items-center justify-center gap-2 min-h-[56px] rounded-xl border-[3px] border-[var(--kyb-gold)] px-4 text-lg font-black text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]">
         Explore entire catalog of IL bills <ArrowUpRight className="w-5 h-5" aria-hidden="true" />
       </a>
       </div>}

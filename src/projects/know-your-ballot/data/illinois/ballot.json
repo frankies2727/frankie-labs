@@ -103,9 +103,9 @@
       "through": "06/30/2026"
      },
      "social": {
-      "facebook": "https://www.facebook.com/BaileyforIllinois",
-      "x": "https://twitter.com/DarrenBaileyIL",
-      "instagram": "https://www.instagram.com/baileyforillinois"
+      "x": "https://x.com/DarrenBaileyIL",
+      "instagram": "https://www.instagram.com/baileyforillinois",
+      "facebook": "https://www.facebook.com/BaileyforIllinois"
      }
     },
     {
@@ -120,7 +120,17 @@
       "spent": 26626897,
       "cash": 3141018,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "x": "https://x.com/JBPritzker",
+      "facebook": "https://www.facebook.com/jbpritzker",
+      "instagram": "https://www.instagram.com/jbpritzker",
+      "youtube": "https://www.youtube.com/channel/UCI8FbW3Sm5y_3eP2g8kyXHg",
+      "tiktok": "https://www.tiktok.com/@teamjb_hq",
+      "bluesky": "https://bsky.app/profile/jbpritzker.bsky.social",
+      "threads": "https://www.threads.net/@jbpritzker"
+     },
+     "website": "http://www.jbpritzker.com"
     },
     {
      "ballot": 6,
@@ -175,7 +185,12 @@
       "spent": 591591,
       "cash": 1720908,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "x": "https://x.com/kwameraoul",
+      "facebook": "https://www.facebook.com/kwame.raoul.illinois"
+     },
+     "website": "http://www.kwameraoul.com/"
     }
    ],
    "writeIn": false
@@ -217,6 +232,9 @@
       "spent": 493699,
       "cash": 21849062,
       "through": "06/30/2026"
+     },
+     "social": {
+      "x": "https://x.com/Giannoulias"
      }
     }
    ],
@@ -335,7 +353,9 @@
      "incumbent": true,
      "social": {
       "facebook": "https://www.facebook.com/repjackson",
-      "instagram": "https://www.instagram.com/repjackson"
+      "instagram": "https://www.instagram.com/repjackson",
+      "bluesky": "https://bsky.app/profile/jonathanjackson.house.gov",
+      "x": "https://x.com/rep_jackson"
      },
      "website": "https://jonathanjackson.house.gov"
     }
@@ -420,7 +440,8 @@
      "social": {
       "x": "https://x.com/repdeliaramirez",
       "facebook": "https://www.facebook.com/Repdeliaramirez",
-      "instagram": "https://www.instagram.com/repdeliaramirez"
+      "instagram": "https://www.instagram.com/repdeliaramirez",
+      "bluesky": "https://bsky.app/profile/ramirez.house.gov"
      },
      "website": "https://ramirez.house.gov"
     }
@@ -457,6 +478,7 @@
      "social": {
       "x": "https://x.com/RepChuyGarcia",
       "facebook": "https://www.facebook.com/RepChuyGarcia",
+      "instagram": "https://instagram.com/repchuygarcia",
       "bluesky": "https://bsky.app/profile/chuygarcia.house.gov"
      },
      "website": "https://chuygarcia.house.gov"
@@ -520,7 +542,9 @@
       "x": "https://x.com/RepMikeQuigley",
       "facebook": "https://www.facebook.com/repmikequigley",
       "instagram": "https://www.instagram.com/repmikequigley",
-      "youtube": "https://www.youtube.com/channel/UCDP13XegdoZ4bxYHxM34yAA"
+      "youtube": "https://www.youtube.com/channel/UCDP13XegdoZ4bxYHxM34yAA",
+      "bluesky": "https://bsky.app/profile/quigley.house.gov",
+      "tiktok": "https://www.tiktok.com/@repmikequigley"
      },
      "website": "https://quigley.house.gov"
     }
@@ -567,7 +591,9 @@
      "social": {
       "x": "https://x.com/RepCasten",
       "facebook": "https://www.facebook.com/RepSeanCasten",
-      "instagram": "https://www.instagram.com/repseancasten"
+      "instagram": "https://www.instagram.com/repseancasten",
+      "tiktok": "https://www.tiktok.com/@repseancasten",
+      "bluesky": "https://bsky.app/profile/seancasten.bsky.social"
      },
      "website": "https://casten.house.gov"
     }
@@ -682,9 +708,9 @@
       "through": "06/30/2026"
      },
      "social": {
-      "facebook": "https://facebook.com/danielbiss",
-      "instagram": "https://instagram.com/daniel.biss",
       "x": "https://x.com/danielbiss",
+      "facebook": "https://www.facebook.com/DanielBiss",
+      "instagram": "https://instagram.com/daniel.biss",
       "tiktok": "https://tiktok.com/@bissforcongress",
       "bluesky": "https://bsky.app/profile/danielbiss.bsky.social",
       "youtube": "https://youtube.com/@bissforcongress"
@@ -716,7 +742,11 @@
       "cash": 114224,
       "through": "06/30/2026"
      },
-     "website": "https://www.senatoraquino.com/"
+     "website": "https://www.senatoraquino.com/",
+     "social": {
+      "facebook": "https://www.facebook.com/State-Senator-Omar-Aquino-166233740452421",
+      "x": "https://twitter.com/SenatorAquino"
+     }
     }
    ],
    "writeIn": false
@@ -1103,8 +1133,9 @@
      },
      "social": {
       "facebook": "https://www.facebook.com/GracielaGuzmanFor20",
+      "x": "https://x.com/graciela4senate",
       "instagram": "https://www.instagram.com/gracielaforsenate",
-      "x": "https://twitter.com/graciela4senate"
+      "bluesky": "https://bsky.app/profile/gracielaforsenate.bsky.social"
      }
     }
    ],
@@ -1382,8 +1413,7 @@
       "spent": 48561,
       "cash": 247891,
       "through": "06/30/2026"
-     },
-     "website": "https://justfacts.votesmart.org/candidate/biography/186497/omar-williams"
+     }
     }
    ],
    "writeIn": false
@@ -1632,8 +1662,8 @@
       "through": "06/30/2026"
      },
      "social": {
-      "x": "https://x.com/RobynGabel",
       "instagram": "https://www.instagram.com/repgabel",
+      "x": "https://x.com/RobynGabel",
       "linkedin": "https://www.linkedin.com/in/robyn-gabel-7794b017"
      },
      "website": "https://robyngabel.com/"
@@ -1775,8 +1805,7 @@
       "spent": 9356,
       "cash": 114437,
       "through": "06/30/2026"
-     },
-     "website": "https://justfacts.votesmart.org/candidate/biography/195857/angie-guerrero-cuellar"
+     }
     }
    ],
    "writeIn": false
@@ -1803,8 +1832,7 @@
       "spent": 132224,
       "cash": 216245,
       "through": "06/30/2026"
-     },
-     "website": "https://justfacts.votesmart.org/candidate/biography/188093/edgar-gonzalez-jr"
+     }
     }
    ],
    "writeIn": false
@@ -1872,8 +1900,7 @@
       "spent": 123731,
       "cash": 254166,
       "through": "06/30/2026"
-     },
-     "website": "https://justfacts.votesmart.org/candidate/biography/177148/curtis-tarver-ii"
+     }
     }
    ],
    "writeIn": true
@@ -1935,8 +1962,8 @@
       "through": "06/30/2026"
      },
      "social": {
-      "facebook": "https://www.facebook.com/justin.q.slaughter",
-      "x": "https://twitter.com/repjslaughter"
+      "facebook": "https://www.facebook.com/repjustinslaughter",
+      "x": "https://x.com/RepJSlaughter"
      },
      "website": "https://repslaughter27.com/"
     }
@@ -1966,7 +1993,10 @@
       "cash": 377752,
       "through": "06/30/2026"
      },
-     "website": "https://justfacts.votesmart.org/candidate/biography/33351/bob-rita"
+     "website": "http://robertbobrita.com/",
+     "social": {
+      "facebook": "https://www.facebook.com/RepBobRita"
+     }
     }
    ],
    "writeIn": false
@@ -2025,8 +2055,7 @@
       "spent": 63455,
       "cash": 19773,
       "through": "06/30/2026"
-     },
-     "website": "https://justfacts.votesmart.org/candidate/biography/166391/michael-crawford"
+     }
     }
    ],
    "writeIn": false
@@ -2053,8 +2082,7 @@
       "spent": 210934,
       "cash": 63361,
       "through": "06/30/2026"
-     },
-     "website": "https://justfacts.votesmart.org/candidate/biography/213068/lisa-davis"
+     }
     }
    ],
    "writeIn": false
@@ -2082,7 +2110,12 @@
       "cash": 882041,
       "through": "06/30/2026"
      },
-     "website": "https://www.repevans.com/"
+     "website": "https://www.repevans.com/",
+     "social": {
+      "facebook": "https://www.facebook.com/repevans",
+      "instagram": "https://instagram.com/repevans33",
+      "x": "https://twitter.com/Repevans33"
+     }
     }
    ],
    "writeIn": false
@@ -2186,8 +2219,7 @@
       "spent": 47545,
       "cash": 95630,
       "through": "06/30/2026"
-     },
-     "website": "https://justfacts.votesmart.org/candidate/biography/33833/rick-ryan"
+     }
     }
    ],
    "writeIn": false
@@ -2381,7 +2413,11 @@
       "spent": 196096,
       "cash": 40475,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "x": "https://x.com/mspreciousdavis"
+     },
+     "website": "https://preciousbradydavis.com/"
     },
     {
      "ballot": 55,
@@ -2459,7 +2495,11 @@
       "spent": 3097175,
       "cash": 110739,
       "through": "06/30/2026"
-     }
+     },
+     "social": {
+      "x": "https://x.com/tonipreckwinkle"
+     },
+     "website": "http://www.cookcountyil.gov/office-of-the-president/"
     },
     {
      "ballot": 63,
@@ -3701,7 +3741,11 @@
       "PRBA": "Recommended",
       "WBAI": "Recommended"
      },
-     "barSource": "https://www.voteforjudges.org/#1790663185702-b5306af9-9f8a:~:text=Julian%20Sanchez%20Crozier"
+     "barSource": "https://www.voteforjudges.org/#1790663185702-b5306af9-9f8a:~:text=Julian%20Sanchez%20Crozier",
+     "social": {
+      "instagram": "https://instagram.com/jscforjudge",
+      "facebook": "https://facebook.com/jscforjudge"
+     }
     }
    ],
    "writeIn": false
@@ -4928,7 +4972,13 @@
       "cash": 462621,
       "through": "06/30/2026"
      },
-     "website": "https://www.repmbc.com/"
+     "website": "https://www.repmbc.com/",
+     "social": {
+      "facebook": "https://facebook.com/repmbc",
+      "instagram": "https://www.instagram.com/rep.mbc",
+      "x": "https://x.com/RepMBC",
+      "youtube": "https://www.youtube.com/@RepMBC"
+     }
     },
     {
      "party": "Republican",
@@ -5067,7 +5117,7 @@
      },
      "social": {
       "facebook": "https://www.facebook.com/senatordavesyverson",
-      "x": "https://twitter.com/Sen1Dave"
+      "x": "https://x.com/Sen1Dave"
      },
      "website": "https://senatordavesyverson.com/"
     }
@@ -5260,8 +5310,8 @@
       "through": "06/30/2026"
      },
      "social": {
-      "x": "https://twitter.com/SenatorRezin",
       "facebook": "https://www.facebook.com/statesenatorsuerezin",
+      "x": "https://x.com/SenatorRezin",
       "tiktok": "https://www.tiktok.com/@state.senator.sue"
      },
      "website": "https://senatorrezin.com/"
@@ -5474,8 +5524,7 @@
       "spent": 373420,
       "cash": 484458,
       "through": "06/30/2026"
-     },
-     "website": "https://justfacts.votesmart.org/candidate/biography/135077/natalie-manley"
+     }
     },
     {
      "party": "Republican",
@@ -6650,8 +6699,9 @@
      },
      "social": {
       "facebook": "https://facebook.com/jedforfreedom",
-      "x": "https://twitter.com/jedforfreedom",
-      "instagram": "https://instagram.com/jedforfreedom"
+      "x": "https://x.com/jedforfreedom",
+      "instagram": "https://instagram.com/jedforfreedom",
+      "tiktok": "https://tiktok.com/@jedforfreedom"
      }
     }
    ],
@@ -7006,7 +7056,8 @@
      "incumbent": true,
      "social": {
       "x": "https://x.com/RepMaryMiller",
-      "facebook": "https://www.facebook.com/RepMaryMiller"
+      "facebook": "https://www.facebook.com/RepMaryMiller",
+      "instagram": "https://instagram.com/RepMaryMiller"
      },
      "website": "https://marymiller.house.gov"
     }
@@ -7295,7 +7346,9 @@
      "social": {
       "x": "https://x.com/RepNikkiB",
       "facebook": "https://www.facebook.com/RepNikkiBudzinski",
-      "instagram": "https://www.instagram.com/repnikki"
+      "instagram": "https://www.instagram.com/repnikki",
+      "youtube": "https://www.youtube.com/channel/UCO-9KQJRVP0ZxB0cjjgjY7Q",
+      "bluesky": "https://bsky.app/profile/budzinski.house.gov"
      },
      "website": "https://budzinski.house.gov"
     },
@@ -7591,7 +7644,10 @@
       "cash": 100996,
       "through": "06/30/2026"
      },
-     "website": "https://justfacts.votesmart.org/candidate/biography/135086/sue-scherer"
+     "website": "http://sueschererforstaterep.com/",
+     "social": {
+      "instagram": "https://www.instagram.com/staterepsue96"
+     }
     }
    ],
    "writeIn": false,
@@ -7907,10 +7963,10 @@
       "through": "06/30/2026"
      },
      "social": {
-      "x": "https://twitter.com/nabeelaforil",
-      "linkedin": "https://www.linkedin.com/in/nabeela-syed",
+      "x": "https://x.com/nabeelaforil",
       "facebook": "https://www.facebook.com/Nabeela4Illinois",
-      "instagram": "https://www.instagram.com/nabeelasyed"
+      "instagram": "https://www.instagram.com/nabeelasyed",
+      "linkedin": "https://www.linkedin.com/in/nabeela-syed"
      }
     },
     {
@@ -7964,7 +8020,9 @@
      "social": {
       "x": "https://x.com/RepBillFoster",
       "facebook": "https://www.facebook.com/CongressmanBillFoster",
-      "youtube": "https://www.youtube.com/channel/UCicixINQr_-3cFHI2bJzFpQ"
+      "youtube": "https://www.youtube.com/channel/UCicixINQr_-3cFHI2bJzFpQ",
+      "instagram": "https://www.instagram.com/repbillfoster",
+      "bluesky": "https://bsky.app/profile/repbillfoster.bsky.social"
      },
      "website": "https://foster.house.gov"
     },
@@ -8241,8 +8299,8 @@
      },
      "social": {
       "facebook": "https://www.facebook.com/RepRitaMayfield",
-      "linkedin": "https://www.linkedin.com/in/rita-mayfield-40ab32",
-      "x": "https://twitter.com/ritamayfield"
+      "x": "https://twitter.com/ritamayfield",
+      "linkedin": "https://www.linkedin.com/in/rita-mayfield-40ab32"
      },
      "website": "https://www.ritamayfield60.com/"
     }
@@ -8347,6 +8405,7 @@
       "through": "06/30/2026"
      },
      "social": {
+      "facebook": "https://www.facebook.com/StateRepDMM",
       "instagram": "https://www.instagram.com/repdebbiemeyersmartin"
      },
      "website": "https://www.repdebbiemeyersmartin.com/"
@@ -8421,8 +8480,7 @@
       "spent": 152895,
       "cash": 64534,
       "through": "06/30/2026"
-     },
-     "website": "https://justfacts.votesmart.org/candidate/biography/33782/will-davis"
+     }
     }
    ],
    "writeIn": false,
@@ -8874,7 +8932,9 @@
      "incumbent": true,
      "social": {
       "x": "https://x.com/RepUnderwood",
-      "facebook": "https://www.facebook.com/repunderwood"
+      "bluesky": "https://bsky.app/profile/underwood.house.gov",
+      "facebook": "https://www.facebook.com/repunderwood",
+      "instagram": "https://instagram.com/repunderwood"
      },
      "website": "https://underwood.house.gov"
     },
@@ -8926,8 +8986,7 @@
       "spent": 829871,
       "cash": 1860304,
       "through": "06/30/2026"
-     },
-     "website": "https://justfacts.votesmart.org/candidate/biography/6334/jay-hoffman"
+     }
     }
    ],
    "writeIn": false,
@@ -9017,7 +9076,10 @@
       "cash": 123305,
       "through": "09/30/2026"
      },
-     "website": "https://repwindhorst.com/"
+     "website": "https://repwindhorst.com/",
+     "social": {
+      "facebook": "https://www.facebook.com/StateRepWindhorst"
+     }
     }
    ],
    "writeIn": false,
@@ -9385,7 +9447,7 @@
       "cash": 375099,
       "through": "06/30/2026"
      },
-     "website": "https://justfacts.votesmart.org/candidate/biography/149703/lawrence-walsh-jr"
+     "website": "http://larrywalshjr.com/"
     }
    ],
    "writeIn": false,
@@ -9505,7 +9567,10 @@
       "cash": 27747,
       "through": "06/30/2026"
      },
-     "website": "https://repniemerg.com/"
+     "website": "https://repniemerg.com/",
+     "social": {
+      "facebook": "https://www.facebook.com/State-Representative-Adam-Niemerg-101445711896839"
+     }
     }
    ],
    "writeIn": false,
@@ -9562,6 +9627,9 @@
       "spent": 26722,
       "cash": 36745,
       "through": "06/30/2026"
+     },
+     "social": {
+      "x": "https://x.com/bradhalbrook"
      }
     }
    ],
@@ -11504,6 +11572,8 @@
   "asOf": "2026-10-14T00:14:52Z",
   "laws": [
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5816",
     "title": "FIRE PROT DIST-TRUSTEE REMOVAL",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5816&GAID=18&DocTypeID=HB&LegId=168916&SessionID=114",
@@ -11512,6 +11582,8 @@
     "latest_action_desc": "Filed with the Clerk by Rep. John M. Cabello"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR1035",
     "title": "MEMORIAL-DR. MARK MCCONNELL",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1035&GAID=18&DocTypeID=HR&LegId=168914&SessionID=114",
@@ -11520,6 +11592,8 @@
     "latest_action_desc": "Filed with the Clerk by Rep. Jehan Gordon-Booth"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR1036",
     "title": "CONGRATS-MICHAEL KRELOFF",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1036&GAID=18&DocTypeID=HR&LegId=168915&SessionID=114",
@@ -11528,6 +11602,8 @@
     "latest_action_desc": "Filed with the Clerk by Rep. Jennifer Gong-Gershowitz"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB1208",
     "title": "CRIM PRO-REVOKE PRETRIAL REL",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1208&GAID=18&DocTypeID=HB&LegId=156996&SessionID=114",
@@ -11536,6 +11612,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Adam M. Niemerg"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4907",
     "title": "CRIM PRO-PRETRIAL RELEASE",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4907&GAID=18&DocTypeID=HB&LegId=166205&SessionID=114",
@@ -11544,6 +11622,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Adam M. Niemerg"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5798",
     "title": "DIGITAL ASSET TAX ACT-REPEAL",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5798&GAID=18&DocTypeID=HB&LegId=168767&SessionID=114",
@@ -11555,6 +11635,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Joe C. Sosnowski"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5806",
     "title": "SOCIAL MEDIA TAX-REPEAL",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5806&GAID=18&DocTypeID=HB&LegId=168834&SessionID=114",
@@ -11565,6 +11647,8 @@
     "latest_action_desc": "Added Chief Co-Sponsor Rep. Steven Reick"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5807",
     "title": "TARGETED AD TAX-REPEAL",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5807&GAID=18&DocTypeID=HB&LegId=168835&SessionID=114",
@@ -11575,6 +11659,8 @@
     "latest_action_desc": "Added Chief Co-Sponsor Rep. Steven Reick"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5811",
     "title": "SPORTS WAGERING-EXCHANGE TAX",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5811&GAID=18&DocTypeID=HB&LegId=168884&SessionID=114",
@@ -11585,6 +11671,8 @@
     "latest_action_desc": "Added Chief Co-Sponsor Rep. Steven Reick"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5814",
     "title": "SPORTS WAGERING-FANTASY MKT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5814&GAID=18&DocTypeID=HB&LegId=168901&SessionID=114",
@@ -11593,6 +11681,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Jennifer Sanalitro"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR1033",
     "title": "URGES-NOMINATE CENSUS DIRECTOR",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1033&GAID=18&DocTypeID=HR&LegId=168910&SessionID=114",
@@ -11601,6 +11691,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. David Friess"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2020",
     "title": "LINE-OF-DUTY DISABILITY",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2020&GAID=18&DocTypeID=SB&LegId=161431&SessionID=114",
@@ -11609,6 +11701,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Mary Edly-Allen"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3082",
     "title": "POLICE-LINE-OF-DUTY DISABILITY",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3082&GAID=18&DocTypeID=SB&LegId=165663&SessionID=114",
@@ -11619,6 +11713,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Mary Edly-Allen"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5287",
     "title": "CD CORR-SENTENCE CREDITS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5287&GAID=18&DocTypeID=HB&LegId=167009&SessionID=114",
@@ -11627,6 +11723,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Michael Crawford"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR1034",
     "title": "MEMORIAL-MICHAEL R. WEHMAN SR.",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1034&GAID=18&DocTypeID=HR&LegId=168913&SessionID=114",
@@ -11635,6 +11733,8 @@
     "latest_action_desc": "Filed with the Clerk by Rep. Joyce Mason"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5808",
     "title": "STUDENT ATHLETE-TRANSFER RULES",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5808&GAID=18&DocTypeID=HB&LegId=168853&SessionID=114",
@@ -11645,6 +11745,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Michelle Mussman"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB12",
     "title": "ESTATE TX-EXCLUSION AMOUNT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=12&GAID=18&DocTypeID=HB&LegId=155667&SessionID=114",
@@ -11655,6 +11757,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Regan Deering"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB1479",
     "title": "CRIM PRO-REVOKE PRETRIAL REL",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1479&GAID=18&DocTypeID=HB&LegId=157548&SessionID=114",
@@ -11663,6 +11767,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Brandun Schweizer"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB1482",
     "title": "CRIM PRO-PRETRIAL DETENTION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1482&GAID=18&DocTypeID=HB&LegId=157551&SessionID=114",
@@ -11671,6 +11777,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Brandun Schweizer"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB1483",
     "title": "CRIM CD-PRETRIAL RELEASE",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1483&GAID=18&DocTypeID=HB&LegId=157552&SessionID=114",
@@ -11679,6 +11787,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Brandun Schweizer"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5568",
     "title": "LOC GOV TORT IMMUNITY",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5568&GAID=18&DocTypeID=HB&LegId=167610&SessionID=114",
@@ -11687,6 +11797,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Aarón M. Ortíz"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR1027",
     "title": "CONDEMNS SOCIALISM",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1027&GAID=18&DocTypeID=HR&LegId=168891&SessionID=114",
@@ -11695,6 +11807,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Brad Halbrook"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR1032",
     "title": "CONGRATS-ST. FRANCIS PARISH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1032&GAID=18&DocTypeID=HR&LegId=168909&SessionID=114",
@@ -11703,6 +11817,8 @@
     "latest_action_desc": "Filed with the Clerk by Rep. Adam M. Niemerg"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2715",
     "title": "OPEN MTGS-STATEWIDE ASSOC",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2715&GAID=18&DocTypeID=SB&LegId=164394&SessionID=114",
@@ -11711,6 +11827,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Adriane L. Johnson"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3848",
     "title": "INC TX-INSURANCE DEDUCTION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3848&GAID=18&DocTypeID=SB&LegId=167265&SessionID=114",
@@ -11722,6 +11840,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Donald P. DeWitte"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3849",
     "title": "PROP TX-GENERAL HOMESTEAD-CPI",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3849&GAID=18&DocTypeID=SB&LegId=167266&SessionID=114",
@@ -11730,6 +11850,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Donald P. DeWitte"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3868",
     "title": "INC TAX-PROP TAX CREDIT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3868&GAID=18&DocTypeID=SB&LegId=167298&SessionID=114",
@@ -11740,6 +11862,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Donald P. DeWitte"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB4029",
     "title": "PROP TX-SENIOR FREEZE",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4029&GAID=18&DocTypeID=SB&LegId=167586&SessionID=114",
@@ -11748,6 +11872,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Seth Lewis"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2878",
     "title": "INS-DENTAL COVERAGE REIMBURSE",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2878&GAID=18&DocTypeID=SB&LegId=165140&SessionID=114",
@@ -11756,6 +11882,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Sue Rezin"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5815",
     "title": "CANNABIS-IL FREEDOM FUND",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5815&GAID=18&DocTypeID=HB&LegId=168907&SessionID=114",
@@ -11764,6 +11892,8 @@
     "latest_action_desc": "Filed with the Clerk by Rep. La Shawn K. Ford"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR1031",
     "title": "CONGRATS-CHARLIE SCHLENKER",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1031&GAID=18&DocTypeID=HR&LegId=168906&SessionID=114",
@@ -11772,6 +11902,8 @@
     "latest_action_desc": "Filed with the Clerk by Rep. Sharon Chung"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4443",
     "title": "ILLINOIS FUTURE FUND",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4443&GAID=18&DocTypeID=HB&LegId=165148&SessionID=114",
@@ -11780,6 +11912,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Anne Stava"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR1030",
     "title": "CONGRATS-MARIA E. JONAS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1030&GAID=18&DocTypeID=HR&LegId=168903&SessionID=114",
@@ -11788,6 +11922,8 @@
     "latest_action_desc": "Filed with the Clerk by Rep. Laura Faver Dias"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5813",
     "title": "EVICTION-NONPAYMENT OF RENT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5813&GAID=18&DocTypeID=HB&LegId=168900&SessionID=114",
@@ -11798,6 +11934,8 @@
     "latest_action_desc": "Filed with the Clerk by Rep. Tony M. McCombie"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR1029",
     "title": "MEMORIAL-REV. DR. WILLIAMS JR.",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1029&GAID=18&DocTypeID=HR&LegId=168897&SessionID=114",
@@ -11806,6 +11944,8 @@
     "latest_action_desc": "Filed with the Clerk by Rep. Michael Crawford"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3821",
     "title": "MINIMUM WAGE-VARIOUS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3821&GAID=18&DocTypeID=SB&LegId=167227&SessionID=114",
@@ -11816,6 +11956,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Mike Simmons"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5786",
     "title": "CO2 PIPELINES-EMINENT DOMAIN",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5786&GAID=18&DocTypeID=HB&LegId=168604&SessionID=114",
@@ -11824,6 +11966,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Anna Moeller"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5812",
     "title": "$SOS-COSMETOLOGY CIVICS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5812&GAID=18&DocTypeID=HB&LegId=168892&SessionID=114",
@@ -11832,6 +11976,8 @@
     "latest_action_desc": "Filed with the Clerk by Rep. La Shawn K. Ford"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR1028",
     "title": "MEMORIAL-MICHEAL WILLIAMS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1028&GAID=18&DocTypeID=HR&LegId=168893&SessionID=114",
@@ -11840,6 +11986,8 @@
     "latest_action_desc": "Filed with the Clerk by Rep. Jehan Gordon-Booth"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3175",
     "title": "INC TX-OVERTIME WAGES",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3175&GAID=18&DocTypeID=SB&LegId=165822&SessionID=114",
@@ -11850,6 +11998,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Darby A. Hills"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB1382",
     "title": "ETHICS COMM-INVESTIGATIONS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1382&GAID=18&DocTypeID=HB&LegId=157328&SessionID=114",
@@ -11860,6 +12010,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Brandun Schweizer"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB1385",
     "title": "ETHICS-LOBBYING RESTRICTION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1385&GAID=18&DocTypeID=HB&LegId=157331&SessionID=114",
@@ -11870,6 +12022,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Brandun Schweizer"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB1554",
     "title": "ELEC CD-USE OF FUNDS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1554&GAID=18&DocTypeID=HB&LegId=157646&SessionID=114",
@@ -11880,6 +12034,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Brandun Schweizer"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB1727",
     "title": "PEN CD-FELONY-SUSPEND BENEFITS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1727&GAID=18&DocTypeID=HB&LegId=158909&SessionID=114",
@@ -11890,6 +12046,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Brandun Schweizer"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2413",
     "title": "LOBBYING PROHIBITION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2413&GAID=18&DocTypeID=HB&LegId=160153&SessionID=114",
@@ -11898,6 +12056,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Brandun Schweizer"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR1026",
     "title": "AUDIT-GROW YOUR OWN ILLINOIS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1026&GAID=18&DocTypeID=HR&LegId=168890&SessionID=114",
@@ -11906,6 +12066,8 @@
     "latest_action_desc": "Filed with the Clerk by Rep. Tony M. McCombie"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2981",
     "title": "CLIMATE CHANGE SUPERFUND",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2981&GAID=18&DocTypeID=SB&LegId=165475&SessionID=114",
@@ -11916,6 +12078,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Robert Peters"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2563",
     "title": "CONDO-RESERVE STUDY",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2563&GAID=18&DocTypeID=HB&LegId=160431&SessionID=114",
@@ -11924,6 +12088,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Diane Blair-Sherlock"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3776",
     "title": "EDUCATION CHOICE FOR CHILD ACT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3776&GAID=18&DocTypeID=SB&LegId=167091&SessionID=114",
@@ -11934,6 +12100,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Dave Syverson"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4523",
     "title": "PFAS-CONTAINING PESTICIDES",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4523&GAID=18&DocTypeID=HB&LegId=165334&SessionID=114",
@@ -11944,6 +12112,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Laura Faver Dias"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5151",
     "title": "AUTO LICENSE PLATE RECOGNITION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5151&GAID=18&DocTypeID=HB&LegId=166766&SessionID=114",
@@ -11954,6 +12124,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Laura Faver Dias"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5804",
     "title": "MEDICAID-MCO RX PAYMENTS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5804&GAID=18&DocTypeID=HB&LegId=168815&SessionID=114",
@@ -11964,6 +12136,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Maurice A. West, II"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4701",
     "title": "LIMITATIONS FACILITY FEES ACT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4701&GAID=18&DocTypeID=HB&LegId=165720&SessionID=114",
@@ -11974,6 +12148,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Gregg Johnson"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR1025",
     "title": "CONGRATS-CAPT. A. F. CIGANEK",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1025&GAID=18&DocTypeID=HR&LegId=168880&SessionID=114",
@@ -11982,6 +12158,8 @@
     "latest_action_desc": "Filed with the Clerk by Rep. John M. Cabello"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB1050",
     "title": "LOCAL GOVERNMENT-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1050&GAID=18&DocTypeID=SB&LegId=158838&SessionID=114",
@@ -11990,6 +12168,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Paul Jacobs"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2687",
     "title": "HOME UTILITY RELIEF ACT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2687&GAID=18&DocTypeID=SB&LegId=164069&SessionID=114",
@@ -11998,6 +12178,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Paul Jacobs"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2745",
     "title": "PROP TX-DISABLED PERSONS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2745&GAID=18&DocTypeID=SB&LegId=164600&SessionID=114",
@@ -12006,6 +12188,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Paul Jacobs"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3008",
     "title": "DHS-ABLE PROGRAM INFO MATERIAL",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3008&GAID=18&DocTypeID=SB&LegId=165512&SessionID=114",
@@ -12014,6 +12198,8 @@
     "latest_action_desc": "Alternate Chief Sponsor Changed to Rep. Dagmara Avelar"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3540",
     "title": "PROP TX-ASSESSMENT LIMIT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3540&GAID=18&DocTypeID=SB&LegId=166580&SessionID=114",
@@ -12022,6 +12208,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Paul Jacobs"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3580",
     "title": "ENERGY-GENERATION TASK FORCE",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3580&GAID=18&DocTypeID=SB&LegId=166654&SessionID=114",
@@ -12032,6 +12220,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Paul Jacobs"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3581",
     "title": "EPA-GREENHOUSE GASES",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3581&GAID=18&DocTypeID=SB&LegId=166655&SessionID=114",
@@ -12040,6 +12230,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Paul Jacobs"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3582",
     "title": "DCEO-BUSINESS ASSIST REFORM",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3582&GAID=18&DocTypeID=SB&LegId=166656&SessionID=114",
@@ -12048,6 +12240,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Paul Jacobs"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5809",
     "title": "STUDENT CARDIAC SAFETY ACT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5809&GAID=18&DocTypeID=HB&LegId=168858&SessionID=114",
@@ -12058,6 +12252,8 @@
     "latest_action_desc": "Filed with the Clerk by Rep. Lindsey LaPointe"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB1581",
     "title": "EQUITABLE UNIVERSITY FUNDING",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1581&GAID=18&DocTypeID=HB&LegId=157693&SessionID=114",
@@ -12068,6 +12264,8 @@
     "latest_action_desc": "Removed Co-Sponsor Rep. Michael Crawford"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3688",
     "title": "MENOPAUSE THERAPY & EDUCATION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3688&GAID=18&DocTypeID=SB&LegId=166896&SessionID=114",
@@ -12078,6 +12276,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5574",
     "title": "DHFS-PACE-OUTREACH & EDUCATION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5574&GAID=18&DocTypeID=HB&LegId=167616&SessionID=114",
@@ -12088,6 +12288,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5552",
     "title": "EDUCATION-VARIOUS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5552&GAID=18&DocTypeID=HB&LegId=167567&SessionID=114",
@@ -12098,6 +12300,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5321",
     "title": "SCH CD-TEACHER SALARY-CONT ED",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5321&GAID=18&DocTypeID=HB&LegId=167081&SessionID=114",
@@ -12108,6 +12312,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5107",
     "title": "SCH SAFETY-PANIC ALERT SYSTEM",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5107&GAID=18&DocTypeID=HB&LegId=166665&SessionID=114",
@@ -12118,6 +12324,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4826",
     "title": "IDFPR-CONTINUING EDUCATION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4826&GAID=18&DocTypeID=HB&LegId=166047&SessionID=114",
@@ -12128,6 +12336,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4304",
     "title": "HIGHER ED STUDENT BILL OF RTS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4304&GAID=18&DocTypeID=HB&LegId=164803&SessionID=114",
@@ -12138,6 +12348,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB1718",
     "title": "USE/OCC TAX-SCHOOL HOLIDAY",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1718&GAID=18&DocTypeID=SB&LegId=160738&SessionID=114",
@@ -12148,6 +12360,8 @@
     "latest_action_desc": "Added as Chief Co-Sponsor Sen. Christopher Belt"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3774",
     "title": "SCH CD-ADMIN WITHDRAW-TRUANCY",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3774&GAID=18&DocTypeID=SB&LegId=167089&SessionID=114",
@@ -12158,6 +12372,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3361",
     "title": "SCH CD-RELIGIOUS HAIRSTYLES",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3361&GAID=18&DocTypeID=SB&LegId=166238&SessionID=114",
@@ -12168,6 +12384,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3224",
     "title": "ILLINOIS SCHOOL FOR THE BLIND",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3224&GAID=18&DocTypeID=SB&LegId=165939&SessionID=114",
@@ -12178,6 +12396,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5204",
     "title": "EARLY LEARNING COUNCIL",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5204&GAID=18&DocTypeID=HB&LegId=166861&SessionID=114",
@@ -12188,6 +12408,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5135",
     "title": "ADULT EDUCATION PROGRAMS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5135&GAID=18&DocTypeID=HB&LegId=166729&SessionID=114",
@@ -12198,6 +12420,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4862",
     "title": "SCH CD-STAFF MENTAL HEALTH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4862&GAID=18&DocTypeID=HB&LegId=166150&SessionID=114",
@@ -12208,6 +12432,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4788",
     "title": "SCH CD-CPR-FEMALE MANIKINS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4788&GAID=18&DocTypeID=HB&LegId=165943&SessionID=114",
@@ -12218,6 +12444,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4687",
     "title": "REPEAL-LOAN DEFAULT ACT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4687&GAID=18&DocTypeID=HB&LegId=165672&SessionID=114",
@@ -12228,6 +12456,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB1783",
     "title": "ST BD ED-LANGUAGE ASSESSMENT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1783&GAID=18&DocTypeID=HB&LegId=159179&SessionID=114",
@@ -12238,6 +12468,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2918",
     "title": "PARENT-TEACHER ADVISORY COMM",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2918&GAID=18&DocTypeID=SB&LegId=165286&SessionID=114",
@@ -12248,6 +12480,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2914",
     "title": "SCH CD-REMOVE/DISMISS TEACHERS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2914&GAID=18&DocTypeID=SB&LegId=165276&SessionID=114",
@@ -12258,6 +12492,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2913",
     "title": "SCH CD-TEACHER EVALUATION PLAN",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2913&GAID=18&DocTypeID=SB&LegId=165275&SessionID=114",
@@ -12268,6 +12504,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4239",
     "title": "SCH CD-HIGH SCH COURSE CREDIT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4239&GAID=18&DocTypeID=HB&LegId=164711&SessionID=114",
@@ -12278,6 +12516,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB3860",
     "title": "SCH CD-DEACTIVATE SCH-CONTRACT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3860&GAID=18&DocTypeID=HB&LegId=162759&SessionID=114",
@@ -12288,6 +12528,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB3250",
     "title": "SCH CD-GLOBAL SCHOLAR CERTIFY",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3250&GAID=18&DocTypeID=HB&LegId=161736&SessionID=114",
@@ -12298,6 +12540,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB3175",
     "title": "VEH CD-PASSING SCHOOL BUS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3175&GAID=18&DocTypeID=HB&LegId=161592&SessionID=114",
@@ -12308,6 +12552,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4339",
     "title": "SCH CD-HIGH SCH-REGISTER VOTER",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4339&GAID=18&DocTypeID=HB&LegId=164865&SessionID=114",
@@ -12318,6 +12564,8 @@
     "latest_action_desc": "Added as Alternate Chief Co-Sponsor Sen. Adriane Johnson"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3783",
     "title": "INC TX-EDUCATION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3783&GAID=18&DocTypeID=SB&LegId=167100&SessionID=114",
@@ -12328,6 +12576,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Erica Harriss"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2909",
     "title": "SCH CD-TEACHER EVALUATION-AI",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2909&GAID=18&DocTypeID=SB&LegId=165259&SessionID=114",
@@ -12338,6 +12588,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4577",
     "title": "KINDERGARTEN-PLAY-BASED LEARN",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4577&GAID=18&DocTypeID=HB&LegId=165437&SessionID=114",
@@ -12348,6 +12600,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4535",
     "title": "SCH CD-E-LEARNING DAY-ELECTION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4535&GAID=18&DocTypeID=HB&LegId=165362&SessionID=114",
@@ -12358,6 +12612,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB1807",
     "title": "DFPR-NURSING EDUCATION PROGRAM",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1807&GAID=18&DocTypeID=HB&LegId=159239&SessionID=114",
@@ -12368,6 +12624,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3855",
     "title": "ENGINEER STUDENT SCHOLARSHIP",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3855&GAID=18&DocTypeID=SB&LegId=167280&SessionID=114",
@@ -12378,6 +12636,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Darby A. Hills"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3338",
     "title": "FACILITATE VOTING FOR ALL",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3338&GAID=18&DocTypeID=SB&LegId=166197&SessionID=114",
@@ -12388,6 +12648,8 @@
     "latest_action_desc": "Added as Chief Co-Sponsor Sen. David Koehler"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SR752",
     "title": "SCHOOL START TIMES",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=752&GAID=18&DocTypeID=SR&LegId=168399&SessionID=114",
@@ -12398,6 +12660,8 @@
     "latest_action_desc": "Pursuant to Senate Rule 3-9(b) / Referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SJR58",
     "title": "DENY-SCHOOL CODE WAIVER",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=58&GAID=18&DocTypeID=SJR&LegId=168099&SessionID=114",
@@ -12408,6 +12672,8 @@
     "latest_action_desc": "Pursuant to Senate Rule 3-9(b) / Referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB958",
     "title": "ELECTIONS-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=958&GAID=18&DocTypeID=SB&LegId=158691&SessionID=114",
@@ -12418,6 +12684,8 @@
     "latest_action_desc": "Senate Floor Amendment No. 1 Pursuant to Senate Rule 3-9(b) / Referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3393",
     "title": "OSFM-CONTINUING EDUCATION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3393&GAID=18&DocTypeID=SB&LegId=166313&SessionID=114",
@@ -12428,6 +12696,8 @@
     "latest_action_desc": "Pursuant to Senate Rule 3-9(b) / Referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2350",
     "title": "$ISBE-COORDINATED STRATEGY",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2350&GAID=18&DocTypeID=SB&LegId=162313&SessionID=114",
@@ -12439,6 +12709,8 @@
     "latest_action_desc": "Pursuant to Senate Rule 3-9(b) / Referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2797",
     "title": "MEDICAID-SCHOOL DENTAL PGRAM",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2797&GAID=18&DocTypeID=SB&LegId=164873&SessionID=114",
@@ -12450,6 +12722,8 @@
     "latest_action_desc": "Senate Floor Amendment No. 1 Pursuant to Senate Rule 3-9(b) / Referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2975",
     "title": "$ISBE-TRANSPORT/SP ED TUITION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2975&GAID=18&DocTypeID=SB&LegId=165466&SessionID=114",
@@ -12460,6 +12734,8 @@
     "latest_action_desc": "Pursuant to Senate Rule 3-9(b) / Referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB1943",
     "title": "$BD ELECTIONS-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1943&GAID=18&DocTypeID=HB&LegId=159587&SessionID=114",
@@ -12470,6 +12746,8 @@
     "latest_action_desc": "Rule 19(b) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2365",
     "title": "$ISBE-HEALTHY SCHOOL MEALS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2365&GAID=18&DocTypeID=HB&LegId=160078&SessionID=114",
@@ -12480,6 +12758,8 @@
     "latest_action_desc": "Rule 19(b) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4507",
     "title": "$SECURE ELECTIONS FUND",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4507&GAID=18&DocTypeID=HB&LegId=165292&SessionID=114",
@@ -12491,6 +12771,8 @@
     "latest_action_desc": "Rule 19(b) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4525",
     "title": "$ISBE-LAKE COUNTY TECH CAMPUS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4525&GAID=18&DocTypeID=HB&LegId=165352&SessionID=114",
@@ -12502,6 +12784,8 @@
     "latest_action_desc": "Rule 19(b) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4795",
     "title": "SCH-CD-LICENSE-EARLY CHILDHOOD",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4795&GAID=18&DocTypeID=HB&LegId=165954&SessionID=114",
@@ -12513,6 +12797,8 @@
     "latest_action_desc": "Senate Floor Amendment No. 1 Rule 19(b) / Motion Referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5573",
     "title": "$ICCB-COM COL ECONOMIC EMPOWER",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5573&GAID=18&DocTypeID=HB&LegId=167615&SessionID=114",
@@ -12524,6 +12810,8 @@
     "latest_action_desc": "Rule 19(b) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HJR50",
     "title": "PRP & ISBE AI ANALYSIS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=50&GAID=18&DocTypeID=HJR&LegId=165093&SessionID=114",
@@ -12535,6 +12823,8 @@
     "latest_action_desc": "Rule 19(b) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HJRCA27",
     "title": "CONAMEND-REDISTRICTING",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=27&GAID=18&DocTypeID=HJRCA&LegId=168319&SessionID=114",
@@ -12545,6 +12835,8 @@
     "latest_action_desc": "Rule 19(b) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SR542",
     "title": "SERVICE ANIMALS IN SCHOOLS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=542&GAID=18&DocTypeID=SR&LegId=164690&SessionID=114",
@@ -12555,6 +12847,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Mary Edly-Allen"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4247",
     "title": "SCH CD-ASTHMA MEDICATION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4247&GAID=18&DocTypeID=HB&LegId=164719&SessionID=114",
@@ -12566,6 +12860,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4420",
     "title": "COLLEGE PRESS ACT-PUBLIC MEDIA",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4420&GAID=18&DocTypeID=HB&LegId=165094&SessionID=114",
@@ -12576,6 +12872,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4575",
     "title": "PEN CD-CTPF-TRUSTEE ELECTION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4575&GAID=18&DocTypeID=HB&LegId=165435&SessionID=114",
@@ -12586,6 +12884,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4754",
     "title": "PRIVATE EDUCATION LOANS-REPORT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4754&GAID=18&DocTypeID=HB&LegId=165886&SessionID=114",
@@ -12596,6 +12896,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5093",
     "title": "HIGHER ED-IN-STATE TUITION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5093&GAID=18&DocTypeID=HB&LegId=166637&SessionID=114",
@@ -12606,6 +12908,8 @@
     "latest_action_desc": "Governor Approved"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2918",
     "title": "SCH CD-DYSLEXIA SCREENING",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2918&GAID=18&DocTypeID=HB&LegId=161121&SessionID=114",
@@ -12617,6 +12921,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Tony M. McCombie"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB1647",
     "title": "INC TX-EDUCATION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1647&GAID=18&DocTypeID=SB&LegId=160500&SessionID=114",
@@ -12628,6 +12934,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Erica Harriss"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4435",
     "title": "CORPORATE ELECTION ACTIVITIES",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4435&GAID=18&DocTypeID=HB&LegId=165138&SessionID=114",
@@ -12638,6 +12946,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Lindsey LaPointe"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5611",
     "title": "EDUCATION PROPERTY TAX RELIEF",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5611&GAID=18&DocTypeID=HB&LegId=167665&SessionID=114",
@@ -12649,6 +12959,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Brandun Schweizer"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB13",
     "title": "EQUITABLE UNIVERSITY FUNDING",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=13&GAID=18&DocTypeID=SB&LegId=157103&SessionID=114",
@@ -12659,6 +12971,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3907",
     "title": "CHILD CARE-TERMINOLOGY",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3907&GAID=18&DocTypeID=SB&LegId=167358&SessionID=114",
@@ -12669,6 +12983,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB412",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=412&GAID=18&DocTypeID=SB&LegId=158046&SessionID=114",
@@ -12679,6 +12995,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB417",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=417&GAID=18&DocTypeID=SB&LegId=158069&SessionID=114",
@@ -12689,6 +13007,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB418",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=418&GAID=18&DocTypeID=SB&LegId=158073&SessionID=114",
@@ -12699,6 +13019,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB419",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=419&GAID=18&DocTypeID=SB&LegId=158078&SessionID=114",
@@ -12709,6 +13031,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB938",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=938&GAID=18&DocTypeID=SB&LegId=158670&SessionID=114",
@@ -12719,6 +13043,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR923",
     "title": "IDEC-STUDY-DAY CARE LICENSURE",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=923&GAID=18&DocTypeID=HR&LegId=168603&SessionID=114",
@@ -12729,6 +13055,8 @@
     "latest_action_desc": "House Floor Amendment No. 2 Adopted"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3391",
     "title": "SCH CD-CHARTER SCHOOL-CLOSURE",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3391&GAID=18&DocTypeID=SB&LegId=166297&SessionID=114",
@@ -12739,6 +13067,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB415",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=415&GAID=18&DocTypeID=SB&LegId=158060&SessionID=114",
@@ -12749,6 +13079,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB416",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=416&GAID=18&DocTypeID=SB&LegId=158064&SessionID=114",
@@ -12759,6 +13091,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR957",
     "title": "CONGRATS-ST. MARY SCHOOL",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=957&GAID=18&DocTypeID=HR&LegId=168679&SessionID=114",
@@ -12769,6 +13103,8 @@
     "latest_action_desc": "Placed on Calendar Agreed Resolutions"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SJR50",
     "title": "SCH. DISTS.-ARABIC FL OPTION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=50&GAID=18&DocTypeID=SJR&LegId=165816&SessionID=114",
@@ -12779,6 +13115,8 @@
     "latest_action_desc": "Resolution Adopted"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR678",
     "title": "ARCH. DEGREE RECLASSIFICATION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=678&GAID=18&DocTypeID=HR&LegId=167739&SessionID=114",
@@ -12789,6 +13127,8 @@
     "latest_action_desc": "Resolution Adopted 075-028-000"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR783",
     "title": "529 COLLEGE SAVINGS DAY",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=783&GAID=18&DocTypeID=HR&LegId=168227&SessionID=114",
@@ -12799,6 +13139,8 @@
     "latest_action_desc": "Resolution Adopted"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR652",
     "title": "ICE-ELECTIONS/POLLING PLACES",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=652&GAID=18&DocTypeID=HR&LegId=167366&SessionID=114",
@@ -12809,6 +13151,8 @@
     "latest_action_desc": "Resolution Adopted 074-037-000"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR660",
     "title": "SCHOOL START TIMES",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=660&GAID=18&DocTypeID=HR&LegId=167689&SessionID=114",
@@ -12819,6 +13163,8 @@
     "latest_action_desc": "Resolution Adopted 071-031-000"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2726",
     "title": "ELEC CD-POLLING PLACES",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2726&GAID=18&DocTypeID=SB&LegId=164483&SessionID=114",
@@ -12829,6 +13175,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Javier L. Cervantes"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3170",
     "title": "VOTING RIGHTS ACT OF 2026",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3170&GAID=18&DocTypeID=SB&LegId=165815&SessionID=114",
@@ -12839,6 +13187,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Javier L. Cervantes"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4739",
     "title": "SCH CD-SCHOOL VENTILATION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4739&GAID=18&DocTypeID=HB&LegId=165856&SessionID=114",
@@ -12849,6 +13199,8 @@
     "latest_action_desc": "Added as Alternate Co-Sponsor Sen. Mary Edly-Allen"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB143",
     "title": "JUDICIAL CAMPAIGN REFORM",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=143&GAID=18&DocTypeID=SB&LegId=157357&SessionID=114",
@@ -12860,6 +13212,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB1577",
     "title": "TOBACCO STORES NEAR SCHOOL ACT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1577&GAID=18&DocTypeID=SB&LegId=160323&SessionID=114",
@@ -12870,6 +13224,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB1786",
     "title": "SCH CD-HIGH SCH-REGISTER VOTER",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1786&GAID=18&DocTypeID=SB&LegId=160934&SessionID=114",
@@ -12880,6 +13236,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB1813",
     "title": "INC TX-EDUCATION EXPENSE",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1813&GAID=18&DocTypeID=SB&LegId=160962&SessionID=114",
@@ -12891,6 +13249,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2089",
     "title": "USE/OCC TX-SCHOOLS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2089&GAID=18&DocTypeID=SB&LegId=161597&SessionID=114",
@@ -12901,6 +13261,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2158",
     "title": "ELEC CD-OPEN PRIMARY ELECTIONS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2158&GAID=18&DocTypeID=SB&LegId=161844&SessionID=114",
@@ -12911,6 +13273,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2193",
     "title": "SCH CD-SCHOOL VENTILATION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2193&GAID=18&DocTypeID=SB&LegId=161916&SessionID=114",
@@ -12921,6 +13285,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2714",
     "title": "ELECTION CODE-VACANCY",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2714&GAID=18&DocTypeID=SB&LegId=164314&SessionID=114",
@@ -12931,6 +13297,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2764",
     "title": "ELECTION CODE-VACANCY",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2764&GAID=18&DocTypeID=SB&LegId=164701&SessionID=114",
@@ -12941,6 +13309,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2893",
     "title": "HIGHER ED-MAP GRANT-TEACHER",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2893&GAID=18&DocTypeID=SB&LegId=165195&SessionID=114",
@@ -12951,6 +13321,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2905",
     "title": "SCH CD-SPECIAL ED WORKLOAD",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2905&GAID=18&DocTypeID=SB&LegId=165249&SessionID=114",
@@ -12962,6 +13334,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2930",
     "title": "DRAINAGE DISTRICT ELECTIONS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2930&GAID=18&DocTypeID=SB&LegId=165308&SessionID=114",
@@ -12972,6 +13346,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2963",
     "title": "INC TX-STUDENT LOAN REPAYMENT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2963&GAID=18&DocTypeID=SB&LegId=165393&SessionID=114",
@@ -12983,6 +13359,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2983",
     "title": "VOTING RIGHTS-RELEASE CORR INS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2983&GAID=18&DocTypeID=SB&LegId=165477&SessionID=114",
@@ -12993,6 +13371,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3025",
     "title": "IL CLEAN ELECTIONS ACT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3025&GAID=18&DocTypeID=SB&LegId=165563&SessionID=114",
@@ -13003,6 +13383,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3059",
     "title": "ELECTION CODE POLL ACCESS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3059&GAID=18&DocTypeID=SB&LegId=165608&SessionID=114",
@@ -13013,6 +13395,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3060",
     "title": "ELECTION CODE EQUIPMENT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3060&GAID=18&DocTypeID=SB&LegId=165609&SessionID=114",
@@ -13023,6 +13407,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3088",
     "title": "ELEC CD-POLLING PLACES",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3088&GAID=18&DocTypeID=SB&LegId=165669&SessionID=114",
@@ -13033,6 +13419,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3110",
     "title": "SCH CD-SCHOOL VENTILATION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3110&GAID=18&DocTypeID=SB&LegId=165729&SessionID=114",
@@ -13043,6 +13431,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3151",
     "title": "COMM COLLEGE ECON EMPOWERMENT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3151&GAID=18&DocTypeID=SB&LegId=165792&SessionID=114",
@@ -13053,6 +13443,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3252",
     "title": "DIRECT RECORDING ELEC VOTING",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3252&GAID=18&DocTypeID=SB&LegId=166011&SessionID=114",
@@ -13063,6 +13455,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3284",
     "title": "SCH CD-E-LEARNING DAY-ELECTION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3284&GAID=18&DocTypeID=SB&LegId=166068&SessionID=114",
@@ -13073,6 +13467,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3297",
     "title": "ELEC CD-POLLING PLACES",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3297&GAID=18&DocTypeID=SB&LegId=166093&SessionID=114",
@@ -13083,6 +13479,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3299",
     "title": "ELEC CD-VOTERS PER PRECINCT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3299&GAID=18&DocTypeID=SB&LegId=166095&SessionID=114",
@@ -13093,6 +13491,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3673",
     "title": "ELEC CD-VOTER EDUCATION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3673&GAID=18&DocTypeID=SB&LegId=166868&SessionID=114",
@@ -13104,6 +13504,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3701",
     "title": "SCH CD-FULL FUNDING LEVELS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3701&GAID=18&DocTypeID=SB&LegId=166918&SessionID=114",
@@ -13115,6 +13517,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB60",
     "title": "ELEC CD-VOTE BY MAIL TRACKER",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=60&GAID=18&DocTypeID=SB&LegId=157165&SessionID=114",
@@ -13125,6 +13529,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4200",
     "title": "EDUCATIONAL CHOICE ACT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4200&GAID=18&DocTypeID=HB&LegId=164564&SessionID=114",
@@ -13135,6 +13541,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Tom Weber"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5037",
     "title": "FIXING HIGHER ED FUNDING ACT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5037&GAID=18&DocTypeID=HB&LegId=166515&SessionID=114",
@@ -13145,6 +13553,8 @@
     "latest_action_desc": "Added Chief Co-Sponsor Rep. La Shawn K. Ford"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5414",
     "title": "VOTING RIGHTS-RELEASE CORR INS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5414&GAID=18&DocTypeID=HB&LegId=167223&SessionID=114",
@@ -13156,6 +13566,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Carol Ammons"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB4199",
     "title": "VOTER PARTICIPATION TASK FORCE",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4199&GAID=18&DocTypeID=SB&LegId=168468&SessionID=114",
@@ -13166,6 +13578,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Rachel Ventura"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5778",
     "title": "FOIA-STUDENT COMMS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5778&GAID=18&DocTypeID=HB&LegId=168561&SessionID=114",
@@ -13176,6 +13590,8 @@
     "latest_action_desc": "First Reading"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2004",
     "title": "ELEC CD-RANKED-CHOICE VOTING",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2004&GAID=18&DocTypeID=SB&LegId=161409&SessionID=114",
@@ -13186,6 +13602,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Mattie Hunter"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2393",
     "title": "NICOTINE SALES NEAR SCHOOLS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2393&GAID=18&DocTypeID=SB&LegId=162406&SessionID=114",
@@ -13196,6 +13614,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2818",
     "title": "PEN CD-CTPF-TRUSTEE ELECTION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2818&GAID=18&DocTypeID=SB&LegId=164946&SessionID=114",
@@ -13206,6 +13626,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB939",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=939&GAID=18&DocTypeID=SB&LegId=158671&SessionID=114",
@@ -13216,6 +13638,8 @@
     "latest_action_desc": "Added Alternate Co-Sponsor Rep. Tony M. McCombie"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5363",
     "title": "SCH CD-ACT NOW",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5363&GAID=18&DocTypeID=HB&LegId=167151&SessionID=114",
@@ -13227,6 +13651,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Lisa Davis"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB34",
     "title": "ELEC CD-FIREARMS POLLING PLACE",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=34&GAID=18&DocTypeID=HB&LegId=155692&SessionID=114",
@@ -13237,6 +13663,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Martha Deuter"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3669",
     "title": "SCH-MULTI-TIER SYSTEM SUPPORT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3669&GAID=18&DocTypeID=SB&LegId=166853&SessionID=114",
@@ -13247,6 +13675,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5319",
     "title": "COMM COLLEGE-BA DEGREE PROGRAM",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5319&GAID=18&DocTypeID=HB&LegId=167075&SessionID=114",
@@ -13257,6 +13687,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Charles Meier"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB9",
     "title": "SCHOOL CD-PROPERTY TAX RELIEF",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=9&GAID=18&DocTypeID=HB&LegId=155661&SessionID=114",
@@ -13268,6 +13700,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Travis Weaver"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SR728",
     "title": "CONGRATS-AQSA SCHOOL",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=728&GAID=18&DocTypeID=SR&LegId=168313&SessionID=114",
@@ -13278,6 +13712,8 @@
     "latest_action_desc": "Added as Chief Co-Sponsor Sen. Mike Porfirio"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB4034",
     "title": "COMM COLLEGE-BA DEGREE PRORGAM",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4034&GAID=18&DocTypeID=SB&LegId=167594&SessionID=114",
@@ -13288,6 +13724,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Rachel Ventura"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR837",
     "title": "COMMENDS-CARL SANDBURG COLLEGE",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=837&GAID=18&DocTypeID=HR&LegId=168354&SessionID=114",
@@ -13298,6 +13736,8 @@
     "latest_action_desc": "Placed on Calendar Agreed Resolutions"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB2438",
     "title": "SCH CD-RADON TESTING",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2438&GAID=18&DocTypeID=SB&LegId=162489&SessionID=114",
@@ -13308,6 +13748,8 @@
     "latest_action_desc": "Added as Co-Sponsor Sen. Mark L. Walker"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HJRCA28",
     "title": "CONAMEND-REDISTRICTING",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=28&GAID=18&DocTypeID=HJRCA&LegId=168325&SessionID=114",
@@ -13318,6 +13760,8 @@
     "latest_action_desc": "Arrive in Senate"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4792",
     "title": "SCH CD-TEACH EXCELLENC PROGRAM",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4792&GAID=18&DocTypeID=HB&LegId=165949&SessionID=114",
@@ -13329,6 +13773,8 @@
     "latest_action_desc": "Added as Alternate Chief Co-Sponsor Sen. Christopher Belt"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3112",
     "title": "SCH CD-SPECIAL ED-SPEECH-LANG",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3112&GAID=18&DocTypeID=SB&LegId=165731&SessionID=114",
@@ -13339,6 +13785,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3330",
     "title": "SCH CD-TEACHER DISMISSAL",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3330&GAID=18&DocTypeID=SB&LegId=166166&SessionID=114",
@@ -13349,6 +13797,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3451",
     "title": "SCH CD-SUPERINTENDENT AGREEMNT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3451&GAID=18&DocTypeID=SB&LegId=166409&SessionID=114",
@@ -13359,6 +13809,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3559",
     "title": "SCH CD-COMPLIANCE COMPLAINT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3559&GAID=18&DocTypeID=SB&LegId=166609&SessionID=114",
@@ -13369,6 +13821,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3757",
     "title": "SAFE SPORTS SCHOOL SEAL",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3757&GAID=18&DocTypeID=SB&LegId=167064&SessionID=114",
@@ -13379,6 +13833,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB1498",
     "title": "ELEC CODE-DECEASED VOTER",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1498&GAID=18&DocTypeID=HB&LegId=157569&SessionID=114",
@@ -13389,6 +13845,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Kevin Schmidt"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4068",
     "title": "SCH CD-ACCOMODATIONS-TIMELINE",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4068&GAID=18&DocTypeID=HB&LegId=163899&SessionID=114",
@@ -13400,6 +13858,8 @@
     "latest_action_desc": "Added as Alternate Co-Sponsor Sen. Karina Villa"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB476",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=476&GAID=18&DocTypeID=HB&LegId=156154&SessionID=114",
@@ -13410,6 +13870,8 @@
     "latest_action_desc": "Arrive in Senate"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB1596",
     "title": "PESTICIDE-NOTICE-SCHOOLS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1596&GAID=18&DocTypeID=HB&LegId=157725&SessionID=114",
@@ -13421,6 +13883,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Ann M. Williams"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4343",
     "title": "HIGHER ED-ADMISSION & TUITION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4343&GAID=18&DocTypeID=HB&LegId=164875&SessionID=114",
@@ -13431,6 +13895,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Nicolle Grasse"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5462",
     "title": "HIGHER ED-HUMAN SERVICES LOAN",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5462&GAID=18&DocTypeID=HB&LegId=167361&SessionID=114",
@@ -13441,6 +13907,8 @@
     "latest_action_desc": "Added Chief Co-Sponsor Rep. Carol Ammons"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5463",
     "title": "SOCIAL WORK/SCH COUNSEL LOAN",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5463&GAID=18&DocTypeID=HB&LegId=167362&SessionID=114",
@@ -13451,6 +13919,8 @@
     "latest_action_desc": "Added Chief Co-Sponsor Rep. Carol Ammons"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB1130",
     "title": "ELEC CD-VOTER REGISTRATION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1130&GAID=18&DocTypeID=HB&LegId=156866&SessionID=114",
@@ -13461,6 +13931,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Tony M. McCombie"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2056",
     "title": "ELECTIONS-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2056&GAID=18&DocTypeID=HB&LegId=159704&SessionID=114",
@@ -13471,6 +13943,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2057",
     "title": "ELECTIONS-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2057&GAID=18&DocTypeID=HB&LegId=159705&SessionID=114",
@@ -13481,6 +13955,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2058",
     "title": "ELECTIONS-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2058&GAID=18&DocTypeID=HB&LegId=159706&SessionID=114",
@@ -13491,6 +13967,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2059",
     "title": "ELECTIONS-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2059&GAID=18&DocTypeID=HB&LegId=159707&SessionID=114",
@@ -13501,6 +13979,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2060",
     "title": "ELECTIONS-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2060&GAID=18&DocTypeID=HB&LegId=159708&SessionID=114",
@@ -13511,6 +13991,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2061",
     "title": "ELECTIONS-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2061&GAID=18&DocTypeID=HB&LegId=159709&SessionID=114",
@@ -13521,6 +14003,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2062",
     "title": "ELECTIONS-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2062&GAID=18&DocTypeID=HB&LegId=159710&SessionID=114",
@@ -13531,6 +14015,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2063",
     "title": "ELECTIONS-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2063&GAID=18&DocTypeID=HB&LegId=159711&SessionID=114",
@@ -13541,6 +14027,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2064",
     "title": "ELECTIONS-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2064&GAID=18&DocTypeID=HB&LegId=159712&SessionID=114",
@@ -13551,6 +14039,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2144",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2144&GAID=18&DocTypeID=HB&LegId=159792&SessionID=114",
@@ -13561,6 +14051,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2145",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2145&GAID=18&DocTypeID=HB&LegId=159793&SessionID=114",
@@ -13571,6 +14063,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2146",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2146&GAID=18&DocTypeID=HB&LegId=159794&SessionID=114",
@@ -13581,6 +14075,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2147",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2147&GAID=18&DocTypeID=HB&LegId=159795&SessionID=114",
@@ -13591,6 +14087,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2148",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2148&GAID=18&DocTypeID=HB&LegId=159796&SessionID=114",
@@ -13601,6 +14099,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2149",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2149&GAID=18&DocTypeID=HB&LegId=159797&SessionID=114",
@@ -13611,6 +14111,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2150",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2150&GAID=18&DocTypeID=HB&LegId=159798&SessionID=114",
@@ -13621,6 +14123,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2151",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2151&GAID=18&DocTypeID=HB&LegId=159799&SessionID=114",
@@ -13631,6 +14135,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2152",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2152&GAID=18&DocTypeID=HB&LegId=159800&SessionID=114",
@@ -13641,6 +14147,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2153",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2153&GAID=18&DocTypeID=HB&LegId=159801&SessionID=114",
@@ -13651,6 +14159,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2154",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2154&GAID=18&DocTypeID=HB&LegId=159802&SessionID=114",
@@ -13661,6 +14171,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2156",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2156&GAID=18&DocTypeID=HB&LegId=159804&SessionID=114",
@@ -13671,6 +14183,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2157",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2157&GAID=18&DocTypeID=HB&LegId=159805&SessionID=114",
@@ -13681,6 +14195,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2158",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2158&GAID=18&DocTypeID=HB&LegId=159806&SessionID=114",
@@ -13691,6 +14207,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2159",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2159&GAID=18&DocTypeID=HB&LegId=159807&SessionID=114",
@@ -13701,6 +14219,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2160",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2160&GAID=18&DocTypeID=HB&LegId=159808&SessionID=114",
@@ -13711,6 +14231,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2161",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2161&GAID=18&DocTypeID=HB&LegId=159809&SessionID=114",
@@ -13721,6 +14243,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2162",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2162&GAID=18&DocTypeID=HB&LegId=159810&SessionID=114",
@@ -13731,6 +14255,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2163",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2163&GAID=18&DocTypeID=HB&LegId=159811&SessionID=114",
@@ -13741,6 +14267,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2164",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2164&GAID=18&DocTypeID=HB&LegId=159812&SessionID=114",
@@ -13751,6 +14279,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2165",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2165&GAID=18&DocTypeID=HB&LegId=159813&SessionID=114",
@@ -13761,6 +14291,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2166",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2166&GAID=18&DocTypeID=HB&LegId=159814&SessionID=114",
@@ -13771,6 +14303,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2167",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2167&GAID=18&DocTypeID=HB&LegId=159815&SessionID=114",
@@ -13781,6 +14315,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2168",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2168&GAID=18&DocTypeID=HB&LegId=159816&SessionID=114",
@@ -13791,6 +14327,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2169",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2169&GAID=18&DocTypeID=HB&LegId=159817&SessionID=114",
@@ -13801,6 +14339,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2170",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2170&GAID=18&DocTypeID=HB&LegId=159818&SessionID=114",
@@ -13811,6 +14351,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2171",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2171&GAID=18&DocTypeID=HB&LegId=159819&SessionID=114",
@@ -13821,6 +14363,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2172",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2172&GAID=18&DocTypeID=HB&LegId=159820&SessionID=114",
@@ -13831,6 +14375,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2173",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2173&GAID=18&DocTypeID=HB&LegId=159821&SessionID=114",
@@ -13841,6 +14387,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2174",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2174&GAID=18&DocTypeID=HB&LegId=159822&SessionID=114",
@@ -13851,6 +14399,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2175",
     "title": "EDUCATION-TECH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2175&GAID=18&DocTypeID=HB&LegId=159823&SessionID=114",
@@ -13861,6 +14411,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB2960",
     "title": "SCH CD-MENTAL HEALTH ED REQ",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=2960&GAID=18&DocTypeID=HB&LegId=161179&SessionID=114",
@@ -13872,6 +14424,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB3730",
     "title": "DESIGN BUILD-HIGHER EDUCATION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3730&GAID=18&DocTypeID=HB&LegId=162575&SessionID=114",
@@ -13882,6 +14436,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4164",
     "title": "HIGHER ED-COMPACT SIGNING BAN",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4164&GAID=18&DocTypeID=HB&LegId=164412&SessionID=114",
@@ -13892,6 +14448,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4423",
     "title": "SCH CD-LICENSE ENDORSEMENT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4423&GAID=18&DocTypeID=HB&LegId=165109&SessionID=114",
@@ -13903,6 +14461,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4440",
     "title": "SCH CD-LICENSURE-PARAPROFESS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4440&GAID=18&DocTypeID=HB&LegId=165145&SessionID=114",
@@ -13914,6 +14474,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4582",
     "title": "SCHCD-TWICE-EXCEPTIONAL STUDNT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4582&GAID=18&DocTypeID=HB&LegId=165442&SessionID=114",
@@ -13924,6 +14486,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB4780",
     "title": "ILLINOIS SCHOOL FOR THE BLIND",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4780&GAID=18&DocTypeID=HB&LegId=165929&SessionID=114",
@@ -13934,6 +14498,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5051",
     "title": "HIGHER ED-REVERSE TRANSFER",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5051&GAID=18&DocTypeID=HB&LegId=166536&SessionID=114",
@@ -13944,6 +14510,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5207",
     "title": "SCH CD-AG ED PROGRAM REPORT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5207&GAID=18&DocTypeID=HB&LegId=166864&SessionID=114",
@@ -13954,6 +14522,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5216",
     "title": "SCH CD-TEACHING EXCELLENCE",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5216&GAID=18&DocTypeID=HB&LegId=166889&SessionID=114",
@@ -13965,6 +14535,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5373",
     "title": "CHILD CARE-TERMINOLOGY",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5373&GAID=18&DocTypeID=HB&LegId=167161&SessionID=114",
@@ -13975,6 +14547,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5375",
     "title": "VEH CD-SCHOOL TRANSPORTATION",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5375&GAID=18&DocTypeID=HB&LegId=167163&SessionID=114",
@@ -13986,6 +14560,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5503",
     "title": "SCH CD-ADULT WORKFORCE DIPLOMA",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5503&GAID=18&DocTypeID=HB&LegId=167477&SessionID=114",
@@ -13996,6 +14572,8 @@
     "latest_action_desc": "Rule 19(a) / Re-referred to Rules Committee"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB5507",
     "title": "FOOD REFORM-STUDENT HEALTH",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5507&GAID=18&DocTypeID=HB&LegId=167481&SessionID=114",
@@ -14007,6 +14585,8 @@
     "latest_action_desc": "Added Co-Sponsor Rep. Barbara Hernandez"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3106",
     "title": "PRIVATE EDUCATION LOANS-REPORT",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3106&GAID=18&DocTypeID=SB&LegId=165714&SessionID=114",
@@ -14017,6 +14597,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3320",
     "title": "DHFS-INSPECTOR GENERAL",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3320&GAID=18&DocTypeID=SB&LegId=166125&SessionID=114",
@@ -14027,6 +14609,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3641",
     "title": "DEC-DAY CARE CRIMINAL CHECKS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3641&GAID=18&DocTypeID=SB&LegId=166818&SessionID=114",
@@ -14038,6 +14622,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB3698",
     "title": "ADULT EDUCATION PROGRAMS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3698&GAID=18&DocTypeID=SB&LegId=166915&SessionID=114",
@@ -14048,6 +14634,8 @@
     "latest_action_desc": "Rule 3-9(a) / Re-referred to Assignments"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HR807",
     "title": "CONGRATS-PARKLAND COLLEGE",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=807&GAID=18&DocTypeID=HR&LegId=168262&SessionID=114",
@@ -14058,6 +14646,8 @@
     "latest_action_desc": "Resolution Adopted"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "SB4187",
     "title": "PLANNING COMM-SCHOOLS",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4187&GAID=18&DocTypeID=SB&LegId=168296&SessionID=114",
@@ -14068,6 +14658,8 @@
     "latest_action_desc": "Filed with Secretary by Sen. Darby A. Hills"
    },
    {
+    "state": "il",
+    "session": "104th",
     "id": "HB3047",
     "title": "VOTING RIGHTS ACT OF 2025",
     "url": "https://ilga.gov/Legislation/BillStatus?DocNum=3047&GAID=18&DocTypeID=HB&LegId=161324&SessionID=114",
