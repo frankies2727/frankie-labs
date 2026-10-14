@@ -106,6 +106,12 @@
       "x": "https://x.com/DarrenBaileyIL",
       "instagram": "https://www.instagram.com/baileyforillinois",
       "facebook": "https://www.facebook.com/BaileyforIllinois"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/darren-bailey-governor-lieutenant-governor.jpg",
+      "credit": "Cobiblair · CC BY-SA 4.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Darren_Bailey_at_a_2022_Campaign_Event.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Darren_Bailey_at_a_2022_Campaign_Event.jpg/500px-Darren_Bailey_at_a_2022_Campaign_Event.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -130,7 +136,13 @@
       "bluesky": "https://bsky.app/profile/jbpritzker.bsky.social",
       "threads": "https://www.threads.net/@jbpritzker"
      },
-     "website": "http://www.jbpritzker.com"
+     "website": "http://www.jbpritzker.com",
+     "photo": {
+      "file": "kyb-photos/illinois/jb-pritzker-governor-lieutenant-governor.jpg",
+      "credit": "Maryland GovPics · CC BY 2.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:J.B._Pritzker_April_2023.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/J.B._Pritzker_April_2023.jpg/500px-J.B._Pritzker_April_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+     }
     },
     {
      "ballot": 6,
@@ -190,7 +202,13 @@
       "x": "https://x.com/kwameraoul",
       "facebook": "https://www.facebook.com/kwame.raoul.illinois"
      },
-     "website": "http://www.kwameraoul.com/"
+     "website": "http://www.kwameraoul.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/kwame-raoul-attorney-general.jpg",
+      "credit": "Erin Klee from Illinois, United States · CC BY 2.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Kwame_Raoul_RFCG_(adjust3).jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Kwame_Raoul_RFCG_%28adjust3%29.jpg/500px-Kwame_Raoul_RFCG_%28adjust3%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+     }
     }
    ],
    "writeIn": false
@@ -235,6 +253,12 @@
      },
      "social": {
       "x": "https://x.com/Giannoulias"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/alexi-giannoulias-secretary-of-state.png",
+      "credit": "United States Senate Committee on the Judiciary · Public domain · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Alexi_Giannoulias_at_Senate_Judiciary_Committee_hearing_2023_(cropped).png",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Alexi_Giannoulias_at_Senate_Judiciary_Committee_hearing_2023_%28cropped%29.png/500px-Alexi_Giannoulias_at_Senate_Judiciary_Committee_hearing_2023_%28cropped%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     }
    ],
@@ -357,7 +381,13 @@
       "bluesky": "https://bsky.app/profile/jonathanjackson.house.gov",
       "x": "https://x.com/rep_jackson"
      },
-     "website": "https://jonathanjackson.house.gov"
+     "website": "https://jonathanjackson.house.gov",
+     "photo": {
+      "file": "kyb-photos/illinois/jonathan-l-jackson-u-s-representative-1st-district.jpg",
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/J000309",
+      "from": "https://unitedstates.github.io/images/congress/450x550/J000309.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -395,6 +425,12 @@
       "facebook": "https://www.facebook.com/donnamillerforcongress",
       "x": "https://x.com/Donna4Congress",
       "bluesky": "https://bsky.app/profile/donnaforcongress.bsky.social"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/donna-miller-u-s-representative-2nd-district.jpg",
+      "credit": "Paul Goyette · CC BY 2.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Cook_County_Commissioner_Donna_Miller_at_May_Day_2025.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Cook_County_Commissioner_Donna_Miller_at_May_Day_2025.jpg/500px-Cook_County_Commissioner_Donna_Miller_at_May_Day_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     }
    ],
@@ -443,7 +479,13 @@
       "instagram": "https://www.instagram.com/repdeliaramirez",
       "bluesky": "https://bsky.app/profile/ramirez.house.gov"
      },
-     "website": "https://ramirez.house.gov"
+     "website": "https://ramirez.house.gov",
+     "photo": {
+      "file": "kyb-photos/illinois/delia-ramirez-u-s-representative-3rd-district.jpg",
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/R000617",
+      "from": "https://unitedstates.github.io/images/congress/450x550/R000617.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -481,7 +523,13 @@
       "instagram": "https://instagram.com/repchuygarcia",
       "bluesky": "https://bsky.app/profile/chuygarcia.house.gov"
      },
-     "website": "https://chuygarcia.house.gov"
+     "website": "https://chuygarcia.house.gov",
+     "photo": {
+      "file": "kyb-photos/illinois/patty-garcia-u-s-representative-4th-district.jpg",
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/G000586",
+      "from": "https://unitedstates.github.io/images/congress/450x550/G000586.jpg"
+     }
     },
     {
      "ballot": 23,
@@ -546,7 +594,13 @@
       "bluesky": "https://bsky.app/profile/quigley.house.gov",
       "tiktok": "https://www.tiktok.com/@repmikequigley"
      },
-     "website": "https://quigley.house.gov"
+     "website": "https://quigley.house.gov",
+     "photo": {
+      "file": "kyb-photos/illinois/mike-quigley-u-s-representative-5th-district.jpg",
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/Q000023",
+      "from": "https://unitedstates.github.io/images/congress/450x550/Q000023.jpg"
+     }
     }
    ],
    "writeIn": true
@@ -595,7 +649,13 @@
       "tiktok": "https://www.tiktok.com/@repseancasten",
       "bluesky": "https://bsky.app/profile/seancasten.bsky.social"
      },
-     "website": "https://casten.house.gov"
+     "website": "https://casten.house.gov",
+     "photo": {
+      "file": "kyb-photos/illinois/sean-casten-u-s-representative-6th-district.jpg",
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/C001117",
+      "from": "https://unitedstates.github.io/images/congress/450x550/C001117.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -634,6 +694,12 @@
       "spent": 609421,
       "cash": 112588,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/la-shawn-k-ford-u-s-representative-7th-district.jpg",
+      "credit": "US Department of Education · CC BY 2.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:La_Shawn_K._Ford_on_11_December_2023_-_8_(cropped).jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/La_Shawn_K._Ford_on_11_December_2023_-_8_%28cropped%29.jpg/500px-La_Shawn_K._Ford_on_11_December_2023_-_8_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     }
    ],
@@ -673,6 +739,12 @@
       "spent": 1926546,
       "cash": 144530,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/melissa-l-bean-u-s-representative-8th-district.jpg",
+      "credit": "House of Represenatatives · Public domain · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Melissa_Bean_Official.jpg",
+      "from": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Melissa_Bean_Official.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
      }
     }
    ],
@@ -714,6 +786,12 @@
       "tiktok": "https://tiktok.com/@bissforcongress",
       "bluesky": "https://bsky.app/profile/danielbiss.bsky.social",
       "youtube": "https://youtube.com/@bissforcongress"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/daniel-biss-u-s-representative-9th-district.jpg",
+      "credit": "Charles Edward Miller · CC BY-SA 2.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Daniel_Biss_2018.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Daniel_Biss_2018.jpg/500px-Daniel_Biss_2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     }
    ],
@@ -1526,14 +1604,6 @@
       "spent": 243988,
       "cash": 15836,
       "through": "06/30/2026"
-     },
-     "social": {
-      "instagram": "https://www.instagram.com/demiforillinois",
-      "facebook": "https://facebook.com/Demiforillinois",
-      "bluesky": "https://bsky.app/profile/demiforillinois.bsky.social",
-      "tiktok": "https://tiktok.com/@demiforillinois",
-      "threads": "https://www.threads.com/@demiforillinois",
-      "youtube": "https://www.youtube.com/@DemiforIllinois"
      }
     }
    ],
@@ -2417,7 +2487,13 @@
      "social": {
       "x": "https://x.com/mspreciousdavis"
      },
-     "website": "https://preciousbradydavis.com/"
+     "website": "https://preciousbradydavis.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/precious-brady-davis-metropolitan-water-reclamation-district-.jpg",
+      "credit": "Paul Goyette · CC BY 2.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:4-5-25_Hands_Off!_(Chicago)_Precious_Brady-Davis_(cropped).jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/4-5-25_Hands_Off%21_%28Chicago%29_Precious_Brady-Davis_%28cropped%29.jpg/500px-4-5-25_Hands_Off%21_%28Chicago%29_Precious_Brady-Davis_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+     }
     },
     {
      "ballot": 55,
@@ -2499,7 +2575,13 @@
      "social": {
       "x": "https://x.com/tonipreckwinkle"
      },
-     "website": "http://www.cookcountyil.gov/office-of-the-president/"
+     "website": "http://www.cookcountyil.gov/office-of-the-president/",
+     "photo": {
+      "file": "kyb-photos/illinois/toni-preckwinkle-president-of-county-board.jpg",
+      "credit": "Charles Edward Miller from Chicago, United States · CC BY-SA 2.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Toni_Preckwinkle_(3107244285)_white_background.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Toni_Preckwinkle_%283107244285%29_white_background.jpg/500px-Toni_Preckwinkle_%283107244285%29_white_background.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+     }
     },
     {
      "ballot": 63,
@@ -2706,6 +2788,12 @@
       "spent": 280181,
       "cash": 63053,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/bill-lowry-county-commissioner-3rd-district.jpg",
+      "credit": "CommBillLowry · CC BY-SA 4.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Bill_lowry_3rd_district_black_and_whit.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Bill_lowry_3rd_district_black_and_whit.jpg/500px-Bill_lowry_3rd_district_black_and_whit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     }
    ],
@@ -2914,6 +3002,12 @@
       "spent": 17748,
       "cash": 7272,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/john-p-daley-county-commissioner-11th-district.jpg",
+      "credit": "artistmac · CC BY-SA 2.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Cook_County_Commissioner_John_Daley_(9472853714)_(1).jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Cook_County_Commissioner_John_Daley_%289472853714%29_%281%29.jpg/500px-Cook_County_Commissioner_John_Daley_%289472853714%29_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     }
    ],
@@ -3038,6 +3132,12 @@
       "spent": 368780,
       "cash": 57914,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/george-a-cardenas-board-of-review-1st-district.png",
+      "credit": "CAN TV · CC BY 3.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:George_Cardenas_2014_(1).png",
+      "from": "https://upload.wikimedia.org/wikipedia/commons/0/04/George_Cardenas_2014_%281%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
      }
     }
    ],
@@ -5919,6 +6019,12 @@
       "spent": 102409,
       "cash": 49109,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/janet-yang-rohr-sldl-41-staterepresentativestdistrict.jpg",
+      "credit": "COD Newsroom · CC BY 4.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:District_502_Officials_Tour_%E2%80%9CHokusai_%26_Ukiyo-e-_The_Floating_World%E2%80%9D_Exhibition_at_the_MAC_-_Janet_Yang_Rohr_(cropped).jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/District_502_Officials_Tour_%E2%80%9CHokusai_%26_Ukiyo-e-_The_Floating_World%E2%80%9D_Exhibition_at_the_MAC_-_Janet_Yang_Rohr_%28cropped%29.jpg/500px-District_502_Officials_Tour_%E2%80%9CHokusai_%26_Ukiyo-e-_The_Floating_World%E2%80%9D_Exhibition_at_the_MAC_-_Janet_Yang_Rohr_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -6466,6 +6572,12 @@
       "x": "https://x.com/RepSchneider",
       "facebook": "https://www.facebook.com/CongressmanBradSchneider",
       "instagram": "https://www.instagram.com/repschneider"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/brad-schneider-cd-10-usrepresentativethdistrict.jpg",
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/S001190",
+      "from": "https://unitedstates.github.io/images/congress/450x550/S001190.jpg"
      }
     },
     {
@@ -6780,6 +6892,12 @@
       "instagram": "https://www.instagram.com/repericsorensen",
       "facebook": "https://facebook.com/EricForIllinois",
       "bluesky": "https://bsky.app/profile/ericsorensen.bsky.social"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/eric-sorensen-cd-17-usrepresentativethdistrict.jpg",
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/S001225",
+      "from": "https://unitedstates.github.io/images/congress/450x550/S001225.jpg"
      }
     },
     {
@@ -7059,7 +7177,13 @@
       "facebook": "https://www.facebook.com/RepMaryMiller",
       "instagram": "https://instagram.com/RepMaryMiller"
      },
-     "website": "https://marymiller.house.gov"
+     "website": "https://marymiller.house.gov",
+     "photo": {
+      "file": "kyb-photos/illinois/mary-e-miller-cd-15-usrepresentativethdistrict.jpg",
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/M001211",
+      "from": "https://unitedstates.github.io/images/congress/450x550/M001211.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -7245,7 +7369,13 @@
       "facebook": "https://www.facebook.com/RepBost",
       "youtube": "https://www.youtube.com/channel/UCYA1psY06vSf3QadHuCrmjQ"
      },
-     "website": "https://bost.house.gov"
+     "website": "https://bost.house.gov",
+     "photo": {
+      "file": "kyb-photos/illinois/mike-bost-cd-12-usrepresentativethdistrict.jpg",
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/B001295",
+      "from": "https://unitedstates.github.io/images/congress/450x550/B001295.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -7350,7 +7480,13 @@
       "youtube": "https://www.youtube.com/channel/UCO-9KQJRVP0ZxB0cjjgjY7Q",
       "bluesky": "https://bsky.app/profile/budzinski.house.gov"
      },
-     "website": "https://budzinski.house.gov"
+     "website": "https://budzinski.house.gov",
+     "photo": {
+      "file": "kyb-photos/illinois/nikki-budzinski-cd-13-usrepresentativethdistrict.jpg",
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/B001315",
+      "from": "https://unitedstates.github.io/images/congress/450x550/B001315.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -7967,6 +8103,12 @@
       "facebook": "https://www.facebook.com/Nabeela4Illinois",
       "instagram": "https://www.instagram.com/nabeelasyed",
       "linkedin": "https://www.linkedin.com/in/nabeela-syed"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/nabeela-syed-sldu-26-statesenatorthdistrict.jpg",
+      "credit": "VOA · Public domain · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Nabeela_Syed_2023.jpg",
+      "from": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Nabeela_Syed_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
      }
     },
     {
@@ -8024,7 +8166,13 @@
       "instagram": "https://www.instagram.com/repbillfoster",
       "bluesky": "https://bsky.app/profile/repbillfoster.bsky.social"
      },
-     "website": "https://foster.house.gov"
+     "website": "https://foster.house.gov",
+     "photo": {
+      "file": "kyb-photos/illinois/bill-foster-cd-11-usrepresentativethdistrict.jpg",
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/F000454",
+      "from": "https://unitedstates.github.io/images/congress/450x550/F000454.jpg"
+     }
     },
     {
      "party": "Republican",
@@ -8127,7 +8275,13 @@
       "facebook": "https://www.facebook.com/replahood",
       "youtube": "https://www.youtube.com/channel/UCVRbtFwaBGcixZIkygtalRw"
      },
-     "website": "https://lahood.house.gov"
+     "website": "https://lahood.house.gov",
+     "photo": {
+      "file": "kyb-photos/illinois/darin-lahood-cd-16-usrepresentativethdistrict.jpg",
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/L000585",
+      "from": "https://unitedstates.github.io/images/congress/450x550/L000585.jpg"
+     }
     }
    ],
    "writeIn": false,
@@ -8188,7 +8342,8 @@
       "through": "06/30/2026"
      },
      "social": {
-      "facebook": "https://www.facebook.com/senchapinrose",
+      "facebook": "https://www.facebook.com/SenatorChapinRose",
+      "x": "https://x.com/SenChapinRose",
       "instagram": "https://www.instagram.com/ilsenatorchapinrose",
       "tiktok": "https://www.tiktok.com/@senchapinrose"
      },
@@ -8771,8 +8926,8 @@
       "through": "06/30/2026"
      },
      "social": {
-      "x": "https://twitter.com/SenJohnCurran",
-      "facebook": "https://www.facebook.com/senatorjohncurran"
+      "facebook": "https://www.facebook.com/senatorjohncurran",
+      "x": "https://x.com/SenJohnCurran"
      },
      "website": "https://senatorcurran.com/"
     }
@@ -8936,7 +9091,13 @@
       "facebook": "https://www.facebook.com/repunderwood",
       "instagram": "https://instagram.com/repunderwood"
      },
-     "website": "https://underwood.house.gov"
+     "website": "https://underwood.house.gov",
+     "photo": {
+      "file": "kyb-photos/illinois/lauren-underwood-cd-14-usrepresentativethdistrict.jpg",
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/U000040",
+      "from": "https://unitedstates.github.io/images/congress/450x550/U000040.jpg"
+     }
     },
     {
      "party": "Republican",

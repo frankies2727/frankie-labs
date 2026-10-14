@@ -1,5 +1,5 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { memo, useMemo, useRef, useState } from 'react';
+import { memo, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { Candidate, Race } from './types';
 
 // "Meet the candidates": everyone on a Cook County ballot as a row of faces,
@@ -57,7 +57,8 @@ export const MeetCandidates = memo(function MeetCandidates({ races, onOpen }: { 
     return n;
   }, [people]);
   const shown = letter ? people.filter((p) => p.letter === letter) : people;
-  const pick = (l: string | null) => { setLetter(l); if (row.current) row.current.scrollLeft = 0; };
+  // Back to the start of the row once the new list is drawn (before, the browser kept the old faces in view).
+  useLayoutEffect(() => { if (row.current) row.current.scrollLeft = 0; }, [letter]);
   const scroll = (dir: number) => row.current?.scrollBy({ left: dir * row.current.clientWidth * 0.8, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   if (!people.length) return null;
 
@@ -85,7 +86,7 @@ export const MeetCandidates = memo(function MeetCandidates({ races, onOpen }: { 
           const n = l ? counts[l] ?? 0 : people.length;
           const on = letter === l;
           return (
-            <button key={l ?? 'all'} type="button" onClick={() => pick(l)} disabled={!n} aria-pressed={on}
+            <button key={l ?? 'all'} type="button" onClick={() => setLetter(l)} disabled={!n} aria-pressed={on}
               aria-label={l ? (n ? `${l}: ${n} candidate${n === 1 ? '' : 's'}` : `${l}: no candidates`) : `All ${n} candidates`}
               className={`shrink-0 ${pill} ${on ? 'border-[var(--gb-primary)] bg-[var(--gb-primary)] text-[var(--gb-on-primary)]'
                 : n ? 'border-[var(--gb-border-strong)] hover:border-[var(--gb-text)]' : 'border-dashed border-[var(--gb-border-strong)] line-through cursor-not-allowed'}`}>
@@ -104,8 +105,9 @@ export const MeetCandidates = memo(function MeetCandidates({ races, onOpen }: { 
           <li key={`${race.id}|${c.ballot}`} className="snap-start shrink-0 w-[132px] sm:w-[196px]">
             <button type="button" onClick={() => onOpen(race, c)} className="group w-full flex flex-col items-center gap-3 text-center focus-visible:outline-none">
               <Face c={c} className="w-[124px] h-[124px] sm:w-[176px] sm:h-[176px] text-[40px] sm:text-[56px] ring-offset-4 ring-offset-[var(--gb-bg)] group-hover:ring-[3px] group-hover:ring-[var(--gb-primary)] group-focus-visible:ring-[3px] group-focus-visible:ring-[var(--gb-link)]" />
-              <span className="space-y-1">
+              <span className="flex flex-col items-center gap-1.5">
                 <span className="block text-[16px] sm:text-[18px] font-semibold leading-tight">{c.name}</span>
+                <span className="inline-flex rounded-full bg-[var(--kyb-chip)] px-2.5 py-0.5 text-[12px] sm:text-[13px] font-bold">{c.party}</span>
                 <span className="block text-[13px] sm:text-[14px] leading-snug">{shortOffice(race.office)}</span>
               </span>
             </button>
