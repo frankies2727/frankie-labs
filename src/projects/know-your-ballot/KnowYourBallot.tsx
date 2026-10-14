@@ -1,4 +1,4 @@
-import { ArrowLeft, Crosshair, ListChecks, MapPin, Printer, Search, Share2 } from 'lucide-react';
+import { Crosshair, ListChecks, MapPin, Printer, Search, Share2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import rawData from './data/illinois/ballot.json';
 import { ballotFor, ballotIdsFor, districtsAt, geocode, inChicago, inCook, inIllinois, prefetchDistricts } from './lookup';
@@ -117,7 +117,7 @@ function Confetti({ onDone }: { onDone: () => void }) {
   );
 }
 
-export function KnowYourBallot({ onExit }: { onExit: () => void }) {
+export function KnowYourBallot() {
   const [saved, setSaved] = useSaved();
   const browsing = !!saved.browsing;
   const setBrowsing = (on: boolean) => setSaved((s) => ({ ...s, browsing: on || undefined }));
@@ -439,11 +439,7 @@ export function KnowYourBallot({ onExit }: { onExit: () => void }) {
       <GaugeDefs />
 
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pb-24 print:hidden">
-        {/* The lab's way home (not part of govbot's page). */}
-        <nav className="pt-3 text-sm flex flex-wrap items-center justify-between gap-x-4">
-          <button type="button" onClick={onExit} className="inline-flex items-center gap-1.5 min-h-[44px] font-bold text-[var(--gb-text)] underline underline-offset-2">
-            <ArrowLeft className="w-4 h-4" aria-hidden="true" /> Frankie Labs
-          </button>
+        <nav className="pt-3 text-sm">
           <a href="https://chihacknight.github.io/govbot/" className="inline-flex items-center min-h-[44px] font-bold text-[var(--gb-text)]">
             A Frankie Labs project, built on&nbsp;<span className="underline underline-offset-2">govbot</span>&nbsp;↗
           </a>

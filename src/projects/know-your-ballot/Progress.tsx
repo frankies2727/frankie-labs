@@ -1,5 +1,6 @@
 import { ChevronDown, Info } from 'lucide-react';
 import { useState } from 'react';
+import { useOpen } from './store';
 
 // The ballot as a game: a streak of visits and trophies for the habits that
 // make a good voter (reading up, planning, finishing). All counted on this
@@ -72,13 +73,8 @@ export const earnedTrophies = (c: Ctx) => trophies(c.levels).filter((t) => isEar
 const SHOW_FIRST = 6;
 
 /** Trophies: earned ones first (tap ⓘ for what each was for), then the closest to earning. */
-// Whether the trophy case is open, remembered on this device (closed at first).
-const OPEN_KEY = 'kyb-trophies-open';
-const readOpen = () => { try { return localStorage.getItem(OPEN_KEY) === '1'; } catch { return false; } };
-
 export function Trophies({ ctx }: { ctx: Ctx }) {
-  const [open, setOpen] = useState(readOpen);
-  const toggle = () => setOpen((o) => { try { localStorage.setItem(OPEN_KEY, o ? '0' : '1'); } catch { /* not remembered */ } return !o; });
+  const [open, toggle] = useOpen('kyb-trophies-open');
   const [showAll, setShowAll] = useState(false);
   const [opened, setOpened] = useState<string | null>(null);
   const list = trophies(ctx.levels)

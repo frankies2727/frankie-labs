@@ -1,6 +1,7 @@
-import { ArrowUpRight, Rss, Search } from 'lucide-react';
+import { ArrowUpRight, ChevronDown, Rss, Search } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { ClearButton } from '../../components/ClearButton';
+import { useOpen } from './store';
 import type { Law } from './types';
 
 // Illinois bills that change how elections and schools work, from govbot's
@@ -64,6 +65,7 @@ function Bill({ b }: { key?: string; b: Law }) {
 export function Laws({ laws }: { laws: Law[] }) {
   const [tab, setTab] = useState<string>(TABS[0].id);
   const [q, setQ] = useState('');
+  const [open, toggle] = useOpen('kyb-laws-open');
   const list = useMemo(() => {
     const words = q.toLowerCase().split(/\s+/).filter(Boolean);
     return laws.filter((b) => inTab(b, tab) && words.every((w) => `${b.id} ${b.title} ${b.latest_action_desc ?? ''} ${b.tags.join(' ')}`.toLowerCase().includes(w)));
@@ -72,7 +74,17 @@ export function Laws({ laws }: { laws: Law[] }) {
   return (
     <section aria-labelledby="kyb-laws" className="rounded-2xl border-[3px] border-[var(--kyb-gold)] bg-[var(--gb-surface)] p-4 sm:p-5 space-y-4">
       <div className="space-y-1">
-        <h2 id="kyb-laws" className="text-2xl">🏛️ The laws that shape your ballot, from Springfield</h2>
+        <h2 id="kyb-laws" className="text-2xl">
+          <button type="button" onClick={toggle} aria-expanded={open} aria-controls="kyb-laws-body" className="inline-flex min-h-[44px] items-center gap-2 text-left">
+            🏛️ The laws that shape your ballot, from Springfield
+            <ChevronDown className={`w-6 h-6 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
+            <span className="sr-only">{open ? '(hide)' : '(show)'}</span>
+          </button>
+        </h2>
+      </div>
+
+      {open && <div id="kyb-laws-body" className="space-y-4">
+      <div className="space-y-1">
         <p className="text-[15px] leading-relaxed max-w-[75ch]">The Illinois bills that shape how elections and schools work, from campaign finance and voting rules to ward boundaries and school governance, with action in the last six months.<br /><br />“Other” is the rest of Illinois’ recent legislative activity.</p>
       </div>
 
@@ -108,6 +120,7 @@ export function Laws({ laws }: { laws: Law[] }) {
         className="flex items-center justify-center gap-2 min-h-[56px] rounded-xl border-[3px] border-[var(--kyb-gold)] bg-[var(--gb-primary)] px-4 text-lg font-black text-[var(--gb-on-primary)] hover:brightness-105">
         Explore entire catalog of IL bills <ArrowUpRight className="w-5 h-5" aria-hidden="true" />
       </a>
+      </div>}
     </section>
   );
 }
