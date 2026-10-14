@@ -4,13 +4,18 @@
 // it, keeps it only if it really is an image, and records where it came from
 // and its credit. Wikimedia Commons files carry their author and license.
 //
+// Candidates no official source covers can have a photo picked by hand in
+// photos-chosen.json ({ "<race id>|<name>": { url, page, credit } }): only a
+// government page about that person or their own campaign site, checked to be
+// a photo of that one person. An automatic source always wins over it.
+//
 // Re-downloads only when the source changes; a candidate whose source can't be
 // read in time (or wasn't matched) today keeps the photo the last build saved; files
 // nobody uses any more are deleted.
 
 import { execFileSync } from 'node:child_process';
 import { X509Certificate } from 'node:crypto';
-import { existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import https from 'node:https';
 import { join } from 'node:path';
 import tls from 'node:tls';
@@ -22,6 +27,7 @@ const UA_PLAIN = 'KnowYourBallot/1.0';
 const COMMONS = 'https://commons.wikimedia.org/w/api.php';
 const MAX_BYTES = 1_500_000;
 const WIDTH = 360; // a thumbnail size from Commons: twice the 176 px circle
+const CHOSEN = JSON.parse(readFileSync(new URL('./photos-chosen.json', import.meta.url), 'utf8'));
 const BUDGET_MS = 5 * 60_000; // a slow or blocking image server can't hold up the daily build
 
 const slug = (s) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -155,6 +161,13 @@ export async function addPhotos(races, { dir, publicPath, prev }) {
   const before = new Map((prev?.races ?? []).flatMap((r) => r.candidates.filter((c) => c.photo).map((c) => [`${r.id}|${c.name}`, c.photo])));
   const saved = (p) => p && existsSync(join(dir, p.file.split('/').pop()));
   const entries = races.flatMap((race) => race.candidates.map((c) => ({ race, c, key: `${race.id}|${c.name}` })));
+  for (const e of entries) {
+    const pick = CHOSEN[e.key];
+    if (!e.c.photoFrom && pick) e.c.photoFrom = { url: pick.url, credit: pick.credit, link: pick.page };
+  }
+  // A hand-picked photo whose candidate isn't on the ballot any more (or was renamed) is flagged, not lost silently.
+  const onBallot = new Set(entries.map((e) => e.key));
+  const stale = Object.keys(CHOSEN).filter((k) => !onBallot.has(k));
   const used = new Set();
   let fetched = 0, kept = 0, failed = 0, late = 0;
   const why = new Map(); // host + reason → how many, so the log says why photos were missed
@@ -192,5 +205,6 @@ export async function addPhotos(races, { dir, publicPath, prev }) {
   // A photo nobody uses any more (a candidate who left the race) goes too.
   for (const f of readdirSync(dir)) if (!used.has(f)) rmSync(join(dir, f));
   const reasons = [...why].sort((a, b) => b[1] - a[1]).slice(0, 6).map(([r, n]) => `  missed ${n} × ${r}`);
+  if (stale.length) reasons.push(`  photos-chosen.json: ${stale.length} entries match no candidate (${stale.slice(0, 3).join('; ')})`);
   return { withPhoto: used.size, total: entries.length, log: [`photos: ${fetched} fetched, ${kept} unchanged, ${failed} couldn't be fetched, ${late} skipped (time limit)`, ...reasons] };
 }
