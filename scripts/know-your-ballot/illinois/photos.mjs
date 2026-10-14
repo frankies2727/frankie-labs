@@ -31,9 +31,14 @@ function imageType(buf) {
   return null;
 }
 
-async function get(url, ua) {
+// An image is asked for the way a web page asks for one (an image Accept and the
+// site's own address as Referer): the legislature's image server refuses a bare request.
+async function get(url, ua, image = false) {
+  const headers = image
+    ? { 'User-Agent': ua, Accept: 'image/avif,image/webp,image/png,image/jpeg,image/*,*/*;q=0.8', Referer: `${new URL(url).origin}/` }
+    : { 'User-Agent': ua, Accept: 'application/json' };
   for (let attempt = 1; ; attempt++) {
-    const res = await fetch(url, { headers: { 'User-Agent': ua, Accept: 'image/*,application/json' }, redirect: 'follow', signal: AbortSignal.timeout(20_000) });
+    const res = await fetch(url, { headers, redirect: 'follow', signal: AbortSignal.timeout(20_000) });
     if ((res.status === 429 || res.status === 503) && attempt < 4) {
       await res.body?.cancel();
       await new Promise((r) => setTimeout(r, 1000 * Math.min(Number(res.headers.get('retry-after')) || 2 ** attempt, 10)));
@@ -73,6 +78,7 @@ export async function addPhotos(races, { dir, publicPath, prev }) {
   const entries = races.flatMap((race) => race.candidates.map((c) => ({ race, c, key: `${race.id}|${c.name}` })));
   const used = new Set();
   let fetched = 0, kept = 0, failed = 0, late = 0;
+  const why = new Map(); // host + reason → how many, so the log says why photos were missed
   const deadline = Date.now() + BUDGET_MS;
 
   await pool(entries.filter((e) => e.c.photoFrom), 4, async (e) => {
@@ -83,7 +89,7 @@ export async function addPhotos(races, { dir, publicPath, prev }) {
       if (!src) throw new Error(`no Commons file ${from.commons}`);
       const old = before.get(e.key);
       if (old?.from === src.url && saved(old)) { e.c.photo = old; kept++; return; }
-      const res = await get(src.url, /wikimedia\.org/.test(src.url) ? UA_WIKIMEDIA : UA_PLAIN);
+      const res = await get(src.url, /wikimedia\.org/.test(src.url) ? UA_WIKIMEDIA : UA_PLAIN, true);
       const buf = Buffer.from(await res.arrayBuffer());
       const type = imageType(buf);
       if (!type || buf.length > MAX_BYTES) throw new Error(`${src.url}: not a usable image`);
@@ -91,8 +97,11 @@ export async function addPhotos(races, { dir, publicPath, prev }) {
       writeFileSync(join(dir, name), buf);
       e.c.photo = { file: `${publicPath}/${name}`, credit: src.credit, link: src.link, from: src.url };
       fetched++;
-    } catch {
+    } catch (err) {
       failed++;
+      const host = from.commons ? 'commons.wikimedia.org' : new URL(from.url).host;
+      const reason = `${host}: ${String(err.cause?.code ?? err.message).replace(/^https?:\/\/\S+: /, '')}`;
+      why.set(reason, (why.get(reason) ?? 0) + 1);
     }
   });
 
@@ -104,5 +113,6 @@ export async function addPhotos(races, { dir, publicPath, prev }) {
   }
   // A photo nobody uses any more (a candidate who left the race) goes too.
   for (const f of readdirSync(dir)) if (!used.has(f)) rmSync(join(dir, f));
-  return { withPhoto: used.size, total: entries.length, log: [`photos: ${fetched} fetched, ${kept} unchanged, ${failed} couldn't be fetched, ${late} skipped (time limit)`] };
+  const reasons = [...why].sort((a, b) => b[1] - a[1]).slice(0, 6).map(([r, n]) => `  missed ${n} × ${r}`);
+  return { withPhoto: used.size, total: entries.length, log: [`photos: ${fetched} fetched, ${kept} unchanged, ${failed} couldn't be fetched, ${late} skipped (time limit)`, ...reasons] };
 }
