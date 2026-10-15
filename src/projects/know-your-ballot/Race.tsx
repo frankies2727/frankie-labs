@@ -1,7 +1,7 @@
 import { AtSign, Check, ExternalLink, Facebook, Info, Instagram, Linkedin, Music2, Scale, Twitter, X, Youtube, type LucideIcon } from 'lucide-react';
 import { memo, useEffect, useRef, type ReactNode } from 'react';
 import { BarRatings } from './BarRatings';
-import { Face } from './MeetCandidates';
+import { Face } from './Face';
 import { useReadOnly, useStateConfig } from './state';
 import { money, type Choice } from './store';
 import type { Candidate, Measure, Race, Retention, SocialPlatform } from './types';

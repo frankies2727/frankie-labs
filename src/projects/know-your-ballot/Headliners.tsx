@@ -1,6 +1,6 @@
 import { ArrowRight, RotateCcw } from 'lucide-react';
 import { useState, type ReactNode } from 'react';
-import { Face } from './MeetCandidates';
+import { Face } from './Face';
 import type { Candidate, Race } from './types';
 
 // The races everyone in the state votes on, as cards on the landing page.

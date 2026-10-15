@@ -17,7 +17,6 @@ import { ClearButton } from '../../components/ClearButton';
 import { SinceLastVisit } from './Updates';
 import { KeyDates, NextElectionNote } from './Calendar';
 import { Laws } from './Laws';
-import { MeetCandidates } from './MeetCandidates';
 import { LINKS, PlanToVote } from './PlanToVote';
 import { CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard } from './Race';
 import { drawShareCard, shareCard } from './share';
@@ -586,14 +585,6 @@ export function KnowYourBallot() {
             </div>
             </div>
           </>
-        )}
-
-        {/* The landing page only: once someone is going through races (contents
-            panel, trophies), the faces would just repeat what's on screen. */}
-        {!showBallot && (
-          <div className="max-w-[1100px] mx-auto mt-12">
-            <MeetCandidates races={everything.races} onOpen={openSheet} />
-          </div>
         )}
 
         {/* Always last, above the footer, on every screen. */}
