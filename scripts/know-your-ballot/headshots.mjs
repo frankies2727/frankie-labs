@@ -78,7 +78,8 @@ export async function addHeadshots(races, { dir, publicPath, prev }) {
   mkdirSync(dir, { recursive: true });
   if (!faceCheckWorks()) return { found: 0, kept: 0, tried: 0, log: ['no OpenCV (pip install "opencv-python-headless<5"): campaign-site headshots skipped'] };
   const scratch = mkdtempSync(join(tmpdir(), 'headshot-'));
-  const isOurs = (photo) => photo && /\(campaign site\)$/.test(photo.credit);
+  // Hand-picked photos (photos-chosen.json) are credited "… (campaign site)"; these are "(their campaign site)".
+  const isOurs = (photo) => photo && /\(their campaign site\)$/.test(photo.credit);
   const before = new Map((prev?.races ?? []).flatMap((r) => r.candidates.filter((c) => isOurs(c.photo)).map((c) => [`${r.id}|${c.name}`, c.photo])));
   const log = [];
   const deadline = Date.now() + BUDGET_MS;
@@ -106,7 +107,7 @@ export async function addHeadshots(races, { dir, publicPath, prev }) {
           if (!isHeadshot(buf, type, scratch)) continue;
           const file = `${slug(c.name.split(' & ')[0])}-${slug(race.id).slice(0, 40)}.jpg`;
           writeFileSync(join(dir, file), shrink(buf, type).bytes);
-          c.photo = { file: `${publicPath}/${file}`, credit: `${c.name.split(' & ')[0]} (campaign site)`, link: c.website, from: url };
+          c.photo = { file: `${publicPath}/${file}`, credit: `${c.name.split(' & ')[0]} (their campaign site)`, link: c.website, from: url };
           found++;
           break;
         }
