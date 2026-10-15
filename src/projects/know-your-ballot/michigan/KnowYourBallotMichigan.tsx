@@ -655,6 +655,9 @@ function Sources() {
     { emoji: '💵', title: 'Campaign money', status: 'Live · federal races',
       body: 'Raised, spent and cash on hand from each federal campaign’s latest FEC report, attached only on a confident name match. State-level money (governor, Lansing, boards) isn’t loaded yet.',
       links: [['FEC data', s.money.url], ['Michigan disclosure search', LINKS.disclosure]] },
+    { emoji: '📷', title: 'Photos, websites & social media', status: 'Live · daily',
+      body: 'Each candidate’s Ballotpedia profile supplies their photo (credited on their card), their campaign website, and the accounts Ballotpedia lists as theirs: campaign accounts first, then the office’s, then personal ones. Candidates with no photo on file show their initials.',
+      links: [['Ballotpedia', 'https://ballotpedia.org/']] },
     { emoji: '📜', title: 'Proposals', status: 'Official ballot wording',
       body: 'The two statewide proposals as certified by the Board of State Canvassers, from the League of Women Voters of Michigan’s handout, with a plain-English note on each.',
       links: [['LWV Michigan', s.proposals.lwv], ['Ballotpedia', s.proposals.ballotpedia]] },
@@ -671,7 +674,7 @@ function Sources() {
       body: 'Every morning the guide re-reads its sources and notes candidates added or dropped and new money reports, so returning voters see what’s new.',
       links: [] },
     { emoji: '⏳', title: 'Not here yet', status: 'Planned', planned: true,
-      body: 'County and local offices, trial-court judges, local proposals, state-level campaign money and candidate photos. Your sample ballot at Michigan.gov/Vote has the contests.',
+      body: 'County and local offices, trial-court judges, local proposals and state-level campaign money. Your sample ballot at Michigan.gov/Vote has the contests.',
       links: [['Your sample ballot', LINKS.myInfo]] },
   ];
   return (

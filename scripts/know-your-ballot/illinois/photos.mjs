@@ -36,7 +36,7 @@ const slug = (s) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().repl
 const stripHtml = (s) => s.replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#0?39;/g, "'").replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
 
 /** The file type from its first bytes, or null when it isn't a photo. */
-function imageType(buf) {
+export function imageType(buf) {
   if (buf[0] === 0xff && buf[1] === 0xd8 && buf[2] === 0xff) return 'jpg';
   if (buf.slice(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]))) return 'png';
   if (buf.slice(0, 4).toString() === 'RIFF' && buf.slice(8, 12).toString() === 'WEBP') return 'webp';
@@ -130,7 +130,7 @@ async function download(url, ua) {
  * guesses it from the bytes. If it can't run, the photo is kept as it came.
  * Returns the bytes and their type.
  */
-function shrink(buf, type, crop) {
+export function shrink(buf, type, crop) {
   const cut = /^\d+x\d+\+\d+\+\d+$/.test(crop ?? '') ? ['-crop', crop, '+repage'] : [];
   try {
     const out = execFileSync('convert', [`${type}:-`, ...cut, '-resize', `${WIDTH}x>`, '-background', '#E9EAEE', '-flatten', '-strip', '-quality', '82', 'jpg:-'],

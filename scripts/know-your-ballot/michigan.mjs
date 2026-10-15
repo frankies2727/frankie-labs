@@ -6,12 +6,13 @@
 //   1. Ballotpedia's race pages                 -> every statewide, congressional,
 //      and Wikipedia's (university boards)         legislative and Court of Appeals
 //                                                  contest on the Nov 3, 2026 ballot
-//   2. FEC bulk "all candidates" summary        -> money for federal candidates
-//   3. Census TIGERweb                          -> district and county maps,
+//   2. Each candidate's Ballotpedia profile     -> photo, campaign site, social accounts
+//   3. FEC bulk "all candidates" summary        -> money for federal candidates
+//   4. Census TIGERweb                          -> district and county maps,
 //                                                  the state outline for the hero
-//   4. The certified statewide proposals (michigan/proposals.mjs)
+//   5. The certified statewide proposals (michigan/proposals.mjs)
 //
-// Needs `unzip` on PATH. Run by .github/workflows/know-your-ballot-michigan.yml;
+// Needs `unzip`, `curl` and ImageMagick's `convert` on PATH. Run by .github/workflows/know-your-ballot-michigan.yml;
 // locally: `node scripts/know-your-ballot/michigan.mjs`.
 
 import { execFileSync } from 'node:child_process';
@@ -25,10 +26,12 @@ import { changeLog } from './illinois/changes.mjs';
 import { addFederalMoney, parseWeball } from './illinois/fec.mjs';
 import { fetchPage, parseAppellate, parseHouseLists, parsePartisanTable, parseVoteboxes } from './michigan/ballotpedia.mjs';
 import { buildDistricts, buildOutline } from './michigan/districts.mjs';
+import { addProfiles } from './michigan/profiles.mjs';
 import { PROPOSALS, PROPOSALS_SOURCE } from './michigan/proposals.mjs';
 import { boardCandidates } from './michigan/wikipedia.mjs';
 
 const OUT = 'src/projects/know-your-ballot/data/michigan';
+const PHOTOS_DIR = 'public/kyb-photos/michigan';
 const FEC_WEBALL = 'https://www.fec.gov/files/bulk-downloads/2026/weball26.zip';
 const ELECTION = { name: 'General Election', date: '2026-11-03' };
 
@@ -144,6 +147,11 @@ async function main() {
   execFileSync('unzip', ['-o', '-q', join(work, 'weball.zip'), '-d', work]);
   const money = addFederalMoney(races, parseWeball(readFileSync(join(work, 'weball26.txt'), 'utf8')), 'MI');
   console.log(`FEC: matched ${money.matched}/${money.total} federal candidates`);
+
+  // Photos, websites and social accounts from each candidate's profile.
+  const profiles = await addProfiles(races, { dir: PHOTOS_DIR, publicPath: 'kyb-photos/michigan', prev });
+  console.log(`Profiles: ${profiles.withProfile}/${profiles.total} candidates; photos ${profiles.withPhoto}, social ${profiles.withSocial}`);
+  for (const line of profiles.log) console.log('  ' + line);
 
   // Maps, and the county -> Court of Appeals district table the app needs.
   const districts = await buildDistricts();
