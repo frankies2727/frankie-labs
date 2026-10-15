@@ -7,15 +7,16 @@ import { BallotSearch, type Hit } from './Search';
 import { GovbotChrome } from './GovbotChrome';
 import { Capitol } from './Hero';
 import { GaugeDefs } from './BarRatings';
-import { Confetti, Ring } from './Bits';
+import { BrowsingNotice, Confetti, Ring, useDocumentMeta } from './Bits';
+import { ReadOnlyContext } from './state';
 import { ContentsColumn, ContentsDrawer } from './Contents';
+import { Headliners } from './Headliners';
 import { earnedTrophies, streak, Trophies } from './Progress';
 import './ballot.css';
 import { ClearButton } from '../../components/ClearButton';
 import { SinceLastVisit } from './Updates';
 import { KeyDates, NextElectionNote } from './Calendar';
 import { Laws } from './Laws';
-import { MeetCandidates } from './MeetCandidates';
 import { LINKS, PlanToVote } from './PlanToVote';
 import { CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard } from './Race';
 import { drawShareCard, shareCard } from './share';
@@ -25,6 +26,8 @@ import type { BallotData, Candidate, Districts, Race } from './types';
 const data = rawData as unknown as BallotData;
 const ballotIds = (d: Districts) => ballotIdsFor(data, d);
 const everything = ballotFor(data, null);
+// The races every Illinois voter sees, for the landing page's cards.
+const STATEWIDE = data.races.filter((r) => !r.area && (r.section === 'federal' || r.section === 'state'));
 const SHARE_URL = `https://frankies2727.github.io${import.meta.env.BASE_URL}projects/know-your-ballot-illinois`;
 // Runs elections in suburban Cook (the Chicago Board runs Chicago's).
 const COOK_CLERK = 'https://www.cookcountyclerkil.gov/';
@@ -91,6 +94,7 @@ const DISTRICT_CHIPS: [keyof Districts, string][] = [
 const districtNumber = (k: keyof Districts, v: string) => (k === 'precinct' ? v.split('-')[1] : v);
 
 export function KnowYourBallot() {
+  useDocumentMeta('Know Your Ballot: Illinois', '🗳️');
   const [saved, setSaved] = useSaved();
   const browsing = !!saved.browsing;
   const setBrowsing = (on: boolean) => setSaved((s) => ({ ...s, browsing: on || undefined }));
@@ -213,7 +217,7 @@ export function KnowYourBallot() {
   useEffect(() => {
     const before = prevEarned.current;
     prevEarned.current = { ids: earnedIds, districts };
-    if (!before || before.districts !== districts) return;
+    if (!before || before.districts !== districts || !saved.place) return;
     const fresh = earned.find((t) => t.id !== 'ready' && !t.id.startsWith('level-') && !before.ids.split(',').includes(t.id));
     if (fresh) setToast(`${fresh.emoji} Trophy unlocked: ${fresh.name}!`);
   }, [earnedIds]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -407,6 +411,7 @@ export function KnowYourBallot() {
 
   // ---- screens ------------------------------------------------------------------
   return (
+    <ReadOnlyContext.Provider value={!saved.place}>
     <GovbotChrome>
     <div className="kyb min-h-[100dvh] bg-[var(--gb-bg)] text-[var(--gb-text)] selection:bg-[var(--gb-blue-hi)] selection:text-[var(--gb-bg)]">
       <GaugeDefs />
@@ -417,6 +422,8 @@ export function KnowYourBallot() {
             address={address} setAddress={setAddress} status={status} onSubmit={lookUp} onLocate={useLocation}
             daysLeft={daysLeft}
             onSearchJump={(h) => { setBrowsing(true); jumpTo(h.section, h.id); }}
+            onOpenRace={(race) => { setBrowsing(true); jumpTo(race.section, race.id); }}
+            onOpenCandidate={openSheet}
             saved={Object.keys(saved.picks).length}
             onStartFresh={() => { setSaved((s) => ({ ...s, picks: {}, plan: {} })); setToast('Cleared. Starting fresh.'); }}
           />
@@ -430,7 +437,7 @@ export function KnowYourBallot() {
               <div className="flex items-center gap-2 sm:gap-4">
                 <Ring pct={total ? done / total : 0} />
                 <div className="min-w-0 flex-1">
-                  <p className="font-black text-lg leading-tight">{allDone ? 'Ballot ready 🎉' : `${done} of ${total} decided`}</p>
+                  <p className="font-black text-lg leading-tight">{!saved.place ? `${total} contests to browse` : allDone ? 'Ballot ready 🎉' : `${done} of ${total} decided`}</p>
                   <button type="button" onClick={changeAddress} className="flex max-w-full items-center gap-1.5 text-sm text-[var(--gb-text)] hover:text-[var(--gb-text)]">
                     <span className="truncate">{saved.place ? `📍 ${saved.place.label}` : 'Browsing every race'}</span>
                     <span className="shrink-0 font-bold text-[var(--gb-text)] underline underline-offset-2">{saved.place ? 'Change' : 'Add address'}</span>
@@ -453,6 +460,7 @@ export function KnowYourBallot() {
               <div className="mt-3">
                 <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} sections={SECTION_TITLES} places={data.places} onJump={(h) => jumpTo(h.section, h.id)} />
               </div>
+              {!saved.place && <BrowsingNotice region="Chicago or suburban Cook" onAddAddress={changeAddress} />}
             </div>
             </div>
             <div className="lg:grid lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-8 lg:items-start max-w-[1100px] mx-auto pt-4">
@@ -475,7 +483,7 @@ export function KnowYourBallot() {
                 )}
                 {change && <ChangeReport change={change} onDismiss={() => setChange(null)} onNext={() => { setChange(null); nextUp(); }} />}
                 {updates.length > 0 && <SinceLastVisit changes={updates} since={lastSeen!} picks={saved.picks} onJump={(id) => jumpTo(sectionFor(id), id)} onDismiss={() => setLastSeen(undefined)} />}
-                {total > 0 && <Trophies ctx={gameCtx} />}
+                {total > 0 && saved.place && <Trophies ctx={gameCtx} />}
                 <WhereYouVote districts={districts} chicago={chicago} cook={cook} onChange={changeAddress} />
 
                 {sections.filter((s) => s.id === current).map((s) => {
@@ -579,14 +587,6 @@ export function KnowYourBallot() {
           </>
         )}
 
-        {/* The landing page only: once someone is going through races (contents
-            panel, trophies), the faces would just repeat what's on screen. */}
-        {!showBallot && (
-          <div className="max-w-[1100px] mx-auto mt-12">
-            <MeetCandidates races={everything.races} onOpen={openSheet} />
-          </div>
-        )}
-
         {/* Always last, above the footer, on every screen. */}
         <div className="max-w-[1100px] mx-auto mt-12 space-y-8">
           <div role="separator" aria-label="Beyond your ballot" className="flex items-center gap-4">
@@ -630,14 +630,15 @@ export function KnowYourBallot() {
       {party && <Confetti onDone={() => setParty(false)} />}
     </div>
     </GovbotChrome>
+    </ReadOnlyContext.Provider>
   );
 }
 
 // ---- pieces ------------------------------------------------------------------------
 
-function Landing({ address, setAddress, status, onSubmit, onLocate, onSearchJump, daysLeft, saved, onStartFresh }: {
+function Landing({ address, setAddress, status, onSubmit, onLocate, onSearchJump, onOpenRace, onOpenCandidate, daysLeft, saved, onStartFresh }: {
   address: string; setAddress: (s: string) => void; status: { busy: boolean; error: string; outside: boolean };
-  onSubmit: (e: FormEvent) => void; onLocate: () => void; onSearchJump: (h: Hit) => void; daysLeft: number;
+  onSubmit: (e: FormEvent) => void; onLocate: () => void; onSearchJump: (h: Hit) => void; onOpenRace: (r: Race) => void; onOpenCandidate: (r: Race, c: Candidate) => void; daysLeft: number;
   /** Picks already saved on this device. */
   saved: number; onStartFresh: () => void;
 }) {
@@ -653,7 +654,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onSearchJump
     return () => cancelIdleCallback(id);
   }, []);
   return (
-    <div className="space-y-8 pt-2 [&>*:not(header)]:max-w-3xl">
+    <div className="space-y-8 pt-2 [&>*:not(header,.kyb-wide)]:max-w-3xl">
       {/* govbot's elections hero: overline, serif title, the Capitol. */}
       <header className="flex flex-col-reverse md:flex-row md:items-center gap-4 md:gap-10">
         <div className="min-w-0 flex-1 space-y-3">
@@ -716,6 +717,12 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onSearchJump
           </li>
         ))}
       </ul>
+
+      <div className="kyb-wide pt-4">
+        <Headliners races={STATEWIDE} sections={SECTIONS} overline="On every Illinois ballot" heading="The statewide races"
+          intro={`These ${STATEWIDE.length} contests are on every ballot in Illinois. Tap a card to meet the candidates; your address adds Congress, Springfield, Cook County, the judges and your ballot questions.`}
+          onOpen={onOpenCandidate} onOpenRace={onOpenRace} />
+      </div>
     </div>
   );
 }
@@ -779,6 +786,7 @@ function ChangeReport({ change, onDismiss, onNext }: { change: BallotChange; onD
 }
 
 function WhereYouVote({ districts, chicago, cook, onChange }: { districts: Districts | null; chicago: boolean; cook: boolean; onChange: () => void }) {
+  if (!districts) return null;
   return (
     <div className="rounded-2xl border-[3px] border-[var(--gb-primary)] bg-[var(--gb-surface)] p-4 space-y-3">
       {districts ? (
@@ -806,9 +814,7 @@ function WhereYouVote({ districts, chicago, cook, onChange }: { districts: Distr
             <button type="button" onClick={onChange} className="font-bold underline text-[var(--gb-text)]">change your address</button>.
           </p>
         </>
-      ) : (
-        <p className="text-[15px]">You’re seeing <strong>every</strong> race on any ballot in Chicago or suburban Cook. <button type="button" onClick={onChange} className="font-bold underline">Enter your address</button> to see only yours.</p>
-      )}
+      ) : null}
     </div>
   );
 }
