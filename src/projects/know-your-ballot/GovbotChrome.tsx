@@ -43,7 +43,7 @@ function startTheme(): Theme {
   return matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
 }
 
-export function ThemeToggle({ theme, onToggle }: { theme: Theme; onToggle: () => void }) {
+function ThemeToggle({ theme, onToggle }: { theme: Theme; onToggle: () => void }) {
   const dark = theme === 'dark';
   return (
     <button type="button" onClick={onToggle} className="gb-icon-btn" aria-pressed={dark}
@@ -67,7 +67,7 @@ const GOVBOT_STYLE = `${FONT_IMPORT}\n@layer base {\n${govbotCss.replace(FONT_IM
  * theme, remembered on this device. `styled` turns true once the stylesheet
  * is in; render nothing before that, or the page flashes unstyled.
  */
-export function useGuideTheme() {
+function useGuideTheme() {
   const [theme, setTheme] = useState<Theme>(startTheme);
   useEffect(() => {
     // Switch colours in one go: with transitions on, hundreds of elements

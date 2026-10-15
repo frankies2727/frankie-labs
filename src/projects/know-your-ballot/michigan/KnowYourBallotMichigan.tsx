@@ -1,20 +1,20 @@
 import { ChevronDown, Crosshair, ListChecks, MapPin, Printer, Search, Share2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { ClearButton } from '../../../components/ClearButton';
-import { Confetti, Ring } from '../Bits';
+import { BrowsingNotice, Confetti, Ring, useDocumentMeta } from '../Bits';
 import { Group } from '../Calendar';
 import { ContentsColumn, ContentsDrawer } from '../Contents';
 import { earnedTrophies, streak, Trophies } from '../Progress';
 import { CandidateSheet, Compare, MeasureCard, RaceCard } from '../Race';
 import { BallotSearch, type Hit } from '../Search';
 import { drawShareCard, shareCard } from '../share';
-import { StateContext } from '../state';
+import { ReadOnlyContext, StateContext } from '../state';
+import { GovbotChrome } from '../GovbotChrome';
 import { daysUntil, hasProgress, isDecided, readResumeLink, resumeLink, today, useNow, useOpen, useSaved, type Choice, type Saved } from '../store';
 import type { Candidate, Districts, Race } from '../types';
 import { SinceLastVisit } from '../Updates';
 import '../ballot.css';
 import './michigan.css';
-import { MichiganChrome } from './Chrome';
 import { DISTRICT_CHIPS, LINKS, MICHIGAN, SECTION_TITLES, SECTIONS, SHARE_URL, STORAGE_KEY, type SectionId } from './config';
 import rawData from '../data/michigan/ballot.json';
 import { KEY_DATES } from './dates';
@@ -45,7 +45,8 @@ function describePick(id: string, c: Choice | undefined): { what: string; pick: 
   return { what: m?.title ?? id, pick: c === 'yes' ? 'Yes' : c === 'no' ? 'No' : c === 'skip' ? 'Skip' : '—' };
 }
 
-export function KnowYourBallotMichigan({ onExit }: { onExit: () => void }) {
+export function KnowYourBallotMichigan() {
+  useDocumentMeta('Know Your Ballot: Michigan', '🧤');
   const [saved, setSaved] = useSaved(STORAGE_KEY);
   const browsing = !!saved.browsing;
   const setBrowsing = (on: boolean) => setSaved((s) => ({ ...s, browsing: on || undefined }));
@@ -145,7 +146,7 @@ export function KnowYourBallotMichigan({ onExit }: { onExit: () => void }) {
   useEffect(() => {
     const before = prevEarned.current;
     prevEarned.current = { ids: earnedIds, districts };
-    if (!before || before.districts !== districts) return;
+    if (!before || before.districts !== districts || !saved.place) return;
     const fresh = earned.find((t) => t.id !== 'ready' && !t.id.startsWith('level-') && !before.ids.split(',').includes(t.id));
     if (fresh) setToast(`${fresh.emoji} Trophy unlocked: ${fresh.name}!`);
   }, [earnedIds]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -299,8 +300,9 @@ export function KnowYourBallotMichigan({ onExit }: { onExit: () => void }) {
   // ---- screens ------------------------------------------------------------------
   return (
     <StateContext.Provider value={MICHIGAN}>
-    <MichiganChrome onExit={onExit}>
-    <div className="kyb min-h-[100dvh] bg-[var(--gb-bg)] text-[var(--gb-text)] selection:bg-[var(--mi-lake)] selection:text-[var(--gb-bg)]">
+    <ReadOnlyContext.Provider value={!saved.place}>
+    <GovbotChrome>
+    <div className="kyb min-h-[100dvh] bg-[var(--gb-bg)] text-[var(--gb-text)] selection:bg-[var(--mi-arboretum)] selection:text-[var(--gb-bg)]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pb-24 print:hidden">
         {!showBallot ? (
           <Landing
@@ -318,7 +320,7 @@ export function KnowYourBallotMichigan({ onExit }: { onExit: () => void }) {
                 <div className="flex items-center gap-2 sm:gap-4">
                   <Ring pct={total ? done / total : 0} />
                   <div className="min-w-0 flex-1">
-                    <p className="font-black text-lg leading-tight">{allDone ? 'Ballot ready 🎉' : `${done} of ${total} decided`}</p>
+                    <p className="font-black text-lg leading-tight">{!saved.place ? `${total} contests to browse` : allDone ? 'Ballot ready 🎉' : `${done} of ${total} decided`}</p>
                     <button type="button" onClick={changeAddress} className="flex max-w-full items-center gap-1.5 text-sm text-[var(--gb-text)]">
                       <span className="truncate">{saved.place ? `📍 ${saved.place.label}` : 'Browsing every race in Michigan'}</span>
                       <span className="shrink-0 font-bold underline underline-offset-2">{saved.place ? 'Change' : 'Add address'}</span>
@@ -340,6 +342,7 @@ export function KnowYourBallotMichigan({ onExit }: { onExit: () => void }) {
                 <div className="mt-3">
                   <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} sections={SECTION_TITLES} onJump={(h) => jumpTo(h.section, h.id)} />
                 </div>
+                {!saved.place && <BrowsingNotice region="Michigan" onAddAddress={changeAddress} />}
               </div>
             </div>
             <div className="lg:grid lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-8 lg:items-start max-w-[1100px] mx-auto pt-4">
@@ -350,17 +353,17 @@ export function KnowYourBallotMichigan({ onExit }: { onExit: () => void }) {
               {tab === 'ballot' && (
                 <div className="space-y-8 pt-6">
                   {incoming && (
-                    <div role="alertdialog" aria-label="Load saved progress?" className="rounded-2xl border-2 border-[var(--mi-lake)] bg-[var(--gb-surface)] p-4 space-y-3">
+                    <div role="alertdialog" aria-label="Load saved progress?" className="rounded-2xl border-2 border-[var(--mi-arboretum)] bg-[var(--gb-surface)] p-4 space-y-3">
                       <p className="font-black">Load progress from your saved link?</p>
                       <p className="text-[15px]">It has {Object.keys(incoming.picks).length} decisions. This device has {Object.keys(saved.picks).length}. Loading replaces what’s here.</p>
                       <div className="flex flex-wrap gap-2">
-                        <button type="button" onClick={() => { setSaved(incoming); setIncoming(null); }} className="min-h-[44px] rounded-xl bg-[var(--mi-lake)] px-4 font-black text-[var(--gb-bg)]">Load my saved link</button>
+                        <button type="button" onClick={() => { setSaved(incoming); setIncoming(null); }} className="min-h-[44px] rounded-xl bg-[var(--mi-arboretum)] px-4 font-black text-white">Load my saved link</button>
                         <button type="button" onClick={() => setIncoming(null)} className="min-h-[44px] rounded-xl border-2 border-[var(--gb-text)] px-4 font-bold">Keep this device’s</button>
                       </div>
                     </div>
                   )}
                   {updates.length > 0 && <SinceLastVisit changes={updates} since={lastSeen!} picks={saved.picks} onJump={(id) => jumpTo(sectionFor(id), id)} onDismiss={() => setLastSeen(undefined)} />}
-                  {total > 0 && <Trophies ctx={gameCtx} />}
+                  {total > 0 && saved.place && <Trophies ctx={gameCtx} />}
                   <WhereYouVote districts={districts} pin={pin} onChange={changeAddress} />
                   <HowTheBallotWorks />
 
@@ -411,12 +414,12 @@ export function KnowYourBallotMichigan({ onExit }: { onExit: () => void }) {
 
               {tab === 'share' && (
                 <div className="pt-6 space-y-5">
-                  <section className="rounded-2xl border-2 border-[var(--mi-lake)] bg-[var(--gb-surface)] p-5 space-y-3" aria-labelledby="kyb-keep">
+                  <section className="rounded-2xl border-2 border-[var(--mi-arboretum)] bg-[var(--gb-surface)] p-5 space-y-3" aria-labelledby="kyb-keep">
                     <h2 id="kyb-keep" className="text-2xl font-black leading-tight">💾 Keep your progress</h2>
                     <p className="text-[15px] leading-relaxed">Your picks save on this device automatically. To pick up on another phone or computer, or in case your browser clears its data, save a link: opening it brings everything back.</p>
                     <div className="flex flex-wrap gap-2">
                       {typeof navigator !== 'undefined' && 'share' in navigator && (
-                        <button type="button" onClick={() => saveLink(true)} className="min-h-[48px] rounded-xl bg-[var(--mi-lake)] px-4 font-black text-[var(--gb-bg)]">Send it to myself</button>
+                        <button type="button" onClick={() => saveLink(true)} className="min-h-[48px] rounded-xl bg-[var(--mi-arboretum)] px-4 font-black text-white">Send it to myself</button>
                       )}
                       <button type="button" onClick={() => saveLink(false)} className="min-h-[48px] rounded-xl border-2 border-[var(--gb-text)] px-4 font-bold">Copy my link</button>
                     </div>
@@ -469,7 +472,8 @@ export function KnowYourBallotMichigan({ onExit }: { onExit: () => void }) {
       )}
       {party && <Confetti onDone={() => setParty(false)} />}
     </div>
-    </MichiganChrome>
+    </GovbotChrome>
+    </ReadOnlyContext.Provider>
     </StateContext.Provider>
   );
 }
@@ -486,6 +490,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
 }) {
   const [confirming, setConfirming] = useState(false);
   const candidates = data.races.reduce((n, r) => n + r.candidates.length, 0);
+  const byDistrict = data.races.length - HEADLINERS.length;
   // Fetch the district maps while the voter types, once the page is idle.
   useEffect(() => {
     if (!('requestIdleCallback' in window)) { const t = setTimeout(prefetchDistricts, 1500); return () => clearTimeout(t); }
@@ -514,10 +519,10 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
             <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 pointer-events-none" aria-hidden="true" />
             <input id="kyb-address" type="text" autoComplete="street-address" value={address} onChange={(e) => setAddress(e.target.value)}
               placeholder="e.g. 2 Woodward Ave, Detroit or 100 N Capitol Ave, Lansing"
-              className="w-full min-h-[56px] rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] pl-12 pr-12 text-lg font-bold text-[var(--gb-text)] focus:border-[var(--mi-lake)] focus:outline-none" />
+              className="w-full min-h-[56px] rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] pl-12 pr-12 text-lg font-bold text-[var(--gb-text)] focus:border-[var(--mi-arboretum)] focus:outline-none" />
             {address && <ClearButton onClear={() => setAddress('')} className="right-2 text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]" />}
           </div>
-          <button type="submit" disabled={status.busy} className="shrink-0 min-h-[56px] rounded-2xl bg-[var(--mi-lake)] px-5 font-black text-[var(--gb-bg)] disabled:cursor-wait inline-flex items-center gap-2">
+          <button type="submit" disabled={status.busy} className="shrink-0 min-h-[56px] rounded-2xl bg-[var(--mi-arboretum)] px-5 font-black text-white disabled:cursor-wait inline-flex items-center gap-2">
             <Search className="w-5 h-5" aria-hidden="true" /><span className="hidden sm:inline">{status.busy ? 'Finding…' : 'Find my ballot'}</span><span className="sm:hidden">{status.busy ? '…' : 'Go'}</span>
           </button>
         </div>
@@ -552,7 +557,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
       </div>
 
       <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl">
-        {[[data.races.length, 'races statewide'], [candidates, 'candidates'], [data.measures.length, 'statewide proposals'], [83, 'counties covered']].map(([n, label]) => (
+        {[[HEADLINERS.length, 'races on every ballot'], [byDistrict, 'races by district'], [candidates, 'candidates'], [data.measures.length, 'statewide proposals']].map(([n, label]) => (
           <li key={label} className="rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] p-4">
             <span className="block text-3xl font-black">{n}</span>
             <span className="block text-sm font-bold">{label}</span>
@@ -564,7 +569,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
         <div className="space-y-1">
           <p className="text-[13px] font-bold uppercase tracking-[0.16em] text-[var(--gb-primary)]">On every Michigan ballot</p>
           <h2 id="kyb-headliners" className="text-3xl sm:text-4xl leading-[1.05]">The statewide races</h2>
-          <p className="text-[15px]">Tap one to see who’s running and start your picks; your address adds Congress, Lansing and the courts.</p>
+          <p className="text-[15px]">These {HEADLINERS.length} contests are on every Michigan ballot. Tap one to see who’s running; your address adds your own {byDistrict > 0 ? 'U.S. House, state Senate, state House and Court of Appeals' : ''} races from the {byDistrict} by district.</p>
         </div>
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {HEADLINERS.map((r) => {
@@ -582,8 +587,8 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
             );
           })}
           <li>
-            <button type="button" onClick={() => onSearchJump({ id: data.measures[0].id, section: 'measures', title: '', detail: '', about: '' })} className="w-full h-full text-left rounded-2xl border-[3px] border-[var(--gb-red)] bg-[var(--gb-surface)] p-4 space-y-2 hover:bg-[var(--kyb-chip)]">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--gb-red)] px-2.5 py-0.5 text-xs font-bold text-[var(--gb-bg)]">🗳️ Proposals</span>
+            <button type="button" onClick={() => onSearchJump({ id: data.measures[0].id, section: 'measures', title: '', detail: '', about: '' })} className="w-full h-full text-left rounded-2xl border-[3px] border-[var(--mi-red)] bg-[var(--gb-surface)] p-4 space-y-2 hover:bg-[var(--kyb-chip)]">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--mi-red)] px-2.5 py-0.5 text-xs font-bold text-white">🗳️ Proposals</span>
               <span className="block text-lg font-black leading-tight">Two statewide proposals</span>
               <span className="block text-sm leading-snug">A constitutional convention, and campaign money from utilities and state contractors.</span>
               <span className="block text-xs font-bold">Yes or no on each</span>
@@ -596,6 +601,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
 }
 
 function WhereYouVote({ districts, pin, onChange }: { districts: Districts | null; pin: { lat: number; lng: number } | null; onChange: () => void }) {
+  if (!districts) return null;
   return (
     <div className="rounded-2xl border-[3px] border-[var(--gb-primary)] bg-[var(--gb-surface)] p-4">
       {districts ? (
@@ -618,9 +624,7 @@ function WhereYouVote({ districts, pin, onChange }: { districts: Districts | nul
           </div>
           {pin && <div className="hidden sm:block w-36 shrink-0 self-start"><MichiganMap at={pin} /></div>}
         </div>
-      ) : (
-        <p className="text-[15px]">You’re seeing <strong>every</strong> race on any ballot in Michigan: all 13 congressional, 38 Senate and 110 House districts. <button type="button" onClick={onChange} className="font-bold underline">Enter your address</button> to see only yours.</p>
-      )}
+      ) : null}
     </div>
   );
 }

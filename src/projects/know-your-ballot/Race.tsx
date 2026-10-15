@@ -2,7 +2,7 @@ import { AtSign, Check, ExternalLink, Facebook, Info, Instagram, Linkedin, Music
 import { memo, useEffect, useRef, type ReactNode } from 'react';
 import { BarRatings } from './BarRatings';
 import { Face } from './MeetCandidates';
-import { useStateConfig } from './state';
+import { useReadOnly, useStateConfig } from './state';
 import { money, type Choice } from './store';
 import type { Candidate, Measure, Race, Retention, SocialPlatform } from './types';
 
@@ -58,6 +58,7 @@ function Dialog({ title, onClose, children }: { title: string; onClose: () => vo
 
 /** Yes / No / Skip for retentions and referenda. */
 function YesNo({ value, onChange, label }: { value: Choice | undefined; onChange: (c: Choice) => void; label: string }) {
+  const readOnly = useReadOnly();
   const opts: { v: Choice; text: string; on: string }[] = [
     { v: 'yes', text: 'Yes', on: 'bg-[var(--gb-primary)] border-[var(--gb-primary)] text-[var(--gb-bg)]' },
     { v: 'no', text: 'No', on: 'bg-[var(--gb-red)] border-[var(--gb-red)] text-white' },
@@ -71,8 +72,9 @@ function YesNo({ value, onChange, label }: { value: Choice | undefined; onChange
           type="button"
           role="radio"
           aria-checked={value === o.v}
+          disabled={readOnly}
           onClick={() => onChange(o.v)}
-          className={`min-h-[44px] rounded-xl border-2 font-bold transition-colors ${value === o.v ? o.on : 'border-[var(--gb-border)] bg-[var(--kyb-chip)] text-[var(--gb-text)] hover:border-[var(--gb-text)]'}`}
+          className={`min-h-[44px] rounded-xl border-2 font-bold transition-colors disabled:cursor-not-allowed disabled:opacity-60 ${value === o.v ? o.on : 'border-[var(--gb-border)] bg-[var(--kyb-chip)] text-[var(--gb-text)] hover:border-[var(--gb-text)]'}`}
         >
           {o.text}
         </button>
@@ -124,6 +126,7 @@ interface RaceProps {
 
 export const RaceCard = memo(function RaceCard({ race, color, ink, numbered, choice, onChoose: chooseFor, onInfo, onCompare }: RaceProps) {
   const { areaLabel, explainOffice } = useStateConfig();
+  const readOnly = useReadOnly();
   const onChoose = (c: Choice) => chooseFor(race.id, c);
   const picked = Array.isArray(choice) ? choice : [];
   const toggle = (ballot: number) => {
@@ -155,7 +158,7 @@ export const RaceCard = memo(function RaceCard({ race, color, ink, numbered, cho
                 <button
                   type="button"
                   aria-pressed={on}
-                  disabled={!on && full && race.voteFor > 1}
+                  disabled={readOnly || (!on && full && race.voteFor > 1)}
                   onClick={() => toggle(c.ballot)}
                   className="flex-1 min-w-0 flex items-center gap-3 rounded-xl border-2 px-3 py-2.5 text-left transition-colors disabled:cursor-not-allowed"
                   style={on ? { borderColor: color, background: `color-mix(in srgb, ${color} 15%, transparent)` } : { borderColor: 'var(--gb-border)', background: 'var(--kyb-chip)' }}
@@ -187,14 +190,16 @@ export const RaceCard = memo(function RaceCard({ race, color, ink, numbered, cho
               <Scale className="w-4 h-4" aria-hidden="true" /> Compare
             </button>
           )}
-          <button
-            type="button"
-            aria-pressed={choice === 'skip'}
-            onClick={() => onChoose(choice === 'skip' ? [] : 'skip')}
-            className={`min-h-[44px] rounded-xl border-2 px-4 font-bold ${choice === 'skip' ? 'border-[var(--gb-text)] bg-[var(--gb-text)] text-[var(--gb-bg)]' : 'border-[var(--gb-border)] text-[var(--gb-text)] hover:border-[var(--gb-text)]'}`}
-          >
-            {choice === 'skip' ? 'Skipped' : 'Skip this one'}
-          </button>
+          {!readOnly && (
+            <button
+              type="button"
+              aria-pressed={choice === 'skip'}
+              onClick={() => onChoose(choice === 'skip' ? [] : 'skip')}
+              className={`min-h-[44px] rounded-xl border-2 px-4 font-bold ${choice === 'skip' ? 'border-[var(--gb-text)] bg-[var(--gb-text)] text-[var(--gb-bg)]' : 'border-[var(--gb-border)] text-[var(--gb-text)] hover:border-[var(--gb-text)]'}`}
+            >
+              {choice === 'skip' ? 'Skipped' : 'Skip this one'}
+            </button>
+          )}
           {race.candidates.length === 1 && <span className="text-sm text-[var(--gb-text)]">Only one candidate is running.</span>}
           {race.writeIn && <span className="text-sm text-[var(--gb-text)]">Write-ins allowed.</span>}
         </footer>
@@ -233,6 +238,7 @@ function Follow({ c }: { c: Candidate }) {
 
 export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, onShowRace, onClose }: { race: Race; c: Candidate; color: string; ink: string; numbered: boolean; picked: boolean; onPick: () => void; /** From the landing page: open their race on the ballot. */ onShowRace?: () => void; onClose: () => void }) {
   const { noMoney, researchLinks } = useStateConfig();
+  const readOnly = useReadOnly();
   return (
     <Dialog title={c.name} onClose={onClose}>
       <div className="space-y-6">
@@ -284,14 +290,16 @@ export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, 
           </ul>
         </section>
 
-        <button
-          type="button"
-          onClick={() => { onPick(); onClose(); }}
-          className="w-full min-h-[52px] rounded-xl font-black text-lg"
-          style={picked ? { background: 'var(--kyb-chip)', color: 'var(--gb-text)', border: '2px solid var(--gb-text)' } : { background: color, color: ink }}
-        >
-          {picked ? 'Remove from My Ballot' : 'Add to My Ballot'}
-        </button>
+        {!readOnly && (
+          <button
+            type="button"
+            onClick={() => { onPick(); onClose(); }}
+            className="w-full min-h-[52px] rounded-xl font-black text-lg"
+            style={picked ? { background: 'var(--kyb-chip)', color: 'var(--gb-text)', border: '2px solid var(--gb-text)' } : { background: color, color: ink }}
+          >
+            {picked ? 'Remove from My Ballot' : 'Add to My Ballot'}
+          </button>
+        )}
         {onShowRace && (
           <button type="button" onClick={onShowRace}
             className="-mt-3 w-full min-h-[48px] rounded-xl border-2 border-[var(--gb-text)] font-bold text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]">
@@ -307,6 +315,7 @@ export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, 
 
 export function Compare({ race, color, ink, numbered, picked, onPick, onInfo, onClose }: { race: Race; color: string; ink: string; numbered: boolean; picked: number[]; onPick: (ballot: number) => void; onInfo: (c: Candidate) => void; onClose: () => void }) {
   const { compareNote } = useStateConfig();
+  const readOnly = useReadOnly();
   const max = Math.max(1, ...race.candidates.map((c) => c.money ? Math.max(c.money.raised, c.money.spent, c.money.cash) : 0));
   const anyMoney = race.candidates.some((c) => c.money);
   return (
@@ -331,14 +340,16 @@ export function Compare({ race, color, ink, numbered, picked, onPick, onInfo, on
                 <button type="button" onClick={() => onInfo(c)} className="mt-auto inline-flex items-center justify-center gap-1.5 min-h-[44px] rounded-xl border-2 border-[var(--gb-border)] bg-[var(--kyb-chip)] font-bold text-[var(--gb-text)] hover:border-[var(--gb-text)]">
                   <Info className="w-4 h-4" aria-hidden="true" /> Details
                 </button>
-                <button
-                  type="button"
-                  onClick={() => onPick(c.ballot)}
-                  className="min-h-[44px] rounded-xl font-bold"
-                  style={on ? { background: color, color: ink } : { border: '2px solid var(--gb-text)', color: 'var(--gb-text)' }}
-                >
-                  {on ? '✓ On My Ballot' : 'Pick'}
-                </button>
+                {!readOnly && (
+                  <button
+                    type="button"
+                    onClick={() => onPick(c.ballot)}
+                    className="min-h-[44px] rounded-xl font-bold"
+                    style={on ? { background: color, color: ink } : { border: '2px solid var(--gb-text)', color: 'var(--gb-text)' }}
+                  >
+                    {on ? '✓ On My Ballot' : 'Pick'}
+                  </button>
+                )}
               </div>
             );
           })}

@@ -24,16 +24,18 @@ export const STORAGE_KEY = 'know-your-ballot:michigan:2026-11-03';
 
 // Ballot order: the partisan section (federal, state, legislature, boards),
 // then the nonpartisan section (judges), then proposals. Colours are the
-// guide's tokens (ballot.css, michigan.css); the page background is the ink
-// on each. Party never gets a colour.
-const INK = 'var(--gb-bg)';
+// Michigan palette (michigan.css), the same in both themes; each carries the
+// ink that reads on it (white on the deep ones, Michigan Blue on the bright
+// ones). Party never gets a colour.
+const WHITE = '#FFFFFF';
+const BLUE = 'var(--mi-blue)';
 export const SECTIONS = [
-  { id: 'federal', title: 'Federal', color: 'var(--gb-blue-hi)', ink: INK, emoji: '🏛️' },
-  { id: 'state', title: 'Michigan statewide', color: 'var(--mi-lake)', ink: INK, emoji: '🧤' },
-  { id: 'legislature', title: 'Lansing', color: 'var(--gb-purple)', ink: INK, emoji: '⭐' },
-  { id: 'education', title: 'Schools & universities', color: 'var(--kyb-gold)', ink: INK, emoji: '🎓' },
-  { id: 'judicial', title: 'Judges', color: 'var(--mi-copper)', ink: INK, emoji: '⚖️' },
-  { id: 'measures', title: 'Proposals', color: 'var(--gb-red)', ink: INK, emoji: '🗳️' },
+  { id: 'federal', title: 'Federal', color: 'var(--mi-arboretum)', ink: WHITE, emoji: '🏛️' },
+  { id: 'state', title: 'Michigan statewide', color: 'var(--mi-teal)', ink: BLUE, emoji: '🧤' },
+  { id: 'legislature', title: 'Lansing', color: 'var(--mi-amethyst)', ink: WHITE, emoji: '⭐' },
+  { id: 'education', title: 'Schools & universities', color: 'var(--mi-maize)', ink: BLUE, emoji: '🎓' },
+  { id: 'judicial', title: 'Judges', color: 'var(--mi-field)', ink: BLUE, emoji: '⚖️' },
+  { id: 'measures', title: 'Proposals', color: 'var(--mi-red)', ink: WHITE, emoji: '🗳️' },
 ] as const;
 export type SectionId = (typeof SECTIONS)[number]['id'];
 export const SECTION_TITLES: Record<string, string> = Object.fromEntries(SECTIONS.map((s) => [s.id, s.title]));

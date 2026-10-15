@@ -1,22 +1,22 @@
-/* Know Your Ballot: Michigan. Its own accents on govbot's tokens (ballot.css
-   holds the shared ones): the Great Lakes for the statewide section and the
-   hero, copper for the courts. Each reads with the page background as ink in
-   both themes. */
+/* Know Your Ballot: Michigan. The University of Michigan palette (Michigan
+   Blue, Maize, Tappan Red, Ross Orange, Field Green, Taubman Teal, Roof Green,
+   Arboretum Blue, Amethyst) for the sections and the hero. Brand colours stay
+   the same in both themes; each section carries the ink that reads on it
+   (config.ts). The shared tokens are in ballot.css. */
 :root {
-  --mi-lake: #38BDF8;
-  --mi-lake-2: #2DD4BF;
-  --mi-copper: #F0A06A;
-}
-:root[data-theme="light"] { --mi-lake: #0369A1; --mi-lake-2: #0F766E; --mi-copper: #9A4A12; }
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme]) { --mi-lake: #0369A1; --mi-lake-2: #0F766E; --mi-copper: #9A4A12; }
+  --mi-blue: #00274C;
+  --mi-maize: #FFCB05;
+  --mi-red: #9A3324;
+  --mi-orange: #D86018;
+  --mi-field: #A5A508;
+  --mi-teal: #00B2A9;
+  --mi-roof: #75988D;
+  --mi-arboretum: #2F65A7;
+  --mi-amethyst: #702082;
 }
 
 /* The outline glows like the Capitol on the Illinois guide; the pin breathes. */
-.mi-map { display: block; width: 100%; height: auto; filter: drop-shadow(0 0 28px color-mix(in srgb, var(--mi-lake) 45%, transparent)); }
+.mi-map { display: block; width: 100%; height: auto; filter: drop-shadow(0 0 28px color-mix(in srgb, var(--mi-arboretum) 55%, transparent)); }
 .mi-pin-ring { transform-box: fill-box; transform-origin: center; animation: mi-pin 1.8s ease-out infinite; }
 @keyframes mi-pin { 0% { transform: scale(0.6); opacity: 0.6; } 100% { transform: scale(1.8); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .mi-pin-ring { animation: none; } }
-
-/* The guide's own header, the same height govbot's has (--kyb-top). */
-.mi-header { position: sticky; top: 0; z-index: 40; height: var(--kyb-top); display: flex; align-items: center; gap: 12px; padding: 0 16px; background: color-mix(in srgb, var(--gb-bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--gb-border); }

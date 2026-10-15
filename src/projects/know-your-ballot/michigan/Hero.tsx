@@ -14,15 +14,16 @@ export function MichiganMap({ at, className = '' }: { at?: { lat: number; lng: n
     <svg viewBox={`-20 -20 ${width + 40} ${height + 40}`} className={`mi-map ${className}`} role="img" aria-label={pin ? 'Michigan, with your location marked' : 'Michigan'}>
       <defs>
         <linearGradient id="mi-grad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" style={{ stopColor: 'var(--mi-lake)' }} />
-          <stop offset="1" style={{ stopColor: 'var(--mi-lake-2)' }} />
+          <stop offset="0" style={{ stopColor: 'var(--mi-blue)' }} />
+          <stop offset="0.55" style={{ stopColor: 'var(--mi-arboretum)' }} />
+          <stop offset="1" style={{ stopColor: 'var(--mi-teal)' }} />
         </linearGradient>
       </defs>
-      <path d={path} fill="url(#mi-grad)" stroke="var(--gb-bg)" strokeWidth="6" strokeLinejoin="round" />
+      <path d={path} fill="url(#mi-grad)" stroke="var(--mi-maize)" strokeWidth="5" strokeLinejoin="round" />
       {pin && (
         <g transform={`translate(${pin.x.toFixed(0)} ${pin.y.toFixed(0)})`}>
-          <circle r="34" fill="var(--kyb-gold)" opacity="0.35" className="mi-pin-ring" />
-          <circle r="16" fill="var(--kyb-gold)" stroke="var(--gb-bg)" strokeWidth="5" />
+          <circle r="34" fill="var(--mi-maize)" opacity="0.4" className="mi-pin-ring" />
+          <circle r="16" fill="var(--mi-maize)" stroke="var(--mi-blue)" strokeWidth="5" />
         </g>
       )}
     </svg>
