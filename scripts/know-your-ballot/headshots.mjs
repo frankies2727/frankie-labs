@@ -1,12 +1,15 @@
 // A headshot from the candidate's own campaign website, for candidates no
 // other source has a photo for. Only an image the site itself labels as
-// them: its alt text or file name carries their last name (and no other
-// candidate's), and it's shaped like a portrait, not a banner or logo.
-// Credited to the campaign site. A site that can't be read today keeps the
-// photo the last build saved.
+// them (its alt text or file name carries their last name, and no other
+// candidate's), shaped like a portrait, and showing one clear face
+// (face-check.py, OpenCV): sites label flyers, QR codes, logos and family
+// photos with the candidate's name too. Credited to the campaign site.
+// These are re-checked every build; a site that can't be read today keeps
+// the photo the last build saved. Without OpenCV the step takes nothing.
 
 import { execFileSync } from 'node:child_process';
-import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { imageType, shrink } from './illinois/photos.mjs';
 
@@ -22,6 +25,18 @@ const lastName = (name) => fold(name.split(' & ')[0].replace(/["“”][^"“”
 
 const curl = (url, binary = false) =>
   execFileSync('curl', ['-sSL', '--compressed', '--max-time', '40', '--max-filesize', '8000000', '-A', UA, url], { maxBuffer: 16e6, encoding: binary ? 'buffer' : 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
+
+const FACE_CHECK = new URL('./face-check.py', import.meta.url).pathname;
+/** Can OpenCV be run? Checked once. */
+function faceCheckWorks() {
+  try { execFileSync('python3', ['-c', 'import cv2; cv2.CascadeClassifier'], { stdio: 'ignore' }); return true; } catch { return false; }
+}
+/** One clear face? */
+function isHeadshot(buf, type, scratch) {
+  const file = join(scratch, `check.${type}`);
+  writeFileSync(file, buf);
+  return execFileSync('python3', [FACE_CHECK, file], { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim() === 'yes';
+}
 
 /** Width and height, via ImageMagick; null when it isn't an image it can read. */
 function size(buf, type) {
@@ -61,18 +76,23 @@ export function labelledImages(html, site, last, others) {
  */
 export async function addHeadshots(races, { dir, publicPath, prev }) {
   mkdirSync(dir, { recursive: true });
-  const before = new Map((prev?.races ?? []).flatMap((r) => r.candidates.filter((c) => c.photo).map((c) => [`${r.id}|${c.name}`, c.photo])));
+  if (!faceCheckWorks()) return { found: 0, kept: 0, tried: 0, log: ['no OpenCV (pip install "opencv-python-headless<5"): campaign-site headshots skipped'] };
+  const scratch = mkdtempSync(join(tmpdir(), 'headshot-'));
+  const isOurs = (photo) => photo && /\(campaign site\)$/.test(photo.credit);
+  const before = new Map((prev?.races ?? []).flatMap((r) => r.candidates.filter((c) => isOurs(c.photo)).map((c) => [`${r.id}|${c.name}`, c.photo])));
   const log = [];
   const deadline = Date.now() + BUDGET_MS;
   let found = 0, kept = 0, tried = 0;
   for (const race of races) {
     const others = race.candidates.map((c) => lastName(c.name));
     for (const c of race.candidates) {
+      // An earlier headshot from here is checked again; anything else stands.
+      if (isOurs(c.photo)) delete c.photo;
       if (c.photo || !c.website) continue;
       const key = `${race.id}|${c.name}`;
       const old = before.get(key);
-      if (old && /campaign site/.test(old.credit) && existsSync(join(dir, old.file.split('/').pop()))) { c.photo = old; kept++; continue; }
-      if (Date.now() > deadline) continue;
+      const keep = () => { if (old && existsSync(join(dir, old.file.split('/').pop()))) { c.photo = old; kept++; } };
+      if (Date.now() > deadline) { keep(); continue; }
       tried++;
       try {
         const html = curl(c.website).slice(0, 2_000_000);
@@ -83,6 +103,7 @@ export async function addHeadshots(races, { dir, publicPath, prev }) {
           if (!type) continue;
           const dim = size(buf, type);
           if (!dim || Math.min(dim.w, dim.h) < MIN_SIDE || dim.w / dim.h > 1.6 || dim.h / dim.w > 2.2) continue;
+          if (!isHeadshot(buf, type, scratch)) continue;
           const file = `${slug(c.name.split(' & ')[0])}-${slug(race.id).slice(0, 40)}.jpg`;
           writeFileSync(join(dir, file), shrink(buf, type).bytes);
           c.photo = { file: `${publicPath}/${file}`, credit: `${c.name.split(' & ')[0]} (campaign site)`, link: c.website, from: url };
@@ -90,6 +111,7 @@ export async function addHeadshots(races, { dir, publicPath, prev }) {
           break;
         }
       } catch (e) {
+        keep();
         log.push(`${c.name}: ${String(e.message).split('\n')[0].slice(0, 100)}`);
       }
     }

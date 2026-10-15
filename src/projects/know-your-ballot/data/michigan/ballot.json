@@ -47,13 +47,15 @@
       "youtube": "https://www.youtube.com/@BensonforGovernor",
       "facebook": "https://www.facebook.com/bensonformichigan",
       "tiktok": "https://www.tiktok.com/@jocelynbensonhq",
-      "linkedin": "https://www.linkedin.com/in/jocelyn-benson-a603472/"
+      "linkedin": "https://www.linkedin.com/in/jocelyn-benson-a603472/",
+      "threads": "https://threads.net/@jocelynbenson",
+      "bluesky": "https://bsky.app/profile/jocelynbenson"
      },
      "photo": {
       "file": "kyb-photos/michigan/jocelyn-benson-governor-and-lieutenant-governor.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Jocelyn_Benson",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Headshot_20260709_161330_44938_1.jpg"
+      "credit": "Parent55 · CC BY-SA 4.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Jocelyn_Benson_1.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Jocelyn_Benson_1.jpg/500px-Jocelyn_Benson_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -71,9 +73,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/john-james-governor-and-lieutenant-governor.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/John_James_(Michigan)",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/John_James.jpg"
+      "credit": "United States Congress · CC BY-SA 4.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Rep._John_James_official_photo,_118th_Congress.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Rep._John_James_official_photo%2C_118th_Congress.jpg/500px-Rep._John_James_official_photo%2C_118th_Congress.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -86,7 +88,8 @@
       "facebook": "https://www.facebook.com/hudsonfor2k24/",
       "x": "https://x.com/Hudson4Governor",
       "instagram": "https://www.instagram.com/electanthonyhudson/",
-      "linkedin": "https://www.linkedin.com/in/anthony-hudson-6a2a00177/"
+      "linkedin": "https://www.linkedin.com/in/anthony-hudson-6a2a00177/",
+      "tiktok": "https://www.tiktok.com/@hudson2k24"
      },
      "photo": {
       "file": "kyb-photos/michigan/anthony-hudson-governor-and-lieutenant-governor.jpg",
@@ -254,9 +257,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/eli-savit-attorney-general.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Eli_Savit",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Eli_Savit_20250716_042146.png"
+      "credit": "Eli Savit · CC BY-SA 4.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Eli_Savit_Photo_(cropped).jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Eli_Savit_Photo_%28cropped%29.jpg/500px-Eli_Savit_Photo_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -365,13 +368,14 @@
       "instagram": "https://www.instagram.com/abdulelsayed",
       "youtube": "https://www.youtube.com/@abdulelsayed",
       "tiktok": "https://www.tiktok.com/@abdulelsayed",
-      "linkedin": "https://www.linkedin.com/in/abdulelsayed/"
+      "linkedin": "https://www.linkedin.com/in/abdulelsayed/",
+      "bluesky": "https://bsky.app/profile/abdulelsayed.bsky.social"
      },
      "photo": {
       "file": "kyb-photos/michigan/abdul-el-sayed-united-states-senator.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Abdul_El-Sayed",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Abdul_El-Sayed_2026.png"
+      "credit": "Conlan Houston · CC BY-SA 4.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Abdul_El-Sayed_meet-and-greet_by_Conlan_Houston_5_(cropped).jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Abdul_El-Sayed_meet-and-greet_by_Conlan_Houston_5_%28cropped%29.jpg/500px-Abdul_El-Sayed_meet-and-greet_by_Conlan_Houston_5_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -396,9 +400,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/mike-rogers-united-states-senator.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Mike_Rogers_(Michigan)",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Mike_Rogers.jpg"
+      "credit": "P.J. Siquig · Public domain · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Mike_Rogers_in_November_2019_(3x4_cropped).jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Mike_Rogers_in_November_2019_%283x4_cropped%29.jpg/500px-Mike_Rogers_in_November_2019_%283x4_cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -681,6 +685,12 @@
       "x": "https://x.com/CMorseBills",
       "instagram": "https://www.instagram.com/morsebillsformi/",
       "linkedin": "https://www.linkedin.com/in/casandra-morse-bills-b3162bbb/"
+     },
+     "photo": {
+      "file": "kyb-photos/michigan/casandra-morse-bills-justice-of-the-supreme-court.jpg",
+      "credit": "Casandra Morse-Bills (campaign site)",
+      "link": "https://morsebillsforjustice.com/",
+      "from": "https://morsebillsforjustice.com/headshot.jpg"
      }
     },
     {
@@ -755,19 +765,18 @@
      "name": "Paul Brown",
      "party": "Democratic",
      "incumbent": true,
-     "profile": "https://ballotpedia.org/Paul_Brown_(Michigan)",
-     "website": "https://www.gobluevotebrown.com/",
-     "social": {
-      "facebook": "https://www.facebook.com/GoBlueVoteBrown/",
-      "instagram": "https://www.instagram.com/gobluevotebrown",
-      "linkedin": "https://www.linkedin.com/in/paul-brown-9b2b4914/"
-     },
      "photo": {
       "file": "kyb-photos/michigan/paul-brown-regent-of-the-university-of-michigan.jpg",
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Paul_Brown_(Michigan)",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Paul-Brown.jpg"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/GoBlueVoteBrown/",
+      "instagram": "https://www.instagram.com/gobluevotebrown",
+      "linkedin": "https://www.linkedin.com/in/paul-brown-9b2b4914/"
+     },
+     "website": "https://www.gobluevotebrown.com/"
     },
     {
      "ballot": 3,
@@ -910,13 +919,14 @@
       "facebook": "https://www.facebook.com/RogerVictoryforMSU",
       "x": "https://x.com/SenRogerVictory",
       "instagram": "https://www.instagram.com/roger_victory/",
-      "linkedin": "https://www.linkedin.com/in/roger-victory-b5364898/"
+      "linkedin": "https://www.linkedin.com/in/roger-victory-b5364898/",
+      "youtube": "https://www.youtube.com/channel/UClcM4lpNG_USM1rDXpXLqZw"
      },
      "photo": {
       "file": "kyb-photos/michigan/roger-victory-trustee-of-michigan-state-university.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Roger_Victory",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Roger-Victory.jpg"
+      "credit": "DadOfTheYear2022 · CC0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Senator_Roger_Victory.jpg",
+      "from": "https://upload.wikimedia.org/wikipedia/commons/1/18/Senator_Roger_Victory.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
      }
     },
     {
@@ -994,19 +1004,18 @@
      "ballot": 1,
      "name": "Richard Mack",
      "party": "Democratic",
-     "profile": "https://ballotpedia.org/Richard_Mack_(Michigan)",
-     "website": "https://richardmackforwsu.com/",
-     "social": {
-      "facebook": "https://www.facebook.com/profile.php/?id=61587017924384",
-      "instagram": "https://www.instagram.com/richard.g.mack.jr/",
-      "linkedin": "https://www.linkedin.com/in/richard-mack-a046633/"
-     },
      "photo": {
       "file": "kyb-photos/michigan/richard-mack-governor-of-wayne-state-university.jpg",
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Richard_Mack_(Michigan)",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Headshot-larger-2026_20261004_032152_63466_1.jpg"
-     }
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php/?id=61587017924384",
+      "instagram": "https://www.instagram.com/richard.g.mack.jr/",
+      "linkedin": "https://www.linkedin.com/in/richard-mack-a046633/"
+     },
+     "website": "https://richardmackforwsu.com/"
     },
     {
      "ballot": 2,
@@ -1087,8 +1096,7 @@
     {
      "ballot": 7,
      "name": "Jeff McDonald",
-     "party": "U.S. Taxpayers",
-     "profile": "https://ballotpedia.org/Jeff_McDonald_(Michigan)"
+     "party": "U.S. Taxpayers"
     },
     {
      "ballot": 8,
@@ -1155,7 +1163,8 @@
       "instagram": "https://www.instagram.com/callieforcongress/",
       "youtube": "https://www.youtube.com/@Callie4Congress",
       "tiktok": "https://www.tiktok.com/@callie4congress",
-      "linkedin": "https://www.linkedin.com/in/callie-barr-bb499a111/"
+      "linkedin": "https://www.linkedin.com/in/callie-barr-bb499a111/",
+      "bluesky": "https://bsky.app/profile/calliebarr.bsky.social"
      },
      "photo": {
       "file": "kyb-photos/michigan/callie-barr-cd-1.jpg",
@@ -1187,9 +1196,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/jack-bergman-cd-1.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Jack_Bergman",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Jack_Bergman1.png"
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/B001301",
+      "from": "https://unitedstates.github.io/images/congress/450x550/B001301.jpg"
      }
     },
     {
@@ -1297,7 +1306,8 @@
       "instagram": "https://www.instagram.com/ben_ambrose2026/",
       "youtube": "https://www.youtube.com/@Ambrose4Congress",
       "tiktok": "https://www.tiktok.com/@ambrose4congress",
-      "linkedin": "https://www.linkedin.com/in/benjamin-ambrose-mba-pcm-csm-644a47162/"
+      "linkedin": "https://www.linkedin.com/in/benjamin-ambrose-mba-pcm-csm-644a47162/",
+      "x": "https://twitter.com/BenAmbroseMI"
      },
      "photo": {
       "file": "kyb-photos/michigan/ben-ambrose-cd-2.jpg",
@@ -1329,9 +1339,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/john-moolenaar-cd-2.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/John_Moolenaar",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/John_Moolenaar.jpg"
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/M001194",
+      "from": "https://unitedstates.github.io/images/congress/450x550/M001194.jpg"
      }
     },
     {
@@ -1400,9 +1410,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/hillary-scholten-cd-3.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Hillary_Scholten",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/HillaryScholten.jpg"
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/S001221",
+      "from": "https://unitedstates.github.io/images/congress/450x550/S001221.jpg"
      }
     },
     {
@@ -1510,9 +1520,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/bill-huizenga-cd-4.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Bill_Huizenga",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Bill_Huizenga.jpg"
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/H001058",
+      "from": "https://unitedstates.github.io/images/congress/450x550/H001058.jpg"
      }
     },
     {
@@ -1592,9 +1602,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/tim-walberg-cd-5.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Tim_Walberg",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Tim_Walberg.jpg"
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/W000798",
+      "from": "https://unitedstates.github.io/images/congress/450x550/W000798.jpg"
      }
     },
     {
@@ -1623,7 +1633,8 @@
       "x": "https://x.com/BronkeJames",
       "youtube": "https://www.youtube.com/@JimBronke",
       "linkedin": "https://www.linkedin.com/in/james-bronke-4164958/",
-      "tiktok": "https://www.tiktok.com/@jamesbronke"
+      "tiktok": "https://www.tiktok.com/@jamesbronke",
+      "instagram": "https://www.instagram.com/jimbronke"
      },
      "photo": {
       "file": "kyb-photos/michigan/james-bronke-cd-5.jpg",
@@ -1670,9 +1681,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/debbie-dingell-cd-6.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Debbie_Dingell",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/ddingell.jpg"
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/D000624",
+      "from": "https://unitedstates.github.io/images/congress/450x550/D000624.jpg"
      }
     },
     {
@@ -1684,7 +1695,8 @@
      "social": {
       "facebook": "https://www.facebook.com/profile.php?id=61560975149472",
       "instagram": "https://www.instagram.com/smileyforcongress/",
-      "linkedin": "https://www.linkedin.com/in/heather-diepeveen/"
+      "linkedin": "https://www.linkedin.com/in/heather-diepeveen/",
+      "x": "https://x.com/Smiley4Congress"
      },
      "photo": {
       "file": "kyb-photos/michigan/heather-smiley-cd-6.jpg",
@@ -1870,13 +1882,14 @@
       "x": "https://x.com/McdonaldRivet",
       "instagram": "https://www.instagram.com/kmcdonaldrivet/",
       "youtube": "https://www.youtube.com/@KristenforMichigan",
-      "linkedin": "https://www.linkedin.com/in/kristen-mcdonald-2579675/"
+      "linkedin": "https://www.linkedin.com/in/kristen-mcdonald-2579675/",
+      "tiktok": "https://www.tiktok.com/@mcdonaldrivet"
      },
      "photo": {
       "file": "kyb-photos/michigan/kristen-mcdonald-rivet-cd-8.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Kristen_McDonald_Rivet",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/KristenMcDonaldRivet2025.jpg"
+      "credit": "Ike Hayman, House Creative Services · Public domain · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:McDonald_Rivet_Kristen_119th_Congress_(cropped).jpg",
+      "from": "https://upload.wikimedia.org/wikipedia/commons/5/5b/McDonald_Rivet_Kristen_119th_Congress_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
      }
     },
     {
@@ -2011,9 +2024,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/lisa-mcclain-cd-9.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Lisa_McClain",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Lisa-McClain.PNG"
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/M001136",
+      "from": "https://unitedstates.github.io/images/congress/450x550/M001136.jpg"
      }
     },
     {
@@ -2103,7 +2116,8 @@
       "instagram": "https://www.instagram.com/christinahinesforcongress",
       "youtube": "https://www.youtube.com/@ChristinaHinesforCongress",
       "tiktok": "https://www.tiktok.com/@christinaforcongress",
-      "linkedin": "https://www.linkedin.com/in/christina-hines-51336a23/"
+      "linkedin": "https://www.linkedin.com/in/christina-hines-51336a23/",
+      "bluesky": "https://bsky.app/profile/cbhines586.bsky.social"
      },
      "photo": {
       "file": "kyb-photos/michigan/christina-hines-cd-10.jpg",
@@ -2228,9 +2242,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/jeremy-moss-cd-11.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Jeremy_Moss",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Jeremy-Moss.PNG"
+      "credit": "Anmanwell · CC BY-SA 4.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Jeremy_Moss_Southfield_MI_(1).jpg",
+      "from": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Jeremy_Moss_Southfield_MI_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
      }
     },
     {
@@ -2345,13 +2359,14 @@
       "instagram": "https://www.instagram.com/rashidatlaib",
       "youtube": "https://www.youtube.com/@RashidaTlaib12",
       "linkedin": "https://www.linkedin.com/in/rashida-tlaib-b829737/",
-      "tiktok": "https://www.tiktok.com/@rashidatlaib"
+      "tiktok": "https://www.tiktok.com/@rashidatlaib",
+      "threads": "https://www.threads.com/@rashidatlaib"
      },
      "photo": {
       "file": "kyb-photos/michigan/rashida-tlaib-cd-12.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Rashida_Tlaib",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Rashida-Tlaib.PNG"
+      "credit": "Official portrait, U.S. Congress (public domain)",
+      "link": "https://bioguide.congress.gov/search/bio/T000481",
+      "from": "https://unitedstates.github.io/images/congress/450x550/T000481.jpg"
      }
     },
     {
@@ -2465,9 +2480,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/donavan-mckinney-cd-13.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Donavan_McKinney",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Donavan_Mckinney.jpeg"
+      "credit": "City of Detroit · Public domain · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:State_Rep_Donavan_McKinney_Swearing_In_12.12.22_(52565631658)_(cropped).jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/State_Rep_Donavan_McKinney_Swearing_In_12.12.22_%2852565631658%29_%28cropped%29.jpg/500px-State_Rep_Donavan_McKinney_Swearing_In_12.12.22_%2852565631658%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -2718,9 +2733,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/darrin-camilleri-sldu-4.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Darrin_Camilleri",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/DarrinCamilleri2022.jpg"
+      "credit": "Official Portrait of Michigan State Senator-elect Darrin Camilleri uploaded on his Twitter account · CC BY-SA 4.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Darrin_Camilleri_Portrait.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Darrin_Camilleri_Portrait.jpg/500px-Darrin_Camilleri_Portrait.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -2924,7 +2939,8 @@
       "youtube": "https://www.youtube.com/@SenPolehanki",
       "x": "https://x.com/SenPolehanki",
       "instagram": "https://www.instagram.com/sendaynapolehanki/",
-      "linkedin": "https://www.linkedin.com/in/dayna-polehanki-a682a02a7/"
+      "linkedin": "https://www.linkedin.com/in/dayna-polehanki-a682a02a7/",
+      "bluesky": "https://bsky.app/profile/senpolehanki.bsky.social"
      },
      "photo": {
       "file": "kyb-photos/michigan/dayna-polehanki-sldu-8.jpg",
@@ -2944,6 +2960,12 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Kenneth_Massey",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/resized-A_20260629_184542_43112_1.jpeg"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/ElectKenMassey",
+      "instagram": "https://www.instagram.com/electkenmassey",
+      "youtube": "https://www.youtube.com/@ElectKenMassey",
+      "x": "https://x.com/ElectKenMassey"
      }
     }
    ],
@@ -2969,7 +2991,8 @@
      "website": "https://www.drbrooksforsenate.com/",
      "social": {
       "facebook": "https://www.facebook.com/drbrooksforsenate/",
-      "linkedin": "https://www.linkedin.com/in/theresa-brooks-198305187"
+      "linkedin": "https://www.linkedin.com/in/theresa-brooks-198305187",
+      "instagram": "https://instagram.com/drbrooksforsenate"
      },
      "photo": {
       "file": "kyb-photos/michigan/theresa-brooks-sldu-9.jpg",
@@ -3055,7 +3078,11 @@
      "social": {
       "facebook": "https://www.facebook.com/votenatalieprice/",
       "x": "https://x.com/RepNataliePrice",
-      "linkedin": "https://www.linkedin.com/in/votenatalieprice"
+      "linkedin": "https://www.linkedin.com/in/votenatalieprice",
+      "instagram": "https://www.instagram.com/votenatalieprice",
+      "bluesky": "https://bsky.app/profile/natalieprice.bsky.social",
+      "youtube": "https://www.youtube.com/@votenatalieprice",
+      "tiktok": "https://www.tiktok.com/@vote.natalie.price"
      },
      "photo": {
       "file": "kyb-photos/michigan/natalie-price-sldu-10.jpg",
@@ -3163,9 +3190,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/kevin-hertel-sldu-12.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Kevin_Hertel",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Kevin_Hertel1.png"
+      "credit": "Staff Sgt. Drake Chandler · Public domain · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Veteran_Suicide_Prevention_Roundtable_Discusses_Commitment_to_Service_Members_(4)_(cropped).jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Veteran_Suicide_Prevention_Roundtable_Discusses_Commitment_to_Service_Members_%284%29_%28cropped%29.jpg/500px-Veteran_Suicide_Prevention_Roundtable_Discusses_Commitment_to_Service_Members_%284%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -3225,7 +3252,8 @@
      "social": {
       "facebook": "https://www.facebook.com/ElectRyanBerman/",
       "instagram": "https://www.instagram.com/electryanberman/",
-      "linkedin": "https://www.linkedin.com/in/ryan-berman-55aba819/"
+      "linkedin": "https://www.linkedin.com/in/ryan-berman-55aba819/",
+      "x": "https://twitter.com/ElectRyanBerman"
      },
      "photo": {
       "file": "kyb-photos/michigan/ryan-berman-sldu-13.jpg",
@@ -3377,7 +3405,9 @@
      "profile": "https://ballotpedia.org/Joseph_Bellino",
      "website": "https://www.senatorjosephbellino.com/",
      "social": {
-      "facebook": "https://www.facebook.com/JoeBellinoJr"
+      "facebook": "https://www.facebook.com/JoeBellinoJr",
+      "x": "https://twitter.com/JoeBellinoRep",
+      "youtube": "https://www.youtube.com/@senjosephbellino"
      },
      "photo": {
       "file": "kyb-photos/michigan/joseph-bellino-sldu-16.jpg",
@@ -3422,9 +3452,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/jonathan-lindsey-sldu-17.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Jonathan_Lindsey",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/jlindsey.jpg"
+      "credit": "Gage Skidmore · CC BY-SA 3.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Jonathan_Lindsey_by_Gage_Skidmore.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Jonathan_Lindsey_by_Gage_Skidmore.jpg/500px-Jonathan_Lindsey_by_Gage_Skidmore.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     }
    ],
@@ -3621,7 +3651,11 @@
      "name": "Josh Burns",
      "party": "Republican",
      "profile": "https://ballotpedia.org/Josh_Burns_(Michigan)",
-     "website": "https://joshburns.me/"
+     "website": "https://joshburns.me/",
+     "social": {
+      "facebook": "https://www.facebook.com/JoshBurnsForStateSenate",
+      "x": "https://x.com/JoshBurnsForMI"
+     }
     }
    ],
    "writeIn": true,
@@ -3832,7 +3866,10 @@
      "profile": "https://ballotpedia.org/Brendan_Johnson_(Michigan_State_Senate_District_26_candidate)",
      "website": "https://johnsonforsenate.us/",
      "social": {
-      "facebook": "https://www.facebook.com/BrendanJJohnsonForStateSenate/"
+      "facebook": "https://www.facebook.com/BrendanJJohnsonForStateSenate/",
+      "linkedin": "https://www.linkedin.com/in/brendanjjohnson",
+      "bluesky": "https://bsky.app/profile/brendanjjohnson.bsky.social",
+      "x": "https://x.com/JohnsonMISenate"
      },
      "photo": {
       "file": "kyb-photos/michigan/brendan-johnson-sldu-26.jpg",
@@ -3929,7 +3966,9 @@
      "website": "https://www.rashidaharrisonforstatesenate.com/",
      "social": {
       "facebook": "https://www.facebook.com/profile.php?id=61572342371273",
-      "linkedin": "https://www.linkedin.com/in/rlharrison-phd/"
+      "linkedin": "https://www.linkedin.com/in/rlharrison-phd/",
+      "instagram": "https://www.instagram.com/drrashidaformichigan",
+      "tiktok": "https://www.tiktok.com/@drrashidaforstatesenate"
      },
      "photo": {
       "file": "kyb-photos/michigan/rashida-harrison-sldu-28.jpg",
@@ -3965,7 +4004,13 @@
      "name": "Wes Peterson",
      "party": "Working Class",
      "profile": "https://ballotpedia.org/Wes_Peterson",
-     "website": "https://wesformi28.com/"
+     "website": "https://wesformi28.com/",
+     "photo": {
+      "file": "kyb-photos/michigan/wes-peterson-sldu-28.jpg",
+      "credit": "Wes Peterson (campaign site)",
+      "link": "https://wesformi28.com/",
+      "from": "https://wesformi28.com/images/wes-peterson.jpg"
+     }
     }
    ],
    "writeIn": true,
@@ -4007,7 +4052,9 @@
      "profile": "https://ballotpedia.org/Brady_Middleton",
      "website": "https://www.bradymiddleton.com/",
      "social": {
-      "instagram": "https://www.instagram.com/planetbrady/"
+      "instagram": "https://www.instagram.com/planetbrady/",
+      "x": "https://x.com/planetbrady",
+      "threads": "https://www.threads.com/@planetbrady"
      },
      "photo": {
       "file": "kyb-photos/michigan/brady-middleton-sldu-29.jpg",
@@ -4046,9 +4093,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/carol-glanville-sldu-30.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Carol_Glanville",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/MIList-Glanville-headshot_20261001_021734_62297_1.jpg"
+      "credit": "US Department of Education · CC BY 2.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Carol_Glanville_-_12_December_2023_-_5_(cropped).jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Carol_Glanville_-_12_December_2023_-_5_%28cropped%29.jpg/500px-Carol_Glanville_-_12_December_2023_-_5_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -4095,7 +4142,10 @@
      "profile": "https://ballotpedia.org/Chris_Kleinjans",
      "website": "https://kleinjansformichigan.com",
      "social": {
-      "facebook": "https://www.facebook.com/ChrisKleinjansforCountyCommissioner/"
+      "facebook": "https://www.facebook.com/ChrisKleinjansforCountyCommissioner/",
+      "instagram": "https://www.instagram.com/chrisformichigan",
+      "youtube": "https://www.youtube.com/@KleinjansforMichigan31",
+      "tiktok": "https://www.tiktok.com/@kleinjansformichigan"
      },
      "photo": {
       "file": "kyb-photos/michigan/chris-kleinjans-sldu-31.jpg",
@@ -4113,7 +4163,10 @@
      "social": {
       "facebook": "https://www.facebook.com/wetzelformichigan/",
       "instagram": "https://www.instagram.com/wetzel4michigan/",
-      "linkedin": "https://www.linkedin.com/in/wetzel4michigan/"
+      "linkedin": "https://www.linkedin.com/in/wetzel4michigan/",
+      "youtube": "https://www.youtube.com/@wetzel4michigan",
+      "x": "https://x.com/wetzel4michigan",
+      "tiktok": "https://www.tiktok.com/@wetzel4michigan"
      },
      "photo": {
       "file": "kyb-photos/michigan/john-wetzel-sldu-31.jpg",
@@ -4256,9 +4309,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/roger-hauck-sldu-34.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Roger_Hauck_(Michigan)",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Roger_Hauck.jpg"
+      "credit": "Dan Gaken · CC BY 2.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Sen._Roger_Hauck_Meets_with_the_Mt._Pleasant_Chamber%27s_RDLI_Group_(cropped).jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Sen._Roger_Hauck_Meets_with_the_Mt._Pleasant_Chamber%27s_RDLI_Group_%28cropped%29.jpg/500px-Sen._Roger_Hauck_Meets_with_the_Mt._Pleasant_Chamber%27s_RDLI_Group_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     }
    ],
@@ -4369,7 +4422,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Michele_Hoitenga",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Michele_Hoitenga.jpg"
-     }
+     },
+     "website": "https://www.senatormichelehoitenga.com"
     }
    ],
    "writeIn": true,
@@ -4394,7 +4448,8 @@
      "website": "https://www.gallupformichigan.com",
      "social": {
       "facebook": "https://www.facebook.com/profile.php?id=61586865188062",
-      "instagram": "https://www.instagram.com/gallupformichigan"
+      "instagram": "https://www.instagram.com/gallupformichigan",
+      "bluesky": "https://bsky.app/profile/gallupformichigan.bsky.social"
      },
      "photo": {
       "file": "kyb-photos/michigan/kate-gallup-sldu-37.jpg",
@@ -4418,9 +4473,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/john-damoose-sldu-37.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/John_Damoose",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/John-Damoose.jpg"
+      "credit": "Ford School of Public Policy · CC BY 4.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:John_Damoose,_February_2026.png",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/John_Damoose%2C_February_2026.png/500px-John_Damoose%2C_February_2026.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     }
    ],
@@ -4521,9 +4576,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/tyrone-carter-sldl-1.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Tyrone_Carter",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Tyrone-Carter.PNG"
+      "credit": "City of Detroit · Public domain · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Tyrone_Carter_2019.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Tyrone_Carter_2019.jpg/500px-Tyrone_Carter_2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -4614,9 +4669,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/alabas-farhat-sldl-3.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Alabas_Farhat",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Alabas_Farhat.jpg"
+      "credit": "Michigan House of Representatives. · CC0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Farhat-Official-Headshot-3-scaled.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Farhat-Official-Headshot-3-scaled.jpg/500px-Farhat-Official-Headshot-3-scaled.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -4652,7 +4707,8 @@
      "website": "https://reginaross.com/",
      "social": {
       "facebook": "https://www.facebook.com/profile.php?id=61589697904221",
-      "instagram": "https://www.instagram.com/vote4ross/"
+      "instagram": "https://www.instagram.com/vote4ross/",
+      "tiktok": "https://www.tiktok.com/@vote4ross"
      },
      "photo": {
       "file": "kyb-photos/michigan/regina-ross-sldl-4.jpg",
@@ -4971,9 +5027,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/veronica-paiz-sldl-10.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Veronica_Paiz",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Veronica_Paiz_2026.jpg"
+      "credit": "Michigan House Democrats · CC BY 4.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Paiz_Headshot_2025-scaled.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Paiz_Headshot_2025-scaled.jpg/500px-Paiz_Headshot_2025-scaled.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -5132,13 +5188,14 @@
       "facebook": "https://www.facebook.com/VoteMcFall",
       "instagram": "https://www.instagram.com/votemcfall",
       "youtube": "https://www.youtube.com/@mikemcfallforstaterepresen7252",
-      "linkedin": "https://www.linkedin.com/in/mcmcfall/"
+      "linkedin": "https://www.linkedin.com/in/mcmcfall/",
+      "x": "https://x.com/VoteMcFall"
      },
      "photo": {
       "file": "kyb-photos/michigan/mike-mcfall-sldl-14.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Mike_McFall",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Mike_McFall.jpg"
+      "credit": "MI House Dems · Public domain · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Mike_McFall_Official_Photo.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Mike_McFall_Official_Photo.jpg/500px-Mike_McFall_Official_Photo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -5184,7 +5241,8 @@
      "profile": "https://ballotpedia.org/Jalal_Abdallah",
      "website": "https://www.votejalal.com/",
      "social": {
-      "instagram": "https://instagram.com/votejalal"
+      "instagram": "https://instagram.com/votejalal",
+      "facebook": "https://facebook.com/votejalal"
      }
     },
     {
@@ -5277,9 +5335,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/laurie-pohutsky-sldl-17.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Laurie_Pohutsky",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/DSC04873.jpg"
+      "credit": "City of Detroit · Public domain · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Laurie_Pohutsky_in_2023_-_8R4A5233.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Laurie_Pohutsky_in_2023_-_8R4A5233.jpg/500px-Laurie_Pohutsky_in_2023_-_8R4A5233.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -5561,9 +5619,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/jason-morgan-sldl-23.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Jason_Morgan_(Michigan)",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/JasonMorgan24.jpg"
+      "credit": "A2polisci · CC BY-SA 4.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Jason_Morgan.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Jason_Morgan.jpg/500px-Jason_Morgan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -5697,9 +5755,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/dylan-wegela-sldl-26.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Dylan_Wegela",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/DylanWegela2024.jpg"
+      "credit": "Gage Skidmore from Peoria, AZ, United States of America · CC BY-SA 2.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Dylan_Wegela_(40915475985).jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Dylan_Wegela_%2840915475985%29.jpg/500px-Dylan_Wegela_%2840915475985%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -5766,9 +5824,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/rylee-linting-sldl-27.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Rylee_Linting",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Rylee_LintingMI.jpg"
+      "credit": "Gage Skidmore from Surprise, AZ, United States of America · CC BY-SA 2.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Rylee_Linting_(54232150992)_(cropped).jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Rylee_Linting_%2854232150992%29_%28cropped%29.jpg/500px-Rylee_Linting_%2854232150992%29_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     }
    ],
@@ -5793,7 +5851,9 @@
      "profile": "https://ballotpedia.org/Sherry_Berecz",
      "website": "https://sherryberecz.com/",
      "social": {
-      "linkedin": "https://www.linkedin.com/in/sherryberecz/"
+      "linkedin": "https://www.linkedin.com/in/sherryberecz/",
+      "facebook": "https://www.facebook.com/BereczforMichigan",
+      "instagram": "https://www.instagram.com/bereczformichigan"
      },
      "photo": {
       "file": "kyb-photos/michigan/sherry-berecz-sldl-28.jpg",
@@ -5940,7 +6000,8 @@
      "website": "https://shannondarewayne.com/",
      "social": {
       "facebook": "https://www.facebook.com/ShannonDareWayne4MI",
-      "linkedin": "https://www.linkedin.com/in/shannon-dare/"
+      "linkedin": "https://www.linkedin.com/in/shannon-dare/",
+      "instagram": "https://www.instagram.com/shannondarewayne4mi"
      },
      "photo": {
       "file": "kyb-photos/michigan/shannon-wayne-sldl-31.jpg",
@@ -5997,9 +6058,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/jimmie-wilson-jr-sldl-32.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Jimmie_Wilson_Jr._(Michigan)",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Jimmie_WilsonJr.jpg"
+      "credit": "Wayne Dabney · CC BY 4.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Jimmie_Wilson_Jr.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Jimmie_Wilson_Jr.jpg/500px-Jimmie_Wilson_Jr.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -6007,7 +6068,13 @@
      "name": "Mike Eller",
      "party": "Republican",
      "profile": "https://ballotpedia.org/Mike_Eller",
-     "website": "https://www.ellerformichigan.com/"
+     "website": "https://www.ellerformichigan.com/",
+     "photo": {
+      "file": "kyb-photos/michigan/mike-eller-sldl-32.jpg",
+      "credit": "Mike Eller (campaign site)",
+      "link": "https://www.ellerformichigan.com/",
+      "from": "https://images.squarespace-cdn.com/content/v1/69e79cdb12e9bd051d7e10d8/29e0e9b6-0210-4e88-91f5-6b0caed7bf10/Eller+%281%29.png"
+     }
     },
     {
      "ballot": 3,
@@ -6194,9 +6261,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/steve-carra-sldl-36.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Steve_Carra",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Steve-Carra.jpg"
+      "credit": "Gage Skidmore · CC BY-SA 3.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Steve_Carra_by_Gage_Skidmore.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Steve_Carra_by_Gage_Skidmore.jpg/500px-Steve_Carra_by_Gage_Skidmore.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     }
    ],
@@ -6241,10 +6308,11 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/brad-paquette-sldl-37.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Brad_Paquette",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Paquette_Headshot.jpg"
-     }
+      "credit": "Paq18 · CC BY-SA 4.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Paquette_Headshot.jpg",
+      "from": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Paquette_Headshot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+     },
+     "website": "https://gophouse.org/member/repbradpaquette/about"
     }
    ],
    "writeIn": true,
@@ -6367,7 +6435,10 @@
      "website": "https://votepolonowski.com",
      "social": {
       "facebook": "https://www.facebook.com/polonowskijared",
-      "linkedin": "https://www.linkedin.com/in/jared-polonowski-84965a2b2/"
+      "linkedin": "https://www.linkedin.com/in/jared-polonowski-84965a2b2/",
+      "instagram": "https://www.instagram.com/polonowskijared",
+      "tiktok": "https://www.tiktok.com/@polonowski.jared",
+      "x": "https://www.x.com/polonowskijared"
      },
      "photo": {
       "file": "kyb-photos/michigan/jared-polonowski-sldl-39.jpg",
@@ -6442,7 +6513,8 @@
      "social": {
       "facebook": "https://www.facebook.com/jenstrebs",
       "x": "https://x.com/jenstrebs",
-      "instagram": "https://instagram.com/jenstrebs"
+      "instagram": "https://instagram.com/jenstrebs",
+      "bluesky": "https://bsky.app/profile/jenstrebs.bsky.social"
      },
      "photo": {
       "file": "kyb-photos/michigan/jen-strebs-sldl-41.jpg",
@@ -6459,6 +6531,12 @@
      "website": "https://votesabel.com/",
      "social": {
       "linkedin": "https://www.linkedin.com/in/nicole-sabel-508bb17a/"
+     },
+     "photo": {
+      "file": "kyb-photos/michigan/nicole-sabel-sldl-41.jpg",
+      "credit": "Nicole Sabel (campaign site)",
+      "link": "https://votesabel.com/",
+      "from": "https://votesabel.com/wp-content/uploads/2024/06/NicoleSabel-2.jpg"
      }
     },
     {
@@ -6549,7 +6627,9 @@
      "profile": "https://ballotpedia.org/Alan_Swank",
      "website": "https://www.alanswankformichigan43.com/",
      "social": {
-      "facebook": "https://www.facebook.com/profile.php?id=61584837225513"
+      "facebook": "https://www.facebook.com/profile.php?id=61584837225513",
+      "youtube": "https://youtube.com/@committeetoelectalanswank",
+      "tiktok": "https://tiktok.com/@Alan.swank.for.mi"
      }
     },
     {
@@ -6599,9 +6679,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/jim-haadsma-sldl-44.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Jim_Haadsma",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Jim_Haadsma_20230521_074955.jpg"
+      "credit": "WavyPhoton · CC0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Jim_Haadmsa.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Jim_Haadmsa.jpg/500px-Jim_Haadmsa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -6747,9 +6827,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/carrie-rheingans-sldl-47.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Carrie_Rheingans",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Carrie_Rheingans.jpeg"
+      "credit": "University of Michigan Gerald R. Ford School of Public Policy · CC BY 3.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Carrie_Rheingans.png",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Carrie_Rheingans.png/500px-Carrie_Rheingans.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -6977,9 +7057,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/matt-maddock-sldl-51.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Matt_Maddock",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Matt-Maddock.PNG"
+      "credit": "Gage Skidmore · CC BY-SA 3.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Matt_Maddock_by_Gage_Skidmore.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Matt_Maddock_by_Gage_Skidmore.jpg/500px-Matt_Maddock_by_Gage_Skidmore.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     }
    ],
@@ -7149,7 +7229,8 @@
       "instagram": "https://www.instagram.com/alexhawkinsmi",
       "youtube": "https://www.youtube.com/@AlexHawkinsMI",
       "tiktok": "https://www.tiktok.com/@alexhawkinsmi",
-      "linkedin": "https://www.linkedin.com/in/alex-hawkins-mich/"
+      "linkedin": "https://www.linkedin.com/in/alex-hawkins-mich/",
+      "bluesky": "https://bsky.app/profile/alexhawkinsmi.bsky.social"
      },
      "photo": {
       "file": "kyb-photos/michigan/alex-hawkins-sldl-55.jpg",
@@ -7222,7 +7303,8 @@
      "profile": "https://ballotpedia.org/Ashok_Baddi",
      "website": "https://www.ashokbaddi.com/",
      "social": {
-      "facebook": "https://www.facebook.com/profile.php?id=61586663280254"
+      "facebook": "https://www.facebook.com/profile.php?id=61586663280254",
+      "instagram": "https://www.instagram.com/ashokforstaterep"
      },
      "photo": {
       "file": "kyb-photos/michigan/ashok-baddi-sldl-56.jpg",
@@ -7309,7 +7391,8 @@
      "social": {
       "facebook": "https://www.facebook.com/profile.php?id=61587009242659",
       "instagram": "https://www.instagram.com/katrinamanetta/",
-      "youtube": "https://www.youtube.com/@katrinamanetta"
+      "youtube": "https://www.youtube.com/@katrinamanetta",
+      "threads": "https://www.threads.com/@katrinamanetta"
      },
      "photo": {
       "file": "kyb-photos/michigan/katrina-manetta-sldl-58.jpg",
@@ -7546,7 +7629,8 @@
       "facebook": "https://www.facebook.com/profile.php?id=61587276144438",
       "instagram": "https://www.instagram.com/jamieforhouse/",
       "tiktok": "https://www.tiktok.com/@jamieforhouse",
-      "linkedin": "https://www.linkedin.com/in/sonneberger"
+      "linkedin": "https://www.linkedin.com/in/sonneberger",
+      "bluesky": "https://bsky.app/profile/jamieforhouse.bsky.social"
      },
      "photo": {
       "file": "kyb-photos/michigan/jamie-sonneberger-sldl-63.jpg",
@@ -7818,6 +7902,13 @@
      "profile": "https://ballotpedia.org/Deanna_Martin",
      "social": {
       "facebook": "https://www.facebook.com/deanna.martindevaney"
+     },
+     "website": "https://gophouse.org/member/repdavidmartin/posts",
+     "photo": {
+      "file": "kyb-photos/michigan/deanna-martin-sldl-68.jpg",
+      "credit": "Deanna Martin (campaign site)",
+      "link": "https://gophouse.org/member/repdavidmartin/posts",
+      "from": "https://dtj5wlj7ond0z.cloudfront.net/uploads/2025/02/HS_Martin_0125_DSC_1060-scaled.jpg"
      }
     },
     {
@@ -8075,7 +8166,8 @@
      "social": {
       "facebook": "https://www.facebook.com/profile.php?id=61558486495608",
       "instagram": "https://www.instagram.com/rockey4rep/",
-      "linkedin": "https://www.linkedin.com/in/joshua-rockey-430a836/"
+      "linkedin": "https://www.linkedin.com/in/joshua-rockey-430a836/",
+      "youtube": "https://www.youtube.com/@Rockey4Rep-im9mw"
      },
      "photo": {
       "file": "kyb-photos/michigan/joshua-rockey-sldl-73.jpg",
@@ -8150,9 +8242,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/penelope-tsernoglou-sldl-75.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Penelope_Tsernoglou",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Penelope_Tsernoglou.jpg"
+      "credit": "QueenElizabethIsMyIcon · CC0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Rep._Penelope_Tsernoglou.jpg",
+      "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Rep._Penelope_Tsernoglou.jpg/500px-Rep._Penelope_Tsernoglou.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      }
     },
     {
@@ -8242,9 +8334,9 @@
      },
      "photo": {
       "file": "kyb-photos/michigan/emily-dievendorf-sldl-77.jpg",
-      "credit": "Ballotpedia",
-      "link": "https://ballotpedia.org/Emily_Dievendorf",
-      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Emily_Dievendorf.jpg"
+      "credit": "File made available by Equality Michigan through the LGBT Free Media Collective · CC BY-SA 3.0 · Wikimedia Commons",
+      "link": "https://commons.wikimedia.org/wiki/File:Emily_Dievendorf1.jpg",
+      "from": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Emily_Dievendorf1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
      }
     },
     {
@@ -8367,7 +8459,8 @@
      "profile": "https://ballotpedia.org/Zach_Abbott",
      "website": "https://zachabbottformi.runtogether.us/",
      "social": {
-      "facebook": "https://www.facebook.com/profile.php?id=61577916017962"
+      "facebook": "https://www.facebook.com/profile.php?id=61577916017962",
+      "tiktok": "https://www.tiktok.com/@zach.abbott.for.mi79"
      },
      "photo": {
       "file": "kyb-photos/michigan/zach-abbott-sldl-79.jpg",
@@ -8572,6 +8665,12 @@
      "website": "https://www.cindy4mi.com/",
      "social": {
       "facebook": "https://www.facebook.com/cindy4mi/"
+     },
+     "photo": {
+      "file": "kyb-photos/michigan/cindy-ramirez-sldl-83.jpg",
+      "credit": "Cindy Ramirez (campaign site)",
+      "link": "https://www.cindy4mi.com/",
+      "from": "https://www.cindy4mi.com/images/Cindy%20Campaing%20Photos.2.4x6.jpg"
      }
     }
    ],
@@ -8781,7 +8880,14 @@
      "website": "https://kielreid.com/",
      "social": {
       "facebook": "https://www.facebook.com/KielReidforStateRep",
-      "tiktok": "https://www.tiktok.com/@kiel.reid3"
+      "tiktok": "https://www.tiktok.com/@kiel.reid3",
+      "instagram": "https://www.instagram.com/reid4rep"
+     },
+     "photo": {
+      "file": "kyb-photos/michigan/kiel-reid-sldl-88.jpg",
+      "credit": "Kiel Reid (campaign site)",
+      "link": "https://kielreid.com/",
+      "from": "https://i0.wp.com/kielreid.com/wp-content/uploads/2026/02/unnamed-4.jpg?fit=1024%2C1536&ssl=1"
      }
     },
     {
@@ -8825,7 +8931,9 @@
      "profile": "https://ballotpedia.org/Meegan_Zickus",
      "website": "https://zickusfor89th.com",
      "social": {
-      "linkedin": "https://www.linkedin.com/in/meegan-zickus-008706125/"
+      "linkedin": "https://www.linkedin.com/in/meegan-zickus-008706125/",
+      "instagram": "https://www.instagram.com/zickusfor89th",
+      "bluesky": "https://bsky.app/profile/zickusfor89th.bsky.social"
      },
      "photo": {
       "file": "kyb-photos/michigan/meegan-zickus-sldl-89.jpg",
@@ -8876,7 +8984,8 @@
      "social": {
       "facebook": "https://www.facebook.com/electrachelcrowther",
       "instagram": "https://www.instagram.com/electrachelcrowther",
-      "linkedin": "https://www.linkedin.com/in/rachelcrowther1"
+      "linkedin": "https://www.linkedin.com/in/rachelcrowther1",
+      "tiktok": "https://tiktok.com/@rachelcrowther4mi"
      },
      "photo": {
       "file": "kyb-photos/michigan/rachel-crowther-sldl-90.jpg",
@@ -9074,7 +9183,11 @@
      "name": "Amos O'Neal",
      "party": "Democratic",
      "incumbent": true,
-     "profile": "https://ballotpedia.org/Amos_O&#39;Neal"
+     "profile": "https://ballotpedia.org/Amos_O&#39;Neal",
+     "social": {
+      "facebook": "https://www.facebook.com/StateRepAmosONeal"
+     },
+     "website": "https://housedems.com/amos-oneal/"
     },
     {
      "ballot": 2,
@@ -9219,7 +9332,8 @@
      "social": {
       "facebook": "https://www.facebook.com/bearssformichigan",
       "instagram": "https://www.instagram.com/bearssformichigan/",
-      "linkedin": "https://www.linkedin.com/in/briarbearss"
+      "linkedin": "https://www.linkedin.com/in/briarbearss",
+      "x": "https://x.com/bearss4michigan"
      },
      "photo": {
       "file": "kyb-photos/michigan/briar-bearss-sldl-97.jpg",
@@ -9319,7 +9433,11 @@
      "ballot": 3,
      "name": "Steven Lull",
      "party": "Libertarian",
-     "profile": "https://ballotpedia.org/Steven_Lull"
+     "profile": "https://ballotpedia.org/Steven_Lull",
+     "social": {
+      "facebook": "https://www.facebook.com/leaf.leaf.31",
+      "linkedin": "https://www.linkedin.com/in/steven-lull-a6b170221/"
+     }
     }
    ],
    "writeIn": true,
@@ -9724,6 +9842,11 @@
      "party": "Republican",
      "incumbent": true,
      "profile": "https://ballotpedia.org/Parker_Fairbairn",
+     "website": "https://www.parkerformichigan.com/",
+     "social": {
+      "facebook": "https://www.facebook.com/parkerfairbairn107",
+      "linkedin": "https://www.linkedin.com/in/parker-fairbairn-mba-14b146149/"
+     },
      "photo": {
       "file": "kyb-photos/michigan/parker-fairbairn-sldl-107.jpg",
       "credit": "Ballotpedia",

@@ -28,9 +28,12 @@ jobs:
         with:
           node-version: 20
 
-      # ImageMagick shrinks candidates' photos.
+      # ImageMagick shrinks candidates' photos; OpenCV tells a headshot on a
+      # campaign site from a flyer.
       - name: Install tools
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq imagemagick
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq imagemagick
+          pip install --quiet "opencv-python-headless<5"
 
       - name: Build ballot data
         run: node scripts/know-your-ballot/michigan.mjs

@@ -12,7 +12,7 @@
 //                                                  the state outline for the hero
 //   5. The certified statewide proposals (michigan/proposals.mjs)
 //
-// Needs `unzip`, `curl` and ImageMagick's `convert` on PATH. Run by .github/workflows/know-your-ballot-michigan.yml;
+// Needs `unzip`, `curl`, ImageMagick and OpenCV for Python (see face-check.py) on PATH. Run by .github/workflows/know-your-ballot-michigan.yml;
 // locally: `node scripts/know-your-ballot/michigan.mjs`.
 
 import { execFileSync } from 'node:child_process';

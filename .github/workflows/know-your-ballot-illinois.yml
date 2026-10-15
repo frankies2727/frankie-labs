@@ -35,6 +35,7 @@ jobs:
       - name: Install tools
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils imagemagick
+          pip install --quiet "opencv-python-headless<5"
           npm install --no-save playwright@1.56.0
           npx playwright install --with-deps chromium
 
