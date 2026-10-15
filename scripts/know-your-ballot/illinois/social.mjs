@@ -1,7 +1,8 @@
 // Candidates' social media accounts, only from sources that are theirs or
-// official, never guessed from a name alone:
+// official, never guessed from a name alone (for Illinois, or any state in
+// STATES below):
 //   1. Members of Congress: the @unitedstates congress-legislators social file.
-//   2. Sitting Illinois legislators: Open States (their homepage and Wikipedia
+//   2. Sitting state legislators: Open States (their homepage and Wikipedia
 //      page), matched by district and last name.
 //   3. Wikidata, through that Wikipedia page, or found by Wikidata's own search
 //      (its documented API) when the entry's name matches and its description
@@ -31,6 +32,20 @@ const WIKIPEDIA_SUMMARY = 'https://en.wikipedia.org/api/rest_v1/page/summary/';
 const SEARCH_MINUTES = 8;
 const UA = 'KnowYourBallot/1.0 (https://github.com/frankies2727/frankie-labs)';
 
+// What differs per state: where its legislators' files are, what counts as a
+// local description on Wikidata, and which hosts carry the legislature's own
+// member photos (news sites' photos can't be reused).
+export const STATES = {
+  IL: {
+    code: 'IL', local: /illinois|chicago|cook county/i, people: 'data/il/legislature',
+    photo: (url) => (/^https:\/\/cdn\.ilga\.gov\//.test(url) ? { url, credit: 'Illinois General Assembly', link: 'https://www.ilga.gov/' } : undefined),
+  },
+  MI: {
+    code: 'MI', local: /michigan|detroit|lansing|grand rapids/i, people: 'data/mi/legislature',
+    photo: (url) => (/^https:\/\/(?:www\.)?(?:house\.mi\.gov|senate\.michigan\.gov)\//.test(url) ? { url, credit: 'Michigan Legislature', link: 'https://www.legislature.mi.gov/' } : undefined),
+  },
+};
+
 const PLATFORMS = {
   x: (h) => `https://x.com/${h}`,
   facebook: (h) => `https://www.facebook.com/${h}`,
@@ -59,13 +74,13 @@ async function json(url, opts = {}) {
 }
 
 // ---- 1. Congress --------------------------------------------------------------
-async function congress() {
+async function congress(st) {
   const [people, social] = await Promise.all([json(`${CONGRESS}legislators-current.json`), json(`${CONGRESS}legislators-social-media.json`)]);
   const byId = new Map(social.map((s) => [s.id.bioguide, s.social]));
   const out = [];
   for (const p of people) {
     const term = p.terms.at(-1);
-    if (term.state !== 'IL') continue;
+    if (term.state !== st.code) continue;
     const s = byId.get(p.id.bioguide) ?? {};
     out.push({
       last: fold(p.name.last), type: term.type, district: term.district != null ? String(term.district) : null,
@@ -78,9 +93,9 @@ async function congress() {
   return out;
 }
 
-// ---- 2. Open States (Illinois legislators) ------------------------------------------
+// ---- 2. Open States (sitting state legislators) ------------------------------------
 // A few fields from each person's YAML; the files are regular enough to read by line.
-function readPerson(text) {
+function readPerson(text, st) {
   const name = text.match(/^name: "?(.+?)"?$/m)?.[1]?.replace(/\\x([0-9A-F]{2})/gi, (_, h) => String.fromCharCode(parseInt(h, 16)));
   const roles = [...text.matchAll(/- (?:start_date: \S+\n\s+)?type: (lower|upper)[\s\S]*?district: '?(\d+)'?/g)];
   const role = roles.at(-1);
@@ -88,29 +103,26 @@ function readPerson(text) {
   return {
     last: name && fold(text.match(/^family_name: "?(.+?)"?$/m)?.[1]?.replace(/\\x([0-9A-F]{2})/gi, (_, h) => String.fromCharCode(parseInt(h, 16))) ?? name.split(' ').pop()),
     chamber: role?.[1], district: role?.[2],
-    website: links.find((u) => !/ilga\.gov|wikipedia|ballotpedia|openstates/i.test(u)),
+    website: links.find((u) => !/ilga\.gov|legislature\.mi\.gov|wikipedia|ballotpedia|openstates/i.test(u)),
     wiki: links.find((u) => /en\.wikipedia\.org\/wiki\//.test(u))?.split('/wiki/')[1],
-    photo: (() => {
-      // Only the General Assembly's own photos: a few point at news sites' photos, which we can't reuse.
-      const url = text.match(/^image: (https:\/\/cdn\.ilga\.gov\/\S+)/m)?.[1];
-      return url ? { url, credit: 'Illinois General Assembly', link: 'https://www.ilga.gov/' } : undefined;
-    })(),
+    // Only the legislature's own photos: some point at news sites' photos, which we can't reuse.
+    photo: st.photo(text.match(/^image: (https?:\/\/\S+)/m)?.[1] ?? ''),
   };
 }
 
-function openStates(work) {
+function openStates(work, st) {
   const dir = join(work, 'openstates');
   execFileSync('git', ['clone', '-q', '--depth', '1', '--filter=blob:none', '--sparse', 'https://github.com/openstates/people', dir]);
-  execFileSync('git', ['-C', dir, 'sparse-checkout', 'set', 'data/il/legislature']);
-  const legis = join(dir, 'data/il/legislature');
-  return readdirSync(legis).map((f) => readPerson(readFileSync(join(legis, f), 'utf8'))).filter((p) => p.last && p.district);
+  execFileSync('git', ['-C', dir, 'sparse-checkout', 'set', st.people]);
+  const legis = join(dir, st.people);
+  return readdirSync(legis).map((f) => readPerson(readFileSync(join(legis, f), 'utf8'), st)).filter((p) => p.last && p.district);
 }
 
 // ---- 3. Wikidata ------------------------------------------------------------------------
 const PROPS = { P2002: 'x', P2013: 'facebook', P2003: 'instagram', P2397: 'youtube', P7085: 'tiktok', P12361: 'bluesky' };
 
 const ROLE = /politician|judge|candidate|activist|businessman|businesswoman|attorney|lawyer|official|commissioner|educator|alderm|legislator|sheriff|clerk|assessor|treasurer/i;
-const isLocal = (desc) => /politician|judge|candidate|activist|businessman|businesswoman|attorney|lawyer|official|commissioner|educator|alderm|legislator/i.test(desc) && /illinois|chicago|cook county/i.test(desc);
+const isLocal = (desc, st) => /politician|judge|candidate|activist|businessman|businesswoman|attorney|lawyer|official|commissioner|educator|alderm|legislator/i.test(desc) && st.local.test(desc);
 const claim = (e, p) => e.claims?.[p]?.find((c) => c.rank !== 'deprecated')?.mainsnak?.datavalue?.value;
 
 /** An entity's social accounts and official website. */
@@ -153,7 +165,7 @@ const namesAgree = (a, b) => {
 /** Accounts by candidate name, through Wikidata's search: only an entry with the
  *  same first and last name whose description is local (an Illinois/Chicago
  *  politician, judge, …), and only when exactly one entry qualifies. */
-async function wikidataSearch(names) {
+async function wikidataSearch(names, st) {
   const out = new Map();
   let failed = 0;
   // One request at a time, as Wikimedia asks of bots. One name failing doesn't
@@ -171,11 +183,11 @@ async function wikidataSearch(names) {
       const g = new URLSearchParams({ action: 'wbgetentities', ids: h.id, props: 'claims|sitelinks', format: 'json' });
       const e = (await json(`${WIKIDATA}?${g}`)).entities?.[h.id];
       if (!e) continue;
-      if (isLocal(h.description ?? '')) { hits.push(e); continue; }
+      if (isLocal(h.description ?? '', st)) { hits.push(e); continue; }
       const title = e.sitelinks?.enwiki?.title;
       if (!title) continue;
       const summary = await json(`${WIKIPEDIA_SUMMARY}${encodeURIComponent(title.replace(/ /g, '_'))}`).catch(() => null);
-      if (/illinois|chicago|cook county/i.test(summary?.extract ?? '')) hits.push(e);
+      if (st.local.test(summary?.extract ?? '')) hits.push(e);
     }
     if (hits.length === 1) out.set(name, accountsOf(hits[0]));
   } catch { failed++; } });
@@ -253,13 +265,15 @@ async function pool(items, size, fn) {
 /**
  * Attach `social` (and a missing `website`) to every candidate we can. A
  * campaign site that can't be read today keeps the accounts `prev` (the last
- * build's ballot) found for that candidate.
+ * build's ballot) found for that candidate. Accounts a candidate already
+ * carries (from a profile read earlier in the build) come first.
  */
-export async function addSocial(races, work, render, prev) {
+export async function addSocial(races, work, render, prev, code = 'IL') {
+  const st = STATES[code];
   const log = [];
   const tryStep = async (name, f) => { try { return await f(); } catch (e) { log.push(`${name}: ${e.message}`); return null; } };
-  const members = (await tryStep('congress', congress)) ?? [];
-  const legislators = (await tryStep('open states', () => openStates(work))) ?? [];
+  const members = (await tryStep('congress', () => congress(st))) ?? [];
+  const legislators = (await tryStep('open states', () => openStates(work, st))) ?? [];
 
   const entries = races.flatMap((race) => race.candidates.map((c) => ({ race, c, last: lastName(c.name) })));
   for (const e of entries) {
@@ -272,7 +286,7 @@ export async function addSocial(races, work, render, prev) {
 
   const viaOpenStates = (await tryStep('wikidata (open states)', () => wikidata([...new Set(entries.map((e) => e.legislator?.wiki).filter(Boolean))]))) ?? new Map();
   const leadName = (c) => c.name.split(' & ')[0].trim();
-  const byName = (await tryStep('wikidata (search)', () => wikidataSearch([...new Set(entries.map((e) => leadName(e.c)))]))) ?? new Map();
+  const byName = (await tryStep('wikidata (search)', () => wikidataSearch([...new Set(entries.map((e) => leadName(e.c)))], st))) ?? new Map();
   for (const e of entries) {
     e.wiki = (e.legislator?.wiki && viaOpenStates.get(fold(e.legislator.wiki))) || byName.get(leadName(e.c));
     // A profile page on Vote Smart or Ballotpedia isn't their campaign site.
@@ -288,7 +302,7 @@ export async function addSocial(races, work, render, prev) {
 
   const merged = entries.map((e, i) => {
     const m = {};
-    for (const src of [e.member?.social, e.wiki?.social, sites[i]]) {
+    for (const src of [e.c.social, e.member?.social, e.wiki?.social, sites[i]]) {
       for (const [k, v] of Object.entries(src ?? {})) if (v && !m[k]) m[k] = v;
     }
     return m;

@@ -1,20 +1,22 @@
-// Each Michigan candidate's photo, campaign website and social accounts,
-// from their Ballotpedia profile (the page their name links to in the
-// candidate lists). Ballotpedia labels every link it has ("Campaign
+// Candidates' photos, campaign websites and social accounts from their
+// Ballotpedia profiles. Ballotpedia labels every link it has ("Campaign
 // website", "Official Facebook", "Personal LinkedIn"), so accounts are taken
 // only from those labels, campaign first; the photo is the one on the
 // profile, saved with the site and credited to Ballotpedia.
 //
-// Candidates from Wikipedia (the university boards) have no profile link;
-// their profile is looked for at ballotpedia.org/<First_Last> and kept only
-// when that page is about a Michigan candidate for that board.
+// A candidate whose list entry links to their profile (Michigan) is read
+// there. Anyone else is looked for at ballotpedia.org/<First_Last> (and the
+// usual variants), and the page is kept only when its title is their name
+// and it places them in this state and this election.
 //
-// A profile that can't be read today keeps what the last build saved.
+// Michigan fills everything from here; Illinois, whose official sources come
+// first, fills only what's still missing. A profile that can't be read today
+// keeps what the last build saved.
 
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { imageType, shrink } from '../illinois/photos.mjs';
+import { imageType, shrink } from './illinois/photos.mjs';
 
 const UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0 Safari/537.36';
 const BUDGET_MS = 12 * 60_000;
@@ -53,13 +55,31 @@ export function parseProfile(html) {
   return out;
 }
 
+const fold = (s) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
+const parts = (n) => fold(n.split(' & ')[0].replace(/["“”][^"“”]*["“”]/g, ' ').replace(/,?\s+(jr|sr|ii|iii|iv)\.?$/i, '')).split(/[^a-z]+/).filter(Boolean);
+/** First and last name agree ("Robert W. Fioretti" ~ "Robert Fioretti"). */
+const namesAgree = (a, b) => { const [pa, pb] = [parts(a), parts(b)]; return pa.length > 1 && pb.length > 1 && pa[0] === pb[0] && pa.at(-1) === pb.at(-1); };
+
 /**
- * Is a page found by name this candidate's? Its title must be their name and
- * it must mention their university (the boards are the only candidates
- * looked up this way) and this election year.
+ * Is a page found by name this candidate's? Its title must be their name, and
+ * it must place them in this state (and, for the university boards, name the
+ * university) and in this election year.
  */
 const UNIVERSITY = /University of Michigan|Michigan State University|Wayne State University/;
-const isAbout = (html, name, office) => html.includes(`<title>${name}`) && /2026/.test(html) && html.includes(office.match(UNIVERSITY)?.[0] ?? office);
+function isAbout(html, name, office, state) {
+  const title = html.match(/<title>([^<|-]+)/)?.[1]?.trim() ?? '';
+  return namesAgree(title, name) && /2026/.test(html) && html.includes(state) && html.includes(office.match(UNIVERSITY)?.[0] ?? '');
+}
+
+/** Page names to try for someone whose profile isn't linked: as written, without middle names or nicknames, with the state. */
+function guesses(name, state) {
+  const lead = name.split(' & ')[0].trim();
+  const plain = lead.replace(/["“”][^"“”]*["“”]/g, ' ').replace(/\b[A-Z]\.\s*/g, ' ').replace(/\s+/g, ' ').trim();
+  const p = parts(lead);
+  const short = `${p[0]} ${p.at(-1)}`;
+  const names = [...new Set([lead, plain, short].map((n) => n.replace(/\s+/g, '_')))];
+  return names.flatMap((n) => [`https://ballotpedia.org/${n}`, `https://ballotpedia.org/${n}_(${state})`]);
+}
 
 async function pool(items, size, fn) {
   let i = 0;
@@ -68,41 +88,49 @@ async function pool(items, size, fn) {
 }
 
 /**
- * Attach `website`, `social` and `photo` to every candidate whose profile can
- * be read. Photos go in `dir` (served at `publicPath`); unused ones are removed.
+ * Attach `website`, `social` and `photo` from each candidate's profile.
+ * `state` is the state's name, for checking pages found by name. With `fill:
+ * 'missing'`, a candidate keeps what they already have and only gaps are
+ * filled, and the profile URL is not recorded (Illinois uses `profile` for
+ * judges' Injustice Watch pages). Photos go in `dir` (served at `publicPath`).
  */
-export async function addProfiles(races, { dir, publicPath, prev }) {
+export async function addProfiles(races, { dir, publicPath, prev, state = 'Michigan', fill = 'all' }) {
   mkdirSync(dir, { recursive: true });
   const prevBy = new Map((prev?.races ?? []).flatMap((r) => r.candidates.map((c) => [`${r.id}|${c.name}`, c])));
   const started = Date.now();
   const log = [];
   const used = new Set();
+  const missing = fill === 'missing';
   let withPhoto = 0, withSocial = 0, withProfile = 0, total = 0;
   const jobs = races.flatMap((race) => race.candidates.map((c) => ({ race, c })));
   total = jobs.length;
+  for (const { c } of jobs) if (c.photo) used.add(c.photo.file.split('/').pop());
 
   await pool(jobs, POOL, async ({ race, c }) => {
     const key = `${race.id}|${c.name}`;
     const was = prevBy.get(key);
     const keep = () => {
-      if (was?.photo && existsSync(join(dir, was.photo.file.split('/').pop()))) { c.photo = was.photo; used.add(was.photo.file.split('/').pop()); }
-      if (was?.social) c.social = was.social;
-      if (was?.website && !c.website) c.website = was.website;
+      if (!c.photo && was?.photo && existsSync(join(dir, was.photo.file.split('/').pop()))) { c.photo = was.photo; used.add(was.photo.file.split('/').pop()); }
+      if (!c.social && was?.social) c.social = was.social;
+      if (!c.website && was?.website) c.website = was.website;
     };
+    if (missing && c.photo && c.social && c.website) return;
     if (Date.now() - started > BUDGET_MS) { keep(); return; }
     try {
-      // The boards' candidates: find the profile by name, and make sure it's them.
-      if (!c.profile) {
-        const guess = `https://ballotpedia.org/${c.name.split(' & ')[0].replace(/\s+/g, '_')}`;
-        for (const url of [guess, `${guess}_(Michigan)`]) {
+      // No profile linked: find it by name, and make sure it's them.
+      let profile = missing ? was?.photo?.link?.match(/^https:\/\/ballotpedia\.org\/\S+$/)?.[0] : c.profile;
+      if (!profile) {
+        for (const url of guesses(c.name, state)) {
           const html = curl(url);
-          if (isAbout(html, c.name, race.office)) { c.profile = url; break; }
+          if (isAbout(html, c.name, race.office, state)) { profile = url; break; }
         }
-        if (!c.profile) { keep(); log.push(`no profile found for ${c.name} (${race.office})`); return; }
+        if (!profile) { keep(); log.push(`no profile found for ${c.name} (${race.office})`); return; }
       }
-      const page = parseProfile(curl(c.profile));
+      if (!missing) c.profile = profile;
+      const page = parseProfile(curl(profile));
       if (page.website && !c.website) c.website = page.website;
-      if (Object.keys(page.social).length) c.social = page.social;
+      if (Object.keys(page.social).length && !(missing && c.social)) c.social = page.social;
+      if (missing && c.photo) return;
       if (page.photo) {
         const file = `${slug(`${c.name.split(' & ')[0]}-${race.id}`)}.jpg`;
         if (was?.photo?.from === page.photo && existsSync(join(dir, file))) {
@@ -112,7 +140,7 @@ export async function addProfiles(races, { dir, publicPath, prev }) {
           const type = imageType(raw);
           if (!type) throw new Error(`not an image: ${page.photo}`);
           writeFileSync(join(dir, file), shrink(raw, type).bytes);
-          c.photo = { file: `${publicPath}/${file}`, credit: 'Ballotpedia', link: c.profile, from: page.photo };
+          c.photo = { file: `${publicPath}/${file}`, credit: 'Ballotpedia', link: profile, from: page.photo };
         }
         used.add(file);
       } else keep();
@@ -122,7 +150,7 @@ export async function addProfiles(races, { dir, publicPath, prev }) {
     }
   });
 
-  for (const { c } of jobs) { if (c.photo) withPhoto++; if (c.social) withSocial++; if (c.profile) withProfile++; }
-  for (const f of readdirSync(dir)) if (!used.has(f)) rmSync(join(dir, f));
+  for (const { c } of jobs) { if (c.photo) withPhoto++; if (c.social) withSocial++; if (c.profile || (missing && c.photo?.credit === 'Ballotpedia')) withProfile++; }
+  if (!missing) for (const f of readdirSync(dir)) if (!used.has(f)) rmSync(join(dir, f));
   return { withPhoto, withSocial, withProfile, total, log };
 }

@@ -29,7 +29,7 @@ const UA_PLAIN = 'KnowYourBallot/1.0';
 const COMMONS = 'https://commons.wikimedia.org/w/api.php';
 const MAX_BYTES = 5_000_000; // before shrinking; campaign sites often serve 2–3 MB originals
 const WIDTH = 360; // a thumbnail size from Commons: twice the 176 px circle
-const CHOSEN = JSON.parse(readFileSync(new URL('./photos-chosen.json', import.meta.url), 'utf8'));
+const CHOSEN_IL = new URL('./photos-chosen.json', import.meta.url);
 const BUDGET_MS = 5 * 60_000; // a slow or blocking image server can't hold up the daily build
 
 const slug = (s) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -160,10 +160,13 @@ async function pool(items, size, fn) {
 /**
  * Turn each candidate's `photoFrom` into `photo` ({ file, credit, link, from }),
  * `file` being a path under the site root. `dir` is where the files go on disk,
- * `publicPath` the same folder as the site serves it.
+ * `publicPath` the same folder as the site serves it, `chosen` the state's
+ * photos-chosen.json. A candidate who already has a `photo` (from a profile)
+ * keeps it unless an official source above supplies one.
  */
-export async function addPhotos(races, { dir, publicPath, prev }) {
+export async function addPhotos(races, { dir, publicPath, prev, chosen = CHOSEN_IL }) {
   mkdirSync(dir, { recursive: true });
+  const CHOSEN = JSON.parse(readFileSync(chosen, 'utf8'));
   const before = new Map((prev?.races ?? []).flatMap((r) => r.candidates.filter((c) => c.photo).map((c) => [`${r.id}|${c.name}`, c.photo])));
   const saved = (p) => p && existsSync(join(dir, p.file.split('/').pop()));
   const entries = races.flatMap((race) => race.candidates.map((c) => ({ race, c, key: `${race.id}|${c.name}` })));

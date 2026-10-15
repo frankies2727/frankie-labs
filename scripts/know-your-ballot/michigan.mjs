@@ -26,7 +26,10 @@ import { changeLog } from './illinois/changes.mjs';
 import { addFederalMoney, parseWeball } from './illinois/fec.mjs';
 import { fetchPage, parseAppellate, parseHouseLists, parsePartisanTable, parseVoteboxes } from './michigan/ballotpedia.mjs';
 import { buildDistricts, buildOutline } from './michigan/districts.mjs';
-import { addProfiles } from './michigan/profiles.mjs';
+import { addProfiles } from './ballotpedia-profiles.mjs';
+import { addHeadshots } from './headshots.mjs';
+import { addPhotos } from './illinois/photos.mjs';
+import { addSocial } from './illinois/social.mjs';
 import { PROPOSALS, PROPOSALS_SOURCE } from './michigan/proposals.mjs';
 import { boardCandidates } from './michigan/wikipedia.mjs';
 
@@ -148,10 +151,23 @@ async function main() {
   const money = addFederalMoney(races, parseWeball(readFileSync(join(work, 'weball26.txt'), 'utf8')), 'MI');
   console.log(`FEC: matched ${money.matched}/${money.total} federal candidates`);
 
-  // Photos, websites and social accounts from each candidate's profile.
-  const profiles = await addProfiles(races, { dir: PHOTOS_DIR, publicPath: 'kyb-photos/michigan', prev });
+  // Photos, websites and social accounts: each candidate's Ballotpedia
+  // profile first; then the official sources (Congress portraits, the
+  // Legislature's member photos, Wikidata and Wikimedia Commons, campaign
+  // sites), which win where they overlap; then, for anyone still without a
+  // photo, the headshot on their own campaign site.
+  const profiles = await addProfiles(races, { dir: PHOTOS_DIR, publicPath: 'kyb-photos/michigan', prev, state: 'Michigan' });
   console.log(`Profiles: ${profiles.withProfile}/${profiles.total} candidates; photos ${profiles.withPhoto}, social ${profiles.withSocial}`);
   for (const line of profiles.log) console.log('  ' + line);
+  const social = await addSocial(races, work, null, prev, 'MI');
+  console.log(`Social accounts: ${social.withSocial}/${social.total} candidates`);
+  for (const line of social.log) console.log('  ' + line);
+  const photos = await addPhotos(races, { dir: PHOTOS_DIR, publicPath: 'kyb-photos/michigan', prev, chosen: new URL('./michigan/photos-chosen.json', import.meta.url) });
+  console.log(`Photos: ${photos.withPhoto}/${photos.total} candidates`);
+  for (const line of photos.log) console.log('  ' + line);
+  const heads = await addHeadshots(races, { dir: PHOTOS_DIR, publicPath: 'kyb-photos/michigan', prev });
+  console.log(`Campaign-site headshots: ${heads.found} new, ${heads.kept} kept, of ${heads.tried} sites read`);
+  for (const line of heads.log) console.log('  ' + line);
 
   // Maps, and the county -> Court of Appeals district table the app needs.
   const districts = await buildDistricts();
