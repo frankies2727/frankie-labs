@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } fro
 import { ClearButton } from '../../../components/ClearButton';
 import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Ring, SectionCards, useBallotView, useDocumentMeta, type SectionCard } from '../Bits';
 import { Group } from '../Calendar';
+import { changeItems, dateItems, Feed, newsItems } from '../Feed';
 import { Headliners } from '../Headliners';
 import { ContentsColumn, ContentsDrawer } from '../Contents';
 import { earnedTrophies, streak, Trophies } from '../Progress';
@@ -307,7 +308,7 @@ export function KnowYourBallotMichigan() {
     <StateContext.Provider value={MICHIGAN}>
     <ReadOnlyContext.Provider value={!saved.place}>
     <GovbotChrome>
-    <div className="kyb min-h-[100dvh] bg-[var(--gb-bg)] text-[var(--gb-text)] selection:bg-[var(--mi-arboretum)] selection:text-[var(--gb-bg)]">
+    <div className="kyb kyb-mi min-h-[100dvh] bg-[var(--gb-bg)] text-[var(--gb-text)] selection:bg-[var(--mi-arboretum)] selection:text-[var(--gb-bg)]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pb-24 print:hidden">
         {!showBallot ? (
           <Landing
@@ -316,7 +317,7 @@ export function KnowYourBallotMichigan() {
             onSearchJump={(h) => { browse(); jumpTo(h.section, h.id); }}
             onOpenRace={(race) => { browse(); jumpTo(race.section, race.id); }}
             onOpenCandidate={openSheet}
-            onOpenSection={(id) => { browse(); openSection(id); }}
+            onOpenSection={(sectionId, id) => { browse(); jumpTo(sectionId, id); }}
             place={saved.place?.label} onContinue={() => showView(true)}
             saved={Object.keys(saved.picks).length}
             onStartFresh={() => { setSaved((s) => ({ ...s, picks: {}, plan: {} })); setToast('Cleared. Starting fresh.'); }}
@@ -379,6 +380,11 @@ export function KnowYourBallotMichigan() {
                     <p><strong>“Vote for not more than 2.”</strong> Boards and the Supreme Court elect two seats at once; pick up to two names.</p>
                     <p><strong>Judges with no opponent.</strong> Court of Appeals judges usually run unopposed. Marking them is still a vote; leaving them blank is fine too.</p>
                   </HowBallotWorks>
+                  <Feed onJump={(id) => jumpTo(sectionFor(id), id)} items={[
+                    ...changeItems(data.changes ?? [], (c) => (c.kind === 'money' ? { name: 'FEC filings', url: data.sources.money.url } : { name: 'Ballotpedia candidate lists', url: 'https://ballotpedia.org/Michigan_elections,_2026' })),
+                    ...newsItems(data.news ?? []),
+                    ...dateItems(KEY_DATES, today(), { name: 'Michigan Department of State', url: LINKS.dates }),
+                  ]} />
 
                   {sections.filter((s) => s.id === current).map((s) => {
                     const at = sections.indexOf(s);
@@ -498,13 +504,13 @@ const HEADLINERS = data.races.filter((r) => !r.area);
 // ...and the rest of the ballot by section, for the cards under them.
 const MORE: SectionCard[] = SECTIONS.map((s) => {
   const races = s.id === 'measures' ? [] : data.races.filter((r) => r.section === s.id && r.area);
-  return { ...s, n: races.length, hint: 'By district' };
+  return { ...s, n: races.length, hint: 'By district', items: races.map((r) => ({ id: r.id, title: r.office, sub: MICHIGAN.areaLabel(r), race: r })) };
 }).filter((c) => c.n > 0);
 
 function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, onSearchJump, onOpenRace, onOpenCandidate, onOpenSection, place, onContinue, daysLeft, saved, onStartFresh }: {
   address: string; setAddress: (s: string) => void; status: { busy: boolean; error: string; outside: boolean };
   onSubmit: (e: FormEvent) => void; onLocate: () => void; onBrowse: () => void; onSearchJump: (h: Hit) => void; onOpenRace: (r: Race) => void; onOpenCandidate: (r: Race, c: Candidate) => void;
-  onOpenSection: (id: string) => void; /** A saved ballot to go back to. */ place?: string; onContinue: () => void;
+  onOpenSection: (sectionId: string, id: string) => void; /** A saved ballot to go back to. */ place?: string; onContinue: () => void;
   daysLeft: number; saved: number; onStartFresh: () => void;
 }) {
   const [confirming, setConfirming] = useState(false);
@@ -598,7 +604,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
         </li>
       </Headliners>
 
-      <SectionCards cards={MORE} heading="Everything else on your ballot" intro="By district: your address picks out yours. Tap a section to browse all of it and see which district each contest covers." onOpen={onOpenSection} />
+      <SectionCards cards={MORE} heading="Everything else on your ballot" intro="By district: your address picks out yours. Tap a section to see every contest in it, who’s running and where." onOpen={onOpenCandidate} onOpenRace={onOpenRace} onJump={onOpenSection} />
     </div>
   );
 }

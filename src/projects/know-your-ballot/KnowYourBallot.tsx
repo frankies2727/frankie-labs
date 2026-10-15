@@ -5,7 +5,8 @@ import { ballotFor, ballotIdsFor, districtsAt, geocode, inChicago, inCook, inIll
 import { RETENTION_EXPLAINER } from './offices';
 import { BallotSearch, type Hit } from './Search';
 import { GovbotChrome } from './GovbotChrome';
-import { Capitol } from './Hero';
+import { StateMap } from './Hero';
+import outline from './data/illinois/outline.json';
 import { GaugeDefs } from './BarRatings';
 import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Ring, SectionCards, useBallotView, useDocumentMeta, type SectionCard } from './Bits';
 import { ReadOnlyContext } from './state';
@@ -18,10 +19,13 @@ import { SinceLastVisit } from './Updates';
 import { KeyDates, NextElectionNote } from './Calendar';
 import { Laws } from './Laws';
 import { LINKS, PlanToVote } from './PlanToVote';
-import { CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard } from './Race';
+import { areaLabel, CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard, SCOPE } from './Race';
+import { billItems, changeItems, dateItems, Feed, newsItems } from './Feed';
+import { billUrl } from './Laws';
+import { forVoter, NOV_3 } from './dates';
 import { drawShareCard, shareCard } from './share';
 import { daysUntil, hasProgress, isDecided, today, readResumeLink, resumeLink, useOpen, useSaved, type Choice, type Saved } from './store';
-import type { BallotData, Candidate, Districts, Race } from './types';
+import type { BallotData, Candidate, Districts, Outline, Race } from './types';
 
 const data = rawData as unknown as BallotData;
 const ballotIds = (d: Districts) => ballotIdsFor(data, d);
@@ -56,9 +60,11 @@ const SECTION_TITLES: Record<string, string> = Object.fromEntries(SECTIONS.map((
 // ...and the rest of the ballot by section, for the cards under them.
 const MORE: SectionCard[] = SECTIONS.map((s) => {
   const races = s.id === 'retention' || s.id === 'measures' ? [] : everything.races.filter((r) => r.section === s.id && !STATEWIDE.includes(r));
-  const n = s.id === 'retention' ? everything.retentions.filter((r) => !r.withdrawn).length : s.id === 'measures' ? everything.measures.length : races.length;
+  const items = s.id === 'retention' ? everything.retentions.filter((r) => !r.withdrawn).map((r) => ({ id: r.id, title: `Retain ${r.judge}?`, sub: r.court }))
+    : s.id === 'measures' ? everything.measures.map((m) => ({ id: m.id, title: m.title, sub: SCOPE[m.scope.type](m) }))
+    : races.map((r) => ({ id: r.id, title: r.office, sub: areaLabel(r), race: r }));
   const hint = s.id === 'retention' ? 'All of Cook County · yes or no' : s.id === 'measures' ? 'By ward or precinct · yes or no' : races.some((r) => r.area) ? 'By district' : 'All of Cook County';
-  return { ...s, n, hint };
+  return { ...s, n: items.length, hint, items };
 }).filter((c) => c.n > 0);
 
 /** A section colour as a real colour (the share card is drawn on a canvas, which can't read CSS variables). */
@@ -436,7 +442,7 @@ export function KnowYourBallot() {
             onSearchJump={(h) => { browse(); jumpTo(h.section, h.id); }}
             onOpenRace={(race) => { browse(); jumpTo(race.section, race.id); }}
             onOpenCandidate={openSheet}
-            onOpenSection={(id) => { browse(); openSection(id); }}
+            onOpenSection={(sectionId, id) => { browse(); jumpTo(sectionId, id); }}
             place={saved.place?.label} onContinue={() => showView(true)}
             saved={Object.keys(saved.picks).length}
             onStartFresh={() => { setSaved((s) => ({ ...s, picks: {}, plan: {} })); setToast('Cleared. Starting fresh.'); }}
@@ -507,6 +513,14 @@ export function KnowYourBallot() {
                   <p><strong>Keep these judges?</strong> Retention is a yes or no on each sitting judge, with no opponent; a judge stays with at least 60% yes.</p>
                   <p><strong>Referenda.</strong> Yes or no on each question; which ones you see depends on your ward or precinct.</p>
                 </HowBallotWorks>
+                <Feed onJump={(id) => jumpTo(sectionFor(id), id)} items={[
+                  ...changeItems(data.changes ?? [], (c) => (c.kind === 'money'
+                    ? { name: 'FEC and Illinois State Board of Elections filings', url: data.sources.money.url }
+                    : { name: 'Chicago Board of Elections candidate list', url: data.sources.candidates.page })),
+                  ...newsItems(data.news ?? []),
+                  ...billItems(data.govbot.laws, billUrl),
+                  ...dateItems(forVoter(NOV_3, chicago), today(), chicago ? { name: 'Chicago Board of Elections', url: LINKS.myInfo } : { name: 'Illinois State Board of Elections', url: LINKS.stateLookup }),
+                ]} />
 
                 {sections.filter((s) => s.id === current).map((s) => {
                   const at = sections.indexOf(s);
@@ -658,10 +672,13 @@ export function KnowYourBallot() {
 
 // ---- pieces ------------------------------------------------------------------------
 
+/** Illinois in govbot's blues and primary green, pinned in gold. */
+const IL_MAP = { fill: ['var(--gb-blue-hi)', 'var(--gb-primary)', 'var(--gb-blue)'] as [string, string, string], stroke: 'var(--kyb-gold)', pin: 'var(--kyb-gold)', pinStroke: 'var(--gb-bg)' };
+
 function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, onSearchJump, onOpenRace, onOpenCandidate, onOpenSection, place, onContinue, daysLeft, saved, onStartFresh }: {
   address: string; setAddress: (s: string) => void; status: { busy: boolean; error: string; outside: boolean };
   onSubmit: (e: FormEvent) => void; onLocate: () => void; onBrowse: () => void; onSearchJump: (h: Hit) => void; onOpenRace: (r: Race) => void; onOpenCandidate: (r: Race, c: Candidate) => void;
-  onOpenSection: (id: string) => void; /** A saved ballot to go back to. */ place?: string; onContinue: () => void; daysLeft: number;
+  onOpenSection: (sectionId: string, id: string) => void; /** A saved ballot to go back to. */ place?: string; onContinue: () => void; daysLeft: number;
   /** Picks already saved on this device. */
   saved: number; onStartFresh: () => void;
 }) {
@@ -678,18 +695,17 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
   }, []);
   return (
     <div className="space-y-8 pt-2 [&>*:not(header,.kyb-wide)]:max-w-3xl">
-      {/* govbot's elections hero: overline, serif title, the Capitol. */}
       <header className="flex flex-col-reverse md:flex-row md:items-center gap-4 md:gap-10">
         <div className="min-w-0 flex-1 space-y-3">
-          <p className="text-[13px] font-bold uppercase tracking-[0.18em]">Chicago &amp; Illinois · 2026–2027</p>
-          <h1 className="text-[40px] sm:text-5xl leading-[1.02]">Illinois Elections</h1>
-          <p className="font-[family-name:var(--gb-font-display)] text-xl">Know who’s on your ballot before you vote.</p>
+          <p className="text-[13px] font-bold uppercase tracking-[0.18em]">Illinois · 2026 midterms</p>
+          <h1 className="text-[40px] sm:text-5xl leading-[1.02]">Know Your Illinois Ballot</h1>
+          <p className="font-[family-name:var(--gb-font-display)] text-xl">Every race on your ballot, explained before you vote.</p>
           <p className="font-semibold">
-            Next election: Tue, Nov 3, 2026{daysLeft > 0 ? <> · <span className="rounded-full bg-[var(--gb-primary)] px-2.5 py-0.5 font-bold text-[var(--gb-on-primary)]">{daysLeft} days to go</span></> : daysLeft === 0 ? ' · Today!' : ''}
+            Election Day: Tue, Nov 3, 2026{daysLeft > 0 ? <> · <span className="rounded-full bg-[var(--gb-primary)] px-2.5 py-0.5 font-bold text-[var(--gb-on-primary)]">{daysLeft} days to go</span></> : daysLeft === 0 ? ' · Today!' : ''}
           </p>
-          <p className="text-[15px] leading-relaxed max-w-[62ch]">Enter your address to see exactly what’s on yours: what each job does, who’s running and who’s funding them. Make your picks, then bring them to the booth.</p>
+          <p className="text-[15px] leading-relaxed max-w-[62ch]">Governor and every statewide office, a U.S. Senate seat, all 17 U.S. House seats, every seat in Springfield, Cook County’s top jobs, judges to elect and keep, and the questions on the back of the ballot. Enter your address to see exactly what’s on yours: what each job does, who’s running and who’s funding them. Make your picks, then bring them to the booth.</p>
         </div>
-        <div className="w-[260px] md:w-[400px] md:max-w-[45%] shrink-0"><Capitol /></div>
+        <div className="w-[220px] md:w-[340px] md:max-w-[40%] shrink-0 self-center"><StateMap outline={outline as Outline} name="Illinois" colors={IL_MAP} id="il" /></div>
       </header>
 
       <form onSubmit={onSubmit} className="space-y-3">
@@ -752,7 +768,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
           intro={`These ${STATEWIDE.length} contests are on every ballot in Illinois. Tap a card to meet the candidates; your address adds Congress, Springfield, Cook County, the judges and your ballot questions.`}
           onOpen={onOpenCandidate} onOpenRace={onOpenRace} />
         <div className="mt-10">
-          <SectionCards cards={MORE} heading="Everything else on your ballot" intro="By district, ward or precinct: your address picks out yours. Tap a section to browse all of it and see which district each contest covers." onOpen={onOpenSection} />
+          <SectionCards cards={MORE} heading="Everything else on your ballot" intro="By district, ward or precinct: your address picks out yours. Tap a section to see every contest in it, who’s running and where." onOpen={onOpenCandidate} onOpenRace={onOpenRace} onJump={onOpenSection} />
         </div>
       </div>
     </div>

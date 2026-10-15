@@ -38,12 +38,13 @@ export async function buildDistricts() {
 }
 
 /**
- * The state's outline as an SVG path (for the hero), drawn on a 1000-wide
+ * A state's outline as an SVG path (for the hero), drawn on a 1000-wide
  * canvas with the aspect ratio of the state's bounding box. Coarse on
- * purpose: it's a picture, not a map.
+ * purpose: it's a picture, not a map. `fips` is the state's Census code
+ * (Michigan 26, Illinois 17).
  */
-export async function buildOutline() {
-  const fc = await getJson(query('State_County', 0, 'BASENAME'));
+export async function buildOutline(fips = '26') {
+  const fc = await getJson(query('State_County', 0, 'BASENAME').replace('STATE%3D%2726%27', `STATE%3D%27${fips}%27`));
   const rings = ringsOf(fc.features[0].geometry).map((r) => simplify(r, 0.03)).filter((r) => r.length >= 8);
   const xs = rings.flat().map(([x]) => x);
   const ys = rings.flat().map(([, y]) => y);

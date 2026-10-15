@@ -22,7 +22,7 @@ const SHOWN = 9;
 const safeUrl = (u?: string) => (u && /^https:\/\//.test(u) ? u : undefined);
 // The bill's own card in govbot's catalog (its state's catalog opens underneath),
 // else the legislature's page.
-const billUrl = (b: Law) => (b.state && b.session
+export const billUrl = (b: Law) => (b.state && b.session
   ? `${GOVBOT}legislation.html#bill=${[b.state, b.session, b.id].map(encodeURIComponent).join('~')}`
   : safeUrl(b.url));
 const dateLabel = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });

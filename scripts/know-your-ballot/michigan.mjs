@@ -27,6 +27,7 @@ import { addFederalMoney, parseWeball } from './illinois/fec.mjs';
 import { fetchPage, parseAppellate, parseHouseLists, parsePartisanTable, parseVoteboxes } from './michigan/ballotpedia.mjs';
 import { buildDistricts, buildOutline } from './michigan/districts.mjs';
 import { addProfiles } from './ballotpedia-profiles.mjs';
+import { recentNews } from './news.mjs';
 import { addHeadshots } from './headshots.mjs';
 import { addPhotos } from './illinois/photos.mjs';
 import { addSocial } from './illinois/social.mjs';
@@ -174,6 +175,11 @@ async function main() {
   const coa = Object.fromEntries(districts.layers.county.map((c) => [c.id, coaOf(c.id)]));
   const outline = await buildOutline();
 
+  // Headlines for the activity feed; Google News being down keeps yesterday's.
+  let news = prev?.news ?? [];
+  try { news = await recentNews(['Michigan election 2026', 'Michigan governor race Benson James', 'Michigan Senate race El-Sayed Rogers', 'Michigan ballot proposal 2026', 'Michigan Supreme Court election 2026'], ['Michigan governor campaign fundraising', 'Michigan election campaign donations super PAC', 'Michigan Senate race campaign money', 'Michigan campaign finance']); } catch (e) { console.warn(`news: ${e.message}; keeping the last copy`); }
+  console.log(`News: ${news.length} headlines`);
+
   const next = { races, retentions: [], measures: PROPOSALS.map(({ plain, ...m }) => m) };
   const changes = changeLog(prev, next, new Date().toISOString());
   console.log(`Changes since last refresh: ${changes.length - (prev?.changes?.length ?? 0)} new, ${changes.length} kept`);
@@ -190,6 +196,7 @@ async function main() {
     measures: PROPOSALS,
     coa,
     changes,
+    news,
   }, null, 1) + '\n');
   writeFileSync(join(OUT, 'districts.json'), JSON.stringify(districts) + '\n');
   writeFileSync(join(OUT, 'outline.json'), JSON.stringify(outline) + '\n');

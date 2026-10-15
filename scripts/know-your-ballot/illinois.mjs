@@ -34,6 +34,8 @@ import { addStateList, fetchCertifiedList } from './illinois/statewide.mjs';
 import { buildDistricts, buildStateDistricts, placesIn, touchesCook } from './illinois/districts.mjs';
 import { addProfiles } from './ballotpedia-profiles.mjs';
 import { addHeadshots } from './headshots.mjs';
+import { recentNews } from './news.mjs';
+import { buildOutline } from './michigan/districts.mjs';
 
 const OUT = 'src/projects/know-your-ballot/data/illinois';
 const PHOTOS_DIR = 'public/kyb-photos/illinois';
@@ -177,6 +179,11 @@ async function main() {
   const missing = ballot.races.filter((r) => r.area && r.area.type !== 'city' && !mapFor(r)?.some((f) => f.id === r.area.id));
   if (missing.length) throw new Error('No map for: ' + missing.map((r) => r.office).join('; '));
 
+  // Headlines for the activity feed; Google News being down keeps yesterday's.
+  let news = prev?.news ?? [];
+  try { news = await recentNews(['Illinois election 2026', 'Illinois governor race Pritzker Bailey', 'Illinois Senate race Stratton Tracy', 'Cook County election 2026', 'Chicago judicial retention 2026', 'Illinois ballot referendum 2026'], ['Illinois governor campaign fundraising', 'Illinois campaign contributions', 'Pritzker campaign money', 'Illinois Senate race campaign money', 'Cook County campaign contributions']); } catch (e) { console.warn(`news: ${e.message}; keeping the last copy`); }
+  console.log(`News: ${news.length} headlines`);
+
   const next = { races: ballot.races, retentions: ballot.retentions, measures: ballot.measures };
   const changes = changeLog(prev, next, new Date().toISOString());
   // govbot being briefly down shouldn't hold up the ballot: keep yesterday's.
@@ -202,9 +209,11 @@ async function main() {
     changes,
     govbot,
     places,
+    news,
   }, null, 1) + '\n');
   writeFileSync(join(OUT, 'districts.json'), JSON.stringify(districts) + '\n');
   writeFileSync(join(OUT, 'districts-il.json'), JSON.stringify(stateDistricts) + '\n');
+  writeFileSync(join(OUT, 'outline.json'), JSON.stringify(await buildOutline('17')) + '\n');
   console.log(`Wrote ${ballot.races.length} races, ${ballot.retentions.length} retentions, ${ballot.measures.length} measures.`);
 }
 

@@ -15,8 +15,5 @@
   --mi-amethyst: #702082;
 }
 
-/* The outline glows like the Capitol on the Illinois guide; the pin breathes. */
-.mi-map { display: block; width: 100%; height: auto; filter: drop-shadow(0 0 28px color-mix(in srgb, var(--mi-arboretum) 55%, transparent)); }
-.mi-pin-ring { transform-box: fill-box; transform-origin: center; animation: mi-pin 1.8s ease-out infinite; }
-@keyframes mi-pin { 0% { transform: scale(0.6); opacity: 0.6; } 100% { transform: scale(1.8); opacity: 0; } }
-@media (prefers-reduced-motion: reduce) { .mi-pin-ring { animation: none; } }
+/* The outline glows arboretum green. */
+.kyb-mi { --kyb-map-glow: color-mix(in srgb, var(--mi-arboretum) 55%, transparent); }

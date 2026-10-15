@@ -165,7 +165,7 @@ The home screen is the projects gallery. Tap the **Games** button (top right) to
 | ⚡ **VibeCheck** | Type any company, get a scrollable visual story: rundown, fast facts, timeline |
 | 🌍 **Place Timelapse** | Watch a place change over time, from NASA satellite imagery to Street View history |
 | 🎨 **AI Art** | 112 AI images with the exact prompts behind them. Tap to copy a prompt |
-| 🤖 **Govbot Social** | Dashboard of the Govbot bill-update posts on Bluesky, X, Threads & Instagram ↗ |
+| 🏛️ **Govbot** | Open Civic Data for Everyone: Chi Hack Night's free, open-source civic-data toolkit, legislative data from all 56 U.S. jurisdictions to explore, clone as Git repos or query with SQL; Know Your Ballot is built on it ↗ |
 
 <details>
 <summary><b>⚡ How VibeCheck gets its data</b> (no API keys)</summary>
