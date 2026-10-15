@@ -1,0 +1,53 @@
+name: Know Your Ballot Michigan – refresh data
+
+# Rebuilds src/projects/know-your-ballot/data/michigan (candidates from
+# Ballotpedia and Wikipedia, FEC money, Census maps) and redeploys when
+# anything changed. Daily through Election Day. See scripts/know-your-ballot/michigan.mjs.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '41 11 * * *' # daily, ~7am Detroit
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: know-your-ballot-michigan
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build ballot data
+        run: node scripts/know-your-ballot/michigan.mjs
+
+      - name: Commit any changes
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/projects/know-your-ballot/data/michigan
+          if git diff --staged --quiet; then
+            echo "No ballot data changes."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Know Your Ballot Michigan: refresh data [skip ci]"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Trigger Pages deploy
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run "Deploy to GitHub Pages" --ref main

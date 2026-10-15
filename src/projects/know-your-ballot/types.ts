@@ -1,9 +1,9 @@
 // Shapes of the static data built by scripts/know-your-ballot/illinois.mjs.
 
-export type Section = 'federal' | 'state' | 'county' | 'judicial' | 'school';
+export type Section = 'federal' | 'state' | 'county' | 'judicial' | 'school' | 'legislature' | 'education';
 
 /** Which voters see a contest. `null` on a race = every voter in Cook County. */
-export type AreaType = 'cd' | 'sldu' | 'sldl' | 'commissioner' | 'bor' | 'subcircuit' | 'school' | 'ward' | 'mwrd' | 'city' | 'police';
+export type AreaType = 'cd' | 'sldu' | 'sldl' | 'commissioner' | 'bor' | 'subcircuit' | 'school' | 'ward' | 'mwrd' | 'city' | 'police' | 'county' | 'coa';
 export interface Area { type: AreaType; id: string }
 
 /** Campaign totals this cycle (since Jan 1, 2025), from official filings. */
@@ -26,12 +26,14 @@ export interface Candidate {
   party: string;
   /** Only set when official records (FEC or ISBE) say so. */
   incumbent?: boolean;
+  /** Nonpartisan-section candidates (Michigan judges): the party that nominated them. */
+  nominatedBy?: string;
   /** Campaign website: their State Board filing, else their official homepage. */
   website?: string;
   money?: Money;
   /** Their social media accounts (scripts/know-your-ballot/illinois/social.mjs says where each comes from). */
   social?: Partial<Record<SocialPlatform, string>>;
-  /** Judicial candidates: Injustice Watch's profile. */
+  /** A profile written by someone else: Injustice Watch (Illinois judges), Ballotpedia (Michigan). */
   profile?: string;
   /** Their photo, saved with the site (scripts/know-your-ballot/illinois/photos.mjs): `file` under the site root, with its credit. */
   photo?: { file: string; credit: string; link?: string; from?: string };
@@ -57,6 +59,8 @@ export interface Race {
   numbered?: boolean;
   /** A congressional or legislative district with no part in Cook County. */
   outsideCook?: boolean;
+  /** Where this contest's candidate list was read from. */
+  source?: string;
 }
 
 export interface Retention {
@@ -72,12 +76,16 @@ export interface Retention {
 }
 
 export type MeasureScope =
-  | { type: 'county' | 'city' }
+  | { type: 'state' | 'county' | 'city' }
   | { type: 'ward'; id: string }
   | { type: 'precinct'; ward: string; precinct: string }
   | { type: 'named'; name: string };
 
-export interface Measure { id: string; title: string; question: string; scope: MeasureScope }
+export interface Measure {
+  id: string; title: string; question: string; scope: MeasureScope;
+  /** What a yes or no does, in plain words. */
+  plain?: string;
+}
 
 export interface BallotData {
   election: { name: string; date: string };

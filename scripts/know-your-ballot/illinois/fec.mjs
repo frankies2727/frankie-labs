@@ -29,8 +29,8 @@ export function parseWeball(text) {
 
 // Match one ballot name to an FEC record in the same race. Returns null unless
 // the match is unambiguous — showing no money beats showing someone else's.
-export function matchCandidate(name, office, district, records) {
-  const pool = records.filter((r) => r.state === 'IL' && r.office === office && r.district === district);
+export function matchCandidate(name, office, district, records, state = 'IL') {
+  const pool = records.filter((r) => r.state === state && r.office === office && r.district === district);
   const w = words(name);
   if (!w.length) return null;
   const last = w[w.length - 1];
@@ -63,7 +63,9 @@ const toDate = (mdy) => {
 };
 
 // Attach `money` to every federal candidate the FEC file can vouch for.
-export function addFederalMoney(races, records) {
+// The Senate race is the one called "United States Senator"; House races are
+// the ones with a congressional district.
+export function addFederalMoney(races, records, state = 'IL') {
   let matched = 0;
   let total = 0;
   for (const race of races) {
@@ -74,7 +76,7 @@ export function addFederalMoney(races, records) {
     if (!office) continue;
     for (const c of race.candidates) {
       total += 1;
-      const hit = matchCandidate(c.name, office, district, records);
+      const hit = matchCandidate(c.name, office, district, records, state);
       if (hit) {
         c.money = hit.money;
         if (hit.incumbent) c.incumbent = true;

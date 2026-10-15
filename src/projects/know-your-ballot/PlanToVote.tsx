@@ -43,7 +43,7 @@ interface Props {
   ballotDone: boolean;
 }
 
-function Step({ n, done, title, children, onToggle }: { n: number; done: boolean; title: string; children: ReactNode; onToggle?: () => void }) {
+export function Step({ n, done, title, children, onToggle }: { n: number; done: boolean; title: string; children: ReactNode; onToggle?: () => void }) {
   return (
     <li className="rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] p-5">
       <div className="flex items-start gap-4">
@@ -66,7 +66,7 @@ function Step({ n, done, title, children, onToggle }: { n: number; done: boolean
   );
 }
 
-const Out = ({ href, children }: { href: string; children: ReactNode }) => (
+export const Out = ({ href, children }: { href: string; children: ReactNode }) => (
   <a href={href} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 font-bold text-[var(--gb-link)] underline underline-offset-2 hover:text-[var(--gb-text)]">
     {children}<ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
   </a>

@@ -19,6 +19,7 @@ import { execFileSync } from 'node:child_process';
 import { mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { getJson, inRing, normalizeId, ringsOf, simplify } from '../geo.mjs';
 
 // All of Cook County (Chicago plus the suburbs).
 const COOK_BBOX = '-88.27,41.46,-87.52,42.16';
@@ -54,45 +55,6 @@ const TOLERANCE = 0.00003;
 // congressional and legislative districts outside Cook.
 const STATE_TOLERANCE = 0.0001;
 
-async function getJson(url) {
-  for (let attempt = 1; ; attempt++) {
-    try {
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      return await res.json();
-    } catch (e) {
-      if (attempt >= 4) throw new Error(`${url}: ${e.message}`);
-      await new Promise((r) => setTimeout(r, 2000 * attempt));
-    }
-  }
-}
-
-// Douglas–Peucker on one ring of [lng, lat] points.
-function simplify(points, tolerance = TOLERANCE) {
-  if (points.length < 5) return points;
-  const keep = new Uint8Array(points.length);
-  keep[0] = keep[points.length - 1] = 1;
-  const stack = [[0, points.length - 1]];
-  while (stack.length) {
-    const [a, b] = stack.pop();
-    const [ax, ay] = points[a];
-    const [bx, by] = points[b];
-    const dx = bx - ax;
-    const dy = by - ay;
-    const len = Math.hypot(dx, dy);
-    let worst = -1;
-    let at = -1;
-    for (let i = a + 1; i < b; i++) {
-      const [px, py] = points[i];
-      // A closed ring starts and ends on the same point: measure from it.
-      const d = len ? Math.abs(dy * px - dx * py + bx * ay - by * ax) / len : Math.hypot(px - ax, py - ay);
-      if (d > worst) { worst = d; at = i; }
-    }
-    if (worst > tolerance) { keep[at] = 1; stack.push([a, at], [at, b]); }
-  }
-  return points.filter((_, i) => keep[i]);
-}
-
 // Clip a ring to Cook County's bounding box (Sutherland–Hodgman against each
 // edge). Congressional and legislative districts spill into the collar
 // counties; only the part over Cook can match an address we serve.
@@ -125,15 +87,9 @@ function cut(a, b, axis, value) {
   return axis === 0 ? [value, a[1] + t * (b[1] - a[1])] : [a[0] + t * (b[0] - a[0]), value];
 }
 
-const ringsOf = (geometry) =>
-  geometry.type === 'Polygon' ? geometry.coordinates : geometry.type === 'MultiPolygon' ? geometry.coordinates.flat() : [];
-
 const pack = (rings, statewide) =>
   rings.map(statewide ? (r) => r : clip).map((r) => simplify(r, statewide ? STATE_TOLERANCE : TOLERANCE))
     .filter((r) => r.length >= 4).map((r) => r.flatMap(([x, y]) => [+x.toFixed(5), +y.toFixed(5)]));
-
-// "001" / 1 / "1" -> "1": the candidate list numbers districts without zeros.
-const normalizeId = (v) => String(v).trim().replace(/^0+(?=\d)/, '');
 
 function fromGeoJson(fc, idOf, statewide = false) {
   return fc.features
@@ -189,14 +145,6 @@ async function schoolSubdistricts() {
     id: properties.LONGNAME.replace(/^District\s+/i, '').toUpperCase(),
     rings: pack(rings),
   }));
-}
-
-function inRing(x, y, r) {
-  let inside = false;
-  for (let i = 0, j = r.length - 2; i < r.length; j = i, i += 2) {
-    if ((r[i + 1] > y) !== (r[j + 1] > y) && x < ((r[j] - r[i]) * (y - r[i + 1])) / (r[j + 1] - r[i + 1]) + r[i]) inside = !inside;
-  }
-  return inside;
 }
 
 /**

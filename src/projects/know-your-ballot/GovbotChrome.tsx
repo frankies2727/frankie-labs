@@ -43,7 +43,7 @@ function startTheme(): Theme {
   return matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
 }
 
-function ThemeToggle({ theme, onToggle }: { theme: Theme; onToggle: () => void }) {
+export function ThemeToggle({ theme, onToggle }: { theme: Theme; onToggle: () => void }) {
   const dark = theme === 'dark';
   return (
     <button type="button" onClick={onToggle} className="gb-icon-btn" aria-pressed={dark}
@@ -61,7 +61,13 @@ function ThemeToggle({ theme, onToggle }: { theme: Theme; onToggle: () => void }
 const FONT_IMPORT = govbotCss.match(/^@import url\([^)]*\);/m)?.[0] ?? '';
 const GOVBOT_STYLE = `${FONT_IMPORT}\n@layer base {\n${govbotCss.replace(FONT_IMPORT, '')}\n}`;
 
-export function GovbotChrome({ children }: { children: ReactNode }) {
+/**
+ * The guide's look, for any state's chrome: govbot's stylesheet (the colour
+ * tokens every card uses) attached while the page is open, and the light/dark
+ * theme, remembered on this device. `styled` turns true once the stylesheet
+ * is in; render nothing before that, or the page flashes unstyled.
+ */
+export function useGuideTheme() {
   const [theme, setTheme] = useState<Theme>(startTheme);
   useEffect(() => {
     // Switch colours in one go: with transitions on, hundreds of elements
@@ -77,8 +83,6 @@ export function GovbotChrome({ children }: { children: ReactNode }) {
     try { localStorage.setItem(THEME_KEY, next); } catch { /* not remembered */ }
     return next;
   });
-  // Where the switch goes: the spot govbot's own switch held in its header.
-  const [themeSlot, setThemeSlot] = useState<Element | null>(null);
 
   // govbot's stylesheet styles the whole page, so it's attached only while
   // this page is open (the rest of the lab has its own look).
@@ -93,6 +97,13 @@ export function GovbotChrome({ children }: { children: ReactNode }) {
     setStyled(true);
     return () => { style.remove(); root.classList.remove('kyb-govbot'); root.removeAttribute('data-theme'); };
   }, []);
+  return { theme, toggleTheme, styled };
+}
+
+export function GovbotChrome({ children }: { children: ReactNode }) {
+  const { theme, toggleTheme, styled } = useGuideTheme();
+  // Where the switch goes: the spot govbot's own switch held in its header.
+  const [themeSlot, setThemeSlot] = useState<Element | null>(null);
   // The script wires the menus and drawer to the header in the page, so it
   // runs again each time this page opens (a module import would run only the
   // first time, leaving a later visit's header dead).

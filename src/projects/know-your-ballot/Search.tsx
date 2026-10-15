@@ -1,7 +1,7 @@
 import { Search as SearchIcon } from 'lucide-react';
 import { ClearButton } from '../../components/ClearButton';
 import { useMemo, useState } from 'react';
-import { areaLabel, SCOPE } from './Race';
+import { useStateConfig, type StateConfig } from './state';
 import type { Measure, Race, Retention } from './types';
 
 // One box for "where's my alderperson / that judge / the gunshot question?".
@@ -30,7 +30,7 @@ const count = (n: number, one: string) => `${n} ${one}${n === 1 ? '' : 's'}`;
 /** With `places`, a contest also matches the neighborhoods and suburbs it covers. */
 type Entry = Hit & { text: string; places?: string[] };
 
-function index(b: Ballot, sections: Record<string, string>, places?: Record<string, string[]>): Entry[] {
+function index(b: Ballot, sections: Record<string, string>, { areaLabel, scopeLabel, region }: StateConfig, places?: Record<string, string[]>): Entry[] {
   const entries: Entry[] = [
     ...b.races.map((r) => ({
       id: r.id, section: r.section, title: r.office,
@@ -41,12 +41,12 @@ function index(b: Ballot, sections: Record<string, string>, places?: Record<stri
     })),
     ...b.retentions.map((r) => ({
       id: r.id, section: 'retention', title: `Retain ${r.judge}?`, detail: `${r.court} · ${r.withdrawn ? 'withdrew, votes won’t count' : 'judicial retention'}`,
-      about: `${sections.retention} · All of Cook County · yes or no`,
+      about: `${sections.retention} · All of ${region} · yes or no`,
       text: fold(`${r.judge} ${r.court} retention judge`),
     })),
     ...b.measures.map((m) => ({
       id: m.id, section: 'measures', title: m.title, detail: 'Ballot question',
-      about: `${sections.measures} · ${SCOPE[m.scope.type](m)} · yes or no`,
+      about: `${sections.measures} · ${scopeLabel(m)} · yes or no`,
       area: m.scope.type === 'ward' ? `ward:${m.scope.id}` : m.scope.type === 'precinct' ? `precinct:${m.scope.ward}-${m.scope.precinct}` : undefined,
       text: fold(`${m.title} ${m.question} referendum question`),
     })),
@@ -79,10 +79,11 @@ const list = (xs: string[]) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1)
 
 export function BallotSearch({ ballot, everywhere, sections, places, onJump }: Props) {
   const [q, setQ] = useState('');
-  const mine = useMemo(() => index(ballot, sections), [ballot, sections]);
+  const config = useStateConfig();
+  const mine = useMemo(() => index(ballot, sections, config), [ballot, sections, config]);
   const hits = useMemo(() => find(mine, q), [mine, q]);
   // Only built the first time a search comes up empty.
-  const all = useMemo(() => (everywhere && q && !hits.length ? index(everywhere, sections, places) : null), [everywhere, sections, places, q, hits.length]);
+  const all = useMemo(() => (everywhere && q && !hits.length ? index(everywhere, sections, config, places) : null), [everywhere, sections, config, places, q, hits.length]);
   const elsewhere = useMemo(() => (all ? find(all, q) : []), [all, q]);
   const go = (h: Hit) => { setQ(''); onJump(h); };
 
@@ -120,10 +121,10 @@ export function BallotSearch({ ballot, everywhere, sections, places, onJump }: P
             </ul>
           ) : (
             <div className="px-4 py-3 text-[15px] text-[var(--gb-text)] space-y-2">
-              <p>Nothing on {everywhere ? 'your ballot' : 'any Cook County ballot'} matches “{q}”.</p>
+              <p>Nothing on {everywhere ? 'your ballot' : `any ${config.region} ballot`} matches “{q}”.</p>
               {elsewhere.length > 0 && (
                 <>
-                  <p>{elsewhere.length === 1 ? 'One contest matches' : `${elsewhere.length} contests match`} on other ballots in Cook County, just not at your address:</p>
+                  <p>{elsewhere.length === 1 ? 'One contest matches' : `${elsewhere.length} contests match`} on other ballots in {config.region}, just not at your address:</p>
                   <ul className="space-y-2">
                     {elsewhere.slice(0, SHOWN_ELSEWHERE).map((h) => {
                       const where = h.area ? places?.[h.area] : undefined;

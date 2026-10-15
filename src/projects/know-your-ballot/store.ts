@@ -24,7 +24,9 @@ export interface Saved {
   best?: number;
 }
 
-const KEY = 'know-your-ballot:2026-11-03';
+// Illinois keeps its original key so nobody's picks are lost; other states
+// use know-your-ballot:<state>:<election date>.
+const ILLINOIS_KEY = 'know-your-ballot:2026-11-03';
 const EMPTY: Saved = { place: null, picks: {}, plan: {} };
 
 // ---- validation ----------------------------------------------------------------
@@ -68,9 +70,9 @@ function sanitize(raw: unknown): Saved {
   return { place, picks, plan, browsing: raw.browsing === true || undefined, seen, days, looked, goal, best };
 }
 
-function load(): Saved {
+function load(key: string): Saved {
   try {
-    const raw = localStorage.getItem(KEY);
+    const raw = localStorage.getItem(key);
     return raw ? sanitize(JSON.parse(raw)) : EMPTY;
   } catch {
     return EMPTY; // private mode / blocked storage: start fresh, still works
@@ -87,12 +89,12 @@ function keepData() {
   navigator.storage?.persist?.().catch(() => { /* best effort */ });
 }
 
-export function useSaved() {
-  const [saved, setSaved] = useState<Saved>(load);
+export function useSaved(key = ILLINOIS_KEY) {
+  const [saved, setSaved] = useState<Saved>(() => load(key));
   useEffect(() => {
-    try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch { /* not persisted; app still works */ }
+    try { localStorage.setItem(key, JSON.stringify(saved)); } catch { /* not persisted; app still works */ }
     if (Object.keys(saved.picks).length) keepData();
-  }, [saved]);
+  }, [key, saved]);
   return [saved, setSaved] as const;
 }
 

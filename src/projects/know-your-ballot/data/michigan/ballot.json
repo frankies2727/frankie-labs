@@ -1,0 +1,5936 @@
+{
+ "election": {
+  "name": "General Election",
+  "date": "2026-11-03"
+ },
+ "sources": {
+  "candidates": {
+   "pages": {
+    "Governor and Lieutenant Governor": "https://ballotpedia.org/Michigan_gubernatorial_election,_2026",
+    "Secretary of State": "https://ballotpedia.org/Michigan_Secretary_of_State_election,_2026",
+    "Attorney General": "https://ballotpedia.org/Michigan_Attorney_General_election,_2026",
+    "United States Senator": "https://ballotpedia.org/United_States_Senate_election_in_Michigan,_2026",
+    "Member of the State Board of Education": "https://ballotpedia.org/Michigan_State_Board_of_Education_election,_2026",
+    "Justice of the Supreme Court": "https://ballotpedia.org/Michigan_Supreme_Court_elections,_2026",
+    "Regent of the University of Michigan": "https://en.wikipedia.org/wiki/2026_University_of_Michigan_Board_of_Regents_election",
+    "Trustee of Michigan State University": "https://en.wikipedia.org/wiki/2026_Michigan_State_University_Board_of_Trustees_election",
+    "Governor of Wayne State University": "https://en.wikipedia.org/wiki/2026_Wayne_State_University_Board_of_Governors_election"
+   },
+   "asOf": "2026-10-15"
+  },
+  "money": {
+   "url": "https://www.fec.gov/data/",
+   "file": "https://www.fec.gov/files/bulk-downloads/2026/weball26.zip"
+  },
+  "proposals": {
+   "lwv": "https://lwvmi.org/wp-content/uploads/2026/09/BallotProposalHandout2026.pdf",
+   "ballotpedia": "https://ballotpedia.org/Michigan_2026_ballot_measures"
+  }
+ },
+ "races": [
+  {
+   "id": "governor-and-lieutenant-governor",
+   "office": "Governor and Lieutenant Governor",
+   "section": "state",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Jocelyn Benson & Winnie Brinks",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Jocelyn_Benson"
+    },
+    {
+     "ballot": 2,
+     "name": "John James & Jay DeBoyer",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/John_James_(Michigan)"
+    },
+    {
+     "ballot": 3,
+     "name": "Anthony Hudson & Beau Parmenter",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Anthony_Hudson_(Michigan)"
+    },
+    {
+     "ballot": 4,
+     "name": "Donna Brandenburg & Robert Donald Cowper II",
+     "party": "U.S. Taxpayers",
+     "profile": "https://ballotpedia.org/Donna_Brandenburg"
+    },
+    {
+     "ballot": 5,
+     "name": "Douglas Campbell & Bobbie Clay",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Douglas_Campbell_(Michigan)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_gubernatorial_election,_2026"
+  },
+  {
+   "id": "secretary-of-state",
+   "office": "Secretary of State",
+   "section": "state",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Garlin Gilchrist II",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Garlin_Gilchrist_II"
+    },
+    {
+     "ballot": 2,
+     "name": "Anthony Forlini",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Anthony_Forlini"
+    },
+    {
+     "ballot": 3,
+     "name": "Christine Sloan",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Christine_Sloan"
+    },
+    {
+     "ballot": 4,
+     "name": "Scott Aughney",
+     "party": "U.S. Taxpayers",
+     "profile": "https://ballotpedia.org/Scott_Aughney"
+    },
+    {
+     "ballot": 5,
+     "name": "Eric Borregard",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Eric_Borregard"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_Secretary_of_State_election,_2026"
+  },
+  {
+   "id": "attorney-general",
+   "office": "Attorney General",
+   "section": "state",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Eli Savit",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Eli_Savit"
+    },
+    {
+     "ballot": 2,
+     "name": "Doug Lloyd",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Doug_Lloyd"
+    },
+    {
+     "ballot": 3,
+     "name": "Jason Dye",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Jason_Dye"
+    },
+    {
+     "ballot": 4,
+     "name": "John Ludtke",
+     "party": "U.S. Taxpayers",
+     "profile": "https://ballotpedia.org/John_Ludtke"
+    },
+    {
+     "ballot": 5,
+     "name": "Jeff Polonowski",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Jeff_Polonowski"
+    },
+    {
+     "ballot": 6,
+     "name": "Doug Dern",
+     "party": "Natural Law",
+     "profile": "https://ballotpedia.org/Doug_Dern"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_Attorney_General_election,_2026"
+  },
+  {
+   "id": "united-states-senator",
+   "office": "United States Senator",
+   "section": "federal",
+   "area": null,
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Abdul El-Sayed",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Abdul_El-Sayed",
+     "money": {
+      "source": "FEC",
+      "id": "S6MI00418",
+      "raised": 14514336,
+      "spent": 11961573,
+      "cash": 2552763,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 2,
+     "name": "Mike Rogers",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Mike_Rogers_(Michigan)",
+     "money": {
+      "source": "FEC",
+      "id": "S4MI00595",
+      "raised": 10903169,
+      "spent": 6743884,
+      "cash": 4414988,
+      "through": "09/30/2026"
+     }
+    },
+    {
+     "ballot": 3,
+     "name": "Lydia Christensen",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Lydia_Christensen"
+    },
+    {
+     "ballot": 4,
+     "name": "Timothy Long",
+     "party": "U.S. Taxpayers",
+     "profile": "https://ballotpedia.org/Timothy_Long"
+    },
+    {
+     "ballot": 5,
+     "name": "Douglas P. Marsh",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Douglas_P._Marsh"
+    },
+    {
+     "ballot": 6,
+     "name": "Walter Kristy",
+     "party": "Natural Law",
+     "profile": "https://ballotpedia.org/Walter_Kristy"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/United_States_Senate_election_in_Michigan,_2026"
+  },
+  {
+   "id": "member-of-the-state-board-of-education",
+   "office": "Member of the State Board of Education (2 seats)",
+   "section": "education",
+   "area": null,
+   "voteFor": 2,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Judith Pritchett",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Judith_Pritchett"
+    },
+    {
+     "ballot": 2,
+     "name": "Tiffany Tilley",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Tiffany_Tilley"
+    },
+    {
+     "ballot": 3,
+     "name": "Bree Moeggenberg",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Bree_Moeggenberg"
+    },
+    {
+     "ballot": 4,
+     "name": "Terence Collins",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Terence_Collins_(Michigan)"
+    },
+    {
+     "ballot": 5,
+     "name": "Charles Essner",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Charles_Essner"
+    },
+    {
+     "ballot": 6,
+     "name": "Christine Schwartz",
+     "party": "U.S. Taxpayers",
+     "profile": "https://ballotpedia.org/Christine_Schwartz"
+    },
+    {
+     "ballot": 7,
+     "name": "William Mohr II",
+     "party": "U.S. Taxpayers",
+     "profile": "https://ballotpedia.org/William_Mohr_II"
+    },
+    {
+     "ballot": 8,
+     "name": "Wissam Charafeddine",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Wissam_Charafeddine"
+    },
+    {
+     "ballot": 9,
+     "name": "Kelli Monroe",
+     "party": "Natural Law",
+     "profile": "https://ballotpedia.org/Kelli_Monroe"
+    },
+    {
+     "ballot": 10,
+     "name": "Mary Anne Hering",
+     "party": "Working Class",
+     "profile": "https://ballotpedia.org/Mary_Anne_Hering"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Board_of_Education_election,_2026"
+  },
+  {
+   "id": "justice-of-the-supreme-court",
+   "office": "Justice of the Supreme Court (2 seats)",
+   "section": "judicial",
+   "area": null,
+   "voteFor": 2,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Megan Cavanagh",
+     "party": "Nonpartisan",
+     "nominatedBy": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Megan_Cavanagh"
+    },
+    {
+     "ballot": 2,
+     "name": "Noah Hood",
+     "party": "Nonpartisan",
+     "nominatedBy": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Noah_Hood"
+    },
+    {
+     "ballot": 3,
+     "name": "Casandra Morse-Bills",
+     "party": "Nonpartisan",
+     "nominatedBy": "Republican",
+     "profile": "https://ballotpedia.org/Casandra_Morse-Bills"
+    },
+    {
+     "ballot": 4,
+     "name": "Michael D. Warren Jr.",
+     "party": "Nonpartisan",
+     "nominatedBy": "Republican",
+     "profile": "https://ballotpedia.org/Michael_D._Warren_Jr._(Michigan)"
+    },
+    {
+     "ballot": 5,
+     "name": "Jody White",
+     "party": "Nonpartisan",
+     "nominatedBy": "U.S. Taxpayers",
+     "profile": "https://ballotpedia.org/Jody_White"
+    },
+    {
+     "ballot": 6,
+     "name": "Thomas Howe",
+     "party": "Nonpartisan",
+     "nominatedBy": "U.S. Taxpayers",
+     "profile": "https://ballotpedia.org/Thomas_Howe"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_Supreme_Court_elections,_2026"
+  },
+  {
+   "id": "regent-of-the-university-of-michigan",
+   "office": "Regent of the University of Michigan (2 seats)",
+   "section": "education",
+   "area": null,
+   "voteFor": 2,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Amir Makled",
+     "party": "Democratic"
+    },
+    {
+     "ballot": 2,
+     "name": "Paul Brown",
+     "party": "Democratic",
+     "incumbent": true
+    },
+    {
+     "ballot": 3,
+     "name": "Lena Epstein",
+     "party": "Republican"
+    },
+    {
+     "ballot": 4,
+     "name": "Michael Schostak",
+     "party": "Republican"
+    },
+    {
+     "ballot": 5,
+     "name": "Andrew Chadderdon",
+     "party": "Libertarian"
+    },
+    {
+     "ballot": 6,
+     "name": "Kyle Maas",
+     "party": "U.S. Taxpayers"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://en.wikipedia.org/wiki/2026_University_of_Michigan_Board_of_Regents_election"
+  },
+  {
+   "id": "trustee-of-michigan-state-university",
+   "office": "Trustee of Michigan State University (2 seats)",
+   "section": "education",
+   "area": null,
+   "voteFor": 2,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Brianna Scott",
+     "party": "Democratic",
+     "incumbent": true
+    },
+    {
+     "ballot": 2,
+     "name": "Kelly Tebay",
+     "party": "Democratic",
+     "incumbent": true
+    },
+    {
+     "ballot": 3,
+     "name": "Julie Maday",
+     "party": "Republican"
+    },
+    {
+     "ballot": 4,
+     "name": "Roger Victory",
+     "party": "Republican"
+    },
+    {
+     "ballot": 5,
+     "name": "Daniel Patterson",
+     "party": "Libertarian"
+    },
+    {
+     "ballot": 6,
+     "name": "Will White",
+     "party": "Libertarian"
+    },
+    {
+     "ballot": 7,
+     "name": "Janet Sanger",
+     "party": "U.S. Taxpayers"
+    },
+    {
+     "ballot": 8,
+     "name": "John Sanger",
+     "party": "U.S. Taxpayers"
+    },
+    {
+     "ballot": 9,
+     "name": "John Anthony La Pietra",
+     "party": "Green"
+    },
+    {
+     "ballot": 10,
+     "name": "Yaz Ozbek",
+     "party": "Working Class"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://en.wikipedia.org/wiki/2026_Michigan_State_University_Board_of_Trustees_election"
+  },
+  {
+   "id": "governor-of-wayne-state-university",
+   "office": "Governor of Wayne State University (2 seats)",
+   "section": "education",
+   "area": null,
+   "voteFor": 2,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Richard Mack",
+     "party": "Democratic"
+    },
+    {
+     "ballot": 2,
+     "name": "Shereef Akeel",
+     "party": "Democratic"
+    },
+    {
+     "ballot": 3,
+     "name": "Andy Anuzis",
+     "party": "Republican"
+    },
+    {
+     "ballot": 4,
+     "name": "Christa Murphy",
+     "party": "Republican"
+    },
+    {
+     "ballot": 5,
+     "name": "Alex Avery",
+     "party": "Libertarian"
+    },
+    {
+     "ballot": 6,
+     "name": "Jami Van Alstine",
+     "party": "Libertarian"
+    },
+    {
+     "ballot": 7,
+     "name": "Jeff McDonald",
+     "party": "U.S. Taxpayers"
+    },
+    {
+     "ballot": 8,
+     "name": "Paul Ragan",
+     "party": "Green"
+    },
+    {
+     "ballot": 9,
+     "name": "Kathleen Oakford",
+     "party": "Natural Law"
+    },
+    {
+     "ballot": 10,
+     "name": "Suzanne Roehrig",
+     "party": "Working Class"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://en.wikipedia.org/wiki/2026_Wayne_State_University_Board_of_Governors_election"
+  },
+  {
+   "id": "cd-1",
+   "office": "Representative in Congress, 1st District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "1"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Callie Barr",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Callie_Barr",
+     "money": {
+      "source": "FEC",
+      "id": "H4MI01155",
+      "raised": 824341,
+      "spent": 301257,
+      "cash": 530725,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 2,
+     "name": "Jack Bergman",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Jack_Bergman",
+     "money": {
+      "source": "FEC",
+      "id": "H6MI01226",
+      "raised": 1917574,
+      "spent": 1368361,
+      "cash": 660163,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 3,
+     "name": "Arnett Satterla",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Arnett_Satterla"
+    },
+    {
+     "ballot": 4,
+     "name": "Doc Kovaly",
+     "party": "U.S. Taxpayers",
+     "profile": "https://ballotpedia.org/Doc_Kovaly"
+    },
+    {
+     "ballot": 5,
+     "name": "LaVeta Davenport",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/LaVeta_Davenport"
+    },
+    {
+     "ballot": 6,
+     "name": "Liz Hakola",
+     "party": "Working Class",
+     "profile": "https://ballotpedia.org/Liz_Hakola"
+    },
+    {
+     "ballot": 7,
+     "name": "Zebulon Featherly",
+     "party": "Independent",
+     "profile": "https://ballotpedia.org/Zebulon_Featherly"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Michigan,_2026"
+  },
+  {
+   "id": "cd-2",
+   "office": "Representative in Congress, 2nd District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "2"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Ben Ambrose",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Ben_Ambrose",
+     "money": {
+      "source": "FEC",
+      "id": "H6MI02216",
+      "raised": 85094,
+      "spent": 62840,
+      "cash": 21868,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 2,
+     "name": "John Moolenaar",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/John_Moolenaar",
+     "money": {
+      "source": "FEC",
+      "id": "H4MI04126",
+      "raised": 1652235,
+      "spent": 1028618,
+      "cash": 1905561,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 3,
+     "name": "Charlotte Magoon",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Charlotte_Magoon"
+    },
+    {
+     "ballot": 4,
+     "name": "Richard Sills",
+     "party": "Natural Law",
+     "profile": "https://ballotpedia.org/Richard_Sills"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Michigan,_2026"
+  },
+  {
+   "id": "cd-3",
+   "office": "Representative in Congress, 3rd District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "3"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Hillary Scholten",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Hillary_Scholten",
+     "money": {
+      "source": "FEC",
+      "id": "H0MI03316",
+      "raised": 2329122,
+      "spent": 1322264,
+      "cash": 1356573,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 2,
+     "name": "Terri DeBoer",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Terri_DeBoer",
+     "money": {
+      "source": "FEC",
+      "id": "H6MI03198",
+      "raised": 551697,
+      "spent": 190342,
+      "cash": 361355,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 3,
+     "name": "Joe Jock",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Joe_Jock"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Michigan,_2026"
+  },
+  {
+   "id": "cd-4",
+   "office": "Representative in Congress, 4th District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "4"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Sean McCann",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Sean_McCann",
+     "money": {
+      "source": "FEC",
+      "id": "H6MI04204",
+      "raised": 2620011,
+      "spent": 933771,
+      "cash": 1686240,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 2,
+     "name": "Bill Huizenga",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Bill_Huizenga",
+     "money": {
+      "source": "FEC",
+      "id": "H0MI02094",
+      "raised": 4093991,
+      "spent": 1934284,
+      "cash": 2268747,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 3,
+     "name": "Shafina Barnett",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Shafina_Barnett"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Michigan,_2026"
+  },
+  {
+   "id": "cd-5",
+   "office": "Representative in Congress, 5th District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "5"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Christian Vukasovich",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Christian_Vukasovich",
+     "money": {
+      "source": "FEC",
+      "id": "H6MI05227",
+      "raised": 141622,
+      "spent": 105589,
+      "cash": 36034,
+      "through": "09/30/2026"
+     }
+    },
+    {
+     "ballot": 2,
+     "name": "Tim Walberg",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Tim_Walberg",
+     "money": {
+      "source": "FEC",
+      "id": "H4MI07103",
+      "raised": 1742399,
+      "spent": 1658017,
+      "cash": 993833,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 3,
+     "name": "Ronald Muszynski",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Ronald_Muszynski"
+    },
+    {
+     "ballot": 4,
+     "name": "Sharon Renier",
+     "party": "U.S. Taxpayers",
+     "profile": "https://ballotpedia.org/Sharon_Renier"
+    },
+    {
+     "ballot": 5,
+     "name": "James Bronke",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/James_Bronke"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Michigan,_2026"
+  },
+  {
+   "id": "cd-6",
+   "office": "Representative in Congress, 6th District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "6"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Debbie Dingell",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Debbie_Dingell",
+     "money": {
+      "source": "FEC",
+      "id": "H4MI12079",
+      "raised": 1193712,
+      "spent": 1122149,
+      "cash": 414935,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 2,
+     "name": "Heather Smiley",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Heather_Smiley"
+    },
+    {
+     "ballot": 3,
+     "name": "Tim Teagan",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Tim_Teagan"
+    },
+    {
+     "ballot": 4,
+     "name": "Michael Mickevicius",
+     "party": "U.S. Taxpayers",
+     "profile": "https://ballotpedia.org/Michael_Mickevicius"
+    },
+    {
+     "ballot": 5,
+     "name": "Clyde Shabazz",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Clyde_Shabazz"
+    },
+    {
+     "ballot": 6,
+     "name": "Linda Rayburn",
+     "party": "Working Class",
+     "profile": "https://ballotpedia.org/Linda_Rayburn"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Michigan,_2026"
+  },
+  {
+   "id": "cd-7",
+   "office": "Representative in Congress, 7th District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "7"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "William Lawrence",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/William_Lawrence_(Michigan)",
+     "money": {
+      "source": "FEC",
+      "id": "H6MI07298",
+      "raised": 1119198,
+      "spent": 736082,
+      "cash": 383116,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 2,
+     "name": "Tom Barrett",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Tom_Barrett_(Michigan)",
+     "money": {
+      "source": "FEC",
+      "id": "H2MI07123",
+      "raised": 6306828,
+      "spent": 3457356,
+      "cash": 2871872,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 3,
+     "name": "Shane Dedrick",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Shane_Dedrick"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Michigan,_2026"
+  },
+  {
+   "id": "cd-8",
+   "office": "Representative in Congress, 8th District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "8"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Kristen McDonald Rivet",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Kristen_McDonald_Rivet",
+     "money": {
+      "source": "FEC",
+      "id": "H4MI08218",
+      "raised": 5644876,
+      "spent": 1407808,
+      "cash": 4254099,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 2,
+     "name": "Thomas J. Smith",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Thomas_J._Smith_(Michigan)",
+     "money": {
+      "source": "FEC",
+      "id": "H6MI08312",
+      "raised": 245744,
+      "spent": 62439,
+      "cash": 183305,
+      "through": "09/30/2026"
+     }
+    },
+    {
+     "ballot": 3,
+     "name": "C. Mia Pettus",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/C._Mia_Pettus"
+    },
+    {
+     "ballot": 4,
+     "name": "Jim Casha",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Jim_Casha"
+    },
+    {
+     "ballot": 5,
+     "name": "Kathy Goodwin",
+     "party": "Working Class",
+     "profile": "https://ballotpedia.org/Kathy_Goodwin"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Michigan,_2026"
+  },
+  {
+   "id": "cd-9",
+   "office": "Representative in Congress, 9th District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "9"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Ray Pooley",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Ray_Pooley",
+     "money": {
+      "source": "FEC",
+      "id": "H6MI09245",
+      "raised": 8084,
+      "spent": 3142,
+      "cash": 4942,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 2,
+     "name": "Lisa McClain",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Lisa_McClain",
+     "money": {
+      "source": "FEC",
+      "id": "H0MI10287",
+      "raised": 5242309,
+      "spent": 4312277,
+      "cash": 1536890,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 3,
+     "name": "Kevin Vayko",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Kevin_Vayko"
+    },
+    {
+     "ballot": 4,
+     "name": "John Vlahos",
+     "party": "U.S. Taxpayers",
+     "profile": "https://ballotpedia.org/John_Vlahos"
+    },
+    {
+     "ballot": 5,
+     "name": "Destiny Clayton",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Destiny_Clayton"
+    },
+    {
+     "ballot": 6,
+     "name": "Jim Walkowicz",
+     "party": "Working Class",
+     "profile": "https://ballotpedia.org/Jim_Walkowicz"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Michigan,_2026"
+  },
+  {
+   "id": "cd-10",
+   "office": "Representative in Congress, 10th District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "10"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Christina Hines",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Christina_Hines",
+     "money": {
+      "source": "FEC",
+      "id": "H6MI10276",
+      "raised": 1211489,
+      "spent": 1053292,
+      "cash": 158196,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 2,
+     "name": "Michael Bouchard",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Michael_Bouchard_(Michigan_congressional_candidate)",
+     "money": {
+      "source": "FEC",
+      "id": "H6MI10359",
+      "raised": 1626251,
+      "spent": 520915,
+      "cash": 1105337,
+      "through": "09/30/2026"
+     }
+    },
+    {
+     "ballot": 3,
+     "name": "Mike Saliba",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Mike_Saliba"
+    },
+    {
+     "ballot": 4,
+     "name": "Kwabena Nkromo",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Kwabena_Nkromo"
+    },
+    {
+     "ballot": 5,
+     "name": "Andrea Kirby",
+     "party": "Working Class",
+     "profile": "https://ballotpedia.org/Andrea_Kirby"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Michigan,_2026"
+  },
+  {
+   "id": "cd-11",
+   "office": "Representative in Congress, 11th District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "11"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Jeremy Moss",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Jeremy_Moss",
+     "money": {
+      "source": "FEC",
+      "id": "H6MI11191",
+      "raised": 1485178,
+      "spent": 1132661,
+      "cash": 352517,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 2,
+     "name": "Ethan Baker",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Ethan_Baker",
+     "money": {
+      "source": "FEC",
+      "id": "H6MI11290",
+      "raised": 141876,
+      "spent": 21751,
+      "cash": 121125,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 3,
+     "name": "Farid Ishac",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Farid_Ishac"
+    },
+    {
+     "ballot": 4,
+     "name": "Ryan Teasdale",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Ryan_Teasdale"
+    },
+    {
+     "ballot": 5,
+     "name": "Anil Kumar",
+     "party": "Independent",
+     "profile": "https://ballotpedia.org/Anil_Kumar",
+     "money": {
+      "source": "FEC",
+      "id": "H4MI10131",
+      "raised": 712923,
+      "spent": 306864,
+      "cash": 407720,
+      "through": "06/30/2026"
+     }
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Michigan,_2026"
+  },
+  {
+   "id": "cd-12",
+   "office": "Representative in Congress, 12th District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "12"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Rashida Tlaib",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Rashida_Tlaib",
+     "money": {
+      "source": "FEC",
+      "id": "H8MI13250",
+      "raised": 2756214,
+      "spent": 3585336,
+      "cash": 3434433,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 2,
+     "name": "James Hooper",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/James_Hooper",
+     "money": {
+      "source": "FEC",
+      "id": "H2MI12198",
+      "raised": 1450,
+      "spent": 3194,
+      "cash": 7273,
+      "through": "09/30/2026"
+     }
+    },
+    {
+     "ballot": 3,
+     "name": "Marc Joseph Sosnowski",
+     "party": "U.S. Taxpayers",
+     "profile": "https://ballotpedia.org/Marc_Joseph_Sosnowski"
+    },
+    {
+     "ballot": 4,
+     "name": "Brenda Sanders",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Brenda_Sanders"
+    },
+    {
+     "ballot": 5,
+     "name": "Gary Walkowicz",
+     "party": "Working Class",
+     "profile": "https://ballotpedia.org/Gary_Walkowicz"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Michigan,_2026"
+  },
+  {
+   "id": "cd-13",
+   "office": "Representative in Congress, 13th District",
+   "section": "federal",
+   "area": {
+    "type": "cd",
+    "id": "13"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Donavan McKinney",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Donavan_McKinney",
+     "money": {
+      "source": "FEC",
+      "id": "H6MI13254",
+      "raised": 1372309,
+      "spent": 1229455,
+      "cash": 142854,
+      "through": "07/15/2026"
+     }
+    },
+    {
+     "ballot": 2,
+     "name": "Taras Nykoriak",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Taras_Nykoriak"
+    },
+    {
+     "ballot": 3,
+     "name": "Christopher Dardzinski",
+     "party": "U.S. Taxpayers",
+     "profile": "https://ballotpedia.org/Christopher_Dardzinski"
+    },
+    {
+     "ballot": 4,
+     "name": "Raelyn Light",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Raelyn_Light"
+    },
+    {
+     "ballot": 5,
+     "name": "Simone Coleman",
+     "party": "Working Class",
+     "profile": "https://ballotpedia.org/Simone_Coleman"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Michigan,_2026"
+  },
+  {
+   "id": "sldu-1",
+   "office": "State Senator, 1st District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "1"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Justin Onwenu",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Justin_Onwenu"
+    },
+    {
+     "ballot": 2,
+     "name": "Patrick O'Connell",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Patrick_O&#39;Connell"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-2",
+   "office": "State Senator, 2nd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "2"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Abbas Alawieh",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Abbas_Alawieh"
+    },
+    {
+     "ballot": 2,
+     "name": "Harry Sawicki",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Harry_Sawicki"
+    },
+    {
+     "ballot": 3,
+     "name": "Larry Betts",
+     "party": "Working Class",
+     "profile": "https://ballotpedia.org/Larry_Betts"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-3",
+   "office": "State Senator, 3rd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "3"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "John Conyers III",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/John_Conyers_III_(Michigan_State_Senate_candidate)"
+    },
+    {
+     "ballot": 2,
+     "name": "Mark Ashley Price",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Mark_Ashley_Price_(Michigan)"
+    },
+    {
+     "ballot": 3,
+     "name": "David Roehrig",
+     "party": "Working Class",
+     "profile": "https://ballotpedia.org/David_Roehrig"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-4",
+   "office": "State Senator, 4th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "4"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Darrin Camilleri",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Darrin_Camilleri"
+    },
+    {
+     "ballot": 2,
+     "name": "Marcie Grzywacz",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Marcie_Grzywacz"
+    },
+    {
+     "ballot": 3,
+     "name": "Beth Socia",
+     "party": "U.S. Taxpayers",
+     "profile": "https://ballotpedia.org/Beth_Socia"
+    },
+    {
+     "ballot": 4,
+     "name": "Walter Willis",
+     "party": "Working Class",
+     "profile": "https://ballotpedia.org/Walter_Willis"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-5",
+   "office": "State Senator, 5th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "5"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Matt Koleszar",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Matt_Koleszar"
+    },
+    {
+     "ballot": 2,
+     "name": "Estelle Oliansky",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Estelle_Oliansky"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-6",
+   "office": "State Senator, 6th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "6"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Mary Cavanagh",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Mary_Cavanagh"
+    },
+    {
+     "ballot": 2,
+     "name": "Joi Pokerwinski",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Joi_Pokerwinski"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-7",
+   "office": "State Senator, 7th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "7"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Jason Hoskins",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Jason_Hoskins"
+    },
+    {
+     "ballot": 2,
+     "name": "Anthony Paesano",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Anthony_Paesano"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-8",
+   "office": "State Senator, 8th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "8"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Dayna Polehanki",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Dayna_Polehanki"
+    },
+    {
+     "ballot": 2,
+     "name": "Kenneth Massey",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Kenneth_Massey"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-9",
+   "office": "State Senator, 9th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "9"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Theresa Brooks",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Theresa_Brooks_(Michigan)"
+    },
+    {
+     "ballot": 2,
+     "name": "Michael Webber",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Michael_Webber"
+    },
+    {
+     "ballot": 3,
+     "name": "Jacob Schodowski",
+     "party": "Working Class",
+     "profile": "https://ballotpedia.org/Jacob_Schodowski"
+    },
+    {
+     "ballot": 4,
+     "name": "Philippe Cicchini",
+     "party": "Independent",
+     "profile": "https://ballotpedia.org/Philippe_Cicchini"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-10",
+   "office": "State Senator, 10th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "10"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Natalie Price",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Natalie_Price"
+    },
+    {
+     "ballot": 2,
+     "name": "Michelle Nard",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Michelle_Nard"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-11",
+   "office": "State Senator, 11th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "11"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Veronica Klinefelt",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Veronica_Klinefelt"
+    },
+    {
+     "ballot": 2,
+     "name": "Johnnie Townsend",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Johnnie_Townsend"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-12",
+   "office": "State Senator, 12th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "12"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Kevin Hertel",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Kevin_Hertel"
+    },
+    {
+     "ballot": 2,
+     "name": "John Goldwater",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/John_Goldwater"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-13",
+   "office": "State Senator, 13th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "13"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Sean Carlson",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Sean_Carlson"
+    },
+    {
+     "ballot": 2,
+     "name": "Ryan Berman",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Ryan_Berman"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-14",
+   "office": "State Senator, 14th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "14"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Sue Shink",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Sue_Shink"
+    },
+    {
+     "ballot": 2,
+     "name": "Tawn Beliger",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Tawn_Beliger"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-15",
+   "office": "State Senator, 15th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "15"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Felicia Brabec",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Felicia_Brabec"
+    },
+    {
+     "ballot": 2,
+     "name": "Jason Rogers",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Jason_Rogers_(Michigan)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-16",
+   "office": "State Senator, 16th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "16"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Deandre Barnes",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Deandre_Barnes"
+    },
+    {
+     "ballot": 2,
+     "name": "Joseph Bellino",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Joseph_Bellino"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-17",
+   "office": "State Senator, 17th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "17"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Ashleigh Baker",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Ashleigh_Baker"
+    },
+    {
+     "ballot": 2,
+     "name": "Jonathan Lindsey",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Jonathan_Lindsey"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-18",
+   "office": "State Senator, 18th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "18"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Anthony Pennock",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Anthony_Pennock"
+    },
+    {
+     "ballot": 2,
+     "name": "Thomas Albert",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Thomas_Albert_(Michigan)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-19",
+   "office": "State Senator, 19th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "19"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Julie Rogers",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Julie_Rogers"
+    },
+    {
+     "ballot": 2,
+     "name": "Shaun Young",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Shaun_Young"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-20",
+   "office": "State Senator, 20th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "20"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Dale Murney",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Dale_Murney"
+    },
+    {
+     "ballot": 2,
+     "name": "Chris Moraitis",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Chris_Moraitis"
+    },
+    {
+     "ballot": 3,
+     "name": "Shamara Clay",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Shamara_Clay"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-21",
+   "office": "State Senator, 21st District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "21"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Sarah Anthony",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Sarah_Anthony"
+    },
+    {
+     "ballot": 2,
+     "name": "Josh Burns",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Josh_Burns_(Michigan)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-22",
+   "office": "State Senator, 22nd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "22"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Robert Hower",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Robert_Hower"
+    },
+    {
+     "ballot": 2,
+     "name": "Mike Murphy",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Mike_Murphy_(Michigan)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-23",
+   "office": "State Senator, 23rd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "23"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Greg Hill",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Greg_Hill_(Michigan)"
+    },
+    {
+     "ballot": 2,
+     "name": "Donni Steele",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Donni_Steele"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-24",
+   "office": "State Senator, 24th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "24"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Edlira Sako",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Edlira_Sako"
+    },
+    {
+     "ballot": 2,
+     "name": "Douglas Wozniak",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Douglas_Wozniak"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-25",
+   "office": "State Senator, 25th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "25"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "April Osentoski",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/April_Osentoski"
+    },
+    {
+     "ballot": 2,
+     "name": "Andrew Beeler",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Andrew_Beeler"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-26",
+   "office": "State Senator, 26th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "26"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Brendan Johnson",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Brendan_Johnson_(Michigan_State_Senate_District_26_candidate)"
+    },
+    {
+     "ballot": 2,
+     "name": "Matthew Bierlein",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Matthew_Bierlein"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-27",
+   "office": "State Senator, 27th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "27"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "John Cherry",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/John_Cherry_(Michigan_representative)"
+    },
+    {
+     "ballot": 2,
+     "name": "Bill Bain",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Bill_Bain"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-28",
+   "office": "State Senator, 28th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "28"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Rashida Harrison",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Rashida_Harrison"
+    },
+    {
+     "ballot": 2,
+     "name": "Julie DeRose",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Julie_DeRose"
+    },
+    {
+     "ballot": 3,
+     "name": "Brandon Crabill",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Brandon_Crabill"
+    },
+    {
+     "ballot": 4,
+     "name": "Wes Peterson",
+     "party": "Working Class",
+     "profile": "https://ballotpedia.org/Wes_Peterson"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-29",
+   "office": "State Senator, 29th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "29"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Abbie Groff-Blaszak",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Abbie_Groff-Blaszak"
+    },
+    {
+     "ballot": 2,
+     "name": "Brady Middleton",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Brady_Middleton"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-30",
+   "office": "State Senator, 30th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "30"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Carol Glanville",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Carol_Glanville"
+    },
+    {
+     "ballot": 2,
+     "name": "Mark Huizenga",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Mark_Huizenga"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-31",
+   "office": "State Senator, 31st District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "31"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Chris Kleinjans",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Chris_Kleinjans"
+    },
+    {
+     "ballot": 2,
+     "name": "John Wetzel",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/John_Wetzel_(Michigan)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-32",
+   "office": "State Senator, 32nd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "32"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Rebecca Amidon",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Rebecca_Amidon"
+    },
+    {
+     "ballot": 2,
+     "name": "Kim Cole",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Kim_Cole"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-33",
+   "office": "State Senator, 33rd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "33"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Stan Opal",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Stan_Opal"
+    },
+    {
+     "ballot": 2,
+     "name": "Gina Johnsen",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Gina_Johnsen"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-34",
+   "office": "State Senator, 34th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "34"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Tyler Landgraf",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Tyler_Landgraf"
+    },
+    {
+     "ballot": 2,
+     "name": "Roger Hauck",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Roger_Hauck_(Michigan)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-35",
+   "office": "State Senator, 35th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "35"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Chedrick Greene",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Chedrick_Greene"
+    },
+    {
+     "ballot": 2,
+     "name": "Jason Tunney",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Jason_Tunney"
+    },
+    {
+     "ballot": 3,
+     "name": "Laurie Atwood",
+     "party": "U.S. Taxpayers",
+     "profile": "https://ballotpedia.org/Laurie_Atwood"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-36",
+   "office": "State Senator, 36th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "36"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Mark Yonkman",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Mark_Yonkman"
+    },
+    {
+     "ballot": 2,
+     "name": "Michele Hoitenga",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Michele_Hoitenga"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-37",
+   "office": "State Senator, 37th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "37"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Kate Gallup",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Kate_Gallup"
+    },
+    {
+     "ballot": 2,
+     "name": "John Damoose",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/John_Damoose"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldu-38",
+   "office": "State Senator, 38th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldu",
+    "id": "38"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Kelli van Ginhoven",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Kelli_van_Ginhoven"
+    },
+    {
+     "ballot": 2,
+     "name": "David Prestin",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/David_Prestin"
+    },
+    {
+     "ballot": 3,
+     "name": "Sara Cambensy",
+     "party": "Independent",
+     "profile": "https://ballotpedia.org/Sara_Cambensy"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_State_Senate_elections,_2026"
+  },
+  {
+   "id": "sldl-1",
+   "office": "Representative in State Legislature, 1st District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "1"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Tyrone Carter",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Tyrone_Carter"
+    },
+    {
+     "ballot": 2,
+     "name": "Valerie Whittaker",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Valerie_Whittaker"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-2",
+   "office": "Representative in State Legislature, 2nd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "2"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Joanna Whaley",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Joanna_Whaley"
+    },
+    {
+     "ballot": 2,
+     "name": "Ronald Kokinda",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Ronald_Kokinda"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-3",
+   "office": "Representative in State Legislature, 3rd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "3"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Alabas Farhat",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Alabas_Farhat"
+    },
+    {
+     "ballot": 2,
+     "name": "Gus H. Tarraf",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Gus_Tarraf"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-4",
+   "office": "Representative in State Legislature, 4th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "4"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Regina Ross",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Regina_Ross"
+    },
+    {
+     "ballot": 2,
+     "name": "Everett Davis",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Everett_Davis"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-5",
+   "office": "Representative in State Legislature, 5th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "5"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Candace Calloway",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Candace_Calloway"
+    },
+    {
+     "ballot": 2,
+     "name": "Chris Venable",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Chris_Venable"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-6",
+   "office": "Representative in State Legislature, 6th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "6"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Melanie Macey",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Melanie_Macey"
+    },
+    {
+     "ballot": 2,
+     "name": "Michael Steger",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Michael_Steger"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-7",
+   "office": "Representative in State Legislature, 7th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "7"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Tonya Myers Phillips",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Tonya_Myers_Phillips"
+    },
+    {
+     "ballot": 2,
+     "name": "Reginald Moorer",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Reginald_Moorer"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-8",
+   "office": "Representative in State Legislature, 8th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "8"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Chris Gilmer-Hill",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Chris_Gilmer-Hill"
+    },
+    {
+     "ballot": 2,
+     "name": "Bruce Langran",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Bruce_Langran"
+    },
+    {
+     "ballot": 3,
+     "name": "Stephen Boyle",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Stephen_Boyle"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-9",
+   "office": "Representative in State Legislature, 9th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "9"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Willie Burton",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Willie_Burton"
+    },
+    {
+     "ballot": 2,
+     "name": "Michele Lundgren",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Michele_Lundgren"
+    },
+    {
+     "ballot": 3,
+     "name": "Jahdante Smith",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Jahdante_Smith"
+    },
+    {
+     "ballot": 4,
+     "name": "Logan Ausherman",
+     "party": "Working Class",
+     "profile": "https://ballotpedia.org/Logan_Ausherman"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-10",
+   "office": "Representative in State Legislature, 10th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "10"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Veronica Paiz",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Veronica_Paiz"
+    },
+    {
+     "ballot": 2,
+     "name": "Peter Ochs",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Peter_Ochs"
+    },
+    {
+     "ballot": 3,
+     "name": "Piper Smith",
+     "party": "Working Class",
+     "profile": "https://ballotpedia.org/Piper_Smith"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-11",
+   "office": "Representative in State Legislature, 11th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "11"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Kimberly Fisher",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Kimberly_Fisher"
+    },
+    {
+     "ballot": 2,
+     "name": "Matthew Stafford",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Matthew_Stafford_(Michigan)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-12",
+   "office": "Representative in State Legislature, 12th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "12"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Kimberly L. Edwards",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Kimberly_Edwards"
+    },
+    {
+     "ballot": 2,
+     "name": "Randell Shafer",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Randell_Shafer"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-13",
+   "office": "Representative in State Legislature, 13th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "13"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Mai Xiong",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Mai_Xiong"
+    },
+    {
+     "ballot": 2,
+     "name": "Mark T. Foster",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Mark_Foster_(Michigan)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-14",
+   "office": "Representative in State Legislature, 14th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "14"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Mike McFall",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Mike_McFall"
+    },
+    {
+     "ballot": 2,
+     "name": "Larry Szyska",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Larry_Szyska"
+    },
+    {
+     "ballot": 3,
+     "name": "N. Jefferey Sparling",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/N._Jefferey_Sparling"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-15",
+   "office": "Representative in State Legislature, 15th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "15"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Jalal Abdallah",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Jalal_Abdallah"
+    },
+    {
+     "ballot": 2,
+     "name": "Hassan Nehme",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Hassan_Nehme"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-16",
+   "office": "Representative in State Legislature, 16th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "16"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Stephanie Young",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Stephanie_Young"
+    },
+    {
+     "ballot": 2,
+     "name": "Brian Duggan",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Brian_Duggan"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-17",
+   "office": "Representative in State Legislature, 17th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "17"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Laurie Pohutsky",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Laurie_Pohutsky"
+    },
+    {
+     "ballot": 2,
+     "name": "Ken Crider",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Ken_Crider"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-18",
+   "office": "Representative in State Legislature, 18th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "18"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Kelly Garrett",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Kelly_Garrett"
+    },
+    {
+     "ballot": 2,
+     "name": "Ryan Foster",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Ryan_Foster"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-19",
+   "office": "Representative in State Legislature, 19th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "19"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Samantha Steckloff",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Samantha_Steckloff"
+    },
+    {
+     "ballot": 2,
+     "name": "Kevin Hammer",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Kevin_Hammer"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-20",
+   "office": "Representative in State Legislature, 20th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "20"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Noah Arbit",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Noah_Arbit"
+    },
+    {
+     "ballot": 2,
+     "name": "S. Dave Sullivan",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/S._Dave_Sullivan"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-21",
+   "office": "Representative in State Legislature, 21st District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "21"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Kelly Breen",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Kelly_Breen"
+    },
+    {
+     "ballot": 2,
+     "name": "Ross Barranco",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Ross_Barranco"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-22",
+   "office": "Representative in State Legislature, 22nd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "22"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Lisa McIntyre",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Lisa_McIntyre"
+    },
+    {
+     "ballot": 2,
+     "name": "Casey Noce",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Casey_Noce"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-23",
+   "office": "Representative in State Legislature, 23rd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "23"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Jason Morgan",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Jason_Morgan_(Michigan)"
+    },
+    {
+     "ballot": 2,
+     "name": "Miriam Corvino",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Miriam_Corvino"
+    },
+    {
+     "ballot": 3,
+     "name": "Christina Marudas",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Christina_Marudas"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-24",
+   "office": "Representative in State Legislature, 24th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "24"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Ranjeev Puri",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Ranjeev_Puri"
+    },
+    {
+     "ballot": 2,
+     "name": "Allison Fuller",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Allison_Fuller"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-25",
+   "office": "Representative in State Legislature, 25th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "25"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Peter Herzberg",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Peter_Herzberg"
+    },
+    {
+     "ballot": 2,
+     "name": "Dawn Udell",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Dawn_Udell"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-26",
+   "office": "Representative in State Legislature, 26th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "26"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Dylan Wegela",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Dylan_Wegela"
+    },
+    {
+     "ballot": 2,
+     "name": "Chris Dobis",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Chris_Dobis"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-27",
+   "office": "Representative in State Legislature, 27th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "27"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Jaime Churches",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Jaime_Churches"
+    },
+    {
+     "ballot": 2,
+     "name": "Rylee Linting",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Rylee_Linting"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-28",
+   "office": "Representative in State Legislature, 28th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "28"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Sherry Berecz",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Sherry_Berecz"
+    },
+    {
+     "ballot": 2,
+     "name": "Jamie Thompson",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Jamie_Thompson"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-29",
+   "office": "Representative in State Legislature, 29th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "29"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Darian Counts",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Darian_Counts"
+    },
+    {
+     "ballot": 2,
+     "name": "James DeSana",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/James_DeSana"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-30",
+   "office": "Representative in State Legislature, 30th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "30"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Omar Ferdin",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Omar_Ferdin"
+    },
+    {
+     "ballot": 2,
+     "name": "William Bruck",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/William_Bruck"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-31",
+   "office": "Representative in State Legislature, 31st District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "31"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Shannon Wayne",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Shannon_Wayne"
+    },
+    {
+     "ballot": 2,
+     "name": "Laura Perry",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Laura_Perry_(Michigan)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-32",
+   "office": "Representative in State Legislature, 32nd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "32"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Jimmie Wilson Jr.",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Jimmie_Wilson_Jr._(Michigan)"
+    },
+    {
+     "ballot": 2,
+     "name": "Mike Eller",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Mike_Eller"
+    },
+    {
+     "ballot": 3,
+     "name": "John Tatar",
+     "party": "U.S. Taxpayers",
+     "profile": "https://ballotpedia.org/John_Tatar"
+    },
+    {
+     "ballot": 4,
+     "name": "Ryan Sample",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Ryan_Sample"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-33",
+   "office": "Representative in State Legislature, 33rd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "33"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Morgan Foreman",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Morgan_Foreman"
+    },
+    {
+     "ballot": 2,
+     "name": "Catherine Rogers",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Catherine_Rogers_(Michigan)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-34",
+   "office": "Representative in State Legislature, 34th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "34"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "John E. Dahlgren",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/John_Dahlgren"
+    },
+    {
+     "ballot": 2,
+     "name": "Nancy Jenkins-Arno",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Nancy_Jenkins-Arno"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-35",
+   "office": "Representative in State Legislature, 35th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "35"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Jeff Cooley",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Jeff_Cooley"
+    },
+    {
+     "ballot": 2,
+     "name": "Jennifer Wortz",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Jennifer_Wortz"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-36",
+   "office": "Representative in State Legislature, 36th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "36"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Cole Slaski",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Cole_Slaski"
+    },
+    {
+     "ballot": 2,
+     "name": "Steve Carra",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Steve_Carra"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-37",
+   "office": "Representative in State Legislature, 37th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "37"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Angela Jones",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Angela_Jones_(Michigan)"
+    },
+    {
+     "ballot": 2,
+     "name": "Brad Paquette",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Brad_Paquette"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-38",
+   "office": "Representative in State Legislature, 38th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "38"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Joey Andrews",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Joey_Andrews"
+    },
+    {
+     "ballot": 2,
+     "name": "Mark Krieger",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Mark_Krieger_(Michigan)"
+    },
+    {
+     "ballot": 3,
+     "name": "Jett Newton",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Jett_Newton"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-39",
+   "office": "Representative in State Legislature, 39th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "39"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Kerry Tapper",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Kerry_Tapper"
+    },
+    {
+     "ballot": 2,
+     "name": "Pauline Wendzel",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Pauline_Wendzel"
+    },
+    {
+     "ballot": 3,
+     "name": "Jared Polonowski",
+     "party": "Green",
+     "profile": "https://ballotpedia.org/Jared_Polonowski"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-40",
+   "office": "Representative in State Legislature, 40th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "40"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Matt Longjohn",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Matt_Longjohn"
+    },
+    {
+     "ballot": 2,
+     "name": "Robert Sitarski",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Robert_Sitarski"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-41",
+   "office": "Representative in State Legislature, 41st District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "41"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Jen Strebs",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Jen_Strebs"
+    },
+    {
+     "ballot": 2,
+     "name": "Nicole Sabel",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Nicole_Sabel"
+    },
+    {
+     "ballot": 3,
+     "name": "Rafael Wolf",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Rafael_Wolf"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-42",
+   "office": "Representative in State Legislature, 42nd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "42"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Nick Rowe",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Nick_Rowe"
+    },
+    {
+     "ballot": 2,
+     "name": "Matt Hall",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Matt_Hall_(Michigan)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-43",
+   "office": "Representative in State Legislature, 43rd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "43"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Alan Swank",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Alan_Swank"
+    },
+    {
+     "ballot": 2,
+     "name": "Rachelle M. Smit",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Rachelle_Smit"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-44",
+   "office": "Representative in State Legislature, 44th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "44"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Jim Haadsma",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Jim_Haadsma"
+    },
+    {
+     "ballot": 2,
+     "name": "Steve Frisbie",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Steve_Frisbie"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-45",
+   "office": "Representative in State Legislature, 45th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "45"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Randy Davis",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Randy_Davis_(Michigan)"
+    },
+    {
+     "ballot": 2,
+     "name": "Sarah Lightner",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Sarah_Lightner"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-46",
+   "office": "Representative in State Legislature, 46th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "46"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Jan Maino",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Jan_Maino"
+    },
+    {
+     "ballot": 2,
+     "name": "Kathy Schmaltz",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Kathy_Schmaltz"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-47",
+   "office": "Representative in State Legislature, 47th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "47"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Carrie Rheingans",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Carrie_Rheingans"
+    },
+    {
+     "ballot": 2,
+     "name": "Justin Griffis",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Justin_Griffis_(Michigan)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-48",
+   "office": "Representative in State Legislature, 48th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "48"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Jennifer Conlin",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Jennifer_Conlin"
+    },
+    {
+     "ballot": 2,
+     "name": "Brian Ignatowski",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Brian_Ignatowski"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-49",
+   "office": "Representative in State Legislature, 49th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "49"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Dan Pelchat",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Dan_Pelchat"
+    },
+    {
+     "ballot": 2,
+     "name": "Ann Bollin",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Ann_Bollin"
+    },
+    {
+     "ballot": 3,
+     "name": "Trevor Step",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Trevor_Step"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-50",
+   "office": "Representative in State Legislature, 50th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "50"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Cassie Canedo",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Cassie_Canedo"
+    },
+    {
+     "ballot": 2,
+     "name": "Jason Woolford",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Jason_Woolford"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-51",
+   "office": "Representative in State Legislature, 51st District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "51"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Stacey McDuffie",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Stacey_McDuffie"
+    },
+    {
+     "ballot": 2,
+     "name": "Matt Maddock",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Matt_Maddock"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-52",
+   "office": "Representative in State Legislature, 52nd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "52"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Brendan Leddy",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Brendan_Leddy"
+    },
+    {
+     "ballot": 2,
+     "name": "Mike R. Harris",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Mike_R._Harris_(Michigan_state_representative)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-53",
+   "office": "Representative in State Legislature, 53rd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "53"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Brenda Carter",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Brenda_Carter_(Michigan)"
+    },
+    {
+     "ballot": 2,
+     "name": "Melissa Schultz",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Melissa_Schultz"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-54",
+   "office": "Representative in State Legislature, 54th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "54"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Sarah Pounds",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Sarah_Pounds"
+    },
+    {
+     "ballot": 2,
+     "name": "Roman Gaskey",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Roman_Gaskey"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-55",
+   "office": "Representative in State Legislature, 55th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "55"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Alex Hawkins",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Alex_Hawkins"
+    },
+    {
+     "ballot": 2,
+     "name": "Mark Tisdel",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Mark_Tisdel"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-56",
+   "office": "Representative in State Legislature, 56th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "56"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Sharon MacDonell",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Sharon_MacDonell"
+    },
+    {
+     "ballot": 2,
+     "name": "Ashok Baddi",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Ashok_Baddi"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-57",
+   "office": "Representative in State Legislature, 57th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "57"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Tom Turner",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Tom_Turner"
+    },
+    {
+     "ballot": 2,
+     "name": "Thomas Kuhn",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Thomas_Kuhn"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-58",
+   "office": "Representative in State Legislature, 58th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "58"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Katrina Manetta",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Katrina_Manetta"
+    },
+    {
+     "ballot": 2,
+     "name": "Ron Robinson",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Ron_Robinson_(Michigan_House_of_Representatives_member)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-59",
+   "office": "Representative in State Legislature, 59th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "59"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Jason Robbins",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Jason_Robbins"
+    },
+    {
+     "ballot": 2,
+     "name": "Sylvia Grot",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Sylvia_Grot"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-60",
+   "office": "Representative in State Legislature, 60th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "60"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Amy Gray",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Amy_Gray"
+    },
+    {
+     "ballot": 2,
+     "name": "Joseph Aragona",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Joseph_Aragona"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-61",
+   "office": "Representative in State Legislature, 61st District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "61"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Denise Mentzer",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Denise_Mentzer"
+    },
+    {
+     "ballot": 2,
+     "name": "Robert Wojtowicz",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Robert_Wojtowicz"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-62",
+   "office": "Representative in State Legislature, 62nd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "62"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Matthew Smith",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Matthew_Smith_(Michigan_state_representative_candidate)"
+    },
+    {
+     "ballot": 2,
+     "name": "Alicia St. Germaine",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Alicia_St._Germaine"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-63",
+   "office": "Representative in State Legislature, 63rd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "63"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Jamie Sonneberger",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Jamie_Sonneberger"
+    },
+    {
+     "ballot": 2,
+     "name": "Pamela Hornberger",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Pamela_Hornberger"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-64",
+   "office": "Representative in State Legislature, 64th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "64"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Ken Heuvelman",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Ken_Heuvelman"
+    },
+    {
+     "ballot": 2,
+     "name": "Joseph Pavlov",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Joseph_Pavlov"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-65",
+   "office": "Representative in State Legislature, 65th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "65"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "James O'Brien",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/James_O&#39;Brien_(Michigan)"
+    },
+    {
+     "ballot": 2,
+     "name": "Jaime Greene",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Jaime_Greene"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-66",
+   "office": "Representative in State Legislature, 66th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "66"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Ned Zimmer",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Ned_Zimmer"
+    },
+    {
+     "ballot": 2,
+     "name": "Josh Schriver",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Josh_Schriver"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-67",
+   "office": "Representative in State Legislature, 67th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "67"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Leslie Getz",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Leslie_Getz"
+    },
+    {
+     "ballot": 2,
+     "name": "Phil Green",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Phil_Green"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-68",
+   "office": "Representative in State Legislature, 68th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "68"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Matt Schlinker",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Matt_Schlinker"
+    },
+    {
+     "ballot": 2,
+     "name": "David Martin",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/David_Martin_(Michigan)"
+    },
+    {
+     "ballot": 3,
+     "name": "Deanna Martin",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Deanna_Martin"
+    },
+    {
+     "ballot": 4,
+     "name": "Joe McHugh",
+     "party": "Independent",
+     "profile": "https://ballotpedia.org/Joe_McHugh_(Michigan_State_House_candidate)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-69",
+   "office": "Representative in State Legislature, 69th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "69"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Jasper Martus",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Jasper_Martus"
+    },
+    {
+     "ballot": 2,
+     "name": "Patrick Duvendeck",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Patrick_Duvendeck"
+    },
+    {
+     "ballot": 3,
+     "name": "Adam Childress",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Adam_Childress"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-70",
+   "office": "Representative in State Legislature, 70th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "70"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Cynthia Neeley",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Cynthia_Neeley"
+    },
+    {
+     "ballot": 2,
+     "name": "Larry Hutchinson",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Larry_Hutchinson_(Michigan)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-71",
+   "office": "Representative in State Legislature, 71st District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "71"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Stephen Schlaack",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Stephen_Schlaack"
+    },
+    {
+     "ballot": 2,
+     "name": "Brian BeGole",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Brian_BeGole"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-72",
+   "office": "Representative in State Legislature, 72nd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "72"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Thomas Ryan",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Thomas_Ryan_(Michigan)"
+    },
+    {
+     "ballot": 2,
+     "name": "Mike Mueller",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Mike_Mueller"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-73",
+   "office": "Representative in State Legislature, 73rd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "73"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Julie Brixie",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Julie_Brixie"
+    },
+    {
+     "ballot": 2,
+     "name": "Joshua Rockey",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Joshua_Rockey"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-74",
+   "office": "Representative in State Legislature, 74th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "74"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Harold Pope",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Harold_Pope"
+    },
+    {
+     "ballot": 2,
+     "name": "Clinton Tarver",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Clinton_Tarver"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-75",
+   "office": "Representative in State Legislature, 75th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "75"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Penelope Tsernoglou",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Penelope_Tsernoglou"
+    },
+    {
+     "ballot": 2,
+     "name": "Frank Lambert",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Frank_Lambert"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-76",
+   "office": "Representative in State Legislature, 76th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "76"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Angela Witwer",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Angela_Witwer"
+    },
+    {
+     "ballot": 2,
+     "name": "Bill Kaiser",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Bill_Kaiser"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-77",
+   "office": "Representative in State Legislature, 77th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "77"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Emily Dievendorf",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Emily_Dievendorf"
+    },
+    {
+     "ballot": 2,
+     "name": "Sally Jo Nelton",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Sally_Jo_Nelton"
+    },
+    {
+     "ballot": 3,
+     "name": "Jennifer Long",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Jennifer_Long_(Michigan)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-78",
+   "office": "Representative in State Legislature, 78th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "78"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Rachel Gross",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Rachel_Gross"
+    },
+    {
+     "ballot": 2,
+     "name": "Brandon Strong",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Brandon_Strong"
+    },
+    {
+     "ballot": 3,
+     "name": "Ben DeJong",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Ben_DeJong"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-79",
+   "office": "Representative in State Legislature, 79th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "79"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Zach Abbott",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Zach_Abbott"
+    },
+    {
+     "ballot": 2,
+     "name": "Angela Rigas",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Angela_Rigas"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-80",
+   "office": "Representative in State Legislature, 80th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "80"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Lily Cheng-Schulting",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Lily_Cheng-Schulting"
+    },
+    {
+     "ballot": 2,
+     "name": "Doug Lee",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Doug_Lee_(Michigan)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-81",
+   "office": "Representative in State Legislature, 81st District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "81"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Stephen Wooden",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Stephen_Wooden"
+    },
+    {
+     "ballot": 2,
+     "name": "Holly DeBoer",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Holly_DeBoer_(Michigan_state_representative_candidate)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-82",
+   "office": "Representative in State Legislature, 82nd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "82"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Kristian Grant",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Kristian_Grant"
+    },
+    {
+     "ballot": 2,
+     "name": "Ryan Malinoski",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Ryan_Malinoski"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-83",
+   "office": "Representative in State Legislature, 83rd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "83"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "John Fitzgerald",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/John_Fitzgerald_(Michigan_state_representative)"
+    },
+    {
+     "ballot": 2,
+     "name": "Cindy Ramirez",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Cindy_Ramirez"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-84",
+   "office": "Representative in State Legislature, 84th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "84"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Khristian Silvis",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Khristian_Silvis"
+    },
+    {
+     "ballot": 2,
+     "name": "Drew Robbins",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Drew_Robbins"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-85",
+   "office": "Representative in State Legislature, 85th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "85"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Richard Abraham",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Richard_Abraham"
+    },
+    {
+     "ballot": 2,
+     "name": "Bradley Slagh",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Bradley_Slagh"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-86",
+   "office": "Representative in State Legislature, 86th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "86"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Joseph McClusky",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Joseph_McClusky"
+    },
+    {
+     "ballot": 2,
+     "name": "Nancy De Boer",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Nancy_De_Boer"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-87",
+   "office": "Representative in State Legislature, 87th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "87"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Will Snyder",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Will_Snyder_(Michigan)"
+    },
+    {
+     "ballot": 2,
+     "name": "Cody Chipman",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Cody_Chipman"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-88",
+   "office": "Representative in State Legislature, 88th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "88"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Kiel Reid",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Kiel_Reid"
+    },
+    {
+     "ballot": 2,
+     "name": "Greg VanWoerkom",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Greg_VanWoerkom"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-89",
+   "office": "Representative in State Legislature, 89th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "89"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Meegan Zickus",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Meegan_Zickus"
+    },
+    {
+     "ballot": 2,
+     "name": "Joe Moss",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Joe_Moss"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-90",
+   "office": "Representative in State Legislature, 90th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "90"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Rachel Crowther",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Rachel_Crowther"
+    },
+    {
+     "ballot": 2,
+     "name": "Lynn Afendoulis",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Lynn_Afendoulis"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-91",
+   "office": "Representative in State Legislature, 91st District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "91"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Frank LaFata",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Frank_LaFata"
+    },
+    {
+     "ballot": 2,
+     "name": "Pat Outman",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Pat_Outman"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-92",
+   "office": "Representative in State Legislature, 92nd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "92"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Luke Del Castillo",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Luke_Del_Castillo"
+    },
+    {
+     "ballot": 2,
+     "name": "Jerry Neyer",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Jerry_Neyer"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-93",
+   "office": "Representative in State Legislature, 93rd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "93"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Serenity Salak",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Serenity_Salak"
+    },
+    {
+     "ballot": 2,
+     "name": "Tim Kelly",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Tim_Kelly_(Michigan_state_representative)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-94",
+   "office": "Representative in State Legislature, 94th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "94"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Amos O'Neal",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Amos_O&#39;Neal"
+    },
+    {
+     "ballot": 2,
+     "name": "Don Sugg",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Don_Sugg"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-95",
+   "office": "Representative in State Legislature, 95th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "95"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "AnnMarie Horseman",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/AnnMarie_Horseman"
+    },
+    {
+     "ballot": 2,
+     "name": "Bill G. Schuette",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Bill_G._Schuette"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-96",
+   "office": "Representative in State Legislature, 96th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "96"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Christopher Girard",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Christopher_Girard"
+    },
+    {
+     "ballot": 2,
+     "name": "Timothy Beson",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Timothy_Beson"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-97",
+   "office": "Representative in State Legislature, 97th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "97"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Jack Bader",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Jack_Bader"
+    },
+    {
+     "ballot": 2,
+     "name": "Briar Bearss",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Briar_Bearss"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-98",
+   "office": "Representative in State Legislature, 98th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "98"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Keith Brusseau",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Keith_Brusseau"
+    },
+    {
+     "ballot": 2,
+     "name": "Gregory Alexander",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Gregory_Alexander_(Michigan_House_of_Representatives_District_98)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-99",
+   "office": "Representative in State Legislature, 99th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "99"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "David Forgione",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/David_Forgione"
+    },
+    {
+     "ballot": 2,
+     "name": "Mike Hoadley",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Mike_Hoadley"
+    },
+    {
+     "ballot": 3,
+     "name": "Steven Lull",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Steven_Lull"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-100",
+   "office": "Representative in State Legislature, 100th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "100"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Tracy Ruell",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Tracy_Ruell"
+    },
+    {
+     "ballot": 2,
+     "name": "Tom Kunse",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Tom_Kunse"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-101",
+   "office": "Representative in State Legislature, 101st District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "101"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Christopher Crain",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Christopher_Crain"
+    },
+    {
+     "ballot": 2,
+     "name": "Jaxon Deur",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Jaxon_Deur"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-102",
+   "office": "Representative in State Legislature, 102nd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "102"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Angel Coon",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Angel_Coon"
+    },
+    {
+     "ballot": 2,
+     "name": "Curt VanderWall",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Curt_VanderWall"
+    },
+    {
+     "ballot": 3,
+     "name": "Shawn Orton",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Shawn_Orton"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-103",
+   "office": "Representative in State Legislature, 103rd District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "103"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Betsy Coffia",
+     "party": "Democratic",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Betsy_Coffia"
+    },
+    {
+     "ballot": 2,
+     "name": "Edwin Dean",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Edwin_Dean"
+    },
+    {
+     "ballot": 3,
+     "name": "Michael Gorbe",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Michael_Gorbe"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-104",
+   "office": "Representative in State Legislature, 104th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "104"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Mitchell Distin",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Mitchell_Distin"
+    },
+    {
+     "ballot": 2,
+     "name": "John Roth",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/John_Roth"
+    },
+    {
+     "ballot": 3,
+     "name": "Alexander Jarvis",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Alexander_Jarvis"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-105",
+   "office": "Representative in State Legislature, 105th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "105"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Rachel Longendyke-Teeter",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Rachel_Longendyke-Teeter"
+    },
+    {
+     "ballot": 2,
+     "name": "Ken Borton",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Ken_Borton"
+    },
+    {
+     "ballot": 3,
+     "name": "Frank Tillman",
+     "party": "Libertarian",
+     "profile": "https://ballotpedia.org/Frank_Tillman"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-106",
+   "office": "Representative in State Legislature, 106th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "106"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Mary Hamilton",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Mary_Hamilton_(Michigan)"
+    },
+    {
+     "ballot": 2,
+     "name": "Cameron Cavitt",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Cameron_Cavitt"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-107",
+   "office": "Representative in State Legislature, 107th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "107"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Melissa Perron",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Melissa_Perron"
+    },
+    {
+     "ballot": 2,
+     "name": "Parker Fairbairn",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Parker_Fairbairn"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-108",
+   "office": "Representative in State Legislature, 108th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "108"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Rachel Keys",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Rachel_Keys"
+    },
+    {
+     "ballot": 2,
+     "name": "Larry Johnson Jr.",
+     "party": "Republican",
+     "profile": "https://ballotpedia.org/Larry_Johnson_Jr._(Michigan)"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-109",
+   "office": "Representative in State Legislature, 109th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "109"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Anna Rink",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Anna_Rink"
+    },
+    {
+     "ballot": 2,
+     "name": "Karl Bohnak",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Karl_Bohnak"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "sldl-110",
+   "office": "Representative in State Legislature, 110th District",
+   "section": "legislature",
+   "area": {
+    "type": "sldl",
+    "id": "110"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Brian Irizarry",
+     "party": "Democratic",
+     "profile": "https://ballotpedia.org/Brian_Irizarry"
+    },
+    {
+     "ballot": 2,
+     "name": "Gregory Markkanen",
+     "party": "Republican",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Gregory_Markkanen"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_House_of_Representatives_elections,_2026"
+  },
+  {
+   "id": "coa-1-3",
+   "office": "Judge of the Court of Appeals, 1st District (3 seats)",
+   "section": "judicial",
+   "area": {
+    "type": "coa",
+    "id": "1"
+   },
+   "voteFor": 3,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Anica Letica",
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Anica_Letica"
+    },
+    {
+     "ballot": 2,
+     "name": "Christopher Murray",
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Christopher_Murray_(Michigan)"
+    },
+    {
+     "ballot": 3,
+     "name": "Mariam Bazzi",
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Mariam_Bazzi"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_intermediate_appellate_court_elections,_2026"
+  },
+  {
+   "id": "coa-2-2",
+   "office": "Judge of the Court of Appeals, 2nd District (2 seats)",
+   "section": "judicial",
+   "area": {
+    "type": "coa",
+    "id": "2"
+   },
+   "voteFor": 2,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Christopher Trebilcock",
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Christopher_Trebilcock"
+    },
+    {
+     "ballot": 2,
+     "name": "Sima Patel",
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Sima_Patel"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_intermediate_appellate_court_elections,_2026"
+  },
+  {
+   "id": "coa-3-2",
+   "office": "Judge of the Court of Appeals, 3rd District (2 seats)",
+   "section": "judicial",
+   "area": {
+    "type": "coa",
+    "id": "3"
+   },
+   "voteFor": 2,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Daniel Korobkin",
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Daniel_Korobkin"
+    },
+    {
+     "ballot": 2,
+     "name": "Mark Boonstra",
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Mark_Boonstra"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_intermediate_appellate_court_elections,_2026"
+  },
+  {
+   "id": "coa-4-3",
+   "office": "Judge of the Court of Appeals, 4th District (3 seats)",
+   "section": "judicial",
+   "area": {
+    "type": "coa",
+    "id": "4"
+   },
+   "voteFor": 3,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Allie Greenleaf Maldonado",
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Allie_Greenleaf_Maldonado"
+    },
+    {
+     "ballot": 2,
+     "name": "Michael J. Kelly",
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Michael_J._Kelly_(Michigan)"
+    },
+    {
+     "ballot": 3,
+     "name": "Michelle Rick",
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Michelle_Rick"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_intermediate_appellate_court_elections,_2026"
+  },
+  {
+   "id": "coa-1-1",
+   "office": "Judge of the Court of Appeals, 1st District, partial term (1 seat)",
+   "section": "judicial",
+   "area": {
+    "type": "coa",
+    "id": "1"
+   },
+   "voteFor": 1,
+   "candidates": [
+    {
+     "ballot": 1,
+     "name": "Andrew Lievense",
+     "party": "Nonpartisan",
+     "incumbent": true,
+     "profile": "https://ballotpedia.org/Andrew_Lievense"
+    }
+   ],
+   "writeIn": true,
+   "numbered": false,
+   "source": "https://ballotpedia.org/Michigan_intermediate_appellate_court_elections,_2026"
+  }
+ ],
+ "retentions": [],
+ "measures": [
+  {
+   "id": "proposal-2026-1",
+   "title": "Proposal 2026-1: Hold a constitutional convention?",
+   "question": "A proposal to convene a constitutional convention for the purpose of drafting a general revision of the State Constitution. Shall a convention of elected delegates be convened in 2027 to draft a general revision of the State Constitution for presentation to the state’s voters for their approval or rejection?",
+   "scope": {
+    "type": "state"
+   },
+   "plain": "Michigan’s constitution requires this question every 16 years (last asked in 2010, when voters said no). A “yes” means electing delegates in 2027 to rewrite the 1963 constitution; whatever they draft would go back to voters for approval. A “no” keeps the current constitution, which can still be amended piece by piece."
+  },
+  {
+   "id": "proposal-2026-2",
+   "title": "Proposal 2026-2: Campaign money from utilities and state contractors",
+   "question": "A proposed initiated law to prohibit campaign contributions from certain regulated utilities and government contractors and apply campaign finance laws and regulations to additional types of political communications. The proposal would: prohibit regulated electric and gas utilities, contractors with over $250,000 annually in government contracts, and people and organizations with substantial connections to these utilities/contractors from making direct or indirect campaign contributions to those who run for or hold offices that impact them; expand laws regulating spending on political communications, including those requiring disclosing donor information, to apply to communications clearly identifying candidates or ballot questions, even if they do not expressly advocate voting for/against them; expressly apply the law requiring disclosure of who paid for political communications to internet political communications. Should this proposal be adopted?",
+   "scope": {
+    "type": "state"
+   },
+   "plain": "A citizen-initiated law (561,000 signatures, certified by the Board of State Canvassers). A “yes” bars regulated electric and gas utilities, big state contractors and people closely tied to them from giving to the campaigns of officials who regulate them, and widens Michigan’s disclosure rules to ads that name a candidate or ballot question without saying “vote for” or “vote against,” including online ads. Backed by Money Out of Politics; opposed by Protect MI Free Speech."
+  }
+ ],
+ "coa": {
+  "Genesee": "2",
+  "Tuscola": "4",
+  "Eaton": "3",
+  "Cass": "3",
+  "Monroe": "1",
+  "Gogebic": "4",
+  "Marquette": "4",
+  "Leelanau": "4",
+  "Hillsdale": "1",
+  "Cheboygan": "4",
+  "Crawford": "4",
+  "Gratiot": "4",
+  "Dickinson": "4",
+  "Branch": "1",
+  "Van Buren": "3",
+  "Manistee": "4",
+  "Berrien": "3",
+  "Mason": "3",
+  "Kalkaska": "4",
+  "Otsego": "4",
+  "Missaukee": "4",
+  "Oakland": "2",
+  "Ionia": "3",
+  "Sanilac": "4",
+  "Arenac": "4",
+  "Emmet": "4",
+  "Huron": "4",
+  "Iosco": "4",
+  "Lake": "4",
+  "Ottawa": "3",
+  "Wayne": "1",
+  "Barry": "3",
+  "Montcalm": "3",
+  "Menominee": "4",
+  "Clare": "4",
+  "Allegan": "3",
+  "Wexford": "4",
+  "Baraga": "4",
+  "Delta": "4",
+  "Lenawee": "1",
+  "Calhoun": "3",
+  "Osceola": "4",
+  "Isabella": "4",
+  "Lapeer": "4",
+  "St. Joseph": "1",
+  "Ingham": "4",
+  "Iron": "4",
+  "Ontonagon": "4",
+  "Chippewa": "4",
+  "Clinton": "4",
+  "Alger": "4",
+  "Newaygo": "3",
+  "Kent": "3",
+  "Midland": "4",
+  "Antrim": "4",
+  "Mecosta": "4",
+  "Jackson": "3",
+  "Gladwin": "4",
+  "Benzie": "4",
+  "Schoolcraft": "4",
+  "Mackinac": "4",
+  "Presque Isle": "4",
+  "Houghton": "4",
+  "Muskegon": "3",
+  "Washtenaw": "3",
+  "Roscommon": "4",
+  "Charlevoix": "4",
+  "Shiawassee": "4",
+  "Alcona": "4",
+  "Bay": "4",
+  "Ogemaw": "4",
+  "Macomb": "2",
+  "Alpena": "4",
+  "Kalamazoo": "1",
+  "Grand Traverse": "4",
+  "Saginaw": "4",
+  "Oceana": "3",
+  "Keweenaw": "4",
+  "St. Clair": "4",
+  "Montmorency": "4",
+  "Oscoda": "4",
+  "Livingston": "4",
+  "Luce": "4"
+ },
+ "changes": [
+  {
+   "at": "2026-10-15T01:24:56.370Z",
+   "id": "governor-and-lieutenant-governor",
+   "what": "Governor and Lieutenant Governor",
+   "kind": "candidate-removed",
+   "name": "Jocelyn Benson",
+   "ballot": 1
+  },
+  {
+   "at": "2026-10-15T01:24:56.370Z",
+   "id": "governor-and-lieutenant-governor",
+   "what": "Governor and Lieutenant Governor",
+   "kind": "candidate-removed",
+   "name": "John James",
+   "ballot": 2
+  },
+  {
+   "at": "2026-10-15T01:24:56.370Z",
+   "id": "governor-and-lieutenant-governor",
+   "what": "Governor and Lieutenant Governor",
+   "kind": "candidate-removed",
+   "name": "Anthony Hudson",
+   "ballot": 3
+  },
+  {
+   "at": "2026-10-15T01:24:56.370Z",
+   "id": "governor-and-lieutenant-governor",
+   "what": "Governor and Lieutenant Governor",
+   "kind": "candidate-removed",
+   "name": "Donna Brandenburg",
+   "ballot": 4
+  },
+  {
+   "at": "2026-10-15T01:24:56.370Z",
+   "id": "governor-and-lieutenant-governor",
+   "what": "Governor and Lieutenant Governor",
+   "kind": "candidate-removed",
+   "name": "Douglas Campbell",
+   "ballot": 5
+  },
+  {
+   "at": "2026-10-15T01:24:56.370Z",
+   "id": "governor-and-lieutenant-governor",
+   "what": "Governor and Lieutenant Governor",
+   "kind": "candidate-added",
+   "name": "Jocelyn Benson & Winnie Brinks"
+  },
+  {
+   "at": "2026-10-15T01:24:56.370Z",
+   "id": "governor-and-lieutenant-governor",
+   "what": "Governor and Lieutenant Governor",
+   "kind": "candidate-added",
+   "name": "John James & Jay DeBoyer"
+  },
+  {
+   "at": "2026-10-15T01:24:56.370Z",
+   "id": "governor-and-lieutenant-governor",
+   "what": "Governor and Lieutenant Governor",
+   "kind": "candidate-added",
+   "name": "Anthony Hudson & Beau Parmenter"
+  },
+  {
+   "at": "2026-10-15T01:24:56.370Z",
+   "id": "governor-and-lieutenant-governor",
+   "what": "Governor and Lieutenant Governor",
+   "kind": "candidate-added",
+   "name": "Donna Brandenburg & Robert Donald Cowper II"
+  },
+  {
+   "at": "2026-10-15T01:24:56.370Z",
+   "id": "governor-and-lieutenant-governor",
+   "what": "Governor and Lieutenant Governor",
+   "kind": "candidate-added",
+   "name": "Douglas Campbell & Bobbie Clay"
+  }
+ ]
+}

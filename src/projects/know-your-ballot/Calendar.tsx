@@ -5,7 +5,7 @@ import type { CityRace, Districts } from './types';
 
 const when = (days: number) => (days === 0 ? 'Today' : days === 1 ? 'Tomorrow' : `In ${days} days`);
 
-function Group({ title, dates, now, info }: { title: string; dates: KeyDate[]; now: Date; info: string }) {
+export function Group({ title, dates, now, info }: { title: string; dates: KeyDate[]; now: Date; info: string }) {
   // Past dates drop off, so the list is always "what's next".
   const ahead = dates.filter((d) => daysUntil(d.date, now) >= 0);
   if (!ahead.length) return null;
