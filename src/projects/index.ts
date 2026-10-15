@@ -91,10 +91,5 @@ export const PROJECTS: ProjectDefinition[] = [
   },
 ];
 
-// Old project ids that still resolve, so links shared before a rename (with
-// their ?query and #hash, like Know Your Ballot's resume links) keep working.
-// Know Your Ballot projects are named know-your-ballot-<state>.
-export const PROJECT_ALIASES: Record<string, string> = { 'know-your-ballot': 'know-your-ballot-illinois' };
-
 export const projectById = (id: string): ProjectDefinition | undefined =>
   PROJECTS.find((p) => p.id === id);
