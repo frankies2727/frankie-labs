@@ -1,7 +1,7 @@
 import { ChevronDown, Crosshair, ListChecks, MapPin, Printer, Search, Share2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { ClearButton } from '../../../components/ClearButton';
-import { BrowsingNotice, Confetti, Ring, useDocumentMeta } from '../Bits';
+import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Ring, SectionCards, useBallotView, useDocumentMeta, type SectionCard } from '../Bits';
 import { Group } from '../Calendar';
 import { Headliners } from '../Headliners';
 import { ContentsColumn, ContentsDrawer } from '../Contents';
@@ -87,7 +87,9 @@ export function KnowYourBallotMichigan() {
   }, [setSaved]);
 
   const districts = saved.place?.districts ?? null;
-  const showBallot = !!saved.place || browsing;
+  // The details view has its own URL; with saved progress the first open goes straight there.
+  const [showBallot, showView] = useBallotView('know-your-ballot-michigan', !!saved.place || browsing);
+  const browse = () => { setBrowsing(true); showView(true); };
   const daysLeft = daysUntil(data.election.date);
 
   // ---- the voter's ballot and their progress through it --------------------
@@ -199,7 +201,7 @@ export function KnowYourBallotMichigan() {
     const race = raceById.get(decodeURIComponent(m[1]));
     if (!race) return;
     if (districts && !ballotIdsFor(data, districts).has(race.id)) { setToast(`${race.office} isn’t on the ballot at your address. Use the search to see it.`); return; }
-    if (!showBallot) setBrowsing(true);
+    if (!showBallot) browse();
     jumpTo(race.section, race.id);
   };
   useEffect(() => {
@@ -228,6 +230,7 @@ export function KnowYourBallotMichigan() {
     if (decided.length) setToast(cleared ? `Kept ${decided.length - cleared} pick${decided.length - cleared === 1 ? '' : 's'}; cleared ${cleared} not on this ballot.` : `Your ${decided.length} pick${decided.length === 1 ? '' : 's'} carried over.`);
     setStatus({ busy: false, error: '', outside: false });
     setBrowsing(false);
+    showView(true);
     window.scrollTo({ top: 0 });
   };
   const lookUp = async (e: FormEvent) => {
@@ -255,6 +258,7 @@ export function KnowYourBallotMichigan() {
     setSaved((s) => ({ ...s, place: null, browsing: undefined }));
     setPin(null);
     setTab('ballot');
+    showView(false);
     window.scrollTo({ top: 0 });
   };
 
@@ -308,10 +312,12 @@ export function KnowYourBallotMichigan() {
         {!showBallot ? (
           <Landing
             address={address} setAddress={setAddress} status={status} onSubmit={lookUp} onLocate={useLocation} daysLeft={daysLeft}
-            onBrowse={() => { setBrowsing(true); window.scrollTo({ top: 0 }); }}
-            onSearchJump={(h) => { setBrowsing(true); jumpTo(h.section, h.id); }}
-            onOpenRace={(race) => { setBrowsing(true); jumpTo(race.section, race.id); }}
+            onBrowse={() => { browse(); window.scrollTo({ top: 0 }); }}
+            onSearchJump={(h) => { browse(); jumpTo(h.section, h.id); }}
+            onOpenRace={(race) => { browse(); jumpTo(race.section, race.id); }}
             onOpenCandidate={openSheet}
+            onOpenSection={(id) => { browse(); openSection(id); }}
+            place={saved.place?.label} onContinue={() => showView(true)}
             saved={Object.keys(saved.picks).length}
             onStartFresh={() => { setSaved((s) => ({ ...s, picks: {}, plan: {} })); setToast('Cleared. Starting fresh.'); }}
           />
@@ -367,7 +373,12 @@ export function KnowYourBallotMichigan() {
                   {updates.length > 0 && <SinceLastVisit changes={updates} since={lastSeen!} picks={saved.picks} onJump={(id) => jumpTo(sectionFor(id), id)} onDismiss={() => setLastSeen(undefined)} />}
                   {total > 0 && saved.place && <Trophies ctx={gameCtx} />}
                   <WhereYouVote districts={districts} pin={pin} onChange={changeAddress} />
-                  <HowTheBallotWorks />
+                  <HowBallotWorks storageKey="kyb-mi-how-open" title="How a Michigan ballot works">
+                    <p><strong>Three parts.</strong> The partisan section (Congress, governor, Lansing, the school and university boards), the nonpartisan section (judges, plus local offices like city council in many places) and the proposals.</p>
+                    <p><strong>The straight-party box.</strong> At the top, one mark votes for every candidate of that party in the partisan section. You can still mark individual races, and those marks win for that race. It never touches the nonpartisan section or the proposals, so look at those either way.</p>
+                    <p><strong>“Vote for not more than 2.”</strong> Boards and the Supreme Court elect two seats at once; pick up to two names.</p>
+                    <p><strong>Judges with no opponent.</strong> Court of Appeals judges usually run unopposed. Marking them is still a vote; leaving them blank is fine too.</p>
+                  </HowBallotWorks>
 
                   {sections.filter((s) => s.id === current).map((s) => {
                     const at = sections.indexOf(s);
@@ -460,7 +471,7 @@ export function KnowYourBallotMichigan() {
         <CandidateSheet race={sheet.race} c={sheet.c} color={sectionOf(sheet.race.section).color} ink={sectionOf(sheet.race.section).ink} numbered={false}
           picked={picksFor(sheet.race.id).includes(sheet.c.ballot)}
           onPick={() => togglePick(sheet.race, sheet.c.ballot)}
-          onShowRace={showBallot ? undefined : () => { const race = sheet.race; setSheet(null); setBrowsing(true); jumpTo(race.section, race.id); }}
+          onShowRace={showBallot ? undefined : () => { const race = sheet.race; setSheet(null); browse(); jumpTo(race.section, race.id); }}
           onClose={() => setSheet(null)} />
       )}
       {comparing && (
@@ -484,10 +495,16 @@ export function KnowYourBallotMichigan() {
 
 // The statewide races everyone votes on, for the landing page's quick tour.
 const HEADLINERS = data.races.filter((r) => !r.area);
+// ...and the rest of the ballot by section, for the cards under them.
+const MORE: SectionCard[] = SECTIONS.map((s) => {
+  const races = s.id === 'measures' ? [] : data.races.filter((r) => r.section === s.id && r.area);
+  return { ...s, n: races.length, hint: 'By district' };
+}).filter((c) => c.n > 0);
 
-function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, onSearchJump, onOpenRace, onOpenCandidate, daysLeft, saved, onStartFresh }: {
+function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, onSearchJump, onOpenRace, onOpenCandidate, onOpenSection, place, onContinue, daysLeft, saved, onStartFresh }: {
   address: string; setAddress: (s: string) => void; status: { busy: boolean; error: string; outside: boolean };
   onSubmit: (e: FormEvent) => void; onLocate: () => void; onBrowse: () => void; onSearchJump: (h: Hit) => void; onOpenRace: (r: Race) => void; onOpenCandidate: (r: Race, c: Candidate) => void;
+  onOpenSection: (id: string) => void; /** A saved ballot to go back to. */ place?: string; onContinue: () => void;
   daysLeft: number; saved: number; onStartFresh: () => void;
 }) {
   const [confirming, setConfirming] = useState(false);
@@ -536,6 +553,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
             <ListChecks className="w-5 h-5" aria-hidden="true" /> No address? Browse every race
           </button>
         </div>
+        {place && <ContinueCard label={place} onContinue={onContinue} />}
         {status.error && <p role="alert" className="rounded-xl bg-[var(--gb-red)] px-4 py-3 font-bold text-white">{status.error}</p>}
         {status.outside && (
           <p role="alert" className="rounded-xl bg-[var(--kyb-chip)] border-2 border-[var(--gb-amber-hi)] px-4 py-3 font-bold">
@@ -579,6 +597,8 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
           </button>
         </li>
       </Headliners>
+
+      <SectionCards cards={MORE} heading="Everything else on your ballot" intro="By district: your address picks out yours. Tap a section to browse all of it and see which district each contest covers." onOpen={onOpenSection} />
     </div>
   );
 }
@@ -612,29 +632,6 @@ function WhereYouVote({ districts, pin, onChange }: { districts: Districts | nul
   );
 }
 
-function HowTheBallotWorks() {
-  const [open, toggle] = useOpen('kyb-mi-how-open');
-  return (
-    <section aria-labelledby="kyb-how" className="rounded-2xl border border-[var(--gb-border)] bg-[var(--gb-surface)] p-4 sm:p-5 space-y-3">
-      <h2 id="kyb-how" className="text-xl">
-        <button type="button" onClick={toggle} aria-expanded={open} aria-controls="kyb-how-body" className="inline-flex min-h-[44px] items-center gap-2 text-left">
-          🧾 How a Michigan ballot works
-          <ChevronDown className={`w-5 h-5 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
-          <span className="sr-only">{open ? '(hide)' : '(show)'}</span>
-        </button>
-      </h2>
-      {open && (
-        <div id="kyb-how-body" className="space-y-2 text-[15px] leading-relaxed">
-          <p><strong>Three parts.</strong> The partisan section (Congress, governor, Lansing, the school and university boards), the nonpartisan section (judges, plus local offices like city council in many places) and the proposals.</p>
-          <p><strong>The straight-party box.</strong> At the top, one mark votes for every candidate of that party in the partisan section. You can still mark individual races, and those marks win for that race. It never touches the nonpartisan section or the proposals, so look at those either way.</p>
-          <p><strong>“Vote for not more than 2.”</strong> Boards and the Supreme Court elect two seats at once; pick up to two names.</p>
-          <p><strong>Judges with no opponent.</strong> Court of Appeals judges usually run unopposed. Marking them is still a vote; leaving them blank is fine too.</p>
-        </div>
-      )}
-    </section>
-  );
-}
-
 function KeyDates() {
   const now = useNow();
   return (
@@ -658,6 +655,9 @@ function Sources() {
     { emoji: '💵', title: 'Campaign money', status: 'Live · federal races',
       body: 'Raised, spent and cash on hand from each federal campaign’s latest FEC report, attached only on a confident name match. State-level money (governor, Lansing, boards) isn’t loaded yet.',
       links: [['FEC data', s.money.url], ['Michigan disclosure search', LINKS.disclosure]] },
+    { emoji: '📷', title: 'Photos, websites & social media', status: 'Live · daily',
+      body: 'Each candidate’s Ballotpedia profile supplies their photo, campaign website and the accounts Ballotpedia lists as theirs. Official sources win where they overlap: Congress’s portraits, the Legislature’s member photos (via Open States), Wikidata and Wikimedia Commons. Anyone still without a photo gets the headshot their own campaign site labels as them. Every photo is credited on the card; candidates with none anywhere show their initials.',
+      links: [['Ballotpedia', 'https://ballotpedia.org/'], ['Congress portraits', 'https://github.com/unitedstates/images'], ['Open States', 'https://openstates.org/mi/']] },
     { emoji: '📜', title: 'Proposals', status: 'Official ballot wording',
       body: 'The two statewide proposals as certified by the Board of State Canvassers, from the League of Women Voters of Michigan’s handout, with a plain-English note on each.',
       links: [['LWV Michigan', s.proposals.lwv], ['Ballotpedia', s.proposals.ballotpedia]] },
@@ -674,7 +674,7 @@ function Sources() {
       body: 'Every morning the guide re-reads its sources and notes candidates added or dropped and new money reports, so returning voters see what’s new.',
       links: [] },
     { emoji: '⏳', title: 'Not here yet', status: 'Planned', planned: true,
-      body: 'County and local offices, trial-court judges, local proposals, state-level campaign money and candidate photos. Your sample ballot at Michigan.gov/Vote has the contests.',
+      body: 'County and local offices, trial-court judges, local proposals and state-level campaign money. Your sample ballot at Michigan.gov/Vote has the contests.',
       links: [['Your sample ballot', LINKS.myInfo]] },
   ];
   return (

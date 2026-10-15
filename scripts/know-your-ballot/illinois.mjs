@@ -32,6 +32,8 @@ import { parseWeball, addFederalMoney } from './illinois/fec.mjs';
 import { ISBE_BASE, ISBE_FILES, addStateMoney } from './illinois/isbe.mjs';
 import { addStateList, fetchCertifiedList } from './illinois/statewide.mjs';
 import { buildDistricts, buildStateDistricts, placesIn, touchesCook } from './illinois/districts.mjs';
+import { addProfiles } from './ballotpedia-profiles.mjs';
+import { addHeadshots } from './headshots.mjs';
 
 const OUT = 'src/projects/know-your-ballot/data/illinois';
 const PHOTOS_DIR = 'public/kyb-photos/illinois';
@@ -154,6 +156,13 @@ async function main() {
   const photos = await addPhotos(ballot.races, { dir: PHOTOS_DIR, publicPath: 'kyb-photos/illinois', prev });
   console.log(`Photos: ${photos.withPhoto}/${photos.total} candidates`);
   for (const line of photos.log) console.log('  ' + line);
+  // Whoever is still without a photo, accounts or a site: their Ballotpedia
+  // profile, then the headshot on their own campaign site.
+  const profiles = await addProfiles(ballot.races, { dir: PHOTOS_DIR, publicPath: 'kyb-photos/illinois', prev, state: 'Illinois', fill: 'missing' });
+  console.log(`Ballotpedia: photos now ${profiles.withPhoto}/${profiles.total}, social ${profiles.withSocial}`);
+  const heads = await addHeadshots(ballot.races, { dir: PHOTOS_DIR, publicPath: 'kyb-photos/illinois', prev });
+  console.log(`Campaign-site headshots: ${heads.found} new, ${heads.kept} kept, of ${heads.tried} sites read`);
+  for (const line of heads.log) console.log('  ' + line);
 
   const judges = await addJudges(ballot, prev);
   for (const line of judges.log) console.log(line);
