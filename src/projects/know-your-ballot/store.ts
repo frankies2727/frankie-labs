@@ -163,8 +163,8 @@ export function daysUntil(isoDate: string, now = new Date()): number {
 }
 
 /** Whether a fold-away section is open, remembered on this device (closed at first). */
-export function useOpen(key: string): [boolean, () => void] {
-  const [open, setOpen] = useState(() => { try { return localStorage.getItem(key) === '1'; } catch { return false; } });
+export function useOpen(key: string, initially = false): [boolean, () => void] {
+  const [open, setOpen] = useState(() => { try { const v = localStorage.getItem(key); return v === null ? initially : v === '1'; } catch { return initially; } });
   const toggle = () => setOpen((o) => { try { localStorage.setItem(key, o ? '0' : '1'); } catch { /* not remembered */ } return !o; });
   return [open, toggle];
 }

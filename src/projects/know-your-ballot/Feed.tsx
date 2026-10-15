@@ -1,6 +1,6 @@
-import { ExternalLink } from 'lucide-react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
 import { useMemo, useState } from 'react';
-import { money } from './store';
+import { money, useOpen } from './store';
 import type { Change, Law, NewsItem } from './types';
 import type { KeyDate } from './dates';
 
@@ -61,7 +61,9 @@ export const dateItems = (dates: KeyDate[], today: string, source: { name: strin
 
 const SHOWN = 10;
 
-export function Feed({ items, onJump }: { items: FeedItem[]; onJump: (id: string) => void }) {
+/** `storageKey` remembers whether the feed is shown or hidden; it starts shown. */
+export function Feed({ items, storageKey, onJump }: { items: FeedItem[]; storageKey: string; onJump: (id: string) => void }) {
+  const [open, toggle] = useOpen(storageKey, true);
   const [kind, setKind] = useState<Kind | 'all'>('all');
   const [all, setAll] = useState(false);
   const sorted = useMemo(() => [...items].sort((a, b) => b.at.localeCompare(a.at)), [items]);
@@ -72,9 +74,16 @@ export function Feed({ items, onJump }: { items: FeedItem[]; onJump: (id: string
   return (
     <section aria-labelledby="kyb-feed" className="rounded-2xl border-[3px] border-[var(--gb-blue-hi)] bg-[var(--gb-surface)] p-4 sm:p-5 space-y-4">
       <div className="space-y-1">
-        <h2 id="kyb-feed" className="text-2xl">📰 What’s new</h2>
-        <p className="text-[15px] leading-relaxed">Everything that moved lately: news, campaign money (new reports and stories about who’s funding whom), changes to the ballot the daily refresh noticed, bills and the dates coming up. Each item says where it comes from.</p>
+        <h2 id="kyb-feed" className="text-2xl">
+          <button type="button" onClick={toggle} aria-expanded={open} aria-controls="kyb-feed-body" className="inline-flex min-h-[44px] items-center gap-2 text-left">
+            📰 What’s new
+            <ChevronDown className={`w-5 h-5 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
+            <span className="sr-only">{open ? '(hide)' : '(show)'}</span>
+          </button>
+        </h2>
+        {open && <p className="text-[15px] leading-relaxed">Everything that moved lately: news, campaign money (new reports and stories about who’s funding whom), changes to the ballot the daily refresh noticed, bills and the dates coming up. Each item says where it comes from.</p>}
       </div>
+      {open && <div id="kyb-feed-body" className="space-y-4">
       <div className="flex flex-wrap gap-2" role="tablist" aria-label="Kinds of activity">
         {KINDS.filter((k) => k.id === 'all' || sorted.some((i) => i.kind === k.id)).map((k) => (
           <button key={k.id} type="button" role="tab" aria-selected={kind === k.id} onClick={() => { setKind(k.id); setAll(false); }}
@@ -110,6 +119,7 @@ export function Feed({ items, onJump }: { items: FeedItem[]; onJump: (id: string
         </button>
       )}
       {!shown.length && <p className="text-[15px]">Nothing of this kind lately.</p>}
+      </div>}
     </section>
   );
 }

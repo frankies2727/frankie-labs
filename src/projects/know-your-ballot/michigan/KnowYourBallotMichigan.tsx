@@ -380,7 +380,7 @@ export function KnowYourBallotMichigan() {
                     <p><strong>“Vote for not more than 2.”</strong> Boards and the Supreme Court elect two seats at once; pick up to two names.</p>
                     <p><strong>Judges with no opponent.</strong> Court of Appeals judges usually run unopposed. Marking them is still a vote; leaving them blank is fine too.</p>
                   </HowBallotWorks>
-                  <Feed onJump={(id) => jumpTo(sectionFor(id), id)} items={[
+                  <Feed storageKey="kyb-mi-feed-open" onJump={(id) => jumpTo(sectionFor(id), id)} items={[
                     ...changeItems(data.changes ?? [], (c) => (c.kind === 'money' ? { name: 'FEC filings', url: data.sources.money.url } : { name: 'Ballotpedia candidate lists', url: 'https://ballotpedia.org/Michigan_elections,_2026' })),
                     ...newsItems(data.news ?? []),
                     ...dateItems(KEY_DATES, today(), { name: 'Michigan Department of State', url: LINKS.dates }),

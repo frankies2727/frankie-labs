@@ -209,6 +209,19 @@
       "spent": 61253,
       "cash": 28303,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/robert-w-fioretti-attorney-general.jpg",
+      "credit": "Ballotpedia",
+      "link": "https://ballotpedia.org/Bob_Fioretti",
+      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Bob_Fioretti.jpg"
+     },
+     "website": "https://www.bobforillinois.com/",
+     "social": {
+      "facebook": "https://www.facebook.com/FiorettiForCook",
+      "x": "https://x.com/BobFiorettiChi",
+      "instagram": "https://www.instagram.com/bobfioretti_2026/",
+      "linkedin": "https://www.linkedin.com/in/bobfioretti/"
      }
     },
     {
@@ -409,6 +422,14 @@
       "credit": "Illinois State Treasurer's Office",
       "link": "https://www.illinoistreasurer.gov/news/treasurer-frerichs-makes-1-45-billion-in-investment-earnings-on-state-portfolio/",
       "from": "https://www.illinoistreasurer.gov/wp-content/uploads/2026/08/Treasurer-Frerichs-photo.jpg"
+     },
+     "website": "https://mikeforillinois.com",
+     "social": {
+      "facebook": "https://www.facebook.com/MikeForIllinois/",
+      "x": "https://x.com/MikeForIllinois",
+      "instagram": "https://www.instagram.com/mikeforillinois/",
+      "youtube": "https://www.youtube.com/@TreasurerMichaelFrerichs",
+      "linkedin": "https://www.linkedin.com/in/michaelfrerichs/"
      }
     }
    ],
@@ -611,6 +632,12 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Lupe_Castillo",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Lupe_Castillo_20240826_050308.jpg"
+     },
+     "website": "https://castillolupe.com/",
+     "social": {
+      "x": "https://x.com/castillolupe4",
+      "instagram": "https://www.instagram.com/castillolupe4",
+      "facebook": "https://www.facebook.com/profile.php?id=100084542564496"
      }
     },
     {
@@ -649,6 +676,9 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Ed_Hershey",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Edward_Hershey.jpg"
+     },
+     "social": {
+      "x": "https://x.com/Efhershe"
      }
     },
     {
@@ -1161,6 +1191,9 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Vince_Romano",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Vince_Romano.jpeg"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=100067333777350"
      }
     },
     {
@@ -1517,6 +1550,10 @@
       "credit": "Fran Hurley for 18th Senate District (campaign site)",
       "link": "https://franhurley.com/meet-fran/fran-hurley-about/",
       "from": "https://franhurley.com/wp-content/uploads/fran-hurley-about.webp#crop=300x300+150+20"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/fran.hurley.12",
+      "linkedin": "https://www.linkedin.com/in/fran-hurley-22012739/"
      }
     }
    ],
@@ -1976,6 +2013,11 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Justin_Kumar",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Justin_Kumar.jpeg"
+     },
+     "website": "https://kumarforil12.com/",
+     "social": {
+      "facebook": "https://www.facebook.com/justin.kumar/",
+      "linkedin": "https://www.linkedin.com/in/justinjkumar"
      }
     },
     {
@@ -2033,6 +2075,12 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Terry_Nguyen_Le",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Terry_Le_20240620_012625.jpg"
+     },
+     "website": "https://www.terryleforillinois.com/",
+     "social": {
+      "x": "https://x.com/TerryLeforILRep",
+      "instagram": "https://www.instagram.com/terryleforillinois/",
+      "linkedin": "https://www.linkedin.com/in/terry-le-3b8b08312/"
      }
     },
     {
@@ -2053,6 +2101,14 @@
       "credit": "Demi for Illinois (campaign site)",
       "link": "https://www.demiforillinois.com/",
       "from": "https://static.wixstatic.com/media/e62ce9_23ef01dd793642db93e0a5511675abfd~mv2.png/v1/crop/x_1138,y_0,w_5257,h_3956/fill/w_905,h_681,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Untitled%20design%20(5).png"
+     },
+     "social": {
+      "instagram": "https://www.instagram.com/demiforillinois",
+      "facebook": "https://facebook.com/Demiforillinois",
+      "bluesky": "https://bsky.app/profile/demiforillinois.bsky.social",
+      "tiktok": "https://tiktok.com/@demiforillinois",
+      "threads": "https://www.threads.com/@demiforillinois",
+      "youtube": "https://www.youtube.com/@DemiforIllinois"
      }
     }
    ],
@@ -2233,7 +2289,13 @@
       "instagram": "https://www.instagram.com/zimmers.john/",
       "tiktok": "https://www.tiktok.com/@john.jz.zimmers"
      },
-     "website": "https://www.jzfor19.com/"
+     "website": "https://www.jzfor19.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/john-jz-zimmers-state-representative-19th-district.jpg",
+      "credit": "John \"JZ\" Zimmers (their campaign site)",
+      "link": "https://www.jzfor19.com/",
+      "from": "https://static.wixstatic.com/media/ee8399_55832ae01bdd4f5cbedea70f5889f1c4~mv2.jpg"
+     }
     },
     {
      "ballot": 42,
@@ -2329,6 +2391,13 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Eric_Su",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/EricSu26.jpg"
+     },
+     "website": "https://teamericsu.com",
+     "social": {
+      "facebook": "https://www.facebook.com/teamericsufb",
+      "x": "https://x.com/teamericsu",
+      "instagram": "https://www.instagram.com/teamericsu",
+      "linkedin": "https://www.linkedin.com/in/ericwsutrainer/"
      }
     },
     {
@@ -2421,6 +2490,13 @@
       "credit": "Illinois General Assembly",
       "link": "https://www.ilga.gov/",
       "from": "https://cdn.ilga.gov/assets/img/members/{370B1494-7F8F-48BC-BD66-4756E15442E1}.jpg"
+     },
+     "website": "https://www.edgargonzalezjr.com",
+     "social": {
+      "facebook": "https://www.facebook.com/edgargonzalezjr96",
+      "instagram": "https://www.instagram.com/edgargonzalezjr96/",
+      "x": "https://x.com/egonzalezjr96",
+      "linkedin": "https://www.linkedin.com/in/edgar-gonzalez-jr/"
      }
     }
    ],
@@ -3133,6 +3209,12 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Michelle_Pennington",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Michelle_Pennington_20240808_094329.jpg"
+     },
+     "website": "https://www.michelleforcleanwater.com/",
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=61562831790753",
+      "linkedin": "https://www.linkedin.com/in/michelle-pennington-a1a4536/",
+      "x": "https://x.com/Michelleforcook"
      }
     },
     {
@@ -3144,6 +3226,10 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Timothy_Rueckert",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Timothy_Rueckert_2026-09-02_234545.jpg"
+     },
+     "website": "https://Tim4MWRD.com",
+     "social": {
+      "facebook": "https://facebook.com/tim.rueckert.for.mwrd"
      }
     },
     {
@@ -3393,6 +3479,11 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Brad_Sandefur",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Brad_Sandefur.jpg"
+     },
+     "website": "https://sandefurforsheriff.org/",
+     "social": {
+      "facebook": "https://facebook.com/sgtsandefur",
+      "linkedin": "https://www.linkedin.com/in/brad-sandefur-bb9b3b85/"
      }
     }
    ],
@@ -3467,6 +3558,11 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Nico_Tsatsoulis",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Nico_Tsatsoulis.jpg"
+     },
+     "website": "https://web.archive.org/web/20261006215639/https://nicotheassessor.com/issues",
+     "social": {
+      "facebook": "https://facebook.com/nicotheassessor",
+      "x": "https://x.com/nicotheassessor"
      }
     }
    ],
@@ -3735,7 +3831,10 @@
       "link": "https://www.cookcountyil.gov/person/luis-arroyo-jr",
       "from": "https://www.cookcountyil.gov/sites/g/files/ywwepo161/files/styles/crop_profile_photo/public/images/portraits/2025-05/Com.%20Vasquez%20Seal%20Headshot.jpg?itok=xX-X4DuV"
      },
-     "website": "https://www.vasquezforcookcounty.org/"
+     "website": "https://www.vasquezforcookcounty.org/",
+     "social": {
+      "instagram": "https://www.instagram.com/vasquezforcounty"
+     }
     }
    ],
    "writeIn": false
@@ -3753,7 +3852,18 @@
     {
      "ballot": 71,
      "name": "Jon Luers",
-     "party": "Republican"
+     "party": "Republican",
+     "photo": {
+      "file": "kyb-photos/illinois/jon-luers-county-commissioner-9th-district.jpg",
+      "credit": "Ballotpedia",
+      "link": "https://ballotpedia.org/Jon_Luers",
+      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/JonathonLuers.JPG"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/jon.luers.3",
+      "instagram": "https://www.instagram.com/jon.luers.il/",
+      "linkedin": "https://www.linkedin.com/in/jon-luers-17665954/"
+     }
     },
     {
      "ballot": 72,
@@ -3891,6 +4001,12 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Xiaoli_Hu",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Xiaoli_Hu.png"
+     },
+     "website": "https://www.votealicehu.com/",
+     "social": {
+      "facebook": "https://www.facebook.com/votealicehu",
+      "instagram": "https://instagram.com/votealicehu",
+      "linkedin": "https://www.linkedin.com/in/alicehu/"
      }
     },
     {
@@ -3910,6 +4026,11 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Elizabeth_Granato",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Elizabeth_Granato.png"
+     },
+     "website": "https://www.elizabethforcookcounty.com/",
+     "social": {
+      "facebook": "https://facebook.com/elizabethforcook",
+      "instagram": "https://instagram.com/elizabethforcook"
      }
     }
    ],
@@ -3934,6 +4055,12 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Aasi_Siddique",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Aasi_Siddique2026Screenshot-20260930-152356-Photos_20261003_175125_35838_1_2026-10-15_001623.jpg"
+     },
+     "website": "https://www.citizensforaasisiddique.com/",
+     "social": {
+      "x": "https://x.com/Citizensforaasi",
+      "instagram": "https://www.instagram.com/citizensforaasisiddique",
+      "youtube": "https://www.youtube.com/@CitizensForAasiSiddique"
      }
     },
     {
@@ -3989,7 +4116,13 @@
       "facebook": "https://www.facebook.com/Miranda4Cook",
       "linkedin": "https://www.linkedin.com/in/mehern/"
      },
-     "website": "https://mirandaforcookcounty.org/"
+     "website": "https://mirandaforcookcounty.org/",
+     "photo": {
+      "file": "kyb-photos/illinois/miranda-e-hernandez-county-commissioner-16th-district.jpg",
+      "credit": "Miranda E. Hernandez (their campaign site)",
+      "link": "https://mirandaforcookcounty.org/",
+      "from": "https://mirandaforcookcounty.org/wp-content/uploads/2025/11/Miranda-100-230x300.jpg"
+     }
     }
    ],
    "writeIn": false
@@ -4058,6 +4191,12 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Elizabeth_Nicholson",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Elizabeth_Nicholson_20260308_051745.jpeg"
+     },
+     "website": "https://www.lizfor2.com",
+     "social": {
+      "facebook": "https://facebook.com/lizforboardofreview",
+      "x": "https://x.com/lizforbor2",
+      "instagram": "https://instagram.com/lizforboardofreview"
      }
     }
    ],
@@ -4324,7 +4463,11 @@
       "PRBA": "Recommended",
       "WBAI": "Recommended"
      },
-     "barSource": "https://www.voteforjudges.org/#1790652891742-e2c39703-e6ee:~:text=D'Anthony%20%22Tony%22%20Thedford"
+     "barSource": "https://www.voteforjudges.org/#1790652891742-e2c39703-e6ee:~:text=D'Anthony%20%22Tony%22%20Thedford",
+     "social": {
+      "facebook": "https://www.facebook.com/JudgeDanthonyThedford",
+      "instagram": "https://www.instagram.com/JudgeDanthonyThedford"
+     }
     }
    ],
    "writeIn": false
@@ -4944,7 +5087,10 @@
       "PRBA": "Recommended",
       "WBAI": "Recommended"
      },
-     "barSource": "https://www.voteforjudges.org/#1790663589793-3a9d5e97-654e:~:text=Bianca%20B.%20Brown"
+     "barSource": "https://www.voteforjudges.org/#1790663589793-3a9d5e97-654e:~:text=Bianca%20B.%20Brown",
+     "social": {
+      "instagram": "https://www.instagram.com/biancabrownforjudge"
+     }
     }
    ],
    "writeIn": false
@@ -5133,7 +5279,12 @@
       "PRBA": "Recommended",
       "WBAI": "Recommended"
      },
-     "barSource": "https://www.voteforjudges.org/#1790665075386-9ab376a6-4084:~:text=Jon%20Stromsta"
+     "barSource": "https://www.voteforjudges.org/#1790665075386-9ab376a6-4084:~:text=Jon%20Stromsta",
+     "website": "https://www.jon4judge.com/",
+     "social": {
+      "facebook": "https://www.facebook.com/jon4judge/",
+      "linkedin": "https://www.linkedin.com/in/jonstromsta/"
+     }
     }
    ],
    "writeIn": false
@@ -5207,6 +5358,11 @@
       "credit": "Sendhil Revuluri for CPS (campaign site)",
       "link": "https://www.sendhilforcps.com/",
       "from": "https://run.imgix.net/8a00b92c-6a0c-4c41-836e-12c054881383/609a7f98-21bd-4805-8488-31ba0a17173a/609a7f98-21bd-4805-8488-31ba0a17173a.avif?ixlib=js-3.8.0&bri=0&con=0&sat=0&high=0&shad=0&usm=0&rect=459%2C207%2C1320%2C691"
+     },
+     "website": "https://www.SendhilForCPS.com",
+     "social": {
+      "facebook": "https://www.facebook.com/SendhilForCPS",
+      "linkedin": "https://www.linkedin.com/in/revuluri"
      }
     },
     {
@@ -5343,6 +5499,10 @@
       "credit": "Michelle Pierre for School Board (campaign site)",
       "link": "https://www.votemichellepierre.com/",
       "from": "https://images.squarespace-cdn.com/content/v1/6646b403421c1357e7e38036/81b56aef-2e8b-4e36-b5f5-f7e5587304b9/_DSC3444+Large.jpeg?format=1000w#crop=480x480+178+280"
+     },
+     "website": "https://www.votemichellepierre.com/priorities",
+     "social": {
+      "linkedin": "https://www.linkedin.com/in/michelle-pierre-farid-1a784013/"
      }
     }
    ],
@@ -5426,6 +5586,10 @@
       "credit": "Chicago Board of Education",
       "link": "https://www.cpsboe.org/about/bios/2030",
       "from": "https://www.cpsboe.org/content/images/person/debbypope-cropped.jpg/image-full;max$800,0.ImageHandler"
+     },
+     "website": "https://www.debbyfordistrict2b.com/",
+     "social": {
+      "facebook": "https://www.facebook.com/debbyfordistrict2b/"
      }
     },
     {
@@ -5439,6 +5603,16 @@
       "spent": 0,
       "cash": 200,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/kyna-lenhof-member-of-the-chicago-board-of-education-subdistrict-2b.jpg",
+      "credit": "Ballotpedia",
+      "link": "https://ballotpedia.org/Kyna_Lenhof",
+      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Kyna-Lenhof_20261001_002552_61784_1.jpg"
+     },
+     "website": "https://kynaforthekids.org",
+     "social": {
+      "linkedin": "https://www.linkedin.com/in/kynalenhof/"
      }
     },
     {
@@ -5458,6 +5632,11 @@
       "credit": "Basco for Chicago Board of Education, Dist. 2B (campaign site)",
       "link": "https://www.votedanielbasco.com/",
       "from": "https://images.squarespace-cdn.com/content/v1/69f972b8bd51de249657ba25/86f03d85-036e-4594-b9c5-4cdb77e85c30/Dan-+Headshot.jpg?format=1000w"
+     },
+     "website": "https://www.votedanielbasco.com/",
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=61593900981389",
+      "linkedin": "https://www.linkedin.com/in/daniel-basco/"
      }
     }
    ],
@@ -5546,6 +5725,10 @@
       "credit": "Jason Dónes for Chicago School Board District 3B (campaign site)",
       "link": "https://www.donesforschoolboard.com/",
       "from": "https://images.squarespace-cdn.com/content/v1/662fc672711cd811e2d77f51/ac5b9a47-feb1-489d-9ea8-2179a646853c/1.png?format=1000w#crop=320x320+570+110"
+     },
+     "website": "https://www.donesforschoolboard.com/",
+     "social": {
+      "linkedin": "https://www.linkedin.com/in/jason-dones/"
      }
     },
     {
@@ -5640,6 +5823,16 @@
       "spent": 0,
       "cash": 1000,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/angel-alvarez-member-of-the-chicago-board-of-education-subdistrict-4a.jpg",
+      "credit": "Ballotpedia",
+      "link": "https://ballotpedia.org/Angel_Alvarez",
+      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Angel-Alvarez-headshot-under2mb_20261002_213646_63104_1.jpg"
+     },
+     "website": "https://angelforcps.org",
+     "social": {
+      "linkedin": "https://www.linkedin.com/in/angel-alvarez-phd-775843411/"
      }
     }
    ],
@@ -5759,6 +5952,9 @@
       "credit": "Chicago Board of Education",
       "link": "https://www.cpsboe.org/about/bios/2029",
       "from": "https://www.cpsboe.org/content/images/person/michilla_blaise-6_resized.jpg/image-full;max$800,0.ImageHandler"
+     },
+     "social": {
+      "linkedin": "https://www.linkedin.com/in/michilla-johnson-blaise-45935b47/"
      }
     },
     {
@@ -5909,6 +6105,11 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Brittany_B._Kimble",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Brittany-Kimble-Headshot-Web_20260711_011709_45170_1.jpeg"
+     },
+     "website": "https://buildwithbrittanychicago.com",
+     "social": {
+      "linkedin": "https://www.linkedin.com/in/brittany-kimble-bb579325/",
+      "instagram": "https://www.instagram.com/buildwithbrittanychi"
      }
     }
    ],
@@ -6228,7 +6429,11 @@
      "ballot": 132,
      "name": "Patrick C. Watson",
      "party": "Nonpartisan",
-     "website": "https://patrickforcps.net"
+     "website": "https://patrickforcps.net",
+     "social": {
+      "facebook": "https://www.facebook.com/patrickforcps",
+      "instagram": "https://www.instagram.com/patrickforcps"
+     }
     }
    ],
    "writeIn": true
@@ -6277,6 +6482,10 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Rhys_Read",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Read-HEADSHOT_20260831_125719_33379_1.jpg"
+     },
+     "website": "https://readforil56.com/",
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=61592154191294"
      }
     }
    ],
@@ -6354,6 +6563,10 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Jared_Ploger",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Jared_Ploger_20260215_111036.png"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/jared.ploger",
+      "instagram": "https://www.instagram.com/jaredploger/"
      }
     },
     {
@@ -6373,6 +6586,11 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Edgardo_Perez",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/EP_20260730_194953_48486_1.jpg"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/PerezForStateSenate",
+      "instagram": "https://www.instagram.com/perezforsenate/",
+      "linkedin": "https://www.linkedin.com/in/cmdr-edgardo-eddie-perez-ret-9174011b/"
      }
     }
    ],
@@ -6537,6 +6755,13 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Kate_McGrath",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Kate_McGrath_20260204_034929.jpg"
+     },
+     "website": "https://www.kateforstatesenate.com/",
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=61579128803777",
+      "x": "https://x.com/katyperrone13",
+      "linkedin": "https://www.linkedin.com/in/kate-mcgrath-a323047/",
+      "instagram": "https://www.instagram.com/mcgrath4senate"
      }
     }
    ],
@@ -6570,6 +6795,13 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Sarah_Mertens",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/59c03b4e-a6c4-468a-b491-831491f12862_20260805_162112_49665_1.jpg"
+     },
+     "website": "https://www.citizensforsarahmertens.com/",
+     "social": {
+      "facebook": "https://www.facebook.com/SarahMertens4IL35/",
+      "tiktok": "https://www.tiktok.com/@citizens.for.sarah",
+      "instagram": "https://www.instagram.com/Sarah.Mertens.for.IL.Senate",
+      "bluesky": "https://bsky.app/profile/sarahmertensforil.bsky.social"
      }
     },
     {
@@ -6811,6 +7043,12 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Ernie_Marcelain",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/ErnieMarcelain2025.jpeg"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/share/1CybYhuUaQ/?mibextid=wwXIfr",
+      "instagram": "https://www.instagram.com/ernie_for_illinois38th/",
+      "x": "https://x.com/Firegot",
+      "tiktok": "https://www.tiktok.com/@firegot74"
      }
     },
     {
@@ -6897,6 +7135,11 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Daniel_Rhyne",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Daniel_Rhyne_2025.jpeg"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=61578990907710",
+      "instagram": "https://www.instagram.com/rhyno31673/",
+      "linkedin": "https://www.linkedin.com/in/daniel-rhyne-50968a108/"
      }
     }
    ],
@@ -6955,6 +7198,13 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Adam_Beaty",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/AdamBeaty2024.JPG"
+     },
+     "website": "https://www.BeatyforIllinois.com",
+     "social": {
+      "x": "https://x.com/Beaty4Illinois",
+      "instagram": "https://www.instagram.com/beatyforillinois/",
+      "facebook": "https://www.facebook.com/adam.beaty.3",
+      "linkedin": "https://www.linkedin.com/in/adam-beaty-a0029457/"
      }
     }
    ],
@@ -7170,6 +7420,9 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Kermit_Thomas",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/KermitThomas26.png"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/kermitforillinois"
      }
     },
     {
@@ -7185,7 +7438,17 @@
       "cash": 115232,
       "through": "06/30/2026"
      },
-     "website": "https://repswanson.com/"
+     "website": "https://repswanson.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/dan-swanson-sldl-71-staterepresentativestdistrict.jpg",
+      "credit": "Ballotpedia",
+      "link": "https://ballotpedia.org/Daniel_Swanson",
+      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Daniel_Swanson_portrait.jpg"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/SwansonStrongIL",
+      "linkedin": "https://www.linkedin.com/in/dan-swanson-17089452/"
+     }
     }
    ],
    "writeIn": false,
@@ -7245,6 +7508,12 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Ralph_Black",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Ralph_Black_20260516_174821_1.jpg"
+     },
+     "website": "https://RalphforIllinois.com",
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=61582435425854",
+      "instagram": "https://www.instagram.com/ralphblackforillinois/",
+      "linkedin": "https://www.linkedin.com/in/ralph-black-a2336a33/"
      }
     }
    ],
@@ -7399,6 +7668,10 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Chris_Metcalfe",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/ChrisMetcalfe2.jpg"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=100085292472773",
+      "linkedin": "https://www.linkedin.com/in/chris-metcalfe-03b0b017/"
      }
     }
    ],
@@ -7548,6 +7821,14 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Tracy_Katz_Muhl",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/TracyKatzMuhl.png"
+     },
+     "website": "https://tracyforrep.com",
+     "social": {
+      "facebook": "https://www.facebook.com/TracyForIllinois",
+      "instagram": "https://www.instagram.com/tracyforil/",
+      "x": "https://x.com/TracyforRep",
+      "youtube": "https://www.youtube.com/@Tracyforrep",
+      "linkedin": "https://www.linkedin.com/in/tracy-katz-muhl-78a096136/"
      }
     },
     {
@@ -7634,6 +7915,13 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Ajay_Gupta",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Shutterfly-Pic-Used-in-Billboard_20260928_202611_60047_1.jpeg"
+     },
+     "website": "https://ajayforilhouse41.com",
+     "social": {
+      "facebook": "https://www.facebook.com/AjayforILHouse41",
+      "x": "https://x.com/AjayGuptaTweets",
+      "youtube": "https://www.youtube.com/@ILHouse41",
+      "linkedin": "https://www.linkedin.com/in/ajay-gupta-naperville/"
      }
     }
    ],
@@ -7728,6 +8016,13 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Stephanie_Trussell",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Stephanie-Trussell.PNG"
+     },
+     "website": "https://www.trussellforillinois.com/",
+     "social": {
+      "facebook": "https://www.facebook.com/StephanieTrussellIL",
+      "x": "https://x.com/trussell2026",
+      "instagram": "https://www.instagram.com/stephanie_w_trussell/",
+      "linkedin": "https://www.linkedin.com/in/stephanie-trussell-154907134/"
      }
     }
    ],
@@ -7821,12 +8116,18 @@
       "credit": "Illinois General Assembly",
       "link": "https://www.ilga.gov/",
       "from": "https://cdn.ilga.gov/assets/img/members/{4E4C2A21-FDC2-48CA-9BA8-462A62E7A33B}.jpg"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/RepHernandez83rd"
      }
     },
     {
      "party": "Republican",
      "name": "Laura Hruska",
-     "ballot": 2
+     "ballot": 2,
+     "social": {
+      "linkedin": "https://www.linkedin.com/in/lhruska/"
+     }
     }
    ],
    "writeIn": false,
@@ -7855,7 +8156,18 @@
       "cash": 20341,
       "through": "09/30/2026"
      },
-     "website": "https://repbunting.com/"
+     "website": "https://repbunting.com/",
+     "photo": {
+      "file": "kyb-photos/illinois/jason-r-bunting-sldl-106-staterepresentativethdistrict.jpg",
+      "credit": "Ballotpedia",
+      "link": "https://ballotpedia.org/Jason_Bunting",
+      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Jason-Bunting.PNG"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=100092635987327",
+      "x": "https://x.com/jason_bunting",
+      "instagram": "https://www.instagram.com/jasonbunting/"
+     }
     }
    ],
    "writeIn": false,
@@ -8141,6 +8453,14 @@
       "credit": "Citizens for Carina (campaign site)",
       "link": "https://www.carinaforsenate.com/about-carina",
       "from": "https://images.squarespace-cdn.com/content/v1/66feb33dd4917c5192e52a3e/7d254a45-9666-452a-8a8e-fb28ac01b814/Carina-Senate-Springfield-85-CutOut.png?format=1000w"
+     },
+     "website": "https://carinaforsenate.com",
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=61578741968271",
+      "instagram": "https://www.instagram.com/csmforillinois/",
+      "x": "https://x.com/CarinaSantaMar7",
+      "youtube": "https://www.youtube.com/@carinahomann2099",
+      "linkedin": "https://www.linkedin.com/in/cnhomann/"
      }
     },
     {
@@ -8213,6 +8533,12 @@
       "credit": "Committee to Elect Julie Berkowicz (campaign site)",
       "link": "https://www.julieberkowicz.net/",
       "from": "https://www.julieberkowicz.net/assets/images/julie-headshot.jpg"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/julie.berkowicz",
+      "x": "https://x.com/JulieBerkowicz",
+      "instagram": "https://www.instagram.com/julieberkowicz/",
+      "linkedin": "https://www.linkedin.com/in/julie-berkowicz-b8076610/"
      }
     }
    ],
@@ -8247,6 +8573,12 @@
       "credit": "Friends for Karen Battaglia (campaign site)",
       "link": "https://karenforil32.com/",
       "from": "https://karenforil32.com/wp-content/uploads/2026/01/Home-About-1024x955.png"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=61579219937887",
+      "instagram": "https://www.instagram.com/karenforil32/",
+      "x": "https://x.com/ckaren426",
+      "linkedin": "https://www.linkedin.com/in/karen-battaglia-829b6944/"
      }
     },
     {
@@ -8418,6 +8750,10 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Mary_Catherine_Roberson",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Mary_Catherine_Roberson_20260407_094448.jpeg"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/MCRobersonDanville",
+      "linkedin": "https://www.linkedin.com/in/mary-catherine-roberson-6a361b313/"
      }
     },
     {
@@ -8502,6 +8838,12 @@
       "credit": "JP for Illinois (campaign site)",
       "link": "https://jp4il.com/",
       "from": "https://img1.wsimg.com/isteam/ip/4b8089ef-9862-4a10-ab32-15574b297098/IMG_1357.jpg/:/rs=w:800,cg:true,m"
+     },
+     "website": "https://www.jp4il.com",
+     "social": {
+      "facebook": "https://www.facebook.com/JP4IL",
+      "x": "https://x.com/JP4IL",
+      "linkedin": "https://www.linkedin.com/in/john-paul-augustynowicz-629b8337/"
      }
     }
    ],
@@ -9840,6 +10182,12 @@
       "credit": "Illinois General Assembly",
       "link": "https://www.ilga.gov/",
       "from": "https://cdn.ilga.gov/assets/img/members/{E820664D-DF76-4A22-88DC-736A218A001E}.jpg"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/RepBriel/",
+      "x": "https://x.com/MurriFor76",
+      "instagram": "https://www.instagram.com/murrifor76",
+      "linkedin": "https://www.linkedin.com/in/amy-murri-briel-00a320149"
      }
     },
     {
@@ -9900,6 +10248,11 @@
       "credit": "Illinois General Assembly",
       "link": "https://www.ilga.gov/",
       "from": "https://cdn.ilga.gov/assets/img/members/{9E64DAD4-4264-42B1-AFDA-AB8F652472A3}.jpg"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/johnmcabello/",
+      "x": "https://x.com/JohnCabello",
+      "instagram": "https://www.instagram.com/cabelloforstaterep/"
      }
     }
    ],
@@ -10304,6 +10657,9 @@
       "credit": "Illinois General Assembly",
       "link": "https://www.ilga.gov/",
       "from": "https://cdn.ilga.gov/assets/img/members/{9D43D019-A58A-47EC-B769-A7050C4B49DB}.jpg"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=100057878088324"
      }
     }
    ],
@@ -10491,6 +10847,12 @@
       "credit": "State Rep. Laura Faver Dias office website (repfaverdias.com)",
       "link": "https://www.repfaverdias.com/",
       "from": "https://images.squarespace-cdn.com/content/v1/63ff891bf17d014c181da478/4d699cb9-feee-4191-88f1-a2445d51908f/Dias+Family-285.jpg?format=1000w"
+     },
+     "website": "https://laurafaverdias.com",
+     "social": {
+      "facebook": "https://www.facebook.com/LauraFaverDiasForStateRep/",
+      "instagram": "https://www.instagram.com/lauraforstaterep",
+      "x": "https://x.com/laurafaverdias"
      }
     }
    ],
@@ -10957,6 +11319,12 @@
       "credit": "Illinois General Assembly",
       "link": "https://www.ilga.gov/",
       "from": "https://cdn.ilga.gov/assets/img/members/{D6DC8152-9760-4BEA-ACF5-C41785E6F6C4}.jpg"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/StuartForRep/",
+      "x": "https://x.com/RepKatieStuart",
+      "instagram": "https://www.instagram.com/stuartforrep/",
+      "linkedin": "https://www.linkedin.com/in/katie-stuart-03597b28/"
      }
     },
     {
@@ -10976,6 +11344,10 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Jimmy_Ford",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Jimmy_Ford_20260428_044859.jpg"
+     },
+     "website": "https://www.fordforus.com/",
+     "social": {
+      "facebook": "https://www.facebook.com/JimmyForStateRep"
      }
     }
    ],
@@ -11011,7 +11383,12 @@
       "link": "https://www.zahorakforil48.com/home",
       "from": "https://images.squarespace-cdn.com/content/v1/68c34a4cc9fe6858752eabde/008f7422-8ff9-4887-b574-6a2097dbcef5/Headshot+2024.jpg?format=1000w"
      },
-     "website": "https://www.zahorakforil48.com/"
+     "website": "https://www.zahorakforil48.com/",
+     "social": {
+      "tiktok": "https://www.tiktok.com/@amandazahorak",
+      "instagram": "https://www.instagram.com/azforil48",
+      "facebook": "https://www.facebook.com/p/Amanda-Zahorak-for-State-Representative-48-61552282161140"
+     }
     },
     {
      "party": "Republican",
@@ -11293,7 +11670,8 @@
       "credit": "Citizens for Parrilli (campaign site)",
       "link": "https://gina4illinois.com/",
       "from": "https://gina4illinois.com/wp-content/uploads/2026/01/Gina-arms-crossed-glasses-no-background-674x1024.png"
-     }
+     },
+     "website": "https://gina4illinois.com/"
     }
    ],
    "writeIn": false,
@@ -11610,6 +11988,16 @@
       "spent": 17920,
       "cash": 47214,
       "through": "06/30/2026"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/homer-chip-markel-sldl-118-staterepresentativethdistrict.jpg",
+      "credit": "Ballotpedia",
+      "link": "https://ballotpedia.org/Homer_Markel",
+      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/HomerMarkel.jpg"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=61580048781549",
+      "x": "https://x.com/ChipMarkel"
      }
     },
     {
@@ -12332,7 +12720,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665606309-cdc95b95-b258:~:text=Bertina%20E.%20Lampkin"
+   "barSource": "https://www.voteforjudges.org/#1790665606309-cdc95b95-b258:~:text=Bertina%20E.%20Lampkin",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-bertina-e-lampkin.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/bertina-e-lampkin-35640",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/BEL%20PHOTO.jpg"
+   }
   },
   {
    "id": "retain-lewis-nixon",
@@ -12355,7 +12749,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Lewis%20Nixon"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Lewis%20Nixon",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-lewis-nixon.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/lewis-nixon-35869",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Lewis-Nixon.jpg"
+   }
   },
   {
    "id": "retain-kerry-m-kennedy",
@@ -12401,7 +12801,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Joan%20E.%20Powelll"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Joan%20E.%20Powelll",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-joan-e-powell.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/joan-e-powell-35867",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Joan-Powell.jpg"
+   }
   },
   {
    "id": "retain-maureen-ward-kirby",
@@ -12424,7 +12830,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Maureen%20Ward%20Kirby"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Maureen%20Ward%20Kirby",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-maureen-ward-kirby.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/maureen-ward-kirby-35819",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Maureen-Kirby-2000.jpg"
+   }
   },
   {
    "id": "retain-edward-a-arce",
@@ -12447,7 +12859,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Edward%20A%20Arce"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Edward%20A%20Arce",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-edward-a-arce.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/edward-a-arce-35893",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Edward_arce-2000.jpg"
+   }
   },
   {
    "id": "retain-thomas-j-byrne",
@@ -12470,7 +12888,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Thomas%20J.%20Byrne"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Thomas%20J.%20Byrne",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-thomas-j-byrne.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/thomas-j-byrne-35790",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Thomas-Byrne-2000.png"
+   }
   },
   {
    "id": "retain-diana-l-kenworthy",
@@ -12493,7 +12917,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Diana%20L.%20Kenworthy"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Diana%20L.%20Kenworthy",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-diana-l-kenworthy.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/diana-l-kenworthy-35883",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Diana-Kenworthy.jpeg"
+   }
   },
   {
    "id": "retain-kristyna-colleen-ryan",
@@ -12516,7 +12946,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Kristyna%20Colleen%20Ryan"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Kristyna%20Colleen%20Ryan",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-kristyna-colleen-ryan.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/kristyna-colleen-ryan-35861",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/KR%20headshot%202026.jpg"
+   }
   },
   {
    "id": "retain-ursula-walowski",
@@ -12538,7 +12974,13 @@
     "DSL": "Yes",
     "AABA": "Not evaluated"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Ursula%20Walowski"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Ursula%20Walowski",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-ursula-walowski.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/ursula-walowski-35891",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Ursula_Walowski-2000.jpg"
+   }
   },
   {
    "id": "retain-anthony-c-tony-kyriakopoulos",
@@ -12561,7 +13003,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Anthony%20C.%20Kyriakopoulos"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Anthony%20C.%20Kyriakopoulos",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-anthony-c-tony-kyriakopoulos.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/anthony-c-tony-kyriakopoulos-35885",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Tony-Kyriakopoulos.jpg"
+   }
   },
   {
    "id": "retain-caroline-kate-moreland",
@@ -12584,7 +13032,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Caroline%20Kate%20Moreland"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Caroline%20Kate%20Moreland",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-caroline-kate-moreland.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/caroline-kate-moreland-35806",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Kate_Moreland-2000.jpg"
+   }
   },
   {
    "id": "retain-thomas-j-carroll",
@@ -12607,7 +13061,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Thomas%20J.%20Carroll"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Thomas%20J.%20Carroll",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-thomas-j-carroll.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/thomas-j-carroll-35792",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Headshot%20Carroll.jpg"
+   }
   },
   {
    "id": "retain-andrea-m-buford",
@@ -12630,7 +13090,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Andrea%20M.%20Buford"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Andrea%20M.%20Buford",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-andrea-m-buford.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/andrea-m-buford-35788",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Andrea-Buford.jpg"
+   }
   },
   {
    "id": "retain-john-michael-allegretti",
@@ -12653,7 +13119,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=John%20Michael%20Allegretti"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=John%20Michael%20Allegretti",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-john-michael-allegretti.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/john-michael-allegretti-35841",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/John-Allegretti.jpg"
+   }
   },
   {
    "id": "retain-kristal-r-rivers",
@@ -12676,7 +13148,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Kristal%20Rivers"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Kristal%20Rivers",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-kristal-r-rivers.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/kristal-r-rivers-35863",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Kristal-Rivers.jpg"
+   }
   },
   {
    "id": "retain-steven-g-watkins",
@@ -12699,7 +13177,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Steven%20G.%20Watkins"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Steven%20G.%20Watkins",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-steven-g-watkins.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/steven-g-watkins-35831",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Steven_Gregory_Watkins-2000.jpg"
+   }
   },
   {
    "id": "retain-abbey-fishman-romanek",
@@ -12722,7 +13206,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Abbey%20Fishman%20Romanek"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Abbey%20Fishman%20Romanek",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-abbey-fishman-romanek.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/abbey-fishman-romanek-35879",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Abbey-Fishman-Romanek.jpg"
+   }
   },
   {
    "id": "retain-judith-c-rice",
@@ -12745,7 +13235,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Judith%20C.%20Rice"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Judith%20C.%20Rice",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-judith-c-rice.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/judith-c-rice-35857",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Rice.jpg"
+   }
   },
   {
    "id": "retain-patrick-kevin-coughlin",
@@ -12768,7 +13264,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Patrick%20Kevin%20Coughlin"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Patrick%20Kevin%20Coughlin",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-patrick-kevin-coughlin.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/patrick-kevin-coughlin-35905",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Pat%20Coughlin.JPG"
+   }
   },
   {
    "id": "retain-megan-elizabeth-goldish",
@@ -12791,7 +13293,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Megan%20Elizabeth%20Goldish"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Megan%20Elizabeth%20Goldish",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-megan-elizabeth-goldish.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/megan-elizabeth-goldish-35875",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/goldish%20headshot.jpg"
+   }
   },
   {
    "id": "retain-anjana-m-j-hansen",
@@ -12814,7 +13322,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Anjana%20M.%20J.%20Hansen"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Anjana%20M.%20J.%20Hansen",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-anjana-m-j-hansen.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/anjana-mj-hansen-35877",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Anjana-Hanson-2000.jpg"
+   }
   },
   {
    "id": "retain-robert-d-kuzas",
@@ -12837,14 +13351,26 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Robert%20D.%20Kuzas"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Robert%20D.%20Kuzas",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-robert-d-kuzas.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/robert-d-kuzas-35853",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Robert-Kuzas.png"
+   }
   },
   {
    "id": "retain-john-j-mahoney",
    "court": "Circuit Court",
    "judge": "John J. Mahoney",
    "withdrawn": true,
-   "profile": "https://2026retention.injusticewatch.org/candidate/john-j-mahoney-35845"
+   "profile": "https://2026retention.injusticewatch.org/candidate/john-j-mahoney-35845",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-john-j-mahoney.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/john-j-mahoney-35845",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/John-Mahoney-2000.jpg"
+   }
   },
   {
    "id": "retain-maritza-martinez",
@@ -12864,7 +13390,13 @@
     "WBAI": "Yes",
     "DSL": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Maritza%20Martinez"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Maritza%20Martinez",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-maritza-martinez.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/maritza-martinez-35798",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Maritza-Martinez.jpg"
+   }
   },
   {
    "id": "retain-terrence-j-mcguire",
@@ -12887,7 +13419,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Terrence%20J.%20McGuire"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Terrence%20J.%20McGuire",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-terrence-j-mcguire.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/terrence-j-mcguire-35837",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/TerrenceMcGuire-2000.jpg"
+   }
   },
   {
    "id": "retain-bridget-anne-mitchell",
@@ -12910,7 +13448,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Bridget%20Anne%20Mitchell"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Bridget%20Anne%20Mitchell",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-bridget-anne-mitchell.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/bridget-anne-mitchell-35802",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Bridget-Mitchell.jpg"
+   }
   },
   {
    "id": "retain-james-p-pieczonka",
@@ -12933,7 +13477,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=James%20P.%20Pieczonka"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=James%20P.%20Pieczonka",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-james-p-pieczonka.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/james-p-pieczonka-35897",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/James_Paul_Pieczonka-2000.jpg"
+   }
   },
   {
    "id": "retain-patricia-o-brien-sheahan",
@@ -12956,7 +13506,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Patricia%20O'Brien%20Sheahan"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Patricia%20O'Brien%20Sheahan",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-patricia-o-brien-sheahan.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/patricia-obrien-sheahan-35859",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Patricia-Sheahan-2000.jpg"
+   }
   },
   {
    "id": "retain-michael-a-forti",
@@ -12979,7 +13535,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Michael%20A.%20Forti"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Michael%20A.%20Forti",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-michael-a-forti.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/michael-a-forti-35849",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Michael-Forti-2020.jpg"
+   }
   },
   {
    "id": "retain-nichole-c-patton",
@@ -13002,7 +13564,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Nichole%20C.%20Patton"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Nichole%20C.%20Patton",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-nichole-c-patton.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/nichole-c-patton-35903",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Nichole-Patton.jpeg"
+   }
   },
   {
    "id": "retain-sondra-n-denmark",
@@ -13025,7 +13593,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Sondra%20Nicole%20Denmark"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Sondra%20Nicole%20Denmark",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-sondra-n-denmark.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/sondra-n-denmark-35829",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Sondra-Denmark-2020.jpg"
+   }
   },
   {
    "id": "retain-gerardo-tristan-jr",
@@ -13048,7 +13622,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Gerardo%20Tristan%20Jr."
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Gerardo%20Tristan%20Jr.",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-gerardo-tristan-jr.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/gerardo-tristan-jr-35901",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Gerardo-Tristan-2020.jpg"
+   }
   },
   {
    "id": "retain-lynn-weaver-boyle",
@@ -13071,7 +13651,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Lynn%20Waver%20Boyle"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Lynn%20Waver%20Boyle",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-lynn-weaver-boyle.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/lynn-weaver-boyle-35821",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Lynn-Weaver-Boyle.png"
+   }
   },
   {
    "id": "retain-daniel-edward-maloney",
@@ -13094,7 +13680,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Daniel%20Edward%20Maloney"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Daniel%20Edward%20Maloney",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-daniel-edward-maloney.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/daniel-edward-maloney-35835",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Judge%20Head%20shot.png"
+   }
   },
   {
    "id": "retain-thomas-m-cushing",
@@ -13117,7 +13709,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Thomas%20M.%20Cushing"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Thomas%20M.%20Cushing",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-thomas-m-cushing.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/thomas-m-cushing-35873",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Thomas-Cushing-2020.jpg"
+   }
   },
   {
    "id": "retain-john-g-mulroe",
@@ -13140,7 +13738,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=John%20G.%20Mulroe"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=John%20G.%20Mulroe",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-john-g-mulroe.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/john-g-mulroe-35889",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/8Q4A3660.png"
+   }
   },
   {
    "id": "retain-tyria-b-walton",
@@ -13163,7 +13767,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Tyria%20B.%20Walton"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Tyria%20B.%20Walton",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-tyria-b-walton.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/tyria-b-walton-35827",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Headshot.png"
+   }
   },
   {
    "id": "retain-erin-haggerty-antonietti",
@@ -13186,7 +13796,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Erin%20Haggerty%20Antonietti"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Erin%20Haggerty%20Antonietti",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-erin-haggerty-antonietti.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/erin-haggerty-antonietti-35833",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/8Q4A3653%20(1).jpg"
+   }
   },
   {
    "id": "retain-teresa-molina-gonzalez",
@@ -13209,7 +13825,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Teresa%20Molina%2DGonzalez"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Teresa%20Molina%2DGonzalez",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-teresa-molina-gonzalez.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/teresa-molina-gonzalez-35804",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Teresa-Molina-2020.jpg"
+   }
   },
   {
    "id": "retain-patricia-maria-fallon",
@@ -13232,7 +13854,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Patricia%20M.%20Fallon"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Patricia%20M.%20Fallon",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-patricia-maria-fallon.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/patricia-maria-fallon-35895",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/head%20shot%202.jpg"
+   }
   },
   {
    "id": "retain-sheree-d-henry",
@@ -13255,7 +13883,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Sheree%20Desiree%20Henry"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Sheree%20Desiree%20Henry",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-sheree-d-henry.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/sheree-d-henry-35794",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Judicial%20Headshot%20for%20Sheree%20D.%20Henry"
+   }
   },
   {
    "id": "retain-celestia-l-mays",
@@ -13278,7 +13912,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Celestia%20L.%20Mays"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Celestia%20L.%20Mays",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-celestia-l-mays.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/celestia-l-mays-35800",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Celestia-Mays.jpg"
+   }
   },
   {
    "id": "retain-levander-smith-jr",
@@ -13301,7 +13941,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Levander%20Smith%2C%20Jr."
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Levander%20Smith%2C%20Jr.",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-levander-smith-jr.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/levander-smith-jr-35813",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Levander-Smith-2020.jpg"
+   }
   },
   {
    "id": "retain-julie-bess-aimen",
@@ -13324,7 +13970,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Julie%20Bess%20Aimen"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Julie%20Bess%20Aimen",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-julie-bess-aimen.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/julie-bess-aimen-35871",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Julie-Bess-Aimen-NEW.jpg"
+   }
   },
   {
    "id": "retain-laura-ayala-gonzalez",
@@ -13347,7 +13999,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Laura%20Ayala%2DGonzalez"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Laura%20Ayala%2DGonzalez",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-laura-ayala-gonzalez.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/laura-ayala-gonzalez-35786",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Ayala-Gonzalez.PNG"
+   }
   },
   {
    "id": "retain-krista-d-butler",
@@ -13370,7 +14028,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Krista%20D.%20Butler"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Krista%20D.%20Butler",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-krista-d-butler.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/krista-d-butler-35825",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Krista-Butler.jpg"
+   }
   },
   {
    "id": "retain-marie-aileen-dempsey",
@@ -13393,7 +14057,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Maire%20Aileen%20Dempsey"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Maire%20Aileen%20Dempsey",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-marie-aileen-dempsey.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/marie-aileen-dempsey-35881",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Marie-Aileen-Dempsey-2020.jpg"
+   }
   },
   {
    "id": "retain-jamie-guerra-dickler",
@@ -13416,7 +14086,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Jamie%20Guerra%20Dickler"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Jamie%20Guerra%20Dickler",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-jamie-guerra-dickler.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/jamie-guerra-dickler-35843",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Jamie-Guerra-Dickler-2020.jpg"
+   }
   },
   {
    "id": "retain-jonathan-clark-green",
@@ -13439,7 +14115,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Jonathan%20Clark%20Green"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Jonathan%20Clark%20Green",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-jonathan-clark-green.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/jonathan-clark-green-35851",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Closeup%20Headshot.jpg"
+   }
   },
   {
    "id": "retain-mary-catherine-marubio",
@@ -13462,7 +14144,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Mary%20Catherine%20Marubio"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Mary%20Catherine%20Marubio",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-mary-catherine-marubio.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/mary-catherine-marubio-35887",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/mary_marubio-2020.jpg"
+   }
   },
   {
    "id": "retain-regina-a-mescall",
@@ -13485,7 +14173,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Regina%20Ann%20Mescall"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Regina%20Ann%20Mescall",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-regina-a-mescall.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/regina-a-mescall-35839",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/photo%20head%20shot.jpg"
+   }
   },
   {
    "id": "retain-lorraine-mary-murphy",
@@ -13508,7 +14202,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Lorraine%20Mary%20Murphy"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Lorraine%20Mary%20Murphy",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-lorraine-mary-murphy.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/lorraine-mary-murphy-35808",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Lorraine-Mary-Murphy-2020.jpg"
+   }
   },
   {
    "id": "retain-eileen-marie-o-connor",
@@ -13531,7 +14231,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Eileen%20Marie%20O'Connor"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Eileen%20Marie%20O'Connor",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-eileen-marie-o-connor.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/eileen-marie-oconnor-35847",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Eileen-O'Connor.jpg"
+   }
   },
   {
    "id": "retain-jill-rose-quinn",
@@ -13554,7 +14260,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Jill%20Rose%20Quinn"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Jill%20Rose%20Quinn",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-jill-rose-quinn.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/jill-rose-quinn-35865",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/3F749372-51A9-4E6F-AB07-3A84351514B3.jpeg"
+   }
   },
   {
    "id": "retain-pamela-reaves-harris",
@@ -13577,7 +14289,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Pamela%20Reaves%2DHarris"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Pamela%20Reaves%2DHarris",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-pamela-reaves-harris.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/pamela-reaves-harris-35855",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Reaves-Harris.jpg"
+   }
   },
   {
    "id": "retain-tiesha-l-smith",
@@ -13600,7 +14318,13 @@
     "DSL": "No",
     "AABA": "No"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Tiesha%20L.%20Smith"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Tiesha%20L.%20Smith",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-tiesha-l-smith.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/tiesha-l-smith-35811",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/8Q4A3631.jpg"
+   }
   },
   {
    "id": "retain-chris-stacey",
@@ -13623,7 +14347,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Chris%20Stacey"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Chris%20Stacey",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-chris-stacey.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/chris-stacey-35815",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/JUDGE%20Chris%20Stacey%20HEADSHOT.jpeg"
+   }
   },
   {
    "id": "retain-perla-tirado",
@@ -13646,7 +14376,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Perla%20Tirado"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Perla%20Tirado",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-perla-tirado.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/perla-tirado-35899",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/me.jpeg"
+   }
   },
   {
    "id": "retain-elizabeth-anne-walsh",
@@ -13669,7 +14405,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Elizabeth%20Anne%20Walsh"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Elizabeth%20Anne%20Walsh",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-elizabeth-anne-walsh.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/elizabeth-anne-walsh-35817",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Elizabeth-Walsh-2020.jpg"
+   }
   },
   {
    "id": "retain-maura-mcmahon-zeller",
@@ -13692,7 +14434,13 @@
     "DSL": "Yes",
     "AABA": "Yes"
    },
-   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Maura%20McMahon%20Zeller"
+   "barSource": "https://www.voteforjudges.org/#1790665724369-48d55cd0-8675:~:text=Maura%20McMahon%20Zeller",
+   "photo": {
+    "file": "kyb-photos/illinois/retain-maura-mcmahon-zeller.jpg",
+    "credit": "Injustice Watch",
+    "link": "https://2026retention.injusticewatch.org/candidate/maura-mcmahon-zeller-35823",
+    "from": "https://2026retention.injusticewatch.org/images/candidates/Maura-McMahon-Zeller-2020.jpg"
+   }
   }
  ],
  "measures": [
@@ -13702,7 +14450,8 @@
    "question": "Shall Illinois adopt the Millionaire Amendment for Property Tax Relief and Education, which would enact a 3% income tax surcharge only on millionaires and use 50% of this new revenue to provide property tax relief for residential and commercial taxpayers and 50% to improve state funding for public education?",
    "scope": {
     "type": "county"
-   }
+   },
+   "plain": "Advisory: it changes no law by itself. The Cook County Board put it on every county ballot in July to gauge support for a statewide constitutional amendment (a proposal in the Illinois House, backed by House Speaker Welch and Mayor Johnson) adding a 3% surcharge on income over $1 million; Illinois’ constitution requires a flat income tax, so a real change would need a statewide vote. Supporters say it would raise about $4 billion a year from roughly 41,000 taxpayers for property-tax relief and schools; opponents say it would push high earners and employers out of the state."
   },
   {
    "id": "city-restart-chicago-gunshot-detection",
@@ -13710,7 +14459,8 @@
    "question": "Should the City of Chicago restart the use of gunshot detection technology that informs first responders when gunshots are detected?",
    "scope": {
     "type": "city"
-   }
+   },
+   "plain": "Advisory. Chicago ended its ShotSpotter contract in September 2024 after Mayor Johnson questioned the system’s accuracy and cost; a replacement has been promised but not chosen. Ald. Marty Quinn (13th), a ShotSpotter supporter, got this question onto the ballot to put voters on record. A “yes” signals the city should bring gunshot-detection sensors back; a “no” that it should stay without them."
   },
   {
    "id": "city-permanent-chicago-festival-space",
@@ -13718,7 +14468,8 @@
    "question": "Should Chicago develop a permanent festival and outdoor event space for large-scale events?",
    "scope": {
     "type": "city"
-   }
+   },
+   "plain": "Advisory. Lollapalooza in Grant Park, Riot Fest in Douglass Park and other festivals close public parks for weeks and leave damage behind. Ald. Nicole Lee (11th) proposed asking whether the city should build a permanent fairgrounds for big events instead; there is no site or cost yet. A “yes” tells the city to pursue one."
   },
   {
    "id": "city-chicago-cost-recovery-from-midway-blitz",
@@ -13726,7 +14477,8 @@
    "question": "Shall the City of Chicago pursue all lawful means to recover financial compensation from the federal government for the costs and economic harm caused by the Donald Trump administration's violent, militarized ICE operations, including the Midway Blitz operation led by Greg Bovino, to recover lost tax revenue, public safety response costs, and services provided to residents and families affected by those operations?",
    "scope": {
     "type": "city"
-   }
+   },
+   "plain": "Advisory, backed by Mayor Johnson. “Operation Midway Blitz” was the federal immigration enforcement surge in Chicago in fall 2025, with more than 3,800 people detained; a University of Illinois Chicago study put the loss to immigrant business corridors above $1 billion. A “yes” says the city should try, in court or otherwise, to make the federal government pay for its costs and lost revenue; how it would is not spelled out."
   },
   {
    "id": "city-advisory-question-regarding-millionaires-surcharge",
@@ -13734,7 +14486,8 @@
    "question": "Shall Illinois use revenue from a surcharge on millionaires to increase funding to public schools?",
    "scope": {
     "type": "city"
-   }
+   },
+   "plain": "Advisory, from the Chicago Board of Education, and broader than the county’s question on the same idea: it asks only whether money from a tax surcharge on millionaires should go to public schools. The school board added it in August, with the vacant-property question below, to show support for new school funding."
   },
   {
    "id": "city-advisory-question-regarding-chicago-land-owners",
@@ -13742,7 +14495,8 @@
    "question": "Should the City of Chicago require owners of long-term vacant or undeveloped commercial or investment properties to pay an additional annual charge that would support Chicago Public Schools?",
    "scope": {
     "type": "city"
-   }
+   },
+   "plain": "Advisory, from the Chicago Board of Education. It asks whether owners of commercial or investment property left vacant or undeveloped for a long time should pay an extra yearly charge, with the money going to Chicago Public Schools. Board members split: some said it would push owners to build and fund schools, others doubted it could be enforced fairly."
   },
   {
    "id": "named-mid-northside-expanded-mental-health-services",
@@ -13751,7 +14505,8 @@
    "scope": {
     "type": "named",
     "name": "Mid-Northside Expanded Mental Health Services Program Area"
-   }
+   },
+   "plain": "Binding. Under Illinois’ Community Expanded Mental Health Services Act, residents of an area can petition to create a program offering free mental-health care to anyone living there, paid for by a small property-tax levy (capped at 0.025% of the area’s equalized assessed value) and run by a locally elected governing commission. Several Chicago neighborhoods have voted such programs in since 2012. A “yes” creates one for the area named on your ballot."
   },
   {
    "id": "named-2027-property-tax-extension-mid-northside-expanded-mental-health-services",
@@ -13760,7 +14515,8 @@
    "scope": {
     "type": "named",
     "name": "Mid-Northside Expanded Mental Health Services Program Area"
-   }
+   },
+   "plain": "Binding, and paired with the question above it: if the program is created, this sets how much property tax it may collect for 2027 (the dollar cap in the question, spread over the area’s property owners). A “no” here with a “yes” above would leave the program without that budget."
   },
   {
    "id": "named-far-southwest-side-expanded-mental-health-services",
@@ -13769,7 +14525,8 @@
    "scope": {
     "type": "named",
     "name": "Far Southwest Side Expanded Mental Health Services Program Area"
-   }
+   },
+   "plain": "Binding. Under Illinois’ Community Expanded Mental Health Services Act, residents of an area can petition to create a program offering free mental-health care to anyone living there, paid for by a small property-tax levy (capped at 0.025% of the area’s equalized assessed value) and run by a locally elected governing commission. Several Chicago neighborhoods have voted such programs in since 2012. A “yes” creates one for the area named on your ballot."
   },
   {
    "id": "named-2027-property-tax-extension-far-southwest-side-expanded-mental-health-services",
@@ -13778,7 +14535,8 @@
    "scope": {
     "type": "named",
     "name": "Far Southwest Side Expanded Mental Health Services Program Area"
-   }
+   },
+   "plain": "Binding, and paired with the question above it: if the program is created, this sets how much property tax it may collect for 2027 (the dollar cap in the question, spread over the area’s property owners). A “no” here with a “yes” above would leave the program without that budget."
   },
   {
    "id": "ward-4-jesse-jackson-monument-statue",
@@ -13787,7 +14545,8 @@
    "scope": {
     "type": "ward",
     "id": "4"
-   }
+   },
+   "plain": "Advisory, by petition in the 4th Ward. It asks whether the city should place a life-size statue of the Rev. Jesse L. Jackson Sr., the civil-rights leader and founder of Rainbow PUSH who died in February 2026, in the median near the organization’s Kenwood headquarters. A “yes” tells the alderperson and the city to pursue it."
   },
   {
    "id": "ward-26-shared-housing-limits-in-26th-ward",
@@ -13796,7 +14555,8 @@
    "scope": {
     "type": "ward",
     "id": "26"
-   }
+   },
+   "plain": "Advisory, by petition in the 26th Ward. Chicago’s shared-housing ordinance already lets precincts vote to restrict short-term rentals (Airbnb-style listings); this asks whether the whole ward should limit new ones, on the argument that they take apartments off the long-term rental market."
   },
   {
    "id": "precinct-7-13-chicago-lakefront-national-park",
@@ -13806,7 +14566,8 @@
     "type": "precinct",
     "ward": "7",
     "precinct": "13"
-   }
+   },
+   "plain": "Advisory, by petition. A campaign wants Chicago’s lakefront parks, harbors and lagoons nominated as a unit of the National Park Service; a national park would be designated by Congress. A “yes” says the city should support the nomination."
   },
   {
    "id": "precinct-7-14-ensure-remediation-of-former-south-works-site",
@@ -13816,7 +14577,8 @@
     "type": "precinct",
     "ward": "7",
     "precinct": "14"
-   }
+   },
+   "plain": "Advisory, by petition in the 7th and 10th Wards. The former U.S. Steel South Works site on the Southeast Side lakefront, vacant since 1992, is the planned home of the Illinois Quantum and Microelectronics Park. Neighbors (organized as Southside Together) want a guarantee that the soil and slag there are fully cleaned up, with the results made public, before anything is built. The Board of Elections threw out an earlier, multi-part version in March; this and the question below are the single-topic versions."
   },
   {
    "id": "precinct-7-14-government-support-for-quantum-facility-and-data-center-at-former-south-work",
@@ -13826,7 +14588,8 @@
     "type": "precinct",
     "ward": "7",
     "precinct": "14"
-   }
+   },
+   "plain": "Advisory, by petition in the 7th and 10th Wards. The state has pledged public money for the quantum campus at the former South Works site, anchored by PsiQuantum, with a data center alongside. The question asks whether governments should spend an estimated $1 billion of taxpayer money on it. Supporters point to jobs and investment; neighbors who petitioned for this question want the land cleaned up and used for the community instead."
   },
   {
    "id": "precinct-10-2-ensure-remediation-of-former-south-works-site",
@@ -13836,7 +14599,8 @@
     "type": "precinct",
     "ward": "10",
     "precinct": "2"
-   }
+   },
+   "plain": "Advisory, by petition in the 7th and 10th Wards. The former U.S. Steel South Works site on the Southeast Side lakefront, vacant since 1992, is the planned home of the Illinois Quantum and Microelectronics Park. Neighbors (organized as Southside Together) want a guarantee that the soil and slag there are fully cleaned up, with the results made public, before anything is built. The Board of Elections threw out an earlier, multi-part version in March; this and the question below are the single-topic versions."
   },
   {
    "id": "precinct-10-2-government-support-for-quantum-facility-and-data-center-at-former-south-work",
@@ -13846,7 +14610,8 @@
     "type": "precinct",
     "ward": "10",
     "precinct": "2"
-   }
+   },
+   "plain": "Advisory, by petition in the 7th and 10th Wards. The state has pledged public money for the quantum campus at the former South Works site, anchored by PsiQuantum, with a data center alongside. The question asks whether governments should spend an estimated $1 billion of taxpayer money on it. Supporters point to jobs and investment; neighbors who petitioned for this question want the land cleaned up and used for the community instead."
   },
   {
    "id": "precinct-10-4-ensure-remediation-of-former-south-works-site",
@@ -13856,7 +14621,8 @@
     "type": "precinct",
     "ward": "10",
     "precinct": "4"
-   }
+   },
+   "plain": "Advisory, by petition in the 7th and 10th Wards. The former U.S. Steel South Works site on the Southeast Side lakefront, vacant since 1992, is the planned home of the Illinois Quantum and Microelectronics Park. Neighbors (organized as Southside Together) want a guarantee that the soil and slag there are fully cleaned up, with the results made public, before anything is built. The Board of Elections threw out an earlier, multi-part version in March; this and the question below are the single-topic versions."
   },
   {
    "id": "precinct-10-4-government-support-for-quantum-facility-and-data-center-at-former-south-work",
@@ -13866,7 +14632,8 @@
     "type": "precinct",
     "ward": "10",
     "precinct": "4"
-   }
+   },
+   "plain": "Advisory, by petition in the 7th and 10th Wards. The state has pledged public money for the quantum campus at the former South Works site, anchored by PsiQuantum, with a data center alongside. The question asks whether governments should spend an estimated $1 billion of taxpayer money on it. Supporters point to jobs and investment; neighbors who petitioned for this question want the land cleaned up and used for the community instead."
   },
   {
    "id": "precinct-5-1-500-employee-corporate-tax-for-youth-jobs-and-social-services",
@@ -13876,7 +14643,8 @@
     "type": "precinct",
     "ward": "5",
     "precinct": "1"
-   }
+   },
+   "plain": "Advisory, by petition in a handful of precincts. During the 2026 city budget fight, Mayor Johnson proposed a “head tax” of $33 per employee on companies with 500 or more workers (about 175 firms, grocery stores and nonprofits excluded) to fund youth jobs, mental-health care and violence prevention; the City Council did not adopt it. A “yes” asks your alderperson to vote for such a tax."
   },
   {
    "id": "precinct-5-14-500-employee-corporate-tax-for-youth-jobs-and-social-services",
@@ -13886,7 +14654,8 @@
     "type": "precinct",
     "ward": "5",
     "precinct": "14"
-   }
+   },
+   "plain": "Advisory, by petition in a handful of precincts. During the 2026 city budget fight, Mayor Johnson proposed a “head tax” of $33 per employee on companies with 500 or more workers (about 175 firms, grocery stores and nonprofits excluded) to fund youth jobs, mental-health care and violence prevention; the City Council did not adopt it. A “yes” asks your alderperson to vote for such a tax."
   },
   {
    "id": "precinct-8-23-500-employee-corporate-tax-for-youth-jobs-and-social-services",
@@ -13896,7 +14665,8 @@
     "type": "precinct",
     "ward": "8",
     "precinct": "23"
-   }
+   },
+   "plain": "Advisory, by petition in a handful of precincts. During the 2026 city budget fight, Mayor Johnson proposed a “head tax” of $33 per employee on companies with 500 or more workers (about 175 firms, grocery stores and nonprofits excluded) to fund youth jobs, mental-health care and violence prevention; the City Council did not adopt it. A “yes” asks your alderperson to vote for such a tax."
   },
   {
    "id": "precinct-8-26-500-employee-corporate-tax-for-youth-jobs-and-social-services",
@@ -13906,7 +14676,8 @@
     "type": "precinct",
     "ward": "8",
     "precinct": "26"
-   }
+   },
+   "plain": "Advisory, by petition in a handful of precincts. During the 2026 city budget fight, Mayor Johnson proposed a “head tax” of $33 per employee on companies with 500 or more workers (about 175 firms, grocery stores and nonprofits excluded) to fund youth jobs, mental-health care and violence prevention; the City Council did not adopt it. A “yes” asks your alderperson to vote for such a tax."
   },
   {
    "id": "precinct-8-27-500-employee-corporate-tax-for-youth-jobs-and-social-services",
@@ -13916,7 +14687,8 @@
     "type": "precinct",
     "ward": "8",
     "precinct": "27"
-   }
+   },
+   "plain": "Advisory, by petition in a handful of precincts. During the 2026 city budget fight, Mayor Johnson proposed a “head tax” of $33 per employee on companies with 500 or more workers (about 175 firms, grocery stores and nonprofits excluded) to fund youth jobs, mental-health care and violence prevention; the City Council did not adopt it. A “yes” asks your alderperson to vote for such a tax."
   },
   {
    "id": "precinct-21-25-500-employee-corporate-tax-for-youth-jobs-and-social-services",
@@ -13926,7 +14698,8 @@
     "type": "precinct",
     "ward": "21",
     "precinct": "25"
-   }
+   },
+   "plain": "Advisory, by petition in a handful of precincts. During the 2026 city budget fight, Mayor Johnson proposed a “head tax” of $33 per employee on companies with 500 or more workers (about 175 firms, grocery stores and nonprofits excluded) to fund youth jobs, mental-health care and violence prevention; the City Council did not adopt it. A “yes” asks your alderperson to vote for such a tax."
   },
   {
    "id": "precinct-24-5-500-employee-corporate-tax-for-youth-jobs-and-social-services",
@@ -13936,7 +14709,8 @@
     "type": "precinct",
     "ward": "24",
     "precinct": "5"
-   }
+   },
+   "plain": "Advisory, by petition in a handful of precincts. During the 2026 city budget fight, Mayor Johnson proposed a “head tax” of $33 per employee on companies with 500 or more workers (about 175 firms, grocery stores and nonprofits excluded) to fund youth jobs, mental-health care and violence prevention; the City Council did not adopt it. A “yes” asks your alderperson to vote for such a tax."
   },
   {
    "id": "precinct-24-6-500-employee-corporate-tax-for-youth-jobs-and-social-services",
@@ -13946,7 +14720,8 @@
     "type": "precinct",
     "ward": "24",
     "precinct": "6"
-   }
+   },
+   "plain": "Advisory, by petition in a handful of precincts. During the 2026 city budget fight, Mayor Johnson proposed a “head tax” of $33 per employee on companies with 500 or more workers (about 175 firms, grocery stores and nonprofits excluded) to fund youth jobs, mental-health care and violence prevention; the City Council did not adopt it. A “yes” asks your alderperson to vote for such a tax."
   },
   {
    "id": "precinct-24-12-500-employee-corporate-tax-for-youth-jobs-and-social-services",
@@ -13956,7 +14731,8 @@
     "type": "precinct",
     "ward": "24",
     "precinct": "12"
-   }
+   },
+   "plain": "Advisory, by petition in a handful of precincts. During the 2026 city budget fight, Mayor Johnson proposed a “head tax” of $33 per employee on companies with 500 or more workers (about 175 firms, grocery stores and nonprofits excluded) to fund youth jobs, mental-health care and violence prevention; the City Council did not adopt it. A “yes” asks your alderperson to vote for such a tax."
   },
   {
    "id": "precinct-21-10-continue-to-prohibit-status-of-retail-alcohol-sales-in-ward-21-precinct-10",
@@ -13966,7 +14742,8 @@
     "type": "precinct",
     "ward": "21",
     "precinct": "10"
-   }
+   },
+   "plain": "Binding, under Illinois’ local-option law, and only for this precinct, which has voted itself “dry.” A “yes” keeps the ban on stores and bars selling alcohol there; a “no” lifts it."
   }
  ],
  "earlyVotingSites": {

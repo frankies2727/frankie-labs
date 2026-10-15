@@ -513,7 +513,7 @@ export function KnowYourBallot() {
                   <p><strong>Keep these judges?</strong> Retention is a yes or no on each sitting judge, with no opponent; a judge stays with at least 60% yes.</p>
                   <p><strong>Referenda.</strong> Yes or no on each question; which ones you see depends on your ward or precinct.</p>
                 </HowBallotWorks>
-                <Feed onJump={(id) => jumpTo(sectionFor(id), id)} items={[
+                <Feed storageKey="kyb-il-feed-open" onJump={(id) => jumpTo(sectionFor(id), id)} items={[
                   ...changeItems(data.changes ?? [], (c) => (c.kind === 'money'
                     ? { name: 'FEC and Illinois State Board of Elections filings', url: data.sources.money.url }
                     : { name: 'Chicago Board of Elections candidate list', url: data.sources.candidates.page })),

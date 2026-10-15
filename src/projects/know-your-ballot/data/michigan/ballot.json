@@ -253,7 +253,8 @@
       "instagram": "https://www.instagram.com/esavit/",
       "youtube": "https://www.youtube.com/@EliForMichigan",
       "tiktok": "https://www.tiktok.com/@esavit",
-      "linkedin": "https://www.linkedin.com/in/eli-savit-3981956/"
+      "linkedin": "https://www.linkedin.com/in/eli-savit-3981956/",
+      "bluesky": "https://bsky.app/profile/esavit.bsky.social"
      },
      "photo": {
       "file": "kyb-photos/michigan/eli-savit-attorney-general.jpg",
@@ -542,6 +543,12 @@
       "x": "https://x.com/collins4misboe",
       "instagram": "https://www.instagram.com/collins4misboe/",
       "linkedin": "https://www.linkedin.com/in/terence-collins-5566b511/"
+     },
+     "photo": {
+      "file": "kyb-photos/michigan/terence-collins-member-of-the-state-board-of-education.jpg",
+      "credit": "Terence Collins (their campaign site)",
+      "link": "https://collins4misboe.com/",
+      "from": "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=907,fit=crop/QbOwK6VH31OvwoXb/headshot-Hydpe1R1DPpmV7s4.png"
      }
     },
     {
@@ -758,6 +765,12 @@
      "social": {
       "instagram": "https://www.instagram.com/votemakled",
       "tiktok": "https://www.tiktok.com/@attorneymakled"
+     },
+     "photo": {
+      "file": "kyb-photos/michigan/amir-makled-regent-of-the-university-of-michigan.jpg",
+      "credit": "Amir Makled (their campaign site)",
+      "link": "https://amirmakled.com/",
+      "from": "https://amirmakled.com/wp-content/uploads/2026/01/amir-headshot7.png"
      }
     },
     {
@@ -944,7 +957,18 @@
     {
      "ballot": 6,
      "name": "Will White",
-     "party": "Libertarian"
+     "party": "Libertarian",
+     "social": {
+      "facebook": "https://www.facebook.com/will.t.white.31",
+      "youtube": "https://www.youtube.com/channel/UCWm-MFTHY3BLMA-v0agOeBw",
+      "linkedin": "https://www.linkedin.com/in/will-tyler-white-cecd-198b578/"
+     },
+     "photo": {
+      "file": "kyb-photos/michigan/will-white-trustee-of-michigan-state-university.jpg",
+      "credit": "Ballotpedia",
+      "link": "https://ballotpedia.org/Will_Tyler_White",
+      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/WillTaylorWhite.jpg"
+     }
     },
     {
      "ballot": 7,
@@ -1047,6 +1071,12 @@
       "x": "https://x.com/AndyAnuzis4WSU",
       "instagram": "https://www.instagram.com/andyanuzis4wsu",
       "linkedin": "https://www.linkedin.com/in/andy-anuzis-08641b1/"
+     },
+     "photo": {
+      "file": "kyb-photos/michigan/andy-anuzis-governor-of-wayne-state-university.jpg",
+      "credit": "Andy Anuzis (their campaign site)",
+      "link": "https://andyforwaynestate.com/",
+      "from": "https://andyforwaynestate.com/wp-content/uploads/2026/01/Anuzis_002-scaled.jpg"
      }
     },
     {
@@ -1071,7 +1101,17 @@
     {
      "ballot": 5,
      "name": "Alex Avery",
-     "party": "Libertarian"
+     "party": "Libertarian",
+     "social": {
+      "facebook": "https://www.facebook.com/Alchav",
+      "x": "https://x.com/Alchav"
+     },
+     "photo": {
+      "file": "kyb-photos/michigan/alex-avery-governor-of-wayne-state-university.jpg",
+      "credit": "Ballotpedia",
+      "link": "https://ballotpedia.org/Alex_Avery",
+      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/AlexanderAvery2024.jpg"
+     }
     },
     {
      "ballot": 6,
@@ -1991,7 +2031,8 @@
       "x": "https://x.com/Pooley4Congress",
       "instagram": "https://www.instagram.com/pooley4congress/",
       "youtube": "https://www.youtube.com/@pooley4congress",
-      "tiktok": "https://www.tiktok.com/@pooley4congress"
+      "tiktok": "https://www.tiktok.com/@pooley4congress",
+      "bluesky": "https://bsky.app/profile/pooley4congress.bsky.social"
      },
      "photo": {
       "file": "kyb-photos/michigan/ray-pooley-cd-9.jpg",
@@ -2265,7 +2306,8 @@
       "facebook": "https://www.facebook.com/EthanBakerMI/?utm_source=chatgpt.com",
       "instagram": "https://www.instagram.com/ethanbakermi/",
       "youtube": "https://www.youtube.com/@mayorethanbaker",
-      "linkedin": "https://www.linkedin.com/in/ethan-baker-97b15bb9"
+      "linkedin": "https://www.linkedin.com/in/ethan-baker-97b15bb9",
+      "x": "https://x.com/EthanBakerMI"
      },
      "photo": {
       "file": "kyb-photos/michigan/ethan-baker-cd-11.jpg",
@@ -2574,7 +2616,16 @@
      "ballot": 2,
      "name": "Patrick O'Connell",
      "party": "Republican",
-     "profile": "https://ballotpedia.org/Patrick_O&#39;Connell"
+     "profile": "https://ballotpedia.org/Patrick_O&#39;Connell",
+     "social": {
+      "facebook": "https://www.facebook.com/PatrickOconnellforStateSenate"
+     },
+     "photo": {
+      "file": "kyb-photos/michigan/patrick-o-connell-sldu-1.jpg",
+      "credit": "Ballotpedia",
+      "link": "https://ballotpedia.org/Patrick_O'Connell",
+      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Patrick_O_Connell-7_fixed.jpg"
+     }
     }
    ],
    "writeIn": true,
@@ -2668,7 +2719,9 @@
       "x": "https://x.com/CONYERSTHREE",
       "instagram": "https://www.instagram.com/johnconyers",
       "facebook": "https://www.facebook.com/JohnConyersThird",
-      "linkedin": "https://www.linkedin.com/in/johnconyers3/"
+      "linkedin": "https://www.linkedin.com/in/johnconyers3/",
+      "tiktok": "https://tiktok.com/@conyersthree",
+      "youtube": "https://www.youtube.com/@conyersformichigan"
      },
      "photo": {
       "file": "kyb-photos/michigan/john-conyers-iii-sldu-3.jpg",
@@ -2745,7 +2798,8 @@
      "profile": "https://ballotpedia.org/Marcie_Grzywacz",
      "website": "https://www.marcieg.com/",
      "social": {
-      "facebook": "https://www.facebook.com/MarcieGforSenate/"
+      "facebook": "https://www.facebook.com/MarcieGforSenate/",
+      "instagram": "https://instagram.com/marcie_grzywacz"
      },
      "photo": {
       "file": "kyb-photos/michigan/marcie-grzywacz-sldu-4.jpg",
@@ -3045,7 +3099,8 @@
      "social": {
       "facebook": "https://www.facebook.com/61576839915099/",
       "instagram": "https://www.instagram.com/cicchiniformi/",
-      "youtube": "https://www.youtube.com/@CicchiniforMIStateSenate"
+      "youtube": "https://www.youtube.com/@CicchiniforMIStateSenate",
+      "tiktok": "https://www.tiktok.com/@cicchiniformi"
      },
      "photo": {
       "file": "kyb-photos/michigan/philippe-cicchini-sldu-9.jpg",
@@ -3552,6 +3607,12 @@
      "social": {
       "facebook": "https://www.facebook.com/61576481740383/",
       "x": "https://x.com/ShaunYoung2026"
+     },
+     "photo": {
+      "file": "kyb-photos/michigan/shaun-young-sldu-19.jpg",
+      "credit": "Shaun Young (their campaign site)",
+      "link": "https://www.shaun-for-state-senate.com/",
+      "from": "https://primary.jwwb.nl/public/g/u/i/temp-plebopkelsghxapxdnsm/1000006404-high.jpg?enable-io=true&enable=upscale&crop=1%3A1&width=800"
      }
     }
    ],
@@ -3655,6 +3716,12 @@
      "social": {
       "facebook": "https://www.facebook.com/JoshBurnsForStateSenate",
       "x": "https://x.com/JoshBurnsForMI"
+     },
+     "photo": {
+      "file": "kyb-photos/michigan/josh-burns-sldu-21.jpg",
+      "credit": "Josh Burns (their campaign site)",
+      "link": "https://joshburns.me/",
+      "from": "https://joshburns.me/joshburns-profile.jpg"
      }
     }
    ],
@@ -3697,6 +3764,12 @@
      "website": "https://www.mikemurphyforsenate.com/",
      "social": {
       "facebook": "https://www.facebook.com/mikemurphymi"
+     },
+     "photo": {
+      "file": "kyb-photos/michigan/mike-murphy-sldu-22.jpg",
+      "credit": "Mike Murphy (their campaign site)",
+      "link": "https://www.mikemurphyforsenate.com/",
+      "from": "https://static.wixstatic.com/media/c142ea_53c028698f104aabbece4e3f76e33d72~mv2.png"
      }
     }
    ],
@@ -3825,6 +3898,12 @@
       "facebook": "https://www.facebook.com/AprilOsentoski/",
       "instagram": "https://www.instagram.com/aprilosentoski/",
       "linkedin": "https://www.linkedin.com/in/april-osentoski-957386308/"
+     },
+     "photo": {
+      "file": "kyb-photos/michigan/april-osentoski-sldu-25.jpg",
+      "credit": "April Osentoski (their campaign site)",
+      "link": "https://www.aprilformichigan.com/",
+      "from": "https://static.wixstatic.com/media/a42fb5_86b05e770afe42e5a00ca5397d24ab8d~mv2.jpg"
      }
     },
     {
@@ -3835,7 +3914,8 @@
      "website": "https://www.beelerformichigan.com",
      "social": {
       "facebook": "https://www.facebook.com/andrewbeeler26/",
-      "linkedin": "https://www.linkedin.com/in/andrew-beeler-8a849097/"
+      "linkedin": "https://www.linkedin.com/in/andrew-beeler-8a849097/",
+      "instagram": "https://www.instagram.com/andrewwbeeler"
      },
      "photo": {
       "file": "kyb-photos/michigan/andrew-beeler-sldu-25.jpg",
@@ -4201,7 +4281,8 @@
       "instagram": "https://www.instagram.com/rebeccaamidonformi/",
       "youtube": "https://www.youtube.com/@rebeccaamidon5499",
       "tiktok": "https://www.tiktok.com/@rebecca.amidon.for.mi",
-      "linkedin": "https://www.linkedin.com/in/rebeccaamidon/"
+      "linkedin": "https://www.linkedin.com/in/rebeccaamidon/",
+      "bluesky": "https://bsky.app/profile/rebeccaamidonformi.bsky.social"
      },
      "photo": {
       "file": "kyb-photos/michigan/rebecca-amidon-sldu-32.jpg",
@@ -4613,7 +4694,8 @@
      "website": "https://www.joannawhaley.com/",
      "social": {
       "facebook": "https://www.facebook.com/joannawhaleyofficial/",
-      "instagram": "https://www.instagram.com/joannawhaleyofficial/"
+      "instagram": "https://www.instagram.com/joannawhaleyofficial/",
+      "tiktok": "https://www.tiktok.com/@joannawhaleyofficial"
      },
      "photo": {
       "file": "kyb-photos/michigan/joanna-whaley-sldl-2.jpg",
@@ -4881,7 +4963,8 @@
      "social": {
       "facebook": "https://www.facebook.com/cghforstaterep",
       "x": "https://x.com/_cg_h",
-      "linkedin": "https://www.linkedin.com/in/christopher-gilmer-hill-baa27b1a9/"
+      "linkedin": "https://www.linkedin.com/in/christopher-gilmer-hill-baa27b1a9/",
+      "instagram": "https://www.instagram.com/313cgh"
      },
      "photo": {
       "file": "kyb-photos/michigan/chris-gilmer-hill-sldl-8.jpg",
@@ -5562,7 +5645,8 @@
      "website": "https://www.mcintyreformichigan.com/",
      "social": {
       "facebook": "https://www.facebook.com/McIntyreForMichigan",
-      "linkedin": "https://www.linkedin.com/in/lisa-mcintyre-for-michigan"
+      "linkedin": "https://www.linkedin.com/in/lisa-mcintyre-for-michigan",
+      "instagram": "https://www.instagram.com/lisamcintyreformichigan"
      },
      "photo": {
       "file": "kyb-photos/michigan/lisa-mcintyre-sldl-22.jpg",
@@ -7035,7 +7119,8 @@
      "website": "https://www.staceymcduffie.com/",
      "social": {
       "facebook": "https://www.facebook.com/profile.php?id=61569224484498",
-      "instagram": "https://www.instagram.com/votestaceymcduffie/"
+      "instagram": "https://www.instagram.com/votestaceymcduffie/",
+      "tiktok": "https://www.tiktok.com/@stacey.mcduffie.d"
      },
      "photo": {
       "file": "kyb-photos/michigan/stacey-mcduffie-sldl-51.jpg",
@@ -7085,7 +7170,8 @@
      "website": "https://www.electleddy.org/",
      "social": {
       "facebook": "https://www.facebook.com/profile.php?id=61588936582556",
-      "linkedin": "https://www.linkedin.com/in/brendan-leddy-4398671a5/"
+      "linkedin": "https://www.linkedin.com/in/brendan-leddy-4398671a5/",
+      "instagram": "https://www.instagram.com/brendanleddyforstaterep"
      },
      "photo": {
       "file": "kyb-photos/michigan/brendan-leddy-sldl-52.jpg",
@@ -7287,7 +7373,8 @@
       "instagram": "https://www.instagram.com/electsharonmac/",
       "youtube": "https://www.youtube.com/@RepMacDonell",
       "tiktok": "https://www.tiktok.com/@electsharonmac",
-      "linkedin": "https://www.linkedin.com/in/sharonmacd/"
+      "linkedin": "https://www.linkedin.com/in/sharonmacd/",
+      "bluesky": "https://bsky.app/profile/electsharonmac.bsky.social"
      },
      "photo": {
       "file": "kyb-photos/michigan/sharon-macdonell-sldl-56.jpg",
@@ -8745,7 +8832,13 @@
      "name": "Richard Abraham",
      "party": "Democratic",
      "profile": "https://ballotpedia.org/Richard_Abraham",
-     "website": "https://abrahamfor85.com/"
+     "website": "https://abrahamfor85.com/",
+     "photo": {
+      "file": "kyb-photos/michigan/richard-abraham-sldl-85.jpg",
+      "credit": "Richard Abraham (their campaign site)",
+      "link": "https://abrahamfor85.com/",
+      "from": "https://abrahamfor85.com/wp-content/uploads/2026/03/richcoat2-562x1024.jpg"
+     }
     },
     {
      "ballot": 2,
@@ -9083,7 +9176,9 @@
      "profile": "https://ballotpedia.org/Luke_Del_Castillo",
      "website": "https://ivoteluke.com",
      "social": {
-      "facebook": "https://www.facebook.com/IVoteLuke"
+      "facebook": "https://www.facebook.com/IVoteLuke",
+      "instagram": "https://instagram.com/ivoteluke",
+      "tiktok": "https://tiktok.com/@ivoteluke"
      },
      "photo": {
       "file": "kyb-photos/michigan/luke-del-castillo-sldl-92.jpg",
@@ -9187,7 +9282,13 @@
      "social": {
       "facebook": "https://www.facebook.com/StateRepAmosONeal"
      },
-     "website": "https://housedems.com/amos-oneal/"
+     "website": "https://housedems.com/amos-oneal/",
+     "photo": {
+      "file": "kyb-photos/michigan/amos-o-neal-sldl-94.jpg",
+      "credit": "Ballotpedia",
+      "link": "https://ballotpedia.org/Amos_O'Neal",
+      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Amos-ONeal.jpg"
+     }
     },
     {
      "ballot": 2,

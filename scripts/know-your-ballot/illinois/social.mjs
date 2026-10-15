@@ -9,12 +9,14 @@
 //      is an Illinois or Chicago politician, judge or the like. Wikidata also
 //      gives an official website when we have none.
 //   4. The candidate's own campaign website (from their State Board filing,
-//      Open States or Wikidata): the social links anywhere on its home page
-//      (links, embedded Facebook page boxes, page metadata), kept only when the
-//      account name carries part of the candidate's name or their initials.
-//      Sites also link to their party caucus, their web designer or a theme
-//      vendor. Sites that turn away plain requests are read in a real browser.
-//      Vote Smart / Ballotpedia profile pages aren't campaign sites.
+//      Open States, Wikidata or Ballotpedia): the social links anywhere on its
+//      home page (links, embedded Facebook page boxes, page metadata), kept
+//      when the account name carries part of the candidate's name or their
+//      initials, or reads as a campaign account ("vote…", "…forjudge",
+//      "…4staterep"). Sites also link to their party caucus, their web designer
+//      or a theme vendor; those are never taken. Sites are read with a
+//      browser's headers (many turn away plain requests), then in a real
+//      browser. Vote Smart / Ballotpedia profile pages aren't campaign sites.
 // Earlier sources win when two disagree.
 //
 // The same matches give each candidate a photo source (`photoFrom`, turned into
@@ -198,7 +200,8 @@ async function wikidataSearch(names, st) {
 // ---- 4. Campaign websites ------------------------------------------------------------------
 const PATTERNS = {
   x: /^https?:\/\/(?:www\.)?(?:x|twitter)\.com\/(?!intent|share|home|search|hashtag)([A-Za-z0-9_]{1,15})\/?$/i,
-  facebook: /^https?:\/\/(?:www\.|m\.)?facebook\.com\/(?!sharer|share|dialog|plugins|tr\b|profile\.php)([\w.-]+)\/?$/i,
+  // Pages come as /<name>, /people/<name>/<id> or /p/<name>-<id>.
+  facebook: /^https?:\/\/(?:www\.|m\.)?facebook\.com\/(?!sharer|share|dialog|plugins|tr\b|profile\.php|people\/?$|p\/?$)((?:people\/|p\/)?[\w.-]+(?:\/\d+)?)\/?$/i,
   instagram: /^https?:\/\/(?:www\.)?instagram\.com\/(?!p\/|explore)([\w.]+)\/?$/i,
   youtube: /^https?:\/\/(?:www\.)?youtube\.com\/((?:@|channel\/|c\/|user\/)[\w.-]+)\/?$/i,
   tiktok: /^https?:\/\/(?:www\.)?tiktok\.com\/@([\w.]+)\/?$/i,
@@ -217,7 +220,11 @@ const initials = (name) => {
   const words = fold(name.split(' & ')[0]).replace(/["“”][^"“”]*["“”]/g, ' ').split(/[^a-z]+/).filter((w) => w && !['jr', 'sr', 'ii', 'iii', 'iv'].includes(w));
   return words.length >= 3 ? words.map((w) => w[0]).join('') : null;
 };
-const isTheirs = (handle, name) => nameParts(name).some((w) => handle.includes(w)) || (initials(name) && handle.includes(initials(name)));
+/** A handle that reads as a campaign's ("votejalal", "citizensforaasi", "teamshanahan", "judgefinkle"), on the candidate's own site. */
+const CAMPAIGN = /^(?:vote|elect|team|friendsof|citizensfor|committeetoelect|judge|re-?elect)|(?:for|4)(?:judge|rep|staterep|senate|statesenate|congress|cook|cps|il|illinois|mi|michigan|state|county|district|the|wsu|msu|um|boe|sos|ag|gov)/;
+// Who else a campaign site links to: its web platform, a theme vendor, a party caucus.
+const VENDOR = /squarespace|wix|wordpress|godaddy|weebly|nationbuilder|axiomthemes|elementor|themes?$|housedems|senatedems|housegop|senategop|caucus|minorityleader|majorityleader|illinoishouse|illinoissenate|michiganhouse|michigansenate|statedems|stategop|democrats$|republicans$|^fbml$/;
+const isTheirs = (handle, name) => !VENDOR.test(handle) && (nameParts(name).some((w) => handle.includes(w)) || (initials(name) && handle.includes(initials(name))) || CAMPAIGN.test(handle));
 
 // Every social link on a page, wherever it sits: links, embedded Facebook page
 // boxes (…/plugins/page.php?href=<the page>), and page metadata (JSON-LD sameAs).
@@ -234,15 +241,20 @@ function socialLinks(html) {
 }
 
 const NOT_A_SITE = /votesmart\.org|ballotpedia\.org/i;
-// A bot check or an empty shell instead of the real page.
-const looksReal = (html) => html.length > 3000 && !/just a moment|cf-chl|attention required|captcha|access denied/i.test(html.slice(0, 20_000));
+// A bot check or an empty shell instead of the real page. (Not "captcha"
+// alone: site builders load reCAPTCHA scripts on every real page.)
+const looksReal = (html) => html.length > 3000 && !/just a moment|cf-chl|attention required|access denied|verify you are human|challenge-platform/i.test(html.slice(0, 20_000));
+
+const BROWSER_UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0 Safari/537.36';
+/** The page as a browser would get it (curl, with a browser's headers); '' if it can't be read. */
+function curlPage(url) {
+  try {
+    return execFileSync('curl', ['-sSL', '--compressed', '--max-time', '30', '--max-filesize', '4000000', '-A', BROWSER_UA, '-H', 'Accept: text/html,*/*;q=0.8', '-H', 'Accept-Language: en-US,en;q=0.9', url], { maxBuffer: 8e6, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).slice(0, 2_000_000);
+  } catch { return ''; }
+}
 
 async function fromWebsite(url, name, render) {
-  let html = '';
-  try {
-    const res = await fetch(url, { headers: { 'User-Agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(12_000) });
-    if (res.ok) html = (await res.text()).slice(0, 2_000_000);
-  } catch { /* try the browser */ }
+  let html = curlPage(url);
   if (!looksReal(html) && render) {
     try { html = await render(url); } catch { /* down or behind a bot check */ }
   }

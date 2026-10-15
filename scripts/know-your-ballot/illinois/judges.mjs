@@ -1,14 +1,19 @@
 // Judges: what voters can't easily find elsewhere on one screen.
 //   - Injustice Watch's Cook County judicial guide
 //     (https://2026retention.injusticewatch.org/): a link to each judge's
-//     profile, each bar group's rating of the judges up for retention, and
-//     judges who withdrew after the ballots were printed (still on the ballot,
-//     votes not counted), whom the Board's candidate list leaves out. Their
-//     reporting itself stays on their site: we link to it, not copy it.
+//     profile, the judge's photo from it (credited and linked), each bar
+//     group's rating of the judges up for retention, and judges who withdrew
+//     after the ballots were printed (still on the ballot, votes not
+//     counted), whom the Board's candidate list leaves out. Their reporting
+//     itself stays on their site: we link to it, not copy it.
 //   - The Alliance of Bar Associations for Judicial Screening
 //     (https://www.voteforjudges.org/): each member group's rating of every
 //     candidate in a contested judgeship.
 // Ratings are kept per group ({ CCL: "Recommended", ... }); the page draws them.
+
+import { existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { imageType, shrink } from './photos.mjs';
 
 const SITE = 'https://2026retention.injusticewatch.org/';
 const DATA = `${SITE}cacheddata/current-en.json`;
@@ -20,6 +25,8 @@ const key = (s) => fold(s).replace(/[^a-z]/g, '');
 // The judge whose seat it was: "Curry, Jr." and "McLean Meyerson" vs "Meyerson".
 const seat = (s) => key(s.replace(/,?\s*Jr\.?$/i, ''));
 const vacatedSeat = (office) => seat(office.match(/(?:Vacancy|Judgeship) of ([^)]+)\)/)?.[1] ?? '');
+/** The guide's photo of a judge, as its URL on the site; most judges have one. */
+const photoUrl = (c) => { const f = c.photo_provided?.[0]?.filename; return f ? `${SITE}images/candidates/${encodeURIComponent(f)}` : undefined; };
 // Their profile pages: /candidate/<name as a slug>-<candidate id>.
 const profileUrl = (c) => `${SITE}candidate/${fold(c.nameFormatted).replace(/['’.]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}-${c.candidateId}`;
 
@@ -119,11 +126,12 @@ function fromGuide(guide, alliance, races) {
   const judges = guide.filter((r) => r.raceType === 'Retention').flatMap((r) => r.candidates.map((c) => ({
     id: `retain-${fold(c.nameFormatted).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`,
     court: r.level, judge: c.nameFormatted, profile: profileUrl(c), bar: barRatings(c),
-    withdrawn: /\bwithdrew\b/i.test(c.notable ?? '') || undefined,
+    withdrawn: /\bwithdrew\b/i.test(c.notable ?? '') || undefined, photoFrom: photoUrl(c),
   })));
   // Contested judgeships: "Burke Vacancy" ~ "(Vacancy of Burke)" or
   // "(… Associate Judgeship of Baird)", then the candidate's last name.
   const profiles = new Map();
+  const photos = new Map();
   const bars = new Map();
   const judicial = races.filter((r) => /^Judge/.test(r.office));
   for (const v of guide.filter((r) => r.raceType === 'Vacancy')) {
@@ -131,7 +139,7 @@ function fromGuide(guide, alliance, races) {
     const race = judicial.find((r) => vacatedSeat(r.office).endsWith(vacated));
     for (const c of v.candidates) {
       const cand = race?.candidates.find((x) => key(x.name).includes(key(c.lastName)));
-      if (cand) profiles.set(`${race.id}|${cand.name}`, profileUrl(c));
+      if (cand) { profiles.set(`${race.id}|${cand.name}`, profileUrl(c)); if (photoUrl(c)) photos.set(`${race.id}|${cand.name}`, photoUrl(c)); }
     }
   }
   for (const j of judges) {
@@ -146,31 +154,67 @@ function fromGuide(guide, alliance, races) {
       if (cand && Object.keys(c.bar).length) bars.set(`${race.id}|${cand.name}`, { bar: c.bar, source: c.source });
     }
   }
-  return { judges, profiles, bars };
+  return { judges, profiles, photos, bars };
 }
 
 /** The same, from the last build, for when a source can't be read. */
 const byCandidate = (prev, field, value = (c) => c[field]) => new Map((prev?.races ?? []).flatMap((r) => r.candidates.filter((c) => c[field]).map((c) => [`${r.id}|${c.name}`, value(c)])));
 const fromPrev = (prev) => ({
-  judges: prev?.retentions ?? [],
+  judges: (prev?.retentions ?? []).map((r) => ({ ...r, photoFrom: r.photo?.from })),
   profiles: byCandidate(prev, 'profile'),
+  photos: byCandidate(prev, 'photo', (c) => (c.photo.credit === CREDIT ? c.photo.from : undefined)),
   bars: byCandidate(prev, 'bar', (c) => ({ bar: c.bar, source: c.barSource })),
 });
 
+const CREDIT = 'Injustice Watch';
+const slug = (s) => fold(s).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
 /**
- * Adds `profile` and `bar` to `ballot.retentions` and to judicial candidates,
- * and slots in withdrawn judges. The Board's list sets the order.
+ * The guide's photo of a judge, saved with the site as `retain-<name>.jpg`
+ * (the candidates' photo step leaves files named so alone). `old` is the
+ * last build's photo for them, kept if the site can't be read today.
  */
-export async function addJudges(ballot, prev) {
+async function savePhoto(url, name, link, old, { dir, publicPath }) {
+  const file = `retain-${slug(name)}.jpg`;
+  if (old?.from === url && existsSync(join(dir, file))) return old;
+  const res = await fetch(url, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(30_000) });
+  if (!res.ok) throw new Error(`${url}: HTTP ${res.status}`);
+  const raw = Buffer.from(await res.arrayBuffer());
+  const type = imageType(raw);
+  if (!type) throw new Error(`${url}: not an image`);
+  writeFileSync(join(dir, file), shrink(raw, type).bytes);
+  return { file: `${publicPath}/${file}`, credit: CREDIT, link, from: url };
+}
+
+/**
+ * Adds `profile`, `photo` and `bar` to `ballot.retentions` and to judicial
+ * candidates, and slots in withdrawn judges. The Board's list sets the order.
+ * Photos go in `dir` (served at `publicPath`).
+ */
+export async function addJudges(ballot, prev, { dir, publicPath }) {
   let found, note = '';
   try { found = fromGuide(await fetchGuide(), await fetchAlliance(), ballot.races); } catch (e) { found = fromPrev(prev); note = ` (${e.message}; kept the last copy)`; }
-  const { judges, profiles, bars } = found;
+  const { judges, profiles, photos, bars } = found;
+  mkdirSync(dir, { recursive: true });
+  const log = [];
+  let saved = 0;
+  const photoFor = async (url, name, link, old) => {
+    if (!url) return undefined;
+    try { const p = await savePhoto(url, name, link, old, { dir, publicPath }); saved++; return p; } catch (e) {
+      log.push(`  photo for ${name}: ${e.message.slice(0, 100)}`);
+      return old?.credit === CREDIT && existsSync(join(dir, old.file.split('/').pop())) ? old : undefined;
+    }
+  };
 
   const details = new Map(judges.map((j) => [key(j.judge), j]));
-  const retentions = ballot.retentions.map((r) => {
+  const prevRetention = new Map((prev?.retentions ?? []).map((r) => [r.id, r]));
+  const retentions = [];
+  for (const r of ballot.retentions) {
     const j = details.get(key(r.judge));
-    return j ? { ...r, profile: j.profile, bar: j.bar, barSource: j.barSource } : r;
-  });
+    if (!j) { retentions.push(r); continue; }
+    const photo = await photoFor(j.photoFrom, r.judge, j.profile, prevRetention.get(r.id)?.photo);
+    retentions.push({ ...r, profile: j.profile, bar: j.bar, barSource: j.barSource, ...(photo ? { photo } : {}) });
+  }
   // A withdrawn judge goes back in after the judge they followed in the guide.
   judges.forEach((j, i) => {
     if (!j.withdrawn || retentions.some((r) => key(r.judge) === key(j.judge))) return;
@@ -180,12 +224,21 @@ export async function addJudges(ballot, prev) {
   ballot.retentions = retentions;
 
   let linked = 0, rated = 0, total = 0;
+  const prevCandidate = new Map((prev?.races ?? []).flatMap((x) => x.candidates.map((c) => [`${x.id}|${c.name}`, c])));
   for (const r of ballot.races) for (const c of r.candidates) {
     const url = profiles.get(`${r.id}|${c.name}`);
     if (url) { c.profile = url; linked++; } else delete c.profile;
+    // The guide's photo, for a judicial candidate nothing else has a photo of.
+    const old = prevCandidate.get(`${r.id}|${c.name}`)?.photo;
+    if (!c.photo || c.photo.credit === CREDIT) {
+      const photo = await photoFor(photos.get(`${r.id}|${c.name}`), c.name, url, old?.credit === CREDIT ? old : undefined);
+      if (photo) c.photo = photo; else if (c.photo?.credit === CREDIT) delete c.photo;
+    }
     const rating = bars.get(`${r.id}|${c.name}`);
     if (rating) { c.bar = rating.bar; c.barSource = rating.source; rated++; } else { delete c.bar; delete c.barSource; }
     if (/^Judge/.test(r.office)) total++;
   }
-  return { log: [`judges: ${retentions.filter((r) => r.bar).length}/${retentions.length} retentions rated, ${retentions.filter((r) => r.withdrawn).length} withdrawn, ${linked}/${total} judicial candidates linked, ${rated}/${total} rated${note}`] };
+  const used = new Set([...retentions, ...ballot.races.flatMap((r) => r.candidates)].filter((x) => x.photo).map((x) => x.photo.file.split('/').pop()));
+  for (const f of readdirSync(dir)) if (f.startsWith('retain-') && !used.has(f)) rmSync(join(dir, f));
+  return { log: [`judges: ${retentions.filter((r) => r.bar).length}/${retentions.length} retentions rated, ${retentions.filter((r) => r.photo).length} with a photo, ${retentions.filter((r) => r.withdrawn).length} withdrawn, ${linked}/${total} judicial candidates linked, ${rated}/${total} rated, ${saved} photos saved${note}`, ...log] };
 }
