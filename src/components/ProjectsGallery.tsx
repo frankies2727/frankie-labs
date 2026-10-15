@@ -111,9 +111,15 @@ export function ProjectsGallery({ projects, onSelect, onOpenGames }: ProjectsGal
                   <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white drop-shadow-md">
                     {project.name}
                   </h2>
-                  <p className="text-sm text-white mt-2 leading-snug drop-shadow-sm">
-                    {project.description}
-                  </p>
+                  {/* Paragraphs split on blank lines; one wrapped in ** is bold. */}
+                  {project.description.split(/\n\n+/).map((para, i) => {
+                    const bold = /^\*\*(.+)\*\*$/.exec(para);
+                    return (
+                      <p key={i} className="text-sm text-white mt-2 leading-snug drop-shadow-sm">
+                        {bold ? <strong>{bold[1]}</strong> : para}
+                      </p>
+                    );
+                  })}
                   <span className="inline-block mt-4 text-[10px] font-mono font-bold uppercase tracking-widest text-white group-hover:translate-x-1 transition-transform">
                     {project.href ? 'Visit ↗' : 'Open →'}
                   </span>

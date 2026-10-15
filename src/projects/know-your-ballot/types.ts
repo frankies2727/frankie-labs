@@ -165,7 +165,19 @@ export interface Change {
 export interface EarlyVotingSite { site: string; address: string; language?: string }
 
 /** A recent headline (scripts/know-your-ballot/news.mjs), with the outlet that wrote it. */
-export interface NewsItem { at: string; title: string; url: string; source: string }
+export interface NewsItem { at: string; title: string; url: string; source: string; /** "money" for campaign-finance stories. */ topic?: 'money' }
 
 /** The voter's districts, as resolved from their address. */
 export type Districts = Partial<Record<AreaType | 'precinct', string>>;
+
+/** A state's outline as an SVG path, with what's needed to place a point on it. */
+export interface Outline {
+  width: number;
+  height: number;
+  path: string;
+  /** [west, south, east, north] in degrees. */
+  bbox: [number, number, number, number];
+  /** Pixels per degree of longitude and latitude. */
+  kx: number;
+  ky: number;
+}

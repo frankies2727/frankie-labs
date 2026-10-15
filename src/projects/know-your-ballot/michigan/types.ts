@@ -18,15 +18,3 @@ export interface MichiganData {
   /** Recent headlines about the election, newest first. */
   news?: NewsItem[];
 }
-
-/** The state's outline as an SVG path, with what's needed to place a point on it. */
-export interface Outline {
-  width: number;
-  height: number;
-  path: string;
-  /** [west, south, east, north] in degrees. */
-  bbox: [number, number, number, number];
-  /** Pixels per degree of longitude and latitude. */
-  kx: number;
-  ky: number;
-}

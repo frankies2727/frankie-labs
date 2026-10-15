@@ -35,6 +35,7 @@ import { buildDistricts, buildStateDistricts, placesIn, touchesCook } from './il
 import { addProfiles } from './ballotpedia-profiles.mjs';
 import { addHeadshots } from './headshots.mjs';
 import { recentNews } from './news.mjs';
+import { buildOutline } from './michigan/districts.mjs';
 
 const OUT = 'src/projects/know-your-ballot/data/illinois';
 const PHOTOS_DIR = 'public/kyb-photos/illinois';
@@ -180,7 +181,7 @@ async function main() {
 
   // Headlines for the activity feed; Google News being down keeps yesterday's.
   let news = prev?.news ?? [];
-  try { news = await recentNews(['Illinois election 2026', 'Illinois governor race Pritzker Bailey', 'Illinois Senate race Stratton Tracy', 'Cook County election 2026', 'Chicago judicial retention 2026', 'Illinois ballot referendum 2026']); } catch (e) { console.warn(`news: ${e.message}; keeping the last copy`); }
+  try { news = await recentNews(['Illinois election 2026', 'Illinois governor race Pritzker Bailey', 'Illinois Senate race Stratton Tracy', 'Cook County election 2026', 'Chicago judicial retention 2026', 'Illinois ballot referendum 2026'], ['Illinois governor campaign fundraising', 'Illinois campaign contributions', 'Pritzker campaign money', 'Illinois Senate race campaign money', 'Cook County campaign contributions']); } catch (e) { console.warn(`news: ${e.message}; keeping the last copy`); }
   console.log(`News: ${news.length} headlines`);
 
   const next = { races: ballot.races, retentions: ballot.retentions, measures: ballot.measures };
@@ -212,6 +213,7 @@ async function main() {
   }, null, 1) + '\n');
   writeFileSync(join(OUT, 'districts.json'), JSON.stringify(districts) + '\n');
   writeFileSync(join(OUT, 'districts-il.json'), JSON.stringify(stateDistricts) + '\n');
+  writeFileSync(join(OUT, 'outline.json'), JSON.stringify(await buildOutline('17')) + '\n');
   console.log(`Wrote ${ballot.races.length} races, ${ballot.retentions.length} retentions, ${ballot.measures.length} measures.`);
 }
 

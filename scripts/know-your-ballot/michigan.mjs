@@ -177,7 +177,7 @@ async function main() {
 
   // Headlines for the activity feed; Google News being down keeps yesterday's.
   let news = prev?.news ?? [];
-  try { news = await recentNews(['Michigan election 2026', 'Michigan governor race Benson James', 'Michigan Senate race El-Sayed Rogers', 'Michigan ballot proposal 2026', 'Michigan Supreme Court election 2026']); } catch (e) { console.warn(`news: ${e.message}; keeping the last copy`); }
+  try { news = await recentNews(['Michigan election 2026', 'Michigan governor race Benson James', 'Michigan Senate race El-Sayed Rogers', 'Michigan ballot proposal 2026', 'Michigan Supreme Court election 2026'], ['Michigan governor campaign fundraising', 'Michigan election campaign donations super PAC', 'Michigan Senate race campaign money', 'Michigan campaign finance']); } catch (e) { console.warn(`news: ${e.message}; keeping the last copy`); }
   console.log(`News: ${news.length} headlines`);
 
   const next = { races, retentions: [], measures: PROPOSALS.map(({ plain, ...m }) => m) };

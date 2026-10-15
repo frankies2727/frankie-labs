@@ -308,7 +308,7 @@ export function KnowYourBallotMichigan() {
     <StateContext.Provider value={MICHIGAN}>
     <ReadOnlyContext.Provider value={!saved.place}>
     <GovbotChrome>
-    <div className="kyb min-h-[100dvh] bg-[var(--gb-bg)] text-[var(--gb-text)] selection:bg-[var(--mi-arboretum)] selection:text-[var(--gb-bg)]">
+    <div className="kyb kyb-mi min-h-[100dvh] bg-[var(--gb-bg)] text-[var(--gb-text)] selection:bg-[var(--mi-arboretum)] selection:text-[var(--gb-bg)]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pb-24 print:hidden">
         {!showBallot ? (
           <Landing

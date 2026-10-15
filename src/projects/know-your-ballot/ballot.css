@@ -19,22 +19,11 @@
 :root[data-theme="light"] { --kyb-orange: #A04A0C; }
 @media (prefers-color-scheme: light) { :root:not([data-theme]) { --kyb-orange: #A04A0C; } }
 
-/* The Capitol hero: govbot's line-art building with its Illinois flag waving
-   on the pole (same art and motion as govbot's elections page). */
-.kyb-capitol { position: relative; filter: drop-shadow(0 0 26px var(--gb-glow-primary)); }
-.kyb-capitol > img { display: block; width: 100%; height: auto; }
-:root[data-theme="light"] .kyb-capitol > img { filter: brightness(.58) saturate(1.5); }
-@media (prefers-color-scheme: light) { :root:not([data-theme]) .kyb-capitol > img { filter: brightness(.58) saturate(1.5); } }
-.kyb-capitol .kyb-flag { position: absolute; left: 50.3%; top: 2.4%; width: 13.8%; }
-.kyb-capitol .kyb-flag svg { display: block; width: 100%; height: auto; overflow: visible; }
-.kyb-wave { transform-box: fill-box; transform-origin: left center; animation: kyb-wave 3.2s ease-in-out infinite; }
-@keyframes kyb-wave {
-  0%, 100% { transform: rotate(0deg) skewX(0deg) scaleX(1); }
-  22% { transform: rotate(-1.2deg) skewX(5deg) scaleX(1.03); }
-  48% { transform: rotate(0.6deg) skewX(-3deg) scaleX(0.99); }
-  72% { transform: rotate(-0.8deg) skewX(3deg) scaleX(1.01); }
-}
-@media (prefers-reduced-motion: reduce) { .kyb-wave { animation: none; } }
+/* The state-outline hero: it glows; the "you are here" pin breathes. */
+.kyb-map { display: block; width: 100%; height: auto; filter: drop-shadow(0 0 28px var(--kyb-map-glow, var(--gb-glow-primary))); }
+.kyb-pin-ring { transform-box: fill-box; transform-origin: center; animation: kyb-pin 1.8s ease-out infinite; }
+@keyframes kyb-pin { 0% { transform: scale(0.6); opacity: 0.6; } 100% { transform: scale(1.8); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .kyb-pin-ring { animation: none; } }
 
 /* Anything scrolled to (a focused field, a jumped-to card) lands below
    govbot's sticky header, not under it. */

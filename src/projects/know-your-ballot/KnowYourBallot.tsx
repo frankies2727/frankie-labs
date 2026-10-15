@@ -5,7 +5,8 @@ import { ballotFor, ballotIdsFor, districtsAt, geocode, inChicago, inCook, inIll
 import { RETENTION_EXPLAINER } from './offices';
 import { BallotSearch, type Hit } from './Search';
 import { GovbotChrome } from './GovbotChrome';
-import { Capitol } from './Hero';
+import { StateMap } from './Hero';
+import outline from './data/illinois/outline.json';
 import { GaugeDefs } from './BarRatings';
 import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Ring, SectionCards, useBallotView, useDocumentMeta, type SectionCard } from './Bits';
 import { ReadOnlyContext } from './state';
@@ -24,7 +25,7 @@ import { billUrl } from './Laws';
 import { forVoter, NOV_3 } from './dates';
 import { drawShareCard, shareCard } from './share';
 import { daysUntil, hasProgress, isDecided, today, readResumeLink, resumeLink, useOpen, useSaved, type Choice, type Saved } from './store';
-import type { BallotData, Candidate, Districts, Race } from './types';
+import type { BallotData, Candidate, Districts, Outline, Race } from './types';
 
 const data = rawData as unknown as BallotData;
 const ballotIds = (d: Districts) => ballotIdsFor(data, d);
@@ -671,6 +672,9 @@ export function KnowYourBallot() {
 
 // ---- pieces ------------------------------------------------------------------------
 
+/** Illinois in govbot's blues and primary green, pinned in gold. */
+const IL_MAP = { fill: ['var(--gb-blue-hi)', 'var(--gb-primary)', 'var(--gb-blue)'] as [string, string, string], stroke: 'var(--kyb-gold)', pin: 'var(--kyb-gold)', pinStroke: 'var(--gb-bg)' };
+
 function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, onSearchJump, onOpenRace, onOpenCandidate, onOpenSection, place, onContinue, daysLeft, saved, onStartFresh }: {
   address: string; setAddress: (s: string) => void; status: { busy: boolean; error: string; outside: boolean };
   onSubmit: (e: FormEvent) => void; onLocate: () => void; onBrowse: () => void; onSearchJump: (h: Hit) => void; onOpenRace: (r: Race) => void; onOpenCandidate: (r: Race, c: Candidate) => void;
@@ -691,18 +695,17 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
   }, []);
   return (
     <div className="space-y-8 pt-2 [&>*:not(header,.kyb-wide)]:max-w-3xl">
-      {/* govbot's elections hero: overline, serif title, the Capitol. */}
       <header className="flex flex-col-reverse md:flex-row md:items-center gap-4 md:gap-10">
         <div className="min-w-0 flex-1 space-y-3">
-          <p className="text-[13px] font-bold uppercase tracking-[0.18em]">Chicago &amp; Illinois · 2026–2027</p>
-          <h1 className="text-[40px] sm:text-5xl leading-[1.02]">Illinois Elections</h1>
-          <p className="font-[family-name:var(--gb-font-display)] text-xl">Know who’s on your ballot before you vote.</p>
+          <p className="text-[13px] font-bold uppercase tracking-[0.18em]">Illinois · 2026 midterms</p>
+          <h1 className="text-[40px] sm:text-5xl leading-[1.02]">Know Your Illinois Ballot</h1>
+          <p className="font-[family-name:var(--gb-font-display)] text-xl">Every race on your ballot, explained before you vote.</p>
           <p className="font-semibold">
-            Next election: Tue, Nov 3, 2026{daysLeft > 0 ? <> · <span className="rounded-full bg-[var(--gb-primary)] px-2.5 py-0.5 font-bold text-[var(--gb-on-primary)]">{daysLeft} days to go</span></> : daysLeft === 0 ? ' · Today!' : ''}
+            Election Day: Tue, Nov 3, 2026{daysLeft > 0 ? <> · <span className="rounded-full bg-[var(--gb-primary)] px-2.5 py-0.5 font-bold text-[var(--gb-on-primary)]">{daysLeft} days to go</span></> : daysLeft === 0 ? ' · Today!' : ''}
           </p>
-          <p className="text-[15px] leading-relaxed max-w-[62ch]">Enter your address to see exactly what’s on yours: what each job does, who’s running and who’s funding them. Make your picks, then bring them to the booth.</p>
+          <p className="text-[15px] leading-relaxed max-w-[62ch]">Governor and every statewide office, a U.S. Senate seat, all 17 U.S. House seats, every seat in Springfield, Cook County’s top jobs, judges to elect and keep, and the questions on the back of the ballot. Enter your address to see exactly what’s on yours: what each job does, who’s running and who’s funding them. Make your picks, then bring them to the booth.</p>
         </div>
-        <div className="w-[260px] md:w-[400px] md:max-w-[45%] shrink-0"><Capitol /></div>
+        <div className="w-[220px] md:w-[340px] md:max-w-[40%] shrink-0 self-center"><StateMap outline={outline as Outline} name="Illinois" colors={IL_MAP} id="il" /></div>
       </header>
 
       <form onSubmit={onSubmit} className="space-y-3">

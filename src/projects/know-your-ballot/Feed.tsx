@@ -8,7 +8,7 @@ import type { KeyDate } from './dates';
 // item dated and sourced. Ballot changes the daily refresh noticed, news
 // headlines, bills (where the state has them) and the next key dates.
 
-export type Kind = 'ballot' | 'news' | 'bill' | 'date';
+export type Kind = 'ballot' | 'news' | 'money' | 'bill' | 'date';
 
 export interface FeedItem {
   at: string; // ISO
@@ -24,11 +24,12 @@ export interface FeedItem {
 const KINDS: { id: Kind | 'all'; label: string; color: string }[] = [
   { id: 'all', label: 'Everything', color: 'var(--gb-text)' },
   { id: 'news', label: 'News', color: 'var(--gb-blue-hi)' },
+  { id: 'money', label: 'Money', color: 'var(--kyb-orange)' },
   { id: 'ballot', label: 'Ballot changes', color: 'var(--gb-primary)' },
   { id: 'bill', label: 'Bills', color: 'var(--kyb-gold)' },
   { id: 'date', label: 'Key dates', color: 'var(--gb-amber-hi)' },
 ];
-const KIND_LABEL: Record<Kind, string> = { ballot: 'Ballot', news: 'News', bill: 'Bill', date: 'Date' };
+const KIND_LABEL: Record<Kind, string> = { ballot: 'Ballot', news: 'News', money: 'Money', bill: 'Bill', date: 'Date' };
 
 const day = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric' });
 const when = (iso: string) => day.format(new Date(iso.length === 10 ? `${iso}T12:00:00` : iso));
@@ -42,12 +43,12 @@ export function changeItems(changes: Change[], source: (c: Change) => { name: st
       : c.kind === 'candidate-removed' ? `${c.name} is no longer on the ballot for ${c.what}`
       : c.kind === 'money' ? `${c.name} filed a new money report: ${money(c.raised ?? 0)} raised`
       : c.kind === 'contest-added' ? `New on the ballot: ${c.what}` : `No longer on the ballot: ${c.what}`;
-    return { at: c.at, kind: 'ballot', title, detail: c.kind === 'money' ? c.what : undefined, source: source(c), jump: c.kind === 'contest-removed' ? undefined : c.id };
+    return { at: c.at, kind: c.kind === 'money' ? 'money' : 'ballot', title, detail: c.kind === 'money' ? c.what : undefined, source: source(c), jump: c.kind === 'contest-removed' ? undefined : c.id };
   });
 }
 
 export const newsItems = (news: NewsItem[]): FeedItem[] =>
-  news.map((n) => ({ at: n.at, kind: 'news', title: n.title, source: { name: n.source, url: safe(n.url) } }));
+  news.map((n) => ({ at: n.at, kind: n.topic === 'money' ? 'money' : 'news', title: n.title, source: { name: n.source, url: safe(n.url) } }));
 
 export const billItems = (laws: Law[], billUrl: (b: Law) => string | undefined): FeedItem[] =>
   laws.filter((b) => b.latest_action).map((b) => ({
@@ -72,7 +73,7 @@ export function Feed({ items, onJump }: { items: FeedItem[]; onJump: (id: string
     <section aria-labelledby="kyb-feed" className="rounded-2xl border-[3px] border-[var(--gb-blue-hi)] bg-[var(--gb-surface)] p-4 sm:p-5 space-y-4">
       <div className="space-y-1">
         <h2 id="kyb-feed" className="text-2xl">📰 What’s new</h2>
-        <p className="text-[15px] leading-relaxed">Everything that moved lately: news, changes to the ballot the daily refresh noticed, bills and the dates coming up. Each item says where it comes from.</p>
+        <p className="text-[15px] leading-relaxed">Everything that moved lately: news, campaign money (new reports and stories about who’s funding whom), changes to the ballot the daily refresh noticed, bills and the dates coming up. Each item says where it comes from.</p>
       </div>
       <div className="flex flex-wrap gap-2" role="tablist" aria-label="Kinds of activity">
         {KINDS.filter((k) => k.id === 'all' || sorted.some((i) => i.kind === k.id)).map((k) => (

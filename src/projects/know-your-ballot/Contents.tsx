@@ -1,5 +1,5 @@
 import { Check, ChevronDown, Circle, X } from 'lucide-react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 // The ballot's table of contents, course-style: each section with its races,
 // ticked off as they're decided. A side column on desktop; a drawer on phones.
@@ -16,16 +16,19 @@ interface Props {
 }
 
 function List({ sections, current, isDone, labelOf, onSection, onRace }: Props) {
+  // The section you're in lists its races; tapping its header folds them away.
+  const [folded, setFolded] = useState<string | null>(null);
   return (
     <nav aria-label="Ballot contents" className="text-[15px]">
       <ol className="space-y-4 p-4">
         {sections.map((s, i) => {
-          const open = s.id === current;
+          const here = s.id === current;
+          const open = here && folded !== s.id;
           // Each section framed in its colour; the one you're on pulses.
           return (
-            <li key={s.id} className={`rounded-xl border-[3px] ${open ? 'kyb-pulse' : ''}`}
+            <li key={s.id} className={`rounded-xl border-[3px] ${here ? 'kyb-pulse' : ''}`}
               style={{ borderColor: s.color, ['--pulse' as string]: s.color }}>
-              <button type="button" onClick={() => onSection(s.id)} aria-expanded={open} aria-current={open ? 'step' : undefined}
+              <button type="button" onClick={() => { if (here) setFolded(open ? s.id : null); else { setFolded(null); onSection(s.id); } }} aria-expanded={open} aria-current={here ? 'step' : undefined}
                 className={`w-full flex items-center gap-2 px-3 py-3 text-left font-bold hover:bg-[var(--kyb-chip)] ${open ? 'bg-[var(--kyb-chip)] rounded-t-[9px]' : 'rounded-[9px]'}`}>
                 <span aria-hidden="true">{s.emoji}</span>
                 <span className="flex-1 leading-snug">{i + 1}. {s.title}</span>
