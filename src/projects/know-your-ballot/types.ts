@@ -73,6 +73,8 @@ export interface Retention {
   bar?: Record<string, string>;
   /** Where the Alliance publishes this judge's ratings. */
   barSource?: string;
+  /** From Injustice Watch's guide. */
+  photo?: Candidate['photo'];
 }
 
 export type MeasureScope =

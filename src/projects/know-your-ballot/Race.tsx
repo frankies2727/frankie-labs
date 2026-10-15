@@ -367,12 +367,15 @@ export const RetentionCard = memo(function RetentionCard({ color, r, choice, onC
   const onChoose = (c: Choice) => chooseFor(r.id, c);
   return (
     <div id={`race-${r.id}`} className="scroll-mt-[calc(var(--kyb-top)+var(--kyb-bar,260px)+16px)] rounded-2xl border-[3px] bg-[var(--gb-surface)] p-4 space-y-3" style={{ borderColor: color }}>
-      <div>
-        <p className="font-black text-[var(--gb-text)] leading-snug">{r.judge}</p>
-        <p className="text-sm text-[var(--gb-text)]">{r.court} · {r.withdrawn ? 'withdrew' : 'keep this judge?'}</p>
+      <div className="flex items-center gap-3">
+        <Face c={{ name: r.judge, photo: r.photo }} className="w-14 h-14 text-lg" />
+        <div className="min-w-0">
+          <p className="font-black text-[var(--gb-text)] leading-snug">{r.judge}</p>
+          <p className="text-sm text-[var(--gb-text)]">{r.court} · {r.withdrawn ? 'withdrew' : 'keep this judge?'}</p>
+        </div>
       </div>
       {r.bar && !r.withdrawn && <BarRatings bar={r.bar} source={r.barSource} compact />}
-      {r.profile && <a href={r.profile} target="_blank" rel="noreferrer noopener" className="block w-fit text-sm font-bold text-[var(--gb-link)] underline underline-offset-2">Injustice Watch profile ↗</a>}
+      {r.profile && <p className="text-sm"><a href={r.profile} target="_blank" rel="noreferrer noopener" className="font-bold text-[var(--gb-link)] underline underline-offset-2">Injustice Watch profile ↗</a>{r.photo && <span className="text-[var(--gb-text-muted,inherit)]"> · Photo: {r.photo.credit}</span>}</p>}
       {r.withdrawn
         ? <p className="text-[15px] font-bold text-[var(--gb-amber-hi)]">Withdrew after the ballot was finalized. This name is still on your ballot, but votes for or against this judge won’t count.</p>
         : <YesNo value={choice} onChange={onChoose} label={`Retain ${r.judge}?`} />}

@@ -214,7 +214,8 @@ export async function addPhotos(races, { dir, publicPath, prev, chosen = CHOSEN_
     if (e.c.photo) used.add(e.c.photo.file.split('/').pop()); else delete e.c.photo;
   }
   // A photo nobody uses any more (a candidate who left the race) goes too.
-  for (const f of readdirSync(dir)) if (!used.has(f)) rmSync(join(dir, f));
+  // retain-*.jpg are the judges' photos, saved by ./judges.mjs, which sweeps its own.
+  for (const f of readdirSync(dir)) if (!used.has(f) && !f.startsWith('retain-')) rmSync(join(dir, f));
   const reasons = [...why].sort((a, b) => b[1] - a[1]).slice(0, 6).map(([r, n]) => `  missed ${n} × ${r}`);
   if (stale.length) reasons.push(`  photos-chosen.json: ${stale.length} entries match no candidate (${stale.slice(0, 3).join('; ')})`);
   return { withPhoto: used.size, total: entries.length, log: [`photos: ${fetched} fetched, ${kept} unchanged, ${failed} couldn't be fetched, ${late} skipped (time limit)`, ...reasons] };

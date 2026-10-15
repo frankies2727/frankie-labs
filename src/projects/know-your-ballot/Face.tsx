@@ -16,7 +16,7 @@ export function initials(name: string) {
  * (or it doesn't load). Photos are saved with the site, so no third party is
  * called from the visitor's browser.
  */
-export function Face({ c, className }: { c: Candidate; className: string }) {
+export function Face({ c, className }: { c: Pick<Candidate, 'name' | 'photo'>; className: string }) {
   const [broken, setBroken] = useState(false);
   const photo = c.photo && !broken ? `${import.meta.env.BASE_URL}${c.photo.file}` : null;
   return (

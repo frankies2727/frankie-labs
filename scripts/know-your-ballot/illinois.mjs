@@ -25,6 +25,7 @@ import { join } from 'node:path';
 import { changeLog } from './illinois/changes.mjs';
 import { govbotSlices } from './illinois/govbot.mjs';
 import { addJudges } from './illinois/judges.mjs';
+import { explainMeasures } from './illinois/measures-plain.mjs';
 import { addSocial } from './illinois/social.mjs';
 import { addPhotos } from './illinois/photos.mjs';
 import { parseCandidateList } from './illinois/candidates.mjs';
@@ -151,7 +152,7 @@ async function main() {
   console.log(`Illinois: matched ${state.matched}/${state.total} state & local candidates`);
   for (const line of state.log) console.log('  ' + line);
   // Campaign sites behind a bot check are read in the browser, like the Board's pages.
-  const social = await addSocial(ballot.races, work, (url) => fetchPage(url, (h) => h.length > 3000 && !/just a moment|cf-chl|attention required|captcha/i.test(h.slice(0, 20_000))), prev);
+  const social = await addSocial(ballot.races, work, (url) => fetchPage(url, (h) => h.length > 3000 && !/just a moment|cf-chl|attention required|verify you are human/i.test(h.slice(0, 20_000))), prev);
   console.log(`Social accounts: ${social.withSocial}/${social.total} candidates`);
   for (const line of social.log) console.log('  ' + line);
   // Photos for the candidates matched above, saved with the site.
@@ -166,7 +167,7 @@ async function main() {
   console.log(`Campaign-site headshots: ${heads.found} new, ${heads.kept} kept, of ${heads.tried} sites read`);
   for (const line of heads.log) console.log('  ' + line);
 
-  const judges = await addJudges(ballot, prev);
+  const judges = await addJudges(ballot, prev, { dir: PHOTOS_DIR, publicPath: 'kyb-photos/illinois' });
   for (const line of judges.log) console.log(line);
 
   const sites = await earlyVotingSites();
@@ -184,6 +185,7 @@ async function main() {
   try { news = await recentNews(['Illinois election 2026', 'Illinois governor race Pritzker Bailey', 'Illinois Senate race Stratton Tracy', 'Cook County election 2026', 'Chicago judicial retention 2026', 'Illinois ballot referendum 2026'], ['Illinois governor campaign fundraising', 'Illinois campaign contributions', 'Pritzker campaign money', 'Illinois Senate race campaign money', 'Cook County campaign contributions']); } catch (e) { console.warn(`news: ${e.message}; keeping the last copy`); }
   console.log(`News: ${news.length} headlines`);
 
+  explainMeasures(ballot.measures);
   const next = { races: ballot.races, retentions: ballot.retentions, measures: ballot.measures };
   const changes = changeLog(prev, next, new Date().toISOString());
   // govbot being briefly down shouldn't hold up the ballot: keep yesterday's.

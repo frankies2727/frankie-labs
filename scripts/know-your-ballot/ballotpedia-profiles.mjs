@@ -57,8 +57,18 @@ export function parseProfile(html) {
 
 const fold = (s) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
 const parts = (n) => fold(n.split(' & ')[0].replace(/["“”][^"“”]*["“”]/g, ' ').replace(/,?\s+(jr|sr|ii|iii|iv)\.?$/i, '')).split(/[^a-z]+/).filter(Boolean);
-/** First and last name agree ("Robert W. Fioretti" ~ "Robert Fioretti"). */
-const namesAgree = (a, b) => { const [pa, pb] = [parts(a), parts(b)]; return pa.length > 1 && pb.length > 1 && pa[0] === pb[0] && pa.at(-1) === pb.at(-1); };
+// Short forms Ballotpedia and ballots disagree on ("Dan Swanson" is "Daniel Swanson" there).
+const SHORT = { jim: 'james', jimmy: 'james', bill: 'william', billy: 'william', will: 'william', bob: 'robert', rob: 'robert', bobby: 'robert', dick: 'richard', rick: 'richard', mike: 'michael', tom: 'thomas', tommy: 'thomas', joe: 'joseph', joey: 'joseph', dan: 'daniel', danny: 'daniel', chris: 'christopher', charlie: 'charles', chuck: 'charles', ben: 'benjamin', tony: 'anthony', ted: 'edward', ed: 'edward', eddie: 'edward', jack: 'john', johnny: 'john', liz: 'elizabeth', beth: 'elizabeth', betty: 'elizabeth', kathy: 'katherine', kate: 'katherine', katie: 'katherine', peggy: 'margaret', maggie: 'margaret', meg: 'margaret', sam: 'samuel', steve: 'steven', stephen: 'steven', matt: 'matthew', pat: 'patrick', andy: 'andrew', drew: 'andrew', nick: 'nicholas', greg: 'gregory', jeff: 'jeffrey', ken: 'kenneth', ron: 'ronald', don: 'donald', fred: 'frederick', frank: 'francis', larry: 'lawrence', jerry: 'gerald', terry: 'terrence', tim: 'timothy', jon: 'jonathan', dave: 'david', doug: 'douglas', gabby: 'gabrielle', sue: 'susan', debbie: 'deborah', deb: 'deborah', jen: 'jennifer', jenny: 'jennifer', jess: 'jessica', vicky: 'victoria', vicki: 'victoria', alex: 'alexander', al: 'albert', abe: 'abraham', ray: 'raymond', russ: 'russell', marty: 'martin', manny: 'manuel', pete: 'peter', josh: 'joshua', zach: 'zachary', nate: 'nathan', lou: 'louis', vince: 'vincent', max: 'maxwell' };
+const sameFirst = (a, b) => a === b || (SHORT[a] ?? a) === (SHORT[b] ?? b) || (a.length >= 3 && b.length >= 3 && (a.startsWith(b) || b.startsWith(a)));
+/** The quoted nickname, if any ("Christopher "C.D." Davidsmeyer" -> "cd"). */
+const nickname = (n) => { const q = n.match(/["“”]([^"“”]+)["“”]/)?.[1]; return q ? fold(q).replace(/[^a-z]/g, '') : null; };
+/** First and last name agree ("Robert W. Fioretti" ~ "Robert Fioretti", "Dan" ~ "Daniel", a quoted nickname as the first name). */
+const namesAgree = (a, b) => {
+  const [pa, pb] = [parts(a), parts(b)];
+  if (pa.length < 2 || pb.length < 2 || pa.at(-1) !== pb.at(-1)) return false;
+  const firsts = (n, p) => [p[0], nickname(n)].filter(Boolean);
+  return firsts(a, pa).some((x) => firsts(b, pb).some((y) => sameFirst(x, y)));
+};
 
 /**
  * Is a page found by name this candidate's? Its title must be their name, and
@@ -79,6 +89,15 @@ function guesses(name, state) {
   const short = `${p[0]} ${p.at(-1)}`;
   const names = [...new Set([lead, plain, short].map((n) => n.replace(/\s+/g, '_')))];
   return names.flatMap((n) => [`https://ballotpedia.org/${n}`, `https://ballotpedia.org/${n}_(${state})`]);
+}
+
+/** Ballotpedia's own search for the name: the first few pages whose title is the name. */
+function searchHits(name) {
+  const lead = name.split(' & ')[0].trim().replace(/["“”][^"“”]*["“”]/g, ' ').replace(/\s+/g, ' ').trim();
+  const html = curl(`https://ballotpedia.org/wiki/index.php?${new URLSearchParams({ search: lead, fulltext: '1', ns0: '1' })}`);
+  return [...html.matchAll(/class="mw-search-result-heading"><a href="(\/[^"]+)"[^>]*title="([^"]+)"/g)]
+    .filter(([, , title]) => namesAgree(title.replace(/\s*\([^)]*\)\s*$/, ''), lead))
+    .map(([, href]) => `https://ballotpedia.org${href}`).slice(0, 3);
 }
 
 async function pool(items, size, fn) {
@@ -124,6 +143,11 @@ export async function addProfiles(races, { dir, publicPath, prev, state = 'Michi
           const html = curl(url);
           if (isAbout(html, c.name, race.office, state)) { profile = url; break; }
         }
+        if (!profile) {
+          for (const url of searchHits(c.name)) {
+            if (isAbout(curl(url), c.name, race.office, state)) { profile = url; break; }
+          }
+        }
         if (!profile) { keep(); log.push(`no profile found for ${c.name} (${race.office})`); return; }
       }
       if (!missing) c.profile = profile;
@@ -151,6 +175,6 @@ export async function addProfiles(races, { dir, publicPath, prev, state = 'Michi
   });
 
   for (const { c } of jobs) { if (c.photo) withPhoto++; if (c.social) withSocial++; if (c.profile || (missing && c.photo?.credit === 'Ballotpedia')) withProfile++; }
-  if (!missing) for (const f of readdirSync(dir)) if (!used.has(f)) rmSync(join(dir, f));
+  if (!missing) for (const f of readdirSync(dir)) if (!used.has(f) && !f.startsWith('retain-')) rmSync(join(dir, f));
   return { withPhoto, withSocial, withProfile, total, log };
 }
