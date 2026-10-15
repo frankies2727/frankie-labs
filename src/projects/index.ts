@@ -81,13 +81,13 @@ export const PROJECTS: ProjectDefinition[] = [
   },
   {
     id: 'govbot',
-    name: 'Govbot Social',
-    tagline: 'The social-media presence behind Govbot.',
+    name: 'Govbot',
+    tagline: 'Every U.S. legislature, as data you can clone.',
     description:
-      'The rigorous, always-current dashboard for Govbot — the bot that auto-posts legislative bill updates. It tracks every post across Bluesky, X, Threads and Instagram (filterable, with live Bluesky feeds and links to each account), built automatically from the post history to raise awareness of the tool.',
+      'A nonpartisan, open civic-data project built with Chi Hack Night. Bills from all 50 states, Congress, D.C. and four territories, 56 jurisdictions, refreshed from official sources twice a day, tagged by topic with free local models and summarized in plain English on Bluesky, X, Threads and Instagram. Browse legislation by place, topic, sponsor and status, find upcoming hearings and how to weigh in, clone any dataset as a git repo in under a minute, or query every state at once with SQL. Know Your Ballot is built on it.',
     emoji: '🏛️',
     gradient: 'from-[#2563eb] via-[#1e3a8a] to-[#0a0a0a]',
-    href: 'https://frankies2727.github.io/CHN-SocialMedia-Govbot-Main/',
+    href: 'https://chihacknight.github.io/govbot/',
   },
 ];
 

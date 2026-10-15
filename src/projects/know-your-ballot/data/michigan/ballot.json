@@ -10349,81 +10349,247 @@
   "Livingston": "4",
   "Luce": "4"
  },
- "changes": [
+ "changes": [],
+ "news": [
   {
-   "at": "2026-10-15T01:24:56.370Z",
-   "id": "governor-and-lieutenant-governor",
-   "what": "Governor and Lieutenant Governor",
-   "kind": "candidate-removed",
-   "name": "Jocelyn Benson",
-   "ballot": 1
+   "at": "2026-10-15T03:30:21.000Z",
+   "title": "Tracking the 2026 Early Vote: Midterm Elections",
+   "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5CNDhGdFFLbHU0dnFMZGZ5T2Z4LVNzYk5Mb0lHNXZhQW56U09sX1RmWmRLZmlvRnQtOHNHUlZlS3NZckF2WHF0LXVZOHROTTBCMnQzbkM2X1JCYkY5RGpwamRubEc4M3lPaFE?oc=5",
+   "source": "NBC News"
   },
   {
-   "at": "2026-10-15T01:24:56.370Z",
-   "id": "governor-and-lieutenant-governor",
-   "what": "Governor and Lieutenant Governor",
-   "kind": "candidate-removed",
-   "name": "John James",
-   "ballot": 2
+   "at": "2026-10-15T01:30:21.000Z",
+   "title": "Michigan Midterm Elections 2026: Key Races, Candidates and Past Results",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5VWE96aXR0S3I2YjZPYWRXb21UM1lCZXoxbFdDenBTUzdjMmJHUjljRTdFc3hHQm9DTlBiSXIzRGg1c1U4N05MbHk0OFhtSVNpc2RNcWZhMzdpRldLWE5jYzd0cEZQRV8zR1d1VUtWWWlYQQ?oc=5",
+   "source": "NBC News"
   },
   {
-   "at": "2026-10-15T01:24:56.370Z",
-   "id": "governor-and-lieutenant-governor",
-   "what": "Governor and Lieutenant Governor",
-   "kind": "candidate-removed",
-   "name": "Anthony Hudson",
-   "ballot": 3
+   "at": "2026-10-15T00:16:20.000Z",
+   "title": "Election 2026 Michigan",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQR3NzS0VkVTJ5QTBfZXlheHBUajAzb2tpbklBY0RncndNU2xSOHdqMkNlckRaWl94SGotSF9DRXBsbTlqVFRIVWtqVEpjV2RqXzRoTmN0WWpGbmJqYUtTak5RNTNYTUU2TWRPSVlJckE0RlhNLU5DX0Rsa3JyOWJaN25sOEJwUmt1WnE2a2l5QnN2ZnFMdjRRc0UtTjh1UFJBdkN3QjY2ejQ?oc=5",
+   "source": "WV News"
   },
   {
-   "at": "2026-10-15T01:24:56.370Z",
-   "id": "governor-and-lieutenant-governor",
-   "what": "Governor and Lieutenant Governor",
-   "kind": "candidate-removed",
-   "name": "Donna Brandenburg",
-   "ballot": 4
+   "at": "2026-10-14T23:39:50.000Z",
+   "title": "Why aren't Michigan election results instant? How our votes are counted",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQW1hWGpaQWFFUmd1a3Z0ZmRiOVo3SGNic0I0QnloejlUU0xLSzBjcF8wLW9PZHllLXFGTkV0WVZQajl3QzNXbTVZOGtmRFRwd0czYlg1LUxFVUU3X0x6VVlmUFBvQ2dTQkZVRXJuWFE3MDlxSmtmSk5DRmowRWt1SEdNRUdpUXlZWVdydE0zWHNZRmRuLUpIQ3BCVm5sZTBtU2VPNDBZVlEwSkJOX016WGdUcnRnWUZLcEtWSHVsZGw?oc=5",
+   "source": "ClickOnDetroit | WDIV Local 4"
   },
   {
-   "at": "2026-10-15T01:24:56.370Z",
-   "id": "governor-and-lieutenant-governor",
-   "what": "Governor and Lieutenant Governor",
-   "kind": "candidate-removed",
-   "name": "Douglas Campbell",
-   "ballot": 5
+   "at": "2026-10-14T22:45:47.000Z",
+   "title": "The Opioid Crisis Looms Over Michigan’s Senate Race",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQMFZFX0ZpSGRQTXM4bVlDaS1pMEhwSnRtMFdtdnd6TGsyS2JzeXRIN2RvT3I5MXBkVllvWE9RZl9nSjJRZmh6QlluRVo1NzZKNHdTUUFYNXZaUlpNa1FfN3VPWnVUTXlxc2lWcGRNZ196MEpxeE9VdmZUcHJyQ2E1MnNaSUVJb1J2eWk3bG5NUQ?oc=5",
+   "source": "Home ❧ Current Affairs"
   },
   {
-   "at": "2026-10-15T01:24:56.370Z",
-   "id": "governor-and-lieutenant-governor",
-   "what": "Governor and Lieutenant Governor",
-   "kind": "candidate-added",
-   "name": "Jocelyn Benson & Winnie Brinks"
+   "at": "2026-10-14T22:36:00.000Z",
+   "title": "AOC, JD Vance Head to Michigan as Polls Show Tight El-Sayed-Rogers Race",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQckpXbl82Qy16VV9JUjNjWmlHQmtjemtyaEN1S21sNldvMFFJa2hxQlhFOEI5cmtvT1pSYktvZjAxaGdZVlBnZWdpQlNWQkp6U2FoeTFRUWJtMkRDTFZ5MWotUnhGV2JRYU5QQW1MUnplS3ZvMHhVZFg2NmpqbmZtNTlsZDUxbTNvTzhyc1VUanFKMmd3QWdPN09ib1ljRGVDcGRvTV96cw?oc=5",
+   "source": "Newsweek"
   },
   {
-   "at": "2026-10-15T01:24:56.370Z",
-   "id": "governor-and-lieutenant-governor",
-   "what": "Governor and Lieutenant Governor",
-   "kind": "candidate-added",
-   "name": "John James & Jay DeBoyer"
+   "at": "2026-10-14T22:14:00.000Z",
+   "title": "Abdul El-Sayed’s denial on Muslim Brotherhood ties provides opening for Mike Rogers",
+   "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZ3NBSkRXekR1M2ZNc0RHXzhBMXlFRE1iaUJyV0tYLVgtOWc1blZISEI3S2lFM1JKb3RGbjNvNFltbHZaTjNqTU9BYjJZc1ZycVVlYTYxeFVuQzdaU0Jqc1EyM0dibmFCTlh0Y1hLdkMxaGNuSUFJZ09OUFVYZ3pSSGd5LWFUaTYtcDI5M2o1N21XdmtSNGtoQWhWalh2OURDa2FMbHlZY3htNGxQZXo0eUp6T1ZDQURWWDBkU2ZR?oc=5",
+   "source": "New York Post"
   },
   {
-   "at": "2026-10-15T01:24:56.370Z",
-   "id": "governor-and-lieutenant-governor",
-   "what": "Governor and Lieutenant Governor",
-   "kind": "candidate-added",
-   "name": "Anthony Hudson & Beau Parmenter"
+   "at": "2026-10-14T22:04:22.000Z",
+   "title": "Michigan’s Senate race gives a preview of America’s future",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNYlJjS2hPSjh6eGVUbWYxRlhaTjJ5Q193R09tM3dyZjhLWU90U3FKYVBfRlk3OWZnTXFOSmdFLXhNY2hHZUdTQ28tUkMyR1RORG9pRlBuRE95TUhzWjZPUjlkcGx3VjA2NGZhOS1XVF9VWHh4YWl1aWx0NkxPZ2FZTEx1LWFTb3ozUmhWWTJ4bUdZX1N2QUUxZ3NSdw?oc=5",
+   "source": "Orange County Register"
   },
   {
-   "at": "2026-10-15T01:24:56.370Z",
-   "id": "governor-and-lieutenant-governor",
-   "what": "Governor and Lieutenant Governor",
-   "kind": "candidate-added",
-   "name": "Donna Brandenburg & Robert Donald Cowper II"
+   "at": "2026-10-14T21:14:22.000Z",
+   "title": "Lifelong Michigan Democrat sheriff exits party & backs GOP candidates, cites public safety",
+   "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxNZmVTVjRtQjFZX0poVjNrOTNzVnQ5ckxqN0lRU2JxdkJGSXUxUDZrVk9wUXhzZUt5WHpnUFlWdHkyOEJ3RVZlTVI4XzM4MGhDR3dmazEyaFlnSHFERk9xeWtXcW1pbTNvV3gyN0ZKcmQ3OEJyTjJIOC1aWktaOHRuS2RSZGs4NkQtRDJ3eG1vQ1pLcEdFNW0xOGNnQWUxSVF1NXE0UUlXamhudE40MlRnbXh6b0c5eGZvR2lqbERoYXQtamk2UEFxaWl6R2dMY1dxOFRIWTFBaG5MNFE3QWRKeXhDS0JSU3FnYnRiOVNhWmhlY19VaTlrVzlHdzc5RXFwdExxajVpV0R5Zw?oc=5",
+   "source": "The National News Desk"
   },
   {
-   "at": "2026-10-15T01:24:56.370Z",
-   "id": "governor-and-lieutenant-governor",
-   "what": "Governor and Lieutenant Governor",
-   "kind": "candidate-added",
-   "name": "Douglas Campbell & Bobbie Clay"
+   "at": "2026-10-14T21:13:45.000Z",
+   "title": "Michigan GOP Senate nominee Mike Rogers on whether Iran war was a mistake: ‘We’ll find out’",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQUVVNWEZFekJvdmpQeGZXdUowRTRHTVFLVVJCZlVYMDdHQzd6RnpLdV80LXZCdncwTzJzUU8zaWJzRl9BTHBMNlZGV3k2aTNzR0h5UVB1NmdsUENLV20yOHZBX3VwMF9hMzVuMUtEMW1DM2JZc2V6M3EwWGZXOEtvR2UwU3ZId0EzSlF0a2JINXU5cUtkUVZnLUdZT3VSU0x1SG44WEVuVktob3QyaTNMdWNycFZLejJya3RIazNjeV8?oc=5",
+   "source": "NBC News"
+  },
+  {
+   "at": "2026-10-14T20:42:00.000Z",
+   "title": "Mike Rogers' wife gives away $10 gift cards at Detroit gas station",
+   "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOU2Jxb21FeUZLTmtNdzJWSWFhT09INWZKU0VkcjNNemhZdGFjWlRzb0NyaVJaN1JrWjBNSXdaUmZ5OTNZU2Q3Z19uaWx6WEJtSTljVjRHczV0a0oxWF9jemlsMjBxc2wxTEpuMGljTGlYZ3Nhb3hlQ0o0UC1yZDhHV1ZKLTlYQ254QWxTRnZTeV9jcWFkelo2aDM4ZUdWcEF0MXFzQzZkb3A4MXAxMUpUZzJLY2JIODAtRnFBSEl0YzFsY0xtMEtJejYtQWRmUGlv?oc=5",
+   "source": "The Detroit News"
+  },
+  {
+   "at": "2026-10-14T20:38:58.000Z",
+   "title": "NBC Nightly News anchor Tom Llamas visits Detroit as Michigan Senate race draws national attention",
+   "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOd0NYQkt2SGgxTjRIQkIzQkc1Z2E5eFBTOGUwb1Rvbm4teWtpWGdxMXd5OVRWNEYxLU9xTVNmWnpjREl3N0Iyek9hNTR5V1pFNEp0YnNxdDFCUlZ5RUR2bHJjNkotMEx3azFCRW1QTDRZTUs5a2R1azlJVmttZ0t0SUVtMlcxQTEybHhmaG92aFVnVFBfeVg4WldRTUZQS1ktNUt6TWhRSUFPeHdGZjExc0tTcEFXQlptTHplcFpwY1ZTUE1NV09UU3dqcHVqR01IMmRKOGQyeWFqZ3RzaUpvWHBicDEzelE?oc=5",
+   "source": "ClickOnDetroit | WDIV Local 4"
+  },
+  {
+   "at": "2026-10-14T20:37:33.000Z",
+   "title": "Buttigieg discusses tight Michigan Senate race between El-Sayed, Rogers",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9kcVAwWmZzZ28xVXlRRzBTSmtqRDFibnRPaHVJcDZzanotYVJIMGJVa1hpeFBJT0pEdVd6OUVIUG1FNW4zdEd5N0VCRmNabzNUTVZMX2N3?oc=5",
+   "source": "Fox News"
+  },
+  {
+   "at": "2026-10-14T20:20:38.000Z",
+   "title": "Inside the booming market for US midterm election bets",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQamtya0FZUkVIMEc2RS1pWU1tSmtOUlhvQXdEeVR0YTNEektDdVBHVmtqRmtIZlZUVC1vREFBUFRIcTJ4X0tNZDJYczhUUzl0ajUtNDVVcm1lMEl1a01aQVRiMndtZUlQNUdWRHRYWjk3Z2hvZlJsaWE0ckcwcWlNck9HUmxMcUNZSnE0WW1vbXNseDlJeVlCM294SHNXX1Yx?oc=5",
+   "source": "Reuters"
+  },
+  {
+   "at": "2026-10-14T20:02:59.000Z",
+   "title": "Michigan election officials say there is room for improvement in signature petition review process",
+   "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPS2ZwQlVmc2ViNXZqbHpZUGtpcDc0WUMwTFRaeFhOSjFKNzZ3bWVNODY3amJiZE9UYjBkT1NXdDdNalc2dy13Y2VBcHY2a2dPVkZnUTM5T1pndGdnUUN0ZEhCaXl4Q041Q1psT0hMVFM3a2dYSWJ3LU5tTGVmQnJaaC1hTVljRktWaHFDeXcxM3FZRFpDZnVEbHp4UmdadE5FMElhSDRnVlcwT0EwdVF0MVB6aE1hMThMejhrQmJhV3h4cUZnQW5DMkE2amNMTUgtZmxVcQ?oc=5",
+   "source": "Michigan Advance"
+  },
+  {
+   "at": "2026-10-14T19:24:36.000Z",
+   "title": "Ann Arbor council comes out against public power ballot proposal, says it could cost city $1 billion",
+   "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5jSnR3TEFTNk90WjF4Uk55RHUyaVZpTUtJZFU2d0l3Zkp5M29YRGFXVWN4UWhZUkxEdGF3eW02M2xFOE5VUUF5QkxiUlVhS0x5NThEaDI0Yk1uWnpwOEVacE9wMkRDOTdFMjJEamhLaDZIRUxWNmNnM0t3?oc=5",
+   "source": "Planet Detroit"
+  },
+  {
+   "at": "2026-10-14T19:21:36.000Z",
+   "title": "Why many Jewish Michiganders are torn over Abdul El-Sayed’s Senate candidacy",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPaXJFV0hNYkplUTNMM3lNTkpPYi1STERBbWNuMzBzbzlDZU14QkdFY2s4cmtTd0wwMExBd3oweHU2Zkk5UXUzaUw0MEs5d1U0dmxxVEx6ZV9DNUNVaTlCcWtON2lfQVVxSHlGNHZGWUhhamsyT2gySnJ6LTljcmdzYUw5dVdoYXFiX0J5WFNfWjRMWlZSQkdNdw?oc=5",
+   "source": "Yahoo"
+  },
+  {
+   "at": "2026-10-14T19:14:00.000Z",
+   "title": "Not registered to vote? No Kings protest to be deadline reminder",
+   "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNV0RaS2hJS1VXdmpocWZwZmJFbnlSVTBsdXBqTl95RVdLdURFRlkzaE82NDcwcHJKT3J3TG1TY1EtMGRjLW9HWjJtMXdIa000dVpQUW5FN3IzV1NJZmJib2NuYUFNbF85YTFyVzNsRVh2MDZEWUd3MlBfdFAyOVRFT05jY1BzdVJldHN6WnJrSy0tazl0UE5yOUNRM0ZOb3liWTFVaGExa3ZuVXljQjQ2aGphN0xWTjJRSGlpYWZHUTdhWnlPSi1IX0k1UE03N2cwMXJFRjNlZTZZNWxZVDBaVlBBeFQ?oc=5",
+   "source": "Detroit Free Press"
+  },
+  {
+   "at": "2026-10-14T18:35:32.000Z",
+   "title": "Fact check: Did Mike Rogers buy two yachts after leaving Congress?",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQRmZkUmd6UGp2WFlLT2RCcnNSUXZVWkZsMEQwbmZXMndNR0pXZkp5ekY0OUJiLTRCR3Bwc1F1ZGRqYktxVzA0a20wSzdkZTRHR2gwU1NIN1pSWktIZUxRUzBiUGczLW9iRXlXTjZxTlVqUWpEelBrWlRXWGJHQW5XVkVlbGlFUmdnbFZaelNnQXdSNUExMDlUaWIzY3BJYXJtdklyR0hxM3hTdw?oc=5",
+   "source": "Bridge Michigan"
+  },
+  {
+   "at": "2026-10-14T17:56:00.000Z",
+   "title": "Michigan gets national Election spotlight as ‘NBC Nightly News’ broadcasts from Detroit",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPQmZWaWZ5b1FpY2JaNGEzRVNMMGNjekhCNUZabGlDWEtQU0tJTE14RHh6R29lSGtkc0haZWF5N1JfazlCZXhBbzdXeHNEaE5MOURfRG5QX042R1RFT3RYbXlZMkUxOGtEYjlvaTF4TWtWOExvYVZSNWVXTTctdTFlVDU5TkR5eDNkN3N1OUdaRklTOUNpYWljNjYxUUlfelphNWxjSFpkYjU5QzN3NDBSeWFxN25aazZkMnF2VGE1OU9IelY5eFN3?oc=5",
+   "source": "MLive.com"
+  },
+  {
+   "at": "2026-10-14T17:45:00.000Z",
+   "title": "What is Michigan Proposal 2? Explaining the 'Money out of Politics' proposal",
+   "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPMUtKVTV2QThEMktZR0lwSm16TER5djBEZnlUZzY4a1BFUEdQeUJhMWFiRURKWHRIcmdWVjFsY3hDVU9SOWtyZXR4VUtSSGhBWldHMFlmVlNKZGFUWWZzWERTN0I4R3NMMEVhWUMyOERKVHQ3MWxwanllSVJabk1LSlFvczY0NjMzNlpiNVVrX1kyQ3J3TTRoSmxHZlI2Q3RVTkJsZXBCSzd3b3lydmtMVl9ES2E5TEhJSG5wMDgxTm00R0hHZlhVcGNPUHVvcGRsazZfdTlDYnBsT3pvbHc?oc=5",
+   "source": "WZZM13.com"
+  },
+  {
+   "at": "2026-10-14T15:26:00.000Z",
+   "title": "Hottest 2026 Midterm Races—Talarico Ahead In Texas Senate Race In 2 New Polls (Updated Daily)",
+   "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNM0JlSU5fMW9rWGdCbTRGYjFtdnJXMzUzQkJvUHUyS0lXUTBoR1NEVlctWnBVUGZCUzZIaVptbzk1encyb19hNnJrWFotanZWR1hxcTB0SFI2eWJqcEpMdTFFMGt6UkhrZVVXZVlFWVMzVlNOTnRyZDlzNUE3d0kwc2xSU2d1em8yV2hHWVRDRDQzamUtLXl4MHk5LVVjUGc1ZTRFZzBkRndBWUJ4MzRXaDMtWHVkQ3FuVVpKMUFSUzA3RFpmTWZJbk5CbHcxdFJybEE4blJVT08?oc=5",
+   "source": "Forbes"
+  },
+  {
+   "at": "2026-10-14T14:15:00.000Z",
+   "title": "There is nothing Mike Rogers won't do to beat Abdul El-Sayed | Opinion",
+   "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOaDRaaWRRYzdwNXdhNHFWSEdKNHlGckJrZVFkUnoxRmVybTdfYk1PWjJpOUtKM1ZXZ3dLZ1lYYVEtLW5jYk5hWG8zV1ZjbFduR2JtcmdGYU16ZTE1czZONXdBMVM1N0RRN0dUTGE0S3NLYW1Da1BoYWhGR2wzbXJUVXYxbW56MVRlVHladTI5cnd6blRYQVZLVDljRE5Jei1RTFZxMjNoaFNtZjV3ZTFyTnJQNzhPOTdmX2Q3MUd5eHBpcVI1elZObGFEU2dFQ2xnUC1rSHJVSENTbGxtNTdjd0NHejFVRGs?oc=5",
+   "source": "Detroit Free Press"
+  },
+  {
+   "at": "2026-10-14T12:45:00.000Z",
+   "title": "Pro-James Republican ad spending plunges, leaving a big TV gap with Benson",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNTFE0ZmRiN2xkVHdSc0s2ZzhrTlhxMFktU0U0WGQ3ZzZPa3JuTUZvbU42M2ktaXhiRXdidWIwRjBQSWRmTnFDVFR3UXRETU5PLVRqcjBrS0pObngwdzlldGIyd2ZjSXBkSmJhQkp3V1RlVEJ6aWNPUUZ6ZlExQ1pGQXZPRXZhaTIwMUpnd25lOW9sU2JFZFp3dUhR?oc=5",
+   "source": "Crain's Detroit"
+  },
+  {
+   "at": "2026-10-14T11:00:19.000Z",
+   "title": "Is Abdul El-Sayed a doctor? Fact-checking Mike Rogers in Michigan Senate race",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPU1MyZ1ZrRFptT28teHh1YW01eE96QmtrMVZZVFBhcGJub0I3aTFXVklwci1qWmc5SDk3VmhsbmR5ejZVMUxDWHZ4QmxYNkhiTktFak1xY3F0czVmU2VQbzFyaWtXb1dCVDhCaUZnSUw4a05jMGthTU1GRkRMVlliYUFmdHFFc0dkZ3NfYXNRYUxRcDBobHc?oc=5",
+   "source": "PolitiFact"
+  },
+  {
+   "at": "2026-10-14T10:30:01.000Z",
+   "title": "How Trump’s tariffs and Iran war are becoming liabilities in Michigan’s Senate race",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxObllseWdwR2FMbi0zbF9QYWVuREpVSHFhR3RMakxOOHQ1blF2Z2ktaDV6c0V1RkFwNXFINm54OUpTSGFGMG5KRFpCTXpwQnFtdWliTTRTUHpfcFZTZnVhdmNVcGJVRkpnbHR2WnB4OGNNYzFreVh6c2JqMmJNOEFEU3ZyQ1lPTm9YY0k5clpKVlfSAZYBQVVfeXFMTzdJTnJZa1h1eUFMcVVrY2Jhdld4cWlEb3JHRGNHRm9HcEZBZDF0Snd2Yk1xYnVxaDJnUUpzRkpHTE80YldRVXF0LVFYOWMyM3prR1A5ZWRQaTk2VU9CdlBBbzJMZmgzdlVjWVljZmJfT2o0RFlLS1ZJNllWRWZxSUQ0VEJBV1U2RElrOEtsSTdDcFcyamxB?oc=5",
+   "source": "CNBC"
+  },
+  {
+   "at": "2026-10-14T09:41:43.000Z",
+   "title": "Rogers and allies go scorched earth to stop El-Sayed",
+   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQRHgtaHlwZXk3Y29ORHgyTURITmhZcm9ZekdGN0xHbmhVNWhhR2tPNE5RZld2eWFBM25GT0R3aG9XSlM1WVdhU0RxY050S0tzWGh5SDJxQWI4QjlfOVdZOFVhbGhNZTZqYlBkOGVHai1IV1lkRkNHVGwtd2RKVC02enJXZ1plT1paZ0E?oc=5",
+   "source": "Lansing City Pulse"
+  },
+  {
+   "at": "2026-10-14T09:00:42.000Z",
+   "title": "Mike Rogers bets he can outflank Abdul El-Sayed with a low-key campaign in Michigan’s Senate brawl",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOQkF0RGZINk01VVlSRmZUSFBweXE4bTdBeGZaS0wyY3hBOTBwcjRKNFBBdXZJcDY0MEZYODF1dzg0VGVyYXoteFFsNGM3cjZYY1pjSFNzNVEzekpnTTJ2Zi1PeEo2WFlzeXlpc0dCSGRiUEFYc1AtcFNRNVF1S2t4amZmVmJhNTJ6MVlXQlNVekJ6MGFLd3k5bjItMkVCWjlOX2M4VlA2M2pwb1JhTm4yRFJkamh1dnBUbmc?oc=5",
+   "source": "NBC News"
+  },
+  {
+   "at": "2026-10-14T09:00:01.000Z",
+   "title": "What proposals are on Oakland County’s 2026 general election ballot? Here’s the list.",
+   "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQVDdscDFqeTBqNWtfdkZmcFMwZm1mMlA2SzR1Z1ZhY1QxUHdwSFBCaEk2MW9kQnd4U3phTXdFYUxkampTM01EWGZpNVB0WGN5bmd0ZVJ2V1VTcWxaLXZsY1JJNHRpWXN0cm5jc01SZ1dSRHFoeUdKaXl1VnBENzBWcEFSRURtV0NDZ2RkenRlT0xtQ0NQYTZ3WG5EaGhlZUFCcEdOT2tTZjFDVUpBVTFmcDFWcklLMkN2RC05NlNwWlFYUEJKT19KYVo5MGh1cEtkQmxDVQ?oc=5",
+   "source": "ClickOnDetroit | WDIV Local 4"
+  },
+  {
+   "at": "2026-10-14T09:00:01.000Z",
+   "title": "Are you registered to vote in Michigan? Here's how to check ahead of November general election",
+   "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOTFRKa203Y19GdHlieTRwalZPbnhiaUF0ZnFreTQzQTMtNEdjOUlycVVQWXhmTFpwYlB1ckJTbDBCTUhIWFR4RjZ2U2wzUU83bmlYeDBzdVNNbVk4cEtlRFhGeDZPSEkxMFQ3Ymhlb0xON2c5U2lyYXBvLS16NUhIZmduSTI3SnJBZW9VdGlabm1rMk96OXdFdjE0cFVCQ2ZDakR1dWdGVHdwbVRIM1ZJbm5uTFp3dHM3eTdRcVhaeEcyVFc4T19FTVlNTWFxckw1U2RRNV9xeFNkajFfakRn?oc=5",
+   "source": "ClickOnDetroit | WDIV Local 4"
+  },
+  {
+   "at": "2026-10-14T08:40:10.000Z",
+   "title": "Three Weeks Before Election Day, 6% Of Michigan Voters Have Already Cast Ballots",
+   "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9abGg2NlUzLXpNN25BWXRvbmxzckRra0NaeHZ0NHNXT0duVkF5NkdtM2FLR1JfQTdBVjFSWHM3ZXpBemJhUmlMYUhDMl8tUEpySmZ1SmhDV253Z01hZ1NuNTBad0xfdWM5UkN4alVCR1otUTd0X3lhNkgtdzU5Y2s?oc=5",
+   "source": "WHMI"
+  },
+  {
+   "at": "2026-10-14T07:39:58.000Z",
+   "title": "Commentary: Ohio's state supreme court races could decide limits on abortion rights amendment passed by voters",
+   "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNYWwtc2laRGVnMjI1RXBNQ2I1NGkxM1dMU09wdk9VeVRPLTZUVXF4WnlBVHZyV056RkhudmtrZ3dNYXZsbUJGYmFtNHJaejRBV0tIMWdwWU5kQTRpM0VlTjRVNE4xeE9jYWpUbERYOVN1NTczNEZiVmhKZzNFcTEtcEUtRlJDZWExNk1UVGFkLXBHWmJlcElJUDlCN1BhczFHZEcxNWdFQU5zbms5LWZQVVMxVzl5NHZHbVg1T0I4Mk5wbGs0SmJ4QUVSa2ZVTWlXTFJuQV9ndw?oc=5",
+   "source": "Ohio Capital Journal"
+  },
+  {
+   "at": "2026-10-14T01:42:00.000Z",
+   "title": "Progressive groups working to rally Black Michigan voters against Mike Rogers",
+   "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQd3VheUpyVTRNQnBLOHFEQTl3STBxOWRqa2s5Um5zME1zcE5DT09tMXlSc2ZuMU8yRWJrWmY4c3hvLW1ncWJUSVQ2TlYzQWs2S0Y1Q3llTVFYcWRibldhZW15djI5WDQ4UVBsOTc4ZVZNUXlfbUdreDhTeEFoa0EyWDdOU1ZvVkxFbUZCVW91OGhNR3FOcHdJbXdtZHdJUUVISFVCZ1hNS3NCSkxScXdZcDRWVGw3V3RpVGZGaTc0T1ZhQy1IZzVrNTNtenhkSF9KcU53UW1Rd1BIWGdlYUhFYVE0b193c1BMTE5wZ1FZZXFRQQ?oc=5",
+   "source": "Michigan Public"
+  },
+  {
+   "at": "2026-10-13T22:20:36.000Z",
+   "title": "Inside the numbers: Jocelyn Benson leads John James by 7 points in governor’s race",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOZnhheTFRaTZtWGpQX1ZXYnk0ekFOcHU5cWFENjBXQkhHWkFyTFU0LXYyVThseVg0VTltZDNMMkVMQTloQXFuMV9JVTlpVkpOTVZOdXpHWkUyQlNkdFcwYVpsV0RRMVNnbkZDZnc2dWQ5NWRXbC1xbzVncU0xRzQxOHp4WEsxZEtIcGp4NUtLd3fSAZYBQVVfeXFMT0ZMX2c1X2ZBN1FqdDg5am9hN3pFVWZRTE1PRWRFcXc4VUdOWlVjMXZzSUJqOGd6MDBjQVpXYV9RUDZGOTFLOFV4aTdLejRJRmdhOVpMbDlKY3NkanF2WnhBZVR5LVJxMU9LYy0yZEdVemlxQTlBcFFYVXlub3NZV3FYWjV6LThZV01pRGoxaXBHeFltODR3?oc=5",
+   "source": "WLNS 6 News"
+  },
+  {
+   "at": "2026-10-13T22:04:53.000Z",
+   "title": "Tight Michigan Senate race roiled by scrutiny of El-Sayed family Muslim Brotherhood claims",
+   "url": "https://news.google.com/rss/articles/CBMi4wJBVV95cUxQX2V6Y0xiOUNwUzJiODR4RWVqbnNtY0J2WEVEMU44YWQ3Zl9FeHVWQmRmS2hVT3l6RUlTQ3NxRVpiS2hUVWJiQWZUbkFSODBOOHRHbVdwakVjcEFWUFpGQ0VLelAxaUd2VGlObDFIRFRSY2IxMElnVmRDS1k5ZkZmcWpRUkJpRHk0T2N4X0EwME5TUjUwblZQUWRlRlJMdFRVaUtnZW9sOWdISGtaMzh1NXNfYkFVNXdkOWNqdWt5UUlBbWczRVRoSGhacC1FQjFCOXN5WHZYS0FJWlJRU1FtMjgwN2xfWDdsZTB1M25LR3hpckVBc2NEYWRvUUhqenpvU3BsbHl6MFhrTG1rTWRvMVJrVkc0SE03bmt2R29XTEFCWUtTVDcyTWFDWlp3ejZXajFQMWxxbll4Y2YtcWJtcHVZMkN2QkVtbGlHckNaZzNpbkdudTJrNERhRjByQkxwWDNn?oc=5",
+   "source": "KATU"
+  },
+  {
+   "at": "2026-10-13T20:59:46.000Z",
+   "title": "Mike Rogers voted against billions of dollars in homeland security funding",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNLVJWZFNCVmpobHVhODZkd3BrYzV4Z196QXdDX0NwMHFLYk14cHJnMnpxNEp3U0tVcnBWTlM1Ry1PdzFFaVlwWkg4VnJXcTlrNjdYekY5eDBWVnVXQmZMczBUSFhHcVl3TEYxUFJOYXdsdEt2ZFdDODZZM09KemR5ckRKa2pHOVZwRmhraTdqYkotbXNwcnpEd29lSVdraEF5TG5rWFp4dmNRRDlSWERPZFNlQ2Jfd1E?oc=5",
+   "source": "The Michigan Independent"
+  },
+  {
+   "at": "2026-10-13T20:30:04.000Z",
+   "title": "Michigan No Kings rallies aim to translate protest energy into early voting push",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPcXlXWDBhMVRRQkdlMERvclVfQlZudWlZbDM1YUlsSXhhMk50OGVPS1VFaHVQeTlySElseDU2VW1WVTExUzNycjRrVVV4MldrV1YtVk5tQUVKaTh2S2xjVE1lRVdzajh4NDhRQjR1MFVPZ2pia0JhclBOdWNyYjhFMFVDNXQwTTZ4dHBILXZDbk1vbTdHRzlpanJYVDVyVEdCeEEtcUg0bkQ5TG83NUxfVUxYR3otZWpZRFFOVQ?oc=5",
+   "source": "Michigan Advance"
+  },
+  {
+   "at": "2026-10-13T20:11:00.000Z",
+   "title": "President Donald Trump eyes Michigan event near border with Canada",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPNUxNbjJjVUtyTmtVWUI5OVVIZ0l4dWRzclVSQ1gzSE5SWThzTkRqN3pCblBER1l5X2Z0TjNTNVk0QU50cUxJdkF5OENSYmxHQW8xcjFJN3dueWI4TU00Z1FCRlVDZkEyTDMtdVd5djB3eGt0Mm5iRWR1WU5Kd25xdEFyTEhJMk9FRkVjTHZSdFdWNER4YVpsS3pSNFF4SmpLZ21STUVhYlZkampGV1YzN2RIMkY3cm9IOWVJWjFaQ2llLTc1WjNr?oc=5",
+   "source": "The Detroit News"
+  },
+  {
+   "at": "2026-10-13T19:55:23.000Z",
+   "title": "‘To me, it’s Mohammed’: Abdul El-Sayed faces Muslim Brotherhood claims in Michigan Senate race",
+   "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1jWURoeGFJcENWd0ItUjJzLTFnZ3B2clpvNHQ4T09DV2NRWXF5MHQ5TjF1NzQ5a0dyNnJoZ1pUT3VkeVpaZTdpUkdYdlRfay1KNGtpMUhB?oc=5",
+   "source": "Ynetnews"
+  },
+  {
+   "at": "2026-10-13T19:34:33.000Z",
+   "title": "Can John James close the gap on Jocelyn Benson in the Michigan governor’s race?",
+   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQLW5FVzBYTk1FRm9ldm5tc3NHdHAwdkVxSklLaTBvcmdGWm9Cd0s1b1BKZjFfRlZ2ODNuVy1GUGNuOXd6ckRjZWM0Rk82eE84U3NxbDdPd0l5anZhRkFpYUVlMXNveVpSMVowazZ2V2ZlNUpXY3luWFhDSkJ3ZjY5ekhOdUsyM2x1TXZGZ0tia3FBRTJ0QS1qRHF2X2w0Sy1pbFBuUWd4TFR1bGRYbGNvVXdBWlRHY0JoS2ZN?oc=5",
+   "source": "Bridge Michigan"
   }
  ]
 }

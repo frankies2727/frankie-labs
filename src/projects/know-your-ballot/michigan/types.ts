@@ -1,5 +1,5 @@
 // Shape of the static data built by scripts/know-your-ballot/michigan.mjs.
-import type { Change, Measure, Race } from '../types';
+import type { Change, Measure, NewsItem, Race } from '../types';
 
 export interface MichiganData {
   election: { name: string; date: string };
@@ -15,6 +15,8 @@ export interface MichiganData {
   coa: Record<string, string>;
   /** What the daily refresh found different, newest last. */
   changes?: Change[];
+  /** Recent headlines about the election, newest first. */
+  news?: NewsItem[];
 }
 
 /** The state's outline as an SVG path, with what's needed to place a point on it. */
