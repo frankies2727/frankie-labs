@@ -82,3 +82,14 @@
 
 /* Meet the candidates: the row of faces scrolls sideways; its bar wears the brand colour. */
 .kyb-faces { scrollbar-width: thin; scrollbar-color: var(--gb-primary) transparent; }
+
+/* Statewide race cards on the landing page flip over to show the candidates.
+   The face that's showing sizes the card; the other lies over it, hidden,
+   so a card with ten faces on its back is still short until it's flipped. */
+.kyb-flip { perspective: 1400px; }
+.kyb-flip-inner { position: relative; transform-style: preserve-3d; transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
+.kyb-face { width: 100%; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.kyb-face.kyb-off { position: absolute; inset: 0; overflow: hidden; }
+.kyb-back { transform: rotateY(180deg); }
+.kyb-flipped { transform: rotateY(180deg); }
+@media (prefers-reduced-motion: reduce) { .kyb-flip-inner { transition: none; } }

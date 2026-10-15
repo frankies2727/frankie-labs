@@ -10,6 +10,7 @@ import { GaugeDefs } from './BarRatings';
 import { BrowsingNotice, Confetti, Ring, useDocumentMeta } from './Bits';
 import { ReadOnlyContext } from './state';
 import { ContentsColumn, ContentsDrawer } from './Contents';
+import { Headliners } from './Headliners';
 import { earnedTrophies, streak, Trophies } from './Progress';
 import './ballot.css';
 import { ClearButton } from '../../components/ClearButton';
@@ -26,6 +27,8 @@ import type { BallotData, Candidate, Districts, Race } from './types';
 const data = rawData as unknown as BallotData;
 const ballotIds = (d: Districts) => ballotIdsFor(data, d);
 const everything = ballotFor(data, null);
+// The races every Illinois voter sees, for the landing page's cards.
+const STATEWIDE = data.races.filter((r) => !r.area && (r.section === 'federal' || r.section === 'state'));
 const SHARE_URL = `https://frankies2727.github.io${import.meta.env.BASE_URL}projects/know-your-ballot-illinois`;
 // Runs elections in suburban Cook (the Chicago Board runs Chicago's).
 const COOK_CLERK = 'https://www.cookcountyclerkil.gov/';
@@ -420,6 +423,8 @@ export function KnowYourBallot() {
             address={address} setAddress={setAddress} status={status} onSubmit={lookUp} onLocate={useLocation}
             daysLeft={daysLeft}
             onSearchJump={(h) => { setBrowsing(true); jumpTo(h.section, h.id); }}
+            onOpenRace={(race) => { setBrowsing(true); jumpTo(race.section, race.id); }}
+            onOpenCandidate={openSheet}
             saved={Object.keys(saved.picks).length}
             onStartFresh={() => { setSaved((s) => ({ ...s, picks: {}, plan: {} })); setToast('Cleared. Starting fresh.'); }}
           />
@@ -640,9 +645,9 @@ export function KnowYourBallot() {
 
 // ---- pieces ------------------------------------------------------------------------
 
-function Landing({ address, setAddress, status, onSubmit, onLocate, onSearchJump, daysLeft, saved, onStartFresh }: {
+function Landing({ address, setAddress, status, onSubmit, onLocate, onSearchJump, onOpenRace, onOpenCandidate, daysLeft, saved, onStartFresh }: {
   address: string; setAddress: (s: string) => void; status: { busy: boolean; error: string; outside: boolean };
-  onSubmit: (e: FormEvent) => void; onLocate: () => void; onSearchJump: (h: Hit) => void; daysLeft: number;
+  onSubmit: (e: FormEvent) => void; onLocate: () => void; onSearchJump: (h: Hit) => void; onOpenRace: (r: Race) => void; onOpenCandidate: (r: Race, c: Candidate) => void; daysLeft: number;
   /** Picks already saved on this device. */
   saved: number; onStartFresh: () => void;
 }) {
@@ -658,7 +663,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onSearchJump
     return () => cancelIdleCallback(id);
   }, []);
   return (
-    <div className="space-y-8 pt-2 [&>*:not(header)]:max-w-3xl">
+    <div className="space-y-8 pt-2 [&>*:not(header,.kyb-wide)]:max-w-3xl">
       {/* govbot's elections hero: overline, serif title, the Capitol. */}
       <header className="flex flex-col-reverse md:flex-row md:items-center gap-4 md:gap-10">
         <div className="min-w-0 flex-1 space-y-3">
@@ -721,6 +726,12 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onSearchJump
           </li>
         ))}
       </ul>
+
+      <div className="kyb-wide pt-4">
+        <Headliners races={STATEWIDE} sections={SECTIONS} overline="On every Illinois ballot" heading="The statewide races"
+          intro={`These ${STATEWIDE.length} contests are on every ballot in Illinois. Tap a card to meet the candidates; your address adds Congress, Springfield, Cook County, the judges and your ballot questions.`}
+          onOpen={onOpenCandidate} onOpenRace={onOpenRace} />
+      </div>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } fro
 import { ClearButton } from '../../../components/ClearButton';
 import { BrowsingNotice, Confetti, Ring, useDocumentMeta } from '../Bits';
 import { Group } from '../Calendar';
+import { Headliners } from '../Headliners';
 import { ContentsColumn, ContentsDrawer } from '../Contents';
 import { earnedTrophies, streak, Trophies } from '../Progress';
 import { CandidateSheet, Compare, MeasureCard, RaceCard } from '../Race';
@@ -310,6 +311,7 @@ export function KnowYourBallotMichigan() {
             onBrowse={() => { setBrowsing(true); window.scrollTo({ top: 0 }); }}
             onSearchJump={(h) => { setBrowsing(true); jumpTo(h.section, h.id); }}
             onOpenRace={(race) => { setBrowsing(true); jumpTo(race.section, race.id); }}
+            onOpenCandidate={openSheet}
             saved={Object.keys(saved.picks).length}
             onStartFresh={() => { setSaved((s) => ({ ...s, picks: {}, plan: {} })); setToast('Cleared. Starting fresh.'); }}
           />
@@ -483,9 +485,9 @@ export function KnowYourBallotMichigan() {
 // The statewide races everyone votes on, for the landing page's quick tour.
 const HEADLINERS = data.races.filter((r) => !r.area);
 
-function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, onSearchJump, onOpenRace, daysLeft, saved, onStartFresh }: {
+function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, onSearchJump, onOpenRace, onOpenCandidate, daysLeft, saved, onStartFresh }: {
   address: string; setAddress: (s: string) => void; status: { busy: boolean; error: string; outside: boolean };
-  onSubmit: (e: FormEvent) => void; onLocate: () => void; onBrowse: () => void; onSearchJump: (h: Hit) => void; onOpenRace: (r: Race) => void;
+  onSubmit: (e: FormEvent) => void; onLocate: () => void; onBrowse: () => void; onSearchJump: (h: Hit) => void; onOpenRace: (r: Race) => void; onOpenCandidate: (r: Race, c: Candidate) => void;
   daysLeft: number; saved: number; onStartFresh: () => void;
 }) {
   const [confirming, setConfirming] = useState(false);
@@ -565,37 +567,18 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
         ))}
       </ul>
 
-      <section aria-labelledby="kyb-headliners" className="space-y-4">
-        <div className="space-y-1">
-          <p className="text-[13px] font-bold uppercase tracking-[0.16em] text-[var(--gb-primary)]">On every Michigan ballot</p>
-          <h2 id="kyb-headliners" className="text-3xl sm:text-4xl leading-[1.05]">The statewide races</h2>
-          <p className="text-[15px]">These {HEADLINERS.length} contests are on every Michigan ballot. Tap one to see who’s running; your address adds your own {byDistrict > 0 ? 'U.S. House, state Senate, state House and Court of Appeals' : ''} races from the {byDistrict} by district.</p>
-        </div>
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {HEADLINERS.map((r) => {
-            const s = sectionOf(r.section);
-            const majors = r.candidates.filter((c) => /^(Democratic|Republican)$/.test(c.nominatedBy ?? c.party));
-            return (
-              <li key={r.id}>
-                <button type="button" onClick={() => onOpenRace(r)} className="w-full h-full text-left rounded-2xl border-[3px] bg-[var(--gb-surface)] p-4 space-y-2 hover:bg-[var(--kyb-chip)]" style={{ borderColor: s.color }}>
-                  <span className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-bold" style={{ background: s.color, color: s.ink }}>{s.emoji} {s.title}</span>
-                  <span className="block text-lg font-black leading-tight">{r.office.replace(/ \(\d+ seats\)$/, '')}</span>
-                  <span className="block text-sm leading-snug">{(majors.length ? majors : r.candidates).slice(0, 4).map((c) => c.name.split(' & ')[0]).join(' · ')}{r.candidates.length > Math.max(majors.length, 4) ? ` + ${r.candidates.length - Math.min(Math.max(majors.length, 1), 4)} more` : ''}</span>
-                  <span className="block text-xs font-bold">{r.candidates.length} candidate{r.candidates.length === 1 ? '' : 's'}{r.voteFor > 1 ? ` · pick up to ${r.voteFor}` : ''}</span>
-                </button>
-              </li>
-            );
-          })}
-          <li>
-            <button type="button" onClick={() => onSearchJump({ id: data.measures[0].id, section: 'measures', title: '', detail: '', about: '' })} className="w-full h-full text-left rounded-2xl border-[3px] border-[var(--mi-red)] bg-[var(--gb-surface)] p-4 space-y-2 hover:bg-[var(--kyb-chip)]">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--mi-red)] px-2.5 py-0.5 text-xs font-bold text-white">🗳️ Proposals</span>
-              <span className="block text-lg font-black leading-tight">Two statewide proposals</span>
-              <span className="block text-sm leading-snug">A constitutional convention, and campaign money from utilities and state contractors.</span>
-              <span className="block text-xs font-bold">Yes or no on each</span>
-            </button>
-          </li>
-        </ul>
-      </section>
+      <Headliners races={HEADLINERS} sections={SECTIONS} overline="On every Michigan ballot" heading="The statewide races"
+        intro={`These ${HEADLINERS.length} contests are on every Michigan ballot. Tap a card to meet the candidates; your address adds your own U.S. House, state Senate, state House and Court of Appeals races from the ${byDistrict} by district.`}
+        onOpen={onOpenCandidate} onOpenRace={onOpenRace}>
+        <li>
+          <button type="button" onClick={() => onSearchJump({ id: data.measures[0].id, section: 'measures', title: '', detail: '', about: '' })} className="w-full h-full text-left rounded-2xl border-[3px] border-[var(--mi-red)] bg-[var(--gb-surface)] p-4 space-y-2 hover:bg-[var(--kyb-chip)]">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--mi-red)] px-2.5 py-0.5 text-xs font-bold text-white">🗳️ Proposals</span>
+            <span className="block text-lg font-black leading-tight">Two statewide proposals</span>
+            <span className="block text-sm leading-snug">A constitutional convention, and campaign money from utilities and state contractors.</span>
+            <span className="block text-xs font-bold">Yes or no on each</span>
+          </button>
+        </li>
+      </Headliners>
     </div>
   );
 }
