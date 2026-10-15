@@ -49,7 +49,7 @@ export async function geocode(address: string): Promise<Place | null> {
 
 // Coordinates -> districts, against the pre-baked maps (loaded on demand so
 // people who only browse never download them).
-type Layer = { id: string; rings: number[][] }[];
+export type Layer = { id: string; rings: number[][] }[];
 
 function inRing(x: number, y: number, ring: number[]): boolean {
   let inside = false;
@@ -63,10 +63,10 @@ function inRing(x: number, y: number, ring: number[]): boolean {
 // The maps ship as plain JSON files, not code: the browser reads JSON several
 // times faster than a script of the same size, and a phone feels the
 // difference (the Cook maps are 1.1 MB).
-type Maps = Promise<{ layers: Record<string, Layer> }>;
+export type Maps = Promise<{ layers: Record<string, Layer> }>;
 let maps: Maps | null = null;
 let stateMaps: Maps | null = null;
-const getMaps = (url: string): Maps => fetch(url).then((r) => {
+export const getMaps = (url: string): Maps => fetch(url).then((r) => {
   if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`);
   return r.json();
 });
@@ -78,7 +78,7 @@ export const prefetchDistricts = () =>
 const stateDistricts = () =>
   (stateMaps ??= getMaps(stateMapsUrl).catch((e) => { stateMaps = null; throw e; }));
 
-async function lookIn(maps: Maps, lat: number, lng: number): Promise<Districts> {
+export async function lookIn(maps: Maps, lat: number, lng: number): Promise<Districts> {
   const { layers } = await maps;
   const out: Districts = {};
   for (const [type, features] of Object.entries(layers)) {

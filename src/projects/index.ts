@@ -18,6 +18,10 @@ const KnowYourBallot = lazy(() =>
   import('./know-your-ballot/KnowYourBallot').then((m) => ({ default: m.KnowYourBallot })),
 );
 
+const KnowYourBallotMichigan = lazy(() =>
+  import('./know-your-ballot/michigan/KnowYourBallotMichigan').then((m) => ({ default: m.KnowYourBallotMichigan })),
+);
+
 const AIArt = lazy(() =>
   import('./aiart/AIArt').then((m) => ({ default: m.AIArt })),
 );
@@ -34,6 +38,16 @@ export const PROJECTS: ProjectDefinition[] = [
     emoji: '🗳️',
     gradient: 'from-[#009CDF] via-[#973999] to-[#0a0a0a]',
     Component: KnowYourBallot,
+  },
+  {
+    id: 'know-your-ballot-michigan',
+    name: 'Know Your Ballot: Michigan',
+    tagline: 'Every race on your Michigan midterm ballot, explained.',
+    description:
+      'Enter any Michigan address to see your Nov 3 ballot: governor, U.S. Senate, Congress, every seat in Lansing, the Supreme Court, the university boards and both statewide proposals. What each job does, who’s running, who’s funding them. Pick, plan, print, share.',
+    emoji: '🧤',
+    gradient: 'from-[#0369A1] via-[#0F766E] to-[#0a0a0a]',
+    Component: KnowYourBallotMichigan,
   },
   {
     id: 'vibecheck',

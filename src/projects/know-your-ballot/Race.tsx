@@ -2,8 +2,7 @@ import { AtSign, Check, ExternalLink, Facebook, Info, Instagram, Linkedin, Music
 import { memo, useEffect, useRef, type ReactNode } from 'react';
 import { BarRatings } from './BarRatings';
 import { Face } from './MeetCandidates';
-import { explainOffice } from './offices';
-import { researchLinks } from './research';
+import { useStateConfig } from './state';
 import { money, type Choice } from './store';
 import type { Candidate, Measure, Race, Retention, SocialPlatform } from './types';
 
@@ -83,6 +82,7 @@ function YesNo({ value, onChange, label }: { value: Choice | undefined; onChange
 }
 
 function MoneyBars({ c, max }: { c: Candidate; max: number }) {
+  const { moneySource } = useStateConfig();
   if (!c.money) return null;
   const rows: [string, number, string][] = [
     ['Raised', c.money.raised, 'var(--gb-primary)'],
@@ -99,7 +99,7 @@ function MoneyBars({ c, max }: { c: Candidate; max: number }) {
           </div>
         </div>
       ))}
-      <p className="text-xs text-[var(--gb-text)]">{c.money.source === 'FEC' ? 'Federal Election Commission' : 'Illinois State Board of Elections'} reports, Jan 2025 through {c.money.through}. Cash is what’s left on hand.</p>
+      <p className="text-xs text-[var(--gb-text)]">{moneySource(c.money.source)} reports, Jan 2025 through {c.money.through}. Cash is what’s left on hand.</p>
     </div>
   );
 }
@@ -123,6 +123,7 @@ interface RaceProps {
 }
 
 export const RaceCard = memo(function RaceCard({ race, color, ink, numbered, choice, onChoose: chooseFor, onInfo, onCompare }: RaceProps) {
+  const { areaLabel, explainOffice } = useStateConfig();
   const onChoose = (c: Choice) => chooseFor(race.id, c);
   const picked = Array.isArray(choice) ? choice : [];
   const toggle = (ballot: number) => {
@@ -166,6 +167,7 @@ export const RaceCard = memo(function RaceCard({ race, color, ink, numbered, cho
                     <span className="block font-bold leading-snug text-[var(--gb-text)]">{c.name}</span>
                     <span className="flex flex-wrap gap-1.5 mt-1">
                       <Badge tone="var(--gb-bg)">{c.party}</Badge>
+                      {c.nominatedBy && <Badge tone="var(--gb-bg)">{c.nominatedBy} nominee</Badge>}
                       {c.incumbent && <Badge tone="var(--gb-text)" ink="var(--gb-bg)">Incumbent</Badge>}
                       {c.money && <Badge tone="var(--gb-bg)">{money(c.money.raised)} raised</Badge>}
                     </span>
@@ -230,6 +232,7 @@ function Follow({ c }: { c: Candidate }) {
 }
 
 export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, onShowRace, onClose }: { race: Race; c: Candidate; color: string; ink: string; numbered: boolean; picked: boolean; onPick: () => void; /** From the landing page: open their race on the ballot. */ onShowRace?: () => void; onClose: () => void }) {
+  const { noMoney, researchLinks } = useStateConfig();
   return (
     <Dialog title={c.name} onClose={onClose}>
       <div className="space-y-6">
@@ -246,6 +249,7 @@ export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, 
         <div className="flex flex-wrap gap-2">
           <Badge tone={color} ink={ink}>{race.office}</Badge>
           <Badge>{c.party}</Badge>
+          {c.nominatedBy && <Badge>{c.nominatedBy} nominee</Badge>}
           {numbered && <Badge>Ballot #{c.ballot}</Badge>}
           {c.incumbent && <Badge tone="var(--gb-text)" ink="var(--gb-bg)">Incumbent</Badge>}
         </div>
@@ -255,9 +259,7 @@ export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, 
           {c.money ? (
             <MoneyBars c={c} max={Math.max(c.money.raised, c.money.spent, c.money.cash)} />
           ) : (
-            <p className="text-[15px] text-[var(--gb-text)]">{race.section === 'federal'
-              ? 'No FEC filings found. Federal candidates who raise or spend under $5,000 don’t have to file.'
-              : 'No campaign reports found for this cycle. Illinois candidates who raise or spend under $5,000 in a year don’t need a campaign committee.'}</p>
+            <p className="text-[15px] text-[var(--gb-text)]">{noMoney(race)}</p>
           )}
         </section>
 
@@ -304,6 +306,7 @@ export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, 
 // ---- head-to-head --------------------------------------------------------------
 
 export function Compare({ race, color, ink, numbered, picked, onPick, onInfo, onClose }: { race: Race; color: string; ink: string; numbered: boolean; picked: number[]; onPick: (ballot: number) => void; onInfo: (c: Candidate) => void; onClose: () => void }) {
+  const { compareNote } = useStateConfig();
   const max = Math.max(1, ...race.candidates.map((c) => c.money ? Math.max(c.money.raised, c.money.spent, c.money.cash) : 0));
   const anyMoney = race.candidates.some((c) => c.money);
   return (
@@ -342,7 +345,7 @@ export function Compare({ race, color, ink, numbered, picked, onPick, onInfo, on
         </div>
       </div>
       {!anyMoney && <p className="mt-4 text-[15px] text-[var(--gb-text)]">No campaign reports found for anyone in this race this cycle.</p>}
-      <p className="mt-4 text-[15px] text-[var(--gb-text)]">Money and incumbency come from official FEC and Illinois State Board of Elections records. Tap “ⓘ Details” under a name for donors, background and their campaign site.</p>
+      <p className="mt-4 text-[15px] text-[var(--gb-text)]">{compareNote}</p>
     </Dialog>
   );
 }
@@ -367,6 +370,7 @@ export const RetentionCard = memo(function RetentionCard({ color, r, choice, onC
 });
 
 export const SCOPE: Record<Measure['scope']['type'], (m: Measure) => string> = {
+  state: () => 'Statewide',
   county: () => 'All of Cook County',
   city: () => 'All of Chicago',
   ward: (m) => `Ward ${(m.scope as { id: string }).id} only`,
@@ -375,13 +379,15 @@ export const SCOPE: Record<Measure['scope']['type'], (m: Measure) => string> = {
 };
 
 export const MeasureCard = memo(function MeasureCard({ color, m, choice, onChoose: chooseFor }: { key?: string; /** Section colour, for the border. */ color: string; m: Measure; choice: Choice | undefined; onChoose: (id: string, c: Choice) => void }) {
+  const { scopeLabel } = useStateConfig();
   const onChoose = (c: Choice) => chooseFor(m.id, c);
   return (
     <article id={`race-${m.id}`} className="scroll-mt-[calc(var(--kyb-top)+var(--kyb-bar,260px)+16px)] rounded-2xl border-[3px] bg-[var(--gb-surface)] p-5 space-y-4" style={{ borderColor: color }}>
       <div className="space-y-2">
-        <Badge>{SCOPE[m.scope.type](m)}</Badge>
+        <Badge>{scopeLabel(m)}</Badge>
         <h3 className="text-lg font-black leading-tight text-[var(--gb-text)]">{m.title}</h3>
         {m.scope.type === 'named' && <p className="text-sm text-[var(--gb-amber-hi)] font-bold">Only on ballots inside this proposed area. Your official sample ballot will show it if it’s on yours.</p>}
+        {m.plain && <p className="text-[15px] leading-relaxed text-[var(--gb-text)]">{m.plain}</p>}
         <blockquote className="rounded-xl bg-[var(--gb-bg)] p-4 text-[15px] leading-relaxed text-[var(--gb-text)]">
           <span className="block mb-1 text-xs font-black uppercase tracking-widest text-[var(--gb-text)]">Official ballot text</span>
           “{m.question}”

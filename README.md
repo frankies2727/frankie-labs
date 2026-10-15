@@ -17,7 +17,7 @@ No accounts. No installs. No server. Just open the link.
 
 | | |
 |---|---|
-| 🎮 **What** | 13 browser games + 5 projects in one site |
+| 🎮 **What** | 13 browser games + 6 projects in one site |
 | 👥 **Who** | You + friends over a room code, or solo vs bots |
 | 🌍 **Where** | Any browser, phone or desktop, any network |
 | 💸 **Cost** | Free. Runs entirely on GitHub Pages |
@@ -161,6 +161,7 @@ The home screen is the projects gallery. Tap the **Games** button (top right) to
 | Project | What it does |
 |---|---|
 | 🗳️ **Know Your Ballot: Illinois** | Enter a Chicago or suburban Cook address, see every race on your Nov 3 ballot explained. Pick, plan, print, share |
+| 🧤 **Know Your Ballot: Michigan** | Enter any Michigan address, see your Nov 3 midterm ballot: governor, U.S. Senate, Congress, Lansing, the courts, the university boards and both proposals |
 | ⚡ **VibeCheck** | Type any company, get a scrollable visual story: rundown, fast facts, timeline |
 | 🌍 **Place Timelapse** | Watch a place change over time, from NASA satellite imagery to Street View history |
 | 🎨 **AI Art** | 112 AI images with the exact prompts behind them. Tap to copy a prompt |
@@ -185,6 +186,19 @@ The home screen is the projects gallery. Tap the **Games** button (top right) to
 - **Your picks and plan** stay in your browser only. The share card shows progress, never picks.
 - **Fresh daily:** `.github/workflows/know-your-ballot-illinois.yml` reruns `scripts/know-your-ballot/illinois.mjs` every morning and redeploys if anything changed. Needs `pdftotext` (poppler-utils) to run locally.
 - **Built on [govbot](https://chihacknight.github.io/govbot/):** govbot's homepage links here for "What's on my ballot?", and its old `dashboard/elections.html` (now `illinois-elections.html`) forwards here; links to a race, `#race=<govbot race id>`, open that race.
+</details>
+
+<details>
+<summary><b>🧤 How Know Your Ballot: Michigan works</b> (key-free sources, daily refresh)</summary>
+
+- **Who's on the ballot:** Ballotpedia's race pages (statewide offices, the U.S. House delegation, both legislative chambers, the Court of Appeals) and Wikipedia's articles for the three university boards, parsed by `scripts/know-your-ballot/michigan.mjs`. Both are CC BY-SA and linked from the app's Sources. The Secretary of State's certified listing is the official source, but its host refuses automated readers; swap it in (`scripts/know-your-ballot/michigan/ballotpedia.mjs`) when that changes.
+- **Campaign money & incumbency:** FEC bulk filings for federal candidates (same matcher as Illinois, by state). State-level money isn't loaded yet.
+- **Proposals:** the two statewide proposals in their certified wording, with a plain-English note (`scripts/know-your-ballot/michigan/proposals.mjs`).
+- **Your districts:** the address goes to Photon (OpenStreetMap's geocoder; Nominatim as fallback); Census maps of the congressional, state Senate, state House and county lines are pre-baked (`data/michigan/districts.json`, ~0.8 MB) so matching happens on your device. The county sets the Court of Appeals district.
+- **Not here yet:** county and local offices, trial-court judges, local proposals and candidate photos. The app points voters to their sample ballot at Michigan.gov/Vote.
+- **Fresh daily:** `.github/workflows/know-your-ballot-michigan.yml` reruns the build every morning and redeploys if anything changed. No extra tools needed (just `unzip`).
+- **Shared engine:** the race cards, candidate sheets, comparison, search, contents, trophies, share card, resume links and print view are the Illinois components; `src/projects/know-your-ballot/state.tsx` carries what differs per state (area labels, office explainers, research links, money sources).
+
 - **More states, one naming pattern:** project id `know-your-ballot-<state>` (URL `/projects/know-your-ballot-<state>`), name "Know Your Ballot: <State>", data in `src/projects/know-your-ballot/data/<state>/`, build `scripts/know-your-ballot/<state>.mjs` (+ its modules in `scripts/know-your-ballot/<state>/`), refresh workflow `.github/workflows/know-your-ballot-<state>.yml`, saved picks under `know-your-ballot:<state>:<election date>` (Illinois keeps its original key so nobody's picks are lost). On govbot: `dashboard/<state>-elections.html`, archives as `<state>-elections-v<N>.html`.
 
 </details>
