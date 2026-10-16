@@ -8,24 +8,29 @@ export const GOVBOT_ELECTIONS = 'https://chihacknight.github.io/govbot/dashboard
 // A state's bills (govbot's legislation data): il_recent.json is Illinois'
 // bills with recent activity (~1.5 MB); other states have <state>.json whole.
 const GOVBOT_BILLS = 'https://chihacknight.github.io/govbot/dashboard/bills/';
-// Like govbot's elections page: bills with action in the last 6 months, the
-// curated elections/education list merged with every IL bill tagged that way,
-// and an 'Other' tab of everything else (newest OTHER_MAX; the rest are on
-// govbot's legislation page).
+// Bills with action in the last six months that bear on the ballot: the
+// title has to say so (govbot's topic tags are keyword-based and, in
+// Michigan, label crime and sentencing bills "elections & voting"), or the
+// bill is on govbot's curated Illinois list with an upcoming hearing. A
+// ceremonial resolution stays only when it passes the same test, so a
+// tribute to a late representative drops out but a resolution urging a
+// change to voting law stays in.
 const RECENT_DAYS = 183;
-const OTHER_MAX = 60;
-const TOPICS = ['elections & voting', 'education'];
+// Elections, voting, campaigns and the machinery of the ballot.
+const BALLOT = /\b(elect(ion|ions|oral|ed|ing)?|vot(e|es|ing|er|ers)|ballot|campaign|candidate|poll(ing)?|precinct|primar(y|ies)|referend|redistrict|apportion|census)\b/i;
+// Who runs the schools: boards, districts and the state board.
+const SCHOOLS = /\b(school board|board of education|school district|charter school|state board|school code|school governance|school elections?)\b/i;
+// Michigan titles open with their subject; in these the word "election" means
+// choosing a benefit or coverage ("Retirement: ...; election process"), not a vote.
+const LEGAL_SENSE = /^(Retirement|Insurance|Probate|Taxation|Trade|Civil procedure|Property|Corporations|Labor|Health):/i;
+const aboutBallot = (b) => (BALLOT.test(b.title) && !LEGAL_SENSE.test(b.title)) || (b.tags?.includes('education') && SCHOOLS.test(b.title));
 
 const keep = (o, keys) => Object.fromEntries(keys.filter((k) => o[k] != null).map((k) => [k, o[k]]));
 
 // state + session + id is the bill's key in govbot's catalog (legislation.html#bill=…).
 const LAW_FIELDS = ['state', 'session', 'id', 'title', 'url', 'tags', 'latest_action', 'latest_action_desc', 'hearing'];
 
-/**
- * `state`'s bills with action in the last six months: the elections and
- * education ones (plus `curated`, govbot's own list for Illinois), then the
- * newest of the rest.
- */
+/** `state`'s bills with action in the last six months that bear on the ballot (see `aboutBallot`), newest first. */
 export async function recentBills(state, curated = []) {
   const file = state === 'il' ? 'il_recent.json' : `${state}.json`;
   const res = await fetch(`${GOVBOT_BILLS}${file}`);
@@ -35,11 +40,9 @@ export async function recentBills(state, curated = []) {
   const recent = (b) => (b.latest_action ?? '').slice(0, 10) >= since;
   const newest = (a, b) => (b.latest_action ?? '').localeCompare(a.latest_action ?? '');
   // The curated list carries upcoming hearings, so it wins when a bill is in both.
-  const byId = new Map(curated.map((b) => [b.id, b]));
-  for (const b of all) if (!byId.has(b.id) && b.tags?.some((t) => TOPICS.includes(t))) byId.set(b.id, b);
-  const topical = [...byId.values()].filter(recent);
-  const other = all.filter((b) => !byId.has(b.id) && recent(b)).sort(newest).slice(0, OTHER_MAX);
-  return [...topical, ...other].sort(newest).map((b) => keep({ state, ...b }, LAW_FIELDS));
+  const byId = new Map(curated.filter((b) => b.hearing || aboutBallot(b)).map((b) => [b.id, b]));
+  for (const b of all) if (!byId.has(b.id) && aboutBallot(b)) byId.set(b.id, b);
+  return [...byId.values()].filter(recent).sort(newest).map((b) => keep({ state, ...b }, LAW_FIELDS));
 }
 
 // govbot's race ids, which its search, RSS and old links use

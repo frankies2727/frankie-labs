@@ -21,11 +21,9 @@ export interface LawsState {
 }
 
 const GOVBOT = 'https://chihacknight.github.io/govbot/dashboard/';
-const TOPICS = ['elections & voting', 'education'];
 const TABS = [
   { id: 'elections & voting', label: 'Elections & voting' },
-  { id: 'education', label: 'Education' },
-  { id: 'other', label: 'Other' },
+  { id: 'education', label: 'Schools' },
 ] as const;
 // The most recent few per topic; govbot's catalog has the rest.
 const SHOWN = 9;
@@ -33,7 +31,8 @@ const SHOWN = 9;
 const safeUrl = (u?: string) => (u && /^https:\/\//.test(u) ? u : undefined);
 const dateLabel = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 const day = (iso: string) => dateLabel.format(new Date(`${iso.slice(0, 10)}T00:00:00Z`));
-const inTab = (b: Law, tab: string) => (tab === 'other' ? !b.tags.some((t) => TOPICS.includes(t)) : b.tags.includes(tab));
+// Every bill here bears on the ballot (the build filters them); one not tagged education counts as elections.
+const inTab = (b: Law, tab: string) => (tab === 'education' ? b.tags.includes('education') : !b.tags.includes('education') || b.tags.includes('elections & voting'));
 const dot = (t: string) => (t === 'elections & voting' ? 'var(--gb-blue-hi)' : t === 'education' ? 'var(--kyb-gold)' : 'var(--gb-primary)');
 
 function Bill({ b, code }: { key?: string; b: Law; code: string }) {
@@ -96,7 +95,7 @@ export function Laws({ laws, state }: { laws: Law[]; state: LawsState }) {
 
       {open && <div id="kyb-laws-body" className="space-y-4">
       <div className="space-y-1">
-        <p className="text-[15px] leading-relaxed max-w-[75ch]">The {state.name} bills that shape how elections and schools work, from campaign finance and voting rules to district boundaries and school governance, with action in the last six months.<br /><br />“Other” is the rest of {state.name}’s recent legislative activity.</p>
+        <p className="text-[15px] leading-relaxed max-w-[75ch]">The {state.name} bills that shape how elections and schools work, from campaign finance and voting rules to district boundaries and school governance, with action in the last six months.</p>
       </div>
 
       <div className="flex flex-wrap items-center gap-2">
