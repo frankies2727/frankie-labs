@@ -1,5 +1,5 @@
 // Shape of the static data built by scripts/know-your-ballot/michigan.mjs.
-import type { Change, Measure, NewsItem, Race } from '../types';
+import type { Change, Law, Measure, NewsItem, Race } from '../types';
 
 export interface MichiganData {
   election: { name: string; date: string };
@@ -7,6 +7,8 @@ export interface MichiganData {
     /** Each office's candidate page, and the day the list was last read. */
     candidates: { pages: Record<string, string>; asOf: string };
     money: { url: string; file: string };
+    /** MiTN's all-transaction exports. */
+    stateMoney?: { url: string };
     proposals: { lwv: string; ballotpedia: string };
   };
   races: Race[];
@@ -17,4 +19,6 @@ export interface MichiganData {
   changes?: Change[];
   /** Recent headlines about the election, newest first. */
   news?: NewsItem[];
+  /** Lansing's bills on elections and schools, from govbot, newest action first. */
+  laws?: Law[];
 }

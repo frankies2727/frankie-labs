@@ -50,9 +50,9 @@ export function changeItems(changes: Change[], source: (c: Change) => { name: st
 export const newsItems = (news: NewsItem[]): FeedItem[] =>
   news.map((n) => ({ at: n.at, kind: n.topic === 'money' ? 'money' : 'news', title: n.title, source: { name: n.source, url: safe(n.url) } }));
 
-export const billItems = (laws: Law[], billUrl: (b: Law) => string | undefined): FeedItem[] =>
+export const billItems = (laws: Law[], billUrl: (b: Law) => string | undefined, legislature: string): FeedItem[] =>
   laws.filter((b) => b.latest_action).map((b) => ({
-    at: b.latest_action!, kind: 'bill', title: `${b.id}: ${b.title}`, detail: b.latest_action_desc, source: { name: 'Illinois General Assembly, via govbot', url: billUrl(b) },
+    at: b.latest_action!, kind: 'bill', title: `${b.id}: ${b.title}`, detail: b.latest_action_desc, source: { name: `${legislature}, via govbot`, url: billUrl(b) },
   }));
 
 /** The next few dates, as items dated on the day itself. */

@@ -4,10 +4,20 @@ import { ClearButton } from '../../components/ClearButton';
 import { useOpen } from './store';
 import type { Law } from './types';
 
-// Illinois bills that change how elections and schools work, from govbot's
+// A state's bills that change how elections and schools work, from govbot's
 // legislation data, laid out like govbot's own elections page. Text comes from
 // outside, so it's only ever rendered as text, and links are kept only if
 // they're plain https.
+
+export interface LawsState {
+  /** "IL", on each bill's badge. */
+  code: string;
+  name: string;
+  /** Where the legislature sits: "Springfield". */
+  capital: string;
+  /** govbot's RSS feed of these bills, where it has one. */
+  rss?: string;
+}
 
 const GOVBOT = 'https://chihacknight.github.io/govbot/dashboard/';
 const TOPICS = ['elections & voting', 'education'];
@@ -30,13 +40,13 @@ const day = (iso: string) => dateLabel.format(new Date(`${iso.slice(0, 10)}T00:0
 const inTab = (b: Law, tab: string) => (tab === 'other' ? !b.tags.some((t) => TOPICS.includes(t)) : b.tags.includes(tab));
 const dot = (t: string) => (t === 'elections & voting' ? 'var(--gb-blue-hi)' : t === 'education' ? 'var(--kyb-gold)' : 'var(--gb-primary)');
 
-function Bill({ b }: { key?: string; b: Law }) {
+function Bill({ b, code }: { key?: string; b: Law; code: string }) {
   const url = billUrl(b);
   const slip = safeUrl(b.hearing?.witness_slip_url);
   const body = (
     <>
       <div className="flex items-start gap-2">
-        <span className="shrink-0 rounded-md bg-[var(--kyb-gold)] px-1.5 text-xs font-black text-[var(--gb-bg)]">IL</span>
+        <span className="shrink-0 rounded-md bg-[var(--kyb-gold)] px-1.5 text-xs font-black text-[var(--gb-bg)]">{code}</span>
         <span className="font-black leading-tight">{b.id}</span>
         <span className="flex min-w-0 flex-1 flex-wrap gap-1">
           {b.tags.map((t) => (
@@ -67,10 +77,10 @@ function Bill({ b }: { key?: string; b: Law }) {
   );
 }
 
-export function Laws({ laws }: { laws: Law[] }) {
+export function Laws({ laws, state }: { laws: Law[]; state: LawsState }) {
   const [tab, setTab] = useState<string>(TABS[0].id);
   const [q, setQ] = useState('');
-  const [open, toggle] = useOpen('kyb-laws-open');
+  const [open, toggle] = useOpen(`kyb-laws-open:${state.code}`);
   const list = useMemo(() => {
     const words = q.toLowerCase().split(/\s+/).filter(Boolean);
     return laws.filter((b) => inTab(b, tab) && words.every((w) => `${b.id} ${b.title} ${b.latest_action_desc ?? ''} ${b.tags.join(' ')}`.toLowerCase().includes(w)));
@@ -81,7 +91,7 @@ export function Laws({ laws }: { laws: Law[] }) {
       <div className="space-y-1">
         <h2 id="kyb-laws" className="text-2xl">
           <button type="button" onClick={toggle} aria-expanded={open} aria-controls="kyb-laws-body" className="inline-flex min-h-[44px] items-center gap-2 text-left">
-            🏛️ The laws that shape your ballot, from Springfield
+            🏛️ The laws that shape your ballot, from {state.capital}
             <ChevronDown className={`w-6 h-6 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
             <span className="sr-only">{open ? '(hide)' : '(show)'}</span>
           </button>
@@ -90,7 +100,7 @@ export function Laws({ laws }: { laws: Law[] }) {
 
       {open && <div id="kyb-laws-body" className="space-y-4">
       <div className="space-y-1">
-        <p className="text-[15px] leading-relaxed max-w-[75ch]">The Illinois bills that shape how elections and schools work, from campaign finance and voting rules to ward boundaries and school governance, with action in the last six months.<br /><br />“Other” is the rest of Illinois’ recent legislative activity.</p>
+        <p className="text-[15px] leading-relaxed max-w-[75ch]">The {state.name} bills that shape how elections and schools work, from campaign finance and voting rules to district boundaries and school governance, with action in the last six months.<br /><br />“Other” is the rest of {state.name}’s recent legislative activity.</p>
       </div>
 
       <div className="flex flex-wrap items-center gap-2">
@@ -102,14 +112,14 @@ export function Laws({ laws }: { laws: Law[] }) {
             </button>
           ))}
         </div>
-        <a href={`${GOVBOT}elections/springfield.xml`} target="_blank" rel="noreferrer noopener" className="ml-auto inline-flex items-center gap-1.5 min-h-[40px] rounded-full border-2 border-[var(--kyb-gold)] px-3 text-sm font-bold">
+        {state.rss && <a href={state.rss} target="_blank" rel="noreferrer noopener" className="ml-auto inline-flex items-center gap-1.5 min-h-[40px] rounded-full border-2 border-[var(--kyb-gold)] px-3 text-sm font-bold">
           <Rss className="w-4 h-4" aria-hidden="true" /> Follow (RSS)
-        </a>
+        </a>}
         <div className="relative w-full sm:w-auto sm:min-w-[22rem] sm:flex-1 lg:flex-none lg:w-[24rem]">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none" aria-hidden="true" />
-          <label htmlFor="kyb-law-search" className="sr-only">Search Illinois bills</label>
+          <label htmlFor="kyb-law-search" className="sr-only">Search {state.name} bills</label>
           <input id="kyb-law-search" type="text" inputMode="search" value={q} onChange={(e) => setQ(e.target.value)}
-            placeholder="Search Illinois bills by number, title or topic…"
+            placeholder={`Search ${state.name} bills by number, title or topic…`}
             className="w-full min-h-[40px] rounded-full border-2 border-[var(--kyb-gold)] bg-[var(--gb-bg)] pl-9 pr-10 text-sm text-[var(--gb-text)] focus:outline-none" />
           {q && <ClearButton onClear={() => setQ('')} className="right-0 w-9 h-9" />}
         </div>
@@ -117,7 +127,7 @@ export function Laws({ laws }: { laws: Law[] }) {
 
       {list.length ? (
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {list.slice(0, SHOWN).map((b) => <Bill key={b.id} b={b} />)}
+          {list.slice(0, SHOWN).map((b) => <Bill key={b.id} b={b} code={state.code} />)}
         </ul>
       ) : <p className="text-[15px]">{q ? 'No bills match that search.' : 'No bills in this category in the last 6 months.'}</p>}
 
