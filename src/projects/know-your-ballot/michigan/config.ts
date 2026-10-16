@@ -81,11 +81,11 @@ export const MICHIGAN: StateConfig = {
   scopeLabel: () => 'Statewide proposal',
   explainOffice,
   researchLinks,
-  moneySource: () => 'Federal Election Commission',
+  moneySource: (s) => (s === 'FEC' ? 'Federal Election Commission' : 'Michigan Bureau of Elections (MiTN)'),
   noMoney: (r) => (r.section === 'federal'
     ? 'No FEC filings found. Federal candidates who raise or spend under $5,000 don’t have to file.'
-    : 'State and local campaign money isn’t in this guide yet. The Michigan Bureau of Elections’ disclosure database has every report.'),
-  compareNote: 'Federal money comes from FEC records; incumbency from the candidate lists. Tap “ⓘ Details” under a name for their profile and campaign site.',
+    : 'No committee for this race in Michigan’s campaign finance exports: a candidate who expects to raise and spend under $1,000 can file a waiver and reports nothing.'),
+  compareNote: 'Money comes from FEC and Michigan Bureau of Elections (MiTN) records; incumbency from the candidate lists. Tap “ⓘ Details” under a name for their profile and campaign site.',
 };
 
 /** A district's number as a chip: "Congress 7", "County Ingham". */

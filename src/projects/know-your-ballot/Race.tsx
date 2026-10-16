@@ -89,7 +89,7 @@ function MoneyBars({ c, max }: { c: Candidate; max: number }) {
   const rows: [string, number, string][] = [
     ['Raised', c.money.raised, 'var(--gb-primary)'],
     ['Spent', c.money.spent, 'var(--kyb-orange)'],
-    ['Cash', c.money.cash, 'var(--gb-blue-hi)'],
+    ...(c.money.cash === undefined ? [] : [['Cash', c.money.cash, 'var(--gb-blue-hi)'] as [string, number, string]]),
   ];
   return (
     <div className="space-y-2">
@@ -101,7 +101,7 @@ function MoneyBars({ c, max }: { c: Candidate; max: number }) {
           </div>
         </div>
       ))}
-      <p className="text-xs text-[var(--gb-text)]">{moneySource(c.money.source)} reports, Jan 2025 through {c.money.through}. Cash is what’s left on hand.</p>
+      <p className="text-xs text-[var(--gb-text)]">{moneySource(c.money.source)} reports, Jan 2025 through {c.money.through}.{c.money.cash === undefined ? '' : ' Cash is what’s left on hand.'}</p>
     </div>
   );
 }
@@ -263,7 +263,7 @@ export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, 
         <section className="space-y-3">
           <h3 className="text-sm font-black uppercase tracking-widest text-[var(--gb-text)]">💰 Campaign money</h3>
           {c.money ? (
-            <MoneyBars c={c} max={Math.max(c.money.raised, c.money.spent, c.money.cash)} />
+            <MoneyBars c={c} max={Math.max(c.money.raised, c.money.spent, c.money.cash ?? 0)} />
           ) : (
             <p className="text-[15px] text-[var(--gb-text)]">{noMoney(race)}</p>
           )}

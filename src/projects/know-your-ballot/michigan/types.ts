@@ -7,6 +7,8 @@ export interface MichiganData {
     /** Each office's candidate page, and the day the list was last read. */
     candidates: { pages: Record<string, string>; asOf: string };
     money: { url: string; file: string };
+    /** MiTN's all-transaction exports. */
+    stateMoney?: { url: string };
     proposals: { lwv: string; ballotpedia: string };
   };
   races: Race[];

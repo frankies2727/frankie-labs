@@ -1,7 +1,7 @@
 import { ChevronDown, Crosshair, ListChecks, MapPin, Printer, Search, Share2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { ClearButton } from '../../../components/ClearButton';
-import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Ring, SectionCards, useBallotView, useDocumentMeta, type SectionCard } from '../Bits';
+import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Ring, SectionCards, SectionFlip, useBallotView, useDocumentMeta, type SectionCard } from '../Bits';
 import { Group } from '../Calendar';
 import { billItems, changeItems, dateItems, Feed, newsItems } from '../Feed';
 import { billUrl, Laws } from '../Laws';
@@ -383,7 +383,7 @@ export function KnowYourBallotMichigan() {
                     <p><strong>Judges with no opponent.</strong> Court of Appeals judges usually run unopposed. Marking them is still a vote; leaving them blank is fine too.</p>
                   </HowBallotWorks>
                   <Feed storageKey="kyb-mi-feed-open" onJump={(id) => jumpTo(sectionFor(id), id)} items={[
-                    ...changeItems(data.changes ?? [], (c) => (c.kind === 'money' ? { name: 'FEC filings', url: data.sources.money.url } : { name: 'Ballotpedia candidate lists', url: 'https://ballotpedia.org/Michigan_elections,_2026' })),
+                    ...changeItems(data.changes ?? [], (c) => (c.kind === 'money' ? { name: 'FEC and Michigan Bureau of Elections filings', url: data.sources.money.url } : { name: 'Ballotpedia candidate lists', url: 'https://ballotpedia.org/Michigan_elections,_2026' })),
                     ...newsItems(data.news ?? []),
                     ...billItems(data.laws ?? [], billUrl, 'Michigan Legislature'),
                     ...dateItems(KEY_DATES, today(), { name: 'Michigan Department of State', url: LINKS.dates }),
@@ -517,6 +517,8 @@ const MORE: SectionCard[] = SECTIONS.map((s) => {
   const races = s.id === 'measures' ? [] : data.races.filter((r) => r.section === s.id && r.area);
   return { ...s, n: races.length, hint: 'By district', items: races.map((r) => ({ id: r.id, title: r.office, sub: MICHIGAN.areaLabel(r), race: r })) };
 }).filter((c) => c.n > 0);
+// The proposals, as a card among the statewide races that flips to the questions.
+const PROPOSALS_CARD: SectionCard = { ...SECTIONS.find((s) => s.id === 'measures')!, n: data.measures.length, hint: 'Statewide · yes or no on each', items: data.measures.map((m) => ({ id: m.id, title: m.title, sub: 'Statewide', question: m.question, plain: m.plain })) };
 
 function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, onSearchJump, onOpenRace, onOpenCandidate, onOpenSection, place, onContinue, daysLeft, saved, onStartFresh }: {
   address: string; setAddress: (s: string) => void; status: { busy: boolean; error: string; outside: boolean };
@@ -612,14 +614,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
       <Headliners races={HEADLINERS} sections={SECTIONS} overline="On every Michigan ballot" heading="The statewide races"
         intro={`These ${HEADLINERS.length} contests are on every Michigan ballot. Tap a card to meet the candidates; your address adds your own U.S. House, state Senate, state House and Court of Appeals races from the ${byDistrict} by district.`}
         onOpen={onOpenCandidate} onOpenRace={onOpenRace}>
-        <li>
-          <button type="button" onClick={() => onSearchJump({ id: data.measures[0].id, section: 'measures', title: '', detail: '', about: '' })} className="w-full h-full text-left rounded-2xl border-[3px] border-[var(--mi-red)] bg-[var(--gb-surface)] p-4 space-y-2 hover:bg-[var(--kyb-chip)]">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--mi-red)] px-2.5 py-0.5 text-xs font-bold text-white">🗳️ Proposals</span>
-            <span className="block text-lg font-black leading-tight">Two statewide proposals</span>
-            <span className="block text-sm leading-snug">A constitutional convention, and campaign money from utilities and state contractors.</span>
-            <span className="block text-xs font-bold">Yes or no on each</span>
-          </button>
-        </li>
+        <SectionFlip card={PROPOSALS_CARD} onOpen={onOpenCandidate} onOpenRace={onOpenRace} onJump={onOpenSection} />
       </Headliners>
 
       <SectionCards cards={MORE} heading="Everything else on your ballot" intro="By district: your address picks out yours. Tap a section to see every contest in it, who’s running and where." onOpen={onOpenCandidate} onOpenRace={onOpenRace} onJump={onOpenSection} />
@@ -676,9 +671,9 @@ function Sources() {
     { emoji: '🗳️', title: 'Who’s running', status: `Live · daily · read ${s.candidates.asOf}`,
       body: 'Every statewide, congressional, legislative and Court of Appeals contest from Ballotpedia’s race pages (the university boards from Wikipedia), with incumbents and each candidate’s profile. Both are CC BY-SA. The Secretary of State’s certified listing is the official source; its site refuses automated readers, so check it if a name looks off.',
       links: [...pages.slice(0, 3).map(([office, url]) => [office, url] as [string, string]), ['Official listings by county', LINKS.countyResults]] },
-    { emoji: '💵', title: 'Campaign money', status: 'Live · federal races',
-      body: 'Raised, spent and cash on hand from each federal campaign’s latest FEC report, attached only on a confident name match. State-level money (governor, Lansing, boards) isn’t loaded yet.',
-      links: [['FEC data', s.money.url], ['Michigan disclosure search', LINKS.disclosure]] },
+    { emoji: '💵', title: 'Campaign money', status: 'Live · daily',
+      body: 'Federal races: raised, spent and cash on hand from each campaign’s latest FEC report. State and local races: every contribution and expenditure in the Michigan Transparency Network’s nightly exports, summed since Jan 2025 for the candidate’s committee (the exports carry no cash-on-hand figure). Both attached only on a confident name, office and district match.',
+      links: [['FEC data', s.money.url], ['MiTN exports', s.stateMoney?.url ?? LINKS.disclosure], ['Michigan disclosure search', LINKS.disclosure]] },
     { emoji: '📷', title: 'Photos, websites & social media', status: 'Live · daily',
       body: 'Each candidate’s Ballotpedia profile supplies their photo, campaign website and the accounts Ballotpedia lists as theirs. Official sources win where they overlap: Congress’s portraits, the Legislature’s member photos (via Open States), Wikidata and Wikimedia Commons. Anyone still without a photo gets the headshot their own campaign site labels as them. Every photo is credited on the card; candidates with none anywhere show their initials.',
       links: [['Ballotpedia', 'https://ballotpedia.org/'], ['Congress portraits', 'https://github.com/unitedstates/images'], ['Open States', 'https://openstates.org/mi/']] },

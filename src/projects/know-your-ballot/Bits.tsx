@@ -1,4 +1,4 @@
-import { ChevronDown, MapPin, RotateCcw } from 'lucide-react';
+import { ChevronDown, Info, MapPin, RotateCcw } from 'lucide-react';
 import { useCallback, useEffect, useState, type ReactNode } from 'react';
 import { Face } from './Face';
 import type { Candidate, Race } from './types';
@@ -80,10 +80,15 @@ export function useBallotView(projectId: string, resume: boolean): [boolean, (on
   return [onBallot, show];
 }
 
-export interface SectionItem { id: string; title: string; /** Its district, court or scope. */ sub: string; race?: Race }
+export interface SectionItem {
+  id: string; title: string; /** Its district, court or scope. */ sub: string; race?: Race;
+  /** A ballot question: its official wording, and what yes or no does. */
+  question?: string; plain?: string;
+}
 export interface SectionCard { id: string; title: string; emoji: string; color: string; ink: string; n: number; hint: string; items: SectionItem[] }
 
-function SectionFlip({ card, onOpen, onOpenRace, onJump }: { key?: string; card: SectionCard; onOpen: (race: Race, c: Candidate) => void; onOpenRace: (race: Race) => void; onJump: (sectionId: string, id: string) => void }) {
+/** One section as a card that flips to list its contests (or questions). */
+export function SectionFlip({ card, onOpen, onOpenRace, onJump }: { key?: string; card: SectionCard; onOpen: (race: Race, c: Candidate) => void; onOpenRace: (race: Race) => void; onJump: (sectionId: string, id: string) => void }) {
   const [open, setOpen] = useState(false);
   return (
     <li className={`kyb-flip ${open ? 'sm:col-span-2' : ''}`}>
@@ -93,7 +98,7 @@ function SectionFlip({ card, onOpen, onOpenRace, onJump }: { key?: string; card:
           <span className="text-2xl" aria-hidden="true">{card.emoji}</span>
           <span className="min-w-0 flex-1">
             <span className="block font-black leading-tight">{card.title}</span>
-            <span className="block text-sm">{card.hint} · tap to see who’s running</span>
+            <span className="block text-sm">{card.hint} · {card.items.some((it) => it.question) ? 'tap to read the questions' : 'tap to see who’s running'}</span>
           </span>
           <span className="shrink-0 rounded-full px-2.5 py-1 text-sm font-black" style={{ background: card.color, color: card.ink }}>{card.n}</span>
         </button>
@@ -118,15 +123,33 @@ function SectionFlip({ card, onOpen, onOpenRace, onJump }: { key?: string; card:
                   <ul className="px-3 pb-3 space-y-1.5">
                     {it.race.candidates.map((c) => (
                       <li key={c.ballot}>
-                        <button type="button" onClick={() => onOpen(it.race!, c)} className="w-full flex items-center gap-2.5 rounded-lg px-2 py-1.5 text-left hover:bg-[var(--kyb-chip)]">
+                        <button type="button" onClick={() => onOpen(it.race!, c)} aria-label={`${c.name}: more about them`} className="w-full flex items-center gap-2.5 rounded-lg px-2 py-1.5 text-left hover:bg-[var(--kyb-chip)]">
                           <Face c={c} className="w-9 h-9 text-xs" />
                           <span className="min-w-0 flex-1 text-sm font-bold leading-tight">{c.name}</span>
                           <span className="shrink-0 rounded-full bg-[var(--kyb-chip)] px-2 py-0.5 text-[11px] font-bold">{c.nominatedBy ?? c.party}</span>
+                          <Info className="w-5 h-5 shrink-0 text-[var(--gb-link)]" aria-hidden="true" />
                         </button>
                       </li>
                     ))}
                     <li><button type="button" onClick={() => onOpenRace(it.race!)} className="mt-1 text-sm font-bold underline underline-offset-2">Open this race on the ballot →</button></li>
                   </ul>
+                </details>
+              </li>
+            ) : it.question ? (
+              <li key={it.id}>
+                <details className="group">
+                  <summary className="flex cursor-pointer items-center gap-2 px-3 py-2.5 hover:bg-[var(--kyb-chip)]">
+                    <ChevronDown className="w-4 h-4 shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-[15px] font-bold leading-snug">{it.title}</span>
+                      <span className="block text-xs">{it.sub} · yes or no</span>
+                    </span>
+                  </summary>
+                  <div className="px-3 pb-3 space-y-2 text-sm leading-relaxed">
+                    {it.plain && <p>{it.plain}</p>}
+                    <p className="rounded-lg bg-[var(--kyb-chip)] p-2.5"><span className="block text-[11px] font-black uppercase tracking-wide">Official ballot text</span>“{it.question}”</p>
+                    <button type="button" onClick={() => onJump(card.id, it.id)} className="font-bold underline underline-offset-2">Decide on the ballot →</button>
+                  </div>
                 </details>
               </li>
             ) : (

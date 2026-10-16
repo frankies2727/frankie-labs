@@ -29,6 +29,7 @@ import { buildDistricts, buildOutline } from './michigan/districts.mjs';
 import { addProfiles } from './ballotpedia-profiles.mjs';
 import { recentNews } from './news.mjs';
 import { recentBills } from './illinois/govbot.mjs';
+import { addStateMoney, fetchExports, MITN_EXPORTS } from './michigan/mitn.mjs';
 import { addHeadshots } from './headshots.mjs';
 import { addPhotos } from './illinois/photos.mjs';
 import { addSocial } from './illinois/social.mjs';
@@ -152,6 +153,19 @@ async function main() {
   execFileSync('unzip', ['-o', '-q', join(work, 'weball.zip'), '-d', work]);
   const money = addFederalMoney(races, parseWeball(readFileSync(join(work, 'weball26.txt'), 'utf8')), 'MI');
   console.log(`FEC: matched ${money.matched}/${money.total} federal candidates`);
+  // State and local money from MiTN's exports; if they can't be read today, each candidate keeps yesterday's figures.
+  try {
+    const mitn = join(work, 'mitn');
+    mkdirSync(mitn, { recursive: true });
+    await fetchExports(mitn);
+    const state = await addStateMoney(races, mitn);
+    console.log(`MiTN: matched ${state.matched}/${state.total} state & local candidates (${state.committees} candidate committees)`);
+    for (const line of state.log) console.log('  ' + line);
+  } catch (e) {
+    console.warn(`MiTN: ${e.message}; keeping the last figures`);
+    const before = new Map((prev?.races ?? []).flatMap((r) => r.candidates.filter((c) => c.money?.source === 'MiTN').map((c) => [`${r.id}|${c.name}`, c.money])));
+    for (const r of races) for (const c of r.candidates) if (!c.money && before.has(`${r.id}|${c.name}`)) c.money = before.get(`${r.id}|${c.name}`);
+  }
 
   // Photos, websites and social accounts: each candidate's Ballotpedia
   // profile first; then the official sources (Congress portraits, the
@@ -194,6 +208,7 @@ async function main() {
     sources: {
       candidates: { pages, asOf: new Date().toISOString().slice(0, 10) },
       money: { url: 'https://www.fec.gov/data/', file: FEC_WEBALL },
+      stateMoney: { url: MITN_EXPORTS },
       proposals: PROPOSALS_SOURCE,
     },
     races,
