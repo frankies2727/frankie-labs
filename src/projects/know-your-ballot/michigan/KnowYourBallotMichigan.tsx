@@ -486,6 +486,7 @@ export function KnowYourBallotMichigan() {
         {/* The ballot view ends with the sources; the landing page carries them above "Beyond your ballot". */}
         {showBallot && (
           <div className="max-w-[1100px] mx-auto mt-12 space-y-8">
+            <hr className="border-0 h-[3px] rounded-full bg-[var(--gb-text)]" />
             <Sources />
           </div>
         )}

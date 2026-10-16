@@ -639,6 +639,7 @@ export function KnowYourBallot() {
         {/* The ballot view ends with the sources; the landing page carries them above "Beyond your ballot". */}
         {showBallot && (
           <div className="max-w-[1100px] mx-auto mt-12 space-y-8">
+            <hr className="border-0 h-[3px] rounded-full bg-[var(--gb-text)]" />
             <Sources />
           </div>
         )}
@@ -715,13 +716,14 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
             Election Day: Tue, Nov 3, 2026{daysLeft > 0 ? <> · <span className="rounded-full bg-[var(--gb-primary)] px-2.5 py-0.5 font-bold text-[var(--gb-on-primary)]">{daysLeft} days to go</span></> : daysLeft === 0 ? ' · Today!' : ''}
           </p>
           <ul className="space-y-1 text-[15px] leading-relaxed max-w-[62ch]" aria-label="What you’ll vote on">
-            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Governor and every statewide office</span></li>
-            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>A U.S. Senate seat and your U.S. House seat</span></li>
-            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Your seats in the Illinois House and Senate</span></li>
-            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Cook County’s top jobs: board president, assessor, clerk, sheriff, treasurer and your commissioner</span></li>
-            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Judges to elect, and sitting judges to keep or let go</span></li>
-            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Your Chicago school board seat</span></li>
-            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Ballot questions, from countywide down to your precinct</span></li>
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Choosing Illinois’ next governor and statewide leaders</span></li>
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Filling an open U.S. Senate seat</span></li>
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Electing your U.S. House representative</span></li>
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Choosing your Illinois state senator and representative</span></li>
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Electing Cook County leaders who oversee taxes and local services</span></li>
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Deciding which judges stay and which new judges take office</span></li>
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Electing your Chicago school board representative</span></li>
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Voting on local ballot questions that affect your community</span></li>
           </ul>
         </div>
         <div className="w-[190px] md:w-[300px] md:max-w-[36%] shrink-0 self-center"><StateMap outline={outline as Outline} name="Illinois" colors={IL_MAP} id="il" /></div>
