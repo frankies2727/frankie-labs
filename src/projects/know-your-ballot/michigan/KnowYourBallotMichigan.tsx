@@ -16,7 +16,6 @@ import { ReadOnlyContext, StateContext } from '../state';
 import { GovbotChrome } from '../GovbotChrome';
 import { daysUntil, hasProgress, isDecided, readResumeLink, resumeLink, today, useNow, useOpen, useSaved, type Choice, type Saved } from '../store';
 import type { Candidate, Districts, Race } from '../types';
-import { SinceLastVisit } from '../Updates';
 import '../ballot.css';
 import './michigan.css';
 import { DISTRICT_CHIPS, LINKS, MICHIGAN, SECTION_TITLES, SECTIONS, SHARE_URL, STORAGE_KEY, type SectionId } from './config';
@@ -83,10 +82,9 @@ export function KnowYourBallotMichigan() {
   const [toast, setToast] = useState('');
   const [party, setParty] = useState(false);
   const [shareMsg, setShareMsg] = useState('');
-  const [lastSeen, setLastSeen] = useState(saved.seen);
   useEffect(() => {
     const d = today();
-    setSaved((s) => ({ ...s, seen: new Date().toISOString(), days: s.days?.includes(d) ? s.days : [...(s.days ?? []), d].slice(-30) }));
+    setSaved((s) => ({ ...s, days: s.days?.includes(d) ? s.days : [...(s.days ?? []), d].slice(-30) }));
   }, [setSaved]);
 
   const districts = saved.place?.districts ?? null;
@@ -101,11 +99,6 @@ export function KnowYourBallotMichigan() {
     const ids = s.id === 'measures' ? ballot.measures.map((m) => m.id) : ballot.races.filter((r) => r.section === s.id).map((r) => r.id);
     return { ...s, ids, done: ids.filter((id) => isDecided(saved.picks[id])).length };
   }).filter((s) => s.ids.length), [ballot, saved.picks]);
-  const updates = useMemo(() => {
-    if (!lastSeen) return [];
-    const ids = new Set(sections.flatMap((s) => s.ids));
-    return (data.changes ?? []).filter((c) => c.at > lastSeen && (ids.has(c.id) || c.id in saved.picks));
-  }, [lastSeen, sections, saved.picks]);
   const sectionFor = (id: string) => raceById.get(id)?.section ?? 'measures';
   const total = sections.reduce((n, s) => n + s.ids.length, 0);
   const done = sections.reduce((n, s) => n + s.done, 0);
@@ -376,7 +369,6 @@ export function KnowYourBallotMichigan() {
                       </div>
                     </div>
                   )}
-                  {updates.length > 0 && <SinceLastVisit changes={updates} since={lastSeen!} picks={saved.picks} onJump={(id) => jumpTo(sectionFor(id), id)} onDismiss={() => setLastSeen(undefined)} />}
                   {total > 0 && saved.place && <Trophies ctx={gameCtx} />}
                   <WhereYouVote districts={districts} pin={pin} onChange={changeAddress} />
 

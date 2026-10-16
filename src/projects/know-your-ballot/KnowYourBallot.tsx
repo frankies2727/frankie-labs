@@ -15,7 +15,6 @@ import { Headliners } from './Headliners';
 import { earnedTrophies, streak, Trophies } from './Progress';
 import './ballot.css';
 import { ClearButton } from '../../components/ClearButton';
-import { SinceLastVisit } from './Updates';
 import { KeyDates, NextElectionNote } from './Calendar';
 import { Laws } from './Laws';
 import { LINKS, PlanToVote } from './PlanToVote';
@@ -145,12 +144,10 @@ export function KnowYourBallot() {
   const [toast, setToast] = useState('');
   const [party, setParty] = useState(false);
   const [shareMsg, setShareMsg] = useState('');
-  // When this device last opened the guide; this visit becomes the new mark.
-  const [lastSeen, setLastSeen] = useState(saved.seen);
-  // ...and a day on the streak.
+  // A day on the streak.
   useEffect(() => {
     const d = today();
-    setSaved((s) => ({ ...s, seen: new Date().toISOString(), days: s.days?.includes(d) ? s.days : [...(s.days ?? []), d].slice(-30) }));
+    setSaved((s) => ({ ...s, days: s.days?.includes(d) ? s.days : [...(s.days ?? []), d].slice(-30) }));
   }, [setSaved]);
 
   const districts = saved.place?.districts ?? null;
@@ -175,11 +172,6 @@ export function KnowYourBallot() {
     return { ...s, ids, done: ids.filter((id) => isDecided(saved.picks[id])).length };
   }).filter((s) => s.ids.length), [ballot, saved.picks]);
   // What the daily refresh changed on this ballot since the last visit.
-  const updates = useMemo(() => {
-    if (!lastSeen) return [];
-    const ids = new Set(sections.flatMap((s) => s.ids));
-    return (data.changes ?? []).filter((c) => c.at > lastSeen && (ids.has(c.id) || c.id in saved.picks));
-  }, [lastSeen, sections, saved.picks]);
   const sectionFor = (id: string) => data.races.find((r) => r.id === id)?.section ?? (data.retentions.some((r) => r.id === id) ? 'retention' : 'measures');
   const total = sections.reduce((n, s) => n + s.ids.length, 0);
   const done = sections.reduce((n, s) => n + s.done, 0);
@@ -506,7 +498,6 @@ export function KnowYourBallot() {
                   </div>
                 )}
                 {change && <ChangeReport change={change} onDismiss={() => setChange(null)} onNext={() => { setChange(null); nextUp(); }} />}
-                {updates.length > 0 && <SinceLastVisit changes={updates} since={lastSeen!} picks={saved.picks} onJump={(id) => jumpTo(sectionFor(id), id)} onDismiss={() => setLastSeen(undefined)} />}
                 {total > 0 && saved.place && <Trophies ctx={gameCtx} />}
                 <WhereYouVote districts={districts} chicago={chicago} cook={cook} onChange={changeAddress} />
 

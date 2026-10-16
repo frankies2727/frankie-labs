@@ -25,6 +25,7 @@ import { join } from 'node:path';
 import { changeLog } from './illinois/changes.mjs';
 import { govbotSlices } from './illinois/govbot.mjs';
 import { addJudges } from './illinois/judges.mjs';
+import { keepMoneyForward } from './money-forward.mjs';
 import { explainMeasures } from './illinois/measures-plain.mjs';
 import { addSocial } from './illinois/social.mjs';
 import { addPhotos } from './illinois/photos.mjs';
@@ -151,6 +152,7 @@ async function main() {
   const state = await addStateMoney(ballot.races, work);
   console.log(`Illinois: matched ${state.matched}/${state.total} state & local candidates`);
   for (const line of state.log) console.log('  ' + line);
+  console.log(`Money: ${keepMoneyForward(ballot.races, prev)} candidates kept yesterday's later figures (the Board's files served an older snapshot)`);
   // Campaign sites behind a bot check are read in the browser, like the Board's pages.
   const social = await addSocial(ballot.races, work, (url) => fetchPage(url, (h) => h.length > 3000 && !/just a moment|cf-chl|attention required|verify you are human/i.test(h.slice(0, 20_000))), prev);
   console.log(`Social accounts: ${social.withSocial}/${social.total} candidates`);

@@ -30,6 +30,7 @@ import { addProfiles } from './ballotpedia-profiles.mjs';
 import { recentNews } from './news.mjs';
 import { recentBills } from './illinois/govbot.mjs';
 import { addStateMoney, fetchExports, MITN_EXPORTS } from './michigan/mitn.mjs';
+import { keepMoneyForward } from './money-forward.mjs';
 import { addHeadshots } from './headshots.mjs';
 import { addPhotos } from './illinois/photos.mjs';
 import { addSocial } from './illinois/social.mjs';
@@ -163,9 +164,8 @@ async function main() {
     for (const line of state.log) console.log('  ' + line);
   } catch (e) {
     console.warn(`MiTN: ${e.message}; keeping the last figures`);
-    const before = new Map((prev?.races ?? []).flatMap((r) => r.candidates.filter((c) => c.money?.source === 'MiTN').map((c) => [`${r.id}|${c.name}`, c.money])));
-    for (const r of races) for (const c of r.candidates) if (!c.money && before.has(`${r.id}|${c.name}`)) c.money = before.get(`${r.id}|${c.name}`);
   }
+  console.log(`Money: ${keepMoneyForward(races, prev)} candidates kept yesterday's later figures`);
 
   // Photos, websites and social accounts: each candidate's Ballotpedia
   // profile first; then the official sources (Congress portraits, the
