@@ -1,7 +1,10 @@
 // Judges: what voters can't easily find elsewhere on one screen.
 //   - Injustice Watch's Cook County judicial guide
 //     (https://2026retention.injusticewatch.org/): a link to each judge's
-//     profile, the judge's photo from it (credited and linked), each bar
+//     profile, the judge's photo from it (credited and linked; for the
+//     contested seats the photo comes from their March primary guide,
+//     https://2026primary.injusticewatch.org/, which has one for every
+//     candidate who went on to November), each bar
 //     group's rating of the judges up for retention, and judges who withdrew
 //     after the ballots were printed (still on the ballot, votes not
 //     counted), whom the Board's candidate list leaves out. Their reporting
@@ -17,6 +20,8 @@ import { imageType, shrink } from './photos.mjs';
 
 const SITE = 'https://2026retention.injusticewatch.org/';
 const DATA = `${SITE}cacheddata/current-en.json`;
+const PRIMARY = 'https://2026primary.injusticewatch.org/';
+const PRIMARY_DATA = `${PRIMARY}cacheddata/current-en.json`;
 const ALLIANCE = 'https://www.voteforjudges.org/';
 const UA = 'KnowYourBallot/1.0 (https://github.com/frankies2727/frankie-labs)';
 
@@ -40,6 +45,20 @@ async function getText(url) {
   const res = await fetch(url, { headers: { 'User-Agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(30_000) });
   if (!res.ok) throw new Error(`${url}: HTTP ${res.status}`);
   return res.text();
+}
+
+/** The primary guide's candidates: "first last" (folded) -> { photo, profile }. */
+async function fetchPrimary() {
+  const races = JSON.parse(await getText(PRIMARY_DATA));
+  if (!Array.isArray(races) || races.length < 10) throw new Error(`${PRIMARY_DATA}: unexpected shape`);
+  const out = new Map();
+  for (const r of races) for (const { fields: c } of r.fields.candidates) {
+    const file = c.photo?.[0]?.filename;
+    if (!file) continue;
+    const name = `${c.firstName} ${c.lastName}`;
+    out.set(key(name), { photo: `${PRIMARY}images/candidates/${encodeURIComponent(file)}`, profile: `${PRIMARY}candidate/${fold(name).replace(/['’.]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}-${c.candidateId}` });
+  }
+  return out;
 }
 
 async function fetchGuide() {
@@ -122,7 +141,7 @@ function withAlliance(bar, no, groups) {
 }
 
 /** Judges up for retention, in ballot order, and judicial candidates' profiles by "race id|name". */
-function fromGuide(guide, alliance, races) {
+function fromGuide(guide, alliance, races, primary = new Map()) {
   const judges = guide.filter((r) => r.raceType === 'Retention').flatMap((r) => r.candidates.map((c) => ({
     id: `retain-${fold(c.nameFormatted).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`,
     court: r.level, judge: c.nameFormatted, profile: profileUrl(c), bar: barRatings(c),
@@ -139,7 +158,12 @@ function fromGuide(guide, alliance, races) {
     const race = judicial.find((r) => vacatedSeat(r.office).endsWith(vacated));
     for (const c of v.candidates) {
       const cand = race?.candidates.find((x) => key(x.name).includes(key(c.lastName)));
-      if (cand) { profiles.set(`${race.id}|${cand.name}`, profileUrl(c)); if (photoUrl(c)) photos.set(`${race.id}|${cand.name}`, photoUrl(c)); }
+      if (!cand) continue;
+      profiles.set(`${race.id}|${cand.name}`, profileUrl(c));
+      // The general guide carries no photos for contested seats; the primary guide does.
+      const fromPrimary = primary.get(key(cand.name)) ?? primary.get(key(`${c.firstName} ${c.lastName}`));
+      const photo = photoUrl(c) ?? fromPrimary?.photo;
+      if (photo) photos.set(`${race.id}|${cand.name}`, photo);
     }
   }
   for (const j of judges) {
@@ -193,7 +217,9 @@ async function savePhoto(url, name, link, old, { dir, publicPath }) {
  */
 export async function addJudges(ballot, prev, { dir, publicPath }) {
   let found, note = '';
-  try { found = fromGuide(await fetchGuide(), await fetchAlliance(), ballot.races); } catch (e) { found = fromPrev(prev); note = ` (${e.message}; kept the last copy)`; }
+  let primary = new Map();
+  try { primary = await fetchPrimary(); } catch (e) { note = ` (primary guide: ${e.message})`; }
+  try { found = fromGuide(await fetchGuide(), await fetchAlliance(), ballot.races, primary); } catch (e) { found = fromPrev(prev); note += ` (${e.message}; kept the last copy)`; }
   const { judges, profiles, photos, bars } = found;
   mkdirSync(dir, { recursive: true });
   const log = [];

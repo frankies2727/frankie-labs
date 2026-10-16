@@ -532,7 +532,14 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
           <p className="font-semibold">
             Election Day: Tue, Nov 3, 2026{daysLeft > 0 ? <> · <span className="rounded-full bg-[var(--gb-primary)] px-2.5 py-0.5 font-bold text-[var(--gb-on-primary)]">{daysLeft} days to go</span></> : daysLeft === 0 ? ' · Today!' : ''}
           </p>
-          <p className="text-[15px] leading-relaxed max-w-[62ch]">A new governor, a U.S. Senate seat, every seat in Lansing, two Supreme Court justices and two statewide proposals. Enter your address to see exactly what’s on yours: what each job does, who’s running and who’s funding them. Make your picks, then bring them to the booth.</p>
+          <ul className="space-y-1 text-[15px] leading-relaxed max-w-[62ch]" aria-label="What you’ll vote on">
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>A new governor, plus secretary of state and attorney general</span></li>
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>A U.S. Senate seat and your U.S. House seat</span></li>
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Every seat in the Michigan House and Senate</span></li>
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>The State Board of Education and the university boards</span></li>
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Two Supreme Court justices and your Court of Appeals judges</span></li>
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Two statewide proposals</span></li>
+          </ul>
         </div>
         <div className="w-[240px] md:w-[380px] md:max-w-[42%] shrink-0 self-center"><MichiganMap /></div>
       </header>
@@ -575,7 +582,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
             </button>
           </div>
         )}
-        <p className="text-sm leading-relaxed">🔒 Your address goes once to OpenStreetMap’s address search to find your districts, then matching happens on your device. It’s saved only here, like your picks, and never shared.</p>
+        <p className="text-sm leading-relaxed">🔒 Your address goes once to OpenStreetMap’s address search to find your districts, then matching happens on your device. It’s saved only on your device, and never shared or stored anywhere.</p>
       </form>
 
       <div className="max-w-3xl">

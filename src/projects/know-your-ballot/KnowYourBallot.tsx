@@ -703,7 +703,15 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
           <p className="font-semibold">
             Election Day: Tue, Nov 3, 2026{daysLeft > 0 ? <> · <span className="rounded-full bg-[var(--gb-primary)] px-2.5 py-0.5 font-bold text-[var(--gb-on-primary)]">{daysLeft} days to go</span></> : daysLeft === 0 ? ' · Today!' : ''}
           </p>
-          <p className="text-[15px] leading-relaxed max-w-[62ch]">Governor and every statewide office, a U.S. Senate seat, all 17 U.S. House seats, every seat in Springfield, Cook County’s top jobs, judges to elect and keep, and the questions on the back of the ballot. Enter your address to see exactly what’s on yours: what each job does, who’s running and who’s funding them. Make your picks, then bring them to the booth.</p>
+          <ul className="space-y-1 text-[15px] leading-relaxed max-w-[62ch]" aria-label="What you’ll vote on">
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Governor and every statewide office</span></li>
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>A U.S. Senate seat and your U.S. House seat</span></li>
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Your seats in the Illinois House and Senate</span></li>
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Cook County’s top jobs: board president, assessor, clerk, sheriff, treasurer and your commissioner</span></li>
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Judges to elect, and sitting judges to keep or let go</span></li>
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Your Chicago school board seat</span></li>
+            <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Ballot questions, from countywide down to your precinct</span></li>
+          </ul>
         </div>
         <div className="w-[220px] md:w-[340px] md:max-w-[40%] shrink-0 self-center"><StateMap outline={outline as Outline} name="Illinois" colors={IL_MAP} id="il" /></div>
       </header>
@@ -746,7 +754,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
             </button>
           </div>
         )}
-        <p className="text-sm leading-relaxed text-[var(--gb-text)]">🔒 Your address goes once to Cook County’s address lookup (or OpenStreetMap, for the rest of Illinois or if the county’s is down) to find your districts. It’s saved only on this device, like your picks, and never shared.</p>
+        <p className="text-sm leading-relaxed text-[var(--gb-text)]">🔒 Your address goes once to Cook County’s address lookup (or OpenStreetMap, for the rest of Illinois or if the county’s is down) to find your districts. It’s saved only on your device, and never shared or stored anywhere.</p>
       </form>
 
       <BallotSearch ballot={everything} sections={SECTION_TITLES} onJump={onSearchJump} />
