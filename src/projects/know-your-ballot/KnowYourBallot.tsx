@@ -427,6 +427,15 @@ export function KnowYourBallot() {
   const picksFor = (id: string) => { const c = saved.picks[id]; return Array.isArray(c) ? c : []; };
 
   // ---- screens ------------------------------------------------------------------
+  // The three views. On phones, while the browsing notice is up, they scroll
+  // away with the page instead of sitting in the sticky bar.
+  const views = ([['ballot', 'My Ballot'], ['plan', 'Plan to vote'], ['share', 'Save & share']] as const).map(([id, label]) => (
+    <button key={id} type="button" role="tab" aria-selected={tab === id} onClick={() => { setTab(id); window.scrollTo({ top: 0 }); }}
+      className={`min-h-[44px] rounded-xl font-bold border-2 border-[var(--gb-text)] ${tab === id ? 'bg-[var(--gb-text)] text-[var(--gb-bg)]' : 'text-[var(--gb-text)]'}`}>
+      {label}
+    </button>
+  ));
+
   return (
     <ReadOnlyContext.Provider value={!saved.place}>
     <GovbotChrome>
@@ -468,14 +477,7 @@ export function KnowYourBallot() {
                   </button>
                 </div>
               </div>
-              <div className="mt-3 grid grid-cols-3 gap-2" role="tablist" aria-label="Views">
-                {([['ballot', 'My Ballot'], ['plan', 'Plan to vote'], ['share', 'Save & share']] as const).map(([id, label]) => (
-                  <button key={id} type="button" role="tab" aria-selected={tab === id} onClick={() => { setTab(id); window.scrollTo({ top: 0 }); }}
-                    className={`min-h-[44px] rounded-xl font-bold border-2 border-[var(--gb-text)] ${tab === id ? 'bg-[var(--gb-text)] text-[var(--gb-bg)]' : 'text-[var(--gb-text)]'}`}>
-                    {label}
-                  </button>
-                ))}
-              </div>
+              <div className={`mt-3 grid-cols-3 gap-2 ${saved.place ? 'grid' : 'hidden lg:grid'}`}>{views}</div>
               {/* Search stays in reach while scrolling. */}
               <div className="mt-3">
                 <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} sections={SECTION_TITLES} places={data.places} onJump={(h) => jumpTo(h.section, h.id)} />
@@ -483,6 +485,7 @@ export function KnowYourBallot() {
               {!saved.place && <BrowsingNotice region="Chicago or suburban Cook" onAddAddress={changeAddress} />}
             </div>
             </div>
+            {!saved.place && <div className="lg:hidden grid grid-cols-3 gap-2 pt-3 max-w-[1100px] mx-auto">{views}</div>}
             <div className="lg:grid lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-8 lg:items-start max-w-[1100px] mx-auto pt-4">
             <ContentsColumn {...contents} />
             {/* In the drawer a section just opens its list; the page moves when a race is picked. */}
