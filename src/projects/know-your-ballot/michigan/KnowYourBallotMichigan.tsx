@@ -1,7 +1,7 @@
 import { ChevronDown, Crosshair, ListChecks, Loader2, MapPin, Printer, Search, Share2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { ClearButton } from '../../../components/ClearButton';
-import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Locating, Ring, SectionCards, SectionFlip, useBallotView, useDocumentMeta, type SectionCard } from '../Bits';
+import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Locating, Ring, useWide, SectionCards, SectionFlip, useBallotView, useDocumentMeta, type SectionCard } from '../Bits';
 import { Group } from '../Calendar';
 import { billItems, billUrl, changeItems, dateItems, Feed, newsItems } from '../Feed';
 import { Laws } from '../Laws';
@@ -308,6 +308,18 @@ export function KnowYourBallotMichigan() {
     </button>
   ));
 
+  const wide = useWide();
+  // The view tabs, search and browsing notice: in the sticky bar on wide screens, scrolling under it on phones so the ballot gets the screen.
+  const tools = (
+    <>
+      <div className="mt-3 grid grid-cols-3 sm:grid-cols-5 gap-2">{views}</div>
+      <div className="mt-3">
+        <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} sections={SECTION_TITLES} onJump={(h) => jumpTo(h.section, h.id)} />
+      </div>
+      {!saved.place && <BrowsingNotice region="Michigan" onAddAddress={changeAddress} />}
+    </>
+  );
+
   return (
     <StateContext.Provider value={MICHIGAN}>
     <ReadOnlyContext.Provider value={!saved.place}>
@@ -344,14 +356,11 @@ export function KnowYourBallotMichigan() {
                     </button>
                   </div>
                 </div>
-                <div className={`mt-3 grid-cols-3 sm:grid-cols-5 gap-2 ${saved.place ? 'grid' : 'hidden lg:grid'}`}>{views}</div>
-                <div className="mt-3">
-                  <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} sections={SECTION_TITLES} onJump={(h) => jumpTo(h.section, h.id)} />
-                </div>
-                {!saved.place && <BrowsingNotice region="Michigan" onAddAddress={changeAddress} />}
+                {/* Wide screens keep the views, search and notice in the sticky bar; phones let them scroll so the ballot gets the screen. */}
+                {wide && tools}
               </div>
             </div>
-              {!saved.place && <div className="lg:hidden grid grid-cols-3 sm:grid-cols-5 gap-2 pt-3 max-w-[1100px] mx-auto">{views}</div>}
+              {!wide && <div className="max-w-[1100px] mx-auto">{tools}</div>}
             <div className="lg:grid lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-8 lg:items-start max-w-[1100px] mx-auto pt-4">
               <ContentsColumn {...contents} />
               <ContentsDrawer {...contents} onSection={(id) => { setTab('ballot'); setChosenSection(id); }} open={contentsOpen} onClose={closeContents} />

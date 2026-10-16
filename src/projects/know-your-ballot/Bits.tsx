@@ -40,13 +40,25 @@ export function Confetti({ onDone }: { onDone: () => void }) {
 /** Pinned under the progress bar while there's no address: picks are off until there is one. */
 export function BrowsingNotice({ region, onAddAddress }: { region: string; onAddAddress: () => void }) {
   return (
-    <div role="status" className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl border-2 border-[var(--gb-amber-hi)] bg-[var(--kyb-chip)] px-3 py-2 text-[15px] leading-snug">
+    <div role="status" className="mt-3 flex flex-col items-start lg:flex-row lg:flex-wrap lg:items-center gap-x-3 gap-y-2 rounded-xl border-2 border-[var(--gb-amber-hi)] bg-[var(--kyb-chip)] px-3 py-2 text-sm lg:text-[15px] leading-snug">
       <p className="min-w-0 flex-1">You’re seeing <strong>every</strong> race on any ballot in {region}. Picks and trophies are off until it’s <em>your</em> ballot.</p>
       <button type="button" onClick={onAddAddress} className="inline-flex items-center gap-1.5 min-h-[40px] rounded-lg bg-[var(--gb-text)] px-3 font-bold text-[var(--gb-bg)]">
         <MapPin className="w-4 h-4" aria-hidden="true" /> Enter your address
       </button>
     </div>
   );
+}
+
+/** True on wide screens (Tailwind's lg, 1024px), where the ballot view has room for a sticky toolbar. */
+export function useWide() {
+  const [wide, setWide] = useState(() => typeof matchMedia !== 'undefined' && matchMedia('(min-width: 1024px)').matches);
+  useEffect(() => {
+    const mq = matchMedia('(min-width: 1024px)');
+    const on = () => setWide(mq.matches);
+    mq.addEventListener('change', on);
+    return () => mq.removeEventListener('change', on);
+  }, []);
+  return wide;
 }
 
 /** While the browser finds the voter and their districts are looked up: a spinning ring over the page. */
