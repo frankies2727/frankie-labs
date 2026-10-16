@@ -59,16 +59,18 @@ export const billItems = (laws: Law[], billUrl: (b: Law) => string | undefined, 
 export const dateItems = (dates: KeyDate[], today: string, source: { name: string; url: string }): FeedItem[] =>
   dates.filter((d) => d.date >= today).slice(0, 3).map((d) => ({ at: d.date, kind: 'date', title: d.title, detail: d.detail, source }));
 
-const SHOWN = 10;
+// Six at first, five more per tap; the list scrolls past about a screen's worth.
+const SHOWN = 6;
+const STEP = 5;
 
 /** `storageKey` remembers whether the feed is shown or hidden; it starts shown. */
 export function Feed({ items, storageKey, onJump }: { items: FeedItem[]; storageKey: string; onJump: (id: string) => void }) {
   const [open, toggle] = useOpen(storageKey, true);
   const [kind, setKind] = useState<Kind | 'all'>('all');
-  const [all, setAll] = useState(false);
+  const [limit, setLimit] = useState(SHOWN);
   const sorted = useMemo(() => [...items].sort((a, b) => b.at.localeCompare(a.at)), [items]);
   const shown = sorted.filter((i) => kind === 'all' || i.kind === kind);
-  const list = all ? shown : shown.slice(0, SHOWN);
+  const list = shown.slice(0, limit);
   if (!items.length) return null;
   const color = (k: Kind) => KINDS.find((x) => x.id === k)!.color;
   return (
@@ -86,13 +88,13 @@ export function Feed({ items, storageKey, onJump }: { items: FeedItem[]; storage
       {open && <div id="kyb-feed-body" className="space-y-4">
       <div className="flex flex-wrap gap-2" role="tablist" aria-label="Kinds of activity">
         {KINDS.filter((k) => k.id === 'all' || sorted.some((i) => i.kind === k.id)).map((k) => (
-          <button key={k.id} type="button" role="tab" aria-selected={kind === k.id} onClick={() => { setKind(k.id); setAll(false); }}
+          <button key={k.id} type="button" role="tab" aria-selected={kind === k.id} onClick={() => { setKind(k.id); setLimit(SHOWN); }}
             className="min-h-[40px] rounded-full border-2 px-4 text-sm font-bold" style={kind === k.id ? { background: k.color, borderColor: k.color, color: 'var(--gb-bg)' } : { borderColor: k.color }}>
             {k.label}
           </button>
         ))}
       </div>
-      <ol className="divide-y divide-[var(--kyb-chip)]">
+      <ol className="kyb-scroll-bar max-h-[560px] overflow-y-auto divide-y divide-[var(--kyb-chip)] pr-1" style={{ ['--scroll' as string]: 'var(--gb-blue-hi)' }}>
         {list.map((i, n) => (
           <li key={`${i.kind}-${i.at}-${n}`} className="flex gap-3 py-3">
             <div className="w-16 shrink-0">
@@ -114,9 +116,14 @@ export function Feed({ items, storageKey, onJump }: { items: FeedItem[]; storage
         ))}
       </ol>
       {shown.length > SHOWN && (
-        <button type="button" onClick={() => setAll(!all)} aria-expanded={all} className="min-h-[44px] rounded-xl border-2 border-[var(--gb-text)] px-4 font-bold">
-          {all ? 'Show fewer' : `Show all ${shown.length}`}
-        </button>
+        <div className="flex flex-wrap gap-2">
+          {shown.length > limit && (
+            <button type="button" onClick={() => setLimit(limit + STEP)} className="min-h-[44px] rounded-xl border-2 border-[var(--gb-text)] px-4 font-bold">
+              Show {Math.min(STEP, shown.length - limit)} more
+            </button>
+          )}
+          {limit > SHOWN && <button type="button" onClick={() => setLimit(SHOWN)} className="min-h-[44px] rounded-xl border-2 border-[var(--gb-border)] px-4 font-bold">Show fewer</button>}
+        </div>
       )}
       {!shown.length && <p className="text-[15px]">Nothing of this kind lately.</p>}
       </div>}

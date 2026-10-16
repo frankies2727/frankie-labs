@@ -133,7 +133,7 @@ export function Laws({ laws, state }: { laws: Law[]; state: LawsState }) {
 
       <a href={`${GOVBOT}legislation.html#state=il`} target="_blank" rel="noreferrer noopener"
         className="flex items-center justify-center gap-2 min-h-[56px] rounded-xl border-[3px] border-[var(--kyb-gold)] px-4 text-lg font-black text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]">
-        Explore entire catalog of IL bills <ArrowUpRight className="w-5 h-5" aria-hidden="true" />
+        Explore entire catalog of {state.code} bills <ArrowUpRight className="w-5 h-5" aria-hidden="true" />
       </a>
       </div>}
     </section>

@@ -1,4 +1,4 @@
-import { ChevronDown, Crosshair, ListChecks, MapPin, Printer, Search, Share2 } from 'lucide-react';
+import { ChevronDown, Crosshair, ListChecks, Loader2, MapPin, Printer, Search, Share2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import rawData from './data/illinois/ballot.json';
 import { ballotFor, ballotIdsFor, districtsAt, geocode, inChicago, inCook, inIllinois, prefetchDistricts } from './lookup';
@@ -455,6 +455,10 @@ export function KnowYourBallot() {
             <div ref={barRef} className="sticky top-[var(--kyb-top)] z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 pt-3 pb-3 bg-[var(--gb-bg)] border-b border-[var(--gb-border)]">
             <div className="max-w-[1100px] mx-auto">
               <div className="flex items-center gap-2 sm:gap-4">
+                <button type="button" onClick={() => setContentsOpen(true)} aria-label="Contents"
+                  className="lg:hidden shrink-0 w-11 h-11 rounded-xl border-2 border-[var(--gb-border)] flex items-center justify-center text-[var(--gb-text)] hover:border-[var(--gb-text)]">
+                  <ListChecks className="w-5 h-5" aria-hidden="true" />
+                </button>
                 <Ring pct={total ? done / total : 0} />
                 <div className="min-w-0 flex-1">
                   <p className="font-black text-lg leading-tight">{!saved.place ? `${total} contests to browse` : allDone ? 'Ballot ready 🎉' : `${done} of ${total} decided`}</p>
@@ -463,10 +467,6 @@ export function KnowYourBallot() {
                     <span className="shrink-0 font-bold text-[var(--gb-text)] underline underline-offset-2">{saved.place ? 'Change' : 'Add address'}</span>
                   </button>
                 </div>
-                <button type="button" onClick={() => setContentsOpen(true)} aria-label="Contents"
-                  className="lg:hidden shrink-0 w-11 h-11 rounded-xl border-2 border-[var(--gb-border)] flex items-center justify-center text-[var(--gb-text)] hover:border-[var(--gb-text)]">
-                  <ListChecks className="w-5 h-5" aria-hidden="true" />
-                </button>
               </div>
               <div className="mt-3 grid grid-cols-3 gap-2" role="tablist" aria-label="Views">
                 {([['ballot', 'My Ballot'], ['plan', 'Plan to vote'], ['share', 'Save & share']] as const).map(([id, label]) => (
@@ -521,6 +521,8 @@ export function KnowYourBallot() {
                   ...billItems(data.govbot.laws, billUrl, 'Illinois General Assembly'),
                   ...dateItems(forVoter(NOV_3, chicago), today(), chicago ? { name: 'Chicago Board of Elections', url: LINKS.myInfo } : { name: 'Illinois State Board of Elections', url: LINKS.stateLookup }),
                 ]} />
+                <Laws laws={data.govbot.laws} state={{ code: 'IL', name: 'Illinois', capital: 'Springfield', rss: 'https://chihacknight.github.io/govbot/dashboard/elections/springfield.xml' }} />
+                <NextElectionNote chicago={districts ? chicago : undefined} city={data.govbot.city} districts={districts} />
 
                 {sections.filter((s) => s.id === current).map((s) => {
                   const at = sections.indexOf(s);
@@ -625,13 +627,6 @@ export function KnowYourBallot() {
 
         {/* Always last, above the footer, on every screen. */}
         <div className="max-w-[1100px] mx-auto mt-12 space-y-8">
-          <div role="separator" aria-label="Beyond your ballot" className="flex items-center gap-4">
-            <span className="h-[3px] flex-1 rounded-full bg-[var(--gb-text)]" />
-            <span className="text-sm font-black uppercase tracking-[0.18em]">Beyond your ballot</span>
-            <span className="h-[3px] flex-1 rounded-full bg-[var(--gb-text)]" />
-          </div>
-          <Laws laws={data.govbot.laws} state={{ code: 'IL', name: 'Illinois', capital: 'Springfield', rss: 'https://chihacknight.github.io/govbot/dashboard/elections/springfield.xml' }} />
-          <NextElectionNote chicago={districts ? chicago : undefined} city={data.govbot.city} districts={districts} />
           <Sources />
         </div>
       </div>
@@ -682,6 +677,9 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
   /** Picks already saved on this device. */
   saved: number; onStartFresh: () => void;
 }) {
+  // Spins while the browser finds you and the lookup runs.
+  const [locating, setLocating] = useState(false);
+  useEffect(() => { if (!status.busy) setLocating(false); }, [status.busy]);
   // Two taps: wiping someone's picks shouldn't be one slip of the thumb.
   const [confirming, setConfirming] = useState(false);
   const candidates = data.races.reduce((n, r) => n + r.candidates.length, 0);
@@ -731,8 +729,8 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
           </button>
         </div>
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-          <button type="button" onClick={onLocate} disabled={status.busy} className="inline-flex items-center gap-2 min-h-[44px] font-bold text-[var(--gb-text)] underline underline-offset-4 disabled:cursor-wait">
-            <Crosshair className="w-5 h-5" aria-hidden="true" /> Use my current location
+          <button type="button" onClick={() => { setLocating(true); onLocate(); }} disabled={status.busy} aria-busy={locating} className="inline-flex items-center gap-2 min-h-[44px] font-bold text-[var(--gb-text)] underline underline-offset-4 disabled:cursor-wait">
+            {locating ? <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" /> : <Crosshair className="w-5 h-5" aria-hidden="true" />} {locating ? 'Finding where you are…' : 'Use my current location'}
           </button>
           <button type="button" onClick={onBrowse} className="inline-flex items-center gap-2 min-h-[44px] font-bold underline underline-offset-4">
             <ListChecks className="w-5 h-5" aria-hidden="true" /> No address? Browse every race
