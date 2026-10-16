@@ -8,7 +8,7 @@ import { GovbotChrome } from './GovbotChrome';
 import { StateMap } from './Hero';
 import outline from './data/illinois/outline.json';
 import { GaugeDefs } from './BarRatings';
-import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Locating, Ring, SectionCards, useBallotView, useDocumentMeta, type SectionCard } from './Bits';
+import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Locating, Ring, useWide, SectionCards, useBallotView, useDocumentMeta, type SectionCard } from './Bits';
 import { ReadOnlyContext } from './state';
 import { ContentsColumn, ContentsDrawer } from './Contents';
 import { Headliners } from './Headliners';
@@ -429,6 +429,18 @@ export function KnowYourBallot() {
     </button>
   ));
 
+  const wide = useWide();
+  // The view tabs, search and browsing notice: in the sticky bar on wide screens, scrolling under it on phones so the ballot gets the screen.
+  const tools = (
+    <>
+      <div className="mt-3 grid grid-cols-3 sm:grid-cols-5 gap-2">{views}</div>
+      <div className="mt-3">
+        <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} sections={SECTION_TITLES} places={data.places} onJump={(h) => jumpTo(h.section, h.id)} />
+      </div>
+      {!saved.place && <BrowsingNotice region="Chicago or suburban Cook" onAddAddress={changeAddress} />}
+    </>
+  );
+
   return (
     <ReadOnlyContext.Provider value={!saved.place}>
     <GovbotChrome>
@@ -470,15 +482,11 @@ export function KnowYourBallot() {
                   </button>
                 </div>
               </div>
-              <div className={`mt-3 grid-cols-3 sm:grid-cols-5 gap-2 ${saved.place ? 'grid' : 'hidden lg:grid'}`}>{views}</div>
-              {/* Search stays in reach while scrolling. */}
-              <div className="mt-3">
-                <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} sections={SECTION_TITLES} places={data.places} onJump={(h) => jumpTo(h.section, h.id)} />
-              </div>
-              {!saved.place && <BrowsingNotice region="Chicago or suburban Cook" onAddAddress={changeAddress} />}
+              {/* Wide screens keep the views, search and notice in the sticky bar; phones let them scroll so the ballot gets the screen. */}
+              {wide && tools}
             </div>
             </div>
-            {!saved.place && <div className="lg:hidden grid grid-cols-3 sm:grid-cols-5 gap-2 pt-3 max-w-[1100px] mx-auto">{views}</div>}
+            {!wide && <div className="max-w-[1100px] mx-auto">{tools}</div>}
             <div className="lg:grid lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-8 lg:items-start max-w-[1100px] mx-auto pt-4">
             <ContentsColumn {...contents} />
             {/* In the drawer a section just opens its list; the page moves when a race is picked. */}
