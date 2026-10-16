@@ -89,7 +89,7 @@ export function KnowYourBallotMichigan() {
 
   const districts = saved.place?.districts ?? null;
   // The details view has its own URL; with saved progress the first open goes straight there.
-  const [showBallot, showView] = useBallotView('know-your-ballot-michigan', !!saved.place || browsing);
+  const [showBallot, showView] = useBallotView('know-your-ballot-michigan');
   const browse = () => { setBrowsing(true); showView(true); };
   const daysLeft = daysUntil(data.election.date);
 
@@ -486,6 +486,7 @@ export function KnowYourBallotMichigan() {
         {/* The ballot view ends with the sources; the landing page carries them above "Beyond your ballot". */}
         {showBallot && (
           <div className="max-w-[1100px] mx-auto mt-12 space-y-8">
+            <hr className="border-0 h-[3px] rounded-full bg-[var(--gb-text)]" />
             <Sources />
           </div>
         )}
