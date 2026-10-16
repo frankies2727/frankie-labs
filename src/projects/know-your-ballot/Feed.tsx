@@ -36,6 +36,11 @@ const when = (iso: string) => day.format(new Date(iso.length === 10 ? `${iso}T12
 
 const safe = (u?: string) => (u && /^https:\/\//.test(u) ? u : undefined);
 
+/** The bill's own card in govbot's catalog (its state's catalog opens underneath), else the legislature's page. */
+export const billUrl = (b: Law) => (b.state && b.session
+  ? `https://chihacknight.github.io/govbot/dashboard/legislation.html#bill=${[b.state, b.session, b.id].map(encodeURIComponent).join('~')}`
+  : safe(b.url));
+
 /** What a daily-refresh change says, and who it comes from. */
 export function changeItems(changes: Change[], source: (c: Change) => { name: string; url?: string }): FeedItem[] {
   return changes.map((c) => {

@@ -8,7 +8,7 @@ import { GovbotChrome } from './GovbotChrome';
 import { StateMap } from './Hero';
 import outline from './data/illinois/outline.json';
 import { GaugeDefs } from './BarRatings';
-import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Ring, SectionCards, useBallotView, useDocumentMeta, type SectionCard } from './Bits';
+import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Locating, Ring, SectionCards, useBallotView, useDocumentMeta, type SectionCard } from './Bits';
 import { ReadOnlyContext } from './state';
 import { ContentsColumn, ContentsDrawer } from './Contents';
 import { Headliners } from './Headliners';
@@ -16,12 +16,11 @@ import { earnedTrophies, streak, Trophies } from './Progress';
 import './ballot.css';
 import { ClearButton } from '../../components/ClearButton';
 import { SinceLastVisit } from './Updates';
-import { KeyDates, NextElectionNote } from './Calendar';
-import { Laws } from './Laws';
+import { KeyDates } from './Calendar';
 import { LINKS, PlanToVote } from './PlanToVote';
 import { areaLabel, CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard, SCOPE } from './Race';
 import { billItems, changeItems, dateItems, Feed, newsItems } from './Feed';
-import { billUrl } from './Laws';
+import { billUrl } from './Feed';
 import { forVoter, NOV_3 } from './dates';
 import { drawShareCard, shareCard } from './share';
 import { daysUntil, hasProgress, isDecided, today, readResumeLink, resumeLink, useOpen, useSaved, type Choice, type Saved } from './store';
@@ -289,8 +288,8 @@ export function KnowYourBallot() {
     }));
   };
   // Links from govbot (its search, RSS, the old elections page) name a race
-  // by govbot's id: #race=us-house-il-07. Open that race; Feb 2027 races open
-  // the 2027 note. Our own ids work too. Then tidy the address bar.
+  // by govbot's id: #race=us-house-il-07. Open that race. Our own ids work
+  // too. Then tidy the address bar.
   const raceLink = useRef<() => void>(() => {});
   raceLink.current = () => {
     const m = location.hash.match(/^#(race|office)=([^&]+)/);
@@ -310,7 +309,6 @@ export function KnowYourBallot() {
     }
     if (!showBallot) browse();
     if (race) jumpTo(race.section, race.id);
-    else if (id === '2027') requestAnimationFrame(() => requestAnimationFrame(() => scrollTo(document.getElementById('kyb-next'))));
   };
   useEffect(() => {
     const take = () => raceLink.current();
@@ -524,8 +522,6 @@ export function KnowYourBallot() {
                   ...billItems(data.govbot.laws, billUrl, 'Illinois General Assembly'),
                   ...dateItems(forVoter(NOV_3, chicago), today(), chicago ? { name: 'Chicago Board of Elections', url: LINKS.myInfo } : { name: 'Illinois State Board of Elections', url: LINKS.stateLookup }),
                 ]} />
-                <Laws laws={data.govbot.laws} state={{ code: 'IL', name: 'Illinois', capital: 'Springfield', rss: 'https://chihacknight.github.io/govbot/dashboard/elections/springfield.xml' }} />
-                <NextElectionNote chicago={districts ? chicago : undefined} city={data.govbot.city} districts={districts} />
 
                 {sections.filter((s) => s.id === current).map((s) => {
                   const at = sections.indexOf(s);
@@ -735,6 +731,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
           <button type="button" onClick={() => { setLocating(true); onLocate(); }} disabled={status.busy} aria-busy={locating} className="inline-flex items-center gap-2 min-h-[44px] font-bold text-[var(--gb-text)] underline underline-offset-4 disabled:cursor-wait">
             {locating ? <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" /> : <Crosshair className="w-5 h-5" aria-hidden="true" />} {locating ? 'Finding where you are…' : 'Use my current location'}
           </button>
+          <Locating show={locating} />
           <button type="button" onClick={onBrowse} className="inline-flex items-center gap-2 min-h-[44px] font-bold underline underline-offset-4">
             <ListChecks className="w-5 h-5" aria-hidden="true" /> No address? Browse every race
           </button>
@@ -903,8 +900,8 @@ function Sources() {
     { emoji: '🗺️', title: 'District maps', status: 'Live',
       body: 'Census (Congress, Springfield), Cook County (County Board, Board of Review, judicial subcircuits), City of Chicago (wards, police districts, and your precinct, looked up live) and the Illinois Senate (school board).',
       links: [['data.cityofchicago.org', 'https://data.cityofchicago.org/']] },
-    { emoji: '📜', title: 'Springfield bills & 2027 races', status: 'Live · from govbot',
-      body: 'Illinois bills on elections and schools, ILGA hearings, and Chicago’s Feb 23, 2027 races with sitting alderpersons, from govbot’s open data.',
+    { emoji: '📜', title: 'Springfield bills', status: 'Live · from govbot',
+      body: 'Illinois bills on elections and schools with their latest action, in What’s new, from govbot’s open data.',
       links: [['govbot on GitHub', 'https://github.com/chihacknight/govbot']] },
     { emoji: '📍', title: 'Early voting sites', status: 'Live · Chicago',
       body: 'Each ward’s early voting site and hours, from the Board of Elections. Suburban sites come from the Cook County Clerk.',

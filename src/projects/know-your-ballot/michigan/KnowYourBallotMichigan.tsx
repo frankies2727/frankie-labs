@@ -1,11 +1,9 @@
 import { ChevronDown, Crosshair, ListChecks, Loader2, MapPin, Printer, Search, Share2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { ClearButton } from '../../../components/ClearButton';
-import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Ring, SectionCards, SectionFlip, useBallotView, useDocumentMeta, type SectionCard } from '../Bits';
+import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Locating, Ring, SectionCards, SectionFlip, useBallotView, useDocumentMeta, type SectionCard } from '../Bits';
 import { Group } from '../Calendar';
-import { billItems, changeItems, dateItems, Feed, newsItems } from '../Feed';
-import { billUrl, Laws } from '../Laws';
-import { NextElectionNote } from './NextUp';
+import { billItems, billUrl, changeItems, dateItems, Feed, newsItems } from '../Feed';
 import { Headliners } from '../Headliners';
 import { ContentsColumn, ContentsDrawer } from '../Contents';
 import { earnedTrophies, streak, Trophies } from '../Progress';
@@ -391,8 +389,6 @@ export function KnowYourBallotMichigan() {
                     ...billItems(data.laws ?? [], billUrl, 'Michigan Legislature'),
                     ...dateItems(KEY_DATES, today(), { name: 'Michigan Department of State', url: LINKS.dates }),
                   ]} />
-                  <Laws laws={data.laws ?? []} state={{ code: 'MI', name: 'Michigan', capital: 'Lansing' }} />
-                  <NextElectionNote />
 
                   {sections.filter((s) => s.id === current).map((s) => {
                     const at = sections.indexOf(s);
@@ -576,6 +572,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
           <button type="button" onClick={() => { setLocating(true); onLocate(); }} disabled={status.busy} aria-busy={locating} className="inline-flex items-center gap-2 min-h-[44px] font-bold underline underline-offset-4 disabled:cursor-wait">
             {locating ? <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" /> : <Crosshair className="w-5 h-5" aria-hidden="true" />} {locating ? 'Finding where you are…' : 'Use my current location'}
           </button>
+          <Locating show={locating} />
           <button type="button" onClick={onBrowse} className="inline-flex items-center gap-2 min-h-[44px] font-bold underline underline-offset-4">
             <ListChecks className="w-5 h-5" aria-hidden="true" /> No address? Browse every race
           </button>
@@ -682,7 +679,7 @@ function Sources() {
       body: 'The two statewide proposals as certified by the Board of State Canvassers, from the League of Women Voters of Michigan’s handout, with a plain-English note on each.',
       links: [['LWV Michigan', s.proposals.lwv], ['Ballotpedia', s.proposals.ballotpedia]] },
     { emoji: '🏛️', title: 'Lansing bills', status: 'Live · from govbot',
-      body: 'Michigan bills on elections and schools with action in the last six months, plus the newest of the rest, from govbot’s open legislation data.',
+      body: 'Michigan bills on elections and schools with their latest action, in What’s new, from govbot’s open legislation data.',
       links: [['govbot', 'https://chihacknight.github.io/govbot/dashboard/legislation.html']] },
     { emoji: '🗺️', title: 'District maps', status: 'Live',
       body: 'Congressional districts (120th Congress), the 2026 Michigan Senate and House maps and county lines from the Census Bureau. Your county sets your Court of Appeals district (MCL 600.302).',

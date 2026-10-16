@@ -19,6 +19,13 @@
 :root[data-theme="light"] { --kyb-orange: #A04A0C; }
 @media (prefers-color-scheme: light) { :root:not([data-theme]) { --kyb-orange: #A04A0C; } }
 
+/* The locating ring: six colours round a hole. */
+.kyb-rainbow {
+  background: conic-gradient(#5EBD3E, #FFB900, #F78200, #E23838, #973999, #009CDF, #5EBD3E);
+  mask: radial-gradient(farthest-side, transparent calc(100% - 11px), #000 calc(100% - 10px));
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 11px), #000 calc(100% - 10px));
+}
+
 /* The state-outline hero: it glows; the "you are here" pin breathes. */
 .kyb-map { display: block; width: 100%; height: auto; filter: drop-shadow(0 0 28px var(--kyb-map-glow, var(--gb-glow-primary))); }
 .kyb-pin-ring { transform-box: fill-box; transform-origin: center; animation: kyb-pin 1.8s ease-out infinite; }

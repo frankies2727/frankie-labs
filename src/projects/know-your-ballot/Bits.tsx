@@ -49,6 +49,17 @@ export function BrowsingNotice({ region, onAddAddress }: { region: string; onAdd
   );
 }
 
+/** While the browser finds the voter and their districts are looked up: a spinning ring over the page. */
+export function Locating({ show }: { show: boolean }) {
+  if (!show) return null;
+  return (
+    <div role="status" aria-live="polite" className="fixed inset-0 z-[80] flex flex-col items-center justify-center gap-4 bg-black/55 backdrop-blur-[2px]">
+      <div className="kyb-rainbow w-20 h-20 rounded-full animate-spin" aria-hidden="true" />
+      <p className="rounded-full bg-[var(--gb-surface)] px-4 py-2 font-black text-[var(--gb-text)]">Finding where you are…</p>
+    </div>
+  );
+}
+
 /** The browser tab's title and icon while a guide is open; the lab's own come back on exit. */
 export function useDocumentMeta(title: string, emoji: string) {
   useEffect(() => {
