@@ -12,14 +12,16 @@ import { useEffect, useState } from 'react';
 
 const BASE = import.meta.env.BASE_URL; // e.g. "/frankie-labs/" (always ends in "/")
 
-// A deployment can mount one Know Your Ballot guide at the site root: built
-// with VITE_GUIDE=illinois, https://govbot-il-ballot.vercel.app/ is that
-// guide's landing page and /ballot its ballot. Routes inside the app don't
-// change ("projects/know-your-ballot-illinois/ballot"); only the address
-// loses the prefix. See README "Know Your Ballot on its own address".
-const MOUNT = import.meta.env.VITE_GUIDE ? `projects/know-your-ballot-${import.meta.env.VITE_GUIDE}` : '';
-const toRoute = (path: string) => (MOUNT ? (path ? `${MOUNT}/${path}` : MOUNT) : path);
-const toPath = (route: string) => (MOUNT && (route === MOUNT || route.startsWith(`${MOUNT}/`)) ? route.slice(MOUNT.length + 1) : route);
+// The Know Your Ballot site (govbot-know-your-ballot.vercel.app, built with
+// VITE_KYB_SITE from vercel.json) gives each state's guide a short address:
+// /illinois is "projects/know-your-ballot-illinois", /illinois/ballot its
+// ballot, and the root is a pick-your-state page (KybHome). Routes inside the
+// app don't change; only the address does. See README "Know Your Ballot on
+// its own address".
+export const KYB_SITE = !!import.meta.env.VITE_KYB_SITE;
+const KYB = 'projects/know-your-ballot-';
+const toRoute = (path: string) => (KYB_SITE && /^(illinois|michigan)(\/|$)/.test(path) ? KYB + path : path);
+const toPath = (route: string) => (KYB_SITE && route.startsWith(KYB) ? route.slice(KYB.length) : route);
 
 export function currentRoute(): string {
   let p = window.location.pathname;

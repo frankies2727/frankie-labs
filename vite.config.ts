@@ -5,10 +5,10 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    // Served from https://<user>.github.io/frankie-labs/ on GitHub Pages. A
-    // Vercel project that mounts one Know Your Ballot guide at its root
-    // (VITE_GUIDE=illinois|michigan, see src/lib/router.ts) serves from "/".
-    base: process.env.VITE_GUIDE ? '/' : '/frankie-labs/',
+    // Served from https://<user>.github.io/frankie-labs/ on GitHub Pages. The
+    // Know Your Ballot site on Vercel (VITE_KYB_SITE, set in vercel.json; see
+    // src/lib/router.ts) serves from "/".
+    base: process.env.VITE_KYB_SITE ? '/' : '/frankie-labs/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {

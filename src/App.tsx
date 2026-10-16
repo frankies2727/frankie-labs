@@ -4,7 +4,7 @@ import { PROJECTS, projectById } from './projects';
 import { BackToTop } from './components/BackToTop';
 import { Gallery } from './components/Gallery';
 import { ProjectsGallery } from './components/ProjectsGallery';
-import { navigate, useRoute } from './lib/router';
+import { KYB_SITE, navigate, useRoute } from './lib/router';
 
 // Sends the visitor to a separately-hosted project or game (used when its
 // in-app URL is opened directly). `replace` keeps the gallery as the back
@@ -21,6 +21,7 @@ function ExternalRedirect({ href }: { href: string }) {
 
 // The game shell (lobby, networking) and each game load only when a game is
 // opened, so the home page and galleries stay light.
+const KybHome = lazy(() => import('./projects/know-your-ballot/KybHome').then((m) => ({ default: m.KybHome })));
 const GameShell = lazy(() => import('./components/GameShell').then((m) => ({ default: m.GameShell })));
 
 function Loading({ what }: { what: string }) {
@@ -113,6 +114,9 @@ function Screen() {
     }
     // Unknown project id → fall through to the projects gallery below.
   }
+
+  // On the Know Your Ballot site every other address is the pick-your-state page.
+  if (KYB_SITE) return <Suspense fallback={<Loading what="Know Your Ballot" />}><KybHome /></Suspense>;
 
   // /games, plus any unknown /play/<id>: the games gallery.
   if (seg[0] === 'games' || seg[0] === 'play') {
