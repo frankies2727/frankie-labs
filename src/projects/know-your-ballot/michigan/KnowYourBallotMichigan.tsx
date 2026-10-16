@@ -302,7 +302,7 @@ export function KnowYourBallotMichigan() {
   // ---- screens ------------------------------------------------------------------
   // The three views. On phones, while the browsing notice is up, they scroll
   // away with the page instead of sitting in the sticky bar.
-  const views = ([['ballot', 'My Ballot'], ['plan', 'Plan to vote'], ['share', 'Save & share'], ['how', 'How it works'], ['feed', 'What’s new']] as const).map(([id, label]) => (
+  const views = ([['ballot', 'My Ballot'], ['plan', 'Plan to vote'], ['share', 'Save & share'], ['how', 'How it works'], ['feed', 'News Feed']] as const).map(([id, label]) => (
     <button key={id} type="button" role="tab" aria-selected={tab === id} onClick={() => { setTab(id); window.scrollTo({ top: 0 }); }}
       className={`min-h-[44px] rounded-xl font-bold border-2 border-[var(--gb-text)] ${tab === id ? 'bg-[var(--gb-text)] text-[var(--gb-bg)]' : 'text-[var(--gb-text)]'}`}>
       {label}
