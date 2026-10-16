@@ -28,6 +28,7 @@ import { fetchPage, parseAppellate, parseHouseLists, parsePartisanTable, parseVo
 import { buildDistricts, buildOutline } from './michigan/districts.mjs';
 import { addProfiles } from './ballotpedia-profiles.mjs';
 import { recentNews } from './news.mjs';
+import { recentBills } from './illinois/govbot.mjs';
 import { addHeadshots } from './headshots.mjs';
 import { addPhotos } from './illinois/photos.mjs';
 import { addSocial } from './illinois/social.mjs';
@@ -184,6 +185,10 @@ async function main() {
   const changes = changeLog(prev, next, new Date().toISOString());
   console.log(`Changes since last refresh: ${changes.length - (prev?.changes?.length ?? 0)} new, ${changes.length} kept`);
 
+  // govbot being briefly down shouldn't hold up the ballot: keep yesterday's bills.
+  let laws = prev?.laws ?? [];
+  try { laws = await recentBills('mi'); console.log(`govbot: ${laws.length} Lansing bills`); } catch (e) { console.warn(`govbot: ${e.message}; keeping the last copy`); }
+
   writeFileSync(join(OUT, 'ballot.json'), JSON.stringify({
     election: ELECTION,
     sources: {
@@ -197,6 +202,7 @@ async function main() {
     coa,
     changes,
     news,
+    laws,
   }, null, 1) + '\n');
   writeFileSync(join(OUT, 'districts.json'), JSON.stringify(districts) + '\n');
   writeFileSync(join(OUT, 'outline.json'), JSON.stringify(outline) + '\n');

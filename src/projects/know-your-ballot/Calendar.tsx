@@ -1,4 +1,5 @@
 import { CalendarPlus } from 'lucide-react';
+import type { ReactNode } from 'react';
 import { CITY_2027, dayLabel, downloadReminder, forVoter, NEXT_ELECTION, NOV_3, type KeyDate } from './dates';
 import { daysUntil, useNow } from './store';
 import type { CityRace, Districts } from './types';
@@ -94,23 +95,30 @@ function CityRaces({ city, districts }: { city: CityRace[]; districts: Districts
  * address yet) see their 2027 races right there.
  */
 export function NextElectionNote({ chicago, city, districts = null }: { chicago?: boolean; city?: CityRace[]; districts?: Districts | null }) {
-  const days = daysUntil(NEXT_ELECTION, useNow());
-  if (days < 0) return null;
   const showRaces = city && chicago !== false;
+  return (
+    <NextUp date={NEXT_ELECTION} title="Get ready for Feb 23, 2027 too!" lead={NEXT_UP[chicago === undefined ? 'either' : chicago ? 'chicago' : 'suburbs']}>
+      {showRaces && <CityRaces city={city} districts={districts} />}
+    </NextUp>
+  );
+}
+
+/** The card itself: a heads-up counting down to `date`, with whatever details go under it. */
+export function NextUp({ date, title, lead, children }: { date: string; title: string; lead: string; children?: ReactNode }) {
+  const days = daysUntil(date, useNow());
+  if (days < 0) return null;
   return (
     <aside id="kyb-next" aria-label="Next election" className="rounded-2xl border-[3px] border-[var(--kyb-gold)] bg-[var(--gb-surface)] px-4 py-4 space-y-3">
       <div className="flex items-center gap-4">
         <p className="min-w-0 flex-1 text-[15px] leading-relaxed text-[var(--gb-text)]">
-          <strong className="text-[var(--gb-text)]">Get ready for Feb 23, 2027 too!</strong>{' '}
-          {NEXT_UP[chicago === undefined ? 'either' : chicago ? 'chicago' : 'suburbs']}{' '}
-          We’ll be here with everything nice and tidy for you.
+          <strong className="text-[var(--gb-text)]">{title}</strong> {lead} We’ll be here with everything nice and tidy for you.
         </p>
         <p className="shrink-0 w-20 h-20 rounded-full border-[3px] border-[var(--kyb-gold)] flex flex-col items-center justify-center text-[var(--gb-text)]">
           <span className="text-2xl font-black leading-none">{days}</span>
           <span className="text-sm font-bold">day{days === 1 ? '' : 's'}</span>
         </p>
       </div>
-      {showRaces && <CityRaces city={city} districts={districts} />}
+      {children}
     </aside>
   );
 }

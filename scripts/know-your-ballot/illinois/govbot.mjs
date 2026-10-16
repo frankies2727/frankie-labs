@@ -1,11 +1,13 @@
-// The parts of govbot's published election data this guide shows: Illinois
-// bills that shape the ballot, and Chicago's Feb 23, 2027 city races. govbot
-// rebuilds the file twice a day; we keep only the slices (it's ~800 KB whole).
+// The parts of govbot's published election data this guide shows: a state's
+// bills that shape the ballot (any state: govbot publishes every state's
+// legislation), and Chicago's Feb 23, 2027 city races. govbot rebuilds the
+// files twice a day; we keep only the slices (they run to megabytes whole).
 // https://github.com/chihacknight/govbot
 
 export const GOVBOT_ELECTIONS = 'https://chihacknight.github.io/govbot/dashboard/elections.json';
-// Every Illinois bill with recent activity (govbot's legislation data, ~1.5 MB).
-const GOVBOT_IL_RECENT = 'https://chihacknight.github.io/govbot/dashboard/bills/il_recent.json';
+// A state's bills (govbot's legislation data): il_recent.json is Illinois'
+// bills with recent activity (~1.5 MB); other states have <state>.json whole.
+const GOVBOT_BILLS = 'https://chihacknight.github.io/govbot/dashboard/bills/';
 // Like govbot's elections page: bills with action in the last 6 months, the
 // curated elections/education list merged with every IL bill tagged that way,
 // and an 'Other' tab of everything else (newest OTHER_MAX; the rest are on
@@ -19,9 +21,15 @@ const keep = (o, keys) => Object.fromEntries(keys.filter((k) => o[k] != null).ma
 // state + session + id is the bill's key in govbot's catalog (legislation.html#bill=…).
 const LAW_FIELDS = ['state', 'session', 'id', 'title', 'url', 'tags', 'latest_action', 'latest_action_desc', 'hearing'];
 
-async function springfieldBills(curated) {
-  const res = await fetch(GOVBOT_IL_RECENT);
-  if (!res.ok) throw new Error(`govbot il_recent.json: HTTP ${res.status}`);
+/**
+ * `state`'s bills with action in the last six months: the elections and
+ * education ones (plus `curated`, govbot's own list for Illinois), then the
+ * newest of the rest.
+ */
+export async function recentBills(state, curated = []) {
+  const file = state === 'il' ? 'il_recent.json' : `${state}.json`;
+  const res = await fetch(`${GOVBOT_BILLS}${file}`);
+  if (!res.ok) throw new Error(`govbot ${file}: HTTP ${res.status}`);
   const all = (await res.json()).bills ?? [];
   const since = new Date(Date.now() - RECENT_DAYS * 86_400_000).toISOString().slice(0, 10);
   const recent = (b) => (b.latest_action ?? '').slice(0, 10) >= since;
@@ -31,7 +39,7 @@ async function springfieldBills(curated) {
   for (const b of all) if (!byId.has(b.id) && b.tags?.some((t) => TOPICS.includes(t))) byId.set(b.id, b);
   const topical = [...byId.values()].filter(recent);
   const other = all.filter((b) => !byId.has(b.id) && recent(b)).sort(newest).slice(0, OTHER_MAX);
-  return [...topical, ...other].sort(newest).map((b) => keep({ state: 'il', ...b }, LAW_FIELDS));
+  return [...topical, ...other].sort(newest).map((b) => keep({ state, ...b }, LAW_FIELDS));
 }
 
 // govbot's race ids, which its search, RSS and old links use
@@ -65,7 +73,7 @@ export async function govbotSlices(races) {
   const res = await fetch(GOVBOT_ELECTIONS);
   if (!res.ok) throw new Error(`govbot elections.json: HTTP ${res.status}`);
   const d = await res.json();
-  const laws = await springfieldBills(d.springfield);
+  const laws = await recentBills('il', d.springfield);
   const city = d.races
     .filter((r) => r.jurisdiction === 'chicago' && r.ballot_date === '2027-02-23')
     .map((r) => ({

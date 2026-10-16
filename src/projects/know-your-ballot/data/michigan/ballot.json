@@ -10818,5 +10818,3712 @@
    "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQdmpuX180cjVFQlZZMUw0NGVPaGlBeXdaM0gzN1E1WnR6ZnZudlNFN0pnVDFnSFIyQ2pGTktyTFNBbmtOa21xanFvVFNUeUMzZ0w4ZXVFRlE1Tmk5aUtBaElJSjlOeUJXTVozTkoxWVZDMXJNS3drSmY1SWI4SFRkYkRidTE0RlNYS1gwblREWkw1TjkwajRmcVR5c3BmRlQwQ25tMUhXQWllZUQ4SDktai1TNlI0V3lJXzUySV9IYmdZWlZXdjQ5LUdyWWpMcTRpS0FIU1NiVjYtRWs5NmpjM2dOTkw?oc=5",
    "source": "Michigan Public"
   }
+ ],
+ "laws": [
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0979",
+   "title": "Retirement: other; continuing education requirements for trustees; provide for. Amends sec. 13 of 1965 PA 314 (MCL 38.1133).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0979",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "REPORTED BY COMMITTEE OF THE WHOLE FAVORABLY WITH SUBSTITUTE S-1"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1134",
+   "title": "Retirement: state employees; election process to transfer certain law enforcement officers to the Michigan state police retirement system; provide for. Amends sec. 55 of 1943 PA 240 (MCL 38.55) & adds secs. 50b, 50c, 50d, 64a, 64b & 64c.   TIE BAR WITH: SB 1133'26,  SB 1135'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1134",
+   "tags": [
+    "budget & taxes",
+    "criminal justice",
+    "elections & voting"
+   ],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "SENATE CO-SPONSOR(S) NAMED: ROSEMARY BAYER MALLORY MCMORROW JEREMY MOSS"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1208",
+   "title": "Insurance: no-fault; election to opt out of PIP coverage; modify length of election. Amends sec. 3107d of 1956 PA 218 (MCL 500.3107d).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1208",
+   "tags": [
+    "elections & voting",
+    "health care"
+   ],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "INTRODUCED BY SENATOR JONATHAN LINDSEY"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5356",
+   "title": "Vehicles: title; requirements for transfer of title by a dealer; provide for. Amends 14, 41a, 78, 217, 217c, 233, 233a, 233b, 234, 238, 239, 240, 248, 248a, 248j, 249, 250, 258, 801b, 806 & 810a of 1949 PA 300 (MCL 257.14 et seq.) & adds sec. 9b.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5356",
+   "tags": [],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "REPORTED BY COMMITTEE OF THE WHOLE FAVORABLY WITH SUBSTITUTE (S-1)"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6429",
+   "title": "Environmental protection: solid waste; definition of coal combustion residuals; provide for. Amends, adds & repeals (See bill).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6429",
+   "tags": [
+    "environment & climate"
+   ],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "introduced by Representative Rep. David Martin"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6430",
+   "title": "Occupations: individual licensing and registration; issuance of initial or renewal license or registration; modify for certain occupations. Amends sec. 411 of 1980 PA 299 (MCL 339.411).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6430",
+   "tags": [
+    "government operations"
+   ],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "introduced by Representative Rep. Bill Schuette"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6431",
+   "title": "Natural resources: floodplains; predisaster flood resilience grant program; establish. Amends 1994 PA 451 (MCL 324.101 - 324.90106) by adding secs. 33709, 33710 & 33711.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6431",
+   "tags": [],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "introduced by Representative Rep. Curtis VanderWall"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0102",
+   "title": "Counties: employees and officers; request for transcript and abstract of paper or record; modify. Amends sec. 1 of 1895 PA 161 (MCL 48.101).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0102",
+   "tags": [],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "APPROVED BY GOVERNOR 10/9/2026 9:30 AM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0198",
+   "title": "Occupations: vehicles, dealers, and repair facilities; requirements for automobile dealer data collection; provide for. Creates new act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0198",
+   "tags": [],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "APPROVED BY GOVERNOR 10/9/2026 9:32 AM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0265",
+   "title": "Transportation: funds; maintenance of nonmotorized transportation infrastructure; provide for. Amends sec. 10k of 1951 PA 51 (MCL 247.660k).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0265",
+   "tags": [
+    "budget & taxes",
+    "transportation"
+   ],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "REPORTED BY COMMITTEE OF THE WHOLE FAVORABLY WITHOUT AMENDMENT(S)"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0413",
+   "title": "Health occupations: psychologists; licensure requirements for limited licensed psychologists; modify and modify membership of Michigan board of psychology. Amends secs. 18221, 18223, 18233 & 18237 of 1978 PA 368 (MCL 333.18221 et seq.).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0413",
+   "tags": [
+    "health care"
+   ],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "APPROVED BY GOVERNOR 10/9/2026 9:34 AM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0433",
+   "title": "State agencies (existing): health and human services; educational materials regarding health dangers for youth using high-potency THC and cannabis products; require the department to provide. Amends 1976 PA 451 (MCL 380.1 - 380.1852) by adding sec. 1509.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0433",
+   "tags": [
+    "government operations",
+    "health care"
+   ],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "APPROVED BY GOVERNOR 10/5/2026 9:30 AM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0478",
+   "title": "Property: conveyance of state property; transfer of certain state-owned property in Livingston County; provide for. Creates land transfer act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0478",
+   "tags": [],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "APPROVED BY GOVERNOR 10/5/2026 9:32 AM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0712",
+   "title": "Courts: district court; magistrate qualifications; modify. Amends secs. 8501 & 8507 of 1961 PA 236 (MCL 600.8501 & 600.8507).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0712",
+   "tags": [],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "REPORTED BY COMMITTEE OF THE WHOLE FAVORABLY WITH SUBSTITUTE (S-2)"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1113",
+   "title": "Occupations: accounting; required hours of instruction for accountants; revise. Amends secs. 725, 727a & 729 of 1980 PA 299 (MCL 339.725 et seq.).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1113",
+   "tags": [],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "REPORTED BY COMMITTEE OF THE WHOLE FAVORABLY WITH SUBSTITUTE S-1"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1201",
+   "title": "Agriculture: other; Michigan animal agriculture alliance; establish. Amends 1988 PA 466 (MCL 287.701 - 287.746) by adding sec. 35.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1201",
+   "tags": [],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "INTRODUCED BY SENATOR ROGER VICTORY"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1202",
+   "title": "Appropriations: supplemental; funding for the animal agriculture alliance; provide for. Creates appropriation act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1202",
+   "tags": [
+    "budget & taxes",
+    "transportation"
+   ],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "INTRODUCED BY SENATOR ROGER VICTORY"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1203",
+   "title": "Vehicles: driver training; age for graduated license; modify. Amends secs. 309 & 310e of 1949 PA 300 (MCL 257.309 & 257.310e).   TIE BAR WITH: SB 1204'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1203",
+   "tags": [
+    "government operations"
+   ],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "INTRODUCED BY SENATOR ERIKA GEISS"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1204",
+   "title": "Vehicles: driver training; driver training instruction; modify. Amends secs. 3, 7, 9, 15, 17, 21, 23, 25, 31, 33, 35, 37, 41, 43, 45, 57, 59, 63, 69 & 83 of 2006 PA 384 (MCL 256.623 et seq.) & adds sec. 24.   TIE BAR WITH: SB 1203'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1204",
+   "tags": [],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "INTRODUCED BY SENATOR ERIKA GEISS"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1205",
+   "title": "Appropriations: supplemental; funding for the Michigan task force 1; provide for. Creates appropriation act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1205",
+   "tags": [
+    "budget & taxes"
+   ],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "INTRODUCED BY SENATOR CHEDRICK GREENE"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1206",
+   "title": "Labor: other; local government labor regulatory limitation act; repeal. Repeals 2015 PA 105 (MCL 123.1381 - 123.1396).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1206",
+   "tags": [
+    "labor & workers"
+   ],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "INTRODUCED BY SENATOR SEAN MCCANN"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1207",
+   "title": "Labor: other; fair and open competition in governmental construction act; repeal. Repeals 2011 PA 98 (MCL 408.871 - 408.883).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1207",
+   "tags": [
+    "labor & workers"
+   ],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "INTRODUCED BY SENATOR JOHN CHERRY"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1209",
+   "title": "Military affairs: other; release of the Michigan National Guard into active duty combat without an official act of Congress; prohibit. Amends 1967 PA 150 (MCL 32.501 - 32.851) by adding sec. 203.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1209",
+   "tags": [],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "INTRODUCED BY SENATOR JONATHAN LINDSEY"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1210",
+   "title": "Agriculture: marketing; length of time a cooperative may hold the funds of its members; limit. Amends sec. 9 of 1965 PA 232 (MCL 290.659).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1210",
+   "tags": [
+    "budget & taxes"
+   ],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "INTRODUCED BY SENATOR EDWARD MCBROOM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1211",
+   "title": "Water supply: quality and standards; drinking water compliance information; require to be available to the public. Amends sec. 19 of 1976 PA 399 (MCL 325.1019) by adding sec. 19b.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1211",
+   "tags": [
+    "environment & climate"
+   ],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "INTRODUCED BY SENATOR STEPHANIE CHANG"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1212",
+   "title": "Property: conveyance of state property; transfer of certain state-owned property in Wayne County; provide for. Creates new act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1212",
+   "tags": [],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "INTRODUCED BY SENATOR STEPHANIE CHANG"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1213",
+   "title": "Labor: leave; family and medical leave insurance benefits; provide for. Creates new act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1213",
+   "tags": [
+    "health care",
+    "housing",
+    "labor & workers"
+   ],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "INTRODUCED BY SENATOR ERIKA GEISS"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SCR 0016",
+   "title": "A concurrent resolution of tribute offered as a memorial for John Pappageorge, former member of the Michigan Senate and Michigan House of Representatives.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SCR-0016",
+   "tags": [],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "INTRODUCED BY SENATOR WINNIE BRINKS"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SR 0146",
+   "title": "A resolution of tribute offered as a memorial for John Joseph Henry Schwarz, M.D., former member of the Michigan Senate.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SR-0146",
+   "tags": [],
+   "latest_action": "2026-10-14",
+   "latest_action_desc": "INTRODUCED BY SENATOR WINNIE BRINKS"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6428",
+   "title": "Transportation: other; size, weight, and load requirements; modify. Amends sec. 722 of 1949 PA 300 (MCL 257.722).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6428",
+   "tags": [
+    "transportation"
+   ],
+   "latest_action": "2026-10-07",
+   "latest_action_desc": "bill electronically reproduced 10/06/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4598",
+   "title": "Crimes: organized; gift card fraud; provide for. Amends sec. 4 of 2012 PA 455 (MCL 752.1084).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4598",
+   "tags": [
+    "criminal justice",
+    "elections & voting"
+   ],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "returned from Senate without amendment with immediate effect and full title"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4599",
+   "title": "Crimes: organized; certain definitions related to gift card fraud; provide for. Amends 2012 PA 455 (MCL 752.1081 - 752.1087) by adding sec. 3a.   TIE BAR WITH: HB 4598'25",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4599",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "returned from Senate without amendment with immediate effect and full title"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4793",
+   "title": "Elections: school; requirement for school board members to file an acceptance of office; eliminate. Amends secs. 309 & 310 of 1954 PA 116 (MCL 168.309 & 168.310).   TIE BAR WITH: HB 4794'25,  HB 4795'25",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4793",
+   "tags": [
+    "education",
+    "elections & voting"
+   ],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "REPORTED FAVORABLY WITHOUT AMENDMENT 10/1/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4794",
+   "title": "Elections: school; requirement for community college board of trustee members to file an acceptance of office; eliminate. Amends secs. 156 & 157 of 1966 PA 331 (MCL 389.156 & 389.157).   TIE BAR WITH: HB 4793'25",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4794",
+   "tags": [
+    "education",
+    "elections & voting"
+   ],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "REPORTED FAVORABLY WITHOUT AMENDMENT 10/1/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4795",
+   "title": "Elections: school; requirement for intermediate school board members to file an acceptance of office; eliminate. Amends sec. 861 of 1976 PA 451 (MCL 380.861).   TIE BAR WITH: HB 4793'25",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4795",
+   "tags": [
+    "education",
+    "elections & voting"
+   ],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "REPORTED FAVORABLY WITHOUT AMENDMENT 10/1/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1197",
+   "title": "Elections: other; unauthorized presence or conduct by military officers and others at or during an election; prohibit. Amends 1954 PA 116 (MCL 168.1 - 168.992) by adding secs. 932n & 932p.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1197",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "SENATE CO-SPONSOR(S) NAMED: MALLORY MCMORROW"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1198",
+   "title": "Criminal procedure: sentencing guidelines; sentencing guidelines for certain Michigan election law violations dealing with the unauthorized presence or conduct by military officers at an election; provide for. Amends sec. 11d, ch. XVII of 1927 PA 175 (MCL 777.11d).  TIE BAR WITH: SB 1197'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1198",
+   "tags": [
+    "criminal justice",
+    "elections & voting"
+   ],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "SENATE CO-SPONSOR(S) NAMED: MALLORY MCMORROW"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1199",
+   "title": "Campaign finance: public disclosure; disclosure of payments for social media posts; require, and require certain information be included in social media posts. Amends secs. 12 & 43 of 1976 PA 388 (MCL 169.212 & 169.243) & adds sec. 59a.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1199",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "SENATE CO-SPONSOR(S) NAMED: MALLORY MCMORROW"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4135",
+   "title": "Property: conveyance of state property; conveyance of certain state-owned property in Jackson County; provide for. Creates land transfer act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4135",
+   "tags": [],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "approved by the Governor 10/05/2026 09:34 AM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4301",
+   "title": "Vehicles: emergency vehicles; definition of authorized emergency vehicle; expand. Amends secs. 2 & 698 of 1949 PA 300 (MCL 257.2 & 257.698).   TIE BAR WITH: HB 4302'25",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4301",
+   "tags": [
+    "transportation"
+   ],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "returned from Senate without amendment with immediate effect and full title"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4302",
+   "title": "Vehicles: emergency vehicles; exception to commercial driver license for authorized emergency vehicles of Michigan Mutual Aid Box Alarm System; create. Amends sec. 312e of 1949 PA 300 (MCL 257.312e).   TIE BAR WITH: HB 4301'25",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4302",
+   "tags": [
+    "government operations",
+    "transportation"
+   ],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "returned from Senate without amendment with immediate effect and full title"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4678",
+   "title": "Agriculture: weights and measures; certain definitions; provide for. Amends 1964 PA 283 (MCL 290.601 - 290.635) by adding sec. 28g.   TIE BAR WITH: HB 4679'25",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4678",
+   "tags": [],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "returned from Senate with substitute (S-1) with immediate effect and full title"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4679",
+   "title": "Agriculture: weights and measures; certain definitions; provide for. Amends secs. 10 & 28c of 1964 PA 283 (MCL 290.610 & 290.628c).   TIE BAR WITH: HB 4678'25",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4679",
+   "tags": [],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "returned from Senate without amendment with immediate effect and full title"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4703",
+   "title": "Insurance: health insurers; coverage for group prenatal care services; require. Amends 1956 PA 218 (MCL 500.100 - 500.8302) by adding sec. 3406ss.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4703",
+   "tags": [
+    "health care"
+   ],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "returned from Senate with substitute (S-1) with immediate effect and title amendment"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5485",
+   "title": "Natural resources: inland lakes; dam safety regulations; provide for. Amends secs. 31502, 31503, 31504, 31505, 31506, 31507, 31508, 31509, 31510, 31511, 31513, 31515, 31516, 31517, 31518, 31520, 31521 & 31523 of 1994 PA 451 (MCL 324.31502 et seq.) & adds secs. 31506a, 31509a, 31509b, 31517a, 31518a,",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5485",
+   "tags": [],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "returned from Senate with substitute (S-2) with immediate effect and title amendment"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5514",
+   "title": "Children: other; prohibition of use of certain restraint while transporting youths to certain youth residential treatment programs; provide for. Creates new act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5514",
+   "tags": [],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "returned from Senate without amendment with immediate effect"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6007",
+   "title": "Food: service establishments; delegation of certain duties and exemption of certain persons from licensure; modify. Amends secs. 3105, 3113, 3129, 3139, 4101, 4105, 5101 & 6103 of 2000 PA 92 (MCL 289.3105 et seq.).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6007",
+   "tags": [],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "REPORTED FAVORABLY WITHOUT AMENDMENT 10/1/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0791",
+   "title": "Highways: memorial; portion of I-475; designate as the \"St. John Street Community Memorial Highway\". Amends 2001 PA 142 (MCL 250.1001 - 250.2092) by adding sec. 124.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0791",
+   "tags": [
+    "transportation"
+   ],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "received on 10/01/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0988",
+   "title": "Property tax: tax tribunal; number of days to appeal a claim for poverty exemption; modify. Amends sec. 53c of 1893 PA 206 (MCL 211.53c).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0988",
+   "tags": [
+    "budget & taxes"
+   ],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "received on 10/01/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1132",
+   "title": "Military affairs: other; Camp Grayling improvement fund; establish. Amends 1967 PA 150 (MCL 32.501 - 32.851) by adding secs. 388a, 388b, 388c, 388d, 388e & 388f.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1132",
+   "tags": [
+    "budget & taxes"
+   ],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "received on 10/01/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1200",
+   "title": "Transportation: transportation network companies; cancellation of certain rideshare reservations; prohibit. Amends sec. 41 of 2016 PA 345 (MCL 257.2141).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1200",
+   "tags": [
+    "transportation"
+   ],
+   "latest_action": "2026-10-06",
+   "latest_action_desc": "SENATE CO-SPONSOR(S) NAMED: SUE SHINK"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6080",
+   "title": "Education: teachers and administrators; certain professional development courses; prohibit. Amends sec. 1248 of 1976 PA 451 (MCL 380.1248).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6080",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6259",
+   "title": "Criminal procedure: sentencing guidelines; sentencing guidelines for criminal sexual conduct; modify. Amends sec. 16y, ch. XVII of 1927 PA 175 (MCL 777.16y).   TIE BAR WITH: HB 6261'26,  HB 6262'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6259",
+   "tags": [
+    "criminal justice",
+    "elections & voting"
+   ],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6260",
+   "title": "Crimes: criminal sexual conduct; penalties for criminal sexual conduct in the first degree; modify. Amends sec. 520b of 1931 PA 328 (MCL 750.520b).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6260",
+   "tags": [
+    "criminal justice",
+    "elections & voting"
+   ],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6261",
+   "title": "Crimes: criminal sexual conduct; penalties for criminal sexual conduct in the second degree; modify. Amends sec. 520c of 1931 PA 328 (MCL 750.520c).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6261",
+   "tags": [
+    "criminal justice",
+    "elections & voting",
+    "lgbtq"
+   ],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6262",
+   "title": "Crimes: criminal sexual conduct; penalties for criminal sexual conduct in the third degree; modify. Amends sec. 520d of 1931 PA 328 (MCL 750.520d).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6262",
+   "tags": [
+    "criminal justice",
+    "elections & voting",
+    "lgbtq"
+   ],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6263",
+   "title": "Crimes: criminal sexual conduct; penalties for criminal sexual conduct in the fourth degree; modify. Amends sec. 520e of 1931 PA 328 (MCL 750.520e).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6263",
+   "tags": [
+    "criminal justice",
+    "elections & voting"
+   ],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6302",
+   "title": "Education: school districts; requirement to display an American flag in classrooms; provide for. Amends sec. 1347 of 1976 PA 451 (MCL 380.1347).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6302",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6425",
+   "title": "Elections: petitions; petition circulator to include village or postal city on the certificate of circulator; allow. Amends sec. 544c of 1954 PA 116 (MCL 168.544c).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6425",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "bill electronically reproduced 09/30/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4011",
+   "title": "Property: conveyance of state property; transfer of certain state-owned property in Arenac County; provide for. Creates land transfer act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4011",
+   "tags": [],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "DISCHARGE COMMITTEE APPROVED"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5120",
+   "title": "Civil procedure: service of process; cost for service of process for personal protection orders; eliminate. Amends secs. 2559 & 2950 of 1961 PA 236 (MCL 600.2559 & 600.2950).   TIE BAR WITH: HB 5121'25,  HB 6033'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5120",
+   "tags": [],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5121",
+   "title": "Civil procedure: service of process; cost for service of process for personal protection orders; eliminate. Amends sec. 2950a of 1961 PA 236 (MCL 600.2950a) & adds secs. 2950d & 2950p.   TIE BAR WITH: HB 5120'25,  HB 6033'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5121",
+   "tags": [],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6033",
+   "title": "Civil procedure: costs and fees; fees for service of process; revise. Amends sec. 2559 of 1961 PA 236 (MCL 600.2559).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6033",
+   "tags": [
+    "budget & taxes"
+   ],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6282",
+   "title": "Public employees and officers: ethics; moratorium on former legislators accepting employment with an entity that receives a grant from the utility consumer participation board; provide for. Creates new act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6282",
+   "tags": [
+    "government operations"
+   ],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6309",
+   "title": "Highways: memorial; portion of M-86; designate as the \"Casey Rice Memorial Highway\". Amends 2001 PA 142 (MCL 250.1001 - 250.2092) by adding sec. 116.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6309",
+   "tags": [
+    "transportation"
+   ],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6426",
+   "title": "Businesses: other; data center local decision protection act; create. Creates new act.   TIE BAR WITH: HB 6427'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6426",
+   "tags": [
+    "technology & AI"
+   ],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "bill electronically reproduced 09/30/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6427",
+   "title": "Businesses: other; Michigan zoning enabling act; make subject to the data center local decision protection act. Amends secs. 205 & 606 of 2006 PA 110 (MCL 125.3205 & 125.3606).   TIE BAR WITH: HB 6426'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6427",
+   "tags": [
+    "housing",
+    "technology & AI"
+   ],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "bill electronically reproduced 09/30/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0947",
+   "title": "Natural resources: inland lakes; dam safety regulations; provide for. Amends and adds (See bill).   TIE BAR WITH: HB 5485'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0947",
+   "tags": [
+    "environment & climate"
+   ],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "PASSED BY HOUSE WITH SUBSTITUTE (H-1) WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1188",
+   "title": "Family law: child support; cancellation of child support; allow under certain circumstances. Amends secs. 3, 19 & 27 of 1982 PA 295 (MCL 552.603 et seq.) & adds sec. 18.   TIE BAR WITH: SB 1189'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1188",
+   "tags": [],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "INTRODUCED BY SENATOR JIM RUNESTAD"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1189",
+   "title": "Human services: fraud; falsely identifying a person as a biological parent; prohibit. Amends secs. 57e & 57g of 1939 PA 280 (MCL 400.57e & 400.57g).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1189",
+   "tags": [],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "INTRODUCED BY SENATOR JIM RUNESTAD"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1190",
+   "title": "Environmental protection: air pollution; low-carbon fuel standard; provide for. Creates new act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1190",
+   "tags": [
+    "environment & climate"
+   ],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "INTRODUCED BY SENATOR SAM SINGH"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1191",
+   "title": "Economic development: other; mass timber loan and technical assistance programs and mass timber revolving loan fund; create. Amends sec. 9 of 1984 PA 270 (MCL 125.2009) & adds ch. 8F.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1191",
+   "tags": [],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "INTRODUCED BY SENATOR SAM SINGH"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1192",
+   "title": "Corrections: prisoners; certain uses of segregation by department; establish regulations. Amends secs. 51 & 52 of 1953 PA 232 (MCL 791.251 & 791.252) & adds secs. 64a, 64b, 64c & 64d.  TIE BAR WITH: SB 1193'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1192",
+   "tags": [
+    "government operations",
+    "health care"
+   ],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "INTRODUCED BY SENATOR STEPHANIE CHANG"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1193",
+   "title": "Corrections: prisoners; therapeutic alternative space for prisoners who are a member of a vulnerable population; provide for. Amends secs. 1953 PA 232 (MCL 791.201 - 791.285) by adding sec. 64e.   TIE BAR WITH: SB 1192'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1193",
+   "tags": [
+    "health care"
+   ],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "INTRODUCED BY SENATOR STEPHANIE CHANG"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1194",
+   "title": "Traffic control: traffic regulation; passengers riding in the open bed or cargo area of a pickup truck; allow. Repeals sec. 682b of 1949 PA 300 (MCL 257.682b). Sec. 682b of 1949 PA 300 (MCL 257.682b).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1194",
+   "tags": [
+    "transportation"
+   ],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "INTRODUCED BY SENATOR EDWARD MCBROOM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1195",
+   "title": "Counties: employees and officers; appointment of vacant county office; modify. Amends sec. 5 of 1923 PA 199 (MCL 201.35).   TIE BAR WITH: SB 1196'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1195",
+   "tags": [],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "INTRODUCED BY SENATOR DARRIN CAMILLERI"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1196",
+   "title": "Counties: employees and officers; appointment of vacant county office; modify. Amends secs. 205 & 209 of 1954 PA 116 (MCL 168.205 & 168.209).    TIE BAR WITH: SB 1195'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1196",
+   "tags": [],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "INTRODUCED BY SENATOR DARRIN CAMILLERI"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SR 0141",
+   "title": "A resolution to urge the federal government to report on the abduction of Ukrainian children by the Russian Federation and assist in their return.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SR-0141",
+   "tags": [],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "RULES SUSPENDED"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SR 0142",
+   "title": "A resolution to recognize October 13, 2026, as Homeschool Day.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SR-0142",
+   "tags": [],
+   "latest_action": "2026-10-01",
+   "latest_action_desc": "INTRODUCED BY SENATOR JONATHAN LINDSEY"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6422",
+   "title": "Education: school districts; notification to parents of any religious instruction classes scheduled during public school hours; require.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6422",
+   "tags": [
+    "education",
+    "elections & voting"
+   ],
+   "latest_action": "2026-09-30",
+   "latest_action_desc": "bill electronically reproduced 09/29/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6366",
+   "title": "Commercial code: other; references to uniform commercial code in higher education facilities authority act; revise. Amends sec. 11 of 1969 PA 295 (MCL 390.931).   TIE BAR WITH: HB 6347'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6366",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-09-29",
+   "latest_action_desc": "bill electronically reproduced 09/24/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6367",
+   "title": "Commercial code: other; references to uniform commercial code in higher education loan authority act; revise. Amends sec. 9 of 1975 PA 222 (MCL 390.1159).   TIE BAR WITH: HB 6347'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6367",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-09-29",
+   "latest_action_desc": "bill electronically reproduced 09/24/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6397",
+   "title": "Education: meals; plant-based school meals; require to be provided upon request. Amends sec. 30d of 1979 PA 94 (MCL 388.1630d).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6397",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-09-29",
+   "latest_action_desc": "bill electronically reproduced 09/24/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6414",
+   "title": "Elections: election officials; local clerks to investigate and report alleged violations of the election law by the secretary of state, bureau of elections, and the director of elections; authorize. Amends 1954 PA 116 (MCL 168.1 - 168.992) by adding sec. 29a.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6414",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-09-29",
+   "latest_action_desc": "bill electronically reproduced 09/24/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6336",
+   "title": "Counties: boards and commissions; requirement for competitive bidding by county road commissions on certain purchases; modify.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6336",
+   "tags": [
+    "elections & voting",
+    "transportation"
+   ],
+   "latest_action": "2026-09-24",
+   "latest_action_desc": "bill electronically reproduced 09/23/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6334",
+   "title": "Education: teachers and administrators; educational requirements for superintendents and principals; modify.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6334",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-09-23",
+   "latest_action_desc": "bill electronically reproduced 09/22/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HR 0371",
+   "title": "A resolution urging the Michigan Board of Education to advise Michigan schools to continue referring to the Great Lakes as Superior, Michigan, Huron, Erie, and Ontario.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HR-0371",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-09-23",
+   "latest_action_desc": "introduced by Representative Rep. Brenda Carter"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0217",
+   "title": "Traffic control: accidents; penalties for moving violation causing physical injury or death to a vulnerable roadway user; enhance. Amends sec. 12e, ch. XVII of 1927 PA 175 (MCL 777.12e).   TIE BAR WITH: SB 0216'25",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0217",
+   "tags": [
+    "elections & voting",
+    "transportation"
+   ],
+   "latest_action": "2026-09-23",
+   "latest_action_desc": "reported with recommendation with substitute (H-2)"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6090",
+   "title": "Elections: candidates; dual citizenship status; require candidates to disclose. Amends sec. 558 of 1954 PA 116 (MCL 168.558).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6090",
+   "tags": [
+    "elections & voting",
+    "immigration"
+   ],
+   "latest_action": "2026-09-22",
+   "latest_action_desc": "reported with recommendation without amendment"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6130",
+   "title": "Education: financing; Michigan trust fund act; modify. Amends sec. 12 of 2000 PA 489 (MCL 12.262).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6130",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-09-22",
+   "latest_action_desc": "approved by the Governor 09/21/2026 09:52 AM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6257",
+   "title": "State management: other; independent verification and validation services; require for certain information technology projects. Amends 1984 PA 431 (MCL 18.1101 - 18.1594) by adding sec. 261g.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6257",
+   "tags": [
+    "elections & voting",
+    "government operations",
+    "transportation"
+   ],
+   "latest_action": "2026-09-22",
+   "latest_action_desc": "reported with recommendation without amendment"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HJR W",
+   "title": "Elections: candidates; eligibility of an independent citizens redistricting commissioner to run for office; modify.  Amends sec. 6, art. IV of the state constitution.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HJR-W",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-09-22",
+   "latest_action_desc": "reported with recommendation without amendment"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HR 0354",
+   "title": "A resolution to declare September 21-27, 2026, as Rail Safety Education Week in the state of Michigan.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HR-0354",
+   "tags": [
+    "education",
+    "transportation"
+   ],
+   "latest_action": "2026-09-22",
+   "latest_action_desc": "introduced by Representative Rep. Bradley Slagh"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HR 0359",
+   "title": "A resolution to urge the Michigan Department of State to rescind Administrative Rule R 168.48, to align the Department’s administrative rules with federal election laws and make Michigan election records less susceptible to manipulation by foreign actors.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HR-0359",
+   "tags": [
+    "elections & voting",
+    "government operations"
+   ],
+   "latest_action": "2026-09-22",
+   "latest_action_desc": "introduced by Representative Rep. Rachelle Smit"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1013",
+   "title": "Insurance: no-fault; price optimization use in determining insurance rates; prohibit. Amends secs. 2109 & 2119 of 1956 PA 218 (MCL 500.2109 & 500.2119).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1013",
+   "tags": [
+    "elections & voting",
+    "health care"
+   ],
+   "latest_action": "2026-09-22",
+   "latest_action_desc": "PRESENTED TO GOVERNOR 9/15/2026 1:34 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1185",
+   "title": "Education: other; opportunities for school enrollment and transportation for children and youth experiencing homelessness; provide for. Amends secs. 1135 & 1321 of 1976 PA 451 (MCL 380.1135 & 380.1321) & adds sec. 1562.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1185",
+   "tags": [
+    "education",
+    "transportation"
+   ],
+   "latest_action": "2026-09-22",
+   "latest_action_desc": "INTRODUCED BY SENATOR KEVIN HERTEL"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1186",
+   "title": "Elections: special elections; state to reimburse costs for certain special elections; require. Amends 1954 PA 116 (MCL 168.1 - 168.992) by adding sec. 634b.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1186",
+   "tags": [
+    "budget & taxes",
+    "elections & voting"
+   ],
+   "latest_action": "2026-09-22",
+   "latest_action_desc": "INTRODUCED BY SENATOR CHEDRICK GREENE"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1137",
+   "title": "Civil procedure: execution; procedures for collection of judgments; revise. Amends & adds (See bill).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1137",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-09-15",
+   "latest_action_desc": "received on 09/10/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1141",
+   "title": "Economic development: tax increment financing; definition of tax increment revenues; exclude taxes levied under history museum authorities act. Amends secs. 201, 301, 402, 523, 603, 703 & 803 of 2018 PA 57 (MCL 125.4201 et seq.).   TIE BAR WITH: SB 1139'26,  SB 1140'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1141",
+   "tags": [
+    "budget & taxes",
+    "elections & voting"
+   ],
+   "latest_action": "2026-09-15",
+   "latest_action_desc": "received on 09/10/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0858",
+   "title": "Appropriations: school aid; fiscal year 2026-2027 appropriations for K-12 school aid; provide for. Amends secs. 11 & 17b of 1979 PA 94 (MCL 388.1611 & 388.1617b).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0858",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-09-10",
+   "latest_action_desc": "REASSIGNED TO COMMITTEE ON APPROPRIATIONS"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0859",
+   "title": "Appropriations: supplemental; supplemental appropriations in the school aid act for fiscal year 2025-2026; provide for. Amends secs. 11 & 17b of 1979 PA 94 (MCL 388.1611 & 388.1617b).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0859",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-09-10",
+   "latest_action_desc": "REASSIGNED TO COMMITTEE ON APPROPRIATIONS"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0868",
+   "title": "Appropriations: department of lifelong education, advancement, and potential; appropriations for fiscal year 2026-2027; provide for. Creates appropriation act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0868",
+   "tags": [
+    "budget & taxes",
+    "education",
+    "government operations"
+   ],
+   "latest_action": "2026-09-10",
+   "latest_action_desc": "REASSIGNED TO COMMITTEE ON APPROPRIATIONS"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0869",
+   "title": "Appropriations: department of education; appropriations for fiscal year 2026-2027; provide for. Creates appropriation act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0869",
+   "tags": [
+    "budget & taxes",
+    "education",
+    "government operations"
+   ],
+   "latest_action": "2026-09-10",
+   "latest_action_desc": "REASSIGNED TO COMMITTEE ON APPROPRIATIONS"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0874",
+   "title": "Appropriations: higher education; appropriations for fiscal year 2026-2027; provide for. Amends secs. 236 & 241 of 1979 PA 94 (MCL 388.1836 & 388.1841).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0874",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-09-10",
+   "latest_action_desc": "REASSIGNED TO COMMITTEE ON APPROPRIATIONS"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1085",
+   "title": "Businesses: business corporations; power of corporations to spend in elections or ballot issues; revoke. Amends secs. 261, 271, 821, 1012 & 1041 of 1972 PA 284 (MCL 450.1261 et seq.) & adds sec. 261a.   TIE BAR WITH: SB 1086'26,  SB 1087'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1085",
+   "tags": [
+    "elections & voting",
+    "government operations"
+   ],
+   "latest_action": "2026-09-10",
+   "latest_action_desc": "SENATE CO-SPONSOR(S) NAMED: VERONICA KLINEFELT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1086",
+   "title": "Businesses: nonprofit corporations; power of nonprofit corporations to spend in elections or ballot issues; revoke. Amends secs. 261, 271, 821, 1012 & 1041 of 1982 PA 162 (MCL 450.2261 et seq.) & adds sec. 261a.   TIE BAR WITH: SB 1085'26,  SB 1087'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1086",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-09-10",
+   "latest_action_desc": "SENATE CO-SPONSOR(S) NAMED: VERONICA KLINEFELT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1087",
+   "title": "Businesses: limited liability companies; power of limited liability companies to spend in elections or ballot issues; revoke. Amends secs. 105, 210, 211 & 1008 of 1993 PA 23 (MCL 450.4105 et seq.) & adds sec. 210a.   TIE BAR WITH: SB 1085'26,  SB 1086'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1087",
+   "tags": [
+    "elections & voting",
+    "government operations"
+   ],
+   "latest_action": "2026-09-10",
+   "latest_action_desc": "SENATE CO-SPONSOR(S) NAMED: VERONICA KLINEFELT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1160",
+   "title": "Higher education: financial aid; access to Michigan achievement scholarship; expand. Amends sec. 248 of 1979 PA 94 (MCL 388.1848).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1160",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-09-10",
+   "latest_action_desc": "INTRODUCED BY SENATOR JOHN DAMOOSE"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4813",
+   "title": "Education: other; interstate compact on educational opportunity for military children; modify. Amends secs. 1 & 2 of 2008 PA 160 (MCL 3.1041 & 3.1042).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4813",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-09-09",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5648",
+   "title": "Education: graduation requirements; credit for working certain trades; provide for. Amends sec. 1278a of 1976 PA 451 (MCL 380.1278a) & adds sec. 1279i.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5648",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-09-09",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5921",
+   "title": "Legislature: legislative agencies; office of legislative corrections ombudsman; expand powers and duties. Amends secs. 7, 11, 12, 13 & 14 of 1975 PA 46 (MCL 4.357 et seq.).   TIE BAR WITH: HB 5920'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5921",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-09-09",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1147",
+   "title": "Education: curriculum; certain prohibitions concerning curriculum; provide for. Amends 1976 PA 451 (MCL 380.1 - 380.1852) by adding sec. 1167.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1147",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-09-09",
+   "latest_action_desc": "INTRODUCED BY SENATOR JIM RUNESTAD"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6291",
+   "title": "Higher education: financial aid; medical education debt stabilization for students program; establish.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6291",
+   "tags": [
+    "education",
+    "health care"
+   ],
+   "latest_action": "2026-09-01",
+   "latest_action_desc": "bill electronically reproduced 08/27/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6295",
+   "title": "Health: other; grant program for promoting health professions in primary care to students in this state; establish.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6295",
+   "tags": [
+    "education",
+    "health care"
+   ],
+   "latest_action": "2026-09-01",
+   "latest_action_desc": "bill electronically reproduced 08/27/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6298",
+   "title": "Appropriations: supplemental; funding for the youth and family justice bureau; provide for.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6298",
+   "tags": [
+    "budget & taxes",
+    "education",
+    "health care"
+   ],
+   "latest_action": "2026-09-01",
+   "latest_action_desc": "bill electronically reproduced 08/27/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6318",
+   "title": "Elections: voters; denying the right to vote on the basis of sex; prohibit.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6318",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-09-01",
+   "latest_action_desc": "bill electronically reproduced 08/27/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6250",
+   "title": "Traffic control: violations; penalty for damaged registration plate; modify.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6250",
+   "tags": [
+    "criminal justice",
+    "elections & voting",
+    "transportation"
+   ],
+   "latest_action": "2026-08-27",
+   "latest_action_desc": "bill electronically reproduced 08/26/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6273",
+   "title": "Traffic control: speed restrictions; modification requirements for speed restrictions in school zones; revise.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6273",
+   "tags": [
+    "criminal justice",
+    "education",
+    "elections & voting",
+    "environment & climate",
+    "transportation"
+   ],
+   "latest_action": "2026-08-27",
+   "latest_action_desc": "bill electronically reproduced 08/26/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5919",
+   "title": "Education: other; learner-first district; create. Amends secs. 4 & 5 of 1976 PA 451 (MCL 380.4 & 380.5) & adds (See bill).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5919",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-08-26",
+   "latest_action_desc": "reported with recommendation with substitute (H-1)"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6245",
+   "title": "School aid: other; funding for learner-first district; provide for.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6245",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-08-26",
+   "latest_action_desc": "bill electronically reproduced 08/25/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HR 0350",
+   "title": "A resolution to create a select committee on the rules and procedures of the Board of State Canvassers and the Bureau of Elections.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HR-0350",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-08-26",
+   "latest_action_desc": "introduced by Representative Rep. Matt Hall"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6233",
+   "title": "Retirement: state employees; election process to transfer certain law enforcement officers to the Michigan state police retirement system; provide for. Amends sec. 55 of 1943 PA 240 (MCL 38.55) & adds secs. 50b, 50c, 50d, 64a, 64b & 64c.  TIE BAR WITH: HB 6234'26,  HB 6235'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6233",
+   "tags": [
+    "budget & taxes",
+    "criminal justice",
+    "elections & voting"
+   ],
+   "latest_action": "2026-08-11",
+   "latest_action_desc": "introduced by Representative Rep. Amos O'Neal"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4187",
+   "title": "Individual income tax: revenue distributions; distribution and use of renew Michigan fund and lapse of interest and earnings from the revitalization and placemaking fund to general fund; modify and provide for. Amends secs. 51, 51g & 696 of 1967 PA 281 (MCL 206.51 et seq.).  TIE BAR WITH: HB 4180'25",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4187",
+   "tags": [
+    "budget & taxes",
+    "elections & voting"
+   ],
+   "latest_action": "2026-07-29",
+   "latest_action_desc": "approved by the Governor 07/21/2026 02:28 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4779",
+   "title": "Health facilities: other; surgical smoke plume evacuation plan; require. Amends 1978 PA 368 (MCL 333.1101 - 333.25211) by adding sec. 20187.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4779",
+   "tags": [
+    "elections & voting",
+    "health care"
+   ],
+   "latest_action": "2026-07-29",
+   "latest_action_desc": "approved by the Governor 07/21/2026 03:08 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4808",
+   "title": "Civil rights: open meetings; the children trust Michigan state board; allow to meet remotely under the open meetings act. Amends sec. 3a of 1976 PA 267 (MCL 15.263a).   TIE BAR WITH: HB 4807'25",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4808",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-07-29",
+   "latest_action_desc": "approved by the Governor 07/21/2026 02:12 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0081",
+   "title": "Courts: other; Michigan indigent defense commission act; expand duties to include indigent defense of youth. Amends title & secs. 3, 5, 7, 9, 11, 13, 15, 17, 21 & 23 of 2013 PA 93 (MCL 780.983 et seq.) & adds sec. 14.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0081",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-07-29",
+   "latest_action_desc": "APPROVED BY GOVERNOR 7/21/2026 12:58 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0106",
+   "title": "Vehicles: fund-raising registration plates; fund-raising registration plate for spay and neuter clinics; create. Amends 1949 PA 300 (MCL 257.1 - 257.923) by adding sec. 811kk.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0106",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-07-29",
+   "latest_action_desc": "APPROVED BY GOVERNOR 7/21/2026 1:02 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0133",
+   "title": "Insurance: producers; continuing education credit carryover system for insurance producers who belong to a professional insurance association; provide for. Amends sec. 1204c of 1956 PA 218 (MCL 500.1204c).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0133",
+   "tags": [
+    "education",
+    "health care"
+   ],
+   "latest_action": "2026-07-29",
+   "latest_action_desc": "APPROVED BY GOVERNOR 7/21/2026 1:04 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0205",
+   "title": "Health: anatomical gifts; certain private practice offices and urgent care centers to provide information on the donor registry and donating bone marrow; allow. Amends 1978 PA 368 (MCL 333.1101 - 333.25211) by adding sec. 10401.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0205",
+   "tags": [
+    "elections & voting",
+    "health care"
+   ],
+   "latest_action": "2026-07-29",
+   "latest_action_desc": "APPROVED BY GOVERNOR 7/21/2026 1:06 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0301",
+   "title": "Corporate income tax: credits; employer credit for paid organ donation leave; provide for. Amends secs. 30 & 623 of 1967 PA 281 (MCL 206.30 & 206.623) & adds secs. 279 & 679.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0301",
+   "tags": [
+    "budget & taxes",
+    "elections & voting",
+    "government operations",
+    "health care"
+   ],
+   "latest_action": "2026-07-29",
+   "latest_action_desc": "APPROVED BY GOVERNOR 7/21/2026 1:12 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0418",
+   "title": "Children: child abuse or child neglect; child abuse and neglect prevention act; modify. Amends title & secs. 2, 3, 4, 9, 10 & 12 of 1982 PA 250 (MCL 722.602 et seq.).   TIE BAR WITH: SB 0421'25,  HB 4805'25,  HB 4808'25",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0418",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-07-29",
+   "latest_action_desc": "APPROVED BY GOVERNOR 7/21/2026 1:16 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0421",
+   "title": "Children: child abuse or child neglect; reference to the state child abuse and neglect prevention board; update in the vehicle code. Amends sec. 811j of 1949 PA 300 (MCL 257.811j).   TIE BAR WITH: SB 0418'25,  HB 4805'25,  HB 4808'25",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0421",
+   "tags": [
+    "elections & voting",
+    "transportation"
+   ],
+   "latest_action": "2026-07-29",
+   "latest_action_desc": "APPROVED BY GOVERNOR 7/21/2026 1:18 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0604",
+   "title": "Liquor: authorized distribution agents; authorized distribution agent fees; increase. Amends sec. 205 of 1998 PA 58 (MCL 436.1205).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0604",
+   "tags": [
+    "budget & taxes",
+    "elections & voting"
+   ],
+   "latest_action": "2026-07-29",
+   "latest_action_desc": "APPROVED BY GOVERNOR 7/21/2026 1:26 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0616",
+   "title": "Civil procedure: civil actions; civil actions against certain opioid litigation settlement defendants; prohibit. Amends secs. 2 & 3 of 2022 PA 85 (MCL 691.1672 & 691.1673).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0616",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-07-29",
+   "latest_action_desc": "APPROVED BY GOVERNOR 7/21/2026 1:28 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0722",
+   "title": "Economic development: commercial redevelopment; commercial rehabilitation act; modify. Amends secs. 2, 6, 7, 14 & 16 of 2005 PA 210 (MCL 207.842 et seq.).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0722",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-07-29",
+   "latest_action_desc": "APPROVED BY GOVERNOR 7/21/2026 1:34 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0903",
+   "title": "School aid: other; requirements for districts to receive weighted funding; provide for. Amends 1976 PA 451 (MCL 380.1 - 380.1852) by adding sec. 1280h.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0903",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-07-29",
+   "latest_action_desc": "APPROVED BY GOVERNOR 7/21/2026 1:38 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0989",
+   "title": "Education: teachers and administrators; interim teaching certification process; modify. Amends sec. 1531i of 1976 PA 451 (MCL 380.1531i).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0989",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-07-29",
+   "latest_action_desc": "APPROVED BY GOVERNOR 7/21/2026 1:42 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4309",
+   "title": "Health occupations: physician's assistants; physician's assistants licensure compact; provide for. Amends secs. 16337 & 18001 of 1978 PA 368 (MCL 333.16337 & 333.18001) & adds secs. 16187d, 17011b, 17061a, 17511b & 18011b.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4309",
+   "tags": [
+    "elections & voting",
+    "health care"
+   ],
+   "latest_action": "2026-07-22",
+   "latest_action_desc": "approved by the Governor 07/21/2026 02:34 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5571",
+   "title": "Construction: code; sunset of MCL 125.1504j; provide for on adoption of certain rules by the department. Amends 1972 PA 230 (MCL 125.1501 - 125.1531) by adding sec. 4k.  TIE BAR WITH: HB 5570'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5571",
+   "tags": [
+    "elections & voting",
+    "government operations"
+   ],
+   "latest_action": "2026-07-21",
+   "latest_action_desc": "approved by the Governor 07/21/2026 01:56 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5630",
+   "title": "Appropriations: school aid omnibus; fiscal year 2026-2027 appropriations for K-12 school aid, higher education, and community colleges; provide for. Amends; adds & repeals (See bill).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5630",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-07-21",
+   "latest_action_desc": "approved by the Governor 07/21/2026 01:48 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5646",
+   "title": "Education: other; certain requirements for the approval of teacher preparation programs; create. Amends 1976 PA 451 (MCL 380.1 - 380.1852) by adding sec. 1531l.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5646",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-07-21",
+   "latest_action_desc": "approved by the Governor 07/21/2026 01:52 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5697",
+   "title": "Education: teachers and administrators; completion of certain training for K-5 teachers; require. Amends 1976 PA 451 (MCL 380.1 - 380.1852) by adding sec. 1531k.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5697",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-07-21",
+   "latest_action_desc": "approved by the Governor 07/21/2026 01:50 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1098",
+   "title": "Health occupations: pharmacists; continuing education requirements for pharmacists and pharmacy technicians; modify. Amends sec. 17731 of 1978 PA 368 (MCL 333.17731).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1098",
+   "tags": [
+    "education",
+    "health care"
+   ],
+   "latest_action": "2026-07-15",
+   "latest_action_desc": "INTRODUCED BY SENATOR DARRIN CAMILLERI"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1101",
+   "title": "Occupations: cosmetologists; record retention requirements for cosmetology schools; revise. Amends sec. 1205a of 1980 PA 299 (MCL 339.1205a).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1101",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-07-15",
+   "latest_action_desc": "INTRODUCED BY SENATOR DARRIN CAMILLERI"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SJR M",
+   "title": "Elections: primary; nomination process for lieutenant governor, secretary of state, and attorney general; modify. Amends sec. 21, art. V of the state constitution",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SJR-M",
+   "tags": [
+    "elections & voting",
+    "government operations"
+   ],
+   "latest_action": "2026-07-15",
+   "latest_action_desc": "INTRODUCED BY SENATOR SAM SINGH"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SJR N",
+   "title": "Individual income tax: income; surcharge on certain taxpayers and distribution of revenue attributable to the surcharge; provide for. Amends sec. 7, art. IX of the state constitution.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SJR-N",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-07-15",
+   "latest_action_desc": "INTRODUCED BY SENATOR STEPHANIE CHANG"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6157",
+   "title": "Civil rights: public records; regulation of disclosure of certain information; provide for. Creates new act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6157",
+   "tags": [
+    "elections & voting",
+    "government operations",
+    "lgbtq"
+   ],
+   "latest_action": "2026-07-14",
+   "latest_action_desc": "bill electronically reproduced 07/03/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6158",
+   "title": "State management: other; access to certain facilities by federal immigration authorities; regulate. Creates new act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6158",
+   "tags": [
+    "budget & taxes",
+    "elections & voting",
+    "government operations",
+    "immigration",
+    "transportation"
+   ],
+   "latest_action": "2026-07-14",
+   "latest_action_desc": "bill electronically reproduced 07/03/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6164",
+   "title": "Education: curriculum; computer science course requirements; modify. Amends sec. 1166c of 1976 PA 451 (MCL 380.1166c).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6164",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-07-14",
+   "latest_action_desc": "bill electronically reproduced 07/03/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6175",
+   "title": "Education: other; alternative academic performance rating and report card system; provide for. Amends 1976 PA 451 (MCL  380.1 - 380.1852) by adding sec. 1280h.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6175",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-07-14",
+   "latest_action_desc": "bill electronically reproduced 07/03/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6206",
+   "title": "Higher education: other; name, image, and likeness contract regulations; provide for. Amends 2020 PA 366 (MCL 390.1731 - 390.1741) by adding sec. 6a.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6206",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-07-14",
+   "latest_action_desc": "bill electronically reproduced 07/03/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6209",
+   "title": "Education: teachers and administrators; employment of certain federal officers; prohibit. Amends 1976 PA 451 (MCL 380.1 - 380.1852) by adding sec. 1230j.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6209",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-07-14",
+   "latest_action_desc": "bill electronically reproduced 07/03/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6213",
+   "title": "Elections: other; agreement among the states to elect the President by national popular vote; enter into. Creates new act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6213",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-07-14",
+   "latest_action_desc": "bill electronically reproduced 07/03/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6214",
+   "title": "Elections: presidential electors; presidential electors who are elected under the agreement among the states to elect the President by national popular vote; clarify. Amends secs. 42, 46 & 842 of 1954 PA 116 (MCL 168.42 et. seq.).   TIE BAR WITH: HB 6213'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6214",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-07-14",
+   "latest_action_desc": "bill electronically reproduced 07/03/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6216",
+   "title": "Businesses: limited liability companies; power of limited liability companies to spend in elections or ballot issues; revoke. Amends secs. 105, 210, 211 & 1008 of 1993 PA 23 (MCL 450.4105 et. seq.) & adds sec. 210a.   TIE BAR WITH: HB 6217'26,  HB 6218'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6216",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-07-14",
+   "latest_action_desc": "bill electronically reproduced 07/03/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6217",
+   "title": "Businesses: nonprofit corporations; power of nonprofit corporations to spend in elections or ballot issues; revoke. Amends secs. 261, 271, 821, 1012 & 1041 of 1982 PA 162 (MCL 450.2261 et. seq.) by adding sec. 261a.   TIE BAR WITH: HB 6216'26,  HB 6218'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6217",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-07-14",
+   "latest_action_desc": "bill electronically reproduced 07/03/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6218",
+   "title": "Businesses: business corporations; power of corporations to spend in elections or ballot issues; revoke. Amends secs. 261, 271, 821, 1012 & 1041 of 1972 PA 284 (MCL 450.1261 et. seq.) & adds sec. 261a.   TIE BAR WITH: HB 6216'26,  HB 6217'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6218",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-07-14",
+   "latest_action_desc": "bill electronically reproduced 07/03/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6219",
+   "title": "Individual income tax: credit; tax incentive for contributions made to certain ballot and candidate committees; provide for. Amends 1967 PA 281 (MCL 206.1 - 206.847) by adding sec. 281.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6219",
+   "tags": [
+    "budget & taxes",
+    "elections & voting"
+   ],
+   "latest_action": "2026-07-14",
+   "latest_action_desc": "bill electronically reproduced 07/03/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HJR Z",
+   "title": "Businesses: other; power of entities to spend in elections or ballot issues; revoke. Amends the state constitution by adding sec. 55 to art. IV.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HJR-Z",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-07-14",
+   "latest_action_desc": "joint resolution electronically reproduced 07/03/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0793",
+   "title": "Economic development: plant rehabilitation; industrial facility tax; modify. Amends secs. 3, 6, 7 & 9 of 1974 PA 198 (MCL 207.553 et seq.).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0793",
+   "tags": [
+    "budget & taxes",
+    "elections & voting"
+   ],
+   "latest_action": "2026-07-03",
+   "latest_action_desc": "read a first time"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SJR L",
+   "title": "Businesses: other; power of entities to spend in elections or ballot issues; revoke. Amends the state constitution by adding sec. 55 to art. IV.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SJR-L",
+   "tags": [
+    "elections & voting",
+    "government operations"
+   ],
+   "latest_action": "2026-07-03",
+   "latest_action_desc": "SENATE CO-SPONSOR(S) NAMED: MALLORY MCMORROW"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5727",
+   "title": "Labor: youth employment; youth employment standards act; restore former provisions, and eliminate requirement for a work permit. Amends title & secs. 2, 5, 7, 10, 15 & 20 of 1978 PA 90 (MCL 409.102 et seq.); adds sec. 19a & repeals secs. 4a, 4b, 4c, 4d, 6, 8 & 9 of 1978 PA 90 (MCL 409.104a et seq.).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5727",
+   "tags": [
+    "education",
+    "government operations",
+    "labor & workers"
+   ],
+   "latest_action": "2026-07-02",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5338",
+   "title": "Education: curriculum; instruction in organ and tissue donation; require. Amends 1976 PA 451 (MCL 380.1 - 380.1852) by adding sec. 1170c.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5338",
+   "tags": [
+    "education",
+    "health care"
+   ],
+   "latest_action": "2026-07-01",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5546",
+   "title": "Financial institutions: payday lending; deferred presentment services transactions act; revise internal references related to money transmission services. Amends sec. 2 of 2005 PA 244 (MCL 487.2122).   TIE BAR WITH: HB 5544'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5546",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-07-01",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6144",
+   "title": "Education: financing; interest-free loans to school districts and intermediate schools districts from the state's surplus funds; allow under certain circumstances. Amends 1855 PA 105 (MCL 21.141 - 21.147) by adding sec. 2g.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6144",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-07-01",
+   "latest_action_desc": "bill electronically reproduced 06/30/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6145",
+   "title": "Education: school districts; capital outlay funds; allow school districts and intermediate school districts to use. Amends sec. 242 of 1984 PA 431 (MCL 18.1242)",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6145",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-07-01",
+   "latest_action_desc": "bill electronically reproduced 06/30/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HJR Y",
+   "title": "Legislature: other; certain transparency requirements and penalties for failure to present school aid appropriation bills by July 1; provide for. Amends secs. 12, 26 & 31, art. IV & sec. 11, art. IX & adds sec. 55 to art. IV of the state constitution.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HJR-Y",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-07-01",
+   "latest_action_desc": "joint resolution electronically reproduced 06/30/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6134",
+   "title": "Corporate income tax: rate; increasing of rate and revising the distribution of revenue collected; provide for. Amends secs. 623 & 695 of 1967 PA 281 (MCL 206.623 & 206.695).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6134",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-06-30",
+   "latest_action_desc": "bill electronically reproduced 06/25/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5033",
+   "title": "Construction: other; School building construction projects that cost less than $5,000,000.00; exempt from certain construction requirements. Amends sec. 5a of 1937 PA 306 (MCL 388.855a).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5033",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-25",
+   "latest_action_desc": "reported with recommendation with substitute (H-1)"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5975",
+   "title": "Children: health; referral of certain children with elevated blood lead levels to the Early On program administered by the department of lifelong education, advancement, and potential; require. Amends sec. 5474 of 1978 PA 368 (MCL 333.5474).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5975",
+   "tags": [
+    "education",
+    "government operations",
+    "health care"
+   ],
+   "latest_action": "2026-06-25",
+   "latest_action_desc": "reported with recommendation without amendment"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HCR 0008",
+   "title": "A concurrent resolution to approve an extension of the state of energy emergency declared on April 2, 2026.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HCR-0008",
+   "tags": [
+    "elections & voting",
+    "environment & climate"
+   ],
+   "latest_action": "2026-06-25",
+   "latest_action_desc": "RECEIVED FROM HOUSE"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5358",
+   "title": "Education: teachers and administrators; teacher licensing examination requirements; provide for. Amends sec. 1531 of 1976 PA 451 (MCL 380.1531).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5358",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-24",
+   "latest_action_desc": "reported with recommendation for referral to Committee on Rules with substitute (H-2)"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6120",
+   "title": "Higher education: other; regulation of development of college- or university-owned land through local government zoning ordinance; provide for. Amends sec. 201 of 2006 PA 110 (MCL 125.3201).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6120",
+   "tags": [
+    "education",
+    "housing"
+   ],
+   "latest_action": "2026-06-24",
+   "latest_action_desc": "bill electronically reproduced 06/23/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6121",
+   "title": "Higher education: state universities; authority to purchase land; modify. Amends sec. 5 of 1851 PA 151 (MCL 390.5).   TIE BAR WITH: HJR X'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6121",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-24",
+   "latest_action_desc": "bill electronically reproduced 06/23/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HJR X",
+   "title": "Higher education: state universities; exemption from local control, local input, and local zoning laws; eliminate. Amends sec. 5, art. VIII of the state constitution.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HJR-X",
+   "tags": [
+    "education",
+    "housing"
+   ],
+   "latest_action": "2026-06-24",
+   "latest_action_desc": "joint resolution electronically reproduced 06/23/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0517",
+   "title": "Education: school districts; requirements for borrowing money and issuing bonds; modify. Amends sec. 1351a of 1976 PA 451 (MCL 380.1351a).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0517",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-24",
+   "latest_action_desc": "PASSED ROLL CALL # 155 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4025",
+   "title": "Sales tax: exemptions; sunset date on exemption for firearm safety devices; extend. Amends sec. 4ll of 1933 PA 167 (MCL 205.54ll).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4025",
+   "tags": [
+    "budget & taxes",
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "REPORTED FAVORABLY WITHOUT AMENDMENT 6/18/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4358",
+   "title": "Elections: local; term of office for elected officials; modify. Amends 1909 PA 279 (MCL 117.1 - 117.38) by adding sec. 3c.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4358",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "approved by the Governor 06/20/2026 01:04 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4359",
+   "title": "Elections: local; term of office for elected officials; modify. Amends secs. 4, 5 & 13, ch. II & sec. 3, ch. V of 1895 PA 3 (MCL 62.4 et seq.).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4359",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "approved by the Governor 06/20/2026 01:06 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5081",
+   "title": "Education: special education; at least 1 teacher trained in Orton-Gillingham approach principles; require each school district to employ. Amends 1976 PA 451 (MCL 380.1 - 380.1852) by adding sec. 1253.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5081",
+   "tags": [
+    "education",
+    "health care"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5845",
+   "title": "Elections: other; retention of electronic poll book flash drives; require. Amends sec. 811 of 1954 PA 116 (MCL 168.811).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5845",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5957",
+   "title": "Education: teachers and administrators; expiration of nonrenewable temporary teaching certificate; modify. Amends sec. 1531 of 1976 PA 451 (MCL 380.1531).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5957",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5983",
+   "title": "Education: other; public innovative programs; provide for. Amends secs. 1278a, 1278b & 1284a of 1976 PA 451 (MCL 380.1278a et seq.) & adds sec. 1278e.  TIE BAR WITH: HB 5984'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5983",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5984",
+   "title": "Education: other; public innovative programs; provide for. Amends secs. 6, 18 & 101 of 1979 PA 94 (MCL 388.1606 et seq.).  TIE BAR WITH: HB 5983'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5984",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5989",
+   "title": "Highways: memorial; portion of M-40; designate as the \"Chief David Haverdink Memorial Highway\". Amends 2001 PA 142 (MCL 250.1001 - 250.2092) by adding sec. 126.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5989",
+   "tags": [
+    "elections & voting",
+    "transportation"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6016",
+   "title": "Education: teachers and administrators; interim teaching certification process; modify. Amends sec. 1531i of 1976 PA 451 (MCL 380.1531i).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6016",
+   "tags": [
+    "education",
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6106",
+   "title": "Education: school districts; student mental health apprenticeship retention and training (SMART) internship grant program; modify. Amends sec. 3 of 2022 PA 180 (MCL 388.1953).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6106",
+   "tags": [
+    "education",
+    "health care"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "bill electronically reproduced 06/18/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6108",
+   "title": "Education: graduation requirements; foreign language requirement; allow to be satisfied with career and technical education credits. Amends sec. 1278a of 1976 PA 451 (MCL 380.1278a).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6108",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "bill electronically reproduced 06/18/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6109",
+   "title": "Elections: filing fees; filing fees in lieu of nominating petitions; authorize. Amends (See bill).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6109",
+   "tags": [
+    "budget & taxes",
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "bill electronically reproduced 06/18/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6111",
+   "title": "Civil rights: other; American Freedmen reparations commission; establish. Creates new act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6111",
+   "tags": [
+    "elections & voting",
+    "government operations"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "bill electronically reproduced 06/18/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0049",
+   "title": "Labor: health and safety; revisions to the occupational safety and health act; provide for. Amends title & secs. 4, 13, 14, 14a, 14e 14f, 14j, 14n, 24, 27, 28, 29, 30, 31, 33, 35, 36, 37, 41, 45, 46, 52, 54, 55, 56, 63, 65 & 91 of 1974 PA 154 (MCL 408.1004 et seq.) & repeals sec. 1035a of 1974 PA 15",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0049",
+   "tags": [
+    "elections & voting",
+    "health care",
+    "labor & workers"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "AMENDMENT(S) DEFEATED"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0050",
+   "title": "Criminal procedure: sentencing guidelines; reference to section of the Michigan occupational safety and health act; amend to reflect repeal. Amends sec. 14b, ch. XVII of 1927 PA 175 (MCL 777.14b).   TIE BAR WITH: SB 0049'25",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0050",
+   "tags": [
+    "criminal justice",
+    "elections & voting",
+    "health care",
+    "labor & workers"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "PASSED ROLL CALL # 152 YEAS 20 NAYS 15 EXCUSED 3 NOT VOTING 0"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0240",
+   "title": "Elections: local; term of office start date for township officers; modify. Amends secs. 362 & 370 of 1954 PA 116 (MCL 168.362 & 168.370).   TIE BAR WITH: HB 4358'25,  HB 4359'25,  SB 0241'25",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0240",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "PRESENTED TO GOVERNOR 6/18/2026 9:30 AM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0241",
+   "title": "Elections: local; term of office for elected officials; modify. Amends 1909 PA 278 (MCL 78.1 - 78.28) by adding sec. 24e.   TIE BAR WITH: HB 4358'25,  HB 4359'25,  SB 0240'25",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0241",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "PRESENTED TO GOVERNOR 6/18/2026 9:32 AM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1054",
+   "title": "Elections: absent voters; no reason absentee voting; eliminate, and require electors to provide a reason to vote an absent voter ballot. Amends secs. 2, 509aa, 759, 759a & 761 of 1954 PA 116 (MCL 168.2 et seq.); adds sec. 758 & repeals secs. 6, 759e, 759f & 759g of 1954 PA 116 (MCL 168.6 et seq).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1054",
+   "tags": [
+    "elections & voting",
+    "government operations"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "INTRODUCED BY SENATOR JONATHAN LINDSEY"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1058",
+   "title": "Education: other; virtual instruction days; allow. Amends 1976 PA 451 (MCL 380.1 - 380.1852) by adding sec. 1482.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1058",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "INTRODUCED BY SENATOR DAYNA POLEHANKI"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1059",
+   "title": "Children: child abuse or child neglect; priority of reports made by school employees; require. Amends sec. 3 of 1975 PA 238 (MCL 722.623).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1059",
+   "tags": [
+    "education",
+    "housing"
+   ],
+   "latest_action": "2026-06-23",
+   "latest_action_desc": "INTRODUCED BY SENATOR JEREMY MOSS"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4922",
+   "title": "Education: all other employees; licensing of school librarians; eliminate. Amends 1976 PA 451 (MCL 380.1 - 380.1852) by adding sec. 1531k.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4922",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-18",
+   "latest_action_desc": "referred to Committee on Rules"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6100",
+   "title": "Education: calendar; restrictions on school start date; eliminate. Amends sec. 1284a of 1976 PA 451 (MCL 380.1284a) & repeals sec. 1284b of 1976 PA 451 (MCL 380.1284b) & sec. 160 of 1979 PA 94 (MCL 388.1760).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6100",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-18",
+   "latest_action_desc": "bill electronically reproduced 06/17/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HJR U",
+   "title": "Elections: primary; nomination process for secretary of state and attorney general; modify, and provide for gubernatorial appointment of regents, trustees, or board of governors for universities. Amends sec. 21, art. V & sec. 5, art. VIII of the state constitution.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HJR-U",
+   "tags": [
+    "education",
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-18",
+   "latest_action_desc": "referred to Committee on Rules"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0820",
+   "title": "Elections: precinct boundaries; consolidated precincts; allow during certain local elections. Amends sec. 659 of 1954 PA 116 (MCL 168.569).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0820",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-18",
+   "latest_action_desc": "PASSED ROLL CALL # 137 YEAS 35 NAYS 1 EXCUSED 2 NOT VOTING 0"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6091",
+   "title": "Transportation: school vehicles; vehicles allowed for transportation of pupils; modify. Amends sec. 10 of 1990 PA 187 (MCL 257.1810).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6091",
+   "tags": [
+    "education",
+    "transportation"
+   ],
+   "latest_action": "2026-06-17",
+   "latest_action_desc": "bill electronically reproduced 06/16/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6096",
+   "title": "Education: teachers and administrators; extension of certification for certain career and technical education teachers; provide for. Amends sec. 1233b of 1976 PA 451 (MCL 380.1233b).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6096",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-17",
+   "latest_action_desc": "bill electronically reproduced 06/16/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0707",
+   "title": "Health occupations: marriage and family therapists; licensing requirements for marriage and family therapists; modify, and require continuing education. Amends secs. 16903 & 16909 of 1978 PA 368 (MCL 333.16903 & 333.16909) & adds secs. 16909a & 16914.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0707",
+   "tags": [
+    "education",
+    "health care"
+   ],
+   "latest_action": "2026-06-17",
+   "latest_action_desc": "PASSED ROLL CALL # 133 YEAS 22 NAYS 16 EXCUSED 0 NOT VOTING 0"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0808",
+   "title": "Retirement: other; MI secure retirement program board; establish. Creates new act.   TIE BAR WITH: SB 0807'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0808",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-17",
+   "latest_action_desc": "PASSED ROLL CALL # 131 YEAS 20 NAYS 18 EXCUSED 0 NOT VOTING 0"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0898",
+   "title": "Economic development: brownfield redevelopment authority; environmental brownfield redevelopment program; modify. Amends secs. 19608a, 19608b, 19609, 19610, 19610a, 19611, 19612, 19613, 20108b & 21506a of 1994 PA 451 (MCL 324.19608a et seq.) & adds pt. 192.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0898",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-17",
+   "latest_action_desc": "PASSED ROLL CALL # 134 YEAS 29 NAYS 9 EXCUSED 0 NOT VOTING 0"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0899",
+   "title": "Economic development: brownfield redevelopment authority; environmental brownfield redevelopment program; modify. Amends sec. 8a of 1996 PA 381 (MCL 125.2658a).  TIE BAR WITH: SB 0898'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0899",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-17",
+   "latest_action_desc": "PASSED ROLL CALL # 135 YEAS 29 NAYS 9 EXCUSED 0 NOT VOTING 0"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5651",
+   "title": "Traffic control: speed restrictions; enforcement of speed restrictions in school zones; modify. Amends sec. 627a of 1949 PA 300 (MCL 257.627a).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5651",
+   "tags": [
+    "education",
+    "transportation"
+   ],
+   "latest_action": "2026-06-16",
+   "latest_action_desc": "reported with recommendation with substitute (H-2)"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5819",
+   "title": "Education: curriculum; science of reading requirements; modify. Amends sec. 1280f of 1976 PA 451 (MCL 380.1280f).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5819",
+   "tags": [
+    "education",
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-16",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5820",
+   "title": "Education: curriculum; science of reading requirements; modify. Amends sec. 1531e of 1976 PA 451 (MCL 380.1531e).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5820",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-16",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5821",
+   "title": "Education: curriculum; adoption of elementary reading curriculum materials from department-approved list; require. Amends sec. 1280f of 1976 PA 451 (MCL 380.1280f).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5821",
+   "tags": [
+    "education",
+    "government operations"
+   ],
+   "latest_action": "2026-06-16",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0961",
+   "title": "Elections: voters; state voting rights act; create. Creates new act & repeals 1969 PA 161 (MCL 691.1031).   TIE BAR WITH: SB 0962'26,  SB 0963'26,  SB 0964'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0961",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-16",
+   "latest_action_desc": "AMENDMENT(S) DEFEATED"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0962",
+   "title": "Elections: other; voting and elections database and institute act; create. Creates new act.   TIE BAR WITH: SB 0961'26,  SB 0963'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0962",
+   "tags": [
+    "education",
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-16",
+   "latest_action_desc": "PASSED ROLL CALL # 122 YEAS 20 NAYS 17 EXCUSED 1 NOT VOTING 0"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0963",
+   "title": "Elections: voters; language assistance for elections act; create. Creates new act.   TIE BAR WITH: SB 0961'26,  SB 0962'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0963",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-16",
+   "latest_action_desc": "PASSED ROLL CALL # 123 YEAS 20 NAYS 17 EXCUSED 1 NOT VOTING 0"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0964",
+   "title": "Elections: voting procedures; voter access and assistance provisions; provide for. Amends secs. 726, 736 & 751 of 1954 PA 116 (MCL 168.726 et seq.); adds secs. 653c, 653d, 653e, 726a & 753a & repeals sec. 579 of 1954 PA 116 (MCL 168.579).  TIE BAR WITH: SB 0961'26,  SB 0963'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0964",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-16",
+   "latest_action_desc": "AMENDMENT(S) DEFEATED"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1040",
+   "title": "Education: teachers and administrators; extension of certification for certain career and technical education teachers; provide for. Amends sec. 1233b of 1976 PA 451 (MCL 380.1233b).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1040",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-16",
+   "latest_action_desc": "INTRODUCED BY SENATOR THOMAS ALBERT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6075",
+   "title": "School aid: foundation allowance; foundation allowance amounts; base on the state and local government inflation index and tie to inflation. Amends sec. 367b of 1984 PA 431 (MCL 18.1367b).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6075",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-06-11",
+   "latest_action_desc": "bill electronically reproduced 06/10/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1036",
+   "title": "Education: teachers and administrators; extension of certification for certain career and technical education teachers; provide for. Amends sec. 1233b of 1976 PA 451 (MCL 380.1233b).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1036",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-11",
+   "latest_action_desc": "INTRODUCED BY SENATOR DARRIN CAMILLERI"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1039",
+   "title": "Property tax: state education tax; state education tax; repeal. Repeals 1993 PA 331 (MCL 211.901 - 211.906).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1039",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-06-11",
+   "latest_action_desc": "INTRODUCED BY SENATOR ARIC NESBITT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4468",
+   "title": "Insurance: health insurers; coverage for adverse consequences related to gender transition and reversal of gender transition; require. Amends 1956 PA 218 (MCL 500.100 - 500.8302) by adding sec. 3406ww.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4468",
+   "tags": [
+    "elections & voting",
+    "health care"
+   ],
+   "latest_action": "2026-06-10",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5044",
+   "title": "Health occupations: health professionals; policy for the receipt of medically necessary treatment by pupils; require. Amends 1976 PA 451 (MCL 380.1 - 380.1852) by adding sec. 1178b.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5044",
+   "tags": [
+    "education",
+    "health care"
+   ],
+   "latest_action": "2026-06-10",
+   "latest_action_desc": "reported with recommendation with substitute (H-3)"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5520",
+   "title": "Education: elementary; grade 3 reading requirements; provide for. Amends sec. 1280f of 1976 PA 451 (MCL 380.1280f).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5520",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-10",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5810",
+   "title": "Education: school districts; implementation of the presidential fitness test; require. Amends 1976 PA 451 (MCL 380.1 - 380.1852) by adding sec. 1278e.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5810",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-10",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6061",
+   "title": "Individual income tax: credit; credit for student loan payments made by certain taxpayers who remained in or returned to this state for employment; provide for. Amends 1967 PA 281 (MCL 206.1 - 206.847) by adding sec. 279a.   TIE BAR WITH: HB 6062'26,  HB 6063'26,  HB 6064'26,  HB 6065'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6061",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-06-10",
+   "latest_action_desc": "bill electronically reproduced 06/09/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6062",
+   "title": "Individual income tax: credit; credit for student loan payments made by certain taxpayers who relocated to this state for employment; provide for. Amends 1967 PA 281 (MCL 206.1 - 206.847) by adding sec. 279b.   TIE BAR WITH: HB 6061'26,  HB 6063'26,  HB 6064'26,  HB 6065'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6062",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-06-10",
+   "latest_action_desc": "bill electronically reproduced 06/09/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6063",
+   "title": "Corporate income tax: credits; credit for student loan payments made by employer on behalf of a qualified employee who received a diploma or degree from an institution located in this state; provide for. Amends 1967 PA 281 (MCL 206.1 - 206.847) by adding sec. 679.   TIE BAR WITH: HB 6061'26,  HB 606",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6063",
+   "tags": [
+    "budget & taxes",
+    "education",
+    "labor & workers"
+   ],
+   "latest_action": "2026-06-10",
+   "latest_action_desc": "bill electronically reproduced 06/09/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6064",
+   "title": "Corporate income tax: credits; credit for student loan payments made by employer on behalf of a qualified employee who did not receive a diploma or degree from an institution located in this state; provide for. Amends 1967 PA 281 (MCL 206.1 - 206.847) by adding sec. 679a.   TIE BAR WITH: HB 6061'26,",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6064",
+   "tags": [
+    "budget & taxes",
+    "education",
+    "labor & workers"
+   ],
+   "latest_action": "2026-06-10",
+   "latest_action_desc": "bill electronically reproduced 06/09/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6065",
+   "title": "Individual income tax: credit; make it in Michigan tax credit program; create. Amends 1967 PA 281 (MCL 206.1 - 206.847) by adding sec. 279.   TIE BAR WITH: HB 6061'26,  HB 6062'26,  HB 6063'26,  HB 6064'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6065",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-06-10",
+   "latest_action_desc": "bill electronically reproduced 06/09/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1028",
+   "title": "Financial institutions: credit unions; minimum voting age of members; allow credit unions to set. Amends sec. 351 of 2003 PA 215 (MCL 490.351).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1028",
+   "tags": [
+    "elections & voting",
+    "health care"
+   ],
+   "latest_action": "2026-06-10",
+   "latest_action_desc": "INTRODUCED BY SENATOR PAUL WOJNO"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6052",
+   "title": "Individual income tax: deductions; deduction for compensation paid to election inspectors; provide for. Amends sec. 30 of 1967 PA 281 (MCL 206.30).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6052",
+   "tags": [
+    "budget & taxes",
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-09",
+   "latest_action_desc": "bill electronically reproduced 06/04/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0304",
+   "title": "Transportation: other; Charter of City of Mackinac Island; amend; regulation of ferries; provide for. Amends sec. 1, ch. IX & sec. 1, ch. XVI of 1899 LA 437 & provides for a referendum.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0304",
+   "tags": [
+    "elections & voting",
+    "transportation"
+   ],
+   "latest_action": "2026-06-04",
+   "latest_action_desc": "PRESENTED TO GOVERNOR 6/3/2026 9:14 AM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1017",
+   "title": "Higher education: other; name, image, and likeness contract regulations; provide for. Amends 2020 PA 366 (MCL 390.1731 - 390.1741) by adding sec. 6a.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1017",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-04",
+   "latest_action_desc": "INTRODUCED BY SENATOR SAM SINGH"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1021",
+   "title": "Elections: school; election of regents, trustees, or board of governors for the University of Michigan, Michigan State University, and Wayne State University; eliminate, and modify the nominating process for the secretary of state and attorney general. Amends; adds & repeals (See bill).   TIE BAR WI",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1021",
+   "tags": [
+    "education",
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-04",
+   "latest_action_desc": "INTRODUCED BY SENATOR SAM SINGH"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1022",
+   "title": "Campaign finance: other; definition of statewide elective office in the Michigan campaign finance act; remove reference to university boards. Amends sec. 12 of 1976 PA 388 (MCL 169.212).  TIE BAR WITH: SJR J'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1022",
+   "tags": [
+    "education",
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-04",
+   "latest_action_desc": "INTRODUCED BY SENATOR SAM SINGH"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SJR I",
+   "title": "Elections: primary; nomination process for secretary of state and attorney general; modify, and provide for gubernatorial appointment of regents, trustees, or board of governors for universities.  Amends sec. 21, art. V & sec. 5, art. VIII of the state constitution.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SJR-I",
+   "tags": [
+    "education",
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-04",
+   "latest_action_desc": "SENATE CO-SPONSOR(S) NAMED: PAUL WOJNO"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SJR J",
+   "title": "Elections: primary; nomination process for secretary of state and attorney general; modify, and provide for gubernatorial appointment of regents, trustees, or board of governors for universities. Amends sec. 21, art. V & sec. 5, art. VIII of the state constitution.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SJR-J",
+   "tags": [
+    "education",
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-04",
+   "latest_action_desc": "INTRODUCED BY SENATOR SAM SINGH"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5774",
+   "title": "Health: children; referral of certain children to the early on program; require. Amends 1978 PA 368 (MCL 333.1101 - 333.25211) by adding pt. 58B.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5774",
+   "tags": [
+    "education",
+    "health care"
+   ],
+   "latest_action": "2026-06-03",
+   "latest_action_desc": "reported with recommendation for referral to Committee on Rules with substitute (H-1)"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6023",
+   "title": "Education: examinations; classic learning test; include in accepted college entrance examinations. Amends sec. 1279g of 1976 PA 451 (MCL 380.1279g).   TIE BAR WITH: HB 6024'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6023",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-03",
+   "latest_action_desc": "bill electronically reproduced 06/02/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6024",
+   "title": "School aid: other; classic learning test; include in accepted college entrance examinations. Amends sec. 104b of 1979 PA 94 (MCL 388.1704b).   TIE BAR WITH: HB 6023'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6024",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-03",
+   "latest_action_desc": "bill electronically reproduced 06/02/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HJR V",
+   "title": "Elections: millage; certain voter participation in elections to authorize or increase a millage; require. Amends sec. 31, art. IX of the state constitution.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HJR-V",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-03",
+   "latest_action_desc": "joint resolution electronically reproduced 06/02/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0784",
+   "title": "Education: meals; free school lunch and breakfast program; create. Amends 1976 PA 451 (MCL 380.1 - 380.1852) by adding sec. 1271.   TIE BAR WITH: SB 0785'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0784",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-03",
+   "latest_action_desc": "REPORTED FAVORABLY WITH SUBSTITUTE (S-1) 6/2/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0785",
+   "title": "Education: meals; free school lunch and breakfast program; modify.  Amends sec. 30d of 1979 PA 94 (MCL 388.1630d).  TIE BAR WITH: SB 0784'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0785",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-03",
+   "latest_action_desc": "REPORTED FAVORABLY WITH SUBSTITUTE (S-1) 6/2/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5150",
+   "title": "Health occupations: respiratory therapists; licensure for respiratory therapists; modify. Amends secs. 16204, 16344, 18701, 18703, 18707 & 18709 of 1978 PA 368 (MCL 333.16204 et seq.) & adds secs. 18710 & 18712.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5150",
+   "tags": [
+    "elections & voting",
+    "health care"
+   ],
+   "latest_action": "2026-06-02",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5505",
+   "title": "Legislature: legislative agencies; office of digital oversight; establish. Creates new act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5505",
+   "tags": [
+    "elections & voting",
+    "government operations"
+   ],
+   "latest_action": "2026-06-02",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5717",
+   "title": "Elections: election officials; township to contract with an accredited individual to perform election law duties in the absence of a township clerk; authorize. Amends sec. 373 of 1954 PA 116 (MCL 168.373).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5717",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-02",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5797",
+   "title": "School aid: penalties; exception to minimum days of pupil instruction requirement for inclement weather; revise. Amends sec. 101 of 1979 PA 94 (MCL 388.1701).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5797",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-02",
+   "latest_action_desc": "presented to the Governor 05/21/2026 04:36 PM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5872",
+   "title": "Property tax: assessments; taxable value of transferred property; modify. Amends sec. 27a of 1893 PA 206 (MCL 211.27a).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5872",
+   "tags": [
+    "budget & taxes",
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-02",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5873",
+   "title": "Property tax: state education tax; state education tax; eliminate. Repeals 1993 PA 331 (MCL 211.901 - 211.906).   TIE BAR WITH: HB 5880'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5873",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-06-02",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6012",
+   "title": "Education: graduation requirements; civics examination; require. Amends sec. 1166 of 1976 PA 451 (MCL 380.1166).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6012",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-06-02",
+   "latest_action_desc": "bill electronically reproduced 05/21/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6017",
+   "title": "Education: all other employees; school psychologist licensure compact; enact. Creates new act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6017",
+   "tags": [
+    "education",
+    "health care"
+   ],
+   "latest_action": "2026-06-02",
+   "latest_action_desc": "bill electronically reproduced 05/21/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 6018",
+   "title": "Elections: primary; nomination process for secretary of state and attorney general; modify. Amends; adds & repeals (See bill).   TIE BAR WITH: HJR U'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-6018",
+   "tags": [
+    "education",
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-02",
+   "latest_action_desc": "bill electronically reproduced 05/21/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1012",
+   "title": "Elections: primary; nomination process for secretary of state and attorney general; modify. Amends; adds & repeals (See bill).   TIE BAR WITH: SJR I'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1012",
+   "tags": [
+    "education",
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-02",
+   "latest_action_desc": "INTRODUCED BY SENATOR EDWARD MCBROOM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SR 0125",
+   "title": "A resolution to call upon the United States Congress to propose and send to the states for ratification a constitutional amendment to clarify that the states and Congress may set reasonable limits on the spending of money to influence elections, including distinctions between natural persons and art",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SR-0125",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-06-02",
+   "latest_action_desc": "INTRODUCED BY SENATOR EDWARD MCBROOM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HR 0324",
+   "title": "A resolution to call upon the United States Congress to propose and send to the states for ratification a constitutional amendment to clarify that the states and Congress may set reasonable limits on the spending of money to influence elections, including distinctions between natural persons and art",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HR-0324",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-05-21",
+   "latest_action_desc": "introduced by Representative Rep. Pat Outman"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 1002",
+   "title": "Military affairs: other; high school diploma award for certain women supporting the war effort during World War II; provide for. Amends title of 2001 PA 181 (MCL 35.341 - 35.343) & adds sec. 341a.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-1002",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-05-21",
+   "latest_action_desc": "INTRODUCED BY SENATOR SUE SHINK"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4696",
+   "title": "Children: guardians; definition of relative under the guardianship assistance act; modify. Amends sec. 2 of 2008 PA 260 (MCL 722.872).   TIE BAR WITH: HB 4697'25",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4696",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-05-20",
+   "latest_action_desc": "REPORTED FAVORABLY WITHOUT AMENDMENT 5/19/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5480",
+   "title": "Education: other; transfer of enrollment due to certain bullying issues; provide for. Amends sec. 1401 of 1976 PA 451 (MCL 380.1401) & adds sec. 1310f.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5480",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-05-20",
+   "latest_action_desc": "reported with recommendation without amendment"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5822",
+   "title": "Individual income tax: other; qualified higher education expenses under the Michigan education savings program; include qualified postsecondary credentialing expenses. Amends sec. 2 of 2000 PA 161 (MCL 390.1472).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5822",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-05-20",
+   "latest_action_desc": "reported with recommendation without amendment"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0310",
+   "title": "Children: child care; tri-share child care program; establish. Amends 1973 PA 116 (MCL 722.111 - 722.128) by adding sec. 6b.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0310",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-05-20",
+   "latest_action_desc": "PASSED ROLL CALL # 102 YEAS 22 NAYS 13 EXCUSED 2 NOT VOTING 0"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0311",
+   "title": "Children: child care; adjustments of reimbursements under the child development care program for inflation; require. Creates new act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0311",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-05-20",
+   "latest_action_desc": "PASSED ROLL CALL # 103 YEAS 21 NAYS 14 EXCUSED 2 NOT VOTING 0"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0313",
+   "title": "Fire: other; requirements for certain child care organizations and procedures for certain investigations; modify and make other revisions to 1973 PA 116. Amends secs. 2, 3, 5n, 10 & 11c of 1973 PA 116 (MCL 722.112 et seq.).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0313",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-05-20",
+   "latest_action_desc": "PASSED ROLL CALL # 105 YEAS 35 NAYS 0 EXCUSED 2 NOT VOTING 0"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0971",
+   "title": "Property: land sales; purchase of certain residential homes by investors; regulate. Creates new act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0971",
+   "tags": [
+    "education",
+    "elections & voting",
+    "environment & climate",
+    "government operations",
+    "housing",
+    "reproductive rights",
+    "transportation"
+   ],
+   "latest_action": "2026-05-20",
+   "latest_action_desc": "SENATE CO-SPONSOR(S) NAMED: MALLORY MCMORROW"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0990",
+   "title": "Education: curriculum; adoption of elementary reading curriculum materials from department-approved list; require. Amends sec. 1280f of 1976 PA 451 (MCL 380.1280f).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0990",
+   "tags": [
+    "education",
+    "government operations"
+   ],
+   "latest_action": "2026-05-20",
+   "latest_action_desc": "INTRODUCED BY SENATOR DAYNA POLEHANKI"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4935",
+   "title": "Health occupations: dentists; dentist and dental hygienist compact; enact. Amends sec. 16601 of 1978 PA 368 (MCL 333.16601) & adds secs. 16187b & 16611a.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4935",
+   "tags": [
+    "elections & voting",
+    "health care"
+   ],
+   "latest_action": "2026-05-19",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5979",
+   "title": "Education: athletics; children who are homeschooled or attending nonpublic school; require the board of a school district or intermediate school district to allow to participate in certain extracurricular activities. Amends 1976 PA 451 (MCL 380.1 - 380.1852) by adding sec. 1290.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5979",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-05-19",
+   "latest_action_desc": "bill electronically reproduced 05/14/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4556",
+   "title": "Education: examinations; certain requirements concerning the Michigan merit examination; modify. Amends sec. 1279g of 1976 PA 451 (MCL 380.1279g).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4556",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-05-14",
+   "latest_action_desc": "approved by the Governor 05/14/2026 09:30 AM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4557",
+   "title": "Education: examinations; certain requirements concerning the Michigan merit examination; modify. Amends secs. 22p & 104c of 1979 PA 94 (MCL 388.1622p & 388.1704c) & repeals sec. 104b of 1979 PA 94 (MCL 388.1704b).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4557",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-05-14",
+   "latest_action_desc": "approved by the Governor 05/14/2026 09:32 AM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5968",
+   "title": "Elections: candidates; duties and responsibilities of administering elections; require to be performed by the deputy secretary of state if the secretary of state is a candidate for office. Amends secs. 21, 31 & 32 of 1954 PA 116 (MCL 168.21 et seq.).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5968",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-05-14",
+   "latest_action_desc": "bill electronically reproduced 05/13/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5969",
+   "title": "Elections: voters; state voting rights act; create. Creates new act.   TIE BAR WITH: HB 5970'26,  HB 5971'26,  HB 5972'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5969",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-05-14",
+   "latest_action_desc": "bill electronically reproduced 05/13/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5970",
+   "title": "Elections: other; voting and elections database and institute act; create. Creates new act & repeals 1969 PA 161 (MCL 691.1031).  TIE BAR WITH: HB 5969'26,  HB 5971'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5970",
+   "tags": [
+    "education",
+    "elections & voting"
+   ],
+   "latest_action": "2026-05-14",
+   "latest_action_desc": "bill electronically reproduced 05/13/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5971",
+   "title": "Elections: voters; language assistance for elections act; create. Creates new act.   TIE BAR WITH: HB 5969'26,  HB 5970'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5971",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-05-14",
+   "latest_action_desc": "bill electronically reproduced 05/13/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5972",
+   "title": "Elections: voting procedures; voter access and assistance provisions; provide for. Amends secs. 726, 736 & 751 of 1954 PA 116 (MCL 168.726 et seq.); adds secs. 653c, 653d, 653e, 726a & 753a & repeals sec. 579 of 1954 PA 116 (MCL 168.579).   TIE BAR WITH: HB 5969'26,  HB 5971'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5972",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-05-14",
+   "latest_action_desc": "bill electronically reproduced 05/13/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5946",
+   "title": "Health occupations: massage therapists; continuing education requirements for massage therapists; modify. Amends secs. 16148 & 17965 of 1978 PA 368 (MCL 333.16148 & 333.17965).   TIE BAR WITH: HB 5947'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5946",
+   "tags": [
+    "education",
+    "health care"
+   ],
+   "latest_action": "2026-05-13",
+   "latest_action_desc": "bill electronically reproduced 05/12/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0953",
+   "title": "Civil rights: other; standards for public bodies collecting and reporting data related to race and ethnicity; establish. Creates new act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0953",
+   "tags": [
+    "elections & voting",
+    "immigration",
+    "lgbtq"
+   ],
+   "latest_action": "2026-05-13",
+   "latest_action_desc": "INTRODUCED BY SENATOR DARRIN CAMILLERI"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0952",
+   "title": "Education: special education; Michigan special education accountability act; establish. Amends secs. 1310d, 1311, 1526, 1527, 1531 & 1711 of 1976 PA 451 (MCL 380.1310d et seq.) & adds secs. 1531k, 1537, 1712 & 1810.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0952",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-05-12",
+   "latest_action_desc": "INTRODUCED BY SENATOR JOSEPH BELLINO"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5515",
+   "title": "Weapons: other; definition of dangerous weapon; provide for. Amends sec. 227 of 1931 PA 328 (MCL 750.227).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5515",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-05-07",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0943",
+   "title": "Elections: audits; audit of certain contests after each primary election and general election; require. Amends secs. 31a & 822 of 1954 PA 116 (MCL 168.31a & 168.822).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0943",
+   "tags": [
+    "elections & voting",
+    "government operations"
+   ],
+   "latest_action": "2026-05-07",
+   "latest_action_desc": "INTRODUCED BY SENATOR EDWARD MCBROOM"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HR 0300",
+   "title": "A resolution to declare May 4-8, 2026, as Teacher Appreciation Week in the state of Michigan.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HR-0300",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-04-30",
+   "latest_action_desc": "introduced by Representative Rep. Regina Weiss"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0860",
+   "title": "Appropriations: school aid omnibus; fiscal year 2026-2027 appropriations for K-12 school aid, higher education, and community colleges; provide for. Amends secs. 11, 201 & 236 of 1979 PA 94 (MCL 388.1611 et seq.).   TIE BAR WITH: SB 0903'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0860",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-04-30",
+   "latest_action_desc": "REPORTED BY COMMITTEE OF THE WHOLE FAVORABLY WITH SUBSTITUTE (S-1)"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SR 0117",
+   "title": "A resolution to commemorate the 75th anniversary of the Michigan Association of Retired School Personnel (MARSP).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SR-0117",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-04-30",
+   "latest_action_desc": "INTRODUCED BY SENATOR DAYNA POLEHANKI"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5887",
+   "title": "Insurance: no-fault; election to opt out of PIP coverage; modify length of election. Amends sec. 3109a of 1956 PA 218 (MCL 500.3109a) & adds sec. 3015.   TIE BAR WITH: HB 5886'26,  HB 5888'26,  HB 5889'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5887",
+   "tags": [
+    "elections & voting",
+    "health care"
+   ],
+   "latest_action": "2026-04-28",
+   "latest_action_desc": "bill electronically reproduced 04/23/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5846",
+   "title": "Land use: zoning and growth management; zoning overlay districts for data centers; provide for. Creates new act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5846",
+   "tags": [
+    "budget & taxes",
+    "elections & voting",
+    "government operations",
+    "housing",
+    "technology & AI",
+    "transportation"
+   ],
+   "latest_action": "2026-04-23",
+   "latest_action_desc": "bill electronically reproduced 04/22/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0929",
+   "title": "Local government: other; local financial stability and choice act; repeal. Repeals 2012 PA 436 (MCL 141.1541 - 141.1575).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0929",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-04-23",
+   "latest_action_desc": "INTRODUCED BY SENATOR MARY CAVANAGH"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5301",
+   "title": "Natural resources: hunting; use of flashlights; allow. Amends sec. 40113 of 1994 PA 451 (MCL 324.40113).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-5301",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-04-22",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0481",
+   "title": "Housing: public accommodations; information with human trafficking hotline; require hotels and motels to post. Amends secs. 2 & 3 of 2016 PA 62 (MCL 752.1032 & 752.1033).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0481",
+   "tags": [
+    "elections & voting",
+    "housing"
+   ],
+   "latest_action": "2026-04-22",
+   "latest_action_desc": "PASSED ROLL CALL # 60 YEAS 34 NAYS 1 EXCUSED 2 NOT VOTING 0"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4477",
+   "title": "Education: curriculum; instruction in water safety; require. Amends 1976 PA 451 (MCL 380.1 - 380.1852) by adding sec. 1170c.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4477",
+   "tags": [
+    "education",
+    "environment & climate"
+   ],
+   "latest_action": "2026-04-21",
+   "latest_action_desc": "read a second time"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5800",
+   "title": "School aid: penalties; exception to minimum days of pupil instruction requirement for inclement weather; revise. Amends sec. 101 of 1979 PA 94 (MCL 388.1701).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5800",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-04-21",
+   "latest_action_desc": "bill electronically reproduced 04/16/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5808",
+   "title": "School aid: penalties; exception to minimum days of pupil instruction requirement for certain closures; modify. Amends sec. 101 of 1979 PA 94 (MCL 388.1701).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5808",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-04-21",
+   "latest_action_desc": "bill electronically reproduced 04/16/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5811",
+   "title": "Health occupations: physicians; continuing education requirements related to nutrition and metabolic health; require. Amends secs. 17033, 17060 & 17533 of 1978 PA 368 (MCL 333.17033 et seq.) & adds sec. 17233.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5811",
+   "tags": [
+    "education",
+    "health care"
+   ],
+   "latest_action": "2026-04-21",
+   "latest_action_desc": "bill electronically reproduced 04/16/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HR 0290",
+   "title": "A resolution to declare April 2026 as Community College Month in the state of Michigan.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HR-0290",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-04-21",
+   "latest_action_desc": "introduced by Representative Rep. Jason Morgan"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0553",
+   "title": "Economic development: tax increment financing; water resource improvement authorities; modify. Amends secs. 703, 705 & 710 of 2018 PA 57 (MCL 125.4703 et seq.).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0553",
+   "tags": [
+    "budget & taxes",
+    "elections & voting",
+    "environment & climate"
+   ],
+   "latest_action": "2026-04-21",
+   "latest_action_desc": "AMENDMENT(S) DEFEATED"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0904",
+   "title": "School aid: other; weighted funding formula; provide for. Amends secs. 6, 22b & 41 of 1979 PA 94 (MCL 388.1606 et seq.).   TIE BAR WITH: SB 0903'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0904",
+   "tags": [
+    "budget & taxes",
+    "education"
+   ],
+   "latest_action": "2026-04-21",
+   "latest_action_desc": "INTRODUCED BY SENATOR DARRIN CAMILLERI"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4720",
+   "title": "Elections: voting equipment; use of electronic voting systems that contain certain parts or equipment; prohibit. Amends secs. 795 & 795a of 1954 PA 116 (MCL 168.795 & 168.795a).",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4720",
+   "tags": [
+    "elections & voting"
+   ],
+   "latest_action": "2026-04-16",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 4765",
+   "title": "Elections: registration; proof of United States citizenship when registering to vote and identification when voting; require. Amends secs. 493a, 493b, 495, 509gg & 509ii of 1954 PA 116 (MCL 168.493a et seq.) & adds sec. 496c.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4765",
+   "tags": [
+    "elections & voting",
+    "immigration"
+   ],
+   "latest_action": "2026-04-16",
+   "latest_action_desc": "PASSED BY HOUSE WITH IMMEDIATE EFFECT"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5794",
+   "title": "Education: attendance; requirements for recess; modify. Amends 1979 PA 94 (MCL 388.1601 - 388.1896) by adding sec. 101a.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5794",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-04-16",
+   "latest_action_desc": "bill electronically reproduced 04/15/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5795",
+   "title": "Counties: employees and officers; candidates for county office disclosing felony convictions; require. Amends 1954 PA 116 (MCL 168.1 - 168.992) by adding sec. 558a.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5795",
+   "tags": [
+    "criminal justice",
+    "elections & voting"
+   ],
+   "latest_action": "2026-04-16",
+   "latest_action_desc": "bill electronically reproduced 04/15/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "HB 5796",
+   "title": "Counties: employees and officers; county-elected officials disclosing felony convictions; require. Amends 1846 RS 14 (MCL 45.318 - 45.324) by adding sec. 118a.   TIE BAR WITH: HB 5795'26",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-HB-5796",
+   "tags": [
+    "criminal justice",
+    "elections & voting"
+   ],
+   "latest_action": "2026-04-16",
+   "latest_action_desc": "bill electronically reproduced 04/15/2026"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SB 0901",
+   "title": "State management: purchasing; public works projects; require that certain construction materials produced in the United States be procured for. Creates new act.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SB-0901",
+   "tags": [
+    "budget & taxes",
+    "education",
+    "government operations",
+    "transportation"
+   ],
+   "latest_action": "2026-04-16",
+   "latest_action_desc": "INTRODUCED BY SENATOR MICHELE HOITENGA"
+  },
+  {
+   "state": "mi",
+   "session": "2025-2026",
+   "id": "SR 0109",
+   "title": "A resolution to designate April 2026 as Community College Month.",
+   "url": "https://legislature.mi.gov/Bills/Bill?ObjectName=2026-SR-0109",
+   "tags": [
+    "education"
+   ],
+   "latest_action": "2026-04-16",
+   "latest_action_desc": "INTRODUCED BY SENATOR SEAN MCCANN"
+  }
  ]
 }

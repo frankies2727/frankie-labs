@@ -518,7 +518,7 @@ export function KnowYourBallot() {
                     ? { name: 'FEC and Illinois State Board of Elections filings', url: data.sources.money.url }
                     : { name: 'Chicago Board of Elections candidate list', url: data.sources.candidates.page })),
                   ...newsItems(data.news ?? []),
-                  ...billItems(data.govbot.laws, billUrl),
+                  ...billItems(data.govbot.laws, billUrl, 'Illinois General Assembly'),
                   ...dateItems(forVoter(NOV_3, chicago), today(), chicago ? { name: 'Chicago Board of Elections', url: LINKS.myInfo } : { name: 'Illinois State Board of Elections', url: LINKS.stateLookup }),
                 ]} />
 
@@ -630,7 +630,7 @@ export function KnowYourBallot() {
             <span className="text-sm font-black uppercase tracking-[0.18em]">Beyond your ballot</span>
             <span className="h-[3px] flex-1 rounded-full bg-[var(--gb-text)]" />
           </div>
-          <Laws laws={data.govbot.laws} />
+          <Laws laws={data.govbot.laws} state={{ code: 'IL', name: 'Illinois', capital: 'Springfield', rss: 'https://chihacknight.github.io/govbot/dashboard/elections/springfield.xml' }} />
           <NextElectionNote chicago={districts ? chicago : undefined} city={data.govbot.city} districts={districts} />
           <Sources />
         </div>
@@ -757,8 +757,6 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
         <p className="text-sm leading-relaxed text-[var(--gb-text)]">🔒 Your address goes once to Cook County’s address lookup (or OpenStreetMap, for the rest of Illinois or if the county’s is down) to find your districts. It’s saved only on your device, and never shared or stored anywhere.</p>
       </form>
 
-      <BallotSearch ballot={everything} sections={SECTION_TITLES} onJump={onSearchJump} />
-
       <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {[
           [data.races.length, 'races in Illinois'], [candidates, 'candidates'],
@@ -770,6 +768,8 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
           </li>
         ))}
       </ul>
+
+      <BallotSearch ballot={everything} sections={SECTION_TITLES} onJump={onSearchJump} />
 
       <div className="kyb-wide pt-4">
         <Headliners races={STATEWIDE} sections={SECTIONS} overline="On every Illinois ballot" heading="The statewide races"
