@@ -51,7 +51,8 @@ export async function buildOutline(fips = '26') {
   const [x0, x1, y0, y1] = [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)];
   // Longitude degrees are shorter than latitude degrees this far north.
   const kx = 1000 / (x1 - x0);
-  const ky = kx * Math.cos((((y0 + y1) / 2) * Math.PI) / 180);
+  // A degree of latitude is longer on the ground than a degree of longitude (by 1/cos of the latitude).
+  const ky = kx / Math.cos((((y0 + y1) / 2) * Math.PI) / 180);
   const height = Math.round((y1 - y0) * ky);
   const path = rings.map((r) => `M${r.map(([x, y]) => `${((x - x0) * kx).toFixed(0)} ${((y1 - y) * ky).toFixed(0)}`).join('L')}Z`).join('');
   // The bounding box and scales, so the app can place a point on the outline.

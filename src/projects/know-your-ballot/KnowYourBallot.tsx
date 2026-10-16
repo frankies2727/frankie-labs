@@ -713,7 +713,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
             <li className="flex gap-2"><span aria-hidden="true" className="font-black text-[var(--gb-primary)]">&gt;</span><span>Ballot questions, from countywide down to your precinct</span></li>
           </ul>
         </div>
-        <div className="w-[220px] md:w-[340px] md:max-w-[40%] shrink-0 self-center"><StateMap outline={outline as Outline} name="Illinois" colors={IL_MAP} id="il" /></div>
+        <div className="w-[190px] md:w-[300px] md:max-w-[36%] shrink-0 self-center"><StateMap outline={outline as Outline} name="Illinois" colors={IL_MAP} id="il" /></div>
       </header>
 
       <form onSubmit={onSubmit} className="space-y-3">
