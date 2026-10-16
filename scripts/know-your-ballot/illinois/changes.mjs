@@ -14,7 +14,7 @@ function contests(b) {
 
 /** Changes from `prev` to `next`, stamped `at`, appended to prev's recent ones. */
 export function changeLog(prev, next, at) {
-  const kept = (prev?.changes ?? []).filter((c) => Date.parse(at) - Date.parse(c.at) < KEEP_DAYS * 86_400_000);
+  let kept = (prev?.changes ?? []).filter((c) => Date.parse(at) - Date.parse(c.at) < KEEP_DAYS * 86_400_000);
   if (!prev) return kept;
   const before = contests(prev);
   const after = contests(next);
@@ -33,5 +33,8 @@ export function changeLog(prev, next, at) {
     }
   }
   for (const [id, c] of before) if (!after.has(id)) out.push({ at, id, what: c.what, kind: 'contest-removed' });
+  // A new money report replaces the candidate's earlier money line: one per candidate, the latest.
+  const reported = new Set(out.filter((c) => c.kind === 'money').map((c) => `${c.id}|${c.name}`));
+  kept = kept.filter((c) => c.kind !== 'money' || !reported.has(`${c.id}|${c.name}`));
   return [...kept, ...out];
 }
