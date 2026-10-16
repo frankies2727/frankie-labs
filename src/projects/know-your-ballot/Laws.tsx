@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import { ClearButton } from '../../components/ClearButton';
 import { useOpen } from './store';
 import type { Law } from './types';
+import { billUrl } from './Feed';
 
 // A state's bills that change how elections and schools work, from govbot's
 // legislation data, laid out like govbot's own elections page. Text comes from
@@ -30,11 +31,6 @@ const TABS = [
 const SHOWN = 9;
 
 const safeUrl = (u?: string) => (u && /^https:\/\//.test(u) ? u : undefined);
-// The bill's own card in govbot's catalog (its state's catalog opens underneath),
-// else the legislature's page.
-export const billUrl = (b: Law) => (b.state && b.session
-  ? `${GOVBOT}legislation.html#bill=${[b.state, b.session, b.id].map(encodeURIComponent).join('~')}`
-  : safeUrl(b.url));
 const dateLabel = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 const day = (iso: string) => dateLabel.format(new Date(`${iso.slice(0, 10)}T00:00:00Z`));
 const inTab = (b: Law, tab: string) => (tab === 'other' ? !b.tags.some((t) => TOPICS.includes(t)) : b.tags.includes(tab));

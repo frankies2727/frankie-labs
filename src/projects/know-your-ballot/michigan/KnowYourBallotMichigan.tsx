@@ -1,10 +1,10 @@
 import { ChevronDown, Crosshair, ListChecks, Loader2, MapPin, Printer, Search, Share2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { ClearButton } from '../../../components/ClearButton';
-import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Ring, SectionCards, SectionFlip, useBallotView, useDocumentMeta, type SectionCard } from '../Bits';
+import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Locating, Ring, SectionCards, SectionFlip, useBallotView, useDocumentMeta, type SectionCard } from '../Bits';
 import { Group } from '../Calendar';
-import { billItems, changeItems, dateItems, Feed, newsItems } from '../Feed';
-import { billUrl, Laws } from '../Laws';
+import { billItems, billUrl, changeItems, dateItems, Feed, newsItems } from '../Feed';
+import { Laws } from '../Laws';
 import { NextElectionNote } from './NextUp';
 import { Headliners } from '../Headliners';
 import { ContentsColumn, ContentsDrawer } from '../Contents';
@@ -391,8 +391,6 @@ export function KnowYourBallotMichigan() {
                     ...billItems(data.laws ?? [], billUrl, 'Michigan Legislature'),
                     ...dateItems(KEY_DATES, today(), { name: 'Michigan Department of State', url: LINKS.dates }),
                   ]} />
-                  <Laws laws={data.laws ?? []} state={{ code: 'MI', name: 'Michigan', capital: 'Lansing' }} />
-                  <NextElectionNote />
 
                   {sections.filter((s) => s.id === current).map((s) => {
                     const at = sections.indexOf(s);
@@ -576,6 +574,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
           <button type="button" onClick={() => { setLocating(true); onLocate(); }} disabled={status.busy} aria-busy={locating} className="inline-flex items-center gap-2 min-h-[44px] font-bold underline underline-offset-4 disabled:cursor-wait">
             {locating ? <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" /> : <Crosshair className="w-5 h-5" aria-hidden="true" />} {locating ? 'Finding where you are…' : 'Use my current location'}
           </button>
+          <Locating show={locating} />
           <button type="button" onClick={onBrowse} className="inline-flex items-center gap-2 min-h-[44px] font-bold underline underline-offset-4">
             <ListChecks className="w-5 h-5" aria-hidden="true" /> No address? Browse every race
           </button>
@@ -619,6 +618,16 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
       </Headliners>
 
       <SectionCards cards={MORE} heading="Everything else on your ballot" intro="By district: your address picks out yours. Tap a section to see every contest in it, who’s running and where." onOpen={onOpenCandidate} onOpenRace={onOpenRace} onJump={onOpenSection} />
+
+      <div className="pt-2 space-y-8">
+        <div role="separator" aria-label="Beyond your ballot" className="flex items-center gap-4">
+          <span className="h-[3px] flex-1 rounded-full bg-[var(--gb-text)]" />
+          <span className="text-sm font-black uppercase tracking-[0.18em]">Beyond your ballot</span>
+          <span className="h-[3px] flex-1 rounded-full bg-[var(--gb-text)]" />
+        </div>
+        <Laws laws={data.laws ?? []} state={{ code: 'MI', name: 'Michigan', capital: 'Lansing' }} />
+        <NextElectionNote />
+      </div>
     </div>
   );
 }
