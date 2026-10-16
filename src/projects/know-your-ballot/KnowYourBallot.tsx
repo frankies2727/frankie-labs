@@ -159,7 +159,7 @@ export function KnowYourBallot() {
   const clerk = cook ? COOK_CLERK : ELECTION_AUTHORITIES;
   const region = chicago ? 'Chicago' : cook ? 'Cook County' : 'Illinois';
   // The details view has its own URL; with saved progress the first open goes straight there.
-  const [showBallot, showView] = useBallotView('know-your-ballot-illinois', !!saved.place || browsing);
+  const [showBallot, showView] = useBallotView('know-your-ballot-illinois');
   const browse = () => { setBrowsing(true); showView(true); };
   const daysLeft = daysUntil(data.election.date);
 

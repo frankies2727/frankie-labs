@@ -87,20 +87,17 @@ export function useDocumentMeta(title: string, emoji: string) {
 }
 
 /**
- * The details view (progress bar, contents, the ballot) lives at its own URL,
- * projects/<id>/ballot, so it can be linked and the Back button returns to
- * the landing page. Returns whether it's showing, and a way to show or hide
- * it. With `resume` (saved progress), the first open goes straight there.
+ * Which page of the guide is open: the landing (`projects/<id>`) or the ballot
+ * (`projects/<id>/ballot`), which has its own URL so it can be linked and the
+ * Back button returns to the landing. The landing never forwards a returning voter to
+ * their ballot on its own (a link to the guide should land on the guide); it
+ * offers them a "Back to my ballot" card instead.
  */
-export function useBallotView(projectId: string, resume: boolean): [boolean, (on: boolean) => void] {
+export function useBallotView(projectId: string): [boolean, (on: boolean) => void] {
   const route = useRoute();
   const path = `projects/${projectId}/ballot`;
-  const onBallot = route === path;
   const show = useCallback((on: boolean) => navigate(on ? path : `projects/${projectId}`), [path, projectId]);
-  // Replacing, not pushing: Back then leaves the guide rather than landing on
-  // a page that would bounce straight back.
-  useEffect(() => { if (resume && !onBallot) navigate(path, { replace: true }); }, []); // eslint-disable-line react-hooks/exhaustive-deps
-  return [onBallot, show];
+  return [route === path, show];
 }
 
 export interface SectionItem {
