@@ -84,7 +84,7 @@ export const PROJECTS: ProjectDefinition[] = [
     name: 'Govbot',
     tagline: 'Open Civic Data for Everyone.',
     description:
-      'A free, nonpartisan, open-source civic-data toolkit built with Chi Hack Night. Govbot brings legislative data from all 50 states, Congress, Washington, D.C., and four U.S. territories into one accessible platform spanning 56 jurisdictions. Explore legislation, track hearings, and access reusable public datasets. Clone any dataset into its own Git repository in under a minute, or query legislation across every state using SQL.\n\nBuilt to make government data more accessible, searchable, and useful for everyone — from curious citizens and journalists to researchers, developers, and civic technologists.',
+      'Free, nonpartisan, open-source civic data from Chi Hack Night: every bill from all 50 states, Congress, D.C. and four territories in one place. Explore legislation, track hearings, clone any dataset as a Git repo in under a minute, or query every state with SQL.',
     emoji: '🏛️',
     gradient: 'from-[#2563eb] via-[#1e3a8a] to-[#0a0a0a]',
     href: 'https://chihacknight.github.io/govbot/',

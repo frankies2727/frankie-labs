@@ -192,7 +192,7 @@ export function SectionCards({ cards, heading, intro, onOpen, onOpenRace, onJump
 export function HowBallotWorks({ storageKey, title, children }: { storageKey: string; title: string; children: ReactNode }) {
   const [open, toggle] = useOpen(storageKey);
   return (
-    <section aria-labelledby="kyb-how" className="rounded-2xl border border-[var(--gb-border)] bg-[var(--gb-surface)] p-4 sm:p-5 space-y-3">
+    <section aria-labelledby="kyb-how" className="rounded-2xl border-[3px] border-[var(--kyb-gold)] bg-[var(--gb-surface)] p-4 sm:p-5 space-y-3">
       <h2 id="kyb-how" className="text-xl">
         <button type="button" onClick={toggle} aria-expanded={open} aria-controls="kyb-how-body" className="inline-flex min-h-[44px] items-center gap-2 text-left">
           🧾 {title}

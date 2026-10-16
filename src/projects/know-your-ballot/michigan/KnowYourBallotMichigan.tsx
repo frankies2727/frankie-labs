@@ -1,4 +1,4 @@
-import { ChevronDown, Crosshair, ListChecks, MapPin, Printer, Search, Share2 } from 'lucide-react';
+import { ChevronDown, Crosshair, ListChecks, Loader2, MapPin, Printer, Search, Share2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { ClearButton } from '../../../components/ClearButton';
 import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Ring, SectionCards, SectionFlip, useBallotView, useDocumentMeta, type SectionCard } from '../Bits';
@@ -306,6 +306,15 @@ export function KnowYourBallotMichigan() {
   };
 
   // ---- screens ------------------------------------------------------------------
+  // The three views. On phones, while the browsing notice is up, they scroll
+  // away with the page instead of sitting in the sticky bar.
+  const views = ([['ballot', 'My Ballot'], ['plan', 'Plan to vote'], ['share', 'Save & share']] as const).map(([id, label]) => (
+    <button key={id} type="button" role="tab" aria-selected={tab === id} onClick={() => { setTab(id); window.scrollTo({ top: 0 }); }}
+      className={`min-h-[44px] rounded-xl font-bold border-2 border-[var(--gb-text)] ${tab === id ? 'bg-[var(--gb-text)] text-[var(--gb-bg)]' : 'text-[var(--gb-text)]'}`}>
+      {label}
+    </button>
+  ));
+
   return (
     <StateContext.Provider value={MICHIGAN}>
     <ReadOnlyContext.Provider value={!saved.place}>
@@ -329,6 +338,10 @@ export function KnowYourBallotMichigan() {
             <div ref={barRef} className="sticky top-[var(--kyb-top)] z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 pt-3 pb-3 bg-[var(--gb-bg)] border-b border-[var(--gb-border)]">
               <div className="max-w-[1100px] mx-auto">
                 <div className="flex items-center gap-2 sm:gap-4">
+                  <button type="button" onClick={() => setContentsOpen(true)} aria-label="Contents"
+                    className="lg:hidden shrink-0 w-11 h-11 rounded-xl border-2 border-[var(--gb-border)] flex items-center justify-center hover:border-[var(--gb-text)]">
+                    <ListChecks className="w-5 h-5" aria-hidden="true" />
+                  </button>
                   <Ring pct={total ? done / total : 0} />
                   <div className="min-w-0 flex-1">
                     <p className="font-black text-lg leading-tight">{!saved.place ? `${total} contests to browse` : allDone ? 'Ballot ready 🎉' : `${done} of ${total} decided`}</p>
@@ -337,25 +350,15 @@ export function KnowYourBallotMichigan() {
                       <span className="shrink-0 font-bold underline underline-offset-2">{saved.place ? 'Change' : 'Add address'}</span>
                     </button>
                   </div>
-                  <button type="button" onClick={() => setContentsOpen(true)} aria-label="Contents"
-                    className="lg:hidden shrink-0 w-11 h-11 rounded-xl border-2 border-[var(--gb-border)] flex items-center justify-center hover:border-[var(--gb-text)]">
-                    <ListChecks className="w-5 h-5" aria-hidden="true" />
-                  </button>
                 </div>
-                <div className="mt-3 grid grid-cols-3 gap-2" role="tablist" aria-label="Views">
-                  {([['ballot', 'My Ballot'], ['plan', 'Plan to vote'], ['share', 'Save & share']] as const).map(([id, label]) => (
-                    <button key={id} type="button" role="tab" aria-selected={tab === id} onClick={() => { setTab(id); window.scrollTo({ top: 0 }); }}
-                      className={`min-h-[44px] rounded-xl font-bold border-2 border-[var(--gb-text)] ${tab === id ? 'bg-[var(--gb-text)] text-[var(--gb-bg)]' : 'text-[var(--gb-text)]'}`}>
-                      {label}
-                    </button>
-                  ))}
-                </div>
+                <div className={`mt-3 grid-cols-3 gap-2 ${saved.place ? 'grid' : 'hidden lg:grid'}`}>{views}</div>
                 <div className="mt-3">
                   <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} sections={SECTION_TITLES} onJump={(h) => jumpTo(h.section, h.id)} />
                 </div>
                 {!saved.place && <BrowsingNotice region="Michigan" onAddAddress={changeAddress} />}
               </div>
             </div>
+              {!saved.place && <div className="lg:hidden grid grid-cols-3 gap-2 pt-3 max-w-[1100px] mx-auto">{views}</div>}
             <div className="lg:grid lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-8 lg:items-start max-w-[1100px] mx-auto pt-4">
               <ContentsColumn {...contents} />
               <ContentsDrawer {...contents} onSection={(id) => { setTab('ballot'); setChosenSection(id); }} open={contentsOpen} onClose={closeContents} />
@@ -388,6 +391,8 @@ export function KnowYourBallotMichigan() {
                     ...billItems(data.laws ?? [], billUrl, 'Michigan Legislature'),
                     ...dateItems(KEY_DATES, today(), { name: 'Michigan Department of State', url: LINKS.dates }),
                   ]} />
+                  <Laws laws={data.laws ?? []} state={{ code: 'MI', name: 'Michigan', capital: 'Lansing' }} />
+                  <NextElectionNote />
 
                   {sections.filter((s) => s.id === current).map((s) => {
                     const at = sections.indexOf(s);
@@ -471,13 +476,6 @@ export function KnowYourBallotMichigan() {
 
         {/* Always last, above the footer, on every screen. */}
         <div className="max-w-[1100px] mx-auto mt-12 space-y-8">
-          <div role="separator" aria-label="Beyond your ballot" className="flex items-center gap-4">
-            <span className="h-[3px] flex-1 rounded-full bg-[var(--gb-text)]" />
-            <span className="text-sm font-black uppercase tracking-[0.18em]">Beyond your ballot</span>
-            <span className="h-[3px] flex-1 rounded-full bg-[var(--gb-text)]" />
-          </div>
-          <Laws laws={data.laws ?? []} state={{ code: 'MI', name: 'Michigan', capital: 'Lansing' }} />
-          <NextElectionNote />
           <Sources />
         </div>
       </div>
@@ -526,6 +524,9 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
   onOpenSection: (sectionId: string, id: string) => void; /** A saved ballot to go back to. */ place?: string; onContinue: () => void;
   daysLeft: number; saved: number; onStartFresh: () => void;
 }) {
+  // Spins while the browser finds you and the lookup runs.
+  const [locating, setLocating] = useState(false);
+  useEffect(() => { if (!status.busy) setLocating(false); }, [status.busy]);
   const [confirming, setConfirming] = useState(false);
   const candidates = data.races.reduce((n, r) => n + r.candidates.length, 0);
   const byDistrict = data.races.length - HEADLINERS.length;
@@ -572,8 +573,8 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
           </button>
         </div>
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-          <button type="button" onClick={onLocate} disabled={status.busy} className="inline-flex items-center gap-2 min-h-[44px] font-bold underline underline-offset-4 disabled:cursor-wait">
-            <Crosshair className="w-5 h-5" aria-hidden="true" /> Use my current location
+          <button type="button" onClick={() => { setLocating(true); onLocate(); }} disabled={status.busy} aria-busy={locating} className="inline-flex items-center gap-2 min-h-[44px] font-bold underline underline-offset-4 disabled:cursor-wait">
+            {locating ? <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" /> : <Crosshair className="w-5 h-5" aria-hidden="true" />} {locating ? 'Finding where you are…' : 'Use my current location'}
           </button>
           <button type="button" onClick={onBrowse} className="inline-flex items-center gap-2 min-h-[44px] font-bold underline underline-offset-4">
             <ListChecks className="w-5 h-5" aria-hidden="true" /> No address? Browse every race
