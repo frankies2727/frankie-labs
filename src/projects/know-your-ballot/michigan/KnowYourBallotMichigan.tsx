@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } fro
 import { ClearButton } from '../../../components/ClearButton';
 import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Locating, Ring, useWide, SectionCards, SectionFlip, useBallotView, useDocumentMeta, type SectionCard } from '../Bits';
 import { Group } from '../Calendar';
+import { guideUrl } from '../hosts';
 import { billItems, billUrl, changeItems, dateItems, Feed, newsItems } from '../Feed';
 import { Laws } from '../Laws';
 import { NextElectionNote } from './NextUp';
@@ -260,7 +261,7 @@ export function KnowYourBallotMichigan() {
 
   const saveLink = async (send: boolean) => {
     setLinkMsg('');
-    const url = await resumeLink(saved, `${location.origin}${import.meta.env.BASE_URL}projects/know-your-ballot-michigan`);
+    const url = await resumeLink(saved, SHARE_URL);
     try {
       if (send && navigator.share) { await navigator.share({ title: 'My ballot progress', url }); setPlan('shared', true); return; }
       await navigator.clipboard.writeText(url);
@@ -597,7 +598,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
         {status.error && <p role="alert" className="rounded-xl bg-[var(--gb-red)] px-4 py-3 font-bold text-white">{status.error}</p>}
         {status.outside && (
           <p role="alert" className="rounded-xl bg-[var(--kyb-chip)] border-2 border-[var(--gb-amber-hi)] px-4 py-3 font-bold">
-            That address is outside Michigan. This guide covers Michigan voters; Illinois voters have <a className="underline text-[var(--gb-amber-hi)]" href={`${import.meta.env.BASE_URL}projects/know-your-ballot-illinois`}>their own guide</a>.
+            That address is outside Michigan. This guide covers Michigan voters; Illinois voters have <a className="underline text-[var(--gb-amber-hi)]" href={guideUrl('illinois')}>their own guide</a>.
           </p>
         )}
         {saved > 0 && (

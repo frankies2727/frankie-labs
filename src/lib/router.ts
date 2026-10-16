@@ -12,6 +12,15 @@ import { useEffect, useState } from 'react';
 
 const BASE = import.meta.env.BASE_URL; // e.g. "/frankie-labs/" (always ends in "/")
 
+// A deployment can mount one Know Your Ballot guide at the site root: built
+// with VITE_GUIDE=illinois, https://govbot-il-ballot.vercel.app/ is that
+// guide's landing page and /ballot its ballot. Routes inside the app don't
+// change ("projects/know-your-ballot-illinois/ballot"); only the address
+// loses the prefix. See README "Know Your Ballot on its own address".
+const MOUNT = import.meta.env.VITE_GUIDE ? `projects/know-your-ballot-${import.meta.env.VITE_GUIDE}` : '';
+const toRoute = (path: string) => (MOUNT ? (path ? `${MOUNT}/${path}` : MOUNT) : path);
+const toPath = (route: string) => (MOUNT && (route === MOUNT || route.startsWith(`${MOUNT}/`)) ? route.slice(MOUNT.length + 1) : route);
+
 export function currentRoute(): string {
   let p = window.location.pathname;
   if (p.startsWith(BASE)) p = p.slice(BASE.length);
@@ -19,14 +28,14 @@ export function currentRoute(): string {
     const bare = BASE.replace(/\/$/, '');
     if (bare && p.startsWith(bare)) p = p.slice(bare.length);
   }
-  return p.replace(/^\/+|\/+$/g, '');
+  return toRoute(p.replace(/^\/+|\/+$/g, ''));
 }
 
 // `replace` swaps the current history entry instead of adding one — use it when
 // canonicalising a legacy URL, so the Back button skips the old path rather than
 // bouncing the visitor straight back into the redirect.
 export function navigate(route: string, opts?: { replace?: boolean }): void {
-  const clean = route.replace(/^\/+|\/+$/g, '');
+  const clean = toPath(route.replace(/^\/+|\/+$/g, ''));
   const url = clean ? BASE + clean : BASE;
   if (url !== window.location.pathname) {
     if (opts?.replace) window.history.replaceState({}, '', url);

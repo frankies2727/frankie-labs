@@ -1,4 +1,5 @@
 import type { ResearchLink } from '../research';
+import { guideUrl } from '../hosts';
 import type { StateConfig } from '../state';
 import type { Candidate, Race } from '../types';
 
@@ -19,7 +20,7 @@ export const LINKS = {
   countyResults: 'https://www.michigan.gov/sos/elections/election-results-and-data/candidate-listings-and-election-results-by-county',
 };
 
-export const SHARE_URL = `https://frankies2727.github.io${import.meta.env.BASE_URL}projects/know-your-ballot-michigan`;
+export const SHARE_URL = guideUrl('michigan');
 export const STORAGE_KEY = 'know-your-ballot:michigan:2026-11-03';
 
 // Ballot order: the partisan section (federal, state, legislature, boards),
