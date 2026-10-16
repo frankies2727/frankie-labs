@@ -5,6 +5,7 @@ import { ballotFor, ballotIdsFor, districtsAt, geocode, inChicago, inCook, inIll
 import { RETENTION_EXPLAINER } from './offices';
 import { BallotSearch, type Hit } from './Search';
 import { GovbotChrome } from './GovbotChrome';
+import { guideUrl } from './hosts';
 import { StateMap } from './Hero';
 import outline from './data/illinois/outline.json';
 import { GaugeDefs } from './BarRatings';
@@ -31,7 +32,7 @@ const ballotIds = (d: Districts) => ballotIdsFor(data, d);
 const everything = ballotFor(data, null);
 // The races every Illinois voter sees, for the landing page's cards.
 const STATEWIDE = data.races.filter((r) => !r.area && (r.section === 'federal' || r.section === 'state'));
-const SHARE_URL = `https://frankies2727.github.io${import.meta.env.BASE_URL}projects/know-your-ballot-illinois`;
+const SHARE_URL = guideUrl('illinois');
 // Runs elections in suburban Cook (the Chicago Board runs Chicago's).
 const COOK_CLERK = 'https://www.cookcountyclerkil.gov/';
 // Elsewhere in Illinois each county clerk (or city board) runs elections.
@@ -370,7 +371,7 @@ export function KnowYourBallot() {
   const saveLink = async (send: boolean) => {
     setLinkMsg('');
     // Same site the voter is on (also right for previews and local runs).
-    const url = await resumeLink(saved, `${location.origin}${import.meta.env.BASE_URL}projects/know-your-ballot-illinois`);
+    const url = await resumeLink(saved, SHARE_URL);
     try {
       if (send && navigator.share) { await navigator.share({ title: 'My ballot progress', url }); setPlan('shared', true); return; }
       await navigator.clipboard.writeText(url);

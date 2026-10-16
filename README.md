@@ -239,6 +239,18 @@ Open two browser tabs to test host and guest side by side.
 - One-time setup: **Settings → Pages → Source → GitHub Actions**.
 - The site lives at `/frankie-labs/` (`base` in `vite.config.ts`). Change it if you rename the repo.
 
+### 🗳️ Know Your Ballot on its own address
+
+The voter guides also run as one Vercel project, `govbot-know-your-ballot`, so a shared link reads
+`https://govbot-know-your-ballot.vercel.app/illinois` (or `/michigan`) rather than a path under the lab, and the
+root is a pick-your-state page (`src/projects/know-your-ballot/KybHome.tsx`). The project imports this same
+repository with Vercel's default Vite settings and no extra configuration: `vercel.json` sets `VITE_KYB_SITE`
+for the build and sends every path to the app. That flag makes the build serve from `/` instead of
+`/frankie-labs/` (`vite.config.ts`) and gives each guide its short address (`src/lib/router.ts`: `/illinois` is the
+landing page, `/illinois/ballot` the ballot). Share cards, resume links and the link between the two guides use
+those addresses (`src/projects/know-your-ballot/hosts.ts`). The code stays here; every push to `main`, including
+the daily data refreshes, redeploys it. GitHub Pages keeps serving the whole lab as before.
+
 ### 🧩 How it works
 
 - **Peer-to-peer:** browsers connect directly over WebRTC ([PeerJS](https://peerjs.com) does the handshake). No backend to run or pay for.
