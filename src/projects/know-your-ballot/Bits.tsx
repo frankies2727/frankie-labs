@@ -200,8 +200,8 @@ export function SectionCards({ cards, heading, intro, onOpen, onOpenRace, onJump
 }
 
 /** A fold-away explainer of the ballot's layout, remembered open or closed on this device. */
-export function HowBallotWorks({ storageKey, title, children }: { storageKey: string; title: string; children: ReactNode }) {
-  const [open, toggle] = useOpen(storageKey);
+export function HowBallotWorks({ storageKey, title, defaultOpen = false, children }: { storageKey: string; title: string; defaultOpen?: boolean; children: ReactNode }) {
+  const [open, toggle] = useOpen(storageKey, defaultOpen);
   return (
     <section aria-labelledby="kyb-how" className="rounded-2xl border-[3px] border-[var(--kyb-gold)] bg-[var(--gb-surface)] p-4 sm:p-5 space-y-3">
       <h2 id="kyb-how" className="text-xl">

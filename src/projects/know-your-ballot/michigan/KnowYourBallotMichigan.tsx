@@ -54,7 +54,7 @@ export function KnowYourBallotMichigan() {
   const [saved, setSaved] = useSaved(STORAGE_KEY);
   const browsing = !!saved.browsing;
   const setBrowsing = (on: boolean) => setSaved((s) => ({ ...s, browsing: on || undefined }));
-  const [tab, setTab] = useState<'ballot' | 'plan' | 'share'>('ballot');
+  const [tab, setTab] = useState<'ballot' | 'plan' | 'share' | 'how' | 'feed'>('ballot');
   const [incoming, setIncoming] = useState<Saved | null>(null);
   const [linkMsg, setLinkMsg] = useState('');
   const [address, setAddress] = useState('');
@@ -308,7 +308,7 @@ export function KnowYourBallotMichigan() {
   // ---- screens ------------------------------------------------------------------
   // The three views. On phones, while the browsing notice is up, they scroll
   // away with the page instead of sitting in the sticky bar.
-  const views = ([['ballot', 'My Ballot'], ['plan', 'Plan to vote'], ['share', 'Save & share']] as const).map(([id, label]) => (
+  const views = ([['ballot', 'My Ballot'], ['plan', 'Plan to vote'], ['share', 'Save & share'], ['how', 'How it works'], ['feed', 'What’s new']] as const).map(([id, label]) => (
     <button key={id} type="button" role="tab" aria-selected={tab === id} onClick={() => { setTab(id); window.scrollTo({ top: 0 }); }}
       className={`min-h-[44px] rounded-xl font-bold border-2 border-[var(--gb-text)] ${tab === id ? 'bg-[var(--gb-text)] text-[var(--gb-bg)]' : 'text-[var(--gb-text)]'}`}>
       {label}
@@ -351,14 +351,14 @@ export function KnowYourBallotMichigan() {
                     </button>
                   </div>
                 </div>
-                <div className={`mt-3 grid-cols-3 gap-2 ${saved.place ? 'grid' : 'hidden lg:grid'}`}>{views}</div>
+                <div className={`mt-3 grid-cols-3 sm:grid-cols-5 gap-2 ${saved.place ? 'grid' : 'hidden lg:grid'}`}>{views}</div>
                 <div className="mt-3">
                   <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} sections={SECTION_TITLES} onJump={(h) => jumpTo(h.section, h.id)} />
                 </div>
                 {!saved.place && <BrowsingNotice region="Michigan" onAddAddress={changeAddress} />}
               </div>
             </div>
-              {!saved.place && <div className="lg:hidden grid grid-cols-3 gap-2 pt-3 max-w-[1100px] mx-auto">{views}</div>}
+              {!saved.place && <div className="lg:hidden grid grid-cols-3 sm:grid-cols-5 gap-2 pt-3 max-w-[1100px] mx-auto">{views}</div>}
             <div className="lg:grid lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-8 lg:items-start max-w-[1100px] mx-auto pt-4">
               <ContentsColumn {...contents} />
               <ContentsDrawer {...contents} onSection={(id) => { setTab('ballot'); setChosenSection(id); }} open={contentsOpen} onClose={closeContents} />
@@ -379,18 +379,6 @@ export function KnowYourBallotMichigan() {
                   {updates.length > 0 && <SinceLastVisit changes={updates} since={lastSeen!} picks={saved.picks} onJump={(id) => jumpTo(sectionFor(id), id)} onDismiss={() => setLastSeen(undefined)} />}
                   {total > 0 && saved.place && <Trophies ctx={gameCtx} />}
                   <WhereYouVote districts={districts} pin={pin} onChange={changeAddress} />
-                  <HowBallotWorks storageKey="kyb-mi-how-open" title="How a Michigan ballot works">
-                    <p><strong>Three parts.</strong> The partisan section (Congress, governor, Lansing, the school and university boards), the nonpartisan section (judges, plus local offices like city council in many places) and the proposals.</p>
-                    <p><strong>The straight-party box.</strong> At the top, one mark votes for every candidate of that party in the partisan section. You can still mark individual races, and those marks win for that race. It never touches the nonpartisan section or the proposals, so look at those either way.</p>
-                    <p><strong>“Vote for not more than 2.”</strong> Boards and the Supreme Court elect two seats at once; pick up to two names.</p>
-                    <p><strong>Judges with no opponent.</strong> Court of Appeals judges usually run unopposed. Marking them is still a vote; leaving them blank is fine too.</p>
-                  </HowBallotWorks>
-                  <Feed storageKey="kyb-mi-feed-open" onJump={(id) => jumpTo(sectionFor(id), id)} items={[
-                    ...changeItems(data.changes ?? [], (c) => (c.kind === 'money' ? { name: 'FEC and Michigan Bureau of Elections filings', url: data.sources.money.url } : { name: 'Ballotpedia candidate lists', url: 'https://ballotpedia.org/Michigan_elections,_2026' })),
-                    ...newsItems(data.news ?? []),
-                    ...billItems(data.laws ?? [], billUrl, 'Michigan Legislature'),
-                    ...dateItems(KEY_DATES, today(), { name: 'Michigan Department of State', url: LINKS.dates }),
-                  ]} />
 
                   {sections.filter((s) => s.id === current).map((s) => {
                     const at = sections.indexOf(s);
@@ -424,6 +412,28 @@ export function KnowYourBallotMichigan() {
                       </section>
                     );
                   })}
+                </div>
+              )}
+
+              {tab === 'how' && (
+                <div className="pt-6">
+                  <HowBallotWorks storageKey="kyb-mi-how-open" defaultOpen title="How a Michigan ballot works">
+                    <p><strong>Three parts.</strong> The partisan section (Congress, governor, Lansing, the school and university boards), the nonpartisan section (judges, plus local offices like city council in many places) and the proposals.</p>
+                    <p><strong>The straight-party box.</strong> At the top, one mark votes for every candidate of that party in the partisan section. You can still mark individual races, and those marks win for that race. It never touches the nonpartisan section or the proposals, so look at those either way.</p>
+                    <p><strong>“Vote for not more than 2.”</strong> Boards and the Supreme Court elect two seats at once; pick up to two names.</p>
+                    <p><strong>Judges with no opponent.</strong> Court of Appeals judges usually run unopposed. Marking them is still a vote; leaving them blank is fine too.</p>
+                  </HowBallotWorks>
+                </div>
+              )}
+
+              {tab === 'feed' && (
+                <div className="pt-6">
+                  <Feed storageKey="kyb-mi-feed-open" onJump={(id) => jumpTo(sectionFor(id), id)} items={[
+                    ...changeItems(data.changes ?? [], (c) => (c.kind === 'money' ? { name: 'FEC and Michigan Bureau of Elections filings', url: data.sources.money.url } : { name: 'Ballotpedia candidate lists', url: 'https://ballotpedia.org/Michigan_elections,_2026' })),
+                    ...newsItems(data.news ?? []),
+                    ...billItems(data.laws ?? [], billUrl, 'Michigan Legislature'),
+                    ...dateItems(KEY_DATES, today(), { name: 'Michigan Department of State', url: LINKS.dates }),
+                  ]} />
                 </div>
               )}
 
@@ -472,10 +482,12 @@ export function KnowYourBallotMichigan() {
           </>
         )}
 
-        {/* Always last, above the footer, on every screen. */}
-        <div className="max-w-[1100px] mx-auto mt-12 space-y-8">
-          <Sources />
-        </div>
+        {/* The ballot view ends with the sources; the landing page carries them above "Beyond your ballot". */}
+        {showBallot && (
+          <div className="max-w-[1100px] mx-auto mt-12 space-y-8">
+            <Sources />
+          </div>
+        )}
       </div>
 
       <PrintBallot sections={sections} picks={saved.picks} label={saved.place?.label} />
@@ -620,6 +632,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
       <SectionCards cards={MORE} heading="Everything else on your ballot" intro="By district: your address picks out yours. Tap a section to see every contest in it, who’s running and where." onOpen={onOpenCandidate} onOpenRace={onOpenRace} onJump={onOpenSection} />
 
       <div className="pt-2 space-y-8">
+        <Sources />
         <div role="separator" aria-label="Beyond your ballot" className="flex items-center gap-4">
           <span className="h-[3px] flex-1 rounded-full bg-[var(--gb-text)]" />
           <span className="text-sm font-black uppercase tracking-[0.18em]">Beyond your ballot</span>
@@ -718,8 +731,8 @@ function Sources() {
           <span className="sr-only">{open ? '(hide)' : '(show)'}</span>
         </button>
       </h2>
-      {open && <div id="kyb-sources-body">
-        <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+      {open && <div id="kyb-sources-body" className="kyb-scroll-bar mt-4 max-h-[420px] overflow-y-auto pr-1" style={{ ['--scroll' as string]: 'var(--gb-primary)' }}>
+        <ul className="grid gap-3 sm:grid-cols-2">
           {cards.map((c) => (
             <li key={c.title} className="flex flex-col gap-2 rounded-xl border border-[var(--gb-border-strong)] bg-[var(--gb-bg)] p-4">
               <p className="flex flex-wrap items-center gap-2 font-black"><span aria-hidden="true">{c.emoji}</span>{c.title}</p>
