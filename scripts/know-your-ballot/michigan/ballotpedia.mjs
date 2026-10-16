@@ -13,12 +13,19 @@ const UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Geck
 const SITE = 'https://ballotpedia.org/';
 
 // Ballotpedia's firewall answers Node's own HTTP client with a JavaScript
-// challenge (HTTP 202) but lets curl through, so pages are read with curl.
-export async function fetchPage(title) {
+// challenge (HTTP 202, an empty page) but usually lets curl through, so pages
+// are read with curl. It challenges some addresses (GitHub's runners, at
+// times) on every request, so a challenge is retried with a pause before the
+// caller gives up on today's refresh.
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+export async function fetchPage(title, tries = 3) {
   const url = SITE + title;
-  const html = execFileSync('curl', ['-sSL', '--compressed', '--max-time', '90', '-A', UA, url], { maxBuffer: 64e6 }).toString();
-  if (!/mw-content-text|votebox|candidateListTable/.test(html)) throw new Error(`${url}: not a Ballotpedia article`);
-  return { url, html };
+  for (let i = 1; ; i++) {
+    const html = execFileSync('curl', ['-sSL', '--compressed', '--max-time', '90', '-A', UA, url], { maxBuffer: 64e6 }).toString();
+    if (/mw-content-text|votebox|candidateListTable/.test(html)) return { url, html };
+    if (i >= tries) throw new Error(`${url}: not a Ballotpedia article (its firewall is challenging this address)`);
+    await sleep(5000 * i);
+  }
 }
 
 const decode = (s) => s.replace(/&#160;|&nbsp;/g, ' ').replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');

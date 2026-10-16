@@ -94,12 +94,8 @@ async function download(url, file) {
   await pipeline(Readable.fromWeb(res.body), createWriteStream(file));
 }
 
-async function main() {
-  mkdirSync(OUT, { recursive: true });
-  const work = mkdtempSync(join(tmpdir(), 'ballot-mi-'));
-  let prev = null;
-  try { prev = JSON.parse(readFileSync(join(OUT, 'ballot.json'), 'utf8')); } catch { /* first build */ }
-
+/** Every race and its candidates, read from Ballotpedia and Wikipedia today. */
+async function gatherRaces() {
   const races = [];
   const pages = {};
 
@@ -148,6 +144,27 @@ async function main() {
     if (have !== n) throw new Error(`${type}: expected ${n} races, parsed ${have} — refusing to overwrite`);
   }
   console.log(`${races.length} races`);
+  return { races, pages };
+}
+
+async function main() {
+  mkdirSync(OUT, { recursive: true });
+  const work = mkdtempSync(join(tmpdir(), 'ballot-mi-'));
+  let prev = null;
+  try { prev = JSON.parse(readFileSync(join(OUT, 'ballot.json'), 'utf8')); } catch { /* first build */ }
+
+  // Candidates. Ballotpedia blocks some addresses outright; rather than lose
+  // the day, a refresh it turns away keeps yesterday's candidates and still
+  // updates money, profiles, photos, maps, news and bills.
+  let races, pages;
+  let asOf = new Date().toISOString().slice(0, 10);
+  try {
+    ({ races, pages } = await gatherRaces());
+  } catch (e) {
+    if (!prev?.races?.length) throw e;
+    console.warn(`Candidates: ${e.message}; keeping yesterday's ${prev.races.length} races`);
+    ({ races, sources: { candidates: { pages, asOf } } } = structuredClone(prev));
+  }
 
   // Federal money.
   await download(FEC_WEBALL, join(work, 'weball.zip'));
@@ -206,7 +223,7 @@ async function main() {
   writeFileSync(join(OUT, 'ballot.json'), JSON.stringify({
     election: ELECTION,
     sources: {
-      candidates: { pages, asOf: new Date().toISOString().slice(0, 10) },
+      candidates: { pages, asOf },
       money: { url: 'https://www.fec.gov/data/', file: FEC_WEBALL },
       stateMoney: { url: MITN_EXPORTS },
       proposals: PROPOSALS_SOURCE,
