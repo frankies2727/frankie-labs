@@ -4,7 +4,7 @@ import { money, useOpen } from './store';
 import type { Change, Law, NewsItem } from './types';
 import type { KeyDate } from './dates';
 
-// "What's new": one feed of everything that moved lately, newest first, each
+// "News Feed": one feed of everything that moved lately, newest first, each
 // item dated and sourced. Ballot changes the daily refresh noticed, news
 // headlines, bills (where the state has them) and the next key dates.
 
@@ -83,7 +83,7 @@ export function Feed({ items, storageKey, onJump }: { items: FeedItem[]; storage
       <div className="space-y-1">
         <h2 id="kyb-feed" className="text-2xl">
           <button type="button" onClick={toggle} aria-expanded={open} aria-controls="kyb-feed-body" className="inline-flex min-h-[44px] items-center gap-2 text-left">
-            📰 What’s new
+            📰 News Feed
             <ChevronDown className={`w-5 h-5 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
             <span className="sr-only">{open ? '(hide)' : '(show)'}</span>
           </button>
