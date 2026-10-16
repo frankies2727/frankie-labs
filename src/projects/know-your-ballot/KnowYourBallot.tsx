@@ -16,7 +16,8 @@ import { earnedTrophies, streak, Trophies } from './Progress';
 import './ballot.css';
 import { ClearButton } from '../../components/ClearButton';
 import { SinceLastVisit } from './Updates';
-import { KeyDates } from './Calendar';
+import { KeyDates, NextElectionNote } from './Calendar';
+import { Laws } from './Laws';
 import { LINKS, PlanToVote } from './PlanToVote';
 import { areaLabel, CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard, SCOPE } from './Race';
 import { billItems, changeItems, dateItems, Feed, newsItems } from './Feed';
@@ -288,8 +289,9 @@ export function KnowYourBallot() {
     }));
   };
   // Links from govbot (its search, RSS, the old elections page) name a race
-  // by govbot's id: #race=us-house-il-07. Open that race. Our own ids work
-  // too. Then tidy the address bar.
+  // by govbot's id: #race=us-house-il-07. Open that race; Feb 2027 races open
+  // the 2027 note on the landing page. Our own ids work too. Then tidy the
+  // address bar.
   const raceLink = useRef<() => void>(() => {});
   raceLink.current = () => {
     const m = location.hash.match(/^#(race|office)=([^&]+)/);
@@ -307,6 +309,7 @@ export function KnowYourBallot() {
       setToast(`${race.office} is outside Cook County. Enter an address in that district to see it.`);
       return;
     }
+    if (id === '2027') { showView(false); requestAnimationFrame(() => requestAnimationFrame(() => scrollTo(document.getElementById('kyb-next')))); return; }
     if (!showBallot) browse();
     if (race) jumpTo(race.section, race.id);
   };
@@ -776,6 +779,15 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
         <div className="mt-10">
           <SectionCards cards={MORE} heading="Everything else on your ballot" intro="By district, ward or precinct: your address picks out yours. Tap a section to see every contest in it, who’s running and where." onOpen={onOpenCandidate} onOpenRace={onOpenRace} onJump={onOpenSection} />
         </div>
+        <div className="mt-12 space-y-8">
+          <div role="separator" aria-label="Beyond your ballot" className="flex items-center gap-4">
+            <span className="h-[3px] flex-1 rounded-full bg-[var(--gb-text)]" />
+            <span className="text-sm font-black uppercase tracking-[0.18em]">Beyond your ballot</span>
+            <span className="h-[3px] flex-1 rounded-full bg-[var(--gb-text)]" />
+          </div>
+          <Laws laws={data.govbot.laws} state={{ code: 'IL', name: 'Illinois', capital: 'Springfield', rss: 'https://chihacknight.github.io/govbot/dashboard/elections/springfield.xml' }} />
+          <NextElectionNote city={data.govbot.city} />
+        </div>
       </div>
     </div>
   );
@@ -900,8 +912,8 @@ function Sources() {
     { emoji: '🗺️', title: 'District maps', status: 'Live',
       body: 'Census (Congress, Springfield), Cook County (County Board, Board of Review, judicial subcircuits), City of Chicago (wards, police districts, and your precinct, looked up live) and the Illinois Senate (school board).',
       links: [['data.cityofchicago.org', 'https://data.cityofchicago.org/']] },
-    { emoji: '📜', title: 'Springfield bills', status: 'Live · from govbot',
-      body: 'Illinois bills on elections and schools with their latest action, in What’s new, from govbot’s open data.',
+    { emoji: '📜', title: 'Springfield bills & 2027 races', status: 'Live · from govbot',
+      body: 'Illinois bills on elections and schools, ILGA hearings, and Chicago’s Feb 23, 2027 races with sitting alderpersons, from govbot’s open data.',
       links: [['govbot on GitHub', 'https://github.com/chihacknight/govbot']] },
     { emoji: '📍', title: 'Early voting sites', status: 'Live · Chicago',
       body: 'Each ward’s early voting site and hours, from the Board of Elections. Suburban sites come from the Cook County Clerk.',

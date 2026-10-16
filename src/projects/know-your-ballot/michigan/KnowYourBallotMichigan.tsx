@@ -4,6 +4,8 @@ import { ClearButton } from '../../../components/ClearButton';
 import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Locating, Ring, SectionCards, SectionFlip, useBallotView, useDocumentMeta, type SectionCard } from '../Bits';
 import { Group } from '../Calendar';
 import { billItems, billUrl, changeItems, dateItems, Feed, newsItems } from '../Feed';
+import { Laws } from '../Laws';
+import { NextElectionNote } from './NextUp';
 import { Headliners } from '../Headliners';
 import { ContentsColumn, ContentsDrawer } from '../Contents';
 import { earnedTrophies, streak, Trophies } from '../Progress';
@@ -616,6 +618,16 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
       </Headliners>
 
       <SectionCards cards={MORE} heading="Everything else on your ballot" intro="By district: your address picks out yours. Tap a section to see every contest in it, who’s running and where." onOpen={onOpenCandidate} onOpenRace={onOpenRace} onJump={onOpenSection} />
+
+      <div className="pt-2 space-y-8">
+        <div role="separator" aria-label="Beyond your ballot" className="flex items-center gap-4">
+          <span className="h-[3px] flex-1 rounded-full bg-[var(--gb-text)]" />
+          <span className="text-sm font-black uppercase tracking-[0.18em]">Beyond your ballot</span>
+          <span className="h-[3px] flex-1 rounded-full bg-[var(--gb-text)]" />
+        </div>
+        <Laws laws={data.laws ?? []} state={{ code: 'MI', name: 'Michigan', capital: 'Lansing' }} />
+        <NextElectionNote />
+      </div>
     </div>
   );
 }
@@ -679,7 +691,7 @@ function Sources() {
       body: 'The two statewide proposals as certified by the Board of State Canvassers, from the League of Women Voters of Michigan’s handout, with a plain-English note on each.',
       links: [['LWV Michigan', s.proposals.lwv], ['Ballotpedia', s.proposals.ballotpedia]] },
     { emoji: '🏛️', title: 'Lansing bills', status: 'Live · from govbot',
-      body: 'Michigan bills on elections and schools with their latest action, in What’s new, from govbot’s open legislation data.',
+      body: 'Michigan bills on elections and schools with action in the last six months, plus the newest of the rest, from govbot’s open legislation data.',
       links: [['govbot', 'https://chihacknight.github.io/govbot/dashboard/legislation.html']] },
     { emoji: '🗺️', title: 'District maps', status: 'Live',
       body: 'Congressional districts (120th Congress), the 2026 Michigan Senate and House maps and county lines from the Census Bureau. Your county sets your Court of Appeals district (MCL 600.302).',
