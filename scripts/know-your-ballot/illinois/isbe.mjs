@@ -105,7 +105,8 @@ export async function addStateMoney(races, dir) {
   const a1Docs = new Map(); // docId -> committee, for the A-1 (large contribution) reports
   for await (const r of rows(`${dir}/FiledDocs.txt`)) {
     if (!wanted.has(r.CommitteeID)) continue;
-    if (r.FiledDocType === 'A-1') { if (day(r.RcvdDateTime) >= CYCLE_START) a1Docs.set(r.ID, r.CommitteeID); continue; }
+    // FiledDocType is a numeric code; the report's kind is spelled out in DocName.
+    if (r.DocName === 'A-1') { if (day(r.RcvdDateTime) >= CYCLE_START) a1Docs.set(r.ID, r.CommitteeID); continue; }
     if (day(r.RptPdEndDate) < CYCLE_START) continue;
     docs.set(r.ID, { committee: r.CommitteeID, beg: day(r.RptPdBegDate), end: day(r.RptPdEndDate), rcvd: r.RcvdDateTime });
   }
