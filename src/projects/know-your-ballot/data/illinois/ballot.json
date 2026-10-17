@@ -215,7 +215,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Bob_Fioretti",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Bob_Fioretti.jpg"
-     }
+     },
+     "website": "https://www.bobforillinois.com/"
     },
     {
      "ballot": 8,
@@ -625,7 +626,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Lupe_Castillo",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Lupe_Castillo_20240826_050308.jpg"
-     }
+     },
+     "website": "https://castillolupe.com/"
     },
     {
      "ballot": 22,
@@ -912,7 +914,8 @@
       "credit": "Jennifer Davis for Congress (campaign site)",
       "link": "https://www.votejenniferdavis.com/",
       "from": "https://static.wixstatic.com/media/acaba8_2a5c202d028e48fdad468e3d9e01f681~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_85/acaba8_2a5c202d028e48fdad468e3d9e01f681~mv2.jpg#crop=340x340+563+0"
-     }
+     },
+     "website": "https://www.votejenniferdavis.com/"
     },
     {
      "ballot": 22,
@@ -1236,7 +1239,8 @@
       "credit": "Hanley for Illinois (campaign site)",
       "link": "https://www.hanleyforillinois.com/meet-patrick",
       "from": "https://run.imgix.net/5a6e4937-4dc5-49dd-8131-711b1cfad119/84a855ff-20d1-4542-b2df-07daadf3f2a0/84a855ff-20d1-4542-b2df-07daadf3f2a0.png?w=1000"
-     }
+     },
+     "website": "https://www.hanleyforillinois.com/"
     }
    ],
    "writeIn": false
@@ -1535,7 +1539,8 @@
      "social": {
       "facebook": "https://www.facebook.com/fran.hurley.12",
       "linkedin": "https://www.linkedin.com/in/fran-hurley-22012739/"
-     }
+     },
+     "website": "https://franhurley.com/"
     }
    ],
    "writeIn": false
@@ -1847,7 +1852,8 @@
       "facebook": "https://www.facebook.com/profile.php?id=61579008849458&mibextid",
       "instagram": "https://www.instagram.com/shantelforilstaterep",
       "linkedin": "https://www.linkedin.com/in/shantel-franklin-14478a260/"
-     }
+     },
+     "website": "https://shantelforstaterep.com/"
     }
    ],
    "writeIn": false
@@ -1994,7 +2000,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Justin_Kumar",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Justin_Kumar.jpeg"
-     }
+     },
+     "website": "https://kumarforil12.com/"
     },
     {
      "ballot": 42,
@@ -2051,7 +2058,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Terry_Nguyen_Le",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Terry_Le_20240620_012625.jpg"
-     }
+     },
+     "website": "https://www.terryleforillinois.com/"
     },
     {
      "ballot": 42,
@@ -2314,10 +2322,12 @@
      "money": {
       "source": "ISBE",
       "id": "35553",
-      "raised": 632153,
+      "raised": 633153,
       "spent": 563148,
       "cash": 121862,
-      "through": "09/30/2026"
+      "through": "09/30/2026",
+      "recent": 1000,
+      "recentThrough": "10/06/2026"
      },
      "social": {
       "facebook": "https://www.facebook.com/BradStephensForStateRep",
@@ -2361,7 +2371,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Eric_Su",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/EricSu26.jpg"
-     }
+     },
+     "website": "https://teamericsu.com"
     },
     {
      "ballot": 42,
@@ -3169,7 +3180,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Michelle_Pennington",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Michelle_Pennington_20240808_094329.jpg"
-     }
+     },
+     "website": "https://www.michelleforcleanwater.com/"
     },
     {
      "ballot": 52,
@@ -3180,7 +3192,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Timothy_Rueckert",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Timothy_Rueckert_2026-09-02_234545.jpg"
-     }
+     },
+     "website": "https://Tim4MWRD.com"
     },
     {
      "ballot": 53,
@@ -3234,7 +3247,8 @@
       "credit": "Metropolitan Water Reclamation District of Greater Chicago",
       "link": "https://mwrd.org/board-commissioners/eira-l-corral-sepulveda",
       "from": "https://mwrd.org/sites/default/files/styles/tile/public/images/2023-10/BOC-Headshot-Eira%20L%20Corral%20Sepu%CC%81lveda.jpg?h=7919d791"
-     }
+     },
+     "website": "https://www.eira4water.com/"
     },
     {
      "ballot": 56,
@@ -3431,7 +3445,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Brad_Sandefur",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Brad_Sandefur.jpg"
-     }
+     },
+     "website": "https://sandefurforsheriff.org/"
     }
    ],
    "writeIn": false
@@ -3505,7 +3520,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Nico_Tsatsoulis",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Nico_Tsatsoulis.jpg"
-     }
+     },
+     "website": "https://web.archive.org/web/20261006215639/https://nicotheassessor.com/issues"
     }
    ],
    "writeIn": false
@@ -3680,10 +3696,12 @@
      "money": {
       "source": "ISBE",
       "id": "40606",
-      "raised": 134290,
+      "raised": 135290,
       "spent": 88885,
       "cash": 45505,
-      "through": "09/30/2026"
+      "through": "09/30/2026",
+      "recent": 1000,
+      "recentThrough": "10/01/2026"
      },
      "photo": {
       "file": "kyb-photos/illinois/kisha-e-mccaskill-county-commissioner-5th-district.jpg",
@@ -3946,7 +3964,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Xiaoli_Hu",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Xiaoli_Hu.png"
-     }
+     },
+     "website": "https://www.votealicehu.com/"
     },
     {
      "ballot": 72,
@@ -3965,7 +3984,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Elizabeth_Granato",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Elizabeth_Granato.png"
-     }
+     },
+     "website": "https://www.elizabethforcookcounty.com/"
     }
    ],
    "writeIn": false
@@ -3989,7 +4009,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Aasi_Siddique",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Aasi_Siddique2026Screenshot-20260930-152356-Photos_20261003_175125_35838_1_2026-10-15_001623.jpg"
-     }
+     },
+     "website": "https://www.citizensforaasisiddique.com/"
     },
     {
      "ballot": 72,
@@ -4119,7 +4140,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Elizabeth_Nicholson",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Elizabeth_Nicholson_20260308_051745.jpeg"
-     }
+     },
+     "website": "https://www.lizfor2.com"
     }
    ],
    "writeIn": false
@@ -4490,10 +4512,12 @@
      "money": {
       "source": "ISBE",
       "id": "40608",
-      "raised": 60218,
+      "raised": 67218,
       "spent": 59873,
       "cash": 345,
-      "through": "06/30/2026"
+      "through": "06/30/2026",
+      "recent": 7000,
+      "recentThrough": "09/06/2026"
      },
      "social": {
       "instagram": "https://www.instagram.com/ashleygreershambleyforjudge"
@@ -5281,7 +5305,8 @@
       "PRBA": "Recommended",
       "WBAI": "Recommended"
      },
-     "barSource": "https://www.voteforjudges.org/#1790665075386-9ab376a6-4084:~:text=Jon%20Stromsta"
+     "barSource": "https://www.voteforjudges.org/#1790665075386-9ab376a6-4084:~:text=Jon%20Stromsta",
+     "website": "https://www.jon4judge.com/"
     }
    ],
    "writeIn": false
@@ -5303,17 +5328,20 @@
      "money": {
       "source": "ISBE",
       "id": "41112",
-      "raised": 658575,
+      "raised": 671575,
       "spent": 60563,
       "cash": 598012,
-      "through": "06/30/2026"
+      "through": "06/30/2026",
+      "recent": 13000,
+      "recentThrough": "08/19/2026"
      },
      "photo": {
       "file": "kyb-photos/illinois/victor-p-henderson-president-of-the-chicago-board-of-educat.jpg",
       "credit": "Victor For The Future (Victor P. Henderson campaign site)",
       "link": "https://victorforthefuture.org/",
       "from": "https://images.squarespace-cdn.com/content/v1/69ee9d4a77e44149ce58a5b9/1777245515745-RHPTRGWWSP2I5NXUQFCQ/Victor+P.+Henderson_0384+-+Current+Headshot.jpg?format=1000w"
-     }
+     },
+     "website": "https://www.vicforthekids.org/"
     },
     {
      "ballot": 122,
@@ -5462,10 +5490,12 @@
      "money": {
       "source": "ISBE",
       "id": "41087",
-      "raised": 69815,
-      "spent": 40935,
-      "cash": 28880,
-      "through": "09/30/2026"
+      "raised": 115797,
+      "spent": 6880,
+      "cash": 59810,
+      "through": "09/30/2026",
+      "recent": 49107,
+      "recentThrough": "10/09/2026"
      },
      "photo": {
       "file": "kyb-photos/illinois/claudia-peralta-member-of-the-chicago-board-of-education.jpg",
@@ -5550,7 +5580,8 @@
       "credit": "Hector Morales for CPS School Board 2A (campaign site)",
       "link": "https://www.hectorforcpsboard2a.org/",
       "from": "https://www.hectorforcpsboard2a.org/wp-content/uploads/2026/09/HM_Headshot-683x1024.jpg"
-     }
+     },
+     "website": "https://hectorforcpsboard2a.org/"
     }
    ],
    "writeIn": false
@@ -5606,7 +5637,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Kyna_Lenhof",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Kyna-Lenhof_20261001_002552_61784_1.jpg"
-     }
+     },
+     "website": "https://kynaforthekids.org"
     },
     {
      "ballot": 133,
@@ -5663,7 +5695,8 @@
       "credit": "Chicago Board of Education",
       "link": "https://www.cpsboe.org/about/bios/2037",
       "from": "https://www.cpsboe.org/content/images/person/norma_rios-sierra_photo_1.jpg/image-full;max$800,0.ImageHandler"
-     }
+     },
+     "website": "https://www.normaforchicago.org/"
     },
     {
      "ballot": 132,
@@ -5742,7 +5775,8 @@
       "credit": "Chicago Board of Education",
       "link": "https://www.cpsboe.org/about/bios/2043",
       "from": "https://www.cpsboe.org/content/images/person/carlos_rivas_jr_2_edit.jpg/image-full;max$800,0.ImageHandler"
-     }
+     },
+     "website": "https://www.electcarlosrivas.com/"
     }
    ],
    "writeIn": true
@@ -5822,7 +5856,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Angel_Alvarez",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Angel-Alvarez-headshot-under2mb_20261002_213646_63104_1.jpg"
-     }
+     },
+     "website": "https://angelforcps.org"
     }
    ],
    "writeIn": false
@@ -5908,7 +5943,8 @@
       "credit": "Chicago Board of Education",
       "link": "https://www.cpsboe.org/about/bios/2046",
       "from": "https://www.cpsboe.org/content/images/person/jitubrown_1.jpg/image-full;max$800,0.ImageHandler"
-     }
+     },
+     "website": "https://www.aaronjitubrown4cps.org/"
     }
    ],
    "writeIn": true
@@ -5944,7 +5980,8 @@
      },
      "social": {
       "linkedin": "https://www.linkedin.com/in/michilla-johnson-blaise-45935b47/"
-     }
+     },
+     "website": "https://www.blaiseforschoolboard.com/"
     },
     {
      "ballot": 132,
@@ -5967,7 +6004,8 @@
      "social": {
       "facebook": "https://www.facebook.com/profile.php?id=61560024161563",
       "linkedin": "https://www.linkedin.com/in/anthony-hargrove-07bb1023/"
-     }
+     },
+     "website": "http://www.hargroveforcps.com/"
     }
    ],
    "writeIn": true
@@ -6075,7 +6113,8 @@
       "credit": "Michael for District 6B (Friends of Michael Neal campaign site)",
       "link": "https://www.friendsofmichaelneal.com/",
       "from": "https://www.friendsofmichaelneal.com/uploads/1/5/5/9/155950500/59b1a56b-6ed2-4ebb-a8be-4e31da79a31a_orig.png"
-     }
+     },
+     "website": "https://www.friendsofmichaelneal.com/"
     },
     {
      "ballot": 132,
@@ -6094,7 +6133,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Brittany_B._Kimble",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Brittany-Kimble-Headshot-Web_20260711_011709_45170_1.jpeg"
-     }
+     },
+     "website": "https://buildwithbrittanychicago.com"
     }
    ],
    "writeIn": false
@@ -6153,7 +6193,8 @@
      "social": {
       "facebook": "https://www.facebook.com/ayalajrforstudents/",
       "linkedin": "https://www.linkedin.com/in/jesusayalajr/"
-     }
+     },
+     "website": "https://www.ayalajrforstudents.com/"
     }
    ],
    "writeIn": false
@@ -6200,7 +6241,8 @@
       "spent": 1630,
       "cash": 18995,
       "through": "09/30/2026"
-     }
+     },
+     "website": "https://www.erikadiazchavezforchicago.com/"
     }
    ],
    "writeIn": true
@@ -6235,7 +6277,8 @@
       "from": "https://www.cpsboe.org/content/images/person/angel_gutierrez_photo_2.jpg/image-full;max$800,0.ImageHandler"
      },
      "social": {
-      "linkedin": "https://www.linkedin.com/in/angel-gutierrez-baba2a5/"
+      "linkedin": "https://www.linkedin.com/in/angel-gutierrez-baba2a5/",
+      "facebook": "https://www.facebook.com/AngelforCPS"
      }
     }
    ],
@@ -6262,6 +6305,9 @@
       "spent": 15400,
       "cash": 5175,
       "through": "09/30/2026"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=61565227181459"
      }
     }
    ],
@@ -6490,7 +6536,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Rhys_Read",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Read-HEADSHOT_20260831_125719_33379_1.jpg"
-     }
+     },
+     "website": "https://readforil56.com/"
     }
    ],
    "writeIn": false,
@@ -6539,10 +6586,12 @@
      "money": {
       "source": "ISBE",
       "id": "39465",
-      "raised": 101523,
+      "raised": 262092,
       "spent": 111457,
       "cash": 47498,
-      "through": "09/30/2026"
+      "through": "09/30/2026",
+      "recent": 160569,
+      "recentThrough": "10/09/2026"
      },
      "social": {
       "facebook": "https://www.facebook.com/teamshanahan",
@@ -6692,10 +6741,12 @@
      "money": {
       "source": "ISBE",
       "id": "35658",
-      "raised": 175801,
+      "raised": 331738,
       "spent": 140830,
       "cash": 42570,
-      "through": "09/30/2026"
+      "through": "09/30/2026",
+      "recent": 155937,
+      "recentThrough": "10/09/2026"
      },
      "social": {
       "facebook": "https://www.facebook.com/schmidtforillinois"
@@ -6766,7 +6817,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Kate_McGrath",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Kate_McGrath_20260204_034929.jpg"
-     }
+     },
+     "website": "https://www.kateforstatesenate.com/"
     }
    ],
    "writeIn": false,
@@ -6799,7 +6851,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Sarah_Mertens",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/59c03b4e-a6c4-468a-b491-831491f12862_20260805_162112_49665_1.jpg"
-     }
+     },
+     "website": "https://www.citizensforsarahmertens.com/"
     },
     {
      "party": "Republican",
@@ -6928,7 +6981,8 @@
       "facebook": "https://www.facebook.com/friendsoffranklesko/",
       "x": "https://x.com/LeskoFrank",
       "youtube": "https://www.youtube.com/@FrankLesko-217"
-     }
+     },
+     "website": "https://friendsoffranklesko.com/"
     }
    ],
    "writeIn": false,
@@ -6992,10 +7046,12 @@
      "money": {
       "source": "ISBE",
       "id": "25649",
-      "raised": 127178,
+      "raised": 131428,
       "spent": 117807,
       "cash": 115355,
-      "through": "09/30/2026"
+      "through": "09/30/2026",
+      "recent": 4250,
+      "recentThrough": "10/03/2026"
      },
      "social": {
       "facebook": "https://www.facebook.com/SenNeilAnderson"
@@ -7184,7 +7240,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Adam_Beaty",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/AdamBeaty2024.JPG"
-     }
+     },
+     "website": "https://www.BeatyforIllinois.com"
     }
    ],
    "writeIn": false,
@@ -7480,7 +7537,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Ralph_Black",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Ralph_Black_20260516_174821_1.jpg"
-     }
+     },
+     "website": "https://RalphforIllinois.com"
     }
    ],
    "writeIn": false,
@@ -7659,10 +7717,12 @@
      "money": {
       "source": "ISBE",
       "id": "37263",
-      "raised": 56641,
+      "raised": 92246,
       "spent": 19422,
       "cash": 130668,
-      "through": "09/30/2026"
+      "through": "09/30/2026",
+      "recent": 35605,
+      "recentThrough": "10/09/2026"
      },
      "social": {
       "facebook": "https://www.facebook.com/RepBlairSherlock"
@@ -7773,17 +7833,20 @@
      "money": {
       "source": "ISBE",
       "id": "39446",
-      "raised": 225936,
+      "raised": 226936,
       "spent": 184698,
       "cash": 303342,
-      "through": "09/30/2026"
+      "through": "09/30/2026",
+      "recent": 1000,
+      "recentThrough": "10/02/2026"
      },
      "photo": {
       "file": "kyb-photos/illinois/tracy-katz-muhl-sldl-57-staterepresentativethdistrict.jpg",
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Tracy_Katz_Muhl",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/TracyKatzMuhl.png"
-     }
+     },
+     "website": "https://tracyforrep.com"
     },
     {
      "party": "Republican",
@@ -7869,7 +7932,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Ajay_Gupta",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Shutterfly-Pic-Used-in-Billboard_20260928_202611_60047_1.jpeg"
-     }
+     },
+     "website": "https://ajayforilhouse41.com"
     }
    ],
    "writeIn": false,
@@ -7963,7 +8027,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Stephanie_Trussell",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Stephanie-Trussell.PNG"
-     }
+     },
+     "website": "https://www.trussellforillinois.com/"
     }
    ],
    "writeIn": false,
@@ -8002,7 +8067,8 @@
       "facebook": "https://www.facebook.com/profile.php?id=61578976559938",
       "instagram": "https://www.instagram.com/jennylevin_for_il",
       "linkedin": "https://www.linkedin.com/in/jenny-levin-97415532/"
-     }
+     },
+     "website": "https://jennylevin.com/"
     },
     {
      "party": "Republican",
@@ -8011,17 +8077,20 @@
      "money": {
       "source": "ISBE",
       "id": "41026",
-      "raised": 4176,
+      "raised": 6442,
       "spent": 2092,
       "cash": 2084,
-      "through": "09/30/2026"
+      "through": "09/30/2026",
+      "recent": 2266,
+      "recentThrough": "10/01/2026"
      },
      "photo": {
       "file": "kyb-photos/illinois/lori-smith-sldl-51-staterepresentativestdistrict.jpg",
       "credit": "Lori Smith for Illinois (campaign site)",
       "link": "https://www.loriforillinois.com/",
       "from": "https://images.squarespace-cdn.com/content/v1/68c06e70a04ced17d08a95de/ac9dd9e8-0a89-4e52-8e21-fcf5b0c4e4ed/Lori+Smith+Branding+Kit.png"
-     }
+     },
+     "website": "https://www.loriforillinois.com/"
     }
    ],
    "writeIn": false,
@@ -8355,7 +8424,8 @@
      "social": {
       "facebook": "https://www.facebook.com/linda.zamudiopolacek",
       "instagram": "https://www.instagram.com/polacek11/"
-     }
+     },
+     "website": "https://lindaforillinois.com/"
     }
    ],
    "writeIn": false,
@@ -8474,7 +8544,8 @@
       "x": "https://x.com/JulieBerkowicz",
       "instagram": "https://www.instagram.com/julieberkowicz/",
       "linkedin": "https://www.linkedin.com/in/julie-berkowicz-b8076610/"
-     }
+     },
+     "website": "https://www.julieberkowicz.net/"
     }
    ],
    "writeIn": false,
@@ -8514,7 +8585,8 @@
       "instagram": "https://www.instagram.com/karenforil32/",
       "x": "https://x.com/ckaren426",
       "linkedin": "https://www.linkedin.com/in/karen-battaglia-829b6944/"
-     }
+     },
+     "website": "https://karenforil32.com/"
     },
     {
      "party": "Republican",
@@ -8624,7 +8696,8 @@
      },
      "social": {
       "facebook": "https://www.facebook.com/profile.php?id=61578001285997"
-     }
+     },
+     "website": "https://www.doplerforillinois.com/"
     },
     {
      "party": "Republican",
@@ -8818,10 +8891,12 @@
      "money": {
       "source": "ISBE",
       "id": "37358",
-      "raised": 104401,
+      "raised": 107401,
       "spent": 128818,
       "cash": 17201,
-      "through": "09/30/2026"
+      "through": "09/30/2026",
+      "recent": 3000,
+      "recentThrough": "10/05/2026"
      },
      "website": "https://repfritts.com/",
      "photo": {
@@ -9043,10 +9118,12 @@
      "money": {
       "source": "ISBE",
       "id": "34068",
-      "raised": 658225,
+      "raised": 660225,
       "spent": 609241,
       "cash": 69359,
-      "through": "09/30/2026"
+      "through": "09/30/2026",
+      "recent": 2000,
+      "recentThrough": "10/07/2026"
      },
      "social": {
       "facebook": "https://www.facebook.com/SenChesney"
@@ -9508,7 +9585,8 @@
       "credit": "Friends for Veronica (campaign site)",
       "link": "https://veronica4il.com/",
       "from": "https://veronica4il.com/_assets/media/ed46b9def29d6a779cace50aa61b2fbe.jpg"
-     }
+     },
+     "website": "https://veronica4il.com/"
     },
     {
      "party": "Republican",
@@ -10412,7 +10490,8 @@
       "credit": "Citizens for Ben McAdams (campaign site)",
       "link": "https://www.mcadamsforil.com/",
       "from": "https://images.squarespace-cdn.com/content/v1/6918ed1ca252cd1fe0ecccde/f68f07ca-3d3c-4a53-982d-b1f561ba9973/11.13.25_Ben+McAdams+Photoshoot-14-3_FINAL.jpg?format=1000w"
-     }
+     },
+     "website": "https://www.mcadamsforil.com/"
     },
     {
      "party": "Republican",
@@ -10891,10 +10970,12 @@
      "money": {
       "source": "ISBE",
       "id": "22882",
-      "raised": 165975,
+      "raised": 174475,
       "spent": 135161,
       "cash": 116689,
-      "through": "09/30/2026"
+      "through": "09/30/2026",
+      "recent": 8500,
+      "recentThrough": "10/02/2026"
      },
      "social": {
       "facebook": "https://www.facebook.com/RepRitaMayfield",
@@ -10932,10 +11013,12 @@
      "money": {
       "source": "ISBE",
       "id": "31795",
-      "raised": 1188891,
+      "raised": 1296587,
       "spent": 502018,
       "cash": 875350,
-      "through": "09/30/2026"
+      "through": "09/30/2026",
+      "recent": 107696,
+      "recentThrough": "10/01/2026"
      },
      "website": "https://senatorhalpin.com/",
      "photo": {
@@ -11290,17 +11373,20 @@
      "money": {
       "source": "ISBE",
       "id": "40894",
-      "raised": 36925,
+      "raised": 61488,
       "spent": 22013,
       "cash": 14912,
-      "through": "09/30/2026"
+      "through": "09/30/2026",
+      "recent": 24563,
+      "recentThrough": "10/09/2026"
      },
      "photo": {
       "file": "kyb-photos/illinois/jimmy-ford-sldl-112-staterepresentativethdistrict.jpg",
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Jimmy_Ford",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Jimmy_Ford_20260428_044859.jpg"
-     }
+     },
+     "website": "https://www.fordforus.com/"
     }
    ],
    "writeIn": false,
@@ -11414,10 +11500,12 @@
      "money": {
       "source": "ISBE",
       "id": "40895",
-      "raised": 29583,
+      "raised": 45564,
       "spent": 16855,
       "cash": 12728,
-      "through": "09/30/2026"
+      "through": "09/30/2026",
+      "recent": 15981,
+      "recentThrough": "10/09/2026"
      },
      "social": {
       "facebook": "https://www.facebook.com/RobertForIllinois"
@@ -11817,10 +11905,12 @@
      "money": {
       "source": "ISBE",
       "id": "33990",
-      "raised": 39776,
+      "raised": 40776,
       "spent": 55087,
       "cash": 13388,
-      "through": "09/30/2026"
+      "through": "09/30/2026",
+      "recent": 1000,
+      "recentThrough": "10/06/2026"
      },
      "social": {
       "facebook": "https://www.facebook.com/State-Representative-David-Friess-103168288386561"
@@ -11856,10 +11946,12 @@
      "money": {
       "source": "ISBE",
       "id": "32061",
-      "raised": 220956,
+      "raised": 222956,
       "spent": 257163,
       "cash": 52991,
-      "through": "09/30/2026"
+      "through": "09/30/2026",
+      "recent": 2000,
+      "recentThrough": "10/01/2026"
      },
      "website": "https://repseverin.com/",
      "photo": {
@@ -12552,10 +12644,12 @@
      "money": {
       "source": "ISBE",
       "id": "40792",
-      "raised": 74366,
+      "raised": 76866,
       "spent": 38026,
       "cash": 36340,
-      "through": "09/30/2026"
+      "through": "09/30/2026",
+      "recent": 2500,
+      "recentThrough": "10/03/2026"
      },
      "photo": {
       "file": "kyb-photos/illinois/tim-ruestman-sldl-105-staterepresentativethdistrict.jpg",

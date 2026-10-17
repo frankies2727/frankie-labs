@@ -6,13 +6,25 @@
 //   CmteCandidateLinks.txt  candidate -> their committee(s)
 //   FiledDocs.txt           every report, with its period and filing time
 //   D2Totals.txt            the totals on each report (receipts, spending, cash)
+//   Receipts.txt            every itemized contribution (about 1 GB; optional,
+//                           see below)
 //
 // All tab-separated with a header row and CRLF line ends.
+//
+// A quarterly report (D-2) is up to three months old, but a committee must
+// report every contribution of $1,000 or more within five business days
+// (an A-1 report). "Raised" is therefore the quarterly total plus the A-1
+// receipts dated after that quarter ended: the same arithmetic as the
+// Sun-Times voter guide and Illinois Sunshine. The A-1 amounts live only
+// in Receipts.txt; when that file is missing or unreadable the quarterly
+// total stands on its own.
 
-import { createReadStream } from 'node:fs';
+import { createReadStream, existsSync } from 'node:fs';
 import { createInterface } from 'node:readline';
 
 export const ISBE_FILES = ['Candidates', 'CanElections', 'CmteCandidateLinks', 'FiledDocs', 'D2Totals'];
+/** The big itemized file, read when present (the build downloads it fail-soft). */
+export const ISBE_RECEIPTS = 'Receipts';
 export const ISBE_BASE = 'https://www.elections.il.gov/CampaignDisclosureDataFiles/';
 
 // The cycle for Nov 2026 money: everything reported since Jan 1, 2025.
@@ -90,8 +102,12 @@ export async function addStateMoney(races, dir) {
   // 3. Their reports this cycle. An amendment replaces the original for the
   //    same period, so keep the latest filing per committee + period.
   const docs = new Map(); // docId -> { committee, beg, end, rcvd }
+  const a1Docs = new Map(); // docId -> committee, for the A-1 (large contribution) reports
   for await (const r of rows(`${dir}/FiledDocs.txt`)) {
-    if (!wanted.has(r.CommitteeID) || day(r.RptPdEndDate) < CYCLE_START) continue;
+    if (!wanted.has(r.CommitteeID)) continue;
+    // FiledDocType is a numeric code; the report's kind is spelled out in DocName.
+    if (r.DocName === 'A-1') { if (day(r.RcvdDateTime) >= CYCLE_START) a1Docs.set(r.ID, r.CommitteeID); continue; }
+    if (day(r.RptPdEndDate) < CYCLE_START) continue;
     docs.set(r.ID, { committee: r.CommitteeID, beg: day(r.RptPdBegDate), end: day(r.RptPdEndDate), rcvd: r.RcvdDateTime });
   }
   const latestByPeriod = new Map(); // committee|beg|end -> { rcvd, receipts, spent, cash, end }
@@ -110,6 +126,20 @@ export async function addStateMoney(races, dir) {
     m.spent += p.spent;
     if (p.end > m.through) { m.through = p.end; m.cash = p.cash; }
     committeeMoney.set(p.committee, m);
+  }
+  // A-1 receipts dated after the committee's latest quarterly report.
+  let a1Rows = 0;
+  if (existsSync(`${dir}/${ISBE_RECEIPTS}.txt`)) {
+    for await (const r of rows(`${dir}/${ISBE_RECEIPTS}.txt`)) {
+      const committee = a1Docs.get(r.FiledDocID);
+      if (!committee) continue;
+      const m = committeeMoney.get(committee);
+      const on = day(r.RcvDate);
+      if (!m || on <= m.through) continue;
+      m.recent = (m.recent ?? 0) + (+r.Amount || 0);
+      if (!m.recentThrough || on > m.recentThrough) m.recentThrough = on;
+      a1Rows += 1;
+    }
   }
 
   // 4. Match ballot names to people, unambiguously or not at all.
@@ -138,17 +168,18 @@ export async function addStateMoney(races, dir) {
         .filter((x) => x.m)
         .sort((a, b) => b.m.raised - a.m.raised)[0];
       if (!best) continue;
-      const [y, mo, d] = best.m.through.split('-');
+      const us = (iso) => { const [y, mo, d] = iso.split('-'); return `${mo}/${d}/${y}`; };
       c.money = {
         source: 'ISBE',
         id: best.id,
-        raised: Math.round(best.m.raised),
+        raised: Math.round(best.m.raised + (best.m.recent ?? 0)),
         spent: Math.round(best.m.spent),
         cash: Math.round(best.m.cash),
-        through: `${mo}/${d}/${y}`,
+        through: us(best.m.through),
+        ...(best.m.recent ? { recent: Math.round(best.m.recent), recentThrough: us(best.m.recentThrough) } : {}),
       };
       matched += 1;
     }
   }
-  return { matched, total, log };
+  return { matched, total, log, a1Rows };
 }

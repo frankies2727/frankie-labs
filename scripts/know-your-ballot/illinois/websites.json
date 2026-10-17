@@ -1,0 +1,16 @@
+{
+  "_about": "Campaign sites for candidates whose State Board filing lists none, each read from a published voter guide's candidate page and checked to name the candidate. Keyed by race id | ballot name. Only fills a blank; a site from the filing always wins.",
+  "president-of-the-chicago-board-of-education|Victor P. Henderson": { "website": "https://www.vicforthekids.org/", "source": "Chicago Sun-Times 2026 school board voter guide" },
+  "member-of-the-chicago-board-of-education-subdistrict-2a|Hector Morales": { "website": "https://hectorforcpsboard2a.org/", "source": "Chicago Sun-Times 2026 school board voter guide" },
+  "member-of-the-chicago-board-of-education-subdistrict-3a|Norma Rios Sierra": { "website": "https://www.normaforchicago.org/", "source": "Chicago Sun-Times 2026 school board voter guide" },
+  "member-of-the-chicago-board-of-education-subdistrict-3b|Carlos A. Rivas Jr.": { "website": "https://www.electcarlosrivas.com/", "source": "Chicago Sun-Times 2026 school board voter guide" },
+  "member-of-the-chicago-board-of-education-subdistrict-5a|Aaron \"Jitu\" Brown": { "website": "https://www.aaronjitubrown4cps.org/", "source": "Chicago Sun-Times 2026 school board voter guide" },
+  "member-of-the-chicago-board-of-education-subdistrict-5b|Michilla \"Kyla\" Blaise": { "website": "https://www.blaiseforschoolboard.com/", "source": "Chicago Sun-Times 2026 school board voter guide" },
+  "member-of-the-chicago-board-of-education-subdistrict-5b|Anthony Hargrove": { "website": "http://www.hargroveforcps.com/", "source": "Chicago Sun-Times 2026 school board voter guide" },
+  "member-of-the-chicago-board-of-education-subdistrict-6b|Michael L. Neal": { "website": "https://www.friendsofmichaelneal.com/", "source": "Chicago Sun-Times 2026 school board voter guide" },
+  "member-of-the-chicago-board-of-education-subdistrict-7a|Jesus Ayala Jr.": { "website": "https://www.ayalajrforstudents.com/", "source": "Chicago Sun-Times 2026 school board voter guide" },
+  "member-of-the-chicago-board-of-education-subdistrict-7b|Erika E. Diaz-Chavez": { "website": "https://www.erikadiazchavezforchicago.com/", "source": "Chicago Sun-Times 2026 school board voter guide" },
+  "member-of-the-chicago-board-of-education-subdistrict-8a|Angel Gutierrez": { "facebook": "https://www.facebook.com/AngelforCPS", "source": "Chicago Sun-Times 2026 school board voter guide (campaign page is on Facebook)" },
+  "member-of-the-chicago-board-of-education-subdistrict-8b|Juan Ignacio Gonzalez": { "facebook": "https://www.facebook.com/profile.php?id=61565227181459", "source": "Chicago Sun-Times 2026 school board voter guide (campaign page is on Facebook)" },
+  "metropolitan-water-reclamation-district-commissioners-full-6-year-term|Eira Lizeth Corral Sepúlveda": { "website": "https://www.eira4water.com/", "source": "WTTW 2026 voter guide" }
+}

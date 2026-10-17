@@ -31,7 +31,7 @@ import { addSocial } from './illinois/social.mjs';
 import { addPhotos } from './illinois/photos.mjs';
 import { parseCandidateList } from './illinois/candidates.mjs';
 import { parseWeball, addFederalMoney } from './illinois/fec.mjs';
-import { ISBE_BASE, ISBE_FILES, addStateMoney } from './illinois/isbe.mjs';
+import { ISBE_BASE, ISBE_FILES, ISBE_RECEIPTS, addStateMoney } from './illinois/isbe.mjs';
 import { addStateList, fetchCertifiedList } from './illinois/statewide.mjs';
 import { buildDistricts, buildStateDistricts, placesIn, touchesCook } from './illinois/districts.mjs';
 import { addProfiles } from './ballotpedia-profiles.mjs';
@@ -141,6 +141,27 @@ async function main() {
   const merged = addStateList(certified.text, ballot.races, districts.layers, touchesCook);
   ballot.races = merged.races;
   console.log(`State list: +${merged.added} contests (suburban Cook and the rest of Illinois), ${merged.withSite} candidate websites`);
+  // The State Board's files are served from inconsistent snapshots (see
+  // money-forward.mjs): a day's list can lack sites yesterday's had. A site
+  // seen before stays until the filing lists a different one.
+  const prevSite = new Map((prev?.races ?? []).flatMap((r) => r.candidates.filter((c) => c.website).map((c) => [`${r.id}|${c.name}`, c.website])));
+  let kept = 0;
+  for (const r of ballot.races) for (const c of r.candidates) {
+    if (!c.website && prevSite.has(`${r.id}|${c.name}`)) { c.website = prevSite.get(`${r.id}|${c.name}`); kept += 1; }
+  }
+  console.log(`Known sites: ${kept} kept from yesterday (missing from today's State Board files)`);
+  // Candidates whose filing lists no site (the school board files with the
+  // city, not the State Board): sites read from published voter guides and
+  // checked by hand, in websites.json. Only fills a blank.
+  const known = JSON.parse(readFileSync(new URL('./illinois/websites.json', import.meta.url), 'utf8'));
+  let filled = 0;
+  for (const r of ballot.races) for (const c of r.candidates) {
+    const k = known[`${r.id}|${c.name}`];
+    if (!k) continue;
+    if (k.website && !c.website) { c.website = k.website; filled += 1; }
+    if (k.facebook && !c.social?.facebook) { c.social = { ...c.social, facebook: k.facebook }; filled += 1; }
+  }
+  console.log(`Known sites: ${filled} filled in from websites.json`);
   const stateDistricts = await buildStateDistricts();
 
   await download(FEC_WEBALL, join(work, 'weball.zip'));
@@ -149,8 +170,11 @@ async function main() {
   console.log(`FEC: matched ${money.matched}/${money.total} federal candidates`);
 
   for (const f of ISBE_FILES) await download(`${ISBE_BASE}${f}.txt`, join(work, `${f}.txt`));
+  // The itemized receipts (about 1 GB) carry the contributions reported since
+  // the last quarterly report; a day without them just shows the quarterly totals.
+  try { await download(`${ISBE_BASE}${ISBE_RECEIPTS}.txt`, join(work, `${ISBE_RECEIPTS}.txt`)); } catch (e) { console.warn(`ISBE receipts: ${e.message}; raised = quarterly totals only today`); }
   const state = await addStateMoney(ballot.races, work);
-  console.log(`Illinois: matched ${state.matched}/${state.total} state & local candidates`);
+  console.log(`Illinois: matched ${state.matched}/${state.total} state & local candidates; ${state.a1Rows} contributions reported since their last quarterly report`);
   for (const line of state.log) console.log('  ' + line);
   console.log(`Money: ${keepMoneyForward(ballot.races, prev)} candidates kept yesterday's later figures (the Board's files served an older snapshot)`);
   // Campaign sites behind a bot check are read in the browser, like the Board's pages.
@@ -161,6 +185,13 @@ async function main() {
   const photos = await addPhotos(ballot.races, { dir: PHOTOS_DIR, publicPath: 'kyb-photos/illinois', prev });
   console.log(`Photos: ${photos.withPhoto}/${photos.total} candidates`);
   for (const line of photos.log) console.log('  ' + line);
+  // A hand-picked photo credited "(campaign site)" came off the candidate's
+  // own site, so that site stands in when the filing listed none.
+  let fromPhotos = 0;
+  for (const r of ballot.races) for (const c of r.candidates) {
+    if (!c.website && c.photo?.link && /\(campaign site\)$/.test(c.photo.credit || '')) { c.website = new URL(c.photo.link).origin + '/'; fromPhotos += 1; }
+  }
+  console.log(`Known sites: ${fromPhotos} more from hand-picked photos' campaign sites`);
   // Whoever is still without a photo, accounts or a site: their Ballotpedia
   // profile, then the headshot on their own campaign site.
   const profiles = await addProfiles(ballot.races, { dir: PHOTOS_DIR, publicPath: 'kyb-photos/illinois', prev, state: 'Illinois', fill: 'missing' });

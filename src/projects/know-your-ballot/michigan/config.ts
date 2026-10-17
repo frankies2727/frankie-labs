@@ -70,7 +70,7 @@ function researchLinks(c: Candidate, race: Race): ResearchLink[] {
   const links: ResearchLink[] = [];
   if (c.profile) links.push({ label: 'Ballotpedia profile', href: c.profile, note: 'Bio, experience, survey answers and campaign site' });
   if (c.website) links.push({ label: 'Their campaign site', href: c.website, note: 'Their own words on the issues' });
-  else links.push({ label: 'Find their campaign site', href: `https://duckduckgo.com/?q=${q(`${who} ${race.office.replace(/ \(\d+ seats\)$/, '')} Michigan 2026 campaign`)}`, note: 'Their own words on the issues' });
+  else links.push({ label: 'Search the web for their campaign', href: `https://duckduckgo.com/?q=${q(`${who} ${race.office.replace(/ \(\d+ seats\)$/, '')} Michigan 2026 campaign`)}`, note: 'They listed no site in their filing, so this opens a web search, not their site' });
   if (c.money?.source === 'FEC') links.push({ label: 'FEC filings', href: `https://www.fec.gov/data/candidate/${c.money.id}/`, note: 'Every donor and expense, officially' });
   else if (race.section !== 'federal') links.push({ label: 'Michigan campaign finance', href: LINKS.disclosure, note: 'Search the state’s disclosure database for their committee' });
   return links;

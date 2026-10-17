@@ -13,7 +13,7 @@ export function researchLinks(c: Candidate, race: Race): ResearchLink[] {
   const links: ResearchLink[] = [
     c.website
       ? { label: 'Their campaign site', href: c.website, note: 'Their own words: from their state filing or official homepage' }
-      : { label: 'Find their campaign site', href: `https://duckduckgo.com/?q=${q(`${who} ${race.office} Illinois 2026 campaign`)}`, note: 'Their own words on the issues' },
+      : { label: 'Search the web for their campaign', href: `https://duckduckgo.com/?q=${q(`${who} ${race.office} Illinois 2026 campaign`)}`, note: 'They listed no site in their filing, so this opens a web search, not their site' },
     { label: 'Ballotpedia', href: `https://ballotpedia.org/wiki/index.php?search=${q(who)}`, note: 'Bio, experience and survey answers' },
   ];
   if (c.money?.source === 'FEC') {
