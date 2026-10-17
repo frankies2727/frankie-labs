@@ -141,6 +141,15 @@ async function main() {
   const merged = addStateList(certified.text, ballot.races, districts.layers, touchesCook);
   ballot.races = merged.races;
   console.log(`State list: +${merged.added} contests (suburban Cook and the rest of Illinois), ${merged.withSite} candidate websites`);
+  // The State Board's files are served from inconsistent snapshots (see
+  // money-forward.mjs): a day's list can lack sites yesterday's had. A site
+  // seen before stays until the filing lists a different one.
+  const prevSite = new Map((prev?.races ?? []).flatMap((r) => r.candidates.filter((c) => c.website).map((c) => [`${r.id}|${c.name}`, c.website])));
+  let kept = 0;
+  for (const r of ballot.races) for (const c of r.candidates) {
+    if (!c.website && prevSite.has(`${r.id}|${c.name}`)) { c.website = prevSite.get(`${r.id}|${c.name}`); kept += 1; }
+  }
+  console.log(`Known sites: ${kept} kept from yesterday (missing from today's State Board files)`);
   // Candidates whose filing lists no site (the school board files with the
   // city, not the State Board): sites read from published voter guides and
   // checked by hand, in websites.json. Only fills a blank.

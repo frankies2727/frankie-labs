@@ -215,7 +215,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Bob_Fioretti",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Bob_Fioretti.jpg"
-     }
+     },
+     "website": "https://www.bobforillinois.com/"
     },
     {
      "ballot": 8,
@@ -625,7 +626,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Lupe_Castillo",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Lupe_Castillo_20240826_050308.jpg"
-     }
+     },
+     "website": "https://castillolupe.com/"
     },
     {
      "ballot": 22,
@@ -1998,7 +2000,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Justin_Kumar",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Justin_Kumar.jpeg"
-     }
+     },
+     "website": "https://kumarforil12.com/"
     },
     {
      "ballot": 42,
@@ -2055,7 +2058,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Terry_Nguyen_Le",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Terry_Le_20240620_012625.jpg"
-     }
+     },
+     "website": "https://www.terryleforillinois.com/"
     },
     {
      "ballot": 42,
@@ -2365,7 +2369,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Eric_Su",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/EricSu26.jpg"
-     }
+     },
+     "website": "https://teamericsu.com"
     },
     {
      "ballot": 42,
@@ -3173,7 +3178,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Michelle_Pennington",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Michelle_Pennington_20240808_094329.jpg"
-     }
+     },
+     "website": "https://www.michelleforcleanwater.com/"
     },
     {
      "ballot": 52,
@@ -3184,7 +3190,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Timothy_Rueckert",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Timothy_Rueckert_2026-09-02_234545.jpg"
-     }
+     },
+     "website": "https://Tim4MWRD.com"
     },
     {
      "ballot": 53,
@@ -3436,7 +3443,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Brad_Sandefur",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Brad_Sandefur.jpg"
-     }
+     },
+     "website": "https://sandefurforsheriff.org/"
     }
    ],
    "writeIn": false
@@ -3510,7 +3518,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Nico_Tsatsoulis",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Nico_Tsatsoulis.jpg"
-     }
+     },
+     "website": "https://web.archive.org/web/20261006215639/https://nicotheassessor.com/issues"
     }
    ],
    "writeIn": false
@@ -3951,7 +3960,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Xiaoli_Hu",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Xiaoli_Hu.png"
-     }
+     },
+     "website": "https://www.votealicehu.com/"
     },
     {
      "ballot": 72,
@@ -3970,7 +3980,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Elizabeth_Granato",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Elizabeth_Granato.png"
-     }
+     },
+     "website": "https://www.elizabethforcookcounty.com/"
     }
    ],
    "writeIn": false
@@ -3994,7 +4005,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Aasi_Siddique",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Aasi_Siddique2026Screenshot-20260930-152356-Photos_20261003_175125_35838_1_2026-10-15_001623.jpg"
-     }
+     },
+     "website": "https://www.citizensforaasisiddique.com/"
     },
     {
      "ballot": 72,
@@ -4124,7 +4136,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Elizabeth_Nicholson",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Elizabeth_Nicholson_20260308_051745.jpeg"
-     }
+     },
+     "website": "https://www.lizfor2.com"
     }
    ],
    "writeIn": false
@@ -5286,7 +5299,8 @@
       "PRBA": "Recommended",
       "WBAI": "Recommended"
      },
-     "barSource": "https://www.voteforjudges.org/#1790665075386-9ab376a6-4084:~:text=Jon%20Stromsta"
+     "barSource": "https://www.voteforjudges.org/#1790665075386-9ab376a6-4084:~:text=Jon%20Stromsta",
+     "website": "https://www.jon4judge.com/"
     }
    ],
    "writeIn": false
@@ -5613,7 +5627,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Kyna_Lenhof",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Kyna-Lenhof_20261001_002552_61784_1.jpg"
-     }
+     },
+     "website": "https://kynaforthekids.org"
     },
     {
      "ballot": 133,
@@ -5831,7 +5846,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Angel_Alvarez",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Angel-Alvarez-headshot-under2mb_20261002_213646_63104_1.jpg"
-     }
+     },
+     "website": "https://angelforcps.org"
     }
    ],
    "writeIn": false
@@ -6107,7 +6123,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Brittany_B._Kimble",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Brittany-Kimble-Headshot-Web_20260711_011709_45170_1.jpeg"
-     }
+     },
+     "website": "https://buildwithbrittanychicago.com"
     }
    ],
    "writeIn": false
@@ -6509,7 +6526,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Rhys_Read",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Read-HEADSHOT_20260831_125719_33379_1.jpg"
-     }
+     },
+     "website": "https://readforil56.com/"
     }
    ],
    "writeIn": false,
@@ -6785,7 +6803,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Kate_McGrath",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Kate_McGrath_20260204_034929.jpg"
-     }
+     },
+     "website": "https://www.kateforstatesenate.com/"
     }
    ],
    "writeIn": false,
@@ -6818,7 +6837,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Sarah_Mertens",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/59c03b4e-a6c4-468a-b491-831491f12862_20260805_162112_49665_1.jpg"
-     }
+     },
+     "website": "https://www.citizensforsarahmertens.com/"
     },
     {
      "party": "Republican",
@@ -7204,7 +7224,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Adam_Beaty",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/AdamBeaty2024.JPG"
-     }
+     },
+     "website": "https://www.BeatyforIllinois.com"
     }
    ],
    "writeIn": false,
@@ -7500,7 +7521,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Ralph_Black",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Ralph_Black_20260516_174821_1.jpg"
-     }
+     },
+     "website": "https://RalphforIllinois.com"
     }
    ],
    "writeIn": false,
@@ -7803,7 +7825,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Tracy_Katz_Muhl",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/TracyKatzMuhl.png"
-     }
+     },
+     "website": "https://tracyforrep.com"
     },
     {
      "party": "Republican",
@@ -7889,7 +7912,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Ajay_Gupta",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Shutterfly-Pic-Used-in-Billboard_20260928_202611_60047_1.jpeg"
-     }
+     },
+     "website": "https://ajayforilhouse41.com"
     }
    ],
    "writeIn": false,
@@ -7983,7 +8007,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Stephanie_Trussell",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Stephanie-Trussell.PNG"
-     }
+     },
+     "website": "https://www.trussellforillinois.com/"
     }
    ],
    "writeIn": false,
@@ -11328,7 +11353,8 @@
       "credit": "Ballotpedia",
       "link": "https://ballotpedia.org/Jimmy_Ford",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Jimmy_Ford_20260428_044859.jpg"
-     }
+     },
+     "website": "https://www.fordforus.com/"
     }
    ],
    "writeIn": false,
