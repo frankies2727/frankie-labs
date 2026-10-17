@@ -141,6 +141,18 @@ async function main() {
   const merged = addStateList(certified.text, ballot.races, districts.layers, touchesCook);
   ballot.races = merged.races;
   console.log(`State list: +${merged.added} contests (suburban Cook and the rest of Illinois), ${merged.withSite} candidate websites`);
+  // Candidates whose filing lists no site (the school board files with the
+  // city, not the State Board): sites read from published voter guides and
+  // checked by hand, in websites.json. Only fills a blank.
+  const known = JSON.parse(readFileSync(new URL('./illinois/websites.json', import.meta.url), 'utf8'));
+  let filled = 0;
+  for (const r of ballot.races) for (const c of r.candidates) {
+    const k = known[`${r.id}|${c.name}`];
+    if (!k) continue;
+    if (k.website && !c.website) { c.website = k.website; filled += 1; }
+    if (k.facebook && !c.social?.facebook) { c.social = { ...c.social, facebook: k.facebook }; filled += 1; }
+  }
+  console.log(`Known sites: ${filled} filled in from websites.json`);
   const stateDistricts = await buildStateDistricts();
 
   await download(FEC_WEBALL, join(work, 'weball.zip'));
@@ -161,6 +173,13 @@ async function main() {
   const photos = await addPhotos(ballot.races, { dir: PHOTOS_DIR, publicPath: 'kyb-photos/illinois', prev });
   console.log(`Photos: ${photos.withPhoto}/${photos.total} candidates`);
   for (const line of photos.log) console.log('  ' + line);
+  // A hand-picked photo credited "(campaign site)" came off the candidate's
+  // own site, so that site stands in when the filing listed none.
+  let fromPhotos = 0;
+  for (const r of ballot.races) for (const c of r.candidates) {
+    if (!c.website && c.photo?.link && /\(campaign site\)$/.test(c.photo.credit || '')) { c.website = new URL(c.photo.link).origin + '/'; fromPhotos += 1; }
+  }
+  console.log(`Known sites: ${fromPhotos} more from hand-picked photos' campaign sites`);
   // Whoever is still without a photo, accounts or a site: their Ballotpedia
   // profile, then the headshot on their own campaign site.
   const profiles = await addProfiles(ballot.races, { dir: PHOTOS_DIR, publicPath: 'kyb-photos/illinois', prev, state: 'Illinois', fill: 'missing' });
