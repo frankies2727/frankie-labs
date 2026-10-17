@@ -58,6 +58,8 @@ jobs:
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "Know Your Ballot Illinois: refresh data [skip ci]"
+            # main may have moved during the build (a merge landed); replay the data commit on top.
+            git pull --rebase origin main
             git push
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
