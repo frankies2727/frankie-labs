@@ -1,5 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "build": { "env": { "VITE_KYB_SITE": "1" } },
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/illinois", "destination": "/illinois/index.html" },
+    { "source": "/illinois/(.*)", "destination": "/illinois/index.html" },
+    { "source": "/michigan", "destination": "/michigan/index.html" },
+    { "source": "/michigan/(.*)", "destination": "/michigan/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }

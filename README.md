@@ -248,7 +248,10 @@ repository with Vercel's default Vite settings and no extra configuration: `verc
 for the build and sends every path to the app. That flag makes the build serve from `/` instead of
 `/frankie-labs/` (`vite.config.ts`) and gives each guide its short address (`src/lib/router.ts`: `/illinois` is the
 landing page, `/illinois/ballot` the ballot). Share cards, resume links and the link between the two guides use
-those addresses (`src/projects/know-your-ballot/hosts.ts`). The code stays here; every push to `main`, including
+those addresses (`src/projects/know-your-ballot/hosts.ts`). A shared link previews as "Govbot Know Your Ballot" /
+"Know Your Illinois Ballot" / "Know Your Michigan Ballot" with a picture: `vite.config.ts` (`kybSiteMeta`) writes the title,
+description and Open Graph tags into the root page and a per-state copy of the app shell (`illinois/index.html`,
+`michigan/index.html`, which the rewrites serve for those paths); the pictures are `public/kyb-og/*.png`. The code stays here; every push to `main`, including
 the daily data refreshes, redeploys it. GitHub Pages keeps serving the whole lab as before.
 
 ### 🧩 How it works
