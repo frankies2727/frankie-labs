@@ -31,7 +31,7 @@ import { addSocial } from './illinois/social.mjs';
 import { addPhotos } from './illinois/photos.mjs';
 import { parseCandidateList } from './illinois/candidates.mjs';
 import { parseWeball, addFederalMoney } from './illinois/fec.mjs';
-import { ISBE_BASE, ISBE_FILES, addStateMoney } from './illinois/isbe.mjs';
+import { ISBE_BASE, ISBE_FILES, ISBE_RECEIPTS, addStateMoney } from './illinois/isbe.mjs';
 import { addStateList, fetchCertifiedList } from './illinois/statewide.mjs';
 import { buildDistricts, buildStateDistricts, placesIn, touchesCook } from './illinois/districts.mjs';
 import { addProfiles } from './ballotpedia-profiles.mjs';
@@ -170,8 +170,11 @@ async function main() {
   console.log(`FEC: matched ${money.matched}/${money.total} federal candidates`);
 
   for (const f of ISBE_FILES) await download(`${ISBE_BASE}${f}.txt`, join(work, `${f}.txt`));
+  // The itemized receipts (about 1 GB) carry the contributions reported since
+  // the last quarterly report; a day without them just shows the quarterly totals.
+  try { await download(`${ISBE_BASE}${ISBE_RECEIPTS}.txt`, join(work, `${ISBE_RECEIPTS}.txt`)); } catch (e) { console.warn(`ISBE receipts: ${e.message}; raised = quarterly totals only today`); }
   const state = await addStateMoney(ballot.races, work);
-  console.log(`Illinois: matched ${state.matched}/${state.total} state & local candidates`);
+  console.log(`Illinois: matched ${state.matched}/${state.total} state & local candidates; ${state.a1Rows} contributions reported since their last quarterly report`);
   for (const line of state.log) console.log('  ' + line);
   console.log(`Money: ${keepMoneyForward(ballot.races, prev)} candidates kept yesterday's later figures (the Board's files served an older snapshot)`);
   // Campaign sites behind a bot check are read in the browser, like the Board's pages.

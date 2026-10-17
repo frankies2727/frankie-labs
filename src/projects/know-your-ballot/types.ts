@@ -18,6 +18,9 @@ export interface Money {
   cash?: number;
   /** MM/DD/YYYY, end of the latest report. */
   through: string;
+  /** Illinois: large contributions ($1,000+) reported since that report, already counted in `raised`, and the date of the latest. */
+  recent?: number;
+  recentThrough?: string;
 }
 
 export interface Candidate {

@@ -101,7 +101,7 @@ function MoneyBars({ c, max }: { c: Candidate; max: number }) {
           </div>
         </div>
       ))}
-      <p className="text-xs text-[var(--gb-text)]">{moneySource(c.money.source)} reports, Jan 2025 through {c.money.through}.{c.money.cash === undefined ? '' : ' Cash is what’s left on hand.'}</p>
+      <p className="text-xs text-[var(--gb-text)]">{moneySource(c.money.source)} reports, Jan 2025 through {c.money.through}{c.money.recent ? `, plus ${money(c.money.recent)} in large contributions reported since (through ${c.money.recentThrough})` : ''}.{c.money.cash === undefined ? '' : ' Cash is what’s left on hand.'}</p>
     </div>
   );
 }
