@@ -1,4 +1,5 @@
 import { CalendarPlus, Check, ExternalLink } from 'lucide-react';
+import { useOpen } from './store';
 import type { ReactNode } from 'react';
 import { dayLabel, downloadReminder, NOV_3 } from './dates';
 import type { EarlyVotingSite } from './types';
@@ -12,6 +13,8 @@ import type { EarlyVotingSite } from './types';
 const CBOE = 'https://chicagoelections.gov/voting';
 export const LINKS = {
   myInfo: `${CBOE}/your-voter-information`,
+  // The State Board's "Am I registered?" lookup also gives the polling place.
+  pollingPlace: 'https://ova.elections.il.gov/RegistrationLookup.aspx',
   registerOnline: 'https://ova.elections.il.gov/',
   mail: `${CBOE}/vote-mail`,
   dropBoxes: `${CBOE}/drop-boxes`,
@@ -89,7 +92,18 @@ export function PlanToVote({ plan, setPlan, chicago, clerk, clerkName, ward, war
         <p><strong className="text-[var(--gb-amber-hi)]">Not registered or moved?</strong> Register online through <strong>Sun, Oct 18</strong> at <Out href={LINKS.registerOnline}>ova.elections.il.gov</Out>. After that, register in person when you vote early or on Election Day. Bring two IDs, one showing your current address{chicago ? <> (<Out href={LINKS.id}>which IDs count</Out>)</> : null}.</p>
       </Step>
 
-      <Step n={2} done={!!method} title="Pick how you’ll vote">
+      <Step n={2} done={!!plan.id} title="Know whether you’ll need ID" onToggle={() => setPlan('id', !plan.id)}>
+        <p><strong>Already registered at your current address?</strong> Illinois has no voter ID requirement: you sign in, and your signature is matched to your registration. Nobody can ask you for a photo ID to hand you a ballot.</p>
+        <p><strong>You’ll be asked for ID in two cases:</strong></p>
+        <ul className="list-disc pl-5 space-y-1">
+          <li><strong>Registering or changing your address while you vote</strong> (grace-period registration, through Election Day): two forms of ID, at least one showing your current address.</li>
+          <li><strong>First time voting after registering by mail</strong> without the ID check: one ID, or a current document with your name and address.</li>
+        </ul>
+        <p><strong>What counts:</strong> an Illinois driver’s license or state ID, a U.S. passport, a student or work ID, or a current utility bill, bank statement, paycheck, government check, lease or other government document with your name on it (one needs your address). {chicago ? <Out href={LINKS.id}>The Board’s full list</Out> : <Out href="https://www.elections.il.gov/">State Board of Elections</Out>}.</p>
+        <p>Asked for ID when you shouldn’t be, or told you’re not on the rolls? Ask for a <strong>provisional ballot</strong>: it’s your right, and it’s counted once your registration is confirmed.</p>
+      </Step>
+
+      <Step n={3} done={!!method} title="Pick how you’ll vote">
         <div className="grid grid-cols-3 gap-2" role="radiogroup" aria-label="How you'll vote">
           {METHODS.map((m) => (
             <button
@@ -116,7 +130,7 @@ export function PlanToVote({ plan, setPlan, chicago, clerk, clerkName, ward, war
         )}
         {method === 'day' && !chicago && (
           <div className="space-y-2">
-            <p><strong>Tue, Nov 3, 6am–7pm</strong> at your polling place. <Out href={LINKS.stateLookup}>Look it up</Out></p>
+            <p><strong>Tue, Nov 3, 6am–7pm</strong> at your assigned polling place. <Out href={LINKS.pollingPlace}>Find your polling place</Out> (the State Board’s lookup shows it with your registration), or ask <Out href={clerk}>{clerkName}</Out>.</p>
             <p>In line by 7pm? You get to vote.</p>
           </div>
         )}
@@ -139,12 +153,12 @@ export function PlanToVote({ plan, setPlan, chicago, clerk, clerkName, ward, war
         {method === 'day' && chicago && (
           <div className="space-y-2">
             <p><strong>Tue, Nov 3, 6am–7pm.</strong> Vote at your assigned precinct polling place, or at any of 51 vote centers (the 50 ward sites plus 137 S. State St.).</p>
-            <p>In line by 7pm? You get to vote. <Out href={LINKS.electionDay}>Election Day info</Out></p>
+            <p><Out href={LINKS.myInfo}>Find your polling place</Out>: the Board’s “Your Voter Information” lookup shows it with your registration and official sample ballot. In line by 7pm? You get to vote. <Out href={LINKS.electionDay}>Election Day info</Out></p>
           </div>
         )}
       </Step>
 
-      <Step n={3} done={!!plan.reminder} title="Put it on your calendar">
+      <Step n={4} done={!!plan.reminder} title="Put it on your calendar">
         <button
           type="button"
           disabled={!method || method === 'mail'}
@@ -158,10 +172,50 @@ export function PlanToVote({ plan, setPlan, chicago, clerk, clerkName, ward, war
         {!method && <p>Pick how you’ll vote first.</p>}
       </Step>
 
-      <Step n={4} done={ballotDone} title="Bring your notes">
+      <Step n={5} done={ballotDone} title="Bring your notes">
         <p>Finish <strong>My Ballot</strong> and bring it along: Illinois voters have the right to use sample ballots, endorsements or notes while voting.</p>
         <p>{ballotDone ? '✅ Your ballot is ready.' : 'Your ballot isn’t finished yet; it checks itself off when it is.'}</p>
       </Step>
     </ol>
+  );
+}
+
+// Nonpartisan guides that go where this one stops: candidates' answers in
+// their own words, judges' evaluations, and the official lookups.
+const GUIDES: { name: string; href: string; what: string; only?: 'chicago' }[] = [
+  { name: 'Vote411 (League of Women Voters)', href: 'https://www.vote411.org/ballot', what: 'Every candidate asked the same questions; their answers, by your address.' },
+  { name: 'Ballotpedia sample ballot', href: 'https://ballotpedia.org/Sample_Ballot_Lookup', what: 'Bios, past elections and candidate surveys for each race on your ballot.' },
+  { name: 'Injustice Watch judicial guide', href: 'https://2026retention.injusticewatch.org/', what: 'Reporters’ profiles of every Cook County judge on the ballot.', only: 'chicago' },
+  { name: 'Vote for Judges (bar associations)', href: 'https://www.voteforjudges.org/', what: 'The bar groups’ “qualified / not qualified” ratings of judicial candidates.', only: 'chicago' },
+  { name: 'Illinois State Board of Elections', href: 'https://www.elections.il.gov/', what: 'Registration, your polling place, and every certified candidate.' },
+  { name: 'Chicago Board of Elections', href: LINKS.myInfo, what: 'Your registration, polling place and official sample ballot.', only: 'chicago' },
+];
+
+/** Where to read more than this guide carries, opened by default once. */
+export function MoreGuides({ chicago }: { chicago: boolean }) {
+  const [open, toggle] = useOpen('kyb-il-guides-open', true);
+  const list = GUIDES.filter((g) => !g.only || (g.only === 'chicago' && chicago));
+  return (
+    <section aria-labelledby="kyb-guides" className="rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] p-5">
+      <button type="button" onClick={toggle} aria-expanded={open} className="flex w-full items-center justify-between gap-3 text-left">
+        <h3 id="kyb-guides" className="text-lg font-black leading-tight text-[var(--gb-text)]">📚 Other trusted, nonpartisan guides</h3>
+        <span className="text-sm font-bold text-[var(--gb-text)]">{open ? 'Hide' : 'Show'}</span>
+      </button>
+      {open && (
+        <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-[var(--gb-text)]">
+          <p>This guide has the structure, the facts and the money. For candidates’ positions in their own words, pair it with these.</p>
+          <ul className="grid gap-2 sm:grid-cols-2">
+            {list.map((g) => (
+              <li key={g.name}>
+                <a href={g.href} target="_blank" rel="noreferrer noopener" className="flex h-full items-start justify-between gap-3 rounded-xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] p-3 hover:border-[var(--gb-text)]">
+                  <span><span className="block font-bold">{g.name}</span><span className="block text-sm">{g.what}</span></span>
+                  <ExternalLink className="w-4 h-4 shrink-0 mt-1" aria-hidden="true" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </section>
   );
 }

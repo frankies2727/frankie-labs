@@ -1,7 +1,7 @@
 import { ChevronDown, Crosshair, ListChecks, Loader2, MapPin, Printer, Search, Share2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import rawData from './data/illinois/ballot.json';
-import { ballotFor, ballotIdsFor, districtsAt, geocode, inChicago, inCook, inIllinois, prefetchDistricts } from './lookup';
+import { ballotFor, ballotForCounty, ballotIdsFor, districtsAt, geocode, inChicago, inCook, inIllinois, prefetchDistricts } from './lookup';
 import { RETENTION_EXPLAINER } from './offices';
 import { BallotSearch, type Hit } from './Search';
 import { GovbotChrome } from './GovbotChrome';
@@ -18,7 +18,7 @@ import './ballot.css';
 import { ClearButton } from '../../components/ClearButton';
 import { KeyDates, NextElectionNote } from './Calendar';
 import { Laws } from './Laws';
-import { LINKS, PlanToVote } from './PlanToVote';
+import { LINKS, MoreGuides, PlanToVote } from './PlanToVote';
 import { areaLabel, CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard, SCOPE } from './Race';
 import { billItems, changeItems, dateItems, Feed, newsItems } from './Feed';
 import { billUrl } from './Feed';
@@ -41,6 +41,9 @@ const ELECTION_AUTHORITIES = 'https://www.elections.il.gov/ElectionOperations/El
 // guide takes over govbot's elections.html, point this at the old page's new
 // name (elections-classic.html).
 const GOVBOT_ALL_RACES = 'https://chihacknight.github.io/govbot/dashboard/elections.html';
+// Illinois' 102 counties, from govbot's district maps; Cook first, the rest A–Z.
+const COUNTIES = data.counties ? ['Cook', ...Object.keys(data.counties).filter((c) => c !== 'Cook')] : [];
+const COUNTY_KEY = 'kyb-il-county';
 
 // Ballot order. Section colours are govbot's accents (ballot.css, govbot.css);
 // each reads with the page background as its ink in both themes. Party never
@@ -125,6 +128,9 @@ export function KnowYourBallot() {
   // One ballot section on screen at a time; the contents list switches them.
   const [chosenSection, setChosenSection] = useState<string | null>(null);
   const [contentsOpen, setContentsOpen] = useState(false);
+  // Which print view the next print shows: the voter's picks, or a full sample ballot.
+  const [printMode, setPrintMode] = useState<'picks' | 'sample'>('picks');
+  const printAs = (mode: 'picks' | 'sample') => { setPrintMode(mode); setTimeout(() => window.print(), 50); };
   const closeContents = useCallback(() => setContentsOpen(false), []);
   // The pinned bar's height, as --kyb-bar, for what has to sit below it.
   const barObserver = useRef<ResizeObserver | null>(null);
@@ -152,20 +158,26 @@ export function KnowYourBallot() {
   }, [setSaved]);
 
   const districts = saved.place?.districts ?? null;
+  // With no address, any Illinois county can be browsed: Cook shows every
+  // contest; another county shows the statewide races plus the districts
+  // that reach into it. Remembered on this device.
+  const [county, setCountyState] = useState(() => { try { return localStorage.getItem(COUNTY_KEY) || 'Cook'; } catch { return 'Cook'; } });
+  const setCounty = (c: string) => { setCountyState(c); try { localStorage.setItem(COUNTY_KEY, c); } catch { /* private mode */ } };
+  const browsingCounty = !districts && county !== 'Cook' ? county : null;
   // Ballot numbers come from the Chicago Board's list and only match Chicago
   // ballots; suburban ballots number candidates differently.
-  const chicago = districts ? inChicago(districts) : true;
+  const chicago = districts ? inChicago(districts) : !browsingCounty;
   // Outside Cook we carry only statewide, congressional and legislative races.
-  const cook = districts ? inCook(districts) : true;
+  const cook = districts ? inCook(districts) : !browsingCounty;
   const clerk = cook ? COOK_CLERK : ELECTION_AUTHORITIES;
-  const region = chicago ? 'Chicago' : cook ? 'Cook County' : 'Illinois';
+  const region = browsingCounty ? `${browsingCounty} County` : chicago ? 'Chicago' : cook ? 'Cook County' : 'Illinois';
   // The details view has its own URL; with saved progress the first open goes straight there.
   const [showBallot, showView] = useBallotView('know-your-ballot-illinois');
   const browse = () => { setBrowsing(true); showView(true); };
   const daysLeft = daysUntil(data.election.date);
 
   // ---- the voter's ballot and their progress through it --------------------
-  const ballot = useMemo(() => ballotFor(data, districts), [districts]);
+  const ballot = useMemo(() => (browsingCounty ? ballotForCounty(data, browsingCounty) : ballotFor(data, districts)), [districts, browsingCounty]);
   const sections = useMemo(() => SECTIONS.map((s) => {
     const ids = s.id === 'retention' ? ballot.retentions.filter((r) => !r.withdrawn).map((r) => r.id)
       : s.id === 'measures' ? ballot.measures.map((m) => m.id)
@@ -438,7 +450,8 @@ export function KnowYourBallot() {
       <div className="mt-3">
         <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} sections={SECTION_TITLES} places={data.places} onJump={(h) => jumpTo(h.section, h.id)} />
       </div>
-      {!saved.place && <BrowsingNotice region="Chicago or suburban Cook" onAddAddress={changeAddress} />}
+      {!saved.place && <BrowsingNotice region={browsingCounty ? `${browsingCounty} County` : 'Chicago or suburban Cook'} onAddAddress={changeAddress}
+        counties={COUNTIES.length ? { list: COUNTIES, value: county, onChange: setCounty } : undefined} />}
     </>
   );
 
@@ -478,7 +491,7 @@ export function KnowYourBallot() {
                 <div className="min-w-0 flex-1">
                   <p className="font-black text-lg leading-tight">{!saved.place ? `${total} contests to browse` : allDone ? 'Ballot ready 🎉' : `${done} of ${total} decided`}</p>
                   <button type="button" onClick={changeAddress} className="flex max-w-full flex-wrap items-center gap-x-1.5 text-left text-sm leading-snug text-[var(--gb-text)]">
-                    <span>{saved.place ? `📍 ${saved.place.label}` : 'Browsing every race'}</span>
+                    <span>{saved.place ? `📍 ${saved.place.label}` : `Browsing every race in ${region}`}</span>
                     <span className="shrink-0 font-bold text-[var(--gb-text)] underline underline-offset-2">{saved.place ? 'Change' : 'Add address'}</span>
                   </button>
                 </div>
@@ -510,6 +523,7 @@ export function KnowYourBallot() {
                 {change && <ChangeReport change={change} onDismiss={() => setChange(null)} onNext={() => { setChange(null); nextUp(); }} />}
                 {total > 0 && saved.place && <Trophies ctx={gameCtx} />}
                 <WhereYouVote districts={districts} chicago={chicago} cook={cook} onChange={changeAddress} />
+                {browsingCounty && <CountyNote county={browsingCounty} races={ballot.races.length} onChange={changeAddress} />}
 
                 {sections.filter((s) => s.id === current).map((s) => {
                   const at = sections.indexOf(s);
@@ -597,9 +611,16 @@ export function KnowYourBallot() {
                   wardSite={districts?.ward ? data.earlyVotingSites[districts.ward] : undefined}
                   ballotDone={allDone} />
                 <KeyDates chicago={chicago} info={chicago ? LINKS.myInfo : clerk} />
-                <button type="button" onClick={() => window.print()} className="w-full inline-flex items-center justify-center gap-2 min-h-[52px] rounded-xl border-2 border-[var(--gb-text)] font-black text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]">
-                  <Printer className="w-5 h-5" aria-hidden="true" /> Print My Ballot
-                </button>
+                <MoreGuides chicago={chicago} />
+                <div className="grid gap-2 sm:grid-cols-2">
+                  <button type="button" onClick={() => printAs('picks')} className="inline-flex items-center justify-center gap-2 min-h-[52px] rounded-xl border-2 border-[var(--gb-text)] font-black text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]">
+                    <Printer className="w-5 h-5" aria-hidden="true" /> Print My Ballot
+                  </button>
+                  <button type="button" onClick={() => printAs('sample')} className="inline-flex items-center justify-center gap-2 min-h-[52px] rounded-xl border-2 border-[var(--gb-text)] font-black text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]">
+                    <Printer className="w-5 h-5" aria-hidden="true" /> Print a full sample ballot
+                  </button>
+                </div>
+                <p className="text-sm leading-relaxed text-[var(--gb-text)]">“My Ballot” is your picks, one line per race. The sample ballot lists <strong>every</strong> candidate and question on {saved.place ? 'your' : `the ${region}`} ballot with boxes to mark{chicago ? ' and the official ballot numbers' : ''}, like the one from the election office. The official sample ballot is still the one to trust for order and wording: {chicago ? <a className="font-bold underline text-[var(--gb-link)]" href={LINKS.myInfo} target="_blank" rel="noreferrer noopener">Chicago Board of Elections ↗</a> : <a className="font-bold underline text-[var(--gb-link)]" href={clerk} target="_blank" rel="noreferrer noopener">{cook ? 'Cook County Clerk' : 'your county clerk'} ↗</a>}.</p>
               </div>
             )}
 
@@ -648,7 +669,7 @@ export function KnowYourBallot() {
       </div>
 
       {/* Print view: the voter's picks, in ballot order, to take into the booth. */}
-      <PrintBallot sections={sections} picks={saved.picks} label={saved.place?.label} numbered={chicago} region={region} />
+      <PrintBallot sections={sections} picks={saved.picks} label={saved.place?.label} numbered={chicago} region={region} sample={printMode === 'sample'} />
 
       {sheet && (
         <CandidateSheet race={sheet.race} c={sheet.c} color={sectionOf(sheet.race.section).color} ink={sectionOf(sheet.race.section).ink} numbered={chicago && sheet.race.numbered !== false}
@@ -937,8 +958,11 @@ function Sources() {
     { emoji: '🔄', title: 'What changed', status: 'Daily',
       body: 'Every morning the guide re-checks its sources and notes candidates added or dropped and new money reports, so returning voters see what’s new.',
       links: [] },
+    { emoji: '👤', title: 'Who’s in office now', status: 'Live · daily',
+      body: 'Each seat’s current holder: Congress and the General Assembly from Open States’ official roster (via govbot); statewide, Cook County and school board seats from the Wikipedia article on each 2026 race. Whether they’re running is read from the candidate lists, never guessed; when they aren’t, the article’s own sentence on why is quoted with a link. Candidates who already sit in Springfield or Congress show the bills they sponsored this session, from govbot’s catalog.',
+      links: [['Open States', 'https://openstates.org/il/'], ['Wikipedia: 2026 Illinois elections', 'https://en.wikipedia.org/wiki/2026_Illinois_elections']] },
     { emoji: '⏳', title: 'Not here yet', status: 'Planned', planned: true,
-      body: 'Judges and county or local offices outside Cook County, and suburban ballot order. Your county clerk’s sample ballot has them.',
+      body: 'Judges and county or local offices outside Cook County, suburban ballot order, and candidates’ positions in their own words (the Vote411 and voter-guide links under each candidate have those). Your county clerk’s sample ballot has the local races.',
       links: [['Find your county clerk', ELECTION_AUTHORITIES]] },
   ];
   return (
@@ -971,24 +995,63 @@ function Sources() {
   );
 }
 
-function PrintBallot({ sections, picks, label, numbered, region }: { sections: { id: SectionId; title: string; ids: string[] }[]; picks: Record<string, Choice>; label?: string; numbered: boolean; region: string }) {
+function PrintBallot({ sections, picks, label, numbered, region, sample }: { sections: { id: SectionId; title: string; ids: string[] }[]; picks: Record<string, Choice>; label?: string; numbered: boolean; region: string; /** Every candidate and question with boxes to mark, instead of the voter's picks. */ sample: boolean }) {
   return (
     <div className="hidden print:block p-6 text-black bg-white text-[11pt]">
-      <h1 className="text-xl font-black">My Ballot · {region} · Nov 3, 2026</h1>
+      <h1 className="text-xl font-black">{sample ? 'Sample ballot' : 'My Ballot'} · {region} · Nov 3, 2026</h1>
       {label && <p>{label}</p>}
+      {sample && <p className="text-[9pt]">Unofficial, from Know Your Ballot: every contest on this ballot from the Board of Elections’ certified list, in its order{numbered ? ', with the official ballot numbers' : ''}. The election office’s sample ballot is the one to trust for wording.</p>}
       {sections.map((s) => (
         <section key={s.id} className="mt-4 break-inside-avoid-page">
           <h2 className="font-black border-b border-black">{s.title}</h2>
-          <table className="w-full table-fixed">
-            <tbody>
-              {s.ids.map((id) => { const { what, pick } = describePick(id, picks[id], numbered); return (
-                <tr key={id} className="align-top"><td className="w-3/5 py-0.5 pr-4">{what}</td><td className="py-0.5 font-bold">{pick}</td></tr>
-              ); })}
-            </tbody>
-          </table>
+          {sample ? s.ids.map((id) => <SampleContest key={id} id={id} numbered={numbered} pick={picks[id]} />) : (
+            <table className="w-full table-fixed">
+              <tbody>
+                {s.ids.map((id) => { const { what, pick } = describePick(id, picks[id], numbered); return (
+                  <tr key={id} className="align-top"><td className="w-3/5 py-0.5 pr-4">{what}</td><td className="py-0.5 font-bold">{pick}</td></tr>
+                ); })}
+              </tbody>
+            </table>
+          )}
         </section>
       ))}
       <p className="mt-4">Illinois voters may use sample ballots and notes while voting.</p>
+    </div>
+  );
+}
+
+/** One contest on the printed sample ballot: every choice with a box, the voter's pick pre-marked. */
+function SampleContest({ id, numbered, pick }: { key?: string; id: string; numbered: boolean; pick: Choice | undefined }) {
+  const box = (on: boolean) => <span className="inline-block w-[0.9em] h-[0.9em] border border-black align-[-0.1em] mr-1.5 text-[8pt] leading-[0.9em] text-center">{on ? '✕' : ''}</span>;
+  const race = data.races.find((r) => r.id === id);
+  if (race) {
+    const picked = Array.isArray(pick) ? pick : [];
+    return (
+      <div className="mt-2 break-inside-avoid">
+        <p className="font-bold">{race.office}{race.voteFor > 1 ? ` (vote for up to ${race.voteFor})` : ''}</p>
+        <ul className="pl-3">
+          {race.candidates.map((c) => <li key={c.ballot}>{box(picked.includes(c.ballot))}{numbered && race.numbered !== false ? `${c.ballot}. ` : ''}{c.name} <span className="text-[9pt]">({c.party})</span></li>)}
+          {race.writeIn && <li>{box(false)}Write-in: ______________________</li>}
+        </ul>
+      </div>
+    );
+  }
+  const ret = data.retentions.find((r) => r.id === id);
+  const m = data.measures.find((x) => x.id === id);
+  return (
+    <div className="mt-2 break-inside-avoid">
+      <p className="font-bold">{ret ? `Shall ${ret.judge} be retained as ${ret.court}?` : m?.title ?? id}</p>
+      <p className="pl-3">{box(pick === 'yes')}Yes &nbsp; {box(pick === 'no')}No</p>
+    </div>
+  );
+}
+
+/** Browsing a county outside Cook: what this list is and isn't. */
+function CountyNote({ county, races, onChange }: { county: string; races: number; onChange: () => void }) {
+  return (
+    <div className="rounded-2xl border-[3px] border-[var(--gb-amber-hi)] bg-[var(--gb-surface)] p-4 space-y-2 text-[15px] leading-relaxed">
+      <p className="font-black">{county} County: the statewide races, plus every Congress and Springfield district that reaches into the county ({races} contests)</p>
+      <p>Your own ballot has one of each district, not all of them; <button type="button" onClick={onChange} className="font-bold underline text-[var(--gb-text)]">enter your address</button> to narrow it down. County offices, judges and local questions aren’t in here: your county clerk’s sample ballot has them (<a className="font-bold underline text-[var(--gb-text)]" href={ELECTION_AUTHORITIES} target="_blank" rel="noreferrer noopener">find your county clerk ↗</a>). Ballot numbers aren’t shown because each county orders candidates its own way.</p>
     </div>
   );
 }

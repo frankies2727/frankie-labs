@@ -143,6 +143,21 @@ export function ballotIdsFor(data: BallotData, d: Districts | null): Set<string>
   return new Set([...b.races, ...b.retentions, ...b.measures].map((x) => x.id));
 }
 
+/**
+ * Browsing a county outside Cook with no address: the statewide races plus
+ * every congressional and legislative district that reaches into the county
+ * (an address would pick one of each). Cook browses the full list.
+ */
+export function ballotForCounty(data: BallotData, county: string) {
+  if (county === 'Cook') return ballotFor(data, null);
+  const here = new Set(data.counties?.[county] ?? []);
+  return {
+    races: data.races.filter((r) => (r.area ? here.has(`${r.area.type}:${r.area.id}`) : r.section === 'federal' || r.section === 'state')),
+    retentions: [] as BallotData['retentions'],
+    measures: [] as BallotData['measures'],
+  };
+}
+
 export function ballotFor(data: BallotData, d: Districts | null) {
   // Outside Cook: statewide offices and the voter's own U.S. House and
   // legislative races. Everything else we carry is a Cook County contest.

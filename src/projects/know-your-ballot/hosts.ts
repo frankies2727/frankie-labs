@@ -10,3 +10,6 @@ export type GuideState = 'illinois' | 'michigan';
 export function guideUrl(state: GuideState): string {
   return KYB_SITE ? `${location.origin}/${state}` : `${location.origin}${import.meta.env.BASE_URL}projects/know-your-ballot-${state}`;
 }
+
+/** govbot's legislation explorer: `#state=il&q=<name>` lists every bill carrying a name. */
+export const GOVBOT_LEGISLATION = 'https://chihacknight.github.io/govbot/dashboard/legislation.html';

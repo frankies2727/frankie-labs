@@ -1,4 +1,5 @@
 import { AtSign, Check, ExternalLink, Facebook, Info, Instagram, Linkedin, Music2, Scale, Twitter, X, Youtube, type LucideIcon } from 'lucide-react';
+import { GOVBOT_LEGISLATION } from './hosts';
 import { memo, useEffect, useRef, type ReactNode } from 'react';
 import { BarRatings } from './BarRatings';
 import { Face } from './Face';
@@ -106,6 +107,54 @@ function MoneyBars({ c, max }: { c: Candidate; max: number }) {
   );
 }
 
+/** The seat's holder is one of these candidates. */
+export const isIncumbent = (race: Race, c: Candidate) => Boolean(c.incumbent || race.incumbents?.some((i) => i.ballot === c.ballot));
+
+/** Who holds the seat now and whether they're on this ballot; open seats say who left. */
+function Incumbents({ race }: { race: Race }) {
+  const list = race.incumbents;
+  if (!list?.length) return null;
+  const open = /^(Associate )?Judge /.test(list[0].name);
+  return (
+    <div className="rounded-xl border-2 border-[var(--gb-border)] bg-[var(--kyb-chip)] px-3 py-2 text-sm leading-snug text-[var(--gb-text)] space-y-1.5">
+      <p className="text-[11px] font-black uppercase tracking-widest">{open ? '🪑 Open seat' : '👤 In office now'}</p>
+      {list.map((i) => (
+        <p key={i.name}>
+          <strong>{i.name}</strong>{i.party ? ` (${i.party})` : ''}
+          {i.ballot ? <> · <span className="font-bold">running again</span>{race.numbered !== false && race.section !== 'federal' && race.section !== 'state' ? ` (ballot #${i.ballot})` : ''}</>
+            : open ? null : <> · <span className="font-bold">not on this ballot</span></>}
+          {i.note && <>{open ? ' · ' : ' '}<span className={open ? '' : 'italic'}>{open ? i.note : `“${i.note}”`}</span></>}
+          {!i.ballot && !open && !i.note && <> (no reason is on record)</>}
+          {i.source?.url && <> <a href={i.source.url} target="_blank" rel="noreferrer noopener" className="font-bold text-[var(--gb-link)] underline underline-offset-2">{i.source.name.replace(/^Wikipedia: .*/, 'Wikipedia')} ↗</a>{i.asOf ? <span className="text-xs"> · read {i.asOf}</span> : null}</>}
+        </p>
+      ))}
+    </div>
+  );
+}
+
+/** A sitting legislator's bills this session, from govbot. */
+function Record({ c }: { c: Candidate }) {
+  const r = c.record;
+  if (!r) return null;
+  const date = (d?: string) => (d ? new Date(d + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '');
+  const all = `${GOVBOT_LEGISLATION}#state=${r.bills[0]?.state ?? 'il'}&q=${encodeURIComponent(c.name.split(' & ')[0].replace(/["“”][^"“”]*["“”]\s*/g, ''))}`;
+  return (
+    <section className="space-y-3">
+      <h3 className="text-sm font-black uppercase tracking-widest text-[var(--gb-text)]">📜 Their record in office</h3>
+      <p className="text-[15px] leading-relaxed text-[var(--gb-text)]">As {r.seat}’s member they sponsored or co-sponsored <strong>{r.sponsored.toLocaleString()} bill{r.sponsored === 1 ? '' : 's'}</strong> this session. The newest:</p>
+      <ul className="space-y-1.5 text-sm">
+        {r.bills.map((b) => (
+          <li key={b.id} className="leading-snug">
+            {b.url ? <a href={b.url} target="_blank" rel="noreferrer noopener" className="font-bold text-[var(--gb-link)] underline underline-offset-2">{b.id}</a> : <strong>{b.id}</strong>}
+            {' '}{b.title}{b.latest_action ? <span className="text-xs"> · {date(b.latest_action)}</span> : null}
+          </li>
+        ))}
+      </ul>
+      <p className="text-xs text-[var(--gb-text)]"><a href={all} target="_blank" rel="noreferrer noopener" className="font-bold text-[var(--gb-link)] underline underline-offset-2">Every bill with their name on it, on govbot ↗</a> · {r.source}, read {r.asOf}. Sponsoring a bill is one part of a record; how they voted is on the legislature’s own site.</p>
+    </section>
+  );
+}
+
 // ---- race card -------------------------------------------------------------
 
 interface RaceProps {
@@ -148,6 +197,7 @@ export const RaceCard = memo(function RaceCard({ race, color, ink, numbered, cho
           </div>
           <h3 className="text-xl font-black leading-tight text-[var(--gb-text)]">{race.office}</h3>
           <p className="text-[15px] leading-relaxed text-[var(--gb-text)]">{explainOffice(race.office)}</p>
+          <Incumbents race={race} />
         </header>
 
         <ul className="space-y-2">
@@ -174,7 +224,7 @@ export const RaceCard = memo(function RaceCard({ race, color, ink, numbered, cho
                     <span className="flex flex-wrap gap-1.5 mt-1">
                       <Badge tone="var(--gb-bg)">{c.party}</Badge>
                       {c.nominatedBy && <Badge tone="var(--gb-bg)">{c.nominatedBy} nominee</Badge>}
-                      {c.incumbent && <Badge tone="var(--gb-text)" ink="var(--gb-bg)">Incumbent</Badge>}
+                      {isIncumbent(race, c) && <Badge tone="var(--gb-text)" ink="var(--gb-bg)">Incumbent</Badge>}
                       {c.money && <Badge tone="var(--gb-bg)">{money(c.money.raised)} raised</Badge>}
                     </span>
                   </span>
@@ -260,7 +310,7 @@ export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, 
           <Badge>{c.party}</Badge>
           {c.nominatedBy && <Badge>{c.nominatedBy} nominee</Badge>}
           {numbered && <Badge>Ballot #{c.ballot}</Badge>}
-          {c.incumbent && <Badge tone="var(--gb-text)" ink="var(--gb-bg)">Incumbent</Badge>}
+          {isIncumbent(race, c) && <Badge tone="var(--gb-text)" ink="var(--gb-bg)">Incumbent</Badge>}
         </div>
 
         <section className="space-y-3">
@@ -271,6 +321,8 @@ export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, 
             <p className="text-[15px] text-[var(--gb-text)]">{noMoney(race)}</p>
           )}
         </section>
+
+        <Record c={c} />
 
         <Follow c={c} />
 
@@ -337,7 +389,8 @@ export function Compare({ race, color, ink, numbered, picked, onPick, onInfo, on
                   </div>
                 </div>
                 <dl className="space-y-1 text-sm">
-                  <div className="flex justify-between gap-2"><dt className="text-[var(--gb-text)]">Incumbent</dt><dd className="font-bold text-[var(--gb-text)]">{c.incumbent ? 'Yes' : 'No'}</dd></div>
+                  <div className="flex justify-between gap-2"><dt className="text-[var(--gb-text)]">Incumbent</dt><dd className="font-bold text-[var(--gb-text)]">{isIncumbent(race, c) ? 'Yes' : 'No'}</dd></div>
+                  {c.record && <div className="flex justify-between gap-2"><dt className="text-[var(--gb-text)]">Bills sponsored</dt><dd className="font-bold text-[var(--gb-text)]">{c.record.sponsored.toLocaleString()}</dd></div>}
                 </dl>
                 {anyMoney && (c.money ? <MoneyBars c={c} max={max} /> : <p className="text-sm text-[var(--gb-text)]">No campaign reports found.</p>)}
                 <button type="button" onClick={() => onInfo(c)} className="mt-auto inline-flex items-center justify-center gap-1.5 min-h-[44px] rounded-xl border-2 border-[var(--gb-border)] bg-[var(--kyb-chip)] font-bold text-[var(--gb-text)] hover:border-[var(--gb-text)]">
