@@ -75,15 +75,15 @@ export function BrowsingBadge({ region, onAddAddress }: { region: string; onAddA
       {open ? (
         <div role="status" className="relative max-w-[calc(100vw-2rem)] w-80 rounded-xl border-2 border-[var(--gb-amber-hi)] bg-[var(--gb-surface)] p-3 pr-11 text-sm leading-snug text-[var(--gb-text)] shadow-2xl">
           <button type="button" onClick={() => setOpen(false)} aria-label="Close" className="absolute top-2 right-2 w-8 h-8 rounded-full border-2 border-[var(--gb-text)] flex items-center justify-center"><X className="w-4 h-4" aria-hidden="true" /></button>
-          <p>You’re seeing <strong>every</strong> race on any ballot in {region}. Picks and trophies are off until it’s <em>your</em> ballot.</p>
+          <p>Candidate picks are off: you’re seeing <strong>every</strong> race on any ballot in {region}, not just yours. Enter your address to pick.</p>
           <button type="button" onClick={() => { setOpen(false); onAddAddress(); }} className="mt-2 inline-flex items-center gap-1.5 min-h-[40px] rounded-lg bg-[var(--gb-text)] px-3 font-bold text-[var(--gb-bg)]">
             <MapPin className="w-4 h-4" aria-hidden="true" /> Enter your address
           </button>
         </div>
       ) : (
-        <button type="button" onClick={() => setOpen(true)} aria-label={`You’re seeing every race in ${region}. Picks are off until it’s your ballot. Enter your address`}
+        <button type="button" onClick={() => setOpen(true)} aria-label={`Candidate picks are off: you’re seeing every race in ${region}, not just yours. Enter your address to pick`}
           className="inline-flex items-center gap-1.5 min-h-[40px] rounded-full border-2 border-[var(--gb-amber-hi)] bg-[var(--gb-surface)] pl-2.5 pr-3 text-[13px] font-bold text-[var(--gb-text)] shadow-lg">
-          <TriangleAlert className="w-5 h-5 text-[var(--gb-amber-hi)]" aria-hidden="true" /> Every race
+          <TriangleAlert className="w-5 h-5 text-[var(--gb-amber-hi)]" aria-hidden="true" /> Candidate picks off
         </button>
       )}
     </div>
