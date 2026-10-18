@@ -1,4 +1,4 @@
-import { ChevronDown, Info, MapPin, RotateCcw } from 'lucide-react';
+import { ChevronDown, Info, MapPin, RotateCcw, TriangleAlert, X } from 'lucide-react';
 import { useCallback, useEffect, useState, type ReactNode } from 'react';
 import { Face } from './Face';
 import type { Candidate, Race } from './types';
@@ -40,11 +40,52 @@ export function Confetti({ onDone }: { onDone: () => void }) {
 /** Pinned under the progress bar while there's no address: picks are off until there is one. */
 export function BrowsingNotice({ region, onAddAddress }: { region: string; onAddAddress: () => void }) {
   return (
-    <div role="status" className="mt-3 flex flex-col items-start lg:flex-row lg:flex-wrap lg:items-center gap-x-3 gap-y-2 rounded-xl border-2 border-[var(--gb-amber-hi)] bg-[var(--kyb-chip)] px-3 py-2 text-sm lg:text-[15px] leading-snug">
+    <div role="status" data-browsing-notice className="mt-3 flex flex-col items-start lg:flex-row lg:flex-wrap lg:items-center gap-x-3 gap-y-2 rounded-xl border-2 border-[var(--gb-amber-hi)] bg-[var(--kyb-chip)] px-3 py-2 text-sm lg:text-[15px] leading-snug">
       <p className="min-w-0 flex-1">You’re seeing <strong>every</strong> race on any ballot in {region}. Picks and trophies are off until it’s <em>your</em> ballot.</p>
       <button type="button" onClick={onAddAddress} className="inline-flex items-center gap-1.5 min-h-[40px] rounded-lg bg-[var(--gb-text)] px-3 font-bold text-[var(--gb-bg)]">
         <MapPin className="w-4 h-4" aria-hidden="true" /> Enter your address
       </button>
+    </div>
+  );
+}
+
+/** Phones: the same warning as a small yield-sign badge that stays on screen
+ *  while the page scrolls (the full notice scrolls away with the tools).
+ *  Tapping it opens the full sentence and the address button. */
+export function BrowsingBadge({ region, onAddAddress }: { region: string; onAddAddress: () => void }) {
+  const [open, setOpen] = useState(false);
+  // Hidden while the full notice is on screen; it takes over once that scrolls away.
+  const [noticeShown, setNoticeShown] = useState(true);
+  useEffect(() => {
+    const notice = document.querySelector('[data-browsing-notice]');
+    if (!notice || typeof IntersectionObserver === 'undefined') { setNoticeShown(false); return; }
+    const io = new IntersectionObserver(([e]) => setNoticeShown(e.isIntersecting));
+    io.observe(notice);
+    return () => io.disconnect();
+  }, []);
+  useEffect(() => {
+    if (!open) return;
+    const esc = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
+    document.addEventListener('keydown', esc);
+    return () => document.removeEventListener('keydown', esc);
+  }, [open]);
+  if (noticeShown && !open) return null;
+  return (
+    <div className="fixed bottom-5 left-4 z-[45] print:hidden">
+      {open ? (
+        <div role="status" className="relative max-w-[calc(100vw-2rem)] w-80 rounded-xl border-2 border-[var(--gb-amber-hi)] bg-[var(--gb-surface)] p-3 pr-11 text-sm leading-snug text-[var(--gb-text)] shadow-2xl">
+          <button type="button" onClick={() => setOpen(false)} aria-label="Close" className="absolute top-2 right-2 w-8 h-8 rounded-full border-2 border-[var(--gb-text)] flex items-center justify-center"><X className="w-4 h-4" aria-hidden="true" /></button>
+          <p>You’re seeing <strong>every</strong> race on any ballot in {region}. Picks and trophies are off until it’s <em>your</em> ballot.</p>
+          <button type="button" onClick={() => { setOpen(false); onAddAddress(); }} className="mt-2 inline-flex items-center gap-1.5 min-h-[40px] rounded-lg bg-[var(--gb-text)] px-3 font-bold text-[var(--gb-bg)]">
+            <MapPin className="w-4 h-4" aria-hidden="true" /> Enter your address
+          </button>
+        </div>
+      ) : (
+        <button type="button" onClick={() => setOpen(true)} aria-label={`You’re seeing every race in ${region}. Picks are off until it’s your ballot. Enter your address`}
+          className="inline-flex items-center gap-1.5 min-h-[40px] rounded-full border-2 border-[var(--gb-amber-hi)] bg-[var(--gb-surface)] pl-2.5 pr-3 text-[13px] font-bold text-[var(--gb-text)] shadow-lg">
+          <TriangleAlert className="w-5 h-5 text-[var(--gb-amber-hi)]" aria-hidden="true" /> Every race
+        </button>
+      )}
     </div>
   );
 }

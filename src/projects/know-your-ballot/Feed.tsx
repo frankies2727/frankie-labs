@@ -29,7 +29,7 @@ const KINDS: { id: Kind | 'all'; label: string; color: string }[] = [
   { id: 'bill', label: 'Bills', color: 'var(--kyb-gold)' },
   { id: 'date', label: 'Key dates', color: 'var(--gb-amber-hi)' },
 ];
-const KIND_LABEL: Record<Kind, string> = { ballot: 'Ballot', news: 'News', money: 'Money', bill: 'Bill', date: 'Date' };
+const KIND_LABEL: Record<Kind, string> = { ballot: 'Ballot', news: 'News', money: 'Money', bill: 'Bill', date: 'Key date' };
 
 const day = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric' });
 const when = (iso: string) => day.format(new Date(iso.length === 10 ? `${iso}T12:00:00` : iso));
