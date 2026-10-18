@@ -9,7 +9,7 @@ import { guideUrl } from './hosts';
 import { StateMap } from './Hero';
 import outline from './data/illinois/outline.json';
 import { GaugeDefs } from './BarRatings';
-import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Locating, Ring, useWide, SectionCards, useBallotView, useDocumentMeta, type SectionCard } from './Bits';
+import { BrowsingBadge, BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Locating, Ring, useWide, SectionCards, useBallotView, useDocumentMeta, type SectionCard } from './Bits';
 import { ReadOnlyContext } from './state';
 import { ContentsColumn, ContentsDrawer } from './Contents';
 import { Headliners } from './Headliners';
@@ -477,8 +477,8 @@ export function KnowYourBallot() {
                 <Ring pct={total ? done / total : 0} />
                 <div className="min-w-0 flex-1">
                   <p className="font-black text-lg leading-tight">{!saved.place ? `${total} contests to browse` : allDone ? 'Ballot ready 🎉' : `${done} of ${total} decided`}</p>
-                  <button type="button" onClick={changeAddress} className="flex max-w-full items-center gap-1.5 text-sm text-[var(--gb-text)] hover:text-[var(--gb-text)]">
-                    <span className="truncate">{saved.place ? `📍 ${saved.place.label}` : 'Browsing every race'}</span>
+                  <button type="button" onClick={changeAddress} className="flex max-w-full flex-wrap items-center gap-x-1.5 text-left text-sm leading-snug text-[var(--gb-text)]">
+                    <span>{saved.place ? `📍 ${saved.place.label}` : 'Browsing every race'}</span>
                     <span className="shrink-0 font-bold text-[var(--gb-text)] underline underline-offset-2">{saved.place ? 'Change' : 'Add address'}</span>
                   </button>
                 </div>
@@ -488,6 +488,7 @@ export function KnowYourBallot() {
             </div>
             </div>
             {!wide && <div className="max-w-[1100px] mx-auto">{tools}</div>}
+            {!wide && !saved.place && <BrowsingBadge region="Chicago or suburban Cook" onAddAddress={changeAddress} />}
             <div className="lg:grid lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-8 lg:items-start max-w-[1100px] mx-auto pt-4">
             <ContentsColumn {...contents} />
             {/* In the drawer a section just opens its list; the page moves when a race is picked. */}

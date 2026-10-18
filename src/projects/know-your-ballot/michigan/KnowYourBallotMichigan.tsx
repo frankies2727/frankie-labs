@@ -1,7 +1,7 @@
 import { ChevronDown, Crosshair, ListChecks, Loader2, MapPin, Printer, Search, Share2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { ClearButton } from '../../../components/ClearButton';
-import { BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Locating, Ring, useWide, SectionCards, SectionFlip, useBallotView, useDocumentMeta, type SectionCard } from '../Bits';
+import { BrowsingBadge, BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Locating, Ring, useWide, SectionCards, SectionFlip, useBallotView, useDocumentMeta, type SectionCard } from '../Bits';
 import { Group } from '../Calendar';
 import { guideUrl } from '../hosts';
 import { billItems, billUrl, changeItems, dateItems, Feed, newsItems } from '../Feed';
@@ -351,8 +351,8 @@ export function KnowYourBallotMichigan() {
                   <Ring pct={total ? done / total : 0} />
                   <div className="min-w-0 flex-1">
                     <p className="font-black text-lg leading-tight">{!saved.place ? `${total} contests to browse` : allDone ? 'Ballot ready 🎉' : `${done} of ${total} decided`}</p>
-                    <button type="button" onClick={changeAddress} className="flex max-w-full items-center gap-1.5 text-sm text-[var(--gb-text)]">
-                      <span className="truncate">{saved.place ? `📍 ${saved.place.label}` : 'Browsing every race in Michigan'}</span>
+                    <button type="button" onClick={changeAddress} className="flex max-w-full flex-wrap items-center gap-x-1.5 text-left text-sm leading-snug text-[var(--gb-text)]">
+                      <span>{saved.place ? `📍 ${saved.place.label}` : 'Browsing every race in Michigan'}</span>
                       <span className="shrink-0 font-bold underline underline-offset-2">{saved.place ? 'Change' : 'Add address'}</span>
                     </button>
                   </div>
@@ -362,6 +362,7 @@ export function KnowYourBallotMichigan() {
               </div>
             </div>
               {!wide && <div className="max-w-[1100px] mx-auto">{tools}</div>}
+              {!wide && !saved.place && <BrowsingBadge region="Michigan" onAddAddress={changeAddress} />}
             <div className="lg:grid lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-8 lg:items-start max-w-[1100px] mx-auto pt-4">
               <ContentsColumn {...contents} />
               <ContentsDrawer {...contents} onSection={(id) => { setTab('ballot'); setChosenSection(id); }} open={contentsOpen} onClose={closeContents} />
