@@ -18,7 +18,7 @@ import './ballot.css';
 import { ClearButton } from '../../components/ClearButton';
 import { KeyDates, NextElectionNote } from './Calendar';
 import { Laws } from './Laws';
-import { LINKS, MoreGuides, PlanToVote } from './PlanToVote';
+import { ILLINOIS_GUIDES, LINKS, MoreGuides, PlanToVote } from './PlanToVote';
 import { areaLabel, CandidateSheet, Compare, MeasureCard, RaceCard, RetentionCard, SCOPE } from './Race';
 import { billItems, changeItems, dateItems, Feed, newsItems } from './Feed';
 import { billUrl } from './Feed';
@@ -611,7 +611,7 @@ export function KnowYourBallot() {
                   wardSite={districts?.ward ? data.earlyVotingSites[districts.ward] : undefined}
                   ballotDone={allDone} />
                 <KeyDates chicago={chicago} info={chicago ? LINKS.myInfo : clerk} />
-                <MoreGuides chicago={chicago} />
+                <MoreGuides guides={ILLINOIS_GUIDES} chicago={chicago} storageKey="kyb-il-guides-open" />
                 <div className="grid gap-2 sm:grid-cols-2">
                   <button type="button" onClick={() => printAs('picks')} className="inline-flex items-center justify-center gap-2 min-h-[52px] rounded-xl border-2 border-[var(--gb-text)] font-black text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]">
                     <Printer className="w-5 h-5" aria-hidden="true" /> Print My Ballot
@@ -961,6 +961,9 @@ function Sources() {
     { emoji: '👤', title: 'Who’s in office now', status: 'Live · daily',
       body: 'Each seat’s current holder: Congress and the General Assembly from Open States’ official roster (via govbot); statewide, Cook County and school board seats from the Wikipedia article on each 2026 race. Whether they’re running is read from the candidate lists, never guessed; when they aren’t, the article’s own sentence on why is quoted with a link. Candidates who already sit in Springfield or Congress show the bills they sponsored this session, from govbot’s catalog.',
       links: [['Open States', 'https://openstates.org/il/'], ['Wikipedia: 2026 Illinois elections', 'https://en.wikipedia.org/wiki/2026_Illinois_elections']] },
+    { emoji: '🗣️', title: 'In their words & endorsements', status: 'Live · daily',
+      body: 'Each candidate’s three key campaign messages are their own answer to Ballotpedia’s Candidate Connection survey, quoted word for word with the date, plus the “Issues” page on their own campaign site when it has one. Endorsements are the lists in the Wikipedia article on the race, by the article’s own categories, linked to the section. Nothing here is written or rated by us.',
+      links: [['Ballotpedia Candidate Connection', 'https://ballotpedia.org/Ballotpedia:Candidate_Connection'], ['Wikipedia: 2026 Illinois elections', 'https://en.wikipedia.org/wiki/2026_Illinois_elections']] },
     { emoji: '⏳', title: 'Not here yet', status: 'Planned', planned: true,
       body: 'Judges and county or local offices outside Cook County, suburban ballot order, and candidates’ positions in their own words (the Vote411 and voter-guide links under each candidate have those). Your county clerk’s sample ballot has the local races.',
       links: [['Find your county clerk', ELECTION_AUTHORITIES]] },

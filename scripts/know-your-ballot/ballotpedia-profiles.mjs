@@ -29,7 +29,7 @@ const PLATFORM = { x: 'x', twitter: 'x', facebook: 'facebook', instagram: 'insta
 const RANK = { campaign: 0, official: 1, personal: 2 };
 
 const slug = (s) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-const decode = (s) => s.replace(/&amp;/g, '&').replace(/&#0?39;/g, "'").replace(/&quot;/g, '"').replace(/&#160;|&nbsp;/g, ' ');
+const decode = (s) => s.replace(/&amp;/g, '&').replace(/&#0?39;/g, "'").replace(/&quot;/g, '"').replace(/&#160;|&nbsp;/g, ' ').replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n)).replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)));
 
 // Ballotpedia's firewall answers Node's own HTTP client with a challenge but
 // lets curl through (./ballotpedia.mjs), so pages and photos come via curl.
@@ -55,10 +55,31 @@ export function parseProfile(html) {
   return out;
 }
 
+/**
+ * The candidate's own answer to Ballotpedia's Candidate Connection survey
+ * question "Please list below 3 key messages of your campaign", verbatim:
+ * { messages: [...], asOf: 'YYYY-MM-DD' } or null. Ballotpedia publishes the
+ * answers under CC BY-SA; the candidate wrote them.
+ */
+export function parseStances(html) {
+  const at = html.search(/key messages of your campaign/i);
+  if (at < 0) return null;
+  const after = html.slice(at);
+  const box = after.match(/<div class="answers-container">([\s\S]*?)<\/div>/)?.[1];
+  if (!box) return null;
+  const text = (t) => decode(t.replace(/<br\s*\/?>/gi, ' ').replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
+  let messages = [...box.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/g)].map((m) => text(m[1])).filter(Boolean);
+  if (!messages.length) messages = box.split(/<\/p>|<br\s*\/?>/i).map(text).filter(Boolean);
+  messages = messages.slice(0, 3).map((m) => (m.length > 700 ? m.slice(0, 697).replace(/\s+\S*$/, '') + '…' : m));
+  if (!messages.length) return null;
+  const asOf = html.slice(Math.max(0, at - 400), at).match(/-(\d{4}-\d{2}-\d{2})-/g)?.at(-1)?.slice(1, 11);
+  return { messages, asOf };
+}
+
 const fold = (s) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
 const parts = (n) => fold(n.split(' & ')[0].replace(/["“”][^"“”]*["“”]/g, ' ').replace(/,?\s+(jr|sr|ii|iii|iv)\.?$/i, '')).split(/[^a-z]+/).filter(Boolean);
 // Short forms Ballotpedia and ballots disagree on ("Dan Swanson" is "Daniel Swanson" there).
-const SHORT = { angie: 'angelica', jim: 'james', jimmy: 'james', bill: 'william', billy: 'william', will: 'william', bob: 'robert', rob: 'robert', bobby: 'robert', dick: 'richard', rick: 'richard', mike: 'michael', tom: 'thomas', tommy: 'thomas', joe: 'joseph', joey: 'joseph', dan: 'daniel', danny: 'daniel', chris: 'christopher', charlie: 'charles', chuck: 'charles', ben: 'benjamin', tony: 'anthony', ted: 'edward', ed: 'edward', eddie: 'edward', jack: 'john', johnny: 'john', liz: 'elizabeth', beth: 'elizabeth', betty: 'elizabeth', kathy: 'katherine', kate: 'katherine', katie: 'katherine', peggy: 'margaret', maggie: 'margaret', meg: 'margaret', sam: 'samuel', steve: 'steven', stephen: 'steven', matt: 'matthew', pat: 'patrick', andy: 'andrew', drew: 'andrew', nick: 'nicholas', greg: 'gregory', jeff: 'jeffrey', ken: 'kenneth', ron: 'ronald', don: 'donald', fred: 'frederick', frank: 'francis', larry: 'lawrence', jerry: 'gerald', terry: 'terrence', tim: 'timothy', jon: 'jonathan', dave: 'david', doug: 'douglas', gabby: 'gabrielle', sue: 'susan', debbie: 'deborah', deb: 'deborah', jen: 'jennifer', jenny: 'jennifer', jess: 'jessica', vicky: 'victoria', vicki: 'victoria', alex: 'alexander', al: 'albert', abe: 'abraham', ray: 'raymond', russ: 'russell', marty: 'martin', manny: 'manuel', pete: 'peter', josh: 'joshua', zach: 'zachary', nate: 'nathan', lou: 'louis', vince: 'vincent', max: 'maxwell' };
+const SHORT = { angie: 'angelica', jaz: 'jasper', timmy: 'timothy', jim: 'james', jimmy: 'james', bill: 'william', billy: 'william', will: 'william', bob: 'robert', rob: 'robert', bobby: 'robert', dick: 'richard', rick: 'richard', mike: 'michael', tom: 'thomas', tommy: 'thomas', joe: 'joseph', joey: 'joseph', dan: 'daniel', danny: 'daniel', chris: 'christopher', charlie: 'charles', chuck: 'charles', ben: 'benjamin', tony: 'anthony', ted: 'edward', ed: 'edward', eddie: 'edward', jack: 'john', johnny: 'john', liz: 'elizabeth', beth: 'elizabeth', betty: 'elizabeth', kathy: 'katherine', kate: 'katherine', katie: 'katherine', peggy: 'margaret', maggie: 'margaret', meg: 'margaret', sam: 'samuel', steve: 'steven', stephen: 'steven', matt: 'matthew', pat: 'patrick', andy: 'andrew', drew: 'andrew', nick: 'nicholas', greg: 'gregory', jeff: 'jeffrey', ken: 'kenneth', ron: 'ronald', don: 'donald', fred: 'frederick', frank: 'francis', larry: 'lawrence', jerry: 'gerald', terry: 'terrence', tim: 'timothy', jon: 'jonathan', dave: 'david', doug: 'douglas', gabby: 'gabrielle', sue: 'susan', debbie: 'deborah', deb: 'deborah', jen: 'jennifer', jenny: 'jennifer', jess: 'jessica', vicky: 'victoria', vicki: 'victoria', alex: 'alexander', al: 'albert', abe: 'abraham', ray: 'raymond', russ: 'russell', marty: 'martin', manny: 'manuel', pete: 'peter', josh: 'joshua', zach: 'zachary', nate: 'nathan', lou: 'louis', vince: 'vincent', max: 'maxwell' };
 const sameFirst = (a, b) => a === b || (SHORT[a] ?? a) === (SHORT[b] ?? b) || (a.length >= 3 && b.length >= 3 && (a.startsWith(b) || b.startsWith(a)));
 /** The quoted nickname, if any ("Christopher "C.D." Davidsmeyer" -> "cd"). */
 const nickname = (n) => { const q = n.match(/["“”]([^"“”]+)["“”]/)?.[1]; return q ? fold(q).replace(/[^a-z]/g, '') : null; };
@@ -114,12 +135,14 @@ async function pool(items, size, fn) {
  * judges' Injustice Watch pages). Photos go in `dir` (served at `publicPath`).
  */
 export async function addProfiles(races, { dir, publicPath, prev, state = 'Michigan', fill = 'all' }) {
-  mkdirSync(dir, { recursive: true });
+  if (dir) mkdirSync(dir, { recursive: true });
+  // 'stances': only find each candidate's page and read their survey answers (the standalone refresh).
+  const stancesOnly = fill === 'stances';
   const prevBy = new Map((prev?.races ?? []).flatMap((r) => r.candidates.map((c) => [`${r.id}|${c.name}`, c])));
   const started = Date.now();
   const log = [];
   const used = new Set();
-  const missing = fill === 'missing';
+  const missing = fill === 'missing' || stancesOnly;
   let withPhoto = 0, withSocial = 0, withProfile = 0, total = 0;
   const jobs = races.flatMap((race) => race.candidates.map((c) => ({ race, c })));
   total = jobs.length;
@@ -129,15 +152,19 @@ export async function addProfiles(races, { dir, publicPath, prev, state = 'Michi
     const key = `${race.id}|${c.name}`;
     const was = prevBy.get(key);
     const keep = () => {
+      if (stancesOnly) { if (!c.stances && was?.stances) c.stances = was.stances; if (!c.ballotpedia && was?.ballotpedia) c.ballotpedia = was.ballotpedia; return; }
       if (!c.photo && was?.photo && existsSync(join(dir, was.photo.file.split('/').pop()))) { c.photo = was.photo; used.add(was.photo.file.split('/').pop()); }
       if (!c.social && was?.social) c.social = was.social;
       if (!c.website && was?.website) c.website = was.website;
+      if (!c.stances && was?.stances) c.stances = was.stances;
+      if (!c.ballotpedia && was?.ballotpedia) c.ballotpedia = was.ballotpedia;
     };
-    if (missing && c.photo && c.social && c.website) return;
+    // Someone whose page was already read keeps their survey answers until the page is read again.
+    if (missing && c.photo && c.social && c.website && (was?.ballotpedia || c.ballotpedia) && !stancesOnly) { keep(); return; }
     if (Date.now() - started > BUDGET_MS) { keep(); return; }
     try {
       // No profile linked: find it by name, and make sure it's them.
-      let profile = missing ? was?.photo?.link?.match(/^https:\/\/ballotpedia\.org\/\S+$/)?.[0] : c.profile;
+      let profile = c.profile?.match(/^https:\/\/ballotpedia\.org\/\S+$/)?.[0] ?? c.ballotpedia ?? was?.ballotpedia ?? was?.photo?.link?.match(/^https:\/\/ballotpedia\.org\/\S+$/)?.[0];
       if (!profile) {
         for (const url of guesses(c.name, state)) {
           const html = curl(url);
@@ -151,7 +178,13 @@ export async function addProfiles(races, { dir, publicPath, prev, state = 'Michi
         if (!profile) { keep(); log.push(`no profile found for ${c.name} (${race.office})`); return; }
       }
       if (!missing) c.profile = profile;
-      const page = parseProfile(curl(profile));
+      c.ballotpedia = profile;
+      const html = curl(profile);
+      const stances = parseStances(html);
+      // An answer from an earlier run for another office isn't this campaign's message.
+      if (stances && (!stances.asOf || stances.asOf >= '2025-01-01')) c.stances = { ...stances, url: profile }; else delete c.stances;
+      if (stancesOnly) return;
+      const page = parseProfile(html);
       if (page.website && !c.website) c.website = page.website;
       if (Object.keys(page.social).length && !(missing && c.social)) c.social = page.social;
       if (missing && c.photo) return;
@@ -177,4 +210,17 @@ export async function addProfiles(races, { dir, publicPath, prev, state = 'Michi
   for (const { c } of jobs) { if (c.photo) withPhoto++; if (c.social) withSocial++; if (c.profile || (missing && c.photo?.credit === 'Ballotpedia')) withProfile++; }
   if (!missing) for (const f of readdirSync(dir)) if (!used.has(f) && !f.startsWith('retain-')) rmSync(join(dir, f));
   return { withPhoto, withSocial, withProfile, total, log };
+}
+
+// Standalone: refresh the committed data's survey answers (`node ballotpedia-profiles.mjs illinois|michigan`).
+if (process.argv[1] && import.meta.url.endsWith(process.argv[1].split('/').pop())) {
+  const { readFileSync: read, writeFileSync: write } = await import('node:fs');
+  const which = process.argv[2] ?? 'michigan';
+  const file = new URL(`../../src/projects/know-your-ballot/data/${which}/ballot.json`, import.meta.url);
+  const data = JSON.parse(read(file, 'utf8'));
+  const r = await addProfiles(data.races, { prev: data, state: which === 'michigan' ? 'Michigan' : 'Illinois', fill: 'stances' });
+  const n = data.races.flatMap((x) => x.candidates).filter((c) => c.stances).length;
+  console.log(`Stances: ${n} of ${r.total} candidates answered Ballotpedia's survey`);
+  for (const l of r.log.slice(0, 30)) console.log('  ' + l);
+  write(file, JSON.stringify(data, null, 1) + '\n');
 }

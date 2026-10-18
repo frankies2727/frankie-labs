@@ -73,6 +73,8 @@ function researchLinks(c: Candidate, race: Race): ResearchLink[] {
   else links.push({ label: 'Search the web for their campaign', href: `https://duckduckgo.com/?q=${q(`${who} ${race.office.replace(/ \(\d+ seats\)$/, '')} Michigan 2026 campaign`)}`, note: 'They listed no site in their filing, so this opens a web search, not their site' });
   if (c.money?.source === 'FEC') links.push({ label: 'FEC filings', href: `https://www.fec.gov/data/candidate/${c.money.id}/`, note: 'Every donor and expense, officially' });
   else if (race.section !== 'federal') links.push({ label: 'Michigan campaign finance', href: LINKS.disclosure, note: 'Search the state’s disclosure database for their committee' });
+  // The League of Women Voters asks every candidate the same questions; answers are listed by address.
+  links.push({ label: 'Vote411 candidate Q&A', href: 'https://www.vote411.org/ballot', note: 'League of Women Voters: their answers to the League’s questions, by your address' });
   return links;
 }
 

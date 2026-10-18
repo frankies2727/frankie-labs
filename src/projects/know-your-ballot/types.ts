@@ -45,6 +45,14 @@ export interface Candidate {
   barSource?: string;
   /** A sitting legislator's record this session (scripts/know-your-ballot/illinois/record.mjs). */
   record?: LegislativeRecord;
+  /** Their Ballotpedia page, once found (the source of `stances`). */
+  ballotpedia?: string;
+  /** Their own answer to Ballotpedia's survey question "3 key messages of your campaign", verbatim. */
+  stances?: { messages: string[]; asOf?: string; url: string };
+  /** The "Issues" / "Priorities" page on their own campaign site. */
+  issuesUrl?: string;
+  /** Who has endorsed them, as the Wikipedia article on the race lists it (scripts/know-your-ballot/wiki.mjs). */
+  endorsements?: { groups: { category: string; names: string[] }[]; total: number; source: { name: string; url: string }; asOf: string };
 }
 
 /** Bills a sitting legislator sponsored this session, from govbot's catalog. */

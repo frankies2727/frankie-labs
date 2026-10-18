@@ -6,7 +6,7 @@
 // (a county candidate who shares a legislator's name must not inherit their
 // bills), and only against Illinois' own members.
 
-import { sameName } from './incumbents.mjs';
+import { sameName } from '../wiki.mjs';
 
 const GOVBOT_BILLS = 'https://chihacknight.github.io/govbot/dashboard/bills/';
 const ROSTER = 'https://chihacknight.github.io/govbot/dashboard/people.json';
@@ -15,13 +15,16 @@ const SHOW = 5;
 const fold = (s) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
 const surname = (n) => fold(n.split(' & ')[0].replace(/,?\s+(jr|sr|ii|iii|iv)\.?$/i, '')).split(/[^a-z]+/).filter(Boolean).at(-1);
 
-/** Illinois' sitting legislators: [{ name, chamber: 'usa' | 'il', seat }]. */
-export function illinoisMembers(people) {
+const STATE_NAME = { il: 'Illinois', mi: 'Michigan' };
+
+/** A state's sitting legislators: [{ name, chamber: 'usa' | state, seat }]. */
+export function membersOf(people, state) {
   const out = [];
+  const mine = new RegExp(`· ${state.toUpperCase()}-\\d+$|· ${STATE_NAME[state]}$`);
   for (const rows of Object.values(people.usa ?? {})) for (const [, full, , area] of rows) {
-    if (/· IL-\d+$|· Illinois$/.test(area ?? '')) out.push({ name: full, chamber: 'usa', seat: area });
+    if (mine.test(area ?? '')) out.push({ name: full, chamber: 'usa', seat: area });
   }
-  for (const rows of Object.values(people.il ?? {})) for (const [, full, , area] of rows) out.push({ name: full, chamber: 'il', seat: area });
+  for (const rows of Object.values(people[state] ?? {})) for (const [, full, , area] of rows) out.push({ name: full, chamber: state, seat: area });
   return out;
 }
 
@@ -47,24 +50,24 @@ export function recordFor(member, bills, aliases = []) {
  * legislator. Fetchers are injectable for tests; a failed fetch keeps
  * yesterday's records.
  */
-export async function addRecords(races, { prev = null, fetchJson = (u) => fetch(u).then((r) => { if (!r.ok) throw new Error(`${u}: HTTP ${r.status}`); return r.json(); }) } = {}) {
+export async function addRecords(races, { state = 'il', prev = null, fetchJson = (u) => fetch(u).then((r) => { if (!r.ok) throw new Error(`${u}: HTTP ${r.status}`); return r.json(); }) } = {}) {
   const log = [];
   const before = new Map((prev?.races ?? []).flatMap((r) => r.candidates.filter((c) => c.record).map((c) => [`${r.id}|${c.name}`, c.record])));
   let people, il, usa;
   try {
-    [people, il, usa] = await Promise.all([fetchJson(ROSTER), fetchJson(`${GOVBOT_BILLS}il.json`), fetchJson(`${GOVBOT_BILLS}usa.json`)]);
+    [people, il, usa] = await Promise.all([fetchJson(ROSTER), fetchJson(`${GOVBOT_BILLS}${state}.json`), fetchJson(`${GOVBOT_BILLS}usa.json`)]);
   } catch (e) {
     log.push(`govbot: ${e.message}; keeping yesterday's records`);
     for (const r of races) for (const c of r.candidates) { const k = before.get(`${r.id}|${c.name}`); if (k) c.record = k; }
     return { matched: 0, kept: before.size, log };
   }
-  const members = illinoisMembers(people);
-  const bills = { il: il.bills ?? [], usa: usa.bills ?? [] };
-  const source = { il: 'Illinois General Assembly, via govbot', usa: 'Congress.gov, via govbot' };
+  const members = membersOf(people, state);
+  const bills = { [state]: il.bills ?? [], usa: usa.bills ?? [] };
+  const source = { il: 'Illinois General Assembly, via govbot', mi: 'Michigan Legislature, via govbot', usa: 'Congress.gov, via govbot' };
   let matched = 0;
   const asOf = new Date().toISOString().slice(0, 10);
   for (const r of races) {
-    if (r.section !== 'federal' && r.section !== 'state') continue;
+    if (!['federal', 'state', 'legislature'].includes(r.section)) continue;
     for (const c of r.candidates) {
       delete c.record;
       const hits = members.filter((m) => surname(m.name) === surname(c.name) && sameName(c.name, m.name));
@@ -80,12 +83,13 @@ export async function addRecords(races, { prev = null, fetchJson = (u) => fetch(
   return { matched, kept: 0, log };
 }
 
-// Standalone: refresh the committed Illinois data's records.
+// Standalone: refresh the committed data's records (`node record.mjs il|mi`).
 if (process.argv[1] && import.meta.url.endsWith(process.argv[1].split('/').pop())) {
   const { readFileSync, writeFileSync } = await import('node:fs');
-  const file = new URL('../../../src/projects/know-your-ballot/data/illinois/ballot.json', import.meta.url);
+  const state = process.argv[2] ?? 'il';
+  const file = new URL(`../../../src/projects/know-your-ballot/data/${STATE_NAME[state].toLowerCase()}/ballot.json`, import.meta.url);
   const data = JSON.parse(readFileSync(file, 'utf8'));
-  const r = await addRecords(data.races, { prev: data });
+  const r = await addRecords(data.races, { state, prev: data });
   console.log(`Records: ${r.matched} candidates are sitting legislators`);
   for (const l of r.log) console.log('  ' + l);
   writeFileSync(file, JSON.stringify(data, null, 1) + '\n');

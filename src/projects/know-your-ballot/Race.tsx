@@ -1,6 +1,6 @@
 import { AtSign, Check, ExternalLink, Facebook, Info, Instagram, Linkedin, Music2, Scale, Twitter, X, Youtube, type LucideIcon } from 'lucide-react';
 import { GOVBOT_LEGISLATION } from './hosts';
-import { memo, useEffect, useRef, type ReactNode } from 'react';
+import { memo, useEffect, useRef, useState, type ReactNode } from 'react';
 import { BarRatings } from './BarRatings';
 import { Face } from './Face';
 import { useReadOnly, useStateConfig } from './state';
@@ -151,6 +151,62 @@ function Record({ c }: { c: Candidate }) {
         ))}
       </ul>
       <p className="text-xs text-[var(--gb-text)]"><a href={all} target="_blank" rel="noreferrer noopener" className="font-bold text-[var(--gb-link)] underline underline-offset-2">Every bill with their name on it, on govbot ↗</a> · {r.source}, read {r.asOf}. Sponsoring a bill is one part of a record; how they voted is on the legislature’s own site.</p>
+    </section>
+  );
+}
+
+/** The candidate's own campaign messages (their Ballotpedia survey answer) and their site's issues page. */
+function InTheirWords({ c }: { c: Candidate }) {
+  if (!c.stances && !c.issuesUrl) return null;
+  const when = c.stances?.asOf ? new Date(c.stances.asOf + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '';
+  return (
+    <section className="space-y-3">
+      <h3 className="text-sm font-black uppercase tracking-widest text-[var(--gb-text)]">🗣️ In their words</h3>
+      {c.stances && (
+        <>
+          <ol className="space-y-2 text-[15px] leading-relaxed text-[var(--gb-text)]">
+            {c.stances.messages.map((m) => <li key={m.slice(0, 40)} className="rounded-xl bg-[var(--gb-bg)] p-3">“{m}”</li>)}
+          </ol>
+          <p className="text-xs text-[var(--gb-text)]">Their answer to Ballotpedia’s survey question “What are the 3 key messages of your campaign?”{when ? `, ${when}` : ''}, word for word. <a href={c.stances.url} target="_blank" rel="noreferrer noopener" className="font-bold text-[var(--gb-link)] underline underline-offset-2">The whole survey ↗</a></p>
+        </>
+      )}
+      {c.issuesUrl && (
+        <a href={c.issuesUrl} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-2 min-h-[44px] rounded-xl border-2 border-[var(--gb-text)] px-4 font-bold text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]">
+          Where they stand, on their campaign site <ExternalLink className="w-4 h-4" aria-hidden="true" />
+        </a>
+      )}
+    </section>
+  );
+}
+
+const ENDORSEMENTS_SHOWN = 8;
+
+/** Who has endorsed them, as the Wikipedia article on the race lists it. */
+function Endorsements({ c }: { c: Candidate }) {
+  const [all, setAll] = useState(false);
+  const e = c.endorsements;
+  if (!e) return null;
+  // The first few, across the article's own categories; the rest behind a tap.
+  let left = all ? Infinity : ENDORSEMENTS_SHOWN;
+  const groups = e.groups.map((g) => { const names = g.names.slice(0, Math.max(0, left)); left -= names.length; return { ...g, names }; }).filter((g) => g.names.length);
+  const when = new Date(e.asOf + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  return (
+    <section className="space-y-3">
+      <h3 className="text-sm font-black uppercase tracking-widest text-[var(--gb-text)]">🤝 Endorsements <span className="normal-case tracking-normal">({e.total.toLocaleString()})</span></h3>
+      <dl className="space-y-2 text-[15px] leading-snug text-[var(--gb-text)]">
+        {groups.map((g) => (
+          <div key={g.category}>
+            <dt className="text-xs font-black uppercase tracking-wide">{g.category}</dt>
+            <dd><ul className="list-disc pl-5">{g.names.map((n) => <li key={n}>{n}</li>)}</ul></dd>
+          </div>
+        ))}
+      </dl>
+      {e.total > ENDORSEMENTS_SHOWN && (
+        <button type="button" onClick={() => setAll((v) => !v)} className="min-h-[40px] rounded-xl border-2 border-[var(--gb-text)] px-3 text-sm font-bold text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]">
+          {all ? 'Show fewer' : `Show all ${e.total.toLocaleString()}`}
+        </button>
+      )}
+      <p className="text-xs text-[var(--gb-text)]">As listed by <a href={e.source.url} target="_blank" rel="noreferrer noopener" className="font-bold text-[var(--gb-link)] underline underline-offset-2">{e.source.name} ↗</a>, read {when}. An endorsement is the endorser’s choice, not a rating of the candidate; the article may not list every one.</p>
     </section>
   );
 }
@@ -322,6 +378,10 @@ export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, 
           )}
         </section>
 
+        <InTheirWords c={c} />
+
+        <Endorsements c={c} />
+
         <Record c={c} />
 
         <Follow c={c} />
@@ -391,6 +451,8 @@ export function Compare({ race, color, ink, numbered, picked, onPick, onInfo, on
                 <dl className="space-y-1 text-sm">
                   <div className="flex justify-between gap-2"><dt className="text-[var(--gb-text)]">Incumbent</dt><dd className="font-bold text-[var(--gb-text)]">{isIncumbent(race, c) ? 'Yes' : 'No'}</dd></div>
                   {c.record && <div className="flex justify-between gap-2"><dt className="text-[var(--gb-text)]">Bills sponsored</dt><dd className="font-bold text-[var(--gb-text)]">{c.record.sponsored.toLocaleString()}</dd></div>}
+                  {race.candidates.some((x) => x.endorsements) && <div className="flex justify-between gap-2"><dt className="text-[var(--gb-text)]">Endorsements listed</dt><dd className="font-bold text-[var(--gb-text)]">{c.endorsements ? c.endorsements.total.toLocaleString() : '0'}</dd></div>}
+                  {race.candidates.some((x) => x.stances) && <div className="flex justify-between gap-2"><dt className="text-[var(--gb-text)]">Survey answered</dt><dd className="font-bold text-[var(--gb-text)]">{c.stances ? 'Yes' : 'No'}</dd></div>}
                 </dl>
                 {anyMoney && (c.money ? <MoneyBars c={c} max={max} /> : <p className="text-sm text-[var(--gb-text)]">No campaign reports found.</p>)}
                 <button type="button" onClick={() => onInfo(c)} className="mt-auto inline-flex items-center justify-center gap-1.5 min-h-[44px] rounded-xl border-2 border-[var(--gb-border)] bg-[var(--kyb-chip)] font-bold text-[var(--gb-text)] hover:border-[var(--gb-text)]">

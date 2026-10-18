@@ -25,7 +25,7 @@ import { join } from 'node:path';
 import { changeLog } from './illinois/changes.mjs';
 import { districtCounties } from './illinois/counties.mjs';
 import { govbotSlices } from './illinois/govbot.mjs';
-import { addIncumbents } from './illinois/incumbents.mjs';
+import { addWiki } from './illinois/incumbents.mjs';
 import { addRecords } from './illinois/record.mjs';
 import { addJudges } from './illinois/judges.mjs';
 import { keepMoneyForward } from './money-forward.mjs';
@@ -224,10 +224,10 @@ async function main() {
   // Who holds each seat now and whether they're running; sitting legislators'
   // bills; which counties each district covers. Each keeps yesterday's copy
   // when its source is down.
-  const inc = await addIncumbents(ballot.races, { prev });
-  console.log(`Incumbents: ${inc.found} races read, ${inc.kept} kept from yesterday, ${inc.running} on their own ballot, ${inc.noted} with a note`);
-  for (const line of inc.log) console.log('  ' + line);
-  const rec = await addRecords(ballot.races, { prev });
+  const wiki = await addWiki(ballot.races, { prev });
+  console.log(`Incumbents: ${wiki.incumbents.found} races read, ${wiki.incumbents.kept} kept from yesterday, ${wiki.incumbents.running} on their own ballot, ${wiki.incumbents.noted} with a note; endorsements for ${wiki.endorsements.withList} candidates`);
+  for (const line of wiki.log) console.log('  ' + line);
+  const rec = await addRecords(ballot.races, { state: 'il', prev });
   console.log(`Records: ${rec.matched} candidates are sitting legislators${rec.kept ? ` (${rec.kept} kept from yesterday)` : ''}`);
   for (const line of rec.log) console.log('  ' + line);
   let counties = prev?.counties ?? {};

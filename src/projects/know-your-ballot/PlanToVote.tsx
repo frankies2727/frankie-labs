@@ -182,7 +182,8 @@ export function PlanToVote({ plan, setPlan, chicago, clerk, clerkName, ward, war
 
 // Nonpartisan guides that go where this one stops: candidates' answers in
 // their own words, judges' evaluations, and the official lookups.
-const GUIDES: { name: string; href: string; what: string; only?: 'chicago' }[] = [
+export interface Guide { name: string; href: string; what: string; only?: 'chicago' }
+export const ILLINOIS_GUIDES: Guide[] = [
   { name: 'Vote411 (League of Women Voters)', href: 'https://www.vote411.org/ballot', what: 'Every candidate asked the same questions; their answers, by your address.' },
   { name: 'Ballotpedia sample ballot', href: 'https://ballotpedia.org/Sample_Ballot_Lookup', what: 'Bios, past elections and candidate surveys for each race on your ballot.' },
   { name: 'Injustice Watch judicial guide', href: 'https://2026retention.injusticewatch.org/', what: 'Reporters’ profiles of every Cook County judge on the ballot.', only: 'chicago' },
@@ -192,9 +193,9 @@ const GUIDES: { name: string; href: string; what: string; only?: 'chicago' }[] =
 ];
 
 /** Where to read more than this guide carries, opened by default once. */
-export function MoreGuides({ chicago }: { chicago: boolean }) {
-  const [open, toggle] = useOpen('kyb-il-guides-open', true);
-  const list = GUIDES.filter((g) => !g.only || (g.only === 'chicago' && chicago));
+export function MoreGuides({ guides, chicago = false, storageKey }: { guides: Guide[]; chicago?: boolean; storageKey: string }) {
+  const [open, toggle] = useOpen(storageKey, true);
+  const list = guides.filter((g) => !g.only || (g.only === 'chicago' && chicago));
   return (
     <section aria-labelledby="kyb-guides" className="rounded-2xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)] p-5">
       <button type="button" onClick={toggle} aria-expanded={open} className="flex w-full items-center justify-between gap-3 text-left">
@@ -203,7 +204,7 @@ export function MoreGuides({ chicago }: { chicago: boolean }) {
       </button>
       {open && (
         <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-[var(--gb-text)]">
-          <p>This guide has the structure, the facts and the money. For candidates’ positions in their own words, pair it with these.</p>
+          <p>This guide has the structure, the facts, the money and what the candidates say about themselves. For more of their positions in their own words, pair it with these.</p>
           <ul className="grid gap-2 sm:grid-cols-2">
             {list.map((g) => (
               <li key={g.name}>

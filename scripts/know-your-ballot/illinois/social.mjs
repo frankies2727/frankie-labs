@@ -265,7 +265,26 @@ async function fromWebsite(url, name, render) {
       if (!found[key] && re.test(link) && isTheirs(handleOf(link), name)) found[key] = link;
     }
   }
+  const issues = issuesPage(html, url);
+  if (issues) found._issues = issues;
   return found;
+}
+
+// A campaign site's own page on where the candidate stands, by the link's
+// wording in its navigation ("Issues", "Priorities", "Where I stand").
+const ISSUES_TEXT = /^(?:the |our |my |on the )?(?:issues?|priorities|platform|plans?|policy|policies|positions?|vision|where (?:i|she|he|they) stands?|what i stand for|agenda)(?: & \w+)?$/i;
+export function issuesPage(html, site) {
+  let origin;
+  try { origin = new URL(site).origin; } catch { return undefined; }
+  for (const [, href, inner] of html.matchAll(/<a\s[^>]*href="([^"#]+)"[^>]*>([\s\S]*?)<\/a>/gi)) {
+    const text = inner.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
+    if (!ISSUES_TEXT.test(text)) continue;
+    try {
+      const u = new URL(href, site);
+      if (u.origin === origin && !/\.(pdf|jpg|png)$/i.test(u.pathname)) return u.href.split('?')[0];
+    } catch { /* not a URL */ }
+  }
+  return undefined;
 }
 
 async function pool(items, size, fn) {
@@ -308,8 +327,11 @@ export async function addSocial(races, work, render, prev, code = 'IL') {
   for (const e of entries) e.website = [e.c.website, e.legislator?.website, e.member?.website, e.wiki?.website].find((u) => u && !NOT_A_SITE.test(u));
   const sites = await pool(entries, 6, (e) => (e.website ? fromWebsite(e.website, e.c.name, render) : {}));
   const before = new Map((prev?.races ?? []).flatMap((r) => r.candidates.filter((c) => c.social).map((c) => [`${r.id}|${c.name}`, c.social])));
+  const beforeIssues = new Map((prev?.races ?? []).flatMap((r) => r.candidates.filter((c) => c.issuesUrl).map((c) => [`${r.id}|${c.name}`, c.issuesUrl])));
   let unread = 0;
-  entries.forEach((e, i) => { if (sites[i] === null) { unread++; sites[i] = before.get(`${e.race.id}|${e.c.name}`) ?? {}; } });
+  entries.forEach((e, i) => {
+    if (sites[i] === null) { unread++; sites[i] = before.get(`${e.race.id}|${e.c.name}`) ?? {}; e.issues = beforeIssues.get(`${e.race.id}|${e.c.name}`); } else { e.issues = sites[i]._issues; delete sites[i]._issues; }
+  });
   if (unread) log.push(`campaign sites: ${unread} couldn't be read today (kept their last accounts)`);
 
   const merged = entries.map((e, i) => {
@@ -327,6 +349,7 @@ export async function addSocial(races, work, render, prev, code = 'IL') {
     const m = Object.fromEntries(Object.entries(merged[i]).filter(([, v]) => seen.get(v.toLowerCase()) === 1));
     if (Object.keys(m).length) { e.c.social = m; withSocial++; } else delete e.c.social;
     if (!e.c.website && e.website) e.c.website = e.website;
+    if (e.issues) e.c.issuesUrl = e.issues; else delete e.c.issuesUrl;
     const photo = e.member?.photo ?? e.legislator?.photo ?? e.wiki?.photo;
     if (photo) e.c.photoFrom = photo; else delete e.c.photoFrom;
   });

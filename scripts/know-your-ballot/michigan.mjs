@@ -36,6 +36,8 @@ import { addPhotos } from './illinois/photos.mjs';
 import { addSocial } from './illinois/social.mjs';
 import { PROPOSALS, PROPOSALS_SOURCE } from './michigan/proposals.mjs';
 import { boardCandidates } from './michigan/wikipedia.mjs';
+import { addWiki } from './michigan/incumbents.mjs';
+import { addRecords } from './illinois/record.mjs';
 
 const OUT = 'src/projects/know-your-ballot/data/michigan';
 const PHOTOS_DIR = 'public/kyb-photos/michigan';
@@ -219,6 +221,14 @@ async function main() {
   // govbot being briefly down shouldn't hold up the ballot: keep yesterday's bills.
   let laws = prev?.laws ?? [];
   try { laws = await recentBills('mi'); console.log(`govbot: ${laws.length} Lansing bills`); } catch (e) { console.warn(`govbot: ${e.message}; keeping the last copy`); }
+  // Who holds each seat and whether they're running, candidates' endorsements
+  // (Wikipedia's articles on the races) and sitting legislators' bills (govbot).
+  const wiki = await addWiki(races, { prev });
+  console.log(`Incumbents: ${wiki.incumbents.found} races read, ${wiki.incumbents.kept} kept from yesterday, ${wiki.incumbents.running} on their own ballot, ${wiki.incumbents.noted} with a note; endorsements for ${wiki.endorsements.withList} candidates`);
+  for (const line of wiki.log) console.log('  ' + line);
+  const rec = await addRecords(races, { state: 'mi', prev });
+  console.log(`Records: ${rec.matched} candidates are sitting legislators${rec.kept ? ` (${rec.kept} kept from yesterday)` : ''}`);
+  for (const line of rec.log) console.log('  ' + line);
 
   writeFileSync(join(OUT, 'ballot.json'), JSON.stringify({
     election: ELECTION,

@@ -1,6 +1,6 @@
 import { CalendarPlus } from 'lucide-react';
 import { dayLabel, downloadReminder } from '../dates';
-import { Out, Step } from '../PlanToVote';
+import { Out, Step, type Guide } from '../PlanToVote';
 import { LINKS } from './config';
 import { byId } from './dates';
 
@@ -32,7 +32,13 @@ export function PlanToVote({ plan, setPlan, county, ballotDone }: Props) {
         <p><strong className="text-[var(--gb-amber-hi)]">Not registered or moved?</strong> Register online or by mail through <strong>Mon, Oct 19</strong>. After that, go to your clerk’s office in person with proof of where you live (a license, a bill, a lease) right up to <strong>8pm on Election Day</strong>, and vote there and then. <Out href={LINKS.register}>How to register</Out></p>
       </Step>
 
-      <Step n={2} done={!!method} title="Pick how you’ll vote">
+      <Step n={2} done={!!plan.id} title="Know what ID to bring" onToggle={() => setPlan('id', !plan.id)}>
+        <p><strong>Michigan asks for a photo ID, but you can vote without one.</strong> At the polls or an early voting site you’re asked to show photo ID. If you don’t have one with you, you sign a short affidavit saying so and vote a regular ballot that counts like any other.</p>
+        <p><strong>Photo IDs that work:</strong> a Michigan driver’s license or state ID; a driver’s license or ID from another state; a federal, state or local government photo ID; a U.S. passport; a military ID with photo; a student ID with photo from a high school or accredited college; or a tribal ID with photo. It doesn’t need your current address.</p>
+        <p><strong>Registering in person on Election Day</strong> (or in the 14 days before) at your clerk’s office does need proof of where you live: a license or ID, a bill, a bank statement, a paycheck or a government document with your name and address. <Out href={LINKS.myInfo}>Michigan.gov/Vote</Out></p>
+      </Step>
+
+      <Step n={3} done={!!method} title="Pick how you’ll vote">
         <div className="grid grid-cols-3 gap-2" role="radiogroup" aria-label="How you'll vote">
           {METHODS.map((m) => (
             <button key={m.id} type="button" role="radio" aria-checked={method === m.id} onClick={() => setPlan('method', m.id)}
@@ -62,7 +68,7 @@ export function PlanToVote({ plan, setPlan, county, ballotDone }: Props) {
         )}
       </Step>
 
-      <Step n={3} done={!!plan.reminder} title="Put it on your calendar">
+      <Step n={4} done={!!plan.reminder} title="Put it on your calendar">
         <button type="button" disabled={!method}
           onClick={() => { downloadReminder(reminder, LINKS.myInfo); setPlan('reminder', true); }}
           className="inline-flex items-center gap-2 min-h-[44px] rounded-xl border-2 border-[var(--gb-text)] bg-[var(--kyb-chip)] px-4 font-bold text-[var(--gb-text)] hover:bg-[var(--kyb-chip-hi)] disabled:cursor-not-allowed disabled:border-[var(--gb-border)]">
@@ -73,10 +79,19 @@ export function PlanToVote({ plan, setPlan, county, ballotDone }: Props) {
         {!method && <p>Pick how you’ll vote first.</p>}
       </Step>
 
-      <Step n={4} done={ballotDone} title="Bring your notes">
+      <Step n={5} done={ballotDone} title="Bring your notes">
         <p>Finish <strong>My Ballot</strong> and bring it along. Michigan lets you take notes or a marked-up sample ballot into the booth; just keep them to yourself.</p>
         <p>{ballotDone ? '✅ Your ballot is ready.' : 'Your ballot isn’t finished yet; it checks itself off when it is.'}</p>
       </Step>
     </ol>
   );
 }
+
+/** Nonpartisan guides that go where this one stops, for Michigan voters. */
+export const MICHIGAN_GUIDES: Guide[] = [
+  { name: 'Vote411 (League of Women Voters)', href: 'https://www.vote411.org/ballot', what: 'Every candidate asked the same questions; their answers, by your address.' },
+  { name: 'Ballotpedia sample ballot', href: 'https://ballotpedia.org/Sample_Ballot_Lookup', what: 'Bios, past elections and candidate surveys for each race on your ballot.' },
+  { name: 'Michigan Voter Information Center', href: LINKS.myInfo, what: 'Your registration, official sample ballot, polling place, clerk and absentee tracking.' },
+  { name: 'Citizens Research Council of Michigan', href: 'https://crcmich.org/', what: 'Nonpartisan analysis of the statewide proposals.' },
+  { name: 'Michigan Campaign Finance Network', href: 'https://mcfn.org/', what: 'Nonpartisan reporting on who funds state campaigns.' },
+];
