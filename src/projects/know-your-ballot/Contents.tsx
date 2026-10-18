@@ -63,7 +63,7 @@ function List({ sections, current, isDone, labelOf, onSection, onRace }: Props) 
 /** Desktop: a sticky column beside the ballot. */
 export function ContentsColumn(props: Props) {
   return (
-    <aside style={{ ['--scroll' as string]: props.sections.find((x) => x.id === props.current)?.color ?? 'var(--gb-border-strong)' }} className="kyb-scroll-bar hidden lg:block sticky top-[calc(var(--kyb-top)+var(--kyb-bar,0px)+16px)] max-h-[calc(100dvh-var(--kyb-top)-var(--kyb-bar,0px)-32px)] overflow-y-auto rounded-2xl border border-[var(--gb-border)] bg-[var(--gb-surface)]">
+    <aside style={{ ['--scroll' as string]: props.sections.find((x) => x.id === props.current)?.color ?? 'var(--gb-border-strong)' }} className="kyb-scroll-bar hidden lg:block sticky top-[calc(var(--kyb-top)+var(--kyb-bar,0px)+16px)] max-h-[calc(100dvh-var(--kyb-top)-var(--kyb-bar,0px)-32px)] overflow-y-auto rounded-2xl border-2 border-[var(--gb-text)] bg-[var(--gb-surface)]">
       <p className="px-3 py-3 font-black border-b border-[var(--gb-border)]">☰ Contents</p>
       <List {...props} />
     </aside>
@@ -85,7 +85,7 @@ export function ContentsDrawer({ open, onClose, ...props }: Props & { open: bool
   return (
     <div className="fixed inset-0 z-[70] lg:hidden" role="dialog" aria-modal="true" aria-label="Contents">
       <button type="button" aria-label="Close contents" onClick={onClose} className="absolute inset-0 bg-black/50" />
-      <div className="absolute inset-y-0 left-0 w-[86vw] max-w-sm overflow-y-auto bg-[var(--gb-surface)] text-[var(--gb-text)] shadow-2xl">
+      <div className="absolute inset-y-0 left-0 w-[86vw] max-w-sm overflow-y-auto border-r-2 border-[var(--gb-text)] bg-[var(--gb-surface)] text-[var(--gb-text)] shadow-2xl">
         <div className="sticky top-0 z-10 flex items-center justify-between px-3 py-3 border-b border-[var(--gb-border)] bg-[var(--gb-surface)]">
           <p className="font-black">☰ Contents</p>
           <button type="button" onClick={onClose} aria-label="Close contents" className="w-10 h-10 rounded-full border-2 border-[var(--gb-text)] flex items-center justify-center"><X className="w-5 h-5" /></button>

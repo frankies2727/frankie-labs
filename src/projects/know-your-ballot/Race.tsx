@@ -163,8 +163,11 @@ export const RaceCard = memo(function RaceCard({ race, color, ink, numbered, cho
                   className="flex-1 min-w-0 flex items-center gap-3 rounded-xl border-2 px-3 py-2.5 text-left transition-colors disabled:cursor-not-allowed"
                   style={on ? { borderColor: color, background: `color-mix(in srgb, ${color} 15%, transparent)` } : { borderColor: 'var(--gb-border)', background: 'var(--kyb-chip)' }}
                 >
-                  <span className="shrink-0 w-9 h-9 rounded-full border-2 flex items-center justify-center text-sm font-black" style={on ? { background: color, borderColor: color, color: ink } : { borderColor: 'var(--gb-text)', color: 'var(--gb-text)' }}>
-                    {on ? <Check className="w-5 h-5" strokeWidth={3} /> : numbered ? c.ballot : ''}
+                  <span className="shrink-0 flex flex-col items-center gap-0.5">
+                    {numbered && <span className="text-[9px] font-bold uppercase tracking-wide leading-none text-[var(--gb-text)]">Ballot #</span>}
+                    <span className="w-9 h-9 rounded-full border-2 flex items-center justify-center text-sm font-black" style={on ? { background: color, borderColor: color, color: ink } : { borderColor: 'var(--gb-text)', color: 'var(--gb-text)' }}>
+                      {on ? <Check className="w-5 h-5" strokeWidth={3} /> : numbered ? c.ballot : ''}
+                    </span>
                   </span>
                   <span className="min-w-0">
                     <span className="block font-bold leading-snug text-[var(--gb-text)]">{c.name}</span>
