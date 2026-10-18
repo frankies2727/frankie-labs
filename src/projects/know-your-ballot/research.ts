@@ -25,5 +25,10 @@ export function researchLinks(c: Candidate, race: Race): ResearchLink[] {
   if (c.profile) {
     links.push({ label: 'Injustice Watch profile', href: c.profile, note: 'Their background and experience, researched by reporters' });
   }
+  if (race.section === 'school') {
+    links.push({ label: 'Sun-Times / WBEZ voter guide', href: 'https://chicago.suntimes.com/elections/2026/graphics/chicago-school-board-education-voter-guide/', note: 'Each school board candidate’s answers to the same questions' });
+  }
+  // The League of Women Voters asks every candidate the same questions; answers are listed by address.
+  links.push({ label: 'Vote411 candidate Q&A', href: 'https://www.vote411.org/ballot', note: 'League of Women Voters: their answers to the League’s questions, by your address' });
   return links;
 }

@@ -23,7 +23,10 @@ import { pipeline } from 'node:stream/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { changeLog } from './illinois/changes.mjs';
+import { districtCounties } from './illinois/counties.mjs';
 import { govbotSlices } from './illinois/govbot.mjs';
+import { addWiki } from './illinois/incumbents.mjs';
+import { addRecords } from './illinois/record.mjs';
 import { addJudges } from './illinois/judges.mjs';
 import { keepMoneyForward } from './money-forward.mjs';
 import { explainMeasures } from './illinois/measures-plain.mjs';
@@ -218,6 +221,18 @@ async function main() {
   try { news = await recentNews(['Illinois election 2026', 'Illinois governor race Pritzker Bailey', 'Illinois Senate race Stratton Tracy', 'Cook County election 2026', 'Chicago judicial retention 2026', 'Illinois ballot referendum 2026'], ['Illinois governor campaign fundraising', 'Illinois campaign contributions', 'Pritzker campaign money', 'Illinois Senate race campaign money', 'Cook County campaign contributions']); } catch (e) { console.warn(`news: ${e.message}; keeping the last copy`); }
   console.log(`News: ${news.length} headlines`);
 
+  // Who holds each seat now and whether they're running; sitting legislators'
+  // bills; which counties each district covers. Each keeps yesterday's copy
+  // when its source is down.
+  const wiki = await addWiki(ballot.races, { prev });
+  console.log(`Incumbents: ${wiki.incumbents.found} races read, ${wiki.incumbents.kept} kept from yesterday, ${wiki.incumbents.running} on their own ballot, ${wiki.incumbents.noted} with a note; endorsements for ${wiki.endorsements.withList} candidates`);
+  for (const line of wiki.log) console.log('  ' + line);
+  const rec = await addRecords(ballot.races, { state: 'il', prev });
+  console.log(`Records: ${rec.matched} candidates are sitting legislators${rec.kept ? ` (${rec.kept} kept from yesterday)` : ''}`);
+  for (const line of rec.log) console.log('  ' + line);
+  let counties = prev?.counties ?? {};
+  try { counties = await districtCounties(); } catch (e) { console.warn(`counties: ${e.message}; keeping the last copy`); }
+
   explainMeasures(ballot.measures);
   const next = { races: ballot.races, retentions: ballot.retentions, measures: ballot.measures };
   const changes = changeLog(prev, next, new Date().toISOString());
@@ -245,6 +260,7 @@ async function main() {
     govbot,
     places,
     news,
+    counties,
   }, null, 1) + '\n');
   writeFileSync(join(OUT, 'districts.json'), JSON.stringify(districts) + '\n');
   writeFileSync(join(OUT, 'districts-il.json'), JSON.stringify(stateDistricts) + '\n');

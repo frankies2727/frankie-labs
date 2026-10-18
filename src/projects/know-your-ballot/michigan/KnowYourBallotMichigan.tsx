@@ -24,7 +24,8 @@ import rawData from '../data/michigan/ballot.json';
 import { KEY_DATES } from './dates';
 import { MichiganMap } from './Hero';
 import { ballotFor, ballotIdsFor, districtsAt, geocode, inMichigan, prefetchDistricts } from './lookup';
-import { PlanToVote } from './PlanToVote';
+import { MICHIGAN_GUIDES, PlanToVote } from './PlanToVote';
+import { MoreGuides } from '../PlanToVote';
 import type { MichiganData } from './types';
 
 const data = rawData as unknown as MichiganData;
@@ -67,6 +68,9 @@ export function KnowYourBallotMichigan() {
   const [chosenSection, setChosenSection] = useState<string | null>(null);
   const [contentsOpen, setContentsOpen] = useState(false);
   const closeContents = useCallback(() => setContentsOpen(false), []);
+  // Which print view the next print shows: the voter's picks, or a full sample ballot.
+  const [printMode, setPrintMode] = useState<'picks' | 'sample'>('picks');
+  const printAs = (mode: 'picks' | 'sample') => { setPrintMode(mode); setTimeout(() => window.print(), 50); };
   // The pinned bar's height, as --kyb-bar, for what has to sit below it.
   const barObserver = useRef<ResizeObserver | null>(null);
   const barRef = useCallback((bar: HTMLDivElement | null) => {
@@ -444,9 +448,16 @@ export function KnowYourBallotMichigan() {
                 <div className="pt-6 space-y-6">
                   <PlanToVote plan={saved.plan} setPlan={setPlan} county={districts?.county} ballotDone={allDone} />
                   <KeyDates />
-                  <button type="button" onClick={() => window.print()} className="w-full inline-flex items-center justify-center gap-2 min-h-[52px] rounded-xl border-2 border-[var(--gb-text)] font-black hover:bg-[var(--kyb-chip)]">
-                    <Printer className="w-5 h-5" aria-hidden="true" /> Print My Ballot
-                  </button>
+                  <MoreGuides guides={MICHIGAN_GUIDES} storageKey="kyb-mi-guides-open" />
+                  <div className="grid gap-2 sm:grid-cols-2">
+                    <button type="button" onClick={() => printAs('picks')} className="inline-flex items-center justify-center gap-2 min-h-[52px] rounded-xl border-2 border-[var(--gb-text)] font-black hover:bg-[var(--kyb-chip)]">
+                      <Printer className="w-5 h-5" aria-hidden="true" /> Print My Ballot
+                    </button>
+                    <button type="button" onClick={() => printAs('sample')} className="inline-flex items-center justify-center gap-2 min-h-[52px] rounded-xl border-2 border-[var(--gb-text)] font-black hover:bg-[var(--kyb-chip)]">
+                      <Printer className="w-5 h-5" aria-hidden="true" /> Print a full sample ballot
+                    </button>
+                  </div>
+                  <p className="text-sm leading-relaxed">“My Ballot” is your picks, one line per race. The sample ballot lists <strong>every</strong> candidate and proposal on {saved.place ? 'your' : 'the Michigan'} ballot with boxes to mark. The official sample ballot at <a className="font-bold underline text-[var(--gb-link)]" href={LINKS.myInfo} target="_blank" rel="noreferrer noopener">Michigan.gov/Vote ↗</a> is the one to trust for order and wording, and it has the local races this guide doesn’t carry.</p>
                 </div>
               )}
 
@@ -494,7 +505,7 @@ export function KnowYourBallotMichigan() {
         )}
       </div>
 
-      <PrintBallot sections={sections} picks={saved.picks} label={saved.place?.label} />
+      <PrintBallot sections={sections} picks={saved.picks} label={saved.place?.label} sample={printMode === 'sample'} />
 
       {sheet && (
         <CandidateSheet race={sheet.race} c={sheet.c} color={sectionOf(sheet.race.section).color} ink={sectionOf(sheet.race.section).ink} numbered={false}
@@ -722,6 +733,12 @@ function Sources() {
     { emoji: '🔄', title: 'What changed', status: 'Daily',
       body: 'Every morning the guide re-reads its sources and notes candidates added or dropped and new money reports, so returning voters see what’s new.',
       links: [] },
+    { emoji: '👤', title: 'Who’s in office now', status: 'Live · daily',
+      body: 'Each seat’s current holder: Congress and the Legislature from Open States’ official roster (via govbot); statewide offices, the Supreme Court and the boards from the Wikipedia article on each 2026 race. Whether they’re running is read from the candidate lists, never guessed; when they aren’t, the article’s own line on why (term-limited, retiring, lost renomination) is quoted with a link. Candidates who already sit in Lansing or Congress show the bills they sponsored this session, from govbot’s catalog.',
+      links: [['Open States', 'https://openstates.org/mi/'], ['Wikipedia: 2026 Michigan elections', 'https://en.wikipedia.org/wiki/2026_Michigan_elections']] },
+    { emoji: '🗣️', title: 'In their words & endorsements', status: 'Live · daily',
+      body: 'Each candidate’s three key campaign messages are their own answer to Ballotpedia’s Candidate Connection survey, quoted word for word with the date, plus the “Issues” page on their own campaign site when it has one. Endorsements are the lists in the Wikipedia article on the race, by the article’s own categories, linked to the section. Nothing here is written or rated by us.',
+      links: [['Ballotpedia Candidate Connection', 'https://ballotpedia.org/Ballotpedia:Candidate_Connection'], ['Wikipedia: 2026 Michigan elections', 'https://en.wikipedia.org/wiki/2026_Michigan_elections']] },
     { emoji: '⏳', title: 'Not here yet', status: 'Planned', planned: true,
       body: 'County and local offices, trial-court judges, local proposals and state-level campaign money. Your sample ballot at Michigan.gov/Vote has the contests.',
       links: [['Your sample ballot', LINKS.myInfo]] },
@@ -756,24 +773,52 @@ function Sources() {
   );
 }
 
-function PrintBallot({ sections, picks, label }: { sections: { id: SectionId; title: string; ids: string[] }[]; picks: Record<string, Choice>; label?: string }) {
+function PrintBallot({ sections, picks, label, sample }: { sections: { id: SectionId; title: string; ids: string[] }[]; picks: Record<string, Choice>; label?: string; /** Every candidate and proposal with boxes to mark, instead of the voter's picks. */ sample: boolean }) {
   return (
     <div className="hidden print:block p-6 text-black bg-white text-[11pt]">
-      <h1 className="text-xl font-black">My Ballot · Michigan · Nov 3, 2026</h1>
+      <h1 className="text-xl font-black">{sample ? 'Sample ballot' : 'My Ballot'} · Michigan · Nov 3, 2026</h1>
       {label && <p>{label}</p>}
+      {sample && <p className="text-[9pt]">Unofficial, from Know Your Ballot: the statewide, congressional, legislative and Court of Appeals contests and the proposals on this ballot. Local races and your official ballot order are on the sample ballot at Michigan.gov/Vote.</p>}
       {sections.map((s) => (
         <section key={s.id} className="mt-4 break-inside-avoid-page">
           <h2 className="font-black border-b border-black">{s.title}</h2>
-          <table className="w-full table-fixed">
-            <tbody>
-              {s.ids.map((id) => { const { what, pick } = describePick(id, picks[id]); return (
-                <tr key={id} className="align-top"><td className="w-3/5 py-0.5 pr-4">{what}</td><td className="py-0.5 font-bold">{pick}</td></tr>
-              ); })}
-            </tbody>
-          </table>
+          {sample ? s.ids.map((id) => <SampleContest key={id} id={id} pick={picks[id]} />) : (
+            <table className="w-full table-fixed">
+              <tbody>
+                {s.ids.map((id) => { const { what, pick } = describePick(id, picks[id]); return (
+                  <tr key={id} className="align-top"><td className="w-3/5 py-0.5 pr-4">{what}</td><td className="py-0.5 font-bold">{pick}</td></tr>
+                ); })}
+              </tbody>
+            </table>
+          )}
         </section>
       ))}
       <p className="mt-4">Michigan voters may bring notes or a marked sample ballot into the voting booth.</p>
+    </div>
+  );
+}
+
+/** One contest on the printed sample ballot: every choice with a box, the voter's pick pre-marked. */
+function SampleContest({ id, pick }: { key?: string; id: string; pick: Choice | undefined }) {
+  const box = (on: boolean) => <span className="inline-block w-[0.9em] h-[0.9em] border border-black align-[-0.1em] mr-1.5 text-[8pt] leading-[0.9em] text-center">{on ? '✕' : ''}</span>;
+  const race = data.races.find((r) => r.id === id);
+  if (race) {
+    const picked = Array.isArray(pick) ? pick : [];
+    return (
+      <div className="mt-2 break-inside-avoid">
+        <p className="font-bold">{race.office}{race.voteFor > 1 ? ` (vote for up to ${race.voteFor})` : ''}</p>
+        <ul className="pl-3">
+          {race.candidates.map((c) => <li key={c.ballot}>{box(picked.includes(c.ballot))}{c.name} <span className="text-[9pt]">({c.party})</span></li>)}
+          {race.writeIn && <li>{box(false)}Write-in: ______________________</li>}
+        </ul>
+      </div>
+    );
+  }
+  const m = data.measures.find((x) => x.id === id);
+  return (
+    <div className="mt-2 break-inside-avoid">
+      <p className="font-bold">{m?.title ?? id}</p>
+      <p className="pl-3">{box(pick === 'yes')}Yes &nbsp; {box(pick === 'no')}No</p>
     </div>
   );
 }

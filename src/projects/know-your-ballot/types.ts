@@ -43,6 +43,42 @@ export interface Candidate {
   /** Judicial candidates: each bar group's rating, by its short name, and where the Alliance publishes it. */
   bar?: Record<string, string>;
   barSource?: string;
+  /** A sitting legislator's record this session (scripts/know-your-ballot/illinois/record.mjs). */
+  record?: LegislativeRecord;
+  /** Their Ballotpedia page, once found (the source of `stances`). */
+  ballotpedia?: string;
+  /** Their own answer to Ballotpedia's survey question "3 key messages of your campaign", verbatim. */
+  stances?: { messages: string[]; asOf?: string; url: string };
+  /** The "Issues" / "Priorities" page on their own campaign site. */
+  issuesUrl?: string;
+  /** Who has endorsed them, as the Wikipedia article on the race lists it (scripts/know-your-ballot/wiki.mjs). */
+  endorsements?: { groups: { category: string; names: string[] }[]; total: number; source: { name: string; url: string }; asOf: string };
+}
+
+/** Bills a sitting legislator sponsored this session, from govbot's catalog. */
+export interface LegislativeRecord {
+  /** How many bills they sponsored or co-sponsored this session. */
+  sponsored: number;
+  /** The newest few, with the official bill page and govbot's key (state~session~id). */
+  bills: { state: string; session: string; id: string; title: string; latest_action?: string; url?: string }[];
+  /** "House District 8", "U.S. House · IL-7": the seat the record belongs to. */
+  seat: string;
+  source: string;
+  asOf: string;
+}
+
+/** Who holds a seat now, and whether they're on this ballot (scripts/know-your-ballot/illinois/incumbents.mjs). */
+export interface Incumbent {
+  name: string;
+  party?: string;
+  /** Set when they're a candidate in this race: their ballot number. */
+  ballot?: number;
+  /** When they're not: why, in the source's words ("… is retiring to run for Congress."). */
+  note?: string;
+  /** Where the name (and note) were read. */
+  source?: { name: string; url: string };
+  /** YYYY-MM-DD the source was read. */
+  asOf?: string;
 }
 
 export type SocialPlatform = 'x' | 'facebook' | 'instagram' | 'youtube' | 'tiktok' | 'bluesky' | 'threads' | 'linkedin';
@@ -64,6 +100,8 @@ export interface Race {
   outsideCook?: boolean;
   /** Where this contest's candidate list was read from. */
   source?: string;
+  /** The seat's current holder(s); several for a multi-seat contest. Absent when no source names one. */
+  incumbents?: Incumbent[];
 }
 
 export interface Retention {
@@ -113,6 +151,8 @@ export interface BallotData {
   places?: Record<string, string[]>;
   /** Recent headlines about the election, newest first. */
   news?: NewsItem[];
+  /** The districts ("cd:6", "sldu:21") that cover each Illinois county, for browsing a county without an address. */
+  counties?: Record<string, string[]>;
 }
 
 /** From govbot's election data (github.com/chihacknight/govbot), refreshed daily. */

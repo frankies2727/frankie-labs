@@ -38,13 +38,24 @@ export function Confetti({ onDone }: { onDone: () => void }) {
 }
 
 /** Pinned under the progress bar while there's no address: picks are off until there is one. */
-export function BrowsingNotice({ region, onAddAddress }: { region: string; onAddAddress: () => void }) {
+export function BrowsingNotice({ region, onAddAddress, counties }: { region: string; onAddAddress: () => void; /** Illinois: browse another county's races without an address. */ counties?: { list: string[]; value: string; onChange: (county: string) => void } }) {
   return (
     <div role="status" data-browsing-notice className="mt-3 flex flex-col items-start lg:flex-row lg:flex-wrap lg:items-center gap-x-3 gap-y-2 rounded-xl border-2 border-[var(--gb-amber-hi)] bg-[var(--kyb-chip)] px-3 py-2 text-sm lg:text-[15px] leading-snug">
       <p className="min-w-0 flex-1">You’re seeing <strong>every</strong> race on any ballot in {region}. Picks and trophies are off until it’s <em>your</em> ballot.</p>
-      <button type="button" onClick={onAddAddress} className="inline-flex items-center gap-1.5 min-h-[40px] rounded-lg bg-[var(--gb-text)] px-3 font-bold text-[var(--gb-bg)]">
-        <MapPin className="w-4 h-4" aria-hidden="true" /> Enter your address
-      </button>
+      <div className="flex flex-wrap items-center gap-2">
+        {counties && (
+          <label className="inline-flex items-center gap-1.5 min-h-[40px] rounded-lg border-2 border-[var(--gb-text)] bg-[var(--gb-surface)] pl-2.5 pr-1 font-bold text-[var(--gb-text)]">
+            <span className="sr-only">County to browse</span>
+            <span aria-hidden="true">Browse:</span>
+            <select value={counties.value} onChange={(e) => counties.onChange(e.target.value)} className="min-h-[36px] max-w-[11rem] bg-transparent font-bold text-[var(--gb-text)] outline-none">
+              {counties.list.map((c) => <option key={c} value={c}>{c} County</option>)}
+            </select>
+          </label>
+        )}
+        <button type="button" onClick={onAddAddress} className="inline-flex items-center gap-1.5 min-h-[40px] rounded-lg bg-[var(--gb-text)] px-3 font-bold text-[var(--gb-bg)]">
+          <MapPin className="w-4 h-4" aria-hidden="true" /> Enter your address
+        </button>
+      </div>
     </div>
   );
 }
