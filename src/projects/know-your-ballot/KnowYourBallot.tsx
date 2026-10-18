@@ -471,7 +471,7 @@ export function KnowYourBallot() {
             <div className="max-w-[1100px] mx-auto">
               <div className="flex items-center gap-2 sm:gap-4">
                 <button type="button" onClick={() => setContentsOpen(true)} aria-label="Contents"
-                  className="lg:hidden shrink-0 w-11 h-11 rounded-xl border-2 border-[var(--gb-border)] flex items-center justify-center text-[var(--gb-text)] hover:border-[var(--gb-text)]">
+                  className="lg:hidden shrink-0 w-11 h-11 rounded-xl border-2 border-[var(--gb-text)] flex items-center justify-center text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]">
                   <ListChecks className="w-5 h-5" aria-hidden="true" />
                 </button>
                 <Ring pct={total ? done / total : 0} />
