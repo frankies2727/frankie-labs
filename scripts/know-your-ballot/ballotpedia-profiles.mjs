@@ -41,10 +41,12 @@ function curl(url, binary = false) {
 }
 // Every real Ballotpedia page, a profile or not, carries the site's name in its title; a challenge page doesn't.
 const isBallotpedia = (html) => /<title>[^<]*Ballotpedia<\/title>/.test(html);
+// A challenge the browser can clear is gone in a couple of seconds; one it
+// can't (a CAPTCHA) never is, and a hundred pages a day can't each wait long.
 async function ballotpediaPage(url) {
   const html = curl(url);
   if (isBallotpedia(html)) return html;
-  return (await browserPage(url, isBallotpedia, UA)) ?? html;
+  return (await browserPage(url, isBallotpedia, UA, { wait: 10_000 })) ?? html;
 }
 
 /** What a profile page says: its photo and labelled links. */
@@ -153,7 +155,7 @@ export async function addProfiles(races, { dir, publicPath, prev, state = 'Michi
   const log = [];
   const used = new Set();
   const missing = fill === 'missing' || stancesOnly;
-  let withPhoto = 0, withSocial = 0, withProfile = 0, total = 0;
+  let withPhoto = 0, withSocial = 0, withProfile = 0, total = 0, unreached = 0;
   const jobs = races.flatMap((race) => race.candidates.map((c) => ({ race, c })));
   total = jobs.length;
   for (const { c } of jobs) if (c.photo) used.add(c.photo.file.split('/').pop());
@@ -171,7 +173,7 @@ export async function addProfiles(races, { dir, publicPath, prev, state = 'Michi
     };
     // Someone whose page was already read keeps their survey answers until the page is read again.
     if (missing && c.photo && c.social && c.website && (was?.ballotpedia || c.ballotpedia) && !stancesOnly) { keep(); return; }
-    if (Date.now() - started > BUDGET_MS) { keep(); return; }
+    if (Date.now() - started > BUDGET_MS) { keep(); unreached += 1; return; }
     try {
       // No profile linked: find it by name, and make sure it's them.
       let profile = c.profile?.match(/^https:\/\/ballotpedia\.org\/\S+$/)?.[0] ?? c.ballotpedia ?? was?.ballotpedia ?? was?.photo?.link?.match(/^https:\/\/ballotpedia\.org\/\S+$/)?.[0];
@@ -219,6 +221,7 @@ export async function addProfiles(races, { dir, publicPath, prev, state = 'Michi
   });
 
   for (const { c } of jobs) { if (c.photo) withPhoto++; if (c.social) withSocial++; if (c.profile || (missing && c.photo?.credit === 'Ballotpedia')) withProfile++; }
+  if (unreached) log.push(`${unreached} candidates not reached in the ${BUDGET_MS / 60_000}-minute budget (they keep yesterday's)`);
   if (!missing) for (const f of readdirSync(dir)) if (!used.has(f) && !f.startsWith('retain-')) rmSync(join(dir, f));
   return { withPhoto, withSocial, withProfile, total, log };
 }
