@@ -20,6 +20,7 @@
 // total stands on its own.
 
 import { createReadStream, existsSync } from 'node:fs';
+import { namesAgree } from '../ballotpedia-profiles.mjs';
 import { createInterface } from 'node:readline';
 
 export const ISBE_FILES = ['Candidates', 'CanElections', 'CmteCandidateLinks', 'FiledDocs', 'D2Totals'];
@@ -154,7 +155,9 @@ export async function addStateMoney(races, dir) {
       const last = w[w.length - 1];
       let hits = people.filter((p) => (p.last.includes(last) || p.last.join('') === w.slice(-2).join(''))
         && officeFits(race.office, p.office) && districtFits(race.office, p.district));
-      if (hits.length > 1) hits = hits.filter((p) => p.first.some((f) => f.slice(0, 3) === w[0].slice(0, 3)));
+      // The first name has to agree too, even with one surname match (a lone
+      // "Garcia" committee for the office could be the other Garcia's).
+      hits = hits.filter((p) => !p.first.length || p.first.some((f) => f.slice(0, 3) === w[0].slice(0, 3)) || namesAgree(c.name, `${p.first.join(' ')} ${p.last.join(' ')}`));
       const ids = new Set(hits.map((p) => p.id));
       if (!ids.size || new Set(hits.map((p) => p.last.join(' ') + '|' + (p.first[0] ?? ''))).size > 1) continue;
 

@@ -284,7 +284,24 @@ export function KnowYourBallot() {
     setChosenSection(sectionId);
     requestAnimationFrame(() => scrollTo(document.getElementById(`sec-${sectionId}`)?.closest('section') ?? null));
   };
+  // A jump to a contest the browsed county doesn't show (a search result, a
+  // link) first switches to a county that does, then jumps once it renders.
+  const pendingJump = useRef<[string, string] | null>(null);
+  const shown = (id: string) => ballot.races.some((r) => r.id === id) || ballot.retentions.some((r) => r.id === id) || ballot.measures.some((m) => m.id === id);
+  const countyFor = (id: string) => {
+    const race = data.races.find((r) => r.id === id);
+    if (!race?.outsideCook) return 'Cook';
+    const key = race.area ? `${race.area.type}:${race.area.id}` : '';
+    return Object.keys(data.counties ?? {}).find((c) => data.counties?.[c].includes(key)) ?? 'Cook';
+  };
+  useEffect(() => {
+    const p = pendingJump.current;
+    if (!p || !shown(p[1])) return;
+    // The county has changed; open the section, and once the card is on the page, go to it.
+    if (document.getElementById(`race-${p[1]}`)) { pendingJump.current = null; jumpTo(p[0], p[1]); } else { setTab('ballot'); setChosenSection(p[0]); }
+  }); // after every render: the county change has to land first
   const jumpTo = (sectionId: string, id: string) => {
+    if (browsingCounty && !shown(id)) { pendingJump.current = [sectionId, id]; setCounty(countyFor(id)); return; }
     setTab('ballot');
     setChosenSection(sectionId);
     // Two frames: the new section has to render, and the pinned bar has to
@@ -462,7 +479,7 @@ export function KnowYourBallot() {
     <>
       <div className="mt-3 grid grid-cols-3 sm:grid-cols-5 gap-2">{views}</div>
       <div className="mt-3">
-        <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} sections={SECTION_TITLES} places={data.places} onJump={(h) => jumpTo(h.section, h.id)} />
+        <BallotSearch ballot={browsingCounty ? everything : ballot} everywhere={districts ? everything : undefined} sections={SECTION_TITLES} places={data.places} onJump={(h) => jumpTo(h.section, h.id)} />
       </div>
       {!saved.place && <BrowsingNotice region={browsingCounty ? `${browsingCounty} County` : 'Chicago or suburban Cook'} onAddAddress={changeAddress}
         counties={COUNTIES.length ? { list: COUNTIES, value: county, onChange: setCounty } : undefined} />}

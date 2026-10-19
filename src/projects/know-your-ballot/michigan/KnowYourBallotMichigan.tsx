@@ -194,7 +194,18 @@ export function KnowYourBallotMichigan() {
     setChosenSection(sectionId);
     requestAnimationFrame(() => scrollTo(document.getElementById(`sec-${sectionId}`)?.closest('section') ?? null));
   };
+  // A jump to a contest the browsed county doesn't show (a search result, a
+  // link) first goes back to all of Michigan, then jumps once it renders.
+  const pendingJump = useRef<[string, string] | null>(null);
+  const shown = (id: string) => ballot.races.some((r) => r.id === id) || ballot.measures.some((m) => m.id === id);
+  useEffect(() => {
+    const p = pendingJump.current;
+    if (!p || !shown(p[1])) return;
+    // The county has changed; open the section, and once the card is on the page, go to it.
+    if (document.getElementById(`race-${p[1]}`)) { pendingJump.current = null; jumpTo(p[0], p[1]); } else { setTab('ballot'); setChosenSection(p[0]); }
+  }); // after every render: the county change has to land first
   const jumpTo = (sectionId: string, id: string) => {
+    if (browsingCounty && !shown(id)) { pendingJump.current = [sectionId, id]; setCounty(''); return; }
     setTab('ballot');
     setChosenSection(sectionId);
     // Two frames: the section has to render, and the pinned bar has to settle.
@@ -333,7 +344,7 @@ export function KnowYourBallotMichigan() {
     <>
       <div className="mt-3 grid grid-cols-3 sm:grid-cols-5 gap-2">{views}</div>
       <div className="mt-3">
-        <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} sections={SECTION_TITLES} onJump={(h) => jumpTo(h.section, h.id)} />
+        <BallotSearch ballot={browsingCounty ? everything : ballot} everywhere={districts ? everything : undefined} sections={SECTION_TITLES} onJump={(h) => jumpTo(h.section, h.id)} />
       </div>
       {!saved.place && <BrowsingNotice region={region} onAddAddress={changeAddress}
         counties={COUNTIES.length ? { list: COUNTIES, value: county, onChange: setCounty, all: 'All of Michigan' } : undefined} />}

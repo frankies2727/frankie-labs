@@ -38,6 +38,7 @@ import { PROPOSALS, PROPOSALS_SOURCE } from './michigan/proposals.mjs';
 import { boardCandidates } from './michigan/wikipedia.mjs';
 import { addWiki } from './michigan/incumbents.mjs';
 import { countiesFromLayers } from './michigan/counties.mjs';
+import { reconcile } from './audit.mjs';
 import { addRecords } from './illinois/record.mjs';
 
 const OUT = 'src/projects/know-your-ballot/data/michigan';
@@ -232,6 +233,10 @@ async function main() {
   const rec = await addRecords(races, { state: 'mi', prev });
   console.log(`Records: ${rec.matched} candidates are sitting legislators${rec.kept ? ` (${rec.kept} kept from yesterday)` : ''}`);
   for (const line of rec.log) console.log('  ' + line);
+  // Last line: anything attached to a candidate whose source names someone else is dropped.
+  const findings = await reconcile(races, 'mi');
+  console.log(`Audit: ${findings.length} finding${findings.length === 1 ? '' : 's'}`);
+  for (const line of findings) console.log('  ' + line);
 
   writeFileSync(join(OUT, 'ballot.json'), JSON.stringify({
     election: ELECTION,
