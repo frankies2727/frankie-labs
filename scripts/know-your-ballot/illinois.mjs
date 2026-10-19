@@ -40,6 +40,7 @@ import { ISBE_BASE, ISBE_FILES, ISBE_RECEIPTS, addStateMoney } from './illinois/
 import { addStateList, fetchCertifiedList } from './illinois/statewide.mjs';
 import { buildDistricts, buildStateDistricts, placesIn, touchesCook } from './illinois/districts.mjs';
 import { addProfiles } from './ballotpedia-profiles.mjs';
+import { browserPage, closeBrowser } from './browser.mjs';
 import { addHeadshots } from './headshots.mjs';
 import { recentNews } from './news.mjs';
 import { buildOutline } from './michigan/districts.mjs';
@@ -62,8 +63,7 @@ async function download(url, file) {
 }
 
 // The Board's pages sit behind a bot check that sometimes turns away plain
-// requests; a real browser gets through. One browser is shared for the run.
-let browser = null;
+// requests; a real browser gets through (browser.mjs, shared for the run).
 // `looksRight` tells a real page from a bot-check interstitial.
 async function fetchPage(url, looksRight) {
   try {
@@ -73,20 +73,9 @@ async function fetchPage(url, looksRight) {
       if (looksRight(html)) return html;
     }
   } catch { /* fall through to the browser */ }
-  if (!browser) browser = await (await import('playwright')).chromium.launch();
-  const page = await browser.newPage({ userAgent: UA });
-  try {
-    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60_000 });
-    // The bot check resolves itself after a few seconds, then reloads.
-    for (let waited = 0; waited < 30_000; waited += 1_000) {
-      const html = await page.content().catch(() => '');
-      if (looksRight(html)) return html;
-      await page.waitForTimeout(1_000);
-    }
-    throw new Error(`${url} never got past the bot check`);
-  } finally {
-    await page.close();
-  }
+  const html = await browserPage(url, looksRight, UA);
+  if (html) return html;
+  throw new Error(`${url} never got past the bot check`);
 }
 
 // The candidate-list PDF gets a new URL every time the Board updates it, so
@@ -201,6 +190,7 @@ async function main() {
   // profile, then the headshot on their own campaign site.
   const profiles = await addProfiles(ballot.races, { dir: PHOTOS_DIR, publicPath: 'kyb-photos/illinois', prev, state: 'Illinois', fill: 'missing' });
   console.log(`Ballotpedia: photos now ${profiles.withPhoto}/${profiles.total}, social ${profiles.withSocial}`);
+  for (const line of profiles.log) console.log('  ' + line);
   const heads = await addHeadshots(ballot.races, { dir: PHOTOS_DIR, publicPath: 'kyb-photos/illinois', prev });
   console.log(`Campaign-site headshots: ${heads.found} new, ${heads.kept} kept, of ${heads.tried} sites read`);
   for (const line of heads.log) console.log('  ' + line);
@@ -209,7 +199,7 @@ async function main() {
   for (const line of judges.log) console.log(line);
 
   const sites = await earlyVotingSites();
-  await browser?.close();
+  await closeBrowser();
 
   // A race whose district isn't on the map would silently vanish from every
   // ballot, so treat that as a broken build.
