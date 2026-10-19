@@ -6,6 +6,9 @@ import { RETENTION_EXPLAINER } from './offices';
 import { BallotSearch, type Hit } from './Search';
 import { GovbotChrome } from './GovbotChrome';
 import { guideUrl } from './hosts';
+import { routeHref } from '../../lib/router';
+import guideJsonUrl from './data/illinois/guide.json?url';
+import type { Guide } from './types';
 import { StateMap } from './Hero';
 import outline from './data/illinois/outline.json';
 import { GaugeDefs } from './BarRatings';
@@ -44,6 +47,11 @@ const GOVBOT_ALL_RACES = 'https://chihacknight.github.io/govbot/dashboard/electi
 // Illinois' 102 counties, from govbot's district maps; Cook first, the rest A–Z.
 const COUNTIES = data.counties ? ['Cook', ...Object.keys(data.counties).filter((c) => c !== 'Cook')] : [];
 const COUNTY_KEY = 'kyb-il-county';
+// The ballot view's own address, for links that open it in a new tab.
+const BALLOT_HREF = routeHref('projects/know-your-ballot-illinois/ballot');
+// The school board voter guide, fetched once, the first time such a profile opens.
+let guidePromise: Promise<Record<string, Guide>> | null = null;
+const loadGuide = () => (guidePromise ??= fetch(guideJsonUrl).then((r) => (r.ok ? r.json() : {})).catch(() => { guidePromise = null; return {}; }));
 
 // Ballot order. Section colours are govbot's accents (ballot.css, govbot.css);
 // each reads with the page background as its ink in both themes. Party never
@@ -124,6 +132,9 @@ export function KnowYourBallot() {
   const [address, setAddress] = useState('');
   const [status, setStatus] = useState<{ busy: boolean; error: string; outside: boolean }>({ busy: false, error: '', outside: false });
   const [sheet, setSheet] = useState<{ race: Race; c: Candidate } | null>(null);
+  // The open school board candidate's voter-guide page, once it has loaded.
+  const [guide, setGuide] = useState<Record<string, Guide> | null>(null);
+  useEffect(() => { if (sheet?.race.section === 'school' && !guide) loadGuide().then(setGuide); }, [sheet, guide]);
   const [comparing, setComparing] = useState<Race | null>(null);
   // One ballot section on screen at a time; the contents list switches them.
   const [chosenSection, setChosenSection] = useState<string | null>(null);
@@ -305,6 +316,8 @@ export function KnowYourBallot() {
     const asked = decodeURIComponent(m[2]);
     const id = m[1] === 'race' ? (data.govbot.legacy?.[asked] ?? asked) : null;
     const race = id ? data.races.find((r) => r.id === id) : undefined;
+    // A judge's retention or a ballot question (the landing page's search links those too).
+    const other = id && !race && (data.retentions.some((r) => r.id === id) || data.measures.some((x) => x.id === id)) ? id : null;
     if (race && districts && !ballotIds(districts).has(race.id)) {
       setToast(`${race.office} isn’t on the ballot at your address. Use the search to see it.`);
       return;
@@ -317,6 +330,7 @@ export function KnowYourBallot() {
     if (id === '2027') { showView(false); requestAnimationFrame(() => requestAnimationFrame(() => scrollTo(document.getElementById('kyb-next')))); return; }
     if (!showBallot) browse();
     if (race) jumpTo(race.section, race.id);
+    else if (other) jumpTo(sectionFor(other), other);
   };
   useEffect(() => {
     const take = () => raceLink.current();
@@ -674,6 +688,7 @@ export function KnowYourBallot() {
       {sheet && (
         <CandidateSheet race={sheet.race} c={sheet.c} color={sectionOf(sheet.race.section).color} ink={sectionOf(sheet.race.section).ink} numbered={chicago && sheet.race.numbered !== false}
           picked={picksFor(sheet.race.id).includes(sheet.c.ballot)}
+          guide={sheet.race.section === 'school' ? (guide ? guide[`${sheet.race.id}|${sheet.c.name}`] ?? null : undefined) : null}
           onPick={() => {
             const cur = picksFor(sheet.race.id);
             const has = cur.includes(sheet.c.ballot);
@@ -806,7 +821,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
         ))}
       </ul>
 
-      <BallotSearch ballot={everything} sections={SECTION_TITLES} onJump={onSearchJump} />
+      <BallotSearch ballot={everything} sections={SECTION_TITLES} onJump={onSearchJump} hrefFor={(h) => `${BALLOT_HREF}#race=${encodeURIComponent(h.id)}`} />
 
       <div className="kyb-wide pt-4">
         <Headliners races={STATEWIDE} sections={SECTIONS} overline="On every Illinois ballot" heading="The statewide races"
@@ -961,6 +976,9 @@ function Sources() {
     { emoji: '👤', title: 'Who’s in office now', status: 'Live · daily',
       body: 'Each seat’s current holder: Congress and the General Assembly from Open States’ official roster (via govbot); statewide, Cook County and school board seats from the Wikipedia article on each 2026 race. Whether they’re running is read from the candidate lists, never guessed; when they aren’t, the article’s own sentence on why is quoted with a link. Candidates who already sit in Springfield or Congress show the bills they sponsored this session, from govbot’s catalog.',
       links: [['Open States', 'https://openstates.org/il/'], ['Wikipedia: 2026 Illinois elections', 'https://en.wikipedia.org/wiki/2026_Illinois_elections']] },
+    { emoji: '📰', title: 'School board questionnaire', status: 'Live · daily',
+      body: 'Every Chicago Board of Education candidate’s answers to the Chicago Sun-Times / WBEZ voter guide questionnaire (top three issues, a top local concern, six yes/no questions, seven open-ended questions), plus the guide’s background facts and education endorsements, in the candidate’s own words with a link to their page. Loaded only when a school board profile opens.',
+      links: [['Sun-Times / WBEZ voter guide', 'https://chicago.suntimes.com/elections/2026/graphics/chicago-school-board-education-voter-guide/']] },
     { emoji: '🗣️', title: 'In their words & endorsements', status: 'Live · daily',
       body: 'Each candidate’s three key campaign messages are their own answer to Ballotpedia’s Candidate Connection survey, quoted word for word with the date, plus the “Issues” page on their own campaign site when it has one. Endorsements are the lists in the Wikipedia article on the race, by the article’s own categories, linked to the section. Nothing here is written or rated by us.',
       links: [['Ballotpedia Candidate Connection', 'https://ballotpedia.org/Ballotpedia:Candidate_Connection'], ['Wikipedia: 2026 Illinois elections', 'https://en.wikipedia.org/wiki/2026_Illinois_elections']] },

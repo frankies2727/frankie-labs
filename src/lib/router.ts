@@ -47,6 +47,12 @@ export function navigate(route: string, opts?: { replace?: boolean }): void {
   }
 }
 
+/** The address of a route, for a plain link (a new tab, a share). */
+export function routeHref(route: string): string {
+  const clean = toPath(route.replace(/^\/+|\/+$/g, ''));
+  return clean ? BASE + clean : BASE;
+}
+
 export function useRoute(): string {
   const [route, setRoute] = useState(currentRoute);
   useEffect(() => {

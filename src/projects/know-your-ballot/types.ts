@@ -212,6 +212,24 @@ export interface EarlyVotingSite { site: string; address: string; language?: str
 /** A recent headline (scripts/know-your-ballot/news.mjs), with the outlet that wrote it. */
 export interface NewsItem { at: string; title: string; url: string; source: string; /** "money" for campaign-finance stories. */ topic?: 'money' }
 
+/** A school board candidate's page in the Sun-Times / WBEZ voter guide (data/illinois/guide.json, scripts/know-your-ballot/illinois/suntimes.mjs): the questionnaire in their own words. */
+export interface Guide {
+  /** False when they sent no questionnaire back (only `facts` and `endorsements` then). */
+  answered: boolean;
+  facts: { label: string; value: string }[];
+  /** "Key education endorsements/financial support", as the guide lists them. */
+  endorsements: string[];
+  /** "How their elementary school teachers would describe them". */
+  teachers?: string;
+  issues: { title: string; why?: string }[];
+  local?: { q: string; a: string };
+  yesNo: { topic: string; q: string; answer?: string; why?: string }[];
+  open: { title?: string; q: string; a: string }[];
+  url: string;
+  source: string;
+  asOf: string;
+}
+
 /** The voter's districts, as resolved from their address. */
 export type Districts = Partial<Record<AreaType | 'precinct', string>>;
 

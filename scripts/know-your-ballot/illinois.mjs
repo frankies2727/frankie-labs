@@ -27,6 +27,7 @@ import { districtCounties } from './illinois/counties.mjs';
 import { govbotSlices } from './illinois/govbot.mjs';
 import { addWiki } from './illinois/incumbents.mjs';
 import { addRecords } from './illinois/record.mjs';
+import { buildGuide } from './illinois/suntimes.mjs';
 import { addJudges } from './illinois/judges.mjs';
 import { keepMoneyForward } from './money-forward.mjs';
 import { explainMeasures } from './illinois/measures-plain.mjs';
@@ -230,6 +231,14 @@ async function main() {
   const rec = await addRecords(ballot.races, { state: 'il', prev });
   console.log(`Records: ${rec.matched} candidates are sitting legislators${rec.kept ? ` (${rec.kept} kept from yesterday)` : ''}`);
   for (const line of rec.log) console.log('  ' + line);
+  // The Sun-Times / WBEZ school board questionnaire, as a separate file the
+  // profile fetches on demand.
+  let prevGuide = {};
+  try { prevGuide = JSON.parse(readFileSync(join(OUT, 'guide.json'), 'utf8')); } catch { /* first build */ }
+  const guide = await buildGuide(ballot.races, { prev: prevGuide });
+  console.log(`Voter guide: ${guide.read} school board candidates read, ${guide.kept} kept from yesterday`);
+  for (const line of guide.log) console.log('  ' + line);
+  writeFileSync(join(OUT, 'guide.json'), JSON.stringify(guide.guide) + '\n');
   let counties = prev?.counties ?? {};
   try { counties = await districtCounties(); } catch (e) { console.warn(`counties: ${e.message}; keeping the last copy`); }
 

@@ -15,6 +15,8 @@ export interface MichiganData {
   measures: Measure[];
   /** County name -> Court of Appeals election district. */
   coa: Record<string, string>;
+  /** The districts ("cd:6", "sldu:21") that reach into each county, for browsing a county without an address. */
+  counties?: Record<string, string[]>;
   /** What the daily refresh found different, newest last. */
   changes?: Change[];
   /** Recent headlines about the election, newest first. */

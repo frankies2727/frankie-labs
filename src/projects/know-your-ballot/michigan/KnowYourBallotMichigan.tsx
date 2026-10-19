@@ -4,6 +4,7 @@ import { ClearButton } from '../../../components/ClearButton';
 import { BrowsingBadge, BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Locating, Ring, useWide, SectionCards, SectionFlip, useBallotView, useDocumentMeta, type SectionCard } from '../Bits';
 import { Group } from '../Calendar';
 import { guideUrl } from '../hosts';
+import { routeHref } from '../../../lib/router';
 import { billItems, billUrl, changeItems, dateItems, Feed, newsItems } from '../Feed';
 import { Laws } from '../Laws';
 import { NextElectionNote } from './NextUp';
@@ -23,12 +24,17 @@ import { DISTRICT_CHIPS, LINKS, MICHIGAN, SECTION_TITLES, SECTIONS, SHARE_URL, S
 import rawData from '../data/michigan/ballot.json';
 import { KEY_DATES } from './dates';
 import { MichiganMap } from './Hero';
-import { ballotFor, ballotIdsFor, districtsAt, geocode, inMichigan, prefetchDistricts } from './lookup';
+import { ballotFor, ballotForCounty, ballotIdsFor, districtsAt, geocode, inMichigan, prefetchDistricts } from './lookup';
 import { MICHIGAN_GUIDES, PlanToVote } from './PlanToVote';
 import { MoreGuides } from '../PlanToVote';
 import type { MichiganData } from './types';
 
 const data = rawData as unknown as MichiganData;
+// Michigan's 83 counties, A–Z, from the district maps; '' browses the whole state.
+const COUNTIES = data.counties ? Object.keys(data.counties) : [];
+const COUNTY_KEY = 'kyb-mi-county';
+// The ballot view's own address, for links that open it in a new tab.
+const BALLOT_HREF = routeHref('projects/know-your-ballot-michigan/ballot');
 const everything = ballotFor(data, null);
 const raceById = new Map(data.races.map((r) => [r.id, r]));
 const sectionOf = (id: string) => SECTIONS.find((s) => s.id === id) ?? SECTIONS[0];
@@ -93,13 +99,19 @@ export function KnowYourBallotMichigan() {
   }, [setSaved]);
 
   const districts = saved.place?.districts ?? null;
+  // With no address, one county can be browsed: its statewide races plus the
+  // districts that reach into it. Remembered on this device.
+  const [county, setCountyState] = useState(() => { try { return localStorage.getItem(COUNTY_KEY) || ''; } catch { return ''; } });
+  const setCounty = (c: string) => { setCountyState(c); try { localStorage.setItem(COUNTY_KEY, c); } catch { /* private mode */ } };
+  const browsingCounty = !districts && county ? county : null;
+  const region = browsingCounty ? `${browsingCounty} County` : 'Michigan';
   // The details view has its own URL; with saved progress the first open goes straight there.
   const [showBallot, showView] = useBallotView('know-your-ballot-michigan');
   const browse = () => { setBrowsing(true); showView(true); };
   const daysLeft = daysUntil(data.election.date);
 
   // ---- the voter's ballot and their progress through it --------------------
-  const ballot = useMemo(() => ballotFor(data, districts), [districts]);
+  const ballot = useMemo(() => (browsingCounty ? ballotForCounty(data, browsingCounty) : ballotFor(data, districts)), [districts, browsingCounty]);
   const sections = useMemo(() => SECTIONS.map((s) => {
     const ids = s.id === 'measures' ? ballot.measures.map((m) => m.id) : ballot.races.filter((r) => r.section === s.id).map((r) => r.id);
     return { ...s, ids, done: ids.filter((id) => isDecided(saved.picks[id])).length };
@@ -199,8 +211,10 @@ export function KnowYourBallotMichigan() {
     const m = location.hash.match(/^#race=([^&]+)/);
     if (!m) return;
     history.replaceState(null, '', location.pathname + location.search);
-    const race = raceById.get(decodeURIComponent(m[1]));
-    if (!race) return;
+    const id = decodeURIComponent(m[1]);
+    const race = raceById.get(id);
+    // A proposal (the landing page's search links those too).
+    if (!race) { if (data.measures.some((x) => x.id === id)) { if (!showBallot) browse(); jumpTo('measures', id); } return; }
     if (districts && !ballotIdsFor(data, districts).has(race.id)) { setToast(`${race.office} isn’t on the ballot at your address. Use the search to see it.`); return; }
     if (!showBallot) browse();
     jumpTo(race.section, race.id);
@@ -321,7 +335,8 @@ export function KnowYourBallotMichigan() {
       <div className="mt-3">
         <BallotSearch ballot={ballot} everywhere={districts ? everything : undefined} sections={SECTION_TITLES} onJump={(h) => jumpTo(h.section, h.id)} />
       </div>
-      {!saved.place && <BrowsingNotice region="Michigan" onAddAddress={changeAddress} />}
+      {!saved.place && <BrowsingNotice region={region} onAddAddress={changeAddress}
+        counties={COUNTIES.length ? { list: COUNTIES, value: county, onChange: setCounty, all: 'All of Michigan' } : undefined} />}
     </>
   );
 
@@ -356,7 +371,7 @@ export function KnowYourBallotMichigan() {
                   <div className="min-w-0 flex-1">
                     <p className="font-black text-lg leading-tight">{!saved.place ? `${total} contests to browse` : allDone ? 'Ballot ready 🎉' : `${done} of ${total} decided`}</p>
                     <button type="button" onClick={changeAddress} className="flex max-w-full flex-wrap items-center gap-x-1.5 text-left text-sm leading-snug text-[var(--gb-text)]">
-                      <span>{saved.place ? `📍 ${saved.place.label}` : 'Browsing every race in Michigan'}</span>
+                      <span>{saved.place ? `📍 ${saved.place.label}` : `Browsing every race in ${region}`}</span>
                       <span className="shrink-0 font-bold underline underline-offset-2">{saved.place ? 'Change' : 'Add address'}</span>
                     </button>
                   </div>
@@ -366,7 +381,7 @@ export function KnowYourBallotMichigan() {
               </div>
             </div>
               {!wide && <div className="max-w-[1100px] mx-auto">{tools}</div>}
-              {!wide && !saved.place && <BrowsingBadge region="Michigan" onAddAddress={changeAddress} />}
+              {!wide && !saved.place && <BrowsingBadge region={region} onAddAddress={changeAddress} />}
             <div className="lg:grid lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-8 lg:items-start max-w-[1100px] mx-auto pt-4">
               <ContentsColumn {...contents} />
               <ContentsDrawer {...contents} onSection={(id) => { setTab('ballot'); setChosenSection(id); }} open={contentsOpen} onClose={closeContents} />
@@ -386,6 +401,12 @@ export function KnowYourBallotMichigan() {
                   )}
                   {total > 0 && saved.place && <Trophies ctx={gameCtx} />}
                   <WhereYouVote districts={districts} pin={pin} onChange={changeAddress} />
+                  {browsingCounty && (
+                    <div className="rounded-2xl border-[3px] border-[var(--gb-amber-hi)] bg-[var(--gb-surface)] p-4 space-y-2 text-[15px] leading-relaxed">
+                      <p className="font-black">{browsingCounty} County: the statewide races and proposals, its Court of Appeals district, plus every Congress and Lansing district that reaches into the county ({ballot.races.length + ballot.measures.length} contests)</p>
+                      <p>Your own ballot has one of each district, not all of them; <button type="button" onClick={changeAddress} className="font-bold underline">enter your address</button> to narrow it down. County and local offices, trial-court judges and local proposals aren’t in here: your sample ballot at <a className="font-bold underline" href={LINKS.myInfo} target="_blank" rel="noreferrer noopener">Michigan.gov/Vote ↗</a> has them.</p>
+                    </div>
+                  )}
 
                   {sections.filter((s) => s.id === current).map((s) => {
                     const at = sections.indexOf(s);
@@ -635,7 +656,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
       </ul>
 
       <div className="max-w-3xl">
-        <BallotSearch ballot={everything} sections={SECTION_TITLES} onJump={onSearchJump} />
+        <BallotSearch ballot={everything} sections={SECTION_TITLES} onJump={onSearchJump} hrefFor={(h) => `${BALLOT_HREF}#race=${encodeURIComponent(h.id)}`} />
       </div>
 
       <Headliners races={HEADLINERS} sections={SECTIONS} overline="On every Michigan ballot" heading="The statewide races"
