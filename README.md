@@ -7,7 +7,7 @@
 **A lab of awesome things I'm building:** chill multiplayer games and a handful of fun projects.<br>
 No accounts. No installs. No server. Just open the link.
 
-### 👉 [**Play it now: frankies2727.github.io/frankie-labs**](https://frankies2727.github.io/frankie-labs/) 👈
+### 👉 [**Play it now: frankies2727.github.io/frankie-labs**](https://frankies2727.github.io/frankie-labs/games) 👈
 
 </div>
 
