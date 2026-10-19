@@ -20,7 +20,7 @@ concurrency:
 
 jobs:
   refresh:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04 # Playwright 1.56 has no Chromium build for the 26.04 image
     timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4

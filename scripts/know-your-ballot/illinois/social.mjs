@@ -160,13 +160,6 @@ async function wikidata(titles) {
   return out;
 }
 
-/** First and last name agree ("Kimberly Du Buclet" ~ "Kimberly A. Du Buclet"). */
-const namesAgree = (a, b) => {
-  const parts = (n) => fold(n.replace(/["“”][^"“”]*["“”]/g, ' ').replace(/,?\s+(jr|sr|ii|iii|iv)\.?$/i, '')).split(/[^a-z]+/).filter(Boolean);
-  const [pa, pb] = [parts(a), parts(b)];
-  return pa.length > 1 && pb.length > 1 && pa[0] === pb[0] && pa.at(-1) === pb.at(-1);
-};
-
 /** Accounts by candidate name, through Wikidata's search: only an entry with the
  *  same first and last name whose description is local (an Illinois/Chicago
  *  politician, judge, …), and only when exactly one entry qualifies. */
