@@ -4,6 +4,7 @@ import { ClearButton } from '../../../components/ClearButton';
 import { BrowsingBadge, BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Locating, Ring, useWide, SectionCards, SectionFlip, useBallotView, useDocumentMeta, type SectionCard } from '../Bits';
 import { Group } from '../Calendar';
 import { guideUrl } from '../hosts';
+import { routeHref } from '../../../lib/router';
 import { billItems, billUrl, changeItems, dateItems, Feed, newsItems } from '../Feed';
 import { Laws } from '../Laws';
 import { NextElectionNote } from './NextUp';
@@ -32,6 +33,8 @@ const data = rawData as unknown as MichiganData;
 // Michigan's 83 counties, A–Z, from the district maps; '' browses the whole state.
 const COUNTIES = data.counties ? Object.keys(data.counties) : [];
 const COUNTY_KEY = 'kyb-mi-county';
+// The ballot view's own address, for links that open it in a new tab.
+const BALLOT_HREF = routeHref('projects/know-your-ballot-michigan/ballot');
 const everything = ballotFor(data, null);
 const raceById = new Map(data.races.map((r) => [r.id, r]));
 const sectionOf = (id: string) => SECTIONS.find((s) => s.id === id) ?? SECTIONS[0];
@@ -208,8 +211,10 @@ export function KnowYourBallotMichigan() {
     const m = location.hash.match(/^#race=([^&]+)/);
     if (!m) return;
     history.replaceState(null, '', location.pathname + location.search);
-    const race = raceById.get(decodeURIComponent(m[1]));
-    if (!race) return;
+    const id = decodeURIComponent(m[1]);
+    const race = raceById.get(id);
+    // A proposal (the landing page's search links those too).
+    if (!race) { if (data.measures.some((x) => x.id === id)) { if (!showBallot) browse(); jumpTo('measures', id); } return; }
     if (districts && !ballotIdsFor(data, districts).has(race.id)) { setToast(`${race.office} isn’t on the ballot at your address. Use the search to see it.`); return; }
     if (!showBallot) browse();
     jumpTo(race.section, race.id);
@@ -651,7 +656,7 @@ function Landing({ address, setAddress, status, onSubmit, onLocate, onBrowse, on
       </ul>
 
       <div className="max-w-3xl">
-        <BallotSearch ballot={everything} sections={SECTION_TITLES} onJump={onSearchJump} />
+        <BallotSearch ballot={everything} sections={SECTION_TITLES} onJump={onSearchJump} hrefFor={(h) => `${BALLOT_HREF}#race=${encodeURIComponent(h.id)}`} />
       </div>
 
       <Headliners races={HEADLINERS} sections={SECTIONS} overline="On every Michigan ballot" heading="The statewide races"

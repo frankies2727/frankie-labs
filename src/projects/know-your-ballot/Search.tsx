@@ -72,12 +72,14 @@ interface Props {
   /** The neighborhoods and suburbs each district covers, by "type:id". */
   places?: Record<string, string[]>;
   onJump: (hit: Hit) => void;
+  /** When set, each result is a link to that address (opened in a new tab) instead of a jump on this page. */
+  hrefFor?: (hit: Hit) => string;
 }
 
 const SHOWN_ELSEWHERE = 5;
 const list = (xs: string[]) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs.at(-1)}`);
 
-export function BallotSearch({ ballot, everywhere, sections, places, onJump }: Props) {
+export function BallotSearch({ ballot, everywhere, sections, places, onJump, hrefFor }: Props) {
   const [q, setQ] = useState('');
   const config = useStateConfig();
   const mine = useMemo(() => index(ballot, sections, config), [ballot, sections, config]);
@@ -85,7 +87,7 @@ export function BallotSearch({ ballot, everywhere, sections, places, onJump }: P
   // Only built the first time a search comes up empty.
   const all = useMemo(() => (everywhere && q && !hits.length ? index(everywhere, sections, config, places) : null), [everywhere, sections, config, places, q, hits.length]);
   const elsewhere = useMemo(() => (all ? find(all, q) : []), [all, q]);
-  const go = (h: Hit) => { setQ(''); onJump(h); };
+  const go = (h: Hit) => { setQ(''); if (hrefFor) window.open(hrefFor(h), '_blank', 'noopener'); else onJump(h); };
 
   return (
     // The results float over the page rather than push it down: the search sits
@@ -111,10 +113,17 @@ export function BallotSearch({ ballot, everywhere, sections, places, onJump }: P
             <ul>
               {hits.slice(0, 8).map((h) => (
                 <li key={h.id} className="border-b border-[var(--kyb-chip)] last:border-0">
-                  <button type="button" onClick={() => go(h)} className="w-full text-left px-4 py-3 hover:bg-[var(--kyb-chip)]">
-                    <span className="block font-bold text-[var(--gb-text)]">{h.title}</span>
-                    {h.detail && <span className="block text-sm text-[var(--gb-text)] truncate">{h.detail}</span>}
-                  </button>
+                  {hrefFor ? (
+                    <a href={hrefFor(h)} target="_blank" rel="noopener" onClick={() => setQ('')} className="block px-4 py-3 hover:bg-[var(--kyb-chip)]">
+                      <span className="block font-bold text-[var(--gb-text)]">{h.title} <span className="text-sm font-normal">↗</span></span>
+                      {h.detail && <span className="block text-sm text-[var(--gb-text)] truncate">{h.detail}</span>}
+                    </a>
+                  ) : (
+                    <button type="button" onClick={() => go(h)} className="w-full text-left px-4 py-3 hover:bg-[var(--kyb-chip)]">
+                      <span className="block font-bold text-[var(--gb-text)]">{h.title}</span>
+                      {h.detail && <span className="block text-sm text-[var(--gb-text)] truncate">{h.detail}</span>}
+                    </button>
+                  )}
                 </li>
               ))}
               {hits.length > 8 && <li className="px-4 py-2 text-sm text-[var(--gb-text)]">{hits.length - 8} more: keep typing to narrow it down.</li>}

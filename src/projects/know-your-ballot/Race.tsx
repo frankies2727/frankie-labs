@@ -5,7 +5,7 @@ import { BarRatings } from './BarRatings';
 import { Face } from './Face';
 import { useReadOnly, useStateConfig } from './state';
 import { money, type Choice } from './store';
-import type { Candidate, Measure, Race, Retention, SocialPlatform } from './types';
+import type { Candidate, Guide, Measure, Race, Retention, SocialPlatform } from './types';
 
 const AREA_LABEL: Record<string, string> = {
   cd: 'Congressional District', sldu: 'State Senate District', sldl: 'State House District',
@@ -211,6 +211,93 @@ function Endorsements({ c }: { c: Candidate }) {
   );
 }
 
+/** One question of the questionnaire, folded: the question (or its title) is the summary. */
+function QA({ title, q, a }: { key?: string; title?: string; q: string; a: string }) {
+  return (
+    <details className="group rounded-xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)]">
+      <summary className="cursor-pointer list-none px-3 py-2.5 font-bold text-[var(--gb-text)] flex items-start justify-between gap-3">
+        <span>{title ?? q}</span><span className="shrink-0 transition-transform group-open:rotate-180" aria-hidden="true">▾</span>
+      </summary>
+      <div className="px-3 pb-3 space-y-2 text-[15px] leading-relaxed text-[var(--gb-text)]">
+        {title && <p className="text-sm italic">{q}</p>}
+        <p>“{a}”</p>
+      </div>
+    </details>
+  );
+}
+
+/**
+ * The Sun-Times / WBEZ school board questionnaire, in the candidate's own
+ * words: the short answers up front (top three issues, yes/no stances), the
+ * long ones folded one question at a time.
+ */
+function VoterGuide({ g }: { g: Guide | null | undefined }) {
+  if (g === undefined) return <p className="text-sm text-[var(--gb-text)]">Loading their questionnaire…</p>;
+  if (!g) return null;
+  const when = new Date(g.asOf + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  const stance = (a?: string) => (/^yes$/i.test(a ?? '') ? ['Yes', 'var(--gb-primary)', 'var(--gb-on-primary, var(--gb-bg))'] : /^no$/i.test(a ?? '') ? ['No', 'var(--gb-red)', '#fff'] : [a || '—', 'var(--kyb-chip)', 'var(--gb-text)']);
+  return (
+    <section className="space-y-4">
+      <h3 className="text-sm font-black uppercase tracking-widest text-[var(--gb-text)]">📰 Voter guide Q&A</h3>
+      {!g.answered && <p className="text-[15px] leading-relaxed text-[var(--gb-text)]">They didn’t send the Sun-Times / WBEZ questionnaire back; the guide has only their background below.</p>}
+      {g.issues.length > 0 && (
+        <div className="space-y-2">
+          <p className="text-xs font-black uppercase tracking-wide text-[var(--gb-text)]">Their top 3 issues</p>
+          <ol className="space-y-1.5">
+            {g.issues.map((i, n) => (
+              <li key={i.title} className="flex gap-2.5 rounded-xl bg-[var(--gb-bg)] px-3 py-2 text-[15px] leading-snug text-[var(--gb-text)]">
+                <span className="shrink-0 w-6 h-6 rounded-full bg-[var(--gb-text)] text-[var(--gb-bg)] text-xs font-black flex items-center justify-center">{n + 1}</span>
+                <span><strong>{i.title}</strong>{i.why && <span className="block text-sm">“{i.why}”</span>}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
+      {g.yesNo.length > 0 && (
+        <div className="space-y-2">
+          <p className="text-xs font-black uppercase tracking-wide text-[var(--gb-text)]">Yes or no <span className="normal-case font-bold tracking-normal">(tap one for the question and their reason)</span></p>
+          <ul className="grid gap-1.5 sm:grid-cols-2">
+            {g.yesNo.map((y) => { const [label, bg, ink] = stance(y.answer); return (
+              <li key={y.topic}>
+                <details className="group rounded-xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)]">
+                  <summary className="cursor-pointer list-none px-3 py-2 flex items-center justify-between gap-3 font-bold text-[var(--gb-text)]">
+                    <span>{y.topic}</span>
+                    <span className="shrink-0 rounded-full px-2.5 py-0.5 text-xs font-black" style={{ background: bg, color: ink }}>{label}</span>
+                  </summary>
+                  <div className="px-3 pb-3 space-y-1.5 text-sm leading-relaxed text-[var(--gb-text)]">
+                    <p className="italic">{y.q}</p>
+                    {y.why && <p>“{y.why}”</p>}
+                  </div>
+                </details>
+              </li>
+            ); })}
+          </ul>
+        </div>
+      )}
+      {(g.local || g.open.length > 0) && (
+        <div className="space-y-2">
+          <p className="text-xs font-black uppercase tracking-wide text-[var(--gb-text)]">In their own words <span className="normal-case font-bold tracking-normal">(one question at a time)</span></p>
+          <div className="space-y-1.5">
+            {g.local && <QA title="Top local concern" q={g.local.q} a={g.local.a} />}
+            {g.open.map((o) => <QA key={o.q} title={o.title} q={o.q} a={o.a} />)}
+          </div>
+        </div>
+      )}
+      {(g.facts.length > 0 || g.endorsements.length > 0 || g.teachers) && (
+        <details className="group rounded-xl border-2 border-[var(--gb-border)] bg-[var(--gb-surface)]">
+          <summary className="cursor-pointer list-none px-3 py-2.5 font-bold text-[var(--gb-text)] flex items-center justify-between gap-3"><span>Background: CPS ties, education, experience</span><span className="shrink-0 transition-transform group-open:rotate-180" aria-hidden="true">▾</span></summary>
+          <dl className="px-3 pb-3 space-y-1.5 text-sm leading-snug text-[var(--gb-text)]">
+            {g.facts.map((f) => <div key={f.label}><dt className="font-bold">{f.label}</dt><dd>{f.value}</dd></div>)}
+            {g.teachers && <div><dt className="font-bold">How their elementary school teachers would describe them</dt><dd>“{g.teachers}”</dd></div>}
+            {g.endorsements.length > 0 && <div><dt className="font-bold">Education endorsements / financial support</dt><dd>{g.endorsements.join(' · ')}</dd></div>}
+          </dl>
+        </details>
+      )}
+      <p className="text-xs text-[var(--gb-text)]">Their own answers to the <a href={g.url} target="_blank" rel="noreferrer noopener" className="font-bold text-[var(--gb-link)] underline underline-offset-2">{g.source} ↗</a>, read {when}. Answers were limited to 50 or 100 words by the guide.</p>
+    </section>
+  );
+}
+
 // ---- race card -------------------------------------------------------------
 
 interface RaceProps {
@@ -345,7 +432,7 @@ function Follow({ c }: { c: Candidate }) {
   );
 }
 
-export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, onShowRace, onClose }: { race: Race; c: Candidate; color: string; ink: string; numbered: boolean; picked: boolean; onPick: () => void; /** From the landing page: open their race on the ballot. */ onShowRace?: () => void; onClose: () => void }) {
+export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, onShowRace, onClose, guide = null }: { race: Race; c: Candidate; color: string; ink: string; numbered: boolean; picked: boolean; onPick: () => void; /** From the landing page: open their race on the ballot. */ onShowRace?: () => void; onClose: () => void; /** Their voter-guide questionnaire: `undefined` while it loads, `null` when there is none. */ guide?: Guide | null | undefined }) {
   const { noMoney, researchLinks } = useStateConfig();
   const readOnly = useReadOnly();
   return (
@@ -377,6 +464,8 @@ export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, 
             <p className="text-[15px] text-[var(--gb-text)]">{noMoney(race)}</p>
           )}
         </section>
+
+        <VoterGuide g={guide} />
 
         <InTheirWords c={c} />
 
