@@ -70,6 +70,22 @@ export function ballotFor(data: MichiganData, d: Districts | null) {
   return { races: data.races.filter((r) => raceApplies(r, d)), retentions: [], measures: data.measures };
 }
 
+/**
+ * Browsing a county with no address: the statewide races and proposals, the
+ * county's Court of Appeals district, and every congressional and
+ * legislative district that reaches into the county (an address would pick
+ * one of each).
+ */
+export function ballotForCounty(data: MichiganData, county: string) {
+  const here = new Set(data.counties?.[county] ?? []);
+  const coa = data.coa[county];
+  return {
+    races: data.races.filter((r) => (!r.area ? true : r.area.type === 'coa' ? r.area.id === coa : here.has(`${r.area.type}:${r.area.id}`))),
+    retentions: [],
+    measures: data.measures,
+  };
+}
+
 export function ballotIdsFor(data: MichiganData, d: Districts | null): Set<string> {
   const b = ballotFor(data, d);
   return new Set([...b.races, ...b.measures].map((x) => x.id));

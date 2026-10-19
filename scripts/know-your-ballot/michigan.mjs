@@ -37,6 +37,7 @@ import { addSocial } from './illinois/social.mjs';
 import { PROPOSALS, PROPOSALS_SOURCE } from './michigan/proposals.mjs';
 import { boardCandidates } from './michigan/wikipedia.mjs';
 import { addWiki } from './michigan/incumbents.mjs';
+import { countiesFromLayers } from './michigan/counties.mjs';
 import { addRecords } from './illinois/record.mjs';
 
 const OUT = 'src/projects/know-your-ballot/data/michigan';
@@ -207,6 +208,8 @@ async function main() {
   // Maps, and the county -> Court of Appeals district table the app needs.
   const districts = await buildDistricts();
   const coa = Object.fromEntries(districts.layers.county.map((c) => [c.id, coaOf(c.id)]));
+  // Which districts reach into each county, for browsing a county without an address.
+  const counties = countiesFromLayers(districts.layers);
   const outline = await buildOutline();
 
   // Headlines for the activity feed; Google News being down keeps yesterday's.
@@ -245,6 +248,7 @@ async function main() {
     changes,
     news,
     laws,
+    counties,
   }, null, 1) + '\n');
   writeFileSync(join(OUT, 'districts.json'), JSON.stringify(districts) + '\n');
   writeFileSync(join(OUT, 'outline.json'), JSON.stringify(outline) + '\n');

@@ -38,17 +38,21 @@ export function Confetti({ onDone }: { onDone: () => void }) {
 }
 
 /** Pinned under the progress bar while there's no address: picks are off until there is one. */
-export function BrowsingNotice({ region, onAddAddress, counties }: { region: string; onAddAddress: () => void; /** Illinois: browse another county's races without an address. */ counties?: { list: string[]; value: string; onChange: (county: string) => void } }) {
+export function BrowsingNotice({ region, onAddAddress, counties }: { region: string; onAddAddress: () => void; /** Browse one county's races without an address; `all` labels the whole-state choice (value ''). */ counties?: { list: string[]; value: string; onChange: (county: string) => void; all?: string } }) {
+  // The native dropdown draws its own list, so each option gets explicit colours: in dark mode the
+  // page's light text was landing on the system's white list.
+  const option = { color: '#111', background: '#fff' };
   return (
     <div role="status" data-browsing-notice className="mt-3 flex flex-col items-start lg:flex-row lg:flex-wrap lg:items-center gap-x-3 gap-y-2 rounded-xl border-2 border-[var(--gb-amber-hi)] bg-[var(--kyb-chip)] px-3 py-2 text-sm lg:text-[15px] leading-snug">
-      <p className="min-w-0 flex-1">You’re seeing <strong>every</strong> race on any ballot in {region}. Picks and trophies are off until it’s <em>your</em> ballot.</p>
+      <p className="min-w-0 flex-1">You’re seeing <strong>every</strong> race on any ballot in {region}. Picks are off until it’s <em>your</em> ballot.</p>
       <div className="flex flex-wrap items-center gap-2">
         {counties && (
           <label className="inline-flex items-center gap-1.5 min-h-[40px] rounded-lg border-2 border-[var(--gb-text)] bg-[var(--gb-surface)] pl-2.5 pr-1 font-bold text-[var(--gb-text)]">
             <span className="sr-only">County to browse</span>
             <span aria-hidden="true">Browse:</span>
             <select value={counties.value} onChange={(e) => counties.onChange(e.target.value)} className="min-h-[36px] max-w-[11rem] bg-transparent font-bold text-[var(--gb-text)] outline-none">
-              {counties.list.map((c) => <option key={c} value={c}>{c} County</option>)}
+              {counties.all && <option value="" style={option}>{counties.all}</option>}
+              {counties.list.map((c) => <option key={c} value={c} style={option}>{c} County</option>)}
             </select>
           </label>
         )}

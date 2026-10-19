@@ -428,11 +428,26 @@ export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, 
 
 // ---- head-to-head --------------------------------------------------------------
 
+/** One labelled block of the comparison card. */
+function CompareRow({ label, children }: { label: string; children: ReactNode }) {
+  return (
+    <div className="border-t border-[var(--gb-border)] pt-2">
+      <p className="text-[11px] font-black uppercase tracking-widest text-[var(--gb-text)]">{label}</p>
+      <div className="mt-1 text-sm leading-snug text-[var(--gb-text)]">{children}</div>
+    </div>
+  );
+}
+
+const clip = (s: string, n: number) => (s.length > n ? s.slice(0, n - 1).replace(/\s+\S*$/, '') + '…' : s);
+
 export function Compare({ race, color, ink, numbered, picked, onPick, onInfo, onClose }: { race: Race; color: string; ink: string; numbered: boolean; picked: number[]; onPick: (ballot: number) => void; onInfo: (c: Candidate) => void; onClose: () => void }) {
   const { compareNote } = useStateConfig();
   const readOnly = useReadOnly();
   const max = Math.max(1, ...race.candidates.map((c) => c.money ? Math.max(c.money.raised, c.money.spent, c.money.cash) : 0));
   const anyMoney = race.candidates.some((c) => c.money);
+  // A row shows for everyone when anyone in the race has it, so the columns line up and a blank reads as "none found".
+  const any = (k: 'stances' | 'endorsements' | 'record' | 'bar') => race.candidates.some((c) => c[k]);
+  const anyRecord = race.candidates.some((c) => c.record || isIncumbent(race, c));
   return (
     <Dialog title={`Compare: ${race.office}`} onClose={onClose}>
       <div className="overflow-x-auto -mx-6 px-6 pb-2">
@@ -440,21 +455,51 @@ export function Compare({ race, color, ink, numbered, picked, onPick, onInfo, on
           {race.candidates.map((c) => {
             const on = picked.includes(c.ballot);
             return (
-              <div key={c.ballot} className="flex flex-col gap-4 rounded-2xl border-2 bg-[var(--gb-surface)] p-4" style={{ borderColor: on ? color : 'var(--gb-border)' }}>
-                <div className="space-y-2">
-                  <p className="text-lg font-black leading-tight text-[var(--gb-text)]">{c.name}</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    <Badge>{c.party}</Badge>
-                    {numbered && <Badge>#{c.ballot}</Badge>}
+              <div key={c.ballot} className="flex flex-col gap-3 rounded-2xl border-2 bg-[var(--gb-surface)] p-4" style={{ borderColor: on ? color : 'var(--gb-border)' }}>
+                <div className="flex items-center gap-3">
+                  <Face c={c} className="w-14 h-14 text-lg" />
+                  <div className="min-w-0 space-y-1">
+                    <p className="text-lg font-black leading-tight text-[var(--gb-text)]">{c.name}</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      <Badge>{c.party}</Badge>
+                      {numbered && <Badge>#{c.ballot}</Badge>}
+                      {isIncumbent(race, c) && <Badge tone="var(--gb-text)" ink="var(--gb-bg)">Incumbent</Badge>}
+                    </div>
                   </div>
                 </div>
-                <dl className="space-y-1 text-sm">
-                  <div className="flex justify-between gap-2"><dt className="text-[var(--gb-text)]">Incumbent</dt><dd className="font-bold text-[var(--gb-text)]">{isIncumbent(race, c) ? 'Yes' : 'No'}</dd></div>
-                  {c.record && <div className="flex justify-between gap-2"><dt className="text-[var(--gb-text)]">Bills sponsored</dt><dd className="font-bold text-[var(--gb-text)]">{c.record.sponsored.toLocaleString()}</dd></div>}
-                  {race.candidates.some((x) => x.endorsements) && <div className="flex justify-between gap-2"><dt className="text-[var(--gb-text)]">Endorsements listed</dt><dd className="font-bold text-[var(--gb-text)]">{c.endorsements ? c.endorsements.total.toLocaleString() : '0'}</dd></div>}
-                  {race.candidates.some((x) => x.stances) && <div className="flex justify-between gap-2"><dt className="text-[var(--gb-text)]">Survey answered</dt><dd className="font-bold text-[var(--gb-text)]">{c.stances ? 'Yes' : 'No'}</dd></div>}
-                </dl>
-                {anyMoney && (c.money ? <MoneyBars c={c} max={max} /> : <p className="text-sm text-[var(--gb-text)]">No campaign reports found.</p>)}
+                {any('stances') && (
+                  <CompareRow label="In their words">
+                    {c.stances ? <p>“{clip(c.stances.messages[0], 220)}”{c.stances.messages.length > 1 ? ` (+${c.stances.messages.length - 1} more)` : ''}</p> : <p>No survey answer yet.</p>}
+                  </CompareRow>
+                )}
+                {any('endorsements') && (
+                  <CompareRow label={`Endorsements${c.endorsements ? ` (${c.endorsements.total.toLocaleString()})` : ''}`}>
+                    {c.endorsements ? <ul className="list-disc pl-4">{c.endorsements.groups.flatMap((g) => g.names).slice(0, 4).map((n) => <li key={n}>{clip(n, 70)}</li>)}</ul> : <p>None listed.</p>}
+                  </CompareRow>
+                )}
+                {anyRecord && (
+                  <CompareRow label="Record in office">
+                    {c.record ? <p><strong>{c.record.sponsored.toLocaleString()} bills</strong> sponsored this session as {c.record.seat}’s member; newest: {clip(c.record.bills[0].title, 80)}</p> : isIncumbent(race, c) ? <p>Holds the seat now.</p> : <p>Not in this office now.</p>}
+                  </CompareRow>
+                )}
+                {any('bar') && (
+                  <CompareRow label="Bar ratings">
+                    {c.bar ? <p>{Object.entries(c.bar).map(([g, r]) => `${g}: ${r}`).join(' · ')}</p> : <p>Not rated.</p>}
+                  </CompareRow>
+                )}
+                <CompareRow label="Campaign money">
+                  {anyMoney && (c.money ? <MoneyBars c={c} max={max} /> : <p>No campaign reports found.</p>)}
+                  {!anyMoney && <p>No reports found for anyone in this race.</p>}
+                </CompareRow>
+                <CompareRow label="Links">
+                  <p className="flex flex-wrap gap-x-3 gap-y-1">
+                    {c.website && <a href={c.website} target="_blank" rel="noreferrer noopener" className="font-bold text-[var(--gb-link)] underline underline-offset-2">Campaign site ↗</a>}
+                    {c.issuesUrl && <a href={c.issuesUrl} target="_blank" rel="noreferrer noopener" className="font-bold text-[var(--gb-link)] underline underline-offset-2">Their issues page ↗</a>}
+                    {c.stances && <a href={c.stances.url} target="_blank" rel="noreferrer noopener" className="font-bold text-[var(--gb-link)] underline underline-offset-2">Full survey ↗</a>}
+                    {c.profile && <a href={c.profile} target="_blank" rel="noreferrer noopener" className="font-bold text-[var(--gb-link)] underline underline-offset-2">Profile ↗</a>}
+                    {!c.website && !c.issuesUrl && !c.stances && !c.profile && <span>No site or profile on record.</span>}
+                  </p>
+                </CompareRow>
                 <button type="button" onClick={() => onInfo(c)} className="mt-auto inline-flex items-center justify-center gap-1.5 min-h-[44px] rounded-xl border-2 border-[var(--gb-border)] bg-[var(--kyb-chip)] font-bold text-[var(--gb-text)] hover:border-[var(--gb-text)]">
                   <Info className="w-4 h-4" aria-hidden="true" /> Details
                 </button>
@@ -473,8 +518,7 @@ export function Compare({ race, color, ink, numbered, picked, onPick, onInfo, on
           })}
         </div>
       </div>
-      {!anyMoney && <p className="mt-4 text-[15px] text-[var(--gb-text)]">No campaign reports found for anyone in this race this cycle.</p>}
-      <p className="mt-4 text-[15px] text-[var(--gb-text)]">{compareNote}</p>
+      <p className="mt-4 text-[15px] text-[var(--gb-text)]">{compareNote} Survey answers are each candidate’s own words from Ballotpedia; endorsements are as the Wikipedia article on the race lists them.</p>
     </Dialog>
   );
 }
