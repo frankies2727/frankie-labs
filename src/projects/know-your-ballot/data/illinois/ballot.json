@@ -992,7 +992,13 @@
       "link": "https://www.maxsolomon.info",
       "from": "https://media.base44.com/images/public/6a51b60ba01cdf1b02d86d3c/3d254d8d5_04e35e48-a087-4936-87d6-dccf3ce63069.png"
      },
-     "ballotpedia": "https://ballotpedia.org/Max_Solomon"
+     "ballotpedia": "https://ballotpedia.org/Max_Solomon",
+     "social": {
+      "facebook": "https://www.facebook.com/ready2serv/",
+      "x": "https://x.com/MmaxSolomon",
+      "instagram": "https://www.instagram.com/maxssolomon",
+      "linkedin": "https://www.linkedin.com/in/max-solomon-3a4582113/"
+     }
     },
     {
      "ballot": 14,
@@ -1077,6 +1083,13 @@
       ],
       "asOf": "2025-05-07",
       "url": "https://ballotpedia.org/Christian_Maxwell"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=61575173978034",
+      "x": "https://x.com/themodpun",
+      "instagram": "https://www.instagram.com/christianmaxwellforcongress/",
+      "youtube": "https://www.youtube.com/@themodpun",
+      "tiktok": "https://www.tiktok.com/@themodpun"
      }
     },
     {
@@ -1551,6 +1564,19 @@
       "through": "09/30/2026"
      },
      "ballotpedia": "https://ballotpedia.org/Patty_Garcia",
+     "website": "https://pattyforillinois.com/",
+     "social": {
+      "facebook": "https://www.facebook.com/PattyforIL04/",
+      "x": "https://x.com/PattyforIL",
+      "instagram": "https://www.instagram.com/pattyforil",
+      "linkedin": "https://www.linkedin.com/in/dr-patty-garcia-4554a742/"
+     },
+     "photo": {
+      "file": "kyb-photos/illinois/patty-garcia-u-s-representative-4th-district.jpg",
+      "credit": "Ballotpedia",
+      "link": "https://ballotpedia.org/Patty_Garcia",
+      "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Patty_Garcia_20251209_080118.png"
+     },
      "endorsements": {
       "groups": [
        {
@@ -1622,7 +1648,10 @@
       "link": "https://ballotpedia.org/Ed_Hershey",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Edward_Hershey.jpg"
      },
-     "ballotpedia": "https://ballotpedia.org/Ed_Hershey"
+     "ballotpedia": "https://ballotpedia.org/Ed_Hershey",
+     "social": {
+      "x": "https://x.com/Efhershe"
+     }
     },
     {
      "ballot": 24,
@@ -1887,6 +1916,13 @@
       "asOf": "2026-09-29",
       "url": "https://ballotpedia.org/Niki_Conforti"
      },
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=100069103934193",
+      "x": "https://x.com/conforti_niki",
+      "instagram": "https://www.instagram.com/niki_conforti/",
+      "youtube": "https://www.youtube.com/@conforti4congress",
+      "linkedin": "https://www.linkedin.com/in/niki-conforti-34b75b8/"
+     },
      "endorsements": {
       "groups": [
        {
@@ -2086,7 +2122,11 @@
       "link": "https://koppieforcongress.com/",
       "from": "http://www.chadkoppie.com/img/profile-pic.jpg"
      },
-     "ballotpedia": "https://ballotpedia.org/Chad_Koppie"
+     "ballotpedia": "https://ballotpedia.org/Chad_Koppie",
+     "social": {
+      "x": "https://x.com/ChadKoppieIL",
+      "facebook": "https://www.facebook.com/profile.php?id=61566640587612"
+     }
     },
     {
      "ballot": 22,
@@ -2464,6 +2504,13 @@
       "asOf": "2025-12-24",
       "url": "https://ballotpedia.org/John_Elleson"
      },
+     "social": {
+      "facebook": "https://www.facebook.com/johnelleson",
+      "x": "https://x.com/JohnElleson",
+      "instagram": "https://www.instagram.com/johnelleson/",
+      "youtube": "https://www.youtube.com/@JohnElleson.LakewoodChapel",
+      "linkedin": "https://www.linkedin.com/in/john-elleson-489415a0"
+     },
      "endorsements": {
       "groups": [
        {
@@ -2768,6 +2815,12 @@
       "from": "https://cdn.ilga.gov/assets/img/members/{F4630DDB-11F0-417E-8C0A-B4ED6426116F}.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Mattie_Hunter",
+     "social": {
+      "facebook": "https://www.facebook.com/SenatorMattieHunter/",
+      "x": "https://x.com/SenMattieHunter",
+      "instagram": "https://www.instagram.com/senatormattiehunter/",
+      "linkedin": "https://www.linkedin.com/in/mattie-hunter-4b192514/"
+     },
      "record": {
       "sponsored": 169,
       "bills": [
@@ -3055,7 +3108,10 @@
       "link": "https://ballotpedia.org/Vince_Romano",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Vince_Romano.jpeg"
      },
-     "ballotpedia": "https://ballotpedia.org/Vince_Romano"
+     "ballotpedia": "https://ballotpedia.org/Vince_Romano",
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=100067333777350"
+     }
     },
     {
      "ballot": 32,
@@ -3447,6 +3503,11 @@
       ],
       "asOf": "2026-02-18",
       "url": "https://ballotpedia.org/Brian_Skala"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/SkalaforIllinois/",
+      "instagram": "https://www.instagram.com/brian.skala/",
+      "linkedin": "https://www.linkedin.com/in/brian-skala-60081167/"
      }
     },
     {
@@ -3677,6 +3738,10 @@
       ],
       "asOf": "2026-09-30",
       "url": "https://ballotpedia.org/Frederick_Walls"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/Frederick4staterep/",
+      "x": "https://x.com/ElderWalls"
      }
     },
     {
@@ -6130,6 +6195,10 @@
       "from": "https://cdn.ilga.gov/assets/img/members/{E9404756-F108-41DB-A7A8-87C36BBF763D}.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Curtis_Tarver_II",
+     "social": {
+      "instagram": "https://www.instagram.com/reptarver/",
+      "linkedin": "https://www.linkedin.com/in/curtisjtarverii/"
+     },
      "record": {
       "sponsored": 108,
       "bills": [
@@ -6627,6 +6696,11 @@
       "from": "https://cdn.ilga.gov/assets/img/members/{C79CCD19-74A9-494F-BE14-E0D1E0A9D326}.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Michael_Crawford",
+     "social": {
+      "instagram": "https://www.instagram.com/staterepmikecrawford/",
+      "facebook": "https://www.facebook.com/drmikecrawford",
+      "linkedin": "https://www.linkedin.com/in/michaelcrawford1/"
+     },
      "record": {
       "sponsored": 170,
       "bills": [
@@ -6960,7 +7034,13 @@
       "link": "https://repdaviddewar.com/",
       "from": "https://content.campaignpartner.net/images/128200/David_Dewar2.jpg"
      },
-     "ballotpedia": "https://ballotpedia.org/David_Dewar"
+     "ballotpedia": "https://ballotpedia.org/David_Dewar",
+     "social": {
+      "facebook": "https://www.facebook.com/david.dewar.94",
+      "x": "https://x.com/DavidDe74436093",
+      "instagram": "https://www.instagram.com/taxfree1/",
+      "linkedin": "https://www.linkedin.com/in/david-dewar-24a698135/"
+     }
     },
     {
      "ballot": 42,
@@ -7091,6 +7171,12 @@
       ],
       "asOf": "2026-10-01",
       "url": "https://ballotpedia.org/David_Sheppard"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=100078030481308",
+      "youtube": "https://www.youtube.com/@sgtshep557",
+      "linkedin": "https://www.linkedin.com/in/david-sheppard-745772a0/",
+      "tiktok": "https://www.tiktok.com/@davidsheppard9793"
      }
     },
     {
@@ -7797,6 +7883,9 @@
       "asOf": "2026-02-23",
       "url": "https://ballotpedia.org/Beth_McElroy_Kirkwood"
      },
+     "social": {
+      "facebook": "https://www.facebook.com/OrlandDems"
+     },
      "endorsements": {
       "groups": [
        {
@@ -8118,6 +8207,11 @@
       "from": "https://www.cookcountyil.gov/sites/g/files/ywwepo161/files/styles/crop_profile_photo/public/images/portraits/2024-12/IMG_9719.JPG?h=a789e1ce&itok=pctQscx4"
      },
      "ballotpedia": "https://ballotpedia.org/Monica_Gordon",
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=689538948",
+      "instagram": "https://www.instagram.com/commissioner_monica_gordon/",
+      "linkedin": "https://www.linkedin.com/in/monica-gordon-district5/"
+     },
      "endorsements": {
       "groups": [
        {
@@ -8299,6 +8393,10 @@
       "from": "https://www.cookcountyil.gov/sites/g/files/ywwepo161/files/styles/crop_profile_photo/public/images/portraits/2025-05/Cook%20County%20Treasurer%20Maria%20Pappas.jpg?h=e6e0de68&itok=kp94P073"
      },
      "ballotpedia": "https://ballotpedia.org/Maria_Pappas",
+     "social": {
+      "facebook": "https://www.facebook.com/cookcountytreasurer?fref=search",
+      "linkedin": "https://www.linkedin.com/in/maria-pappas-26573a106/"
+     },
      "endorsements": {
       "groups": [
        {
@@ -8664,6 +8762,10 @@
       "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Bill_lowry_3rd_district_black_and_whit.jpg/500px-Bill_lowry_3rd_district_black_and_whit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      },
      "ballotpedia": "https://ballotpedia.org/Bill_Lowry",
+     "social": {
+      "facebook": "https://facebook.com/lowryforcookcounty",
+      "x": "https://x.com/BillLowryFor3"
+     },
      "endorsements": {
       "groups": [
        {
@@ -9096,7 +9198,12 @@
       "link": "https://ballotpedia.org/Jon_Luers",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/JonathonLuers.JPG"
      },
-     "ballotpedia": "https://ballotpedia.org/Jon_Luers"
+     "ballotpedia": "https://ballotpedia.org/Jon_Luers",
+     "social": {
+      "facebook": "https://www.facebook.com/jon.luers.3",
+      "instagram": "https://www.instagram.com/jon.luers.il/",
+      "linkedin": "https://www.linkedin.com/in/jon-luers-17665954/"
+     }
     },
     {
      "ballot": 72,
@@ -9210,6 +9317,11 @@
       "asOf": "2026-02-05",
       "url": "https://ballotpedia.org/Drake_Warren"
      },
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=61577188667084",
+      "x": "https://x.com/drakefor10",
+      "linkedin": "https://www.linkedin.com/in/drakewarren/"
+     },
      "endorsements": {
       "groups": [
        {
@@ -9295,6 +9407,9 @@
       "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Cook_County_Commissioner_John_Daley_%289472853714%29_%281%29.jpg/500px-Cook_County_Commissioner_John_Daley_%289472853714%29_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      },
      "ballotpedia": "https://ballotpedia.org/John_Daley",
+     "social": {
+      "facebook": "https://www.facebook.com/johnpdaleyil/"
+     },
      "endorsements": {
       "groups": [
        {
@@ -9722,6 +9837,10 @@
       "from": "https://upload.wikimedia.org/wikipedia/commons/0/04/George_Cardenas_2014_%281%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
      },
      "ballotpedia": "https://ballotpedia.org/George_A._Cardenas",
+     "social": {
+      "facebook": "https://facebook.com/commissionergeorgecardenas",
+      "x": "https://x.com/aldcardenas"
+     },
      "endorsements": {
       "groups": [
        {
@@ -11191,6 +11310,9 @@
       "from": "https://2026primary.injusticewatch.org/images/candidates/Monica_Somerville.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Monica_Somerville",
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=61580863770327"
+     },
      "profile": "https://2026retention.injusticewatch.org/candidate/monica-somerville-35567",
      "bar": {
       "AABAR": "Recommended",
@@ -11323,6 +11445,10 @@
       ],
       "asOf": "2026-02-01",
       "url": "https://ballotpedia.org/Jon_Stromsta"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/jon4judge/",
+      "linkedin": "https://www.linkedin.com/in/jonstromsta/"
      },
      "profile": "https://2026retention.injusticewatch.org/candidate/jon-stromsta-35362",
      "bar": {
@@ -11583,6 +11709,9 @@
       ],
       "asOf": "2026-09-29",
       "url": "https://ballotpedia.org/Ed_Bannon"
+     },
+     "social": {
+      "linkedin": "https://www.linkedin.com/in/ed-bannon-2733782/"
      },
      "endorsements": {
       "groups": [
@@ -11941,6 +12070,9 @@
       "asOf": "2026-10-01",
       "url": "https://ballotpedia.org/Kyna_Lenhof"
      },
+     "social": {
+      "linkedin": "https://www.linkedin.com/in/kynalenhof/"
+     },
      "endorsements": {
       "groups": [
        {
@@ -12084,6 +12216,9 @@
       "from": "https://petefor3a.com/assets/img/gen/A2c_ecrsGs-900.jpeg"
      },
      "ballotpedia": "https://ballotpedia.org/Peter_Gonzales",
+     "social": {
+      "linkedin": "https://www.linkedin.com/in/peter-gonzales/"
+     },
      "endorsements": {
       "groups": [
        {
@@ -12282,6 +12417,10 @@
       "from": "https://static.wixstatic.com/media/267e42_be07a032f4644fdfa9df2bf57677ad97~mv2.jpeg/v1/fit/w_1000,h_1000,al_c,q_85/267e42_be07a032f4644fdfa9df2bf57677ad97~mv2.jpeg#crop=360x360+330+40"
      },
      "ballotpedia": "https://ballotpedia.org/Ellen_Sherratt",
+     "social": {
+      "facebook": "https://facebook.com/ellen.behrstocksherratt",
+      "linkedin": "https://www.linkedin.com/in/ellensherratt/"
+     },
      "endorsements": {
       "groups": [
        {
@@ -12332,6 +12471,9 @@
       "from": "https://www.cpsboe.org/content/images/person/karen_zaccor_photo_1.jpg/image-full;max$800,0.ImageHandler"
      },
      "ballotpedia": "https://ballotpedia.org/Karen_Zaccor",
+     "social": {
+      "linkedin": "https://www.linkedin.com/in/karen-zaccor-3a800619/"
+     },
      "endorsements": {
       "groups": [
        {
@@ -12384,6 +12526,9 @@
       ],
       "asOf": "2026-10-02",
       "url": "https://ballotpedia.org/Angel_Alvarez"
+     },
+     "social": {
+      "linkedin": "https://www.linkedin.com/in/angel-alvarez-phd-775843411/"
      }
     }
    ],
@@ -12988,6 +13133,9 @@
       "from": "https://www.cpsboe.org/content/images/person/emma_lozano_photo_2.jpg/image-full;max$800,0.ImageHandler"
      },
      "ballotpedia": "https://ballotpedia.org/Emma_Lozano",
+     "social": {
+      "linkedin": "https://www.linkedin.com/in/emma-lozano-7a71b716b/"
+     },
      "endorsements": {
       "groups": [
        {
@@ -13412,6 +13560,9 @@
       "from": "https://www.cpsboe.org/content/images/person/theresa_boyle_photo_1.jpg/image-full;max$800,0.ImageHandler"
      },
      "ballotpedia": "https://ballotpedia.org/Therese_Boyle",
+     "social": {
+      "linkedin": "https://www.linkedin.com/in/therese-boyle-a259732a/"
+     },
      "endorsements": {
       "groups": [
        {
@@ -14107,6 +14258,9 @@
       "recent": 155937,
       "recentThrough": "10/09/2026"
      },
+     "social": {
+      "facebook": "https://www.facebook.com/schmidtforillinois"
+     },
      "photo": {
       "file": "kyb-photos/illinois/kevin-schmidt-sldl-114-staterepresentativethdistrict.jpg",
       "credit": "Illinois General Assembly",
@@ -14114,9 +14268,6 @@
       "from": "https://cdn.ilga.gov/assets/img/members/{385A4AC4-BA7A-42A3-987F-85EA620B1F2B}.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Kevin_Schmidt",
-     "social": {
-      "facebook": "https://www.facebook.com/schmidtforillinois"
-     },
      "record": {
       "sponsored": 80,
       "bills": [
@@ -15516,6 +15667,12 @@
       "from": "https://cdn.ilga.gov/assets/img/members/{F3781CCA-4285-44C3-8E60-811B9229EA1B}.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Natalie_A._Manley",
+     "social": {
+      "facebook": "https://www.facebook.com/nataliemanley98/",
+      "x": "https://x.com/StateRepManley",
+      "instagram": "https://www.instagram.com/rep.manley/",
+      "linkedin": "https://www.linkedin.com/in/natalie-a-manley-1b44a46/"
+     },
      "record": {
       "sponsored": 69,
       "bills": [
@@ -15655,6 +15812,9 @@
       ],
       "asOf": "2026-03-18",
       "url": "https://ballotpedia.org/Kermit_Thomas"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/kermitforillinois"
      }
     },
     {
@@ -15680,6 +15840,10 @@
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Daniel_Swanson_portrait.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Daniel_Swanson",
+     "social": {
+      "facebook": "https://www.facebook.com/SwansonStrongIL",
+      "linkedin": "https://www.linkedin.com/in/dan-swanson-17089452/"
+     },
      "record": {
       "sponsored": 79,
       "bills": [
@@ -16206,7 +16370,11 @@
       "link": "https://ballotpedia.org/Chris_Metcalfe",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/ChrisMetcalfe2.jpg"
      },
-     "ballotpedia": "https://ballotpedia.org/Chris_Metcalfe"
+     "ballotpedia": "https://ballotpedia.org/Chris_Metcalfe",
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=100085292472773",
+      "linkedin": "https://www.linkedin.com/in/chris-metcalfe-03b0b017/"
+     }
     }
    ],
    "writeIn": false,
@@ -17376,7 +17544,13 @@
       "link": "https://www.laurieparman.info/meet-laurie",
       "from": "https://static.wixstatic.com/media/65af8c_a064a7bdae09496485f20e6295cf256d~mv2.jpg/v1/fit/w_1000,h_1000,q_90/65af8c_a064a7bdae09496485f20e6295cf256d~mv2.jpg"
      },
-     "ballotpedia": "https://ballotpedia.org/Laurie_Parman"
+     "ballotpedia": "https://ballotpedia.org/Laurie_Parman",
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=61556798146634",
+      "x": "https://x.com/LaurieParm35785",
+      "instagram": "https://www.instagram.com/lauraparman/",
+      "linkedin": "https://www.linkedin.com/in/laurie-parman-543b9b88/"
+     }
     }
    ],
    "writeIn": false,
@@ -17555,6 +17729,11 @@
       ],
       "asOf": "2026-02-12",
       "url": "https://ballotpedia.org/Tamiko_Mueller"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/tc4me.us/",
+      "instagram": "https://www.instagram.com/tamikomueller/",
+      "linkedin": "https://www.linkedin.com/in/tamiko-mueller-52993639/"
      }
     },
     {
@@ -17962,7 +18141,13 @@
       "link": "https://www.julieberkowicz.net/",
       "from": "https://www.julieberkowicz.net/assets/images/julie-headshot.jpg"
      },
-     "ballotpedia": "https://ballotpedia.org/Julie_Berkowicz"
+     "ballotpedia": "https://ballotpedia.org/Julie_Berkowicz",
+     "social": {
+      "facebook": "https://www.facebook.com/julie.berkowicz",
+      "x": "https://x.com/JulieBerkowicz",
+      "instagram": "https://www.instagram.com/julieberkowicz/",
+      "linkedin": "https://www.linkedin.com/in/julie-berkowicz-b8076610/"
+     }
     }
    ],
    "writeIn": false,
@@ -18351,7 +18536,10 @@
       "link": "https://www.doplerforillinois.com/",
       "from": "https://static.wixstatic.com/media/1d4b38_99939c3f7eab4485be971ed1adc715c5~mv2.webp/v1/fit/w_1000,h_1000,q_90/1d4b38_99939c3f7eab4485be971ed1adc715c5~mv2.webp"
      },
-     "ballotpedia": "https://ballotpedia.org/Nicole_Dopler"
+     "ballotpedia": "https://ballotpedia.org/Nicole_Dopler",
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=61578001285997"
+     }
     },
     {
      "party": "Republican",
@@ -18376,6 +18564,12 @@
       "from": "https://cdn.ilga.gov/assets/img/members/{4C25C70B-0E39-406B-9318-A899C2A6D1B0}.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Ryan_Spain",
+     "social": {
+      "facebook": "https://www.facebook.com/RepRyanSpain/",
+      "x": "https://x.com/ryan_spain",
+      "instagram": "https://www.instagram.com/ryanmspain/",
+      "linkedin": "https://www.linkedin.com/in/ryan-spain-78580918/"
+     },
      "record": {
       "sponsored": 99,
       "bills": [
@@ -18472,7 +18666,11 @@
       "link": "https://ballotpedia.org/Mary_Catherine_Roberson",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Mary_Catherine_Roberson_20260407_094448.jpeg"
      },
-     "ballotpedia": "https://ballotpedia.org/Mary_Catherine_Roberson"
+     "ballotpedia": "https://ballotpedia.org/Mary_Catherine_Roberson",
+     "social": {
+      "facebook": "https://www.facebook.com/MCRobersonDanville",
+      "linkedin": "https://www.linkedin.com/in/mary-catherine-roberson-6a361b313/"
+     }
     },
     {
      "party": "Republican",
@@ -18682,6 +18880,11 @@
       ],
       "asOf": "2026-10-13",
       "url": "https://ballotpedia.org/John_Paul_Augustynowicz"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/JP4IL",
+      "x": "https://x.com/JP4IL",
+      "linkedin": "https://www.linkedin.com/in/john-paul-augustynowicz-629b8337/"
      }
     }
    ],
@@ -19795,6 +19998,13 @@
       ],
       "asOf": "2026-02-11",
       "url": "https://ballotpedia.org/Peter_Janko"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/pete4illinois",
+      "x": "https://x.com/pete4illinois",
+      "instagram": "https://www.instagram.com/pete4illinois/",
+      "tiktok": "https://www.tiktok.com/@pete4illinois",
+      "linkedin": "https://www.linkedin.com/in/lumenelle"
      }
     },
     {
@@ -22287,6 +22497,10 @@
       "from": "https://2026primary.injusticewatch.org/images/candidates/daniel.naranjo-02print.jpeg"
      },
      "ballotpedia": "https://ballotpedia.org/Dan_Naranjo",
+     "social": {
+      "facebook": "https://www.facebook.com/judgedannaranjo/",
+      "linkedin": "https://www.linkedin.com/in/dan-naranjo-5b20091a/"
+     },
      "profile": "https://2026retention.injusticewatch.org/candidate/dan-naranjo-35474",
      "bar": {
       "AABAR": "Recommended",
@@ -22910,6 +23124,9 @@
       "from": "https://cdn.ilga.gov/assets/img/members/{9D43D019-A58A-47EC-B769-A7050C4B49DB}.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Charlie_Meier",
+     "social": {
+      "facebook": "https://www.facebook.com/profile.php?id=100057878088324"
+     },
      "record": {
       "sponsored": 107,
       "bills": [
@@ -23191,6 +23408,13 @@
       "from": "https://cdn.ilga.gov/assets/img/members/{E3518E4F-7AAF-4D93-8985-336197D96094}.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Barbara_Hernandez",
+     "social": {
+      "facebook": "https://www.facebook.com/Barbara4StateRep",
+      "instagram": "https://www.instagram.com/rep.bhernandez/",
+      "youtube": "https://www.youtube.com/@rep.bhernandez50/",
+      "x": "https://x.com/barbara_isabel",
+      "linkedin": "https://www.linkedin.com/in/barbarahernandez1/"
+     },
      "record": {
       "sponsored": 103,
       "bills": [
@@ -23737,6 +23961,12 @@
       "from": "https://cdn.ilga.gov/assets/img/members/{35F1D456-C798-4A8B-9180-4608CB0FDB78}.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Michael_Halpin",
+     "social": {
+      "facebook": "https://www.facebook.com/halpinforillinois",
+      "x": "https://x.com/SenatorHalpin",
+      "instagram": "https://www.instagram.com/senatorhalpin/",
+      "linkedin": "https://www.linkedin.com/in/michael-halpin-136bb81/"
+     },
      "record": {
       "sponsored": 137,
       "bills": [
@@ -23816,6 +24046,11 @@
       ],
       "asOf": "2026-02-05",
       "url": "https://ballotpedia.org/Brad_Beekman"
+     },
+     "social": {
+      "facebook": "https://www.facebook.com/bradnbambi.beekman",
+      "instagram": "https://www.instagram.com/bradley.bambi/",
+      "linkedin": "https://www.linkedin.com/in/bradley-beekman-19b258256/"
      }
     }
    ],
@@ -24061,6 +24296,10 @@
       "from": "https://2026primary.injusticewatch.org/images/candidates/Bob_Groebner.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Robert_Groebner",
+     "social": {
+      "facebook": "https://www.facebook.com/Groebner4Judge/",
+      "linkedin": "https://www.linkedin.com/in/bob-groebner-aaa66b3b/"
+     },
      "profile": "https://2026retention.injusticewatch.org/candidate/robert-bob-groebner-35628",
      "bar": {
       "AABAR": "Recommended",
@@ -24463,6 +24702,12 @@
       "from": "https://cdn.ilga.gov/assets/img/members/{D6DC8152-9760-4BEA-ACF5-C41785E6F6C4}.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Katie_Stuart",
+     "social": {
+      "facebook": "https://www.facebook.com/StuartForRep/",
+      "x": "https://x.com/RepKatieStuart",
+      "instagram": "https://www.instagram.com/stuartforrep/",
+      "linkedin": "https://www.linkedin.com/in/katie-stuart-03597b28/"
+     },
      "record": {
       "sponsored": 142,
       "bills": [
@@ -24617,6 +24862,11 @@
       "from": "https://cdn.ilga.gov/assets/img/members/{07C35999-DEF2-49BA-8A46-7D9D8204BCEA}.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Jennifer_Sanalitro",
+     "social": {
+      "facebook": "https://www.facebook.com/SanalitroforRep/",
+      "instagram": "https://www.instagram.com/sanalitroforrep/",
+      "linkedin": "https://www.linkedin.com/in/jennifer-sanalitro-a00b20144/"
+     },
      "record": {
       "sponsored": 54,
       "bills": [
@@ -26901,6 +27151,9 @@
       "from": "https://cdn.ilga.gov/assets/img/members/{999C86E0-F35D-4F02-81BE-F4FEBF930114}.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Bill_Hauter",
+     "social": {
+      "facebook": "https://www.facebook.com/HauterforStateRep"
+     },
      "record": {
       "sponsored": 34,
       "bills": [
@@ -26998,6 +27251,12 @@
       "from": "https://cdn.ilga.gov/assets/img/members/{57C9E73B-E152-4B7D-B42B-6EA67289504E}.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Regan_Deering",
+     "social": {
+      "facebook": "https://www.facebook.com/ReganforIllinois/",
+      "instagram": "https://www.instagram.com/regan4congress/",
+      "youtube": "https://www.youtube.com/@ReganforIllinois",
+      "linkedin": "https://www.linkedin.com/in/regan-andreas-deering-b18074a2/"
+     },
      "record": {
       "sponsored": 31,
       "bills": [
@@ -35067,7 +35326,13 @@
  },
  "news": [
   {
-   "at": "2026-10-19T17:51:40.000Z",
+   "at": "2026-10-19T17:51:54.000Z",
+   "title": "Voter’s Guide: What to know for Illinois’ Nov. 3, 2026 general election",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPX0Fqa1V3SWxiZUZzeWgyNmVxQ2ZYMkQ2b0REWmNwVldSbU1Qenh4R2ZPR2Jia3dfb05zTjRwdWVaSW1LQjRQSkoxNWZoS0Z1V1FqSTlGNkUyUjBIYWZGTTVKSExtZU80LW9Rc2I1a3hjS0NnSnEwQS1oMHpHU0dROHJ6eGExeWRIajhpYVNrTnhEdy1ZNnB6WjJ5blJ5VXFXU0pV0gGoAUFVX3lxTE5pdWs5RzM4SEE5MlhqRDZKR3U4SGl4b1Nvb05YRTUtV3FRUmNjVWZfOHlBQ0ZpZV9ZTHJPMUh6U3FrRmhwY3FXTmJmSlNhcWluTVVwdDhQeFBJc1JvRmQ0VDczWF9adE1Xd1k1MGsybXUydHM2T2JZbzZiRnNtTTA3RHdKcFV1TVRQTzBmMEVSOHcySENJbWlhVzBBS1NVeFd0ZG5KQUxMSg?oc=5",
+   "source": "FOX 2"
+  },
+  {
+   "at": "2026-10-19T17:51:00.000Z",
    "title": "Early Voting for November General Election Expands in Chicago, Suburban Cook County",
    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQenh0b255dzFGdDhodWY1cVBoZGhWa1JaVkRibTRyeURVTFBQTVFZRFRITjdUNGlXbzNMa0tubGswYi03UU94RnRLeXZKemlIM0FWdS1HRDIxbFo4ZXE4MTJCRWR0dm5vSXE1ODlOdEwyWWJtNWJraVJ0S1VwUmJjRTZJdXdxVW9ZT21vdXlXVExXcHpoS3BaM0pLZmY1Y185OXduNldqOFZXbUFf?oc=5",
    "source": "WTTW News"
@@ -35091,12 +35356,6 @@
    "source": "Shaw Local"
   },
   {
-   "at": "2026-10-19T15:00:26.000Z",
-   "title": "Chicago, Illinois early voting sites expand in all counties on Monday morning; find your nearest location",
-   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNZ1hlMW9odDk5S2lpUjRMczJNN3BpXzZiMmVrQUxuS0lIRDVMbzJaVjVHbWUyX1NtT2dNcnBweTlVazhVaU50MDVnbFlqX3pCY09RMS1YdFBfRXZ4T0NGZnBFWGF6WDMxNDdaM19wR2hJVk5PN0ZPbjF4cm9ncGF3d2ZyVjFjSUhZZkNqU2l3?oc=5",
-   "source": "CBS News"
-  },
-  {
    "at": "2026-10-19T14:59:31.000Z",
    "title": "Your guide to the November 2026 election in Will County",
    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxONVBlT1FYR0dsVk5ja2lmX0g5MXk0Wm9OdU5zVk0zM290UHRnTENZLUlsTHZvMWp2Q3hfZEIwMmV5SVZHekdXY0RHNU9EMVQ1UzJaNWVpaTdyVFU3dlRrNnQ5SDJiUTUzRFctUWs1NEZ2OXN6OVZ5SXM5WmhHamJHeHpVamFVU0ZKSVVlYndIMjV3RWxMOVcyeGRFMGlHMXNWQjdGbVZEeEVGRVVobWc?oc=5",
@@ -35107,6 +35366,12 @@
    "title": "Your guide to the November 2026 election in Kane County",
    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPVXp2LTczdkxZOUZkOFQtQ0tDc1VRbFNETExfTTgwSTdabGp3MXBzVDlrY3J0QWVlM3duUktCaVNvVEVYTDJCYlloUmhIVWUyZnlVQjUtWF9nYm9nM211ZVpVeEV6R29aN1pvQnJIQnlPQ3RhVGFXVG1FdWNNZkxLSURHZENfejJ2YURnS2N4aXoydWlGa2hQQWxLamwyaWlmMFo0OEpKN1BfMkhJVURvT29kS3FXdw?oc=5",
    "source": "Shaw Local"
+  },
+  {
+   "at": "2026-10-19T14:43:02.000Z",
+   "title": "2026 elections: Early voting expands in Cook County suburbs, Chicago wards",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQTHZ1SW5objJJM25WVFlMQkNJb29UbnVVakR6azlLVFRZMGxiQUtzaFUtTE9lV0c4anU4bUJMcExaMjBRUEVrUkhGRk5JSzhwdGxLRkVCSkVlenQyYnpCaWRwX1ZXRFVWQWZ4N3RrS3ZmdmM4RW96eE1FQ0thYmNvN0dia29BbzFYSkM3T25VTGFxNFNyLTNfTUVEWFhJN1B0UTFXYU9pLUdiM3J0SEw5U3pxSkXSAboBQVVfeXFMTzJEUmxqcEw3ZzFvb1RfWWY2UEk0MkJHNHBqenlyNkljbHp0ZUxKekZFZl9sbW5iZmNpMHlsSVFWNHZhSE9IODJxTWtRTEUxU3puMGJScDBhaEFsdFlzazB6T1JnamUwSExVUW9VMGhPLXU5SEFtYlY5SWdDR3VwQzZkM0Q5SnhMNEs5b00zSERZbHp5RW9HemxQdHlHLVdjQVg1RXIwR25pcktwTzVhbDM1d21UYkF3VWxB?oc=5",
+   "source": "ABC7 Chicago"
   },
   {
    "at": "2026-10-19T14:30:21.000Z",
@@ -35127,6 +35392,13 @@
    "source": "Shaw Local"
   },
   {
+   "at": "2026-10-19T11:59:16.000Z",
+   "title": "In Illinois' Democratic primaries, generational change and heavy spending take center stage",
+   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOUzdpckV4V2VyU1gwVElyTGpIWl84QmNoOC1IWGo0LWVXTV9kNlNndWRDQVF0Tk1oWmlMLXdSU2lyWHFSbkV4Uzd2OFZWelpmVFdPYy02Wk9QZUpYY3hzLXJSazZUYU9iVV9ITHNncUJwVVloZ2ZwM0FEbXBOVlFYajhRTmx5U3poX29JS2hxdkhaWUx1RGhDR2l0VHJNNEF3Y1NXRFJBOXRVQkIzV2RUTnloQ3NzU1Y4ZEln0gHAAUFVX3lxTE1ZZGlTSDl4ZVpQa2NVVFhZUmRuV1ZMSmQ3d3pOaHRPN29uX2JBN1I1aER2dTBtREMyZkIzUlVWRVdqMDMyOWRhSl9NNjNaMkJXQk5iN2Y3b1lxNERSekVTWTlhUENBOWlSb0hia0xQdEtMaTBsNGdpTWVTbnhCeDZaT1pPRkhuVXZMelRrbjNqeUZIM0hfSVhpbmhoR2VLTmZvaTF2TlFQX1VJUHJNTHRZM3pWRlpSdDF2TVFvX0V1TQ?oc=5",
+   "source": "ABC News - Breaking News, Latest News and Videos",
+   "topic": "money"
+  },
+  {
    "at": "2026-10-19T11:38:48.000Z",
    "title": "Illinois Election Day 2026: Early voting expands across Chicago, suburbs",
    "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNRnRmNzJhZnk3S3ltSnNoRUs2TXBtaGdwcWtnbUlQejZpM2gzd2l5MzZTTmFqajV2Wjl2X3dfZjQwb3RoSWhfQ1Jpc3VIQ3U4YWNIOW1LNjRoR0hhRl9iWVMyWmc5cFF2d3pRWXM4SGJDXy1Lb3pPMFNzeGtRbTZFYURWX3k3TE0zNjA5c3lfaEs3ZlFTSWl3T2otWUZ6TGF1bEw2aXB0TlBkd0dnREVoeXZTVDU1REFPNzJRUnplcVZKdUZpWlVOVHl1eXlURlhwbFg0VWx6QlNleXdidElvU2J30gHqAUFVX3lxTE9JcjhyR200Mk9qM1dKX25LejdWc2J6T09jYUoxYjZMMHpFTkhxU1dVZm5meldqSkM3djFDNWdIbTFFT3BnM1UtdlhSS2VGcnJzcVF2TWxmWmNVYVBIQndKYktycVlRZmI5MWJHTVJiczRseVVuUDh1SjlrZGhFR0ROMFJtTy1UUU1qelBXQWFYcUh0UlYtRm9DblVfR3Fld2wtSnFSTU5XVUhCRkY5R3R3R0wtRHl2dHdPczRYWU9Eejk2WV9qTzhzM3JmZ2pMZDRKUkhKZEF1b2dVMVNQUGpHUnNSZUc3eGpkZw?oc=5",
@@ -35139,10 +35411,10 @@
    "source": "FOX 32 Chicago"
   },
   {
-   "at": "2026-10-19T10:54:39.000Z",
-   "title": "2026 elections: Early voting to expand in Cook County suburbs, Chicago wards Monday",
-   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQTHZ1SW5objJJM25WVFlMQkNJb29UbnVVakR6azlLVFRZMGxiQUtzaFUtTE9lV0c4anU4bUJMcExaMjBRUEVrUkhGRk5JSzhwdGxLRkVCSkVlenQyYnpCaWRwX1ZXRFVWQWZ4N3RrS3ZmdmM4RW96eE1FQ0thYmNvN0dia29BbzFYSkM3T25VTGFxNFNyLTNfTUVEWFhJN1B0UTFXYU9pLUdiM3J0SEw5U3pxSkXSAboBQVVfeXFMTzJEUmxqcEw3ZzFvb1RfWWY2UEk0MkJHNHBqenlyNkljbHp0ZUxKekZFZl9sbW5iZmNpMHlsSVFWNHZhSE9IODJxTWtRTEUxU3puMGJScDBhaEFsdFlzazB6T1JnamUwSExVUW9VMGhPLXU5SEFtYlY5SWdDR3VwQzZkM0Q5SnhMNEs5b00zSERZbHp5RW9HemxQdHlHLVdjQVg1RXIwR25pcktwTzVhbDM1d21UYkF3VWxB?oc=5",
-   "source": "ABC7 Chicago"
+   "at": "2026-10-19T10:14:00.000Z",
+   "title": "Chicago, Illinois early voting sites expand in all counties on Monday morning; find your nearest location",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNZ1hlMW9odDk5S2lpUjRMczJNN3BpXzZiMmVrQUxuS0lIRDVMbzJaVjVHbWUyX1NtT2dNcnBweTlVazhVaU50MDVnbFlqX3pCY09RMS1YdFBfRXZ4T0NGZnBFWGF6WDMxNDdaM19wR2hJVk5PN0ZPbjF4cm9ncGF3d2ZyVjFjSUhZZkNqU2l3?oc=5",
+   "source": "CBS News"
   },
   {
    "at": "2026-10-19T10:01:34.000Z",
@@ -35210,12 +35482,6 @@
    "title": "Nov. 3 election voters guide: Maries, Montgomery and Osage counties",
    "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPX1o5d1p2Yy11YjFwOG9IN09MMEFqRzZzNTEtSkhSeU1ncUVIczZQZngtWDlSRHFvRXBlWmdURC1wNXZKS3JGOG1zdDJIdlFXdkNqaTc3Nm9IMkJCdDlFdURmWXd5UUwxZ2tfWnZfbi1LVlQyZlZNcllCWk5maXk5N1NwbTRBaVAyMkcwbzRmLU9PaWdXYjdyLVlyaTlGRXptcjZzNm52Y0pMejdtZmFfWVlGYlpCZFJUb28tcTUwTUxoemRJVzVXZ3hGNjlqMW9wTGZzOXBTcDNITzBlRTI2NGxJeU1VTVE?oc=5",
    "source": "KOMU 8"
-  },
-  {
-   "at": "2026-10-17T19:52:18.000Z",
-   "title": "‘No Kings’ protestors united in their Naperville message: ‘Vote’",
-   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPTFlLeFFJR1ljMGtPOGQ0azF1YmczWEtQSFlfRjJhRG9xTHdvRjU1TWtiV3A2RjRtQldPLUl2R2Z0dlAtZEQ4eEdhMkpiN09nenVuS2hscVI3bi1OQnNUYkN4T3A1bXFPNmpvSWU2Zmt5d3p4aFlHNS0tRzBNMkNCTVFlVGN6bTZTM0F4WWluYmc?oc=5",
-   "source": "Chicago Tribune"
   },
   {
    "at": "2026-10-17T15:49:01.000Z",
@@ -35293,12 +35559,6 @@
    "topic": "money"
   },
   {
-   "at": "2026-10-16T15:50:16.000Z",
-   "title": "Illinois U.S. Senate Election 2026: Latest Polls",
-   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNV1pqd1ktWHFTVnJLSHRrX0Z0cC05T3lfTGJtS21SbVNjQk00TDVjcHc5blBUeWRMTmNkV2Z1ZDhxXy0yMDllaDYyNXZFVFhIX0owaFRrdXRpd0pLa0puSjFPcV9OSDhSSGpORUc0R3JmZWpQeTNOQkIxRXBLaXMxV2w4dk9meWRqcGMzaHd3?oc=5",
-   "source": "The New York Times"
-  },
-  {
    "at": "2026-10-16T15:48:43.000Z",
    "title": "Who Is Ahead in the Illinois Governor's Race? Latest 2026 Election Polls",
    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQNHJkMFJ4TVlxNjJKVE1NajBMSi1BRXNpWFBiaEhqb2VRWTNnazM2S2tRRUt1c1ZCOS14cW90UFBMbmFHVG1PcmQ2SVpsQ3d0a3diNDhHTzc2M1RWRUN6d1BucTRaSnpkeGtLR0puenZwY0VsZ1NBcDM1N2I4eDNDX3NlcVBENWVRUGNUbw?oc=5",
@@ -35315,12 +35575,6 @@
    "title": "On the campaign trail, JB Pritzker courts farmers like he's running for president",
    "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPLUpERGhRaW9UTnJwUnJlVUliMnhNQTRVeTdndVkxVmUxZFJLTGxDcDJOaDFTNHBqSGpOUmtCQ1J3Ti1fZnltZkNkVjlMbHdQQWRMRVJqdVBSaThacFJuVy14NlpTdGNVVDdIWGR6cE14Y2RRSXNLRGc3YUNqeWZUZ2tCcC1PVzhjNnpoOW1IUTlZOXFBRXRhM2c5TlJwQzl4dVQ1RUFtWXdXVFRQTlJSempIdXFiM1VnY181clRrUXdMaGs2alh3dE9Ha3JLQ0VXelhpeXZLYmhlMjBDeHc4Vw?oc=5",
    "source": "The Detroit News"
-  },
-  {
-   "at": "2026-10-16T11:02:54.000Z",
-   "title": "‘Teen Takeover for Democracy’ draws election officials to Oak Park and River Forest High School",
-   "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPT1ZULVZhUDBCQWVKbEtKMjJmY3V6YzJEU2NoV0lIbHdvUmJ1UDd5RWUxb0ZUSnR0NXBhM1hkNFpWLTdEU2c5ME16eVRwQ2NvQk5TSE1ZZFo0WGdyTzlVSmlIR2JoNDdhM18ydThPbFNpNjBuSUhGMnBmdkVIUzh2Ug?oc=5",
-   "source": "Chicago Tribune"
   },
   {
    "at": "2026-10-16T11:00:51.000Z",
@@ -35358,6 +35612,12 @@
    "title": "Where to find the 2026 judicial election guide",
    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPenJ0Zm11UEo3X1NHVmpVODVPaUdzUUtvQ3Y4cE1LdUU3SDRSZnlxOENSWG00VEk0RVBTUm5qWDhpcmJGWF82Tng1LTdReW9mTHcyRXp3NTMwWkxDVmMxRWhqU1MzQVFfb3FyZ0ItYTluLUs2VHJLQWdsLXZjcUkyZFZLR000Sl9TRUJwcXVQVFZ4LUtHQWZlQg?oc=5",
    "source": "Injustice Watch"
+  },
+  {
+   "at": "2026-10-15T17:28:15.000Z",
+   "title": "Illinois voter guide for the 2026 midterm election: How to register, vote by mail, find my polling place, more",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNMFZ5dHNNaWJKQmJWSFVNNURmUnNpbjBEajU5eDVVMXNsX1FNRXBFcEg1QzhJazFGQXQwQVNCRWN3WXE4OGNnakpTUXNhcHhZREVmdDdYYW9UT1otaVVJVVJmSlZLZDFWVm5GcThldWhlTkM3blBqSDJpNEh1bjJTdXB2NXFkSGdVS3Z3YXFfb1hQdw?oc=5",
+   "source": "CBS News"
   },
   {
    "at": "2026-10-15T16:31:25.000Z",
