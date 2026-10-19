@@ -180,6 +180,8 @@ export async function addProfiles(races, { dir, publicPath, prev, state = 'Michi
       if (!missing) c.profile = profile;
       c.ballotpedia = profile;
       const html = curl(profile);
+      // A block page or an error page is not their profile: keep what the last read found.
+      if (!/<title>[^<]*Ballotpedia<\/title>/.test(html) || !/infobox person|widget-row/.test(html)) throw new Error('profile page not readable today');
       const stances = parseStances(html);
       // An answer from an earlier run for another office isn't this campaign's message.
       if (stances && (!stances.asOf || stances.asOf >= '2025-01-01')) c.stances = { ...stances, url: profile }; else delete c.stances;
