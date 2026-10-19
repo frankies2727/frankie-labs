@@ -467,6 +467,10 @@ export function Compare({ race, color, ink, numbered, picked, onPick, onInfo, on
                     </div>
                   </div>
                 </div>
+                <CompareRow label="Campaign money">
+                  {anyMoney && (c.money ? <MoneyBars c={c} max={max} /> : <p>No campaign reports found.</p>)}
+                  {!anyMoney && <p>No reports found for anyone in this race.</p>}
+                </CompareRow>
                 {any('stances') && (
                   <CompareRow label="In their words">
                     {c.stances ? <p>“{clip(c.stances.messages[0], 220)}”{c.stances.messages.length > 1 ? ` (+${c.stances.messages.length - 1} more)` : ''}</p> : <p>No survey answer yet.</p>}
@@ -487,10 +491,6 @@ export function Compare({ race, color, ink, numbered, picked, onPick, onInfo, on
                     {c.bar ? <p>{Object.entries(c.bar).map(([g, r]) => `${g}: ${r}`).join(' · ')}</p> : <p>Not rated.</p>}
                   </CompareRow>
                 )}
-                <CompareRow label="Campaign money">
-                  {anyMoney && (c.money ? <MoneyBars c={c} max={max} /> : <p>No campaign reports found.</p>)}
-                  {!anyMoney && <p>No reports found for anyone in this race.</p>}
-                </CompareRow>
                 <CompareRow label="Links">
                   <p className="flex flex-wrap gap-x-3 gap-y-1">
                     {c.website && <a href={c.website} target="_blank" rel="noreferrer noopener" className="font-bold text-[var(--gb-link)] underline underline-offset-2">Campaign site ↗</a>}
