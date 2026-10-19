@@ -1064,7 +1064,16 @@
       "link": "https://christianmaxwellforcongress.com/",
       "from": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/692fbfac2645ab6867a836cf/4b3bf01da_ChristianMaxwellheadshot.png"
      },
-     "ballotpedia": "https://ballotpedia.org/Christian_Maxwell"
+     "ballotpedia": "https://ballotpedia.org/Christian_Maxwell",
+     "stances": {
+      "messages": [
+       "Restoring Safety and Accountability Illinois families deserve safe neighborhoods and accountable leadership. I will fight to restore law and order, protect our communities, and hold leaders accountable for putting politics over public safety.",
+       "Empowering Families and Protecting Parental Rights Families should be in control of their children’s education and well-being — not the government. I will advocate for parents’ rights, quality education, and policies that strengthen families rather than undermine them.",
+       "Fighting Fiscal Mismanagement and Tax Hikes Illinoisans work hard to build their futures, but reckless spending and endless tax hikes are holding us back. I will push for fiscal responsibility, lower taxes, and smarter budgeting to put money back into your pockets."
+      ],
+      "asOf": "2025-05-07",
+      "url": "https://ballotpedia.org/Christian_Maxwell"
+     }
     },
     {
      "ballot": 22,
@@ -1901,6 +1910,15 @@
        "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_6"
       },
       "asOf": "2026-10-19"
+     },
+     "stances": {
+      "messages": [
+       "I am a results-driven businesswomen, not a politician.",
+       "I've lived in this district most of my life. So, I understand your struggles and your needs - because I have lived them myself.",
+       "I am running because I believe Congress has forgotten about the American people. When elected, I will stand up and fight for this country and its people."
+      ],
+      "asOf": "2026-09-29",
+      "url": "https://ballotpedia.org/Niki_Conforti"
      }
     },
     {
@@ -2463,6 +2481,15 @@
        "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_9"
       },
       "asOf": "2026-10-19"
+     },
+     "stances": {
+      "messages": [
+       "I believes in leading with compassion and understanding. We need practical aid-based programs for addiction, homelessness, and mental health. We need community-first healthcare policies, expand local clinics and affordability initiatives without federal overreach. We need to be committed to serving the community and addressing local issues. Listen before legislating. It is then that we can build trust through transparency and accountable leadership. The results will foster bipartisan solutions that stabilize families and uplift vulnerable citizens.",
+       "We need to be focused on policies that uplift and support working families while protecting religious liberty and building bridges across differences. This includes supporting law enforcement with resources and training rooted in de-escalation and community trust. Drugs must be kept off the streets and keep our youth out of crime. On top of all this, we need to promote job creation through local businesses while removing burdensome regulations and support community-based economic revitalization.",
+       "We need to have a vision for the future. I will ensure a prosperous future for constituents by putting their needs first. Three main stances I am running on: Building Trust Empowering Families Bridging Communities"
+      ],
+      "asOf": "2025-12-24",
+      "url": "https://ballotpedia.org/John_Elleson"
      }
     },
     {
@@ -3413,7 +3440,16 @@
       "link": "https://crestwood.illinois.gov/content/elected/",
       "from": "https://crestwood.illinois.gov/content/elected/brian%20skala%20trustee.jpg"
      },
-     "ballotpedia": "https://ballotpedia.org/Brian_Skala"
+     "ballotpedia": "https://ballotpedia.org/Brian_Skala",
+     "stances": {
+      "messages": [
+       "Fight to reduce property taxes",
+       "Lower utility bills",
+       "Hold criminals accountable"
+      ],
+      "asOf": "2026-02-18",
+      "url": "https://ballotpedia.org/Brian_Skala"
+     }
     },
     {
      "ballot": 32,
@@ -3630,7 +3666,16 @@
       "link": "https://wallsforsenate.com/",
       "from": "https://wallsforsenate.com/wp-content/uploads/2026/07/A7405707-112-1024x683.jpg"
      },
-     "ballotpedia": "https://ballotpedia.org/Frederick_Walls"
+     "ballotpedia": "https://ballotpedia.org/Frederick_Walls",
+     "stances": {
+      "messages": [
+       "Property Taxes Illinois has some of the highest property taxes in the nation, and they're uprooting middle-class families from their homes — people who did everything right and still can't keep up with the bill. I don't believe the answer to a financial crisis is to reach deeper into your pockets. True leaders don't blame someone else for the mess Illinois is in — they find a way through it without raising taxes. That's what I'll bring to Springfield.",
+       "Small Business Climate I know the weight of this one personally. As a small business owner, I've felt the heavy regulations, the rising costs and the unfriendly business climate firsthand on top of some of the highest taxes in the country. When the state makes it this hard to build something, businesses leave and take the jobs with them. Families lose paychecks that were feeding their kids. I'll vote against piling new mandates and fees on the people trying to create work here, because a state that drives out employers can't take care of its people.",
+       "CRIME Businesses are closing their doors, and concerns about crime and public safety are affecting communities across Chicagoland. Major retailers and businesses, including Walgreens, McDonald’s, and stores along the Magnificent Mile, have closed locations in Chicago. When businesses leave, communities lose jobs, economic activity, and valuable commercial property. Those closures can have consequences beyond the storefront. Fewer businesses and fewer jobs can mean less economic activity and potentially less tax revenue, while declining commercial property values can put additional pressure on the tax base. Illinois needs policies that support safe communities where businesses can…"
+      ],
+      "asOf": "2026-09-30",
+      "url": "https://ballotpedia.org/Frederick_Walls"
+     }
     },
     {
      "ballot": 32,
@@ -4822,7 +4867,16 @@
       "link": "https://ballotpedia.org/Justin_Kumar",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Justin_Kumar.jpeg"
      },
-     "ballotpedia": "https://ballotpedia.org/Justin_Kumar"
+     "ballotpedia": "https://ballotpedia.org/Justin_Kumar",
+     "stances": {
+      "messages": [
+       "We have to focus on crime and safety since many people do not feel safe with the rise of crime.",
+       "We have to improve our infrastructure with bipartisan solutions.",
+       "We have to be more concerned with the rotting public education system and present solutions in a non-partisan manner."
+      ],
+      "asOf": "2026-03-26",
+      "url": "https://ballotpedia.org/Justin_Kumar"
+     }
     },
     {
      "ballot": 42,
@@ -7006,7 +7060,16 @@
       "link": "https://www.d124.org/about-d124/board-of-education",
       "from": "https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_3/v1752767025/d124org/hlhjqsnfdvaiklmcp1l1/Sheppard.jpg"
      },
-     "ballotpedia": "https://ballotpedia.org/David_Sheppard"
+     "ballotpedia": "https://ballotpedia.org/David_Sheppard",
+     "stances": {
+      "messages": [
+       "Fighting for the small unheard voices",
+       "Fighting for children with disabilities like my son who is nonverbal autistic.",
+       "Fighting to Cap our property taxes and local levy"
+      ],
+      "asOf": "2026-10-01",
+      "url": "https://ballotpedia.org/David_Sheppard"
+     }
     },
     {
      "ballot": 42,
@@ -7517,7 +7580,16 @@
       "link": "https://ballotpedia.org/Timothy_Rueckert",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Timothy_Rueckert_2026-09-02_234545.jpg"
      },
-     "ballotpedia": "https://ballotpedia.org/Timothy_Rueckert"
+     "ballotpedia": "https://ballotpedia.org/Timothy_Rueckert",
+     "stances": {
+      "messages": [
+       "Stop Neighborhood Flooding and Protect Homes Neighborhood flooding damages homes, strains family finances and diminishes property values. I will focus MWRD resources on practical, high-impact drainage projects and work closely with local governments to address known problem areas before the next major storm causes preventable damage.",
+       "Modernize Stormwater Infrastructure Cook County needs stormwater infrastructure capable of meeting today's demands. I will support responsible upgrades to drainage systems, detention facilities and other critical infrastructure, while prioritizing projects that provide measurable protection for the greatest number of residents. One of the ways I intend to accomplish this is by creating a grant program to replace or reline existing public sanitary sewer lines. This will help bring our system into the next century while reducing the infiltration of stormwater into the sanitary system and helping prevent the system from becoming overwhelmed during significant rainfall events.",
+       "Protect the Taxpayer Through Fiscal Responsibility, Accountability and Transparency Every dollar MWRD spends belongs to the taxpayers. I will insist on disciplined budgeting, competitive contracting, open decision-making and clear measures of performance so residents can see where their money is going, and know it is producing real results. Once elected, I will make Board meetings more open and accessible to the public by having them livestreamed and video-recorded, allowing residents to watch the meetings at any time. This will provide a clear record of who was in attendance and what was said, when it was said. Transparency is imperative to maintaining an open, accountable, and…"
+      ],
+      "asOf": "2026-09-23",
+      "url": "https://ballotpedia.org/Timothy_Rueckert"
+     }
     },
     {
      "ballot": 53,
@@ -7731,6 +7803,15 @@
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Water_Reclamation_District_Board"
       },
       "asOf": "2026-10-19"
+     },
+     "stances": {
+      "messages": [
+       "I am committed to advancing stormwater equity and protecting our most vulnerable communities from chronic flooding. By expanding green infrastructure programs like Space to Grow and prioritizing neighborhoods with the greatest need, we can safeguard homes and businesses while creating healthier, more vibrant community spaces across Cook County.",
+       "I will fight to modernize our clean water infrastructure and protect Lake Michigan, the source of our drinking water. Investing in sustainable water collection, treatment, and distribution systems not only protects public health and the environment but also supports long-term economic growth and creates high-wage jobs in historically underserved areas.",
+       "As Commissioner and Chair of Public Information and Education, I am dedicated to expanding environmental education and the Space to Grow program to suburban townships and schools throughout Cook County. My goal is to educate the next generation about water conservation and sustainability, ensuring every child understands the importance of protecting our environment and has the opportunity to thrive."
+      ],
+      "asOf": "2026-02-23",
+      "url": "https://ballotpedia.org/Beth_McElroy_Kirkwood"
      }
     }
    ],
@@ -9110,6 +9191,15 @@
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#10th_district"
       },
       "asOf": "2026-10-19"
+     },
+     "stances": {
+      "messages": [
+       "My most urgent priority is keeping people safe from federal attacks. I'm a rapid responder now, and in office I will end County contracts with vendors that share data with ICE, expand the remote availability of services so that at-risk people can access them from the safety of their homes, and demand that the State's Attorney prosecute ICE agents who break the law. Every single government official has a responsibility to use their platform to speak up, and I will continue calling for resistance to ongoing Federal attacks.",
+       "Everything costs too much. The rising cost of housing, healthcare, and daily essentials is straining all of us and threatening to displace our most vulnerable neighbors. I'm a housing advocate now, and in office I will build affordable housing on vacant land, expand Cook County's reduced-fare transit program, and when finances allow I will create exemptions for hygiene and childcare products from Cook County sales tax. Whether you rent or own, you're on the hook for rising property taxes. I plan to lower residential bills by making vacant land pay its fair share and taking special interests out of the appeals process.",
+       "Healthcare is a human right, and Cook County runs a healthcare system that serves over 500,000 patients. As Commissioner, I will create alternative coverage for the tens of thousands of patients impacted by federal cuts, expand the network of providers that CountyCare patients have access to, and increase the healthcare enrollment of uninsured patients. Going beyond the doctor's office, I will improve public health by increasing the removal of lead pipes for drinking water, provide stable funding for violence prevention programs, and support maximum accessibility of the forest preserves for recreational activities."
+      ],
+      "asOf": "2026-02-05",
+      "url": "https://ballotpedia.org/Drake_Warren"
      }
     }
    ],
@@ -11205,7 +11295,16 @@
       "PRBA": "Recommended",
       "WBAI": "Recommended"
      },
-     "barSource": "https://www.voteforjudges.org/#1790665075386-9ab376a6-4084:~:text=Jon%20Stromsta"
+     "barSource": "https://www.voteforjudges.org/#1790665075386-9ab376a6-4084:~:text=Jon%20Stromsta",
+     "stances": {
+      "messages": [
+       "I am running for Judge because courts should be a place where fairness, due process, and the Rule of Law prevail for everyone, particularly at a time when those ideals are continually under attack. I want to bring my steadiness, experience, and compassion to the bench — ensuring accountability and protecting public safety while making sure our courts offer real opportunities for people to build better futures. I am running a campaign that is non-traditional for judicial candidates. I am knocking on hundreds of doors every day and engaging in conversations with people who have never met a judicial candidate or judge before I showed up at their front door. I will continue that level of…",
+       "The values instilled in me from my upbringing have guided my career and will guide me on the bench. My paternal grandfather was a member of the United Auto Workers, and my parents and siblings were union members. Consistent with this family ethos, dinner table conversations often centered on world affairs and questions of fairness and responsibility to the community. Those early discussions contributed to my running for judge. In my 40-year practice, the judges who most influenced me were those who were truly engaged and who cared about the cases and parties before them. I will be a judge who cares with my sole intention to serve my community.",
+       "I am guided by a deep belief that judges must be fair, honest and free from bias. Fair judges understand that our legal system has not always treated all communities equally and that historically under-resourced communities have often faced harsher outcomes. Being impartial doesn’t mean ignoring that reality – it means being conscious of it so it does not quietly shape decisions. Judges should not legislate from the bench or transition to political activists. But they do have a responsibility to recognize implicit bias, examine each case on its individual facts, and apply the law thoughtfully and consistently so that outcomes are based on evidence and law, and not upon stereotypes,…"
+      ],
+      "asOf": "2026-02-01",
+      "url": "https://ballotpedia.org/Jon_Stromsta"
+     }
     }
    ],
    "writeIn": false,
@@ -11456,6 +11555,15 @@
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_1A"
       },
       "asOf": "2026-10-19"
+     },
+     "stances": {
+      "messages": [
+       "I believe we need to improve educational outcomes while making sure students and teachers have the resources they need to succeed. That means prioritizing classroom resources, strong staffing, mental-health supports, and programs that directly benefit students.",
+       "I do not believe closing schools is a meaningful solution to CPS’s financial challenges. I support investing in schools, especially those experiencing declining enrollment, and finding ways to bring additional community resources into underused buildings. I also believe our tax system should ask more from billionaires and large corporations rather than placing additional pressure on working- and middle-class families.",
+       "I believe CPS and the Board of Education should be transparent and accountable to parents, students, educators, and Chicago residents. I will approach major decisions independently, listen to the communities affected, and make sure families can understand how and why decisions are being made."
+      ],
+      "asOf": "2026-09-29",
+      "url": "https://ballotpedia.org/Ed_Bannon"
      }
     },
     {
@@ -11803,6 +11911,15 @@
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_2B"
       },
       "asOf": "2026-10-19"
+     },
+     "stances": {
+      "messages": [
+       "Safe, equitable, and joyful schools built on strong relationships between students, educators, families, and communities.",
+       "Pass a responsible and transparent CPS budget that helps our students reach their full potential without burdening future generations.",
+       "Protect Chicago students and families from ICE and the Trump Administration’s attacks on public education and our communities."
+      ],
+      "asOf": "2026-10-01",
+      "url": "https://ballotpedia.org/Kyna_Lenhof"
      }
     },
     {
@@ -12220,7 +12337,16 @@
       "link": "https://ballotpedia.org/Angel_Alvarez",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Angel-Alvarez-headshot-under2mb_20261002_213646_63104_1.jpg"
      },
-     "ballotpedia": "https://ballotpedia.org/Angel_Alvarez"
+     "ballotpedia": "https://ballotpedia.org/Angel_Alvarez",
+     "stances": {
+      "messages": [
+       "Fiscal discipline, more money to classrooms: CPS spends too much and delivers too little for it. I've documented real examples: tens of millions in unaccounted-for technology, vendors overpaid for services, and financing mistakes that pushed CPS to junk-bond status. As a research director, I manage budgets and do more with less. On the Board, I'll demand evidence before spending, competitive bidding, and school-level budget transparency with disclosed projections, so CPS stops misreporting spending. I'll also give schools and LSCs more control over their own budgets so they can spend where it's needed most, with less central-office waste. Every dollar lost to waste or bad loans should…",
+       "Universal screenings, strong foundations by second grade: Every child deserves to start school with a strong foundation. I'll push for universal screening for disabilities by age 5, so needs are identified early instead of CPS waiting for problems to grow. As a teacher, I've seen how much early support changes a student's trajectory: that's why I'll call for higher learning standards paired with effective, evidence-based interventions so students reach grade-level proficiency in reading and math by second grade, and we'll keep monitoring growth and providing support as needed. The data are clear: addressing gaps early has the biggest impact, while ignored problems only worsen the longer…",
+       "Special education equity and a proven track record: Students with disabilities are too often an afterthought at CPS, and I bring both a policy record and a personal stake in fixing that. As President of the Family Advisory Board, I led a larger survey of parents than the state did, flagging delayed services, inadequate support, and racial disparities. I've also fought CPS's bureaucracy to get my own daughter the services guaranteed under her IEP. The same failures I've seen there —poor identification, little transparency, no follow-through — show up across CPS: in continued low proficiency, enrollment declines, discipline disparities, unequal access to gifted education, low attendance,…"
+      ],
+      "asOf": "2026-10-02",
+      "url": "https://ballotpedia.org/Angel_Alvarez"
+     }
     }
    ],
    "writeIn": false,
@@ -13706,7 +13832,16 @@
       "link": "https://ballotpedia.org/Jared_Ploger",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Jared_Ploger_20260215_111036.png"
      },
-     "ballotpedia": "https://ballotpedia.org/Jared_Ploger"
+     "ballotpedia": "https://ballotpedia.org/Jared_Ploger",
+     "stances": {
+      "messages": [
+       "Investing in strong Schools, PreK-Higher Education and career pathways.",
+       "Fighting to lower every day costs like grocery, utility, and childcare costs.",
+       "Affordable Housing for young families and those transitioning into smaller dwellings."
+      ],
+      "asOf": "2026-03-13",
+      "url": "https://ballotpedia.org/Jared_Ploger"
+     }
     },
     {
      "party": "Republican",
@@ -13726,7 +13861,16 @@
       "link": "https://ballotpedia.org/Edgardo_Perez",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/EP_20260730_194953_48486_1.jpg"
      },
-     "ballotpedia": "https://ballotpedia.org/Edgardo_Perez"
+     "ballotpedia": "https://ballotpedia.org/Edgardo_Perez",
+     "stances": {
+      "messages": [
+       "I’ve spent decades protecting families, guiding young people, and standing on the front lines for what’s right and the safety of our community.",
+       "I believe strong families are the foundation of a strong society. Parents, not the government, have the primary responsibility and authority to raise, guide, and instill values in their children. Healthy homes provide the stability, discipline, and support young people need to grow into responsible, productive adults. We should empower parents, protect their rights, and ensure they remain the primary decision-makers in their children's lives.",
+       "I strongly support programs that develop the character, leadership, and moral foundation of our youth. Throughout my career, I have invested in mentoring young people, teaching discipline, respect, personal responsibility, and service to others. By providing positive role models and opportunities for growth, we can help the next generation make good choices, reach their full potential, and become responsible citizens who strengthen our communities."
+      ],
+      "asOf": "2026-07-30",
+      "url": "https://ballotpedia.org/Edgardo_Perez"
+     }
     }
    ],
    "writeIn": false,
@@ -14711,7 +14855,16 @@
       "link": "https://ballotpedia.org/Ernie_Marcelain",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/ErnieMarcelain2025.jpeg"
      },
-     "ballotpedia": "https://ballotpedia.org/Ernie_Marcelain"
+     "ballotpedia": "https://ballotpedia.org/Ernie_Marcelain",
+     "stances": {
+      "messages": [
+       "Making life more affordable for working Americans",
+       "Protecting and expanding heathcare and hospitals",
+       "Boosting small businesses while creating good paying jobs"
+      ],
+      "asOf": "2025-12-03",
+      "url": "https://ballotpedia.org/Ernie_Marcelain"
+     }
     },
     {
      "party": "Republican",
@@ -14913,7 +15066,16 @@
       "link": "https://ballotpedia.org/Daniel_Rhyne",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/Daniel_Rhyne_2025.jpeg"
      },
-     "ballotpedia": "https://ballotpedia.org/Daniel_Rhyne"
+     "ballotpedia": "https://ballotpedia.org/Daniel_Rhyne",
+     "stances": {
+      "messages": [
+       "Open Illinois for business, by lowering taxes and easing job killing regulations.",
+       "Make Illinois safer by ending cashless bail, and backing our police by keeping repeat offenders locked up.",
+       "Put Illinois citizens first by ending sanctuary policies and lessen the tax burden it puts on us. Lower taxes and reward citizens that have stayed and endured some of the worst taxes in the nation."
+      ],
+      "asOf": "2025-09-23",
+      "url": "https://ballotpedia.org/Daniel_Rhyne"
+     }
     }
    ],
    "writeIn": false,
@@ -15034,7 +15196,16 @@
       "link": "https://ballotpedia.org/Adam_Beaty",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/AdamBeaty2024.JPG"
      },
-     "ballotpedia": "https://ballotpedia.org/Adam_Beaty"
+     "ballotpedia": "https://ballotpedia.org/Adam_Beaty",
+     "stances": {
+      "messages": [
+       "My first priority is to take on the rising costs of living impacting families across our state. Groceries, fuel, utilities, and everyday essentials continue to climb, placing an unnecessary burden on hardworking residents. Government need not make that burden heavier. Lowering the cost of living starts with responsible budgeting, cutting wasteful spending, and ensuring taxpayer dollars are used efficiently and transparently. We must promote smart economic growth, support local businesses, and reduce unnecessary regulations that drive up costs for families. Our communities thrive when families can afford to live, work, and prosper here with confidence I am committed to making Illinois…",
+       "My next, but no less important, priority is public safety and crime reduction. We can reduce crime in Illinois by fixing what isn’t working in the SAFE-T Act and restoring judges’ discretion to detain dangerous repeat offenders. Accountability and common sense can coexist with fairness. Our communities deserve safe streets, victims deserve justice, and law enforcement needs the tools to keep violent criminals off our streets.",
+       "Third, I chose to prioritize and invest in our state's future by improving education and ensuring the younger generations are best equipped to inherit this state. Every child in Illinois deserves a great education—no matter their ZIP code or their family’s income. Parents should have real choices in where and how their children learn, and every school should have access to equitable resources to help students succeed. It’s time to invest in quality education everywhere and give parents the freedom and support they need to choose what’s best for their children in Illinois classrooms."
+      ],
+      "asOf": "2026-02-12",
+      "url": "https://ballotpedia.org/Adam_Beaty"
+     }
     }
    ],
    "writeIn": false,
@@ -15417,7 +15588,16 @@
       "link": "https://ballotpedia.org/Kermit_Thomas",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/KermitThomas26.png"
      },
-     "ballotpedia": "https://ballotpedia.org/Kermit_Thomas"
+     "ballotpedia": "https://ballotpedia.org/Kermit_Thomas",
+     "stances": {
+      "messages": [
+       "Empathy in Leadership This campaign is about leadership that listens and understands. I have spent my life working directly with families, youth, veterans, and working people, and I understand the real challenges facing our communities. From rising healthcare costs to economic struggles in both rural towns and urban neighborhoods, people deserve a representative who sees them, hears them, and fights for them. I will bring a voice to Springfield that reflects the lived experiences of the people in District 71.",
+       "Actionable Solutions That Deliver Results We don’t just need ideas—we need solutions that work. I am committed to advancing practical policies that improve education, expand access to healthcare, support veterans, and strengthen our local economies. Whether it’s helping farmers navigate economic pressures or ensuring working families have access to affordable care, I will focus on results that make a measurable difference in people’s lives.",
+       "Bridging Rural and Urban Communities District 71 is unique because it includes both rural and urban communities, and too often those voices are divided. I am committed to bringing people together and ensuring that every part of our district is represented fairly. Our farmers, small business owners, students, and families all deserve attention and investment. My campaign is focused on unity—making sure no community is overlooked."
+      ],
+      "asOf": "2026-03-18",
+      "url": "https://ballotpedia.org/Kermit_Thomas"
+     }
     },
     {
      "party": "Republican",
@@ -17303,7 +17483,16 @@
       "link": "https://tcmueller.com/about/",
       "from": "https://tcmueller.com/wp-content/uploads/2025/11/TC-Jackson-Photo.jpeg"
      },
-     "ballotpedia": "https://ballotpedia.org/Tamiko_Mueller"
+     "ballotpedia": "https://ballotpedia.org/Tamiko_Mueller",
+     "stances": {
+      "messages": [
+       "Economic Development and Jobs creation through infrastructure.",
+       "Affordable Healthcare through federal and state governments working together to provide grants and subsidies.",
+       "Veterans Healthcare benefits providing transportation to and from appointments so they are not penalized by having their appointments canceled after waiting months for very important procedures to be completed."
+      ],
+      "asOf": "2026-02-12",
+      "url": "https://ballotpedia.org/Tamiko_Mueller"
+     }
     },
     {
      "party": "Republican",
@@ -18413,7 +18602,16 @@
       "link": "https://jp4il.com/",
       "from": "https://img1.wsimg.com/isteam/ip/4b8089ef-9862-4a10-ab32-15574b297098/IMG_1357.jpg/:/rs=w:800,cg:true,m"
      },
-     "ballotpedia": "https://ballotpedia.org/John_Paul_Augustynowicz"
+     "ballotpedia": "https://ballotpedia.org/John_Paul_Augustynowicz",
+     "stances": {
+      "messages": [
+       "Illinois doesn't have an endless supply of taxpayer money, and government needs to stop acting like it does. I've seen firsthand as an alderman how Springfield makes decisions and leaves municipalities to deal with the costs. I believe in responsible budgets, restoring local government funding, eliminating unfunded mandates, and encouraging economic development instead of constantly looking for new ways to tax people. Local communities should have the authority to make decisions that work for their residents, not be forced into one-size-fits-all solutions from Springfield.",
+       "I believe government should solve real problems, not create new ones. That means safer communities, reliable infrastructure, opportunities for businesses to grow, and an Illinois where young people can build a future and older workers can start over without being priced out. It also means keeping promises, especially the pensions workers earned and the benefits veterans were promised. I don't judge legislation by its title or the press release announcing it. I want to know what problem it solves, what it costs, who pays for it, and whether it actually works.",
+       "I want Illinois to be a place where people can build a life, raise a family, and have a future. I've seen young people graduate from college only to struggle to find a career, and people in their 40s and 50s forced to start over in an economy that seems to have left them behind. I've experienced some of those struggles myself. We need an economy that encourages businesses to invest, creates opportunities for workers, and makes it possible to get ahead. People shouldn't have to leave Illinois to find opportunity, and starting over shouldn't mean starting from nothing."
+      ],
+      "asOf": "2026-10-13",
+      "url": "https://ballotpedia.org/John_Paul_Augustynowicz"
+     }
     }
    ],
    "writeIn": false,
@@ -18459,7 +18657,16 @@
       "link": "https://ballotpedia.org/Nolan_Kemp",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/NolanKemp.JPG"
      },
-     "ballotpedia": "https://ballotpedia.org/Nolan_Kemp"
+     "ballotpedia": "https://ballotpedia.org/Nolan_Kemp",
+     "stances": {
+      "messages": [
+       "Affordability: property tax relief and more disposable income for working families.",
+       "Safe & Free Communities: public safety that protects civil liberties and due process.",
+       "Local Opportunity: strong jobs, housing, and community investment that keeps people here."
+      ],
+      "asOf": "2026-01-12",
+      "url": "https://ballotpedia.org/Nolan_Kemp"
+     }
     },
     {
      "party": "Republican",
@@ -19237,7 +19444,16 @@
       "link": "https://ajforstaterep.com/",
       "from": "https://content.app-sources.com/s/421409513854574561/uploads/Images/IMG_6601-9404808.png?format=webp"
      },
-     "ballotpedia": "https://ballotpedia.org/AJ_Johnson"
+     "ballotpedia": "https://ballotpedia.org/AJ_Johnson",
+     "stances": {
+      "messages": [
+       "I bring a lifetime of public service to this race. I served 26 years in the U.S. Army, retiring as a Master Sergeant, and have spent the past 17 years as a high school Army JROTC instructor. My experience in the military, classroom and community has shaped my approach to leadership: listen carefully, work with people from different backgrounds and focus on practical solutions.",
+       "Affordability is one of my central priorities. Families and seniors are dealing with high property taxes, housing costs, utilities, groceries and health care expenses. I support increasing the state’s share of education funding to reduce reliance on local property taxes, strengthening homeowner and senior relief, and pursuing policies that lower everyday costs without simply shifting the burden elsewhere.",
+       "I want state government to focus on strong public schools, safe communities, accessible health care, support for veterans and responsible economic growth. I support practical, evidence-based policymaking and believe elected officials should be accountable, transparent and willing to work across differences to address the needs of the communities they represent."
+      ],
+      "asOf": "2026-09-29",
+      "url": "https://ballotpedia.org/AJ_Johnson"
+     }
     },
     {
      "party": "Republican",
@@ -19495,7 +19711,16 @@
       "link": "https://pete4illinois.com/",
       "from": "https://pete4illinois.com/wp-content/uploads/2025/09/RUFU24ZPFJBZZDMGXBJ5AJYRCY.jpg"
      },
-     "ballotpedia": "https://ballotpedia.org/Peter_Janko"
+     "ballotpedia": "https://ballotpedia.org/Peter_Janko",
+     "stances": {
+      "messages": [
+       "Persistence and dedication to public service define my approach. This is my third campaign for State Representative, motivated by a commitment to represent the needs of ordinary, hard-working residents and to bring fresh, practical perspectives to government.",
+       "Results matter, even before winning office. During my previous campaigns for State Representative, I made repealing the state portion of the grocery tax my top priority. While I didn’t win those races, I used my candidacy to advocate directly with Governor Pritzker and raise public awareness, efforts that contributed to the state portion being repealed. This demonstrates how running for office allows me to turn advocacy into real results, and imagine what could be achieved if elected.",
+       "We need more legislators with real-world experience, nurses, teachers, farmers, construction and technical professionals, people who understand how things work on the ground. In 1999, I led a $22 million project to modernize the Illinois Tollway communications system, finishing four months ahead of schedule and $2 million under budget. That experience taught me that practical knowledge and hands-on problem solving lead to real results. We need lawmakers like this to provide proper oversight, craft effective policies, and counter the influence of lobbyists."
+      ],
+      "asOf": "2026-02-11",
+      "url": "https://ballotpedia.org/Peter_Janko"
+     }
     },
     {
      "party": "Republican",
@@ -21662,7 +21887,16 @@
       "link": "https://electlizbishop.com/",
       "from": "https://electlizbishop.com/wp-content/uploads/2023/09/Liz-Thinker-flag-768x1024.jpeg"
      },
-     "ballotpedia": "https://ballotpedia.org/Liz_Bishop"
+     "ballotpedia": "https://ballotpedia.org/Liz_Bishop",
+     "stances": {
+      "messages": [
+       "Affordability. The 76th District’s top issue is the same throughout the state: the ever-increasing cost of living in Illinois. High taxes and increased government red tape drive people to leave the state. Illinois is losing young families who struggle to put food on the table and retirees whose retirement savings are not adequate to pay the bills. It is well past time to eliminate unnecessary spending from the state budget so Illinois becomes an affordable place to live. This will require creativity and a willingness to work across the aisle to get the results taxpayers deserve.",
+       "Public Safety. Keeping our communities safe by supporting law enforcement, holding violent offenders accountable, and ensuring victims’ rights are protected is a top priority. Public safety policies should be focused on results—not ideology—so families feel secure in their neighborhoods and businesses can thrive",
+       "Healthcare Accessibility. With the closings of two local hospitals and a recent reduction in services at another, access to healthcare in the 76th has become increasingly limited. These events have made me hyper-aware of how quickly rural healthcare can change, and I am running for State Representative to do all I can to prevent healthcare deserts in this district and throughout the state. This life-and-death issue demands a relentless approach to advocate for affordable, accessible healthcare throughout the region. I would support legislation to address the issues with healthcare disparities in Illinois, and I would fight to ensure each family can rely on nearby quality care for…"
+      ],
+      "asOf": "2026-02-13",
+      "url": "https://ballotpedia.org/Liz_Bishop"
+     }
     }
    ],
    "writeIn": false,
@@ -23488,7 +23722,16 @@
       "link": "https://www.beekmanforsenate.com/",
       "from": "https://www.beekmanforsenate.com/img/brad-cutout.png"
      },
-     "ballotpedia": "https://ballotpedia.org/Brad_Beekman"
+     "ballotpedia": "https://ballotpedia.org/Brad_Beekman",
+     "stances": {
+      "messages": [
+       "A Voice for Law Enforcement - I am opposed to the SAFE-T Act and will support to have it repealed or amended. Our communities and our citizens deserved be safe.",
+       "Advocate for Quality Education - I support school choice, Public Schools, Charter Schools and home schooling. Our schools deserve stable and reliable funding from state government, not local property taxes.",
+       "Support Agriculture and Small Businesses - Input costs and market trades are unsustainable for farmers; regulations need lifted to support farmers growth. Small businesses are expected to compete with large corporations under the same rules; small businesses need to be lawfully defined apart from large corporations and provided support to be successful and profitable."
+      ],
+      "asOf": "2026-02-05",
+      "url": "https://ballotpedia.org/Brad_Beekman"
+     }
     }
    ],
    "writeIn": false,
@@ -25576,7 +25819,16 @@
       "link": "https://ballotpedia.org/Homer_Markel",
       "from": "https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/HomerMarkel.jpg"
      },
-     "ballotpedia": "https://ballotpedia.org/Homer_Markel"
+     "ballotpedia": "https://ballotpedia.org/Homer_Markel",
+     "stances": {
+      "messages": [
+       "Energy bills are hitting our families harder every single month. Seniors on fixed incomes, working parents and small business owners are all feeling the squeeze. We need real solutions that lower costs now and protect us from skyrocketing utility rates in the future. That means expanding access to affordable, renewable energy like solar power. Solar isn't just good for the environment, it's good for our wallets. By investing in local solar projects, encouraging rooftop solar for homeowners, and supporting community solar programs, we can reduce dependence on costly energy sources and stabilize utility bills for the long term. Together, we can turn the lights on to a more affordable tomorrow.",
+       "Families in our communities are working harder than ever, and they deserve to keep more of what they earn. I believe we need more oversight of our TIF districts and Enterprise Zones with full transparency, regular audits, and clear accountability for where every dollar goes. These funds were meant to strengthen our neighborhoods, not operate without public scrutiny. When we shine a light on TIF District/Enterprise Zone spending and stop the waste, we ease the burden on homeowners and taxpayers. This campaign is about common-sense leadership that puts working families, seniors, and homeowners first. Cut the waste. Increase transparency. Lower property taxes.",
+       "Creating good paying jobs in our District is one of our top priorities. I am committed to bringing meaningful, lasting employment to the district by focusing on a few key strategies: 1) Continued investment in infrastructure and broadband access. 2) Support local industry from agriculture and a stable power base to renewable energy and manufacturing. I will work to modernize and support industries while encouraging innovation and sustainable growth. 3) Workforce Development: Partnering with unions, local colleges and employers to expand training programs and apprenticeships. 4) Investing in Small Towns and rural communities: I will work tirelessly to see the Port of Cairo is completed…"
+      ],
+      "asOf": "2026-02-23",
+      "url": "https://ballotpedia.org/Homer_Markel"
+     }
     },
     {
      "party": "Republican",
