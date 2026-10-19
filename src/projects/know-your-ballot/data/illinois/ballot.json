@@ -1538,7 +1538,6 @@
      "ballot": 22,
      "name": "Patty Garcia",
      "party": "Democratic",
-     "website": "https://chuygarcia.house.gov",
      "money": {
       "source": "FEC",
       "id": "H6IL04153",
@@ -1546,19 +1545,6 @@
       "spent": 309314,
       "cash": 172570,
       "through": "09/30/2026"
-     },
-     "social": {
-      "x": "https://x.com/RepChuyGarcia",
-      "facebook": "https://www.facebook.com/RepChuyGarcia",
-      "instagram": "https://instagram.com/repchuygarcia",
-      "bluesky": "https://bsky.app/profile/chuygarcia.house.gov"
-     },
-     "issuesUrl": "https://chuygarcia.house.gov/issues",
-     "photo": {
-      "file": "kyb-photos/illinois/patty-garcia-u-s-representative-4th-district.jpg",
-      "credit": "Official portrait, U.S. Congress (public domain)",
-      "link": "https://bioguide.congress.gov/search/bio/G000586",
-      "from": "https://unitedstates.github.io/images/congress/450x550/G000586.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Patty_Garcia",
      "endorsements": {
@@ -17019,7 +17005,6 @@
      "party": "Democratic",
      "name": "Elizabeth \"Lisa\" Hernandez",
      "ballot": 1,
-     "website": "https://www.staterepresentativebarbarahernandez.com/",
      "incumbent": true,
      "money": {
       "source": "ISBE",

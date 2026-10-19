@@ -28,6 +28,7 @@ import { govbotSlices } from './illinois/govbot.mjs';
 import { addWiki } from './illinois/incumbents.mjs';
 import { addRecords } from './illinois/record.mjs';
 import { buildGuide } from './illinois/suntimes.mjs';
+import { reconcile } from './audit.mjs';
 import { addJudges } from './illinois/judges.mjs';
 import { keepMoneyForward } from './money-forward.mjs';
 import { explainMeasures } from './illinois/measures-plain.mjs';
@@ -241,6 +242,11 @@ async function main() {
   writeFileSync(join(OUT, 'guide.json'), JSON.stringify(guide.guide) + '\n');
   let counties = prev?.counties ?? {};
   try { counties = await districtCounties(); } catch (e) { console.warn(`counties: ${e.message}; keeping the last copy`); }
+
+  // Last line: anything attached to a candidate whose source names someone else is dropped.
+  const findings = await reconcile(ballot.races, 'il');
+  console.log(`Audit: ${findings.length} finding${findings.length === 1 ? '' : 's'}`);
+  for (const line of findings) console.log('  ' + line);
 
   explainMeasures(ballot.measures);
   const next = { races: ballot.races, retentions: ballot.retentions, measures: ballot.measures };

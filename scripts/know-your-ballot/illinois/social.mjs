@@ -27,6 +27,7 @@
 import { execFileSync } from 'node:child_process';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { namesAgree } from '../ballotpedia-profiles.mjs';
 
 const CONGRESS = 'https://raw.githubusercontent.com/unitedstates/congress-legislators/gh-pages/';
 const WIKIDATA = 'https://www.wikidata.org/w/api.php';
@@ -85,6 +86,7 @@ async function congress(st) {
     if (term.state !== st.code) continue;
     const s = byId.get(p.id.bioguide) ?? {};
     out.push({
+      name: `${p.name.first} ${p.name.last}`,
       last: fold(p.name.last), type: term.type, district: term.district != null ? String(term.district) : null,
       social: { x: s.twitter && PLATFORMS.x(s.twitter), facebook: s.facebook && PLATFORMS.facebook(s.facebook), instagram: s.instagram && PLATFORMS.instagram(s.instagram), youtube: s.youtube_id && PLATFORMS.youtube(s.youtube_id) },
       website: term.url,
@@ -103,6 +105,7 @@ function readPerson(text, st) {
   const role = roles.at(-1);
   const links = [...text.matchAll(/^- url: (\S+)/gm)].map((m) => m[1]);
   return {
+    name,
     last: name && fold(text.match(/^family_name: "?(.+?)"?$/m)?.[1]?.replace(/\\x([0-9A-F]{2})/gi, (_, h) => String.fromCharCode(parseInt(h, 16))) ?? name.split(' ').pop()),
     chamber: role?.[1], district: role?.[2],
     website: links.find((u) => !/ilga\.gov|legislature\.mi\.gov|wikipedia|ballotpedia|openstates/i.test(u)),
@@ -309,10 +312,15 @@ export async function addSocial(races, work, render, prev, code = 'IL') {
   const entries = races.flatMap((race) => race.candidates.map((c) => ({ race, c, last: lastName(c.name) })));
   for (const e of entries) {
     const { race, last } = e;
-    if (race.area?.type === 'cd') e.member = members.find((m) => m.type === 'rep' && m.district === race.area.id && m.last === last);
-    if (race.office === 'United States Senator') e.member = members.find((m) => m.type === 'sen' && m.last === last);
+    // The whole name has to agree, not just the surname: a challenger who
+    // shares the sitting member's surname (Patty Garcia, IL-4, against
+    // Chuy García's seat) must never inherit the member's site, accounts
+    // or portrait.
+    const same = (m) => m.last === last && (!m.name || namesAgree(e.c.name, m.name));
+    if (race.area?.type === 'cd') e.member = members.find((m) => m.type === 'rep' && m.district === race.area.id && same(m));
+    if (race.office === 'United States Senator') e.member = members.find((m) => m.type === 'sen' && same(m));
     const chamber = race.area?.type === 'sldl' ? 'lower' : race.area?.type === 'sldu' ? 'upper' : null;
-    if (chamber) e.legislator = legislators.find((l) => l.chamber === chamber && l.district === race.area.id && l.last === last);
+    if (chamber) e.legislator = legislators.find((l) => l.chamber === chamber && l.district === race.area.id && same(l));
   }
 
   const viaOpenStates = (await tryStep('wikidata (open states)', () => wikidata([...new Set(entries.map((e) => e.legislator?.wiki).filter(Boolean))]))) ?? new Map();

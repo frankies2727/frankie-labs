@@ -2,6 +2,8 @@
 // "all candidates" summary (weball26.txt, pipe-delimited, no header).
 // https://www.fec.gov/campaign-finance-data/all-candidates-file-description/
 
+import { namesAgree } from '../ballotpedia-profiles.mjs';
+
 const COL = { id: 0, name: 1, ici: 2, receipts: 5, spent: 7, cash: 10, state: 18, district: 19, through: 27 };
 const SUFFIX = /^(jr|sr|ii|iii|iv|mr|mrs|ms|dr)$/;
 
@@ -35,10 +37,10 @@ export function matchCandidate(name, office, district, records, state = 'IL') {
   if (!w.length) return null;
   const last = w[w.length - 1];
   let hits = pool.filter((r) => r.last.includes(last) || r.last.join('') === w.slice(-2).join(''));
-  if (hits.length > 1) {
-    const first = w[0].slice(0, 3);
-    hits = hits.filter((r) => r.first.some((f) => f.startsWith(first) || first.startsWith(f.slice(0, 3))));
-  }
+  // The first name has to agree too, even with one surname match: a lone
+  // "GARCIA" record in the district could be the other Garcia's.
+  const first = w[0].slice(0, 3);
+  hits = hits.filter((r) => !r.first.length || r.first.some((f) => f.startsWith(first) || first.startsWith(f.slice(0, 3))) || namesAgree(name, `${r.first.join(' ')} ${r.last.join(' ')}`));
   // The same person sometimes has several committees/IDs; they share a name,
   // so keep the one with the latest report.
   const people = new Set(hits.map((r) => `${r.last.join(' ')}|${r.first[0] ?? ''}`));
