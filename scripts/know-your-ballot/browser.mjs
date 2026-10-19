@@ -7,8 +7,8 @@
 let browser = null;
 let unavailable = false;
 
-/** The page as a browser sees it once `looksRight` says the challenge is over; null if it never is, or there is no browser. */
-export async function browserPage(url, looksRight, userAgent) {
+/** The page as a browser sees it once `looksRight` says the challenge is over; null if it never is within `wait` ms, or there is no browser. */
+export async function browserPage(url, looksRight, userAgent, { wait = 30_000 } = {}) {
   if (unavailable) return null;
   if (!browser) {
     try { browser = await (await import('playwright')).chromium.launch(); } catch { unavailable = true; return null; }
@@ -20,7 +20,7 @@ export async function browserPage(url, looksRight, userAgent) {
     // document can look right while that reload is still streaming in, so the
     // page is read again once the document is fully parsed (not once every ad
     // script has loaded, which takes half a minute).
-    for (let waited = 0; waited < 30_000; waited += 1_000) {
+    for (let waited = 0; waited < wait; waited += 1_000) {
       if (looksRight(await page.content().catch(() => ''))) {
         await page.waitForFunction(() => document.readyState !== 'loading', null, { timeout: 30_000 }).catch(() => {});
         const html = await page.content().catch(() => '');
