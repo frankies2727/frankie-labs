@@ -17,6 +17,7 @@ import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { imageType, shrink } from './illinois/photos.mjs';
+import { browserPage } from './browser.mjs';
 
 const UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0 Safari/537.36';
 const BUDGET_MS = 12 * 60_000;
@@ -32,9 +33,18 @@ const slug = (s) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().repl
 const decode = (s) => s.replace(/&amp;/g, '&').replace(/&#0?39;/g, "'").replace(/&quot;/g, '"').replace(/&#160;|&nbsp;/g, ' ').replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n)).replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)));
 
 // Ballotpedia's firewall answers Node's own HTTP client with a challenge but
-// lets curl through (./ballotpedia.mjs), so pages and photos come via curl.
+// usually lets curl through, so pages and photos come via curl. Some days it
+// challenges curl too (whole refreshes used to read nothing); then the page is
+// read in the headless browser, where the challenge resolves itself.
 function curl(url, binary = false) {
-  return execFileSync('curl', ['-sSL', '--compressed', '--max-time', '60', '-A', UA, '-w', binary ? '' : '', url], { maxBuffer: 32e6, encoding: binary ? 'buffer' : 'utf8' });
+  return execFileSync('curl', ['-sSL', '--compressed', '--max-time', '60', '-A', UA, url], { maxBuffer: 32e6, encoding: binary ? 'buffer' : 'utf8' });
+}
+// Every real Ballotpedia page, a profile or not, carries the site's name in its title; a challenge page doesn't.
+const isBallotpedia = (html) => /<title>[^<]*Ballotpedia<\/title>/.test(html);
+async function ballotpediaPage(url) {
+  const html = curl(url);
+  if (isBallotpedia(html)) return html;
+  return (await browserPage(url, isBallotpedia, UA)) ?? html;
 }
 
 /** What a profile page says: its photo and labelled links. */
@@ -113,9 +123,9 @@ function guesses(name, state) {
 }
 
 /** Ballotpedia's own search for the name: the first few pages whose title is the name. */
-function searchHits(name) {
+async function searchHits(name) {
   const lead = name.split(' & ')[0].trim().replace(/["“”][^"“”]*["“”]/g, ' ').replace(/\s+/g, ' ').trim();
-  const html = curl(`https://ballotpedia.org/wiki/index.php?${new URLSearchParams({ search: lead, fulltext: '1', ns0: '1' })}`);
+  const html = await ballotpediaPage(`https://ballotpedia.org/wiki/index.php?${new URLSearchParams({ search: lead, fulltext: '1', ns0: '1' })}`);
   return [...html.matchAll(/class="mw-search-result-heading"><a href="(\/[^"]+)"[^>]*title="([^"]+)"/g)]
     .filter(([, , title]) => namesAgree(title.replace(/\s*\([^)]*\)\s*$/, ''), lead))
     .map(([, href]) => `https://ballotpedia.org${href}`).slice(0, 3);
@@ -167,21 +177,20 @@ export async function addProfiles(races, { dir, publicPath, prev, state = 'Michi
       let profile = c.profile?.match(/^https:\/\/ballotpedia\.org\/\S+$/)?.[0] ?? c.ballotpedia ?? was?.ballotpedia ?? was?.photo?.link?.match(/^https:\/\/ballotpedia\.org\/\S+$/)?.[0];
       if (!profile) {
         for (const url of guesses(c.name, state)) {
-          const html = curl(url);
-          if (isAbout(html, c.name, race.office, state)) { profile = url; break; }
+          if (isAbout(await ballotpediaPage(url), c.name, race.office, state)) { profile = url; break; }
         }
         if (!profile) {
-          for (const url of searchHits(c.name)) {
-            if (isAbout(curl(url), c.name, race.office, state)) { profile = url; break; }
+          for (const url of await searchHits(c.name)) {
+            if (isAbout(await ballotpediaPage(url), c.name, race.office, state)) { profile = url; break; }
           }
         }
         if (!profile) { keep(); log.push(`no profile found for ${c.name} (${race.office})`); return; }
       }
       if (!missing) c.profile = profile;
       c.ballotpedia = profile;
-      const html = curl(profile);
-      // A block page or an error page is not their profile: keep what the last read found.
-      if (!/<title>[^<]*Ballotpedia<\/title>/.test(html) || !/infobox person|widget-row/.test(html)) throw new Error('profile page not readable today');
+      const html = await ballotpediaPage(profile);
+      // A challenge page the browser couldn't clear, or an error page, is not their profile: keep what the last read found.
+      if (!isBallotpedia(html) || !/infobox person|widget-row/.test(html)) throw new Error('profile page not readable today');
       const stances = parseStances(html);
       // An answer from an earlier run for another office isn't this campaign's message.
       if (stances && (!stances.asOf || stances.asOf >= '2025-01-01')) c.stances = { ...stances, url: profile }; else delete c.stances;
