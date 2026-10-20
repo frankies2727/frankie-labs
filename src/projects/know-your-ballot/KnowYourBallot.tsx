@@ -496,7 +496,7 @@ export function KnowYourBallot() {
             {/* Progress, views and search, pinned under govbot's header all the
                 way down the page (its height feeds --kyb-bar, so the contents
                 column and jumped-to races sit just below it). */}
-            <div ref={barRef} className="sticky top-[var(--kyb-top)] z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 py-2 lg:py-3 kyb-glass">
+            <div ref={barRef} className="sticky top-[calc(var(--kyb-top)+6px)] z-30 -mx-2 sm:-mx-3 px-4 sm:px-6 py-2 lg:py-3 kyb-glass">
             <div className="max-w-[1100px] mx-auto">
               <ProgressHead wide={wide} onContents={() => setContentsOpen(true)} done={done} total={total} allDone={allDone} place={saved.place?.label} region={region} onChangeAddress={changeAddress} />
               {/* Wide screens keep the views, search and notice in the sticky bar; phones let them scroll so the ballot gets the screen. */}
