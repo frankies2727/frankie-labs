@@ -1,7 +1,7 @@
 import { ChevronDown, Crosshair, ListChecks, Loader2, MapPin, Printer, Search, Share2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { ClearButton } from '../../../components/ClearButton';
-import { BrowsingBadge, BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Locating, Ring, useWide, SectionCards, SectionFlip, useBallotView, useDocumentMeta, type SectionCard } from '../Bits';
+import { BrowsingBadge, BrowsingNotice, Confetti, ContinueCard, HowBallotWorks, Locating, ProgressHead, ProgressLine, usePinnedBar, useWide, SectionCards, SectionFlip, useBallotView, useDocumentMeta, type SectionCard } from '../Bits';
 import { Group } from '../Calendar';
 import { guideUrl } from '../hosts';
 import { routeHref } from '../../../lib/router';
@@ -77,19 +77,7 @@ export function KnowYourBallotMichigan() {
   // Which print view the next print shows: the voter's picks, or a full sample ballot.
   const [printMode, setPrintMode] = useState<'picks' | 'sample'>('picks');
   const printAs = (mode: 'picks' | 'sample') => { setPrintMode(mode); setTimeout(() => window.print(), 50); };
-  // The pinned bar's height, as --kyb-bar, for what has to sit below it.
-  const barObserver = useRef<ResizeObserver | null>(null);
-  const barRef = useCallback((bar: HTMLDivElement | null) => {
-    barObserver.current?.disconnect();
-    const root = document.documentElement;
-    if (!bar) { root.style.removeProperty('--kyb-bar'); return; }
-    let last = '';
-    barObserver.current = new ResizeObserver(([entry]) => {
-      const h = `${Math.round(entry.borderBoxSize?.[0]?.blockSize ?? bar.offsetHeight)}px`;
-      if (h !== last) root.style.setProperty('--kyb-bar', (last = h));
-    });
-    barObserver.current.observe(bar);
-  }, []);
+  const barRef = usePinnedBar();
   const [toast, setToast] = useState('');
   const [party, setParty] = useState(false);
   const [shareMsg, setShareMsg] = useState('');
@@ -371,27 +359,14 @@ export function KnowYourBallotMichigan() {
           />
         ) : (
           <>
-            <div ref={barRef} className="sticky top-[var(--kyb-top)] z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 pt-3 pb-3 bg-[var(--gb-bg)] border-b border-[var(--gb-border)]">
+            <div ref={barRef} className="sticky top-[var(--kyb-top)] z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 py-2 lg:py-3 bg-[var(--gb-bg)] border-b border-[var(--gb-border)]">
               <div className="max-w-[1100px] mx-auto">
-                <div className="flex items-center gap-2 sm:gap-4">
-                  <button type="button" onClick={() => setContentsOpen(true)} aria-label="Contents"
-                    className="lg:hidden shrink-0 w-11 h-11 rounded-xl border-2 border-[var(--gb-text)] flex items-center justify-center hover:bg-[var(--kyb-chip)]">
-                    <ListChecks className="w-5 h-5" aria-hidden="true" />
-                  </button>
-                  <Ring pct={total ? done / total : 0} />
-                  <div className="min-w-0 flex-1">
-                    <p className="font-black text-lg leading-tight">{!saved.place ? `${total} contests to browse` : allDone ? 'Ballot ready 🎉' : `${done} of ${total} decided`}</p>
-                    <button type="button" onClick={changeAddress} className="flex max-w-full flex-wrap items-center gap-x-1.5 text-left text-sm leading-snug text-[var(--gb-text)]">
-                      <span>{saved.place ? `📍 ${saved.place.label}` : `Browsing every race in ${region}`}</span>
-                      <span className="shrink-0 font-bold underline underline-offset-2">{saved.place ? 'Change' : 'Add address'}</span>
-                    </button>
-                  </div>
-                </div>
+                <ProgressHead wide={wide} onContents={() => setContentsOpen(true)} done={done} total={total} allDone={allDone} place={saved.place?.label} region={region} onChangeAddress={changeAddress} />
                 {/* Wide screens keep the views, search and notice in the sticky bar; phones let them scroll so the ballot gets the screen. */}
                 {wide && tools}
               </div>
             </div>
-              {!wide && <div className="max-w-[1100px] mx-auto">{tools}</div>}
+              {!wide && <div className="max-w-[1100px] mx-auto pt-3"><ProgressLine done={done} total={total} allDone={allDone} place={saved.place?.label} region={region} onChangeAddress={changeAddress} />{tools}</div>}
               {!wide && !saved.place && <BrowsingBadge region={region} onAddAddress={changeAddress} />}
             <div className="lg:grid lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-8 lg:items-start max-w-[1100px] mx-auto pt-4">
               <ContentsColumn {...contents} />
@@ -776,30 +751,30 @@ function Sources() {
       links: [['Your sample ballot', LINKS.myInfo]] },
   ];
   return (
-    <section id="kyb-sources" aria-labelledby="kyb-sources-h" className="scroll-mt-[calc(var(--kyb-top)+var(--kyb-bar,0px)+16px)] rounded-2xl border-[3px] border-[var(--gb-primary)] bg-[var(--gb-surface)] p-4 sm:p-5">
-      <h2 id="kyb-sources-h" className="text-2xl">
+    <section id="kyb-sources" aria-labelledby="kyb-sources-h" className="scroll-mt-[calc(var(--kyb-top)+var(--kyb-bar,0px)+16px)] rounded-2xl border-2 border-[var(--gb-primary)] bg-[var(--gb-surface)] p-3 sm:p-4">
+      <h2 id="kyb-sources-h" className="text-lg">
         <button type="button" onClick={toggle} aria-expanded={open} aria-controls="kyb-sources-body" className="inline-flex min-h-[44px] items-center gap-2 text-left">
           📂 Sources
-          <ChevronDown className={`w-6 h-6 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
+          <ChevronDown className={`w-5 h-5 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
           <span className="sr-only">{open ? '(hide)' : '(show)'}</span>
         </button>
       </h2>
-      {open && <div id="kyb-sources-body" className="kyb-scroll-bar mt-4 max-h-[420px] overflow-y-auto pr-1" style={{ ['--scroll' as string]: 'var(--gb-primary)' }}>
+      {open && <div id="kyb-sources-body" className="kyb-scroll-bar mt-3 max-h-[320px] overflow-y-auto pr-1 text-[13px]" style={{ ['--scroll' as string]: 'var(--gb-primary)' }}>
         <ul className="grid gap-3 sm:grid-cols-2">
           {cards.map((c) => (
-            <li key={c.title} className="flex flex-col gap-2 rounded-xl border border-[var(--gb-border-strong)] bg-[var(--gb-bg)] p-4">
+            <li key={c.title} className="flex flex-col gap-2 rounded-xl border border-[var(--gb-border-strong)] bg-[var(--gb-bg)] p-3">
               <p className="flex flex-wrap items-center gap-2 font-black"><span aria-hidden="true">{c.emoji}</span>{c.title}</p>
               <span className={`self-start rounded-full border px-2.5 py-0.5 text-[11px] font-black uppercase tracking-[0.12em] ${c.planned ? 'border-[var(--gb-text)]' : 'border-[var(--gb-primary)] text-[var(--gb-primary)]'}`}>{c.status}</span>
-              <p className="text-sm leading-relaxed">{c.body}</p>
+              <p className="leading-snug">{c.body}</p>
               {c.links.length > 0 && (
                 <p className="mt-auto flex flex-wrap gap-x-4 gap-y-1">
-                  {c.links.map(([label, href]) => <a key={href} href={href} target="_blank" rel="noreferrer noopener" className="text-sm font-bold text-[var(--gb-link)] underline underline-offset-2">{label} ↗</a>)}
+                  {c.links.map(([label, href]) => <a key={href} href={href} target="_blank" rel="noreferrer noopener" className="font-bold text-[var(--gb-link)] underline underline-offset-2">{label} ↗</a>)}
                 </p>
               )}
             </li>
           ))}
         </ul>
-        <p className="mt-4 text-sm leading-relaxed">Nonpartisan and independent: not affiliated with any campaign, party or election office. Always double-check your <a className="font-bold text-[var(--gb-link)] underline" href={LINKS.myInfo} target="_blank" rel="noreferrer noopener">official sample ballot</a>.</p>
+        <p className="mt-3 leading-snug">Nonpartisan and independent: not affiliated with any campaign, party or election office. Always double-check your <a className="font-bold text-[var(--gb-link)] underline" href={LINKS.myInfo} target="_blank" rel="noreferrer noopener">official sample ballot</a>.</p>
       </div>}
     </section>
   );

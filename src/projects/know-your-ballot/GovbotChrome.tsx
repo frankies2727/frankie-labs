@@ -12,7 +12,8 @@ import govbotJs from './govbot/govbot-shell.js?url';
 // at the live govbot site; on govbot itself the page carries the shell
 // directly and govbot keeps it in sync.
 
-const SITE = 'https://chihacknight.github.io/govbot/';
+export const GOVBOT_SITE = 'https://chihacknight.github.io/govbot/';
+const SITE = GOVBOT_SITE;
 /** govbot's images (the Capitol, the logo). */
 export const GOVBOT_ASSETS = `${SITE}dashboard/assets/`;
 // Our own copy, not outside text: the templates' {placeholders} become links.

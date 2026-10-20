@@ -36,6 +36,15 @@
    govbot's sticky header, not under it. */
 .kyb-govbot { scroll-padding-top: calc(var(--kyb-top) + 16px); }
 
+/* Phones, in the ballot view (html.kyb-ballot while the pinned bar is up):
+   govbot's header scrolls away with the page and the guide's own short bar
+   (logo, contents, progress) is the whole sticky top, so the ballot gets the
+   screen. */
+@media (max-width: 1023px) {
+  .kyb-ballot { --kyb-top: 0px; }
+  .kyb-ballot .gb-header { position: static; }
+}
+
 /* The contents section you're on: a glow around its coloured frame pulses.
    Only the glow layer's opacity animates, which the compositor does on its
    own: animating the shadow itself repainted the page every frame, and made
