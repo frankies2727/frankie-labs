@@ -195,8 +195,13 @@ async function main() {
   console.log(`Campaign-site headshots: ${heads.found} new, ${heads.kept} kept, of ${heads.tried} sites read`);
   for (const line of heads.log) console.log('  ' + line);
 
-  const judges = await addJudges(ballot, prev, { dir: PHOTOS_DIR, publicPath: 'kyb-photos/illinois' });
+  // Judges: ratings and photos onto the ballot, and the guide's profile of
+  // each judge as a separate file the page fetches on demand.
+  let prevJudges = null;
+  try { prevJudges = JSON.parse(readFileSync(join(OUT, 'judges.json'), 'utf8')); } catch { /* first build */ }
+  const judges = await addJudges(ballot, prev, { dir: PHOTOS_DIR, publicPath: 'kyb-photos/illinois', prevJudges });
   for (const line of judges.log) console.log(line);
+  writeFileSync(join(OUT, 'judges.json'), JSON.stringify(judges.file) + '\n');
 
   const sites = await earlyVotingSites();
   await closeBrowser();

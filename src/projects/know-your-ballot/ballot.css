@@ -36,6 +36,44 @@
    govbot's sticky header, not under it. */
 .kyb-govbot { scroll-padding-top: calc(var(--kyb-top) + 16px); }
 
+/* The pinned bar as a floating glass card: the page shows through it heavily
+   blurred and saturated, under a white top highlight, a diagonal sheen and
+   an iridescent violet-blue-pink-cyan edge, with a soft violet glow beneath.
+   The edge and sheen are pseudo-elements behind the content (isolation +
+   z-index -1), so nothing covers the buttons. */
+.kyb-glass {
+  isolation: isolate; border-radius: 20px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, #fff 16%, transparent), color-mix(in srgb, #fff 3%, transparent) 45%, color-mix(in srgb, #7c5cff 14%, transparent)),
+    color-mix(in srgb, var(--gb-bg) 52%, transparent);
+  -webkit-backdrop-filter: blur(26px) saturate(200%) brightness(1.06);
+  backdrop-filter: blur(26px) saturate(200%) brightness(1.06);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, #fff 38%, transparent),
+    inset 0 -1px 0 color-mix(in srgb, #fff 8%, transparent),
+    0 14px 44px -10px rgb(124 92 255 / 0.5),
+    0 2px 14px rgb(0 0 0 / 0.28);
+}
+.kyb-glass::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; padding: 1.5px; pointer-events: none;
+  background: linear-gradient(120deg, #a78bfa, #60a5fa 28%, #f0abfc 52%, #22d3ee 78%, #a78bfa);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  opacity: 0.95;
+}
+.kyb-glass::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(115deg, transparent 28%, color-mix(in srgb, #fff 12%, transparent) 44%, transparent 58%);
+}
+
+/* Phones, in the ballot view (html.kyb-ballot while the pinned bar is up):
+   govbot's header scrolls away with the page and the guide's own short bar
+   (contents, progress) is the whole sticky top, so the ballot gets the screen. */
+@media (max-width: 1023px) {
+  .kyb-ballot { --kyb-top: 0px; }
+  .kyb-ballot .gb-header { position: static; }
+}
+
 /* The contents section you're on: a glow around its coloured frame pulses.
    Only the glow layer's opacity animates, which the compositor does on its
    own: animating the shadow itself repainted the page every frame, and made

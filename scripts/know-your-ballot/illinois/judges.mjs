@@ -7,8 +7,10 @@
 //     candidate who went on to November), each bar
 //     group's rating of the judges up for retention, and judges who withdrew
 //     after the ballots were printed (still on the ballot, votes not
-//     counted), whom the Board's candidate list leaves out. Their reporting
-//     itself stays on their site: we link to it, not copy it.
+//     counted), whom the Board's candidate list leaves out, and each judge's
+//     and judicial candidate's profile, word for word (judges.json, which the
+//     page fetches when a judge's details open): Injustice Watch publishes
+//     under Creative Commons BY-ND, which allows that with credit and no edits.
 //   - The Alliance of Bar Associations for Judicial Screening
 //     (https://www.voteforjudges.org/): each member group's rating of every
 //     candidate in a contested judgeship.
@@ -34,6 +36,62 @@ const vacatedSeat = (office) => seat(office.match(/(?:Vacancy|Judgeship) of ([^)
 const photoUrl = (c) => { const f = c.photo_provided?.[0]?.filename; return f ? `${SITE}images/candidates/${encodeURIComponent(f)}` : undefined; };
 // Their profile pages: /candidate/<name as a slug>-<candidate id>.
 const profileUrl = (c) => `${SITE}candidate/${fold(c.nameFormatted).replace(/['’.]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}-${c.candidateId}`;
+
+// ---- the guide's profile of each judge -------------------------------------------
+// Everything their candidate page shows: age, law school, when they became a
+// judge, experience, the guide's "Notable" reporting, the candidate survey
+// (the excerpt the guide leads with, and every answer), the bar groups'
+// comments and ratings, the guide's icons ("flags") and endorsements. The
+// survey's questions and the glossary's definitions live in the guide's
+// script, not its data: the questions are copied here (they change with the
+// election), the glossary is read from the script each build.
+const SURVEY = {
+  Retention: [
+    ['q1', 'Where did you grow up and how has your personal background influenced your practice of law?'],
+    ['q2', 'Judges hold enormous power over the lives of the people in their courtrooms. How have you grappled with judicial power in your time on the bench?'],
+    ['q3', 'As a judge, how have you worked, both inside and outside the courtroom, to address the ways that the legal system, historically and in the present, has worked in favor of those with money, power and resources and against those without?'],
+    ['q5', 'Please list any volunteer work or community involvement you have done (outside of your work as a judge), such as participation in nonprofit boards.'],
+    ['q6', 'Please list any judicial service you’ve engaged in outside the courtroom, such as [bench book](#bench-book) development or service on committees dedicated to improving the courts.'],
+  ],
+  Vacancy: [
+    ['q1', 'Where did you grow up and how has your personal background influenced your practice of law?'],
+    ['q2', 'Judges hold enormous power over the lives of the people in their courtrooms. Why do you want to be a judge and do you have any concerns about holding that kind of power over others?'],
+    ['q3', 'If elected, how will you grapple with the ways that the legal system, historically and in the present, has worked in favor of those with money, power and resources and against those without?'],
+    ['q4', 'Why should voters support your candidacy for judge?'],
+  ],
+};
+// The guide links a glossary term as [term](http://##slug); the page shows the definition in place from #slug.
+const glossaryLinks = (s) => (s ?? '').trim().replace(/\]\(http:\/\/##([a-z0-9-]+)\)/g, '](#$1)') || undefined;
+const number = (v) => (v != null && v !== '' && !Number.isNaN(Number(v)) ? Number(v) : undefined);
+function profileOf(c, raceType) {
+  const p = {
+    url: profileUrl(c),
+    age: number(c.age), lawSchool: c.lawSchool?.trim() || undefined, graduationYear: c.graduationYear?.trim() || undefined,
+    judgeSince: c.judgeSince?.trim() || undefined, neighborhood: c.cityNeighborhood?.trim() || undefined,
+    flags: (c.flags ?? []).map((f) => ({ name: f.fields.name, description: (f.fields.description ?? '').trim() })),
+    judicialExperience: glossaryLinks(c.judicialExperience), pastExperience: glossaryLinks(c.pastExperience), experience: glossaryLinks(c.experience),
+    notable: glossaryLinks(c.notable), surveyExcerpt: glossaryLinks(c.surveyExcerpt), ratingsExcerpt: glossaryLinks(c.ratingsExcerpt),
+    survey: (SURVEY[raceType] ?? []).map(([k, q]) => ({ q, a: (c.survey?.fields?.[k] ?? '').trim() })).filter((x) => x.a),
+    ratings: (c.ratings ?? []).map((r) => ({ group: r.fields.ratingAgency, rating: r.fields.rating })).filter((r) => r.group && r.rating),
+    endorsements: (c.endorsements ?? []).map((e) => ({ name: e.fields.name, description: e.fields.description?.trim() || undefined })),
+  };
+  for (const k of Object.keys(p)) if (p[k] === undefined || (Array.isArray(p[k]) && !p[k].length)) delete p[k];
+  return p;
+}
+
+// The script's strings are JSON inside a JavaScript string (escapes doubled; apostrophes escaped).
+const unescape = (s) => { const t = s.replace(/\\\\/g, '\\').replace(/\\'/g, "'"); try { return JSON.parse(`"${t}"`); } catch { return t; } };
+/** The glossary: { slug: { name, description } }, read from the guide's scripts (its site keeps the definitions there). */
+async function fetchGlossary() {
+  const home = await getText(SITE);
+  const out = {};
+  for (const [, src] of home.matchAll(/src="(\/_next\/static\/chunks\/[^"]+\.js)"/g)) {
+    const js = await getText(SITE.slice(0, -1) + src);
+    for (const m of js.matchAll(/"glossaryterm\.([a-z0-9-]+)\.(name|description)":"((?:[^"\\]|\\.)*)"/g)) (out[m[1]] ??= {})[m[2]] = unescape(m[3]).trim();
+  }
+  if (Object.keys(out).length < 10) throw new Error('glossary not found in the guide’s scripts');
+  return out;
+}
 
 /** Each bar group's rating, by its short name (the guide uses the Alliance's). */
 function barRatings(c) {
@@ -145,8 +203,10 @@ function fromGuide(guide, alliance, races, primary = new Map()) {
   const judges = guide.filter((r) => r.raceType === 'Retention').flatMap((r) => r.candidates.map((c) => ({
     id: `retain-${fold(c.nameFormatted).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`,
     court: r.level, judge: c.nameFormatted, profile: profileUrl(c), bar: barRatings(c),
-    withdrawn: /\bwithdrew\b/i.test(c.notable ?? '') || undefined, photoFrom: photoUrl(c),
+    withdrawn: /\bwithdrew\b/i.test(c.notable ?? '') || undefined, photoFrom: photoUrl(c), details: profileOf(c, 'Retention'),
   })));
+  // Their profile of each judicial candidate, keyed like the ballot's candidates.
+  const candidateDetails = new Map();
   // Contested judgeships: "Burke Vacancy" ~ "(Vacancy of Burke)" or
   // "(… Associate Judgeship of Baird)", then the candidate's last name.
   const profiles = new Map();
@@ -160,6 +220,7 @@ function fromGuide(guide, alliance, races, primary = new Map()) {
       const cand = race?.candidates.find((x) => key(x.name).includes(key(c.lastName)));
       if (!cand) continue;
       profiles.set(`${race.id}|${cand.name}`, profileUrl(c));
+      candidateDetails.set(`${race.id}|${cand.name}`, profileOf(c, 'Vacancy'));
       // The general guide carries no photos for contested seats; the primary guide does.
       const fromPrimary = primary.get(key(cand.name)) ?? primary.get(key(`${c.firstName} ${c.lastName}`));
       const photo = photoUrl(c) ?? fromPrimary?.photo;
@@ -178,13 +239,14 @@ function fromGuide(guide, alliance, races, primary = new Map()) {
       if (cand && Object.keys(c.bar).length) bars.set(`${race.id}|${cand.name}`, { bar: c.bar, source: c.source });
     }
   }
-  return { judges, profiles, photos, bars };
+  return { judges, profiles, photos, bars, candidateDetails };
 }
 
 /** The same, from the last build, for when a source can't be read. */
 const byCandidate = (prev, field, value = (c) => c[field]) => new Map((prev?.races ?? []).flatMap((r) => r.candidates.filter((c) => c[field]).map((c) => [`${r.id}|${c.name}`, value(c)])));
 const fromPrev = (prev) => ({
   judges: (prev?.retentions ?? []).map((r) => ({ ...r, photoFrom: r.photo?.from })),
+  candidateDetails: new Map(),
   profiles: byCandidate(prev, 'profile'),
   photos: byCandidate(prev, 'photo', (c) => (c.photo.credit === CREDIT ? c.photo.from : undefined)),
   bars: byCandidate(prev, 'bar', (c) => ({ bar: c.bar, source: c.barSource })),
@@ -215,12 +277,22 @@ async function savePhoto(url, name, link, old, { dir, publicPath }) {
  * candidates, and slots in withdrawn judges. The Board's list sets the order.
  * Photos go in `dir` (served at `publicPath`).
  */
-export async function addJudges(ballot, prev, { dir, publicPath }) {
+/**
+ * `prevJudges` is the last build's judges.json; the result's `file` is this
+ * build's (the last one again when the guide can't be read today).
+ */
+export async function addJudges(ballot, prev, { dir, publicPath, prevJudges = null }) {
   let found, note = '';
   let primary = new Map();
   try { primary = await fetchPrimary(); } catch (e) { note = ` (primary guide: ${e.message})`; }
-  try { found = fromGuide(await fetchGuide(), await fetchAlliance(), ballot.races, primary); } catch (e) { found = fromPrev(prev); note += ` (${e.message}; kept the last copy)`; }
-  const { judges, profiles, photos, bars } = found;
+  let fresh = true;
+  try { found = fromGuide(await fetchGuide(), await fetchAlliance(), ballot.races, primary); } catch (e) { found = fromPrev(prev); fresh = false; note += ` (${e.message}; kept the last copy)`; }
+  const { judges, profiles, photos, bars, candidateDetails } = found;
+  let glossary = prevJudges?.glossary ?? {};
+  try { glossary = await fetchGlossary(); } catch (e) { note += ` (${e.message}; kept the last glossary)`; }
+  const file = fresh
+    ? { asOf: new Date().toISOString().slice(0, 10), glossary, profiles: Object.fromEntries([...judges.map((j) => [j.id, j.details]).filter(([, d]) => d), ...candidateDetails]) }
+    : { ...(prevJudges ?? { asOf: '', profiles: {} }), glossary };
   mkdirSync(dir, { recursive: true });
   const log = [];
   let saved = 0;
@@ -266,5 +338,5 @@ export async function addJudges(ballot, prev, { dir, publicPath }) {
   }
   const used = new Set([...retentions, ...ballot.races.flatMap((r) => r.candidates)].filter((x) => x.photo).map((x) => x.photo.file.split('/').pop()));
   for (const f of readdirSync(dir)) if (f.startsWith('retain-') && !used.has(f)) rmSync(join(dir, f));
-  return { log: [`judges: ${retentions.filter((r) => r.bar).length}/${retentions.length} retentions rated, ${retentions.filter((r) => r.photo).length} with a photo, ${retentions.filter((r) => r.withdrawn).length} withdrawn, ${linked}/${total} judicial candidates linked, ${rated}/${total} rated, ${saved} photos saved${note}`, ...log] };
+  return { file, log: [`judges: ${retentions.filter((r) => r.bar).length}/${retentions.length} retentions rated, ${retentions.filter((r) => r.photo).length} with a photo, ${retentions.filter((r) => r.withdrawn).length} withdrawn, ${linked}/${total} judicial candidates linked, ${rated}/${total} rated, ${saved} photos saved, ${Object.keys(file.profiles).length} profiles, ${Object.keys(glossary).length} glossary terms${note}`, ...log] };
 }

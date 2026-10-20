@@ -6,6 +6,7 @@ import { Face } from './Face';
 import { useReadOnly, useStateConfig } from './state';
 import { money, type Choice } from './store';
 import type { Candidate, Guide, Measure, Race, Retention, SocialPlatform } from './types';
+import { JudgeFold, JudgeProfileBlock } from './Judge';
 
 const AREA_LABEL: Record<string, string> = {
   cd: 'Congressional District', sldu: 'State Senate District', sldl: 'State House District',
@@ -432,7 +433,7 @@ function Follow({ c }: { c: Candidate }) {
   );
 }
 
-export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, onShowRace, onClose, guide = null }: { race: Race; c: Candidate; color: string; ink: string; numbered: boolean; picked: boolean; onPick: () => void; /** From the landing page: open their race on the ballot. */ onShowRace?: () => void; onClose: () => void; /** Their voter-guide questionnaire: `undefined` while it loads, `null` when there is none. */ guide?: Guide | null | undefined }) {
+export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, onShowRace, onClose, guide = null, judge }: { race: Race; c: Candidate; color: string; ink: string; numbered: boolean; picked: boolean; onPick: () => void; /** From the landing page: open their race on the ballot. */ onShowRace?: () => void; onClose: () => void; /** Their voter-guide questionnaire: `undefined` while it loads, `null` when there is none. */ guide?: Guide | null | undefined; /** A judicial candidate: their key in Injustice Watch's profiles (judges.json). */ judge?: string }) {
   const { noMoney, researchLinks } = useStateConfig();
   const readOnly = useReadOnly();
   return (
@@ -466,6 +467,13 @@ export function CandidateSheet({ race, c, color, ink, numbered, picked, onPick, 
         </section>
 
         <VoterGuide g={guide} />
+
+        {judge && (
+          <section className="space-y-3">
+            <h3 className="text-sm font-black uppercase tracking-widest text-[var(--gb-text)]">⚖️ About this candidate</h3>
+            <JudgeProfileBlock k={judge} wanted />
+          </section>
+        )}
 
         <InTheirWords c={c} />
 
@@ -627,6 +635,7 @@ export const RetentionCard = memo(function RetentionCard({ color, r, choice, onC
       </div>
       {r.bar && !r.withdrawn && <BarRatings bar={r.bar} source={r.barSource} compact />}
       {r.profile && <p className="text-sm"><a href={r.profile} target="_blank" rel="noreferrer noopener" className="font-bold text-[var(--gb-link)] underline underline-offset-2">Injustice Watch profile ↗</a>{r.photo && <span className="text-[var(--gb-text-muted,inherit)]"> · Photo: {r.photo.credit}</span>}</p>}
+      {r.profile && <JudgeFold k={r.id} />}
       {r.withdrawn
         ? <p className="text-[15px] font-bold text-[var(--gb-amber-hi)]">Withdrew after the ballot was finalized. This name is still on your ballot, but votes for or against this judge won’t count.</p>
         : <YesNo value={choice} onChange={onChoose} label={`Retain ${r.judge}?`} />}

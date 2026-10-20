@@ -1,5 +1,5 @@
-import { ChevronDown, Info, MapPin, RotateCcw, TriangleAlert, X } from 'lucide-react';
-import { useCallback, useEffect, useState, type ReactNode } from 'react';
+import { ChevronDown, Info, ListChecks, MapPin, RotateCcw, TriangleAlert, X } from 'lucide-react';
+import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { Face } from './Face';
 import type { Candidate, Race } from './types';
 import { navigate, useRoute } from '../../lib/router';
@@ -18,6 +18,67 @@ export function Ring({ pct, size = 64 }: { pct: number; size?: number }) {
         strokeDasharray={`${c * pct} ${c}`} transform={`rotate(-90 ${size / 2} ${size / 2})`} className="motion-safe:transition-[stroke-dasharray] motion-safe:duration-500" />
       <text x="50%" y="50%" dominantBaseline="central" textAnchor="middle" style={{ fill: 'var(--gb-text)' }} fontSize={size * 0.26} fontWeight="900">{Math.round(pct * 100)}%</text>
     </svg>
+  );
+}
+
+/**
+ * The pinned bar's height as --kyb-bar (the contents column, jumped-to races
+ * and the race boxes sit below it), and `kyb-ballot` on the page while the bar
+ * is up: on phones govbot's header then scrolls away and the bar is the whole
+ * sticky top (ballot.css).
+ */
+export function usePinnedBar() {
+  const observer = useRef<ResizeObserver | null>(null);
+  return useCallback((bar: HTMLDivElement | null) => {
+    observer.current?.disconnect();
+    const root = document.documentElement;
+    root.classList.toggle('kyb-ballot', !!bar);
+    if (!bar) { root.style.removeProperty('--kyb-bar'); return; }
+    // Setting a variable on the page root makes the browser recheck every
+    // element's style, so only when the height really changed (resizing the
+    // window or zooming changes the width far more often).
+    let last = '';
+    observer.current = new ResizeObserver(([entry]) => {
+      const h = `${Math.round(entry.borderBoxSize?.[0]?.blockSize ?? bar.offsetHeight)}px`;
+      if (h !== last) root.style.setProperty('--kyb-bar', (last = h));
+    });
+    observer.current.observe(bar);
+  }, []);
+}
+
+interface ProgressProps { done: number; total: number; allDone: boolean; place?: string; region: string; onChangeAddress: () => void }
+
+/** The count line and the address under it: "258 contests to browse · Browsing every race in … · Add address". */
+export function ProgressLine({ done, total, allDone, place, region, onChangeAddress }: ProgressProps) {
+  return (
+    <div className="min-w-0 flex-1">
+      <p className="font-black text-lg leading-tight">{!place ? `${total} contests to browse` : allDone ? 'Ballot ready 🎉' : `${done} of ${total} decided`}</p>
+      <button type="button" onClick={onChangeAddress} className="flex max-w-full flex-wrap items-center gap-x-1.5 text-left text-sm leading-snug text-[var(--gb-text)]">
+        <span>{place ? `📍 ${place}` : `Browsing every race in ${region}`}</span>
+        <span className="shrink-0 font-bold text-[var(--gb-text)] underline underline-offset-2">{place ? 'Change' : 'Add address'}</span>
+      </button>
+    </div>
+  );
+}
+
+/**
+ * The head of the pinned bar. Wide screens: the ring and the count line. Phones,
+ * where every pinned pixel is one the ballot loses: one short row of the
+ * contents button, the ring and its fraction, nothing else; the
+ * count line goes under the bar (ProgressLine) and scrolls with the page.
+ */
+export function ProgressHead({ wide, onContents, ...p }: ProgressProps & { wide: boolean; onContents: () => void }) {
+  const pct = p.total ? p.done / p.total : 0;
+  if (wide) return <div className="flex items-center gap-4"><Ring pct={pct} /><ProgressLine {...p} /></div>;
+  return (
+    <div className="flex items-center gap-3">
+      <button type="button" onClick={onContents} aria-label="Contents"
+        className="shrink-0 w-11 h-11 rounded-xl border-2 border-[var(--gb-text)] flex items-center justify-center text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]">
+        <ListChecks className="w-5 h-5" aria-hidden="true" />
+      </button>
+      <Ring pct={pct} size={52} />
+      <p className="font-black text-xl leading-none tabular-nums" aria-label={`${p.done} of ${p.total} decided`}>{p.done}<span className="text-base font-bold"> / {p.total}</span></p>
+    </div>
   );
 }
 
