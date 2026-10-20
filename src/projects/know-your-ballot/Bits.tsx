@@ -1,6 +1,5 @@
 import { ChevronDown, Info, ListChecks, MapPin, RotateCcw, TriangleAlert, X } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
-import { GOVBOT_ASSETS, GOVBOT_SITE } from './GovbotChrome';
 import { Face } from './Face';
 import type { Candidate, Race } from './types';
 import { navigate, useRoute } from '../../lib/router';
@@ -64,8 +63,8 @@ export function ProgressLine({ done, total, allDone, place, region, onChangeAddr
 
 /**
  * The head of the pinned bar. Wide screens: the ring and the count line. Phones,
- * where every pinned pixel is one the ballot loses: one short row of govbot's
- * logo, the contents button, the ring and its fraction, nothing else; the
+ * where every pinned pixel is one the ballot loses: one short row of the
+ * contents button, the ring and its fraction, nothing else; the
  * count line goes under the bar (ProgressLine) and scrolls with the page.
  */
 export function ProgressHead({ wide, onContents, ...p }: ProgressProps & { wide: boolean; onContents: () => void }) {
@@ -73,9 +72,6 @@ export function ProgressHead({ wide, onContents, ...p }: ProgressProps & { wide:
   if (wide) return <div className="flex items-center gap-4"><Ring pct={pct} /><ProgressLine {...p} /></div>;
   return (
     <div className="flex items-center gap-3">
-      <a href={GOVBOT_SITE} aria-label="Govbot home" className="shrink-0">
-        <img src={`${GOVBOT_ASSETS}govbot-mark.png`} width="40" height="40" alt="" className="h-10 w-10 rounded-lg" />
-      </a>
       <button type="button" onClick={onContents} aria-label="Contents"
         className="shrink-0 w-11 h-11 rounded-xl border-2 border-[var(--gb-text)] flex items-center justify-center text-[var(--gb-text)] hover:bg-[var(--kyb-chip)]">
         <ListChecks className="w-5 h-5" aria-hidden="true" />

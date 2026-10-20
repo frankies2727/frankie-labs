@@ -38,8 +38,7 @@
 
 /* Phones, in the ballot view (html.kyb-ballot while the pinned bar is up):
    govbot's header scrolls away with the page and the guide's own short bar
-   (logo, contents, progress) is the whole sticky top, so the ballot gets the
-   screen. */
+   (contents, progress) is the whole sticky top, so the ballot gets the screen. */
 @media (max-width: 1023px) {
   .kyb-ballot { --kyb-top: 0px; }
   .kyb-ballot .gb-header { position: static; }
