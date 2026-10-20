@@ -678,6 +678,7 @@ export function KnowYourBallot() {
         <CandidateSheet race={sheet.race} c={sheet.c} color={sectionOf(sheet.race.section).color} ink={sectionOf(sheet.race.section).ink} numbered={chicago && sheet.race.numbered !== false}
           picked={picksFor(sheet.race.id).includes(sheet.c.ballot)}
           guide={sheet.race.section === 'school' ? (guide ? guide[`${sheet.race.id}|${sheet.c.name}`] ?? null : undefined) : null}
+          judge={/^Judge/.test(sheet.race.office) ? `${sheet.race.id}|${sheet.c.name}` : undefined}
           onPick={() => {
             const cur = picksFor(sheet.race.id);
             const has = cur.includes(sheet.c.ballot);

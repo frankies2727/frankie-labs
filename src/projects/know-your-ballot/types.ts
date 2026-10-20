@@ -118,6 +118,37 @@ export interface Retention {
   photo?: Candidate['photo'];
 }
 
+/**
+ * Injustice Watch's profile of a judge or judicial candidate, word for word
+ * (data/illinois/judges.json, fetched when a judge's details open). Text
+ * fields are the guide's own light markup: paragraphs, "- " bullets,
+ * [text](https://…) links and [term](#slug) glossary terms, **bold**.
+ */
+export interface JudgeProfile {
+  url: string;
+  age?: number; lawSchool?: string; graduationYear?: string; judgeSince?: string; neighborhood?: string;
+  /** The guide's icons: "Former prosecutor", "Notable controversy", … with what each means. */
+  flags?: { name: string; description: string }[];
+  judicialExperience?: string; pastExperience?: string;
+  /** A candidate for a vacancy: their experience, one list. */
+  experience?: string;
+  /** The guide's own reporting. */
+  notable?: string;
+  surveyExcerpt?: string;
+  survey?: { q: string; a: string }[];
+  /** What the bar groups said, in the guide's words, and each group's rating by its full name. */
+  ratingsExcerpt?: string;
+  ratings?: { group: string; rating: string }[];
+  endorsements?: { name: string; description?: string }[];
+}
+
+export interface JudgesFile {
+  asOf: string;
+  glossary: Record<string, { name: string; description: string }>;
+  /** By retention id, or `<race id>|<candidate name>` for a contested seat. */
+  profiles: Record<string, JudgeProfile>;
+}
+
 export type MeasureScope =
   | { type: 'state' | 'county' | 'city' }
   | { type: 'ward'; id: string }
