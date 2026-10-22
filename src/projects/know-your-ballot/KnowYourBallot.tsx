@@ -545,10 +545,13 @@ export function KnowYourBallot() {
                       {s.id === 'retention' && (
                         <div className="space-y-3">
                           <p className="text-[15px] leading-relaxed text-[var(--gb-text)]">{RETENTION_EXPLAINER} Each card shows how Chicago-area bar associations rate that judge.</p>
-                          <button type="button" onClick={() => setSaved((sv) => ({ ...sv, picks: { ...sv.picks, ...Object.fromEntries(s.ids.filter((id) => !isDecided(sv.picks[id])).map((id) => [id, 'skip' as Choice])) } }))}
-                            className="min-h-[44px] rounded-xl border-2 border-[var(--gb-border)] px-4 font-bold text-[var(--gb-text)] hover:border-[var(--gb-text)]">
-                            Skip the ones I haven’t answered
-                          </button>
+                          {/* Like every pick, skipping is off while browsing without an address. */}
+                          {saved.place && (
+                            <button type="button" onClick={() => setSaved((sv) => ({ ...sv, picks: { ...sv.picks, ...Object.fromEntries(s.ids.filter((id) => !isDecided(sv.picks[id])).map((id) => [id, 'skip' as Choice])) } }))}
+                              className="min-h-[44px] rounded-xl border-2 border-[var(--gb-border)] px-4 font-bold text-[var(--gb-text)] hover:border-[var(--gb-text)]">
+                              Skip the ones I haven’t answered
+                            </button>
+                          )}
                         </div>
                       )}
                       {/* The section's races scroll in their own box (scrollbar in the
