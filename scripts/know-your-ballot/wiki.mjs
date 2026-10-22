@@ -124,6 +124,79 @@ export function statusSentence(wt, name) {
   return null;
 }
 
+const surnameOf = (name) => fold(name.split(' & ')[0].replace(/,?\s+(jr|sr|ii|iii|iv)\.?$/i, '')).split(/[^a-z]+/).filter(Boolean).at(-1);
+const names = (name, s) => sameName(s, name) || (surnameOf(name) ? new RegExp(`\\b${surnameOf(name)}\\b`).test(fold(s)) : false);
+
+/**
+ * The incumbent in a results box ({{Election box …}}) with votes counted and
+ * not on top: "Lost the Cook County Board of Review 2nd district Democratic
+ * primary to Liz Nicholson, 37.7% to 62.3%."
+ */
+export function primaryLoss(wt, name) {
+  for (const box of wt.split('{{Election box begin').slice(1)) {
+    const title = clean(box.match(/\|\s*title\s*=\s*([^\n]+)/)?.[1] ?? '').replace(/^\d{4}\s+/, '');
+    const rows = [...box.matchAll(/\{\{Election box candidate[^\n]*\n((?:\s*\|[^\n]*\n)+)/g)].map(([, body]) => ({
+      name: clean(body.match(/\|\s*candidate\s*=\s*([^\n]+)/)?.[1] ?? '').replace(/\s*\((?:incumbent|write-in)\)/gi, '').trim(),
+      votes: +(body.match(/\|\s*votes\s*=\s*([\d,]+)/)?.[1] ?? '').replace(/,/g, '') || 0,
+      pct: body.match(/\|\s*percentage\s*=\s*([\d.]+)/)?.[1] ?? '',
+    })).filter((r) => r.name);
+    const me = rows.find((r) => names(name, r.name));
+    if (!me || !rows.some((r) => r.votes)) continue;
+    const top = rows.reduce((a, b) => (b.votes > a.votes ? b : a));
+    if (top === me) return null;
+    return `Lost the ${/primary/i.test(title) ? title : `${title} primary`} to ${top.name}${me.pct && top.pct ? `, ${me.pct}% to ${top.pct}%` : ''}.`;
+  }
+  return null;
+}
+
+// A candidates-list heading that says the person is out of the race.
+const OUT_HEADING = /withdr|declin|did not qualify|disqualif|removed|eliminated|lost|did not file|not running/i;
+/** The heading the incumbent is listed under when it says they're out: "Filed but did not qualify for the ballot." */
+export function listStatus(wt, name) {
+  let heading = '';
+  for (const line of wt.split('\n')) {
+    const h = line.match(/^(={2,6})\s*(.+?)\s*\1\s*$/);
+    if (h) { heading = h[2].trim(); continue; }
+    if (/^\*/.test(line) && OUT_HEADING.test(heading) && names(name, clean(line).split(',')[0])) {
+      const text = clean(heading).replace(/[.\s]+$/, '');
+      return `${text[0].toUpperCase()}${text.slice(1)}.`;
+    }
+  }
+  return null;
+}
+
+/** The party primary the person is listed as a candidate in ("Democratic"), from the headings above their line; null if none. */
+export function primaryEntered(wt, name) {
+  let party = null, out = false;
+  for (const line of wt.split('\n')) {
+    const h = line.match(/^(={2,6})\s*(.+?)\s*\1\s*$/);
+    if (h) {
+      const p = h[2].match(/^(\w[\w ]*?) primary$/i);
+      if (p) { party = p[1]; out = false; } else if (h[1].length > 3) out = OUT_HEADING.test(h[2]);
+      continue;
+    }
+    if (party && !out && /^\*/.test(line) && names(name, clean(line).split(',')[0])) return party;
+  }
+  return null;
+}
+
+/** The article the race page links for the person ("Nicholas Smith (Illinois politician)"), to read their own page. */
+export function linkTarget(wt, name) {
+  for (const [, target, label] of wt.matchAll(/\[\[([^\]|#]+)(?:\|([^\]]+))?\]\]/g)) {
+    if (names(name, label ?? target) && !/^(?:File|Category|Image):/i.test(target)) return target.trim();
+  }
+  return null;
+}
+
+/** From the person's own article: the first sentence naming them, about this year's election, that says where they stand. */
+export function articleStatus(articleWt, name, year) {
+  const text = clean(articleWt.replace(/^\{\{[\s\S]*?\n\}\}\n/, ''));
+  for (const s of text.split(/(?<!\bU\.S\.|\b[A-Z]\.|\b(?:Jr|Sr|Dr|Mr|Mrs|Ms|St|No|Gov|Sen|Rep)\.)(?<=[.!?])\s+(?=[A-Z"“])/)) {
+    if (s.includes(String(year)) && STATUS.test(s) && names(name, s)) return s.length > 320 ? s.slice(0, 317).replace(/[,;:\s]+\S*$/, '') + '…' : s;
+  }
+  return null;
+}
+
 /**
  * The line about district `n` in the article's lists of outgoing members
  * ("Retirements", "Outgoing incumbents", "Incumbents defeated"), with what its
@@ -206,9 +279,16 @@ export function placeIncumbents(races) {
   }
 }
 
-/** One incumbent record from a page: name, party, the status sentence (if any) and the source. */
-export function incumbentFrom(pageTitle, name, party, wt, section, alias) {
-  const inc = { name, party, note: wt && name ? statusSentence(wt, name) ?? undefined : undefined, source: { name: `Wikipedia: ${pageTitle.replace(/_/g, ' ')}`, url: wikiUrl(pageTitle, section) } };
+/**
+ * One incumbent record from a page: name, party, the status sentence (if any)
+ * and the source. `wt` is the prose to read a status sentence from; `full`
+ * the whole section, for a primary they lost or a candidates-list heading
+ * that says they're out.
+ */
+export function incumbentFrom(pageTitle, name, party, wt, section, alias, full) {
+  // A counted primary result beats a sentence written before the primary ("is seeking re-election").
+  const note = name && ((full && primaryLoss(full, name)) || (wt && statusSentence(wt, name)) || (full && listStatus(full, name))) || undefined;
+  const inc = { name, party, note, source: { name: `Wikipedia: ${pageTitle.replace(/_/g, ' ')}`, url: wikiUrl(pageTitle, section) } };
   if (alias && alias !== name) inc.aliases = [alias];
   return inc;
 }
