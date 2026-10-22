@@ -43,7 +43,7 @@ function curl(url, binary = false) {
 const isBallotpedia = (html) => /<title>[^<]*Ballotpedia<\/title>/.test(html);
 // A challenge the browser can clear is gone in a couple of seconds; one it
 // can't (a CAPTCHA) never is, and a hundred pages a day can't each wait long.
-async function ballotpediaPage(url) {
+export async function ballotpediaPage(url) {
   const html = curl(url);
   if (isBallotpedia(html)) return html;
   return (await browserPage(url, isBallotpedia, UA, { wait: 10_000 })) ?? html;

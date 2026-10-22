@@ -132,7 +132,7 @@
        "name": "Wikipedia: 2026 United States Senate election in Illinois",
        "url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Illinois"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -284,7 +284,7 @@
        "name": "Wikipedia: 2026 United States Senate election in Illinois",
        "url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Illinois"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -311,7 +311,7 @@
       "name": "Wikipedia: 2026 Illinois elections",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_elections#United_States_Senate"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -364,7 +364,7 @@
        "name": "Wikipedia: 2026 Illinois gubernatorial election",
        "url": "https://en.wikipedia.org/wiki/2026_Illinois_gubernatorial_election"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -439,7 +439,7 @@
        "name": "Wikipedia: 2026 Illinois gubernatorial election",
        "url": "https://en.wikipedia.org/wiki/2026_Illinois_gubernatorial_election"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -488,7 +488,7 @@
       "name": "Wikipedia: 2026 Illinois elections",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_elections#Governor_and_lieutenant_governor"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 5
     }
    ]
@@ -593,7 +593,7 @@
        "name": "Wikipedia: 2026 Illinois Attorney General election",
        "url": "https://en.wikipedia.org/wiki/2026_Illinois_Attorney_General_election"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -606,7 +606,7 @@
       "name": "Wikipedia: 2026 Illinois elections",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_elections#Attorney_general"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 8
     }
    ]
@@ -658,7 +658,7 @@
        "name": "Wikipedia: 2026 Illinois Secretary of State election",
        "url": "https://en.wikipedia.org/wiki/2026_Illinois_Secretary_of_State_election"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -714,7 +714,7 @@
        "name": "Wikipedia: 2026 Illinois Secretary of State election",
        "url": "https://en.wikipedia.org/wiki/2026_Illinois_Secretary_of_State_election"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -727,7 +727,7 @@
       "name": "Wikipedia: 2026 Illinois elections",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_elections#Secretary_of_state"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 10
     }
    ]
@@ -795,6 +795,54 @@
       "from": "https://cdn.ilga.gov/assets/img/members/%7B1719759C-D601-4575-A753-1244D0FE550A%7D.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Margaret_Croke",
+     "record": {
+      "sponsored": 58,
+      "bills": [
+       {
+        "state": "il",
+        "session": "104th",
+        "id": "HB5511",
+        "title": "DIGITAL AGE ASSURANCE",
+        "latest_action": "2026-07-31",
+        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5511&GAID=18&DocTypeID=HB&LegId=167486&SessionID=114"
+       },
+       {
+        "state": "il",
+        "session": "104th",
+        "id": "HB4911",
+        "title": "VETERAN SCRATCH-OFF GAME",
+        "latest_action": "2026-07-30",
+        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4911&GAID=18&DocTypeID=HB&LegId=166211&SessionID=114"
+       },
+       {
+        "state": "il",
+        "session": "104th",
+        "id": "HR753",
+        "title": "NUTRITION/DIETETICS TECH DAY",
+        "latest_action": "2026-07-01",
+        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=753&GAID=18&DocTypeID=HR&LegId=168162&SessionID=114"
+       },
+       {
+        "state": "il",
+        "session": "104th",
+        "id": "HR754",
+        "title": "NUTRITION MONTH",
+        "latest_action": "2026-07-01",
+        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=754&GAID=18&DocTypeID=HR&LegId=168163&SessionID=114"
+       },
+       {
+        "state": "il",
+        "session": "104th",
+        "id": "HR760",
+        "title": "DIETITIAN NUTRITIONIST DAY",
+        "latest_action": "2026-07-01",
+        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=760&GAID=18&DocTypeID=HR&LegId=168171&SessionID=114"
+       }
+      ],
+      "seat": "House District 12",
+      "source": "Illinois General Assembly, via govbot",
+      "asOf": "2026-10-21"
+     },
      "endorsements": {
       "groups": [
        {
@@ -900,55 +948,7 @@
        "name": "Wikipedia: 2026 Illinois Comptroller election",
        "url": "https://en.wikipedia.org/wiki/2026_Illinois_Comptroller_election"
       },
-      "asOf": "2026-10-21"
-     },
-     "record": {
-      "sponsored": 58,
-      "bills": [
-       {
-        "state": "il",
-        "session": "104th",
-        "id": "HB5511",
-        "title": "DIGITAL AGE ASSURANCE",
-        "latest_action": "2026-07-31",
-        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5511&GAID=18&DocTypeID=HB&LegId=167486&SessionID=114"
-       },
-       {
-        "state": "il",
-        "session": "104th",
-        "id": "HB4911",
-        "title": "VETERAN SCRATCH-OFF GAME",
-        "latest_action": "2026-07-30",
-        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4911&GAID=18&DocTypeID=HB&LegId=166211&SessionID=114"
-       },
-       {
-        "state": "il",
-        "session": "104th",
-        "id": "HR753",
-        "title": "NUTRITION/DIETETICS TECH DAY",
-        "latest_action": "2026-07-01",
-        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=753&GAID=18&DocTypeID=HR&LegId=168162&SessionID=114"
-       },
-       {
-        "state": "il",
-        "session": "104th",
-        "id": "HR754",
-        "title": "NUTRITION MONTH",
-        "latest_action": "2026-07-01",
-        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=754&GAID=18&DocTypeID=HR&LegId=168163&SessionID=114"
-       },
-       {
-        "state": "il",
-        "session": "104th",
-        "id": "HR760",
-        "title": "DIETITIAN NUTRITIONIST DAY",
-        "latest_action": "2026-07-01",
-        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=760&GAID=18&DocTypeID=HR&LegId=168171&SessionID=114"
-       }
-      ],
-      "seat": "House District 12",
-      "source": "Illinois General Assembly, via govbot",
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -962,7 +962,7 @@
       "name": "Wikipedia: 2026 Illinois elections",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_elections#Comptroller"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -1039,7 +1039,7 @@
       "name": "Wikipedia: 2026 Illinois elections",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_elections#Treasurer"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 14
     }
    ]
@@ -1120,39 +1120,6 @@
       "from": "https://unitedstates.github.io/images/congress/450x550/J000309.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Jonathan_Jackson",
-     "endorsements": {
-      "groups": [
-       {
-        "category": "Labor unions",
-        "names": [
-         "American Federation of Government Employees",
-         "Chicago Federation of Labor",
-         "Chicago Teachers Union",
-         "Illinois AFL-CIO",
-         "International Union of Operating Engineers Locals 150 and 399",
-         "Plumbers Local 130",
-         "SEIU Healthcare",
-         "SEIU Illinois State Council"
-        ]
-       },
-       {
-        "category": "Organizations",
-        "names": [
-         "Citizen Action Illinois",
-         "Giffords",
-         "J Street",
-         "Planned Parenthood Action Fund",
-         "Progressive Democrats of America"
-        ]
-       }
-      ],
-      "total": 13,
-      "source": {
-       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
-       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_1"
-      },
-      "asOf": "2026-10-21"
-     },
      "record": {
       "sponsored": 62,
       "bills": [
@@ -1200,6 +1167,39 @@
       "seat": "U.S. House · IL-1",
       "source": "Congress.gov, via govbot",
       "asOf": "2026-10-21"
+     },
+     "endorsements": {
+      "groups": [
+       {
+        "category": "Labor unions",
+        "names": [
+         "American Federation of Government Employees",
+         "Chicago Federation of Labor",
+         "Chicago Teachers Union",
+         "Illinois AFL-CIO",
+         "International Union of Operating Engineers Locals 150 and 399",
+         "Plumbers Local 130",
+         "SEIU Healthcare",
+         "SEIU Illinois State Council"
+        ]
+       },
+       {
+        "category": "Organizations",
+        "names": [
+         "Citizen Action Illinois",
+         "Giffords",
+         "J Street",
+         "Planned Parenthood Action Fund",
+         "Progressive Democrats of America"
+        ]
+       }
+      ],
+      "total": 13,
+      "source": {
+       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
+       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_1"
+      },
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -1212,7 +1212,7 @@
       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_1"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 22
     }
    ]
@@ -1339,7 +1339,7 @@
        "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
        "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_2"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -1353,7 +1353,7 @@
       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_2"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -1432,44 +1432,6 @@
       "from": "https://unitedstates.github.io/images/congress/450x550/R000617.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Delia_Ramirez",
-     "endorsements": {
-      "groups": [
-       {
-        "category": "Labor unions",
-        "names": [
-         "American Federation of Government Employees",
-         "Chicago Federation of Labor",
-         "Chicago Teachers Union",
-         "Illinois AFL-CIO",
-         "International Union of Operating Engineers Locals 150 and 399",
-         "Plumbers Local 130",
-         "SEIU Healthcare",
-         "SEIU Illinois State Council"
-        ]
-       },
-       {
-        "category": "Organizations",
-        "names": [
-         "Center for Freethought Equality PAC",
-         "End Citizens United",
-         "Giffords",
-         "J Street",
-         "Justice Democrats",
-         "Our Revolution",
-         "PAL PAC",
-         "Planned Parenthood Action Fund",
-         "Progressive Democrats of America",
-         "Track AIPAC"
-        ]
-       }
-      ],
-      "total": 18,
-      "source": {
-       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
-       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_3"
-      },
-      "asOf": "2026-10-21"
-     },
      "record": {
       "sponsored": 51,
       "bills": [
@@ -1517,6 +1479,44 @@
       "seat": "U.S. House · IL-3",
       "source": "Congress.gov, via govbot",
       "asOf": "2026-10-21"
+     },
+     "endorsements": {
+      "groups": [
+       {
+        "category": "Labor unions",
+        "names": [
+         "American Federation of Government Employees",
+         "Chicago Federation of Labor",
+         "Chicago Teachers Union",
+         "Illinois AFL-CIO",
+         "International Union of Operating Engineers Locals 150 and 399",
+         "Plumbers Local 130",
+         "SEIU Healthcare",
+         "SEIU Illinois State Council"
+        ]
+       },
+       {
+        "category": "Organizations",
+        "names": [
+         "Center for Freethought Equality PAC",
+         "End Citizens United",
+         "Giffords",
+         "J Street",
+         "Justice Democrats",
+         "Our Revolution",
+         "PAL PAC",
+         "Planned Parenthood Action Fund",
+         "Progressive Democrats of America",
+         "Track AIPAC"
+        ]
+       }
+      ],
+      "total": 18,
+      "source": {
+       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
+       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_3"
+      },
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -1529,7 +1529,7 @@
       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_3"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 22
     }
    ]
@@ -1645,7 +1645,7 @@
        "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
        "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_4"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -1710,7 +1710,7 @@
        "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
        "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_4"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -1724,7 +1724,7 @@
       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_4"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -1786,45 +1786,6 @@
       "from": "https://unitedstates.github.io/images/congress/450x550/Q000023.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Mike_Quigley",
-     "endorsements": {
-      "groups": [
-       {
-        "category": "Labor unions",
-        "names": [
-         "American Federation of Government Employees",
-         "Chicago Federation of Labor",
-         "Illinois AFL-CIO",
-         "International Union of Operating Engineers Locals 150 and 399",
-         "Plumbers Local 130",
-         "SEIU Healthcare",
-         "SEIU Illinois State Council"
-        ]
-       },
-       {
-        "category": "Organizations",
-        "names": [
-         "AIPAC",
-         "Humane World Action Fund",
-         "Joint Action Committee for Political Affairs",
-         "J Street PAC",
-         "Planned Parenthood Action Fund",
-         "Population Connection"
-        ]
-       },
-       {
-        "category": "Newspapers",
-        "names": [
-         "Chicago Tribune"
-        ]
-       }
-      ],
-      "total": 14,
-      "source": {
-       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
-       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_5"
-      },
-      "asOf": "2026-10-21"
-     },
      "record": {
       "sponsored": 61,
       "bills": [
@@ -1872,6 +1833,45 @@
       "seat": "U.S. House · IL-5",
       "source": "Congress.gov, via govbot",
       "asOf": "2026-10-21"
+     },
+     "endorsements": {
+      "groups": [
+       {
+        "category": "Labor unions",
+        "names": [
+         "American Federation of Government Employees",
+         "Chicago Federation of Labor",
+         "Illinois AFL-CIO",
+         "International Union of Operating Engineers Locals 150 and 399",
+         "Plumbers Local 130",
+         "SEIU Healthcare",
+         "SEIU Illinois State Council"
+        ]
+       },
+       {
+        "category": "Organizations",
+        "names": [
+         "AIPAC",
+         "Humane World Action Fund",
+         "Joint Action Committee for Political Affairs",
+         "J Street PAC",
+         "Planned Parenthood Action Fund",
+         "Population Connection"
+        ]
+       },
+       {
+        "category": "Newspapers",
+        "names": [
+         "Chicago Tribune"
+        ]
+       }
+      ],
+      "total": 14,
+      "source": {
+       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
+       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_5"
+      },
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -1884,7 +1884,7 @@
       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_5"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 22
     }
    ]
@@ -1956,7 +1956,7 @@
        "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
        "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_6"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -1996,52 +1996,6 @@
       "url": "https://ballotpedia.org/Sean_Casten"
      },
      "ballotpedia": "https://ballotpedia.org/Sean_Casten",
-     "endorsements": {
-      "groups": [
-       {
-        "category": "Labor unions",
-        "names": [
-         "American Federation of Government Employees",
-         "Chicago Federation of Labor",
-         "Cook County College Teachers Union Local 1600",
-         "Illinois AFL-CIO",
-         "International Union of Operating Engineers Locals 150 and 399",
-         "Illinois Federation of Teachers",
-         "Plumbers Local 130",
-         "SEIU Healthcare",
-         "SEIU Illinois State Council"
-        ]
-       },
-       {
-        "category": "Organizations",
-        "names": [
-         "314 Action",
-         "Citizen Action Illinois",
-         "Giffords",
-         "Humane World Action Fund",
-         "Jewish Democratic Council of America",
-         "Joint Action Committee for Political Affairs",
-         "J Street",
-         "League of Conservation Voters Action Fund",
-         "Planned Parenthood Action Fund",
-         "Sierra Club"
-        ]
-       },
-       {
-        "category": "Newspapers",
-        "names": [
-         "Chicago Tribune",
-         "Daily Herald"
-        ]
-       }
-      ],
-      "total": 21,
-      "source": {
-       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
-       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_6"
-      },
-      "asOf": "2026-10-21"
-     },
      "record": {
       "sponsored": 73,
       "bills": [
@@ -2089,6 +2043,52 @@
       "seat": "U.S. House · IL-6",
       "source": "Congress.gov, via govbot",
       "asOf": "2026-10-21"
+     },
+     "endorsements": {
+      "groups": [
+       {
+        "category": "Labor unions",
+        "names": [
+         "American Federation of Government Employees",
+         "Chicago Federation of Labor",
+         "Cook County College Teachers Union Local 1600",
+         "Illinois AFL-CIO",
+         "International Union of Operating Engineers Locals 150 and 399",
+         "Illinois Federation of Teachers",
+         "Plumbers Local 130",
+         "SEIU Healthcare",
+         "SEIU Illinois State Council"
+        ]
+       },
+       {
+        "category": "Organizations",
+        "names": [
+         "314 Action",
+         "Citizen Action Illinois",
+         "Giffords",
+         "Humane World Action Fund",
+         "Jewish Democratic Council of America",
+         "Joint Action Committee for Political Affairs",
+         "J Street",
+         "League of Conservation Voters Action Fund",
+         "Planned Parenthood Action Fund",
+         "Sierra Club"
+        ]
+       },
+       {
+        "category": "Newspapers",
+        "names": [
+         "Chicago Tribune",
+         "Daily Herald"
+        ]
+       }
+      ],
+      "total": 21,
+      "source": {
+       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
+       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_6"
+      },
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -2101,7 +2101,7 @@
       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_6"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 22
     }
    ]
@@ -2168,6 +2168,54 @@
       "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/La_Shawn_K._Ford_on_11_December_2023_-_8_%28cropped%29.jpg/500px-La_Shawn_K._Ford_on_11_December_2023_-_8_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      },
      "ballotpedia": "https://ballotpedia.org/La_Shawn_K._Ford",
+     "record": {
+      "sponsored": 98,
+      "bills": [
+       {
+        "state": "il",
+        "session": "104th",
+        "id": "HB5815",
+        "title": "CANNABIS-IL FREEDOM FUND",
+        "latest_action": "2026-09-17",
+        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5815&GAID=18&DocTypeID=HB&LegId=168907&SessionID=114"
+       },
+       {
+        "state": "il",
+        "session": "104th",
+        "id": "HB4443",
+        "title": "ILLINOIS FUTURE FUND",
+        "latest_action": "2026-09-15",
+        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4443&GAID=18&DocTypeID=HB&LegId=165148&SessionID=114"
+       },
+       {
+        "state": "il",
+        "session": "104th",
+        "id": "HB5812",
+        "title": "$SOS-COSMETOLOGY CIVICS",
+        "latest_action": "2026-09-10",
+        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5812&GAID=18&DocTypeID=HB&LegId=168892&SessionID=114"
+       },
+       {
+        "state": "il",
+        "session": "104th",
+        "id": "HR1022",
+        "title": "MEMORIAL-JACQUELINE CHAPPELL",
+        "latest_action": "2026-08-31",
+        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1022&GAID=18&DocTypeID=HR&LegId=168866&SessionID=114"
+       },
+       {
+        "state": "il",
+        "session": "104th",
+        "id": "HB4687",
+        "title": "REPEAL-LOAN DEFAULT ACT",
+        "latest_action": "2026-07-31",
+        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4687&GAID=18&DocTypeID=HB&LegId=165672&SessionID=114"
+       }
+      ],
+      "seat": "House District 8",
+      "source": "Illinois General Assembly, via govbot",
+      "asOf": "2026-10-21"
+     },
      "endorsements": {
       "groups": [
        {
@@ -2253,55 +2301,7 @@
        "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
        "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_7"
       },
-      "asOf": "2026-10-21"
-     },
-     "record": {
-      "sponsored": 98,
-      "bills": [
-       {
-        "state": "il",
-        "session": "104th",
-        "id": "HB5815",
-        "title": "CANNABIS-IL FREEDOM FUND",
-        "latest_action": "2026-09-17",
-        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5815&GAID=18&DocTypeID=HB&LegId=168907&SessionID=114"
-       },
-       {
-        "state": "il",
-        "session": "104th",
-        "id": "HB4443",
-        "title": "ILLINOIS FUTURE FUND",
-        "latest_action": "2026-09-15",
-        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4443&GAID=18&DocTypeID=HB&LegId=165148&SessionID=114"
-       },
-       {
-        "state": "il",
-        "session": "104th",
-        "id": "HB5812",
-        "title": "$SOS-COSMETOLOGY CIVICS",
-        "latest_action": "2026-09-10",
-        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=5812&GAID=18&DocTypeID=HB&LegId=168892&SessionID=114"
-       },
-       {
-        "state": "il",
-        "session": "104th",
-        "id": "HR1022",
-        "title": "MEMORIAL-JACQUELINE CHAPPELL",
-        "latest_action": "2026-08-31",
-        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=1022&GAID=18&DocTypeID=HR&LegId=168866&SessionID=114"
-       },
-       {
-        "state": "il",
-        "session": "104th",
-        "id": "HB4687",
-        "title": "REPEAL-LOAN DEFAULT ACT",
-        "latest_action": "2026-07-31",
-        "url": "https://ilga.gov/Legislation/BillStatus?DocNum=4687&GAID=18&DocTypeID=HB&LegId=165672&SessionID=114"
-       }
-      ],
-      "seat": "House District 8",
-      "source": "Illinois General Assembly, via govbot",
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -2315,7 +2315,7 @@
       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_7"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -2384,7 +2384,7 @@
        "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
        "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_8"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -2470,7 +2470,7 @@
        "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
        "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_8"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -2484,7 +2484,7 @@
       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_8"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -2541,7 +2541,7 @@
        "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
        "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_9"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -2679,7 +2679,7 @@
        "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
        "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_9"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -2693,7 +2693,7 @@
       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_9"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -2793,7 +2793,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_2"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 32
     }
    ]
@@ -2896,7 +2896,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_3"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 32
     }
    ]
@@ -2998,7 +2998,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_5"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 32
     }
    ]
@@ -3099,7 +3099,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_6"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 32
     }
    ]
@@ -3206,7 +3206,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_8"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 32
     }
    ]
@@ -3273,7 +3273,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#Democratic"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -3375,7 +3375,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_11"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 32
     }
    ]
@@ -3475,7 +3475,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_12"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 32
     }
    ]
@@ -3611,7 +3611,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_14"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 32
     }
    ]
@@ -3711,7 +3711,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_15"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 32
     }
    ]
@@ -3847,7 +3847,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_17"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 32
     }
    ]
@@ -3914,11 +3914,12 @@
     {
      "name": "Bill Cunningham",
      "party": "Democratic",
+     "note": "In September 2025, it was reported that Cunningham would not run for reelection in the 2026 general election.",
      "source": {
-      "name": "Wikipedia: 2026 Illinois Senate election",
-      "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_18"
+      "name": "Wikipedia: William Cunningham (Illinois politician)",
+      "url": "https://en.wikipedia.org/wiki/William_Cunningham_(Illinois_politician)"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -4019,7 +4020,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_20"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 32
     }
    ]
@@ -4122,7 +4123,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_39"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 32
     }
    ]
@@ -4225,7 +4226,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_1"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -4327,7 +4328,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_3"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -4426,7 +4427,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_4"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -4475,7 +4476,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_5"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -4577,7 +4578,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_6"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -4630,7 +4631,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#Democratic"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -4729,7 +4730,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#Democratic"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -4826,7 +4827,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_10"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -4924,7 +4925,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_11"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -5022,7 +5023,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#Democratic"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -5113,7 +5114,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#Democratic"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -5215,7 +5216,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_14"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -5312,7 +5313,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_15"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -5412,7 +5413,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_16"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -5521,7 +5522,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_18"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -5643,7 +5644,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_19"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -5744,7 +5745,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_20"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 41
     }
    ]
@@ -5882,7 +5883,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_21"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -5975,7 +5976,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_22"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -6078,7 +6079,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_23"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -6178,7 +6179,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_24"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -6292,7 +6293,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_25"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -6393,7 +6394,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#Democratic"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -6492,7 +6493,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_27"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -6592,7 +6593,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_28"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -6691,7 +6692,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_29"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -6794,7 +6795,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_31"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -6890,7 +6891,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_32"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -6992,7 +6993,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_33"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -7038,11 +7039,12 @@
     {
      "name": "Nick Smith",
      "party": "Democratic",
+     "note": "Not seeking re-election.",
      "source": {
-      "name": "Wikipedia: 2026 Illinois House of Representatives election",
-      "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_34"
+      "name": "Ballotpedia",
+      "url": "https://ballotpedia.org/Illinois_House_of_Representatives_elections,_2026#Retiring_incumbents"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -7162,7 +7164,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_35"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -7298,7 +7300,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_36"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -7408,7 +7410,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_39"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -7453,11 +7455,12 @@
     {
      "name": "Jaime Andrade",
      "party": "Democratic",
+     "note": "Lost the primary.",
      "source": {
-      "name": "Wikipedia: 2026 Illinois House of Representatives election",
-      "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_40"
+      "name": "Ballotpedia",
+      "url": "https://ballotpedia.org/Illinois_House_of_Representatives_elections,_2026#Incumbents_defeated_in_primaries"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -7573,7 +7576,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#Democratic"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -7677,7 +7680,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_78"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 42
     }
    ]
@@ -7822,7 +7825,7 @@
        "name": "Wikipedia: 2026 Cook County, Illinois, elections",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Water_Reclamation_District_Board"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -7889,7 +7892,7 @@
        "name": "Wikipedia: 2026 Cook County, Illinois, elections",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Water_Reclamation_District_Board"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -7967,7 +7970,7 @@
        "name": "Wikipedia: 2026 Cook County, Illinois, elections",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Water_Reclamation_District_Board"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -7979,7 +7982,7 @@
       "name": "Wikipedia: 2026 Cook County, Illinois, elections",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Water_Reclamation_District_Board"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 54
     },
     {
@@ -7988,7 +7991,7 @@
       "name": "Wikipedia: 2026 Cook County, Illinois, elections",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Water_Reclamation_District_Board"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 56
     },
     {
@@ -7997,7 +8000,7 @@
       "name": "Wikipedia: 2026 Cook County, Illinois, elections",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Water_Reclamation_District_Board"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 55
     }
    ]
@@ -8077,7 +8080,7 @@
        "name": "Wikipedia: 2026 Cook County, Illinois, elections",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Water_Reclamation_District_Board"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -8089,7 +8092,7 @@
       "name": "Wikipedia: 2026 Cook County, Illinois, elections",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Water_Reclamation_District_Board"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 57
     }
    ]
@@ -8185,7 +8188,7 @@
        "name": "Wikipedia: 2026 Cook County, Illinois, elections",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#President_of_the_Cook_County_Board_of_Commissioners"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -8212,7 +8215,7 @@
       "name": "Wikipedia: 2026 Cook County, Illinois, elections",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#President_of_the_Cook_County_Board_of_Commissioners"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 62
     }
    ]
@@ -8283,7 +8286,7 @@
        "name": "Wikipedia: 2026 Cook County, Illinois, elections",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Clerk"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -8296,7 +8299,7 @@
       "name": "Wikipedia: 2026 Cook County, Illinois, elections",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Clerk"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 64
     }
    ]
@@ -8361,7 +8364,7 @@
        "name": "Wikipedia: 2026 Cook County, Illinois, elections",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Sheriff"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -8398,7 +8401,7 @@
       "name": "Wikipedia: 2026 Cook County, Illinois, elections",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Sheriff"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 65
     }
    ]
@@ -8465,7 +8468,7 @@
        "name": "Wikipedia: 2026 Cook County, Illinois, elections",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Treasurer"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -8477,7 +8480,7 @@
       "name": "Wikipedia: 2026 Cook County, Illinois, elections",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Treasurer"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 67
     }
    ]
@@ -8567,7 +8570,7 @@
        "name": "Wikipedia: 2026 Cook County, Illinois, elections",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Assessor"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -8596,12 +8599,12 @@
     {
      "name": "Fritz Kaegi",
      "party": "Democratic",
-     "note": "Second-term incumbent Fritz Kaegi, a Democrat, was defeated in his party's primary.",
+     "note": "Lost the Cook County Assessor Democratic primary to Pat Hynes, 47.4% to 52.6%.",
      "source": {
       "name": "Wikipedia: 2026 Cook County, Illinois, elections",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Assessor"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -8667,7 +8670,7 @@
        "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#1st_district"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -8680,7 +8683,7 @@
       "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#1st_district"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 72
     }
    ]
@@ -8751,7 +8754,7 @@
        "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#2nd_district"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -8764,7 +8767,7 @@
       "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#2nd_district"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 72
     }
    ]
@@ -8837,7 +8840,7 @@
        "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#3rd_district"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -8850,7 +8853,7 @@
       "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#3rd_district"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 72
     }
    ]
@@ -8915,7 +8918,7 @@
        "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#4th_district"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -8928,7 +8931,7 @@
       "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#4th_district"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 72
     }
    ]
@@ -9024,7 +9027,7 @@
        "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#5th_district"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -9037,7 +9040,7 @@
       "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#5th_district"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 72
     }
    ]
@@ -9107,7 +9110,7 @@
        "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#7th_district"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -9120,7 +9123,7 @@
       "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#7th_district"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 72
     }
    ]
@@ -9199,7 +9202,7 @@
        "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#8th_district"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -9212,7 +9215,7 @@
       "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#8th_district"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 72
     }
    ]
@@ -9296,7 +9299,7 @@
        "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#9th_district"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -9309,7 +9312,7 @@
       "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#9th_district"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 72
     }
    ]
@@ -9384,7 +9387,7 @@
        "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#10th_district"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -9393,11 +9396,12 @@
     {
      "name": "Bridget Gainer",
      "party": "Democratic",
+     "note": "Lost the Cook County Board of Commissioners 10th district Democratic primary to Drake Warren, 43.7% to 56.3%.",
      "source": {
       "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#10th_district"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -9466,7 +9470,7 @@
        "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#11th_district"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -9479,7 +9483,7 @@
       "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#11th_district"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 72
     }
    ]
@@ -9623,7 +9627,7 @@
        "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#12th_district"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -9637,7 +9641,7 @@
       "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#12th_district"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -9732,7 +9736,7 @@
        "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#13th_district"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -9745,7 +9749,7 @@
       "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#13th_district"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 72
     }
    ]
@@ -9827,7 +9831,7 @@
        "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#16th_district"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -9840,7 +9844,8 @@
       "name": "Wikipedia: 2026 Cook County Board of Commissioners election",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County_Board_of_Commissioners_election#16th_district"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22",
+     "note": "Ran in the Democratic primary; Miranda E. Hernandez is the party’s nominee on this ballot."
     }
    ]
   },
@@ -9928,7 +9933,7 @@
        "name": "Wikipedia: 2026 Cook County, Illinois, elections",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Cook_County_Board_of_Review"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -9940,7 +9945,7 @@
       "name": "Wikipedia: 2026 Cook County, Illinois, elections",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Cook_County_Board_of_Review"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 82
     }
    ]
@@ -10058,7 +10063,7 @@
        "name": "Wikipedia: 2026 Cook County, Illinois, elections",
        "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Cook_County_Board_of_Review"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -10066,11 +10071,12 @@
    "incumbents": [
     {
      "name": "Samantha Steele",
+     "note": "Lost the Cook County Board of Review 2nd district Democratic primary to Liz Nicholson, 37.7% to 62.3%.",
      "source": {
       "name": "Wikipedia: 2026 Cook County, Illinois, elections",
       "url": "https://en.wikipedia.org/wiki/2026_Cook_County,_Illinois,_elections#Cook_County_Board_of_Review"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -10124,13 +10130,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Judge Hoffman",
-     "note": "Left the bench; this election fills the vacancy.",
+     "name": "Justice Hoffman",
+     "note": "Justice Thomas E. Hoffman died on July 4, 2025; the Supreme Court filled the seat by assignment until this election.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Supreme Court",
+      "url": "https://www.illinoiscourts.gov/News/1578/Illinois-Supreme-Court-assigns-Hon-Clare-J-Quish-to-the-First-District-Appellate-Court/news-detail/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -10186,13 +10192,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Judge Burke",
-     "note": "Left the bench; this election fills the vacancy.",
+     "name": "Judge Kathleen M. Burke",
+     "note": "Retired on Aug 31, 2025.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -10245,13 +10251,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Judge Cobbs",
-     "note": "Left the bench; this election fills the vacancy.",
+     "name": "Judge Cynthia Y. Cobbs",
+     "note": "Elected to the Appellate Court on Dec 2, 2024, leaving this seat open.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -10304,13 +10310,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Judge Coghlan",
-     "note": "Left the bench; this election fills the vacancy.",
+     "name": "Judge Mary Ellen Coghlan",
+     "note": "Retired on Aug 31, 2024.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -10366,13 +10372,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Judge Hooks",
-     "note": "Left the bench; this election fills the vacancy.",
+     "name": "Judge William H. Hooks",
+     "note": "Retired on Jul 4, 2024.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -10429,13 +10435,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Judge Karkula",
-     "note": "Left the bench; this election fills the vacancy.",
+     "name": "Judge Paul A. Karkula",
+     "note": "Retired on Jan 29, 2024.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -10495,13 +10501,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Judge Balanoff",
-     "note": "Left the bench; this election fills the vacancy.",
+     "name": "Judge Robert Balanoff",
+     "note": "Retired on Jan 30, 2025.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -10562,13 +10568,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Judge Walker",
-     "note": "Left the bench; this election fills the vacancy.",
+     "name": "Judge Carl A. Walker",
+     "note": "Elected to the Appellate Court on Dec 2, 2024, leaving this seat open.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -10623,13 +10629,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Judge Murphy",
-     "note": "Left the bench; this election fills the vacancy.",
+     "name": "Judge Thomas W. Murphy",
+     "note": "Retired on Jul 2, 2024.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -10688,13 +10694,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Judge Sherlock",
-     "note": "Left the bench; this election fills the vacancy.",
+     "name": "Judge Patrick J. Sherlock",
+     "note": "Retired on Aug 17, 2025.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -10740,13 +10746,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Judge Ross",
-     "note": "Left the bench; this election fills the vacancy.",
+     "name": "Judge Dominique C. Ross",
+     "note": "Retired on Feb 27, 2026.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -10804,13 +10810,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Judge Gamrath",
-     "note": "Left the bench; this election fills the vacancy.",
+     "name": "Judge Celia Gamrath",
+     "note": "Appointed to the Appellate Court on Sep 6, 2024, leaving this seat open.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -10869,13 +10875,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Judge Mikva",
-     "note": "Left the bench; this election fills the vacancy.",
+     "name": "Judge Mary L. Mikva",
+     "note": "Elected to the Appellate Court on Dec 2, 2024, leaving this seat open.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -10935,13 +10941,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Judge McLean Meyerson",
-     "note": "Left the bench; this election fills the vacancy.",
+     "name": "Judge Pamela McLean Meyerson",
+     "note": "Retired on Jan 31, 2025.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -10997,13 +11003,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Judge Roberts",
-     "note": "Left the bench; this election fills the vacancy.",
+     "name": "Judge Mary Colleen Roberts",
+     "note": "Retired on Dec 31, 2024.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -11063,13 +11069,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Associate Judge Baird",
-     "note": "An appointed associate judgeship converted into this elected seat.",
+     "name": "Associate Judge Callie L. Baird",
+     "note": "Retired on Apr 15, 2024.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -11124,13 +11130,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Associate Judge Mendoza",
-     "note": "An appointed associate judgeship converted into this elected seat.",
+     "name": "Associate Judge Patricia Mendoza",
+     "note": "Retired on Jul 31, 2024.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -11186,13 +11192,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Associate Judge Brooks",
-     "note": "An appointed associate judgeship converted into this elected seat.",
+     "name": "Associate Judge Lloyd J. Brooks",
+     "note": "Appointed a circuit judge on Apr 29, 2024; the associate judgeship became this elected seat.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -11251,13 +11257,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Associate Judge Carroll",
-     "note": "An appointed associate judgeship converted into this elected seat.",
+     "name": "Associate Judge James R. Carroll",
+     "note": "Retired on Oct 15, 2024.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -11312,13 +11318,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Associate Judge Fairman",
-     "note": "An appointed associate judgeship converted into this elected seat.",
+     "name": "Associate Judge John A. Fairman",
+     "note": "Appointed a circuit judge on Apr 29, 2024; the associate judgeship became this elected seat.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -11377,13 +11383,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Associate Judge Kane",
-     "note": "An appointed associate judgeship converted into this elected seat.",
+     "name": "Associate Judge Michael J. Kane",
+     "note": "Retired on Feb 23, 2024.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -11439,13 +11445,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Associate Judge Haracz",
-     "note": "An appointed associate judgeship converted into this elected seat.",
+     "name": "Associate Judge David E. Haracz",
+     "note": "Retired on Mar 31, 2024.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -11514,13 +11520,13 @@
    "writeIn": false,
    "incumbents": [
     {
-     "name": "Associate Judge Miller",
-     "note": "An appointed associate judgeship converted into this elected seat.",
+     "name": "Associate Judge Stephanie K. Miller",
+     "note": "Appointed a circuit judge on Jun 11, 2024; the associate judgeship became this elected seat.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -11598,7 +11604,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#Board_President"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -11649,7 +11655,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#Board_President"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -11704,7 +11710,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#Board_President"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -11770,7 +11776,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_1A"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -11815,7 +11821,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_1A"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -11883,7 +11889,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_1B"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -11977,7 +11983,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_2A"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -12007,7 +12013,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_2A"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -12019,7 +12025,7 @@
       "name": "Wikipedia: 2026 Chicago Board of Education election",
       "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_2A"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 131
     }
    ]
@@ -12081,7 +12087,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_2B"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -12133,7 +12139,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_2B"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -12179,7 +12185,7 @@
       "name": "Wikipedia: 2026 Chicago Board of Education election",
       "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_2B"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 131
     }
    ]
@@ -12234,7 +12240,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_3A"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -12285,7 +12291,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_3A"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -12297,7 +12303,7 @@
       "name": "Wikipedia: 2026 Chicago Board of Education election",
       "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_3A"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 131
     }
    ]
@@ -12358,7 +12364,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_3B"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -12412,7 +12418,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_3B"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -12424,7 +12430,7 @@
       "name": "Wikipedia: 2026 Chicago Board of Education election",
       "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_3B"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 132
     }
    ]
@@ -12488,7 +12494,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_4A"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -12539,7 +12545,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_4A"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -12584,7 +12590,7 @@
       "name": "Wikipedia: 2026 Chicago Board of Education election",
       "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_4A"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 132
     }
    ]
@@ -12651,7 +12657,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_4B"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -12663,7 +12669,7 @@
       "name": "Wikipedia: 2026 Chicago Board of Education election",
       "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_4B"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 131
     }
    ]
@@ -12709,7 +12715,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_5A"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -12752,7 +12758,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_5A"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -12764,7 +12770,7 @@
       "name": "Wikipedia: 2026 Chicago Board of Education election",
       "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_5A"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 132
     }
    ]
@@ -12821,7 +12827,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_5B"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -12872,7 +12878,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_5B"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -12884,7 +12890,7 @@
       "name": "Wikipedia: 2026 Chicago Board of Education election",
       "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_5B"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 131
     }
    ]
@@ -12978,7 +12984,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_6A"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -13032,7 +13038,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_6A"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -13044,7 +13050,7 @@
       "name": "Wikipedia: 2026 Chicago Board of Education election",
       "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_6A"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 131
     }
    ]
@@ -13088,7 +13094,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_6B"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -13139,7 +13145,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_6B"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -13194,7 +13200,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_7A"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -13251,7 +13257,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_7A"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -13263,7 +13269,7 @@
       "name": "Wikipedia: 2026 Chicago Board of Education election",
       "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_7A"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 131
     }
    ]
@@ -13315,7 +13321,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_7B"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -13348,7 +13354,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_7B"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -13360,7 +13366,7 @@
       "name": "Wikipedia: 2026 Chicago Board of Education election",
       "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_7B"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 131
     }
    ]
@@ -13423,7 +13429,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_8A"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -13435,7 +13441,7 @@
       "name": "Wikipedia: 2026 Chicago Board of Education election",
       "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_8A"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 131
     }
    ]
@@ -13488,7 +13494,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_8B"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -13496,11 +13502,12 @@
    "incumbents": [
     {
      "name": "Cydney Wallace",
+     "note": "Filed but did not qualify for the ballot.",
      "source": {
       "name": "Wikipedia: 2026 Chicago Board of Education election",
       "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_8B"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -13554,7 +13561,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_9A"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -13562,11 +13569,12 @@
    "incumbents": [
     {
      "name": "Angel L. Velez",
+     "note": "Filed but did not qualify for the ballot.",
      "source": {
       "name": "Wikipedia: 2026 Chicago Board of Education election",
       "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_9A"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -13630,7 +13638,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_9B"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -13687,7 +13695,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_9B"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -13699,7 +13707,7 @@
       "name": "Wikipedia: 2026 Chicago Board of Education election",
       "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_9B"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 131
     }
    ]
@@ -13767,7 +13775,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_10A"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -13779,7 +13787,7 @@
       "name": "Wikipedia: 2026 Chicago Board of Education election",
       "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_10A"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 131
     }
    ]
@@ -13827,7 +13835,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_10B"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -13871,7 +13879,7 @@
        "name": "Wikipedia: 2026 Chicago Board of Education election",
        "url": "https://en.wikipedia.org/wiki/2026_Chicago_Board_of_Education_election#District_10B"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -13990,7 +13998,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_56"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -14068,7 +14076,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_97"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -14150,11 +14158,12 @@
     {
      "name": "Linda Holmes",
      "party": "Democratic",
+     "note": "On June 22, 2026, Holmes removed herself from the 2026 general election ballot and announced her planned retirement for medical reasons.",
      "source": {
-      "name": "Wikipedia: 2026 Illinois Senate election",
-      "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_42"
+      "name": "Wikipedia: Linda Holmes",
+      "url": "https://en.wikipedia.org/wiki/Linda_Holmes"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -14277,7 +14286,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_54"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -14394,7 +14403,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_114"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -14523,7 +14532,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_29"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -14662,7 +14671,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_35"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -14762,7 +14771,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_50"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -14895,7 +14904,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_48"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -14995,7 +15004,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_54"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -15097,7 +15106,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_47"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -15237,7 +15246,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_38"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -15375,7 +15384,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_57"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -15512,7 +15521,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_80"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -15605,7 +15614,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#Democratic"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -15722,7 +15731,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_83"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -15861,7 +15870,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_98"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -15996,7 +16005,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_71"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -16130,7 +16139,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_44"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -16244,7 +16253,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_17"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -16359,7 +16368,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_61"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -16479,7 +16488,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_85"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -16593,7 +16602,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_46"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -16737,7 +16746,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_53"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -16874,7 +16883,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_57"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -17014,7 +17023,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_41"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -17112,7 +17121,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_100"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -17240,7 +17249,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#Democratic"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -17328,7 +17337,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#Democratic"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -17433,7 +17442,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_2"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -17535,7 +17544,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_106"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -17666,7 +17675,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_66"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -17786,7 +17795,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_101"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -17925,7 +17934,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#Republican"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -18053,7 +18062,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_23"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -18131,7 +18140,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#Democratic"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -18265,7 +18274,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_21"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -18396,7 +18405,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_32"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -18437,6 +18446,54 @@
       "from": "https://unitedstates.github.io/images/congress/450x550/S001190.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Brad_Schneider",
+     "record": {
+      "sponsored": 77,
+      "bills": [
+       {
+        "state": "usa",
+        "session": "119",
+        "id": "HR 10805",
+        "title": "Don’t Block LGBTQ Act of 2026",
+        "latest_action": "2026-10-13",
+        "url": "https://congress.gov/bill/119th-congress/house-bill/10805"
+       },
+       {
+        "state": "usa",
+        "session": "119",
+        "id": "HR 10787",
+        "title": "To amend title XVIII of the Social Security Act to exclude urological and ostomy supplies from competitive acquisition programs under the Medicare program for 5 years, and for other purposes.",
+        "latest_action": "2026-10-09",
+        "url": "https://congress.gov/bill/119th-congress/house-bill/10787"
+       },
+       {
+        "state": "usa",
+        "session": "119",
+        "id": "HR 10429",
+        "title": "To designate the facility of the United States Postal Service located at 901 Lake Street in Oak Park, Illinois, as the \"Detective Allan Reddins Post Office Building\".",
+        "latest_action": "2026-09-16",
+        "url": "https://congress.gov/bill/119th-congress/house-bill/10429"
+       },
+       {
+        "state": "usa",
+        "session": "119",
+        "id": "HR 2466",
+        "title": "To designate the facility of the United States Postal Service located at 5225 Harrison Avenue in Rockford, Illinois, as the Jay P. Larson Post Office Building.",
+        "latest_action": "2026-09-14",
+        "url": "https://congress.gov/bill/119th-congress/house-bill/2466"
+       },
+       {
+        "state": "usa",
+        "session": "119",
+        "id": "HR 9764",
+        "title": "To amend the Internal Revenue Code of 1986 to deny any foreign tax credit with respect to taxes paid or accrued to the Russian Federation.",
+        "latest_action": "2026-07-16",
+        "url": "https://congress.gov/bill/119th-congress/house-bill/9764"
+       }
+      ],
+      "seat": "U.S. House · IL-10",
+      "source": "Congress.gov, via govbot",
+      "asOf": "2026-10-21"
+     },
      "endorsements": {
       "groups": [
        {
@@ -18534,55 +18591,7 @@
        "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
        "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_10"
       },
-      "asOf": "2026-10-21"
-     },
-     "record": {
-      "sponsored": 77,
-      "bills": [
-       {
-        "state": "usa",
-        "session": "119",
-        "id": "HR 10805",
-        "title": "Don’t Block LGBTQ Act of 2026",
-        "latest_action": "2026-10-13",
-        "url": "https://congress.gov/bill/119th-congress/house-bill/10805"
-       },
-       {
-        "state": "usa",
-        "session": "119",
-        "id": "HR 10787",
-        "title": "To amend title XVIII of the Social Security Act to exclude urological and ostomy supplies from competitive acquisition programs under the Medicare program for 5 years, and for other purposes.",
-        "latest_action": "2026-10-09",
-        "url": "https://congress.gov/bill/119th-congress/house-bill/10787"
-       },
-       {
-        "state": "usa",
-        "session": "119",
-        "id": "HR 10429",
-        "title": "To designate the facility of the United States Postal Service located at 901 Lake Street in Oak Park, Illinois, as the \"Detective Allan Reddins Post Office Building\".",
-        "latest_action": "2026-09-16",
-        "url": "https://congress.gov/bill/119th-congress/house-bill/10429"
-       },
-       {
-        "state": "usa",
-        "session": "119",
-        "id": "HR 2466",
-        "title": "To designate the facility of the United States Postal Service located at 5225 Harrison Avenue in Rockford, Illinois, as the Jay P. Larson Post Office Building.",
-        "latest_action": "2026-09-14",
-        "url": "https://congress.gov/bill/119th-congress/house-bill/2466"
-       },
-       {
-        "state": "usa",
-        "session": "119",
-        "id": "HR 9764",
-        "title": "To amend the Internal Revenue Code of 1986 to deny any foreign tax credit with respect to taxes paid or accrued to the Russian Federation.",
-        "latest_action": "2026-07-16",
-        "url": "https://congress.gov/bill/119th-congress/house-bill/9764"
-       }
-      ],
-      "seat": "U.S. House · IL-10",
-      "source": "Congress.gov, via govbot",
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -18605,7 +18614,7 @@
       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_10"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -18736,7 +18745,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_73"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -18864,7 +18873,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_104"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -19003,7 +19012,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_49"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -19132,7 +19141,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_74"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -19272,7 +19281,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_75"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -19387,7 +19396,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_77"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -19430,41 +19439,6 @@
       "from": "https://unitedstates.github.io/images/congress/450x550/S001225.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Eric_Sorensen",
-     "endorsements": {
-      "groups": [
-       {
-        "category": "Labor unions",
-        "names": [
-         "American Federation of Government Employees",
-         "Illinois AFL-CIO",
-         "International Union of Operating Engineers Locals 150 and 399",
-         "SEIU Healthcare",
-         "SEIU Illinois State Council"
-        ]
-       },
-       {
-        "category": "Organizations",
-        "names": [
-         "314 Action",
-         "AIPAC",
-         "Bend the Arc",
-         "Democratic Majority for Israel",
-         "Giffords",
-         "Jewish Democratic Council of America",
-         "Joint Action Committee for Political Affairs",
-         "J Street",
-         "LGBTQ+ Victory Fund",
-         "Planned Parenthood Action Fund"
-        ]
-       }
-      ],
-      "total": 15,
-      "source": {
-       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
-       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_17"
-      },
-      "asOf": "2026-10-21"
-     },
      "record": {
       "sponsored": 35,
       "bills": [
@@ -19512,6 +19486,41 @@
       "seat": "U.S. House · IL-17",
       "source": "Congress.gov, via govbot",
       "asOf": "2026-10-21"
+     },
+     "endorsements": {
+      "groups": [
+       {
+        "category": "Labor unions",
+        "names": [
+         "American Federation of Government Employees",
+         "Illinois AFL-CIO",
+         "International Union of Operating Engineers Locals 150 and 399",
+         "SEIU Healthcare",
+         "SEIU Illinois State Council"
+        ]
+       },
+       {
+        "category": "Organizations",
+        "names": [
+         "314 Action",
+         "AIPAC",
+         "Bend the Arc",
+         "Democratic Majority for Israel",
+         "Giffords",
+         "Jewish Democratic Council of America",
+         "Joint Action Committee for Political Affairs",
+         "J Street",
+         "LGBTQ+ Victory Fund",
+         "Planned Parenthood Action Fund"
+        ]
+       }
+      ],
+      "total": 15,
+      "source": {
+       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
+       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_17"
+      },
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -19548,7 +19557,7 @@
        "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
        "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_17"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -19563,7 +19572,7 @@
       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_17"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -19694,7 +19703,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_45"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -19794,7 +19803,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_110"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -19924,7 +19933,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_64"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -20061,7 +20070,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_52"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -20199,7 +20208,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_69"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -20265,7 +20274,7 @@
        "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
        "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_15"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -20294,24 +20303,6 @@
       "from": "https://unitedstates.github.io/images/congress/450x550/M001211.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Mary_Miller",
-     "endorsements": {
-      "groups": [
-       {
-        "category": "Organizations",
-        "names": [
-         "AIPAC",
-         "Freedom Caucus Fund",
-         "Maggie's List"
-        ]
-       }
-      ],
-      "total": 3,
-      "source": {
-       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
-       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_15"
-      },
-      "asOf": "2026-10-21"
-     },
      "record": {
       "sponsored": 92,
       "bills": [
@@ -20359,6 +20350,24 @@
       "seat": "U.S. House · IL-15",
       "source": "Congress.gov, via govbot",
       "asOf": "2026-10-21"
+     },
+     "endorsements": {
+      "groups": [
+       {
+        "category": "Organizations",
+        "names": [
+         "AIPAC",
+         "Freedom Caucus Fund",
+         "Maggie's List"
+        ]
+       }
+      ],
+      "total": 3,
+      "source": {
+       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
+       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_15"
+      },
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -20373,7 +20382,7 @@
       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_15"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -20475,7 +20484,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_63"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -20579,7 +20588,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_67"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -20681,7 +20690,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_103"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -20806,7 +20815,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_70"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -20870,7 +20879,7 @@
        "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
        "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_12"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -20900,34 +20909,6 @@
       "from": "https://unitedstates.github.io/images/congress/450x550/B001295.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Mike_Bost",
-     "endorsements": {
-      "groups": [
-       {
-        "category": "Executive Branch officials",
-        "names": [
-         "Donald Trump, 45th and 47th president of the United States (2017–2021, 2025–present)"
-        ]
-       },
-       {
-        "category": "Labor unions",
-        "names": [
-         "Illinois Fraternal Order of Police"
-        ]
-       },
-       {
-        "category": "Organizations",
-        "names": [
-         "AIPAC"
-        ]
-       }
-      ],
-      "total": 3,
-      "source": {
-       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
-       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_12"
-      },
-      "asOf": "2026-10-21"
-     },
      "record": {
       "sponsored": 56,
       "bills": [
@@ -20975,6 +20956,34 @@
       "seat": "U.S. House · IL-12",
       "source": "Congress.gov, via govbot",
       "asOf": "2026-10-21"
+     },
+     "endorsements": {
+      "groups": [
+       {
+        "category": "Executive Branch officials",
+        "names": [
+         "Donald Trump, 45th and 47th president of the United States (2017–2021, 2025–present)"
+        ]
+       },
+       {
+        "category": "Labor unions",
+        "names": [
+         "Illinois Fraternal Order of Police"
+        ]
+       },
+       {
+        "category": "Organizations",
+        "names": [
+         "AIPAC"
+        ]
+       }
+      ],
+      "total": 3,
+      "source": {
+       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
+       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_12"
+      },
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -20989,7 +20998,7 @@
       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_12"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -21093,7 +21102,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_58"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -21196,7 +21205,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#Republican"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -21239,6 +21248,54 @@
       "from": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Rep_Nikki_Budzinski%2C_119th_Congress.jpg/500px-Rep_Nikki_Budzinski%2C_119th_Congress.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
      },
      "ballotpedia": "https://ballotpedia.org/Nikki_Budzinski",
+     "record": {
+      "sponsored": 67,
+      "bills": [
+       {
+        "state": "usa",
+        "session": "119",
+        "id": "HR 5254",
+        "title": "Gateway Partnership Act",
+        "latest_action": "2026-09-17",
+        "url": "https://congress.gov/bill/119th-congress/house-bill/5254"
+       },
+       {
+        "state": "usa",
+        "session": "119",
+        "id": "HR 10402",
+        "title": "To amend the Department of Energy Organization Act to require financial assistance provided by the Department of Energy to promote high labor standards, community benefits, domestic manufacturing, and investments in small and disadvantaged communities, and for other purposes.",
+        "latest_action": "2026-09-15",
+        "url": "https://congress.gov/bill/119th-congress/house-bill/10402"
+       },
+       {
+        "state": "usa",
+        "session": "119",
+        "id": "HR 9974",
+        "title": "Young Farmer Success Act",
+        "latest_action": "2026-07-27",
+        "url": "https://congress.gov/bill/119th-congress/house-bill/9974"
+       },
+       {
+        "state": "usa",
+        "session": "119",
+        "id": "HRES 1463",
+        "title": "Expressing support for July to be designated as \"Disability Pride Month\".",
+        "latest_action": "2026-07-27",
+        "url": "https://congress.gov/bill/119th-congress/house-resolution/1463"
+       },
+       {
+        "state": "usa",
+        "session": "119",
+        "id": "HRES 1417",
+        "title": "Remembering the lives lost and honoring the survivors 4 years after the Independence Day Parade shooting that occurred on July 4, 2022, in Highland Park, Illinois.",
+        "latest_action": "2026-07-02",
+        "url": "https://congress.gov/bill/119th-congress/house-resolution/1417"
+       }
+      ],
+      "seat": "U.S. House · IL-13",
+      "source": "Congress.gov, via govbot",
+      "asOf": "2026-10-21"
+     },
      "endorsements": {
       "groups": [
        {
@@ -21299,55 +21356,7 @@
        "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
        "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_13"
       },
-      "asOf": "2026-10-21"
-     },
-     "record": {
-      "sponsored": 67,
-      "bills": [
-       {
-        "state": "usa",
-        "session": "119",
-        "id": "HR 5254",
-        "title": "Gateway Partnership Act",
-        "latest_action": "2026-09-17",
-        "url": "https://congress.gov/bill/119th-congress/house-bill/5254"
-       },
-       {
-        "state": "usa",
-        "session": "119",
-        "id": "HR 10402",
-        "title": "To amend the Department of Energy Organization Act to require financial assistance provided by the Department of Energy to promote high labor standards, community benefits, domestic manufacturing, and investments in small and disadvantaged communities, and for other purposes.",
-        "latest_action": "2026-09-15",
-        "url": "https://congress.gov/bill/119th-congress/house-bill/10402"
-       },
-       {
-        "state": "usa",
-        "session": "119",
-        "id": "HR 9974",
-        "title": "Young Farmer Success Act",
-        "latest_action": "2026-07-27",
-        "url": "https://congress.gov/bill/119th-congress/house-bill/9974"
-       },
-       {
-        "state": "usa",
-        "session": "119",
-        "id": "HRES 1463",
-        "title": "Expressing support for July to be designated as \"Disability Pride Month\".",
-        "latest_action": "2026-07-27",
-        "url": "https://congress.gov/bill/119th-congress/house-resolution/1463"
-       },
-       {
-        "state": "usa",
-        "session": "119",
-        "id": "HRES 1417",
-        "title": "Remembering the lives lost and honoring the survivors 4 years after the Independence Day Parade shooting that occurred on July 4, 2022, in Highland Park, Illinois.",
-        "latest_action": "2026-07-02",
-        "url": "https://congress.gov/bill/119th-congress/house-resolution/1417"
-       }
-      ],
-      "seat": "U.S. House · IL-13",
-      "source": "Congress.gov, via govbot",
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -21387,7 +21396,7 @@
       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_13"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -21512,7 +21521,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_56"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -21623,7 +21632,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_53"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -21727,7 +21736,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_91"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -21828,7 +21837,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_92"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -21933,7 +21942,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_93"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -21976,10 +21985,11 @@
      "name": "Norine Hammond",
      "party": "Republican",
      "source": {
-      "name": "Wikipedia: 2026 Illinois House of Representatives election",
-      "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_94"
+      "name": "Wikipedia: Norine Hammond",
+      "url": "https://en.wikipedia.org/wiki/Norine_Hammond"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22",
+     "note": "In 2026, Josh Higgins, a school board member from Henderson County and endorsee of the Illinois House Freedom Caucus, defeated Hammond in the Republican primary."
     }
    ]
   },
@@ -22078,7 +22088,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_95"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -22180,7 +22190,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_96"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -22322,7 +22332,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_76"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -22426,7 +22436,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_90"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -22528,7 +22538,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_79"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -22585,12 +22595,12 @@
    "incumbents": [
     {
      "name": "Judge Martin C. Kelley",
-     "note": "Left the bench; this election fills the vacancy.",
+     "note": "Died on Nov 28, 2024.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -22650,13 +22660,13 @@
    "numbered": false,
    "incumbents": [
     {
-     "name": "Judge O'malley",
-     "note": "Left the bench; this election fills the vacancy.",
+     "name": "Judge Shannon P. O'Malley",
+     "note": "Resigned on Nov 30, 2024.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -22713,12 +22723,12 @@
    "incumbents": [
     {
      "name": "Judge Thomas J. Kelley",
-     "note": "Left the bench; this election fills the vacancy.",
+     "note": "Retired on Sep 15, 2025.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -22847,7 +22857,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_24"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -23037,7 +23047,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_26"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -23081,35 +23091,6 @@
       "from": "https://unitedstates.github.io/images/congress/450x550/F000454.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Bill_Foster",
-     "endorsements": {
-      "groups": [
-       {
-        "category": "Labor unions",
-        "names": [
-         "American Federation of Government Employees",
-         "Chicago Federation of Labor",
-         "Illinois AFL-CIO",
-         "International Union of Operating Engineers Locals 150 and 399",
-         "Plumbers Local 130",
-         "SEIU Healthcare",
-         "SEIU Illinois State Council"
-        ]
-       },
-       {
-        "category": "Organizations",
-        "names": [
-         "J Street PAC",
-         "Planned Parenthood Action Fund"
-        ]
-       }
-      ],
-      "total": 9,
-      "source": {
-       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
-       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_11"
-      },
-      "asOf": "2026-10-21"
-     },
      "record": {
       "sponsored": 36,
       "bills": [
@@ -23157,6 +23138,35 @@
       "seat": "U.S. House · IL-11",
       "source": "Congress.gov, via govbot",
       "asOf": "2026-10-21"
+     },
+     "endorsements": {
+      "groups": [
+       {
+        "category": "Labor unions",
+        "names": [
+         "American Federation of Government Employees",
+         "Chicago Federation of Labor",
+         "Illinois AFL-CIO",
+         "International Union of Operating Engineers Locals 150 and 399",
+         "Plumbers Local 130",
+         "SEIU Healthcare",
+         "SEIU Illinois State Council"
+        ]
+       },
+       {
+        "category": "Organizations",
+        "names": [
+         "J Street PAC",
+         "Planned Parenthood Action Fund"
+        ]
+       }
+      ],
+      "total": 9,
+      "source": {
+       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
+       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_11"
+      },
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -23199,7 +23209,7 @@
        "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
        "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_11"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -23213,7 +23223,7 @@
       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_11"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -23315,7 +23325,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_109"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -23388,7 +23398,7 @@
        "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
        "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_16"
       },
-      "asOf": "2026-10-21"
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -23418,28 +23428,6 @@
       "from": "https://unitedstates.github.io/images/congress/450x550/L000585.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Darin_LaHood",
-     "endorsements": {
-      "groups": [
-       {
-        "category": "Labor unions",
-        "names": [
-         "Illinois Fraternal Order of Police"
-        ]
-       },
-       {
-        "category": "Organizations",
-        "names": [
-         "AIPAC"
-        ]
-       }
-      ],
-      "total": 2,
-      "source": {
-       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
-       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_16"
-      },
-      "asOf": "2026-10-21"
-     },
      "record": {
       "sponsored": 44,
       "bills": [
@@ -23487,6 +23475,28 @@
       "seat": "U.S. House · IL-16",
       "source": "Congress.gov, via govbot",
       "asOf": "2026-10-21"
+     },
+     "endorsements": {
+      "groups": [
+       {
+        "category": "Labor unions",
+        "names": [
+         "Illinois Fraternal Order of Police"
+        ]
+       },
+       {
+        "category": "Organizations",
+        "names": [
+         "AIPAC"
+        ]
+       }
+      ],
+      "total": 2,
+      "source": {
+       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
+       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_16"
+      },
+      "asOf": "2026-10-22"
      }
     }
    ],
@@ -23501,7 +23511,7 @@
       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_16"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -23605,7 +23615,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_50"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -23708,7 +23718,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_51"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -23809,7 +23819,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_62"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -23948,7 +23958,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_65"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -24052,7 +24062,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_60"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -24194,7 +24204,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_36"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -24290,7 +24300,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_37"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -24391,7 +24401,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_38"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -24452,13 +24462,13 @@
    "numbered": false,
    "incumbents": [
     {
-     "name": "Judge Curry, Jr.",
-     "note": "Left the bench; this election fills the vacancy.",
+     "name": "Judge John J. Curry, Jr.",
+     "note": "Retired on May 9, 2025.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -24552,7 +24562,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_30"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -24655,7 +24665,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_30"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -24793,7 +24803,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_111"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -24924,7 +24934,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_112"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -25056,7 +25066,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_48"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -25132,7 +25142,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#Republican"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -25223,7 +25233,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#Republican"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -25324,7 +25334,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_41"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -25426,7 +25436,7 @@
       "name": "Wikipedia: 2026 Illinois Senate election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_Senate_election#District_44"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -25550,7 +25560,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_45"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -25675,7 +25685,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_68"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -25717,43 +25727,6 @@
       "from": "https://unitedstates.github.io/images/congress/450x550/U000040.jpg"
      },
      "ballotpedia": "https://ballotpedia.org/Lauren_Underwood",
-     "endorsements": {
-      "groups": [
-       {
-        "category": "U.S. representatives",
-        "names": [
-         "Hakeem Jeffries, House Minority Leader (2023–present) from NY-08 (2013–present)"
-        ]
-       },
-       {
-        "category": "Labor unions",
-        "names": [
-         "American Federation of Government Employees",
-         "Illinois AFL-CIO",
-         "International Union of Operating Engineers Locals 150 and 399",
-         "SEIU Healthcare",
-         "SEIU Illinois State Council"
-        ]
-       },
-       {
-        "category": "Organizations",
-        "names": [
-         "Black Economic Alliance PAC",
-         "Jewish Democratic Council of America",
-         "Joint Action Committee for Political Affairs",
-         "Planned Parenthood Action Fund",
-         "Population Connection",
-         "Sierra Club"
-        ]
-       }
-      ],
-      "total": 12,
-      "source": {
-       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
-       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_14"
-      },
-      "asOf": "2026-10-21"
-     },
      "record": {
       "sponsored": 55,
       "bills": [
@@ -25801,6 +25774,43 @@
       "seat": "U.S. House · IL-14",
       "source": "Congress.gov, via govbot",
       "asOf": "2026-10-21"
+     },
+     "endorsements": {
+      "groups": [
+       {
+        "category": "U.S. representatives",
+        "names": [
+         "Hakeem Jeffries, House Minority Leader (2023–present) from NY-08 (2013–present)"
+        ]
+       },
+       {
+        "category": "Labor unions",
+        "names": [
+         "American Federation of Government Employees",
+         "Illinois AFL-CIO",
+         "International Union of Operating Engineers Locals 150 and 399",
+         "SEIU Healthcare",
+         "SEIU Illinois State Council"
+        ]
+       },
+       {
+        "category": "Organizations",
+        "names": [
+         "Black Economic Alliance PAC",
+         "Jewish Democratic Council of America",
+         "Joint Action Committee for Political Affairs",
+         "Planned Parenthood Action Fund",
+         "Population Connection",
+         "Sierra Club"
+        ]
+       }
+      ],
+      "total": 12,
+      "source": {
+       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
+       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_14"
+      },
+      "asOf": "2026-10-22"
      }
     },
     {
@@ -25853,7 +25863,7 @@
       "name": "Wikipedia: 2026 United States House of Representatives elections in Illinois",
       "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois#District_14"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -25958,7 +25968,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_113"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -26060,7 +26070,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_115"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -26164,7 +26174,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_116"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -26266,7 +26276,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_117"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -26387,7 +26397,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#Republican"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 2
     }
    ]
@@ -26484,7 +26494,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_99"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -26540,13 +26550,13 @@
    "numbered": false,
    "incumbents": [
     {
-     "name": "Judge Andreou",
-     "note": "Left the bench; this election fills the vacancy.",
+     "name": "Judge Frank J. Andreou",
+     "note": "Elected a circuit judge on Dec 2, 2024; the associate judgeship became this elected seat.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -26606,13 +26616,13 @@
    "numbered": false,
    "incumbents": [
     {
-     "name": "Judge Chrones",
-     "note": "Left the bench; this election fills the vacancy.",
+     "name": "Judge Jeffrey G. Chrones",
+     "note": "Appointed a circuit judge on Apr 29, 2024; the associate judgeship became this elected seat.",
      "source": {
-      "name": "the ballot",
-      "url": ""
+      "name": "Illinois Courts",
+      "url": "https://www.illinoiscourts.gov/judicial-vacancies/circuit/"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -26712,7 +26722,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_43"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -26811,7 +26821,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_72"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -26915,7 +26925,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#Democratic"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -27053,7 +27063,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_81"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -27157,7 +27167,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_82"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -27261,7 +27271,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_86"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -27361,7 +27371,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_87"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -27464,7 +27474,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_88"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -27566,7 +27576,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_89"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -27668,7 +27678,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_102"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -27722,7 +27732,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#Republican"
      },
-     "asOf": "2026-10-21"
+     "asOf": "2026-10-22"
     }
    ]
   },
@@ -27822,7 +27832,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_107"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
@@ -27923,7 +27933,7 @@
       "name": "Wikipedia: 2026 Illinois House of Representatives election",
       "url": "https://en.wikipedia.org/wiki/2026_Illinois_House_of_Representatives_election#District_108"
      },
-     "asOf": "2026-10-21",
+     "asOf": "2026-10-22",
      "ballot": 1
     }
    ]
