@@ -98,27 +98,14 @@ export function Confetti({ onDone }: { onDone: () => void }) {
   );
 }
 
-// "Skip": the browsing notice and its pinned badge are read once; after that
-// only the county picker and the address button stay, on this device.
-const SKIP_KEY = 'kyb-browse-skip';
-const skipWatchers = new Set<() => void>();
-const readSkip = () => { try { return localStorage.getItem(SKIP_KEY) === '1'; } catch { return false; } };
-export function useBrowseSkipped(): [boolean, () => void] {
-  const [skipped, setSkipped] = useState(readSkip);
-  useEffect(() => { const on = () => setSkipped(readSkip()); skipWatchers.add(on); return () => { skipWatchers.delete(on); }; }, []);
-  const skip = useCallback(() => { try { localStorage.setItem(SKIP_KEY, '1'); } catch { /* not remembered */ } for (const on of skipWatchers) on(); }, []);
-  return [skipped, skip];
-}
-
-/** Under the progress bar while there's no address: picks are off until there is one. Skipped, it keeps only its controls. */
+/** Pinned under the progress bar while there's no address: picks are off until there is one. */
 export function BrowsingNotice({ region, onAddAddress, counties }: { region: string; onAddAddress: () => void; /** Browse one county's races without an address; `all` labels the whole-state choice (value ''). */ counties?: { list: string[]; value: string; onChange: (county: string) => void; all?: string } }) {
-  const [skipped, skip] = useBrowseSkipped();
   // The native dropdown draws its own list, so each option gets explicit colours: in dark mode the
   // page's light text was landing on the system's white list.
   const option = { color: '#111', background: '#fff' };
   return (
-    <div role={skipped ? undefined : 'status'} data-browsing-notice className={skipped ? 'mt-3' : 'mt-3 flex flex-col items-start lg:flex-row lg:flex-wrap lg:items-center gap-x-3 gap-y-2 rounded-xl border-2 border-[var(--gb-amber-hi)] bg-[var(--kyb-chip)] px-3 py-2 text-sm lg:text-[15px] leading-snug'}>
-      {!skipped && <p className="min-w-0 flex-1">You’re seeing <strong>every</strong> race on any ballot in {region}. Picks are off until it’s <em>your</em> ballot.</p>}
+    <div role="status" data-browsing-notice className="mt-3 flex flex-col items-start lg:flex-row lg:flex-wrap lg:items-center gap-x-3 gap-y-2 rounded-xl border-2 border-[var(--gb-amber-hi)] bg-[var(--kyb-chip)] px-3 py-2 text-sm lg:text-[15px] leading-snug">
+      <p className="min-w-0 flex-1">You’re seeing <strong>every</strong> race on any ballot in {region}. Picks are off until it’s <em>your</em> ballot.</p>
       <div className="flex flex-wrap items-center gap-2">
         {counties && (
           <label className="inline-flex items-center gap-1.5 min-h-[40px] rounded-lg border-2 border-[var(--gb-text)] bg-[var(--gb-surface)] pl-2.5 pr-1 font-bold text-[var(--gb-text)]">
@@ -133,9 +120,6 @@ export function BrowsingNotice({ region, onAddAddress, counties }: { region: str
         <button type="button" onClick={onAddAddress} className="inline-flex items-center gap-1.5 min-h-[40px] rounded-lg bg-[var(--gb-text)] px-3 font-bold text-[var(--gb-bg)]">
           <MapPin className="w-4 h-4" aria-hidden="true" /> Enter your address
         </button>
-        {!skipped && (
-          <button type="button" onClick={skip} className="inline-flex items-center min-h-[40px] rounded-lg px-2 font-bold text-[var(--gb-text)] underline underline-offset-2">Skip</button>
-        )}
       </div>
     </div>
   );
@@ -145,7 +129,6 @@ export function BrowsingNotice({ region, onAddAddress, counties }: { region: str
  *  while the page scrolls (the full notice scrolls away with the tools).
  *  Tapping it opens the full sentence and the address button. */
 export function BrowsingBadge({ region, onAddAddress }: { region: string; onAddAddress: () => void }) {
-  const [skipped] = useBrowseSkipped();
   const [open, setOpen] = useState(false);
   // Hidden while the full notice is on screen; it takes over once that scrolls away.
   const [noticeShown, setNoticeShown] = useState(true);
@@ -162,7 +145,7 @@ export function BrowsingBadge({ region, onAddAddress }: { region: string; onAddA
     document.addEventListener('keydown', esc);
     return () => document.removeEventListener('keydown', esc);
   }, [open]);
-  if (skipped || (noticeShown && !open)) return null;
+  if (noticeShown && !open) return null;
   return (
     <div className="fixed bottom-5 left-4 z-[45] print:hidden">
       {open ? (

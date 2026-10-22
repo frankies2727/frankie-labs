@@ -74,7 +74,7 @@ function YesNo({ value, onChange, label }: { value: Choice | undefined; onChange
           type="button"
           role="radio"
           aria-checked={value === o.v}
-          disabled={readOnly}
+          disabled={readOnly && o.v !== 'skip'}
           onClick={() => onChange(o.v)}
           className={`min-h-[44px] rounded-xl border-2 font-bold transition-colors disabled:cursor-not-allowed disabled:opacity-60 ${value === o.v ? o.on : 'border-[var(--gb-border)] bg-[var(--kyb-chip)] text-[var(--gb-text)] hover:border-[var(--gb-text)]'}`}
         >
@@ -387,16 +387,15 @@ export const RaceCard = memo(function RaceCard({ race, color, ink, numbered, cho
               <Scale className="w-4 h-4" aria-hidden="true" /> Compare
             </button>
           )}
-          {!readOnly && (
-            <button
-              type="button"
-              aria-pressed={choice === 'skip'}
-              onClick={() => onChoose(choice === 'skip' ? [] : 'skip')}
-              className={`min-h-[44px] rounded-xl border-2 px-4 font-bold ${choice === 'skip' ? 'border-[var(--gb-text)] bg-[var(--gb-text)] text-[var(--gb-bg)]' : 'border-[var(--gb-border)] text-[var(--gb-text)] hover:border-[var(--gb-text)]'}`}
-            >
-              {choice === 'skip' ? 'Skipped' : 'Skip this one'}
-            </button>
-          )}
+          {/* Skipping stays on while browsing without an address: picks are off, but a reader can still move through the races. */}
+          <button
+            type="button"
+            aria-pressed={choice === 'skip'}
+            onClick={() => onChoose(choice === 'skip' ? [] : 'skip')}
+            className={`min-h-[44px] rounded-xl border-2 px-4 font-bold ${choice === 'skip' ? 'border-[var(--gb-text)] bg-[var(--gb-text)] text-[var(--gb-bg)]' : 'border-[var(--gb-border)] text-[var(--gb-text)] hover:border-[var(--gb-text)]'}`}
+          >
+            {choice === 'skip' ? 'Skipped' : 'Skip this one'}
+          </button>
           {race.candidates.length === 1 && <span className="text-sm text-[var(--gb-text)]">Only one candidate is running.</span>}
           {race.writeIn && <span className="text-sm text-[var(--gb-text)]">Write-ins allowed.</span>}
         </footer>

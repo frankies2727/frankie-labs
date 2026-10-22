@@ -42,7 +42,8 @@ export const useStateConfig = () => useContext(StateContext);
 
 /**
  * True while the voter has no address (browsing every race): cards show the
- * candidates but picks, skips and yes/no are off, and no trophies are earned.
+ * candidates but picks and yes/no are off (skipping a race stays on, so the
+ * reader can move through), and no trophies are earned.
  */
 export const ReadOnlyContext = createContext(false);
 export const useReadOnly = () => useContext(ReadOnlyContext);
