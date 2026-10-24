@@ -160,8 +160,7 @@ The home screen is the projects gallery. Tap the **Games** button (top right) to
 
 | Project | What it does |
 |---|---|
-| 🗳️ **Know Your Ballot: Illinois** | Enter a Chicago or suburban Cook address, see every race on your Nov 3 ballot explained. Pick, plan, print, share |
-| 🧤 **Know Your Ballot: Michigan** | Enter any Michigan address, see your Nov 3 midterm ballot: governor, U.S. Senate, Congress, Lansing, the courts, the university boards and both proposals |
+| 🗳️ **Govbot Know Your Ballot** | Your exact ballot by address, every race and judge explained: Illinois and Michigan, built on Govbot. Now its own open-source project: [govbot-know-your-ballot.vercel.app](https://govbot-know-your-ballot.vercel.app) · [github.com/frankies2727/govbot-know-your-ballot](https://github.com/frankies2727/govbot-know-your-ballot) ↗ |
 | ⚡ **VibeCheck** | Type any company, get a scrollable visual story: rundown, fast facts, timeline |
 | 🌍 **Place Timelapse** | Watch a place change over time, from NASA satellite imagery to Street View history |
 | 🎨 **AI Art** | 112 AI images with the exact prompts behind them. Tap to copy a prompt |
@@ -176,44 +175,6 @@ The home screen is the projects gallery. Tap the **Games** button (top right) to
 
 </details>
 
-<details>
-<summary><b>🗳️ How Know Your Ballot: Illinois works</b> (official data, no keys)</summary>
-
-- **Who's on the ballot:** the Chicago Board of Elections candidate list (every contest on any Chicago ballot, in ballot order, plus judicial retentions and referenda), parsed from its PDF. Suburban Cook adds the State Board of Elections' certified list for the congressional, legislative and judicial districts outside Chicago (countywide contests are the same everywhere in Cook).
-- **Not yet for suburban Cook:** the four all-suburban County Board districts, suburban referenda and suburban ballot numbers. Those come from the Cook County Clerk, whose site blocks automated downloads; the app tells suburban voters exactly what's missing for their address.
-- **Campaign money & incumbency:** FEC bulk filings for federal candidates; the Illinois State Board of Elections' bulk disclosure files for state and local ones (raised and spent since Jan 2025, cash on hand; "raised" adds the $1,000+ contributions reported since the last quarterly report, from the Board's itemized receipts, so it keeps pace between quarters). A name only gets numbers when it matches one person running for the same kind of office.
-- **Photos, websites & social accounts:** official sources first (Congress portraits, the General Assembly's member photos via Open States, Wikidata and Wikimedia Commons, campaign sites, hand-picked photos in `illinois/photos-chosen.json`); whoever is still missing a photo, accounts or a site gets them from their Ballotpedia profile (found by page name, then by Ballotpedia's search, and kept only when the page is theirs; Ballotpedia's firewall sometimes answers a plain request with a challenge page, and then the page is read in the headless browser the build already has for the Board of Elections, `browser.mjs`), then from their own campaign site: the headshot it labels as them, or failing that its share image or first portrait, each passed through an OpenCV one-face check (`headshots.mjs`), and the accounts it links that carry their name or read as a campaign's (`votejalal`, `citizensforaasi`), never a platform's or a caucus's. Judges get their photo from Injustice Watch's guide (`illinois/judges.mjs`), credited and linked, and the guide's whole profile of each judge and judicial candidate, word for word (`data/illinois/judges.json`, fetched when a judge's details open; Injustice Watch publishes under Creative Commons BY-ND): age, law school, judge since, experience, their "Notable" reporting, the candidate survey (excerpt and every answer), the bar groups' comments and each group's rating, icons and endorsements, with the glossary's definitions (read from the guide's script) shown in place. Each referendum carries plain words on what it is and why it's on the ballot (`illinois/measures-plain.mjs`).
-- **Who's in office now, and are they running:** each seat's current holder from Open States' official roster of Congress and the General Assembly (via govbot) or, for statewide, Cook County and school board seats, the Wikipedia article on that 2026 race (`wiki.mjs` reads the articles; `illinois/incumbents.mjs` says which section covers which race). Whether they're on the ballot is read from the candidate lists, never from prose; when they aren't, the article's own sentence on why ("retiring to run for Congress", "defeated in the primary") is quoted with a link, and a judicial vacancy names the judge who left. Candidates who already sit in Springfield or Congress carry the bills they sponsored this session, from govbot's catalog (`illinois/record.mjs`).
-- **In their words & endorsements:** each candidate's three key campaign messages are their own answer to Ballotpedia's Candidate Connection survey (`parseStances` in `ballotpedia-profiles.mjs`; only answers given since 2025, quoted verbatim with the date and a link), plus the "Issues" page their own campaign site links in its navigation (`issuesPage` in `illinois/social.mjs`). Endorsements are the `{{Endorsements box}}` lists in the Wikipedia article on the race, by the article's own categories (`endorsementBoxes` in `wiki.mjs`), attached only to a candidate the box names. Nothing is summarized or rated by us.
-- **School board questionnaire:** every Chicago Board of Education candidate's page in the Chicago Sun-Times / WBEZ voter guide (`illinois/suntimes.mjs`: top three issues, a top local concern, six yes/no questions with reasons, seven open-ended questions, background facts and education endorsements), in the candidate's own words, written to `data/illinois/guide.json` and fetched only when a school board profile opens.
-- **Browsing beyond Cook:** with no address, any of the 102 counties can be browsed: the statewide races plus every Congress and Springfield district that reaches into it, from govbot's district-to-county map (`illinois/counties.mjs`).
-- **Why an incumbent isn't on the ballot:** read, in order, from the Wikipedia article's sentence about them, the primary they lost in its results box ("Lost the … Democratic primary to …, 37.7% to 62.3%"), the candidates-list heading they're filed under ("Filed but did not qualify for the ballot."), their own Wikipedia article's sentence about 2026, and Ballotpedia's lists of retiring, primary-defeated and off-the-ballot incumbents (`fillReasons` in `illinois/incumbents.mjs`). A judicial vacancy carries the reason and date from the Illinois Courts' official vacancy list (`parseCourtVacancies` / `vacancyWords`: "Retired on Aug 31, 2025.", "Died on …", "Elected to the Appellate Court on …", an associate judgeship that became an elected seat); the one appellate vacancy is noted from the Supreme Court's announcement (`APPELLATE`).
-- **Browsing without an address:** candidate picks, yes/no and every skip (a race's "Skip this one", a retention's Skip, the section's "Skip the ones I haven't answered") are off until it's the reader's own ballot.
-- **Reconciliation, every build:** `scripts/know-your-ballot/audit.mjs` is the last step before a ballot is written. Anything attached to a candidate whose source names someone else is dropped and logged: a legislature portrait or site for someone who isn't a sitting legislator of that name, a Ballotpedia page with another name, a legislative record for a non-legislator, and a site, account, photo or money id two candidates share (a site stays with the one whose name is in its address). Upstream, a candidate is matched to a sitting member, a legislator or a money filing only when the whole name agrees, never the surname alone. Run it by hand with `node scripts/know-your-ballot/audit.mjs il|mi [--write]`.
-- **Your districts:** your address goes once to Cook County's address locator; district maps (Census, Cook County, City of Chicago, Illinois Senate) are pre-baked, so matching happens on your device.
-- **Your picks and plan** stay in your browser only. The share card shows progress, never picks.
-- **Fresh daily:** `.github/workflows/know-your-ballot-illinois.yml` reruns `scripts/know-your-ballot/illinois.mjs` every morning and redeploys if anything changed. Needs `pdftotext` (poppler-utils) to run locally.
-- **Built on [govbot](https://chihacknight.github.io/govbot/):** govbot's homepage links here for "What's on my ballot?", and its old `dashboard/elections.html` (now `illinois-elections.html`) forwards here; links to a race, `#race=<govbot race id>`, open that race.
-</details>
-
-<details>
-<summary><b>🧤 How Know Your Ballot: Michigan works</b> (key-free sources, daily refresh)</summary>
-
-- **Who's on the ballot:** Ballotpedia's race pages (statewide offices, the U.S. House delegation, both legislative chambers, the Court of Appeals) and Wikipedia's articles for the three university boards, parsed by `scripts/know-your-ballot/michigan.mjs`. Both are CC BY-SA and linked from the app's Sources. The Secretary of State's certified listing is the official source, but its host refuses automated readers; swap it in (`scripts/know-your-ballot/michigan/ballotpedia.mjs`) when that changes.
-- **Campaign money:** federal races from the FEC (`illinois/fec.mjs`); state and local races from the Michigan Transparency Network's nightly all-transaction exports (`michigan/mitn.mjs`: contributions name the committee's candidate, office and district; expenditures join on the committee id; summed since Jan 2025; no cash-on-hand figure in the exports).
-- **Lansing's bills & 2027:** Michigan bills on elections and schools from govbot's legislation data (`illinois/govbot.mjs`, now by state), shown under "Beyond your ballot" with a 2027 heads-up (no statewide election; May, August and November local dates).
-- **Photos, websites & social accounts:** each candidate's Ballotpedia profile first (`scripts/know-your-ballot/ballotpedia-profiles.mjs`: the profile photo, the campaign website, and the accounts Ballotpedia labels as theirs, campaign first), then the same official sources Illinois uses (`illinois/social.mjs` and `illinois/photos.mjs`, now by state: Congress portraits, the Legislature's member photos via Open States, Wikidata and Wikimedia Commons, campaign-site links), which win where they overlap, then for anyone still without a photo the headshot their own campaign site labels as them, or its share image or first portrait, face-checked (`headshots.mjs`). Photos live under `public/kyb-photos/michigan/`, each credited; `michigan/photos-chosen.json` takes hand-picked ones like Illinois.
-- **Campaign money & incumbency:** FEC bulk filings for federal candidates (same matcher as Illinois, by state). State-level money isn't loaded yet.
-- **Proposals:** the two statewide proposals in their certified wording, with a plain-English note (`scripts/know-your-ballot/michigan/proposals.mjs`).
-- **Your districts:** the address goes to Photon (OpenStreetMap's geocoder; Nominatim as fallback); Census maps of the congressional, state Senate, state House and county lines are pre-baked (`data/michigan/districts.json`, ~0.8 MB) so matching happens on your device. The county sets the Court of Appeals district.
-- **Who's in office now, in their words, endorsements, records:** the same steps as Illinois, with Michigan's plan (`michigan/incumbents.mjs`: the Wikipedia articles on the 2026 Michigan races, including the Senate article's term-limited and retiring lists and the boards' convention results; `illinois/record.mjs` with `state: 'mi'` for Lansing and Congress bills; Ballotpedia survey answers and campaign-site issues pages as above).
-- **Not here yet:** county and local offices, trial-court judges and local proposals. The app points voters to their sample ballot at Michigan.gov/Vote.
-- **Fresh daily:** `.github/workflows/know-your-ballot-michigan.yml` reruns the build every morning and redeploys if anything changed. Needs `unzip`, `curl` and ImageMagick.
-- **Shared engine:** the race cards, candidate sheets, comparison, search, contents, trophies, share card, resume links and print view are the Illinois components; `src/projects/know-your-ballot/state.tsx` carries what differs per state (area labels, office explainers, research links, money sources).
-
-- **More states, one naming pattern:** project id `know-your-ballot-<state>` (URL `/projects/know-your-ballot-<state>`), name "Know Your Ballot: <State>", data in `src/projects/know-your-ballot/data/<state>/`, build `scripts/know-your-ballot/<state>.mjs` (+ its modules in `scripts/know-your-ballot/<state>/`), refresh workflow `.github/workflows/know-your-ballot-<state>.yml`, saved picks under `know-your-ballot:<state>:<election date>` (Illinois keeps its original key so nobody's picks are lost). On govbot: `dashboard/<state>-elections.html`, archives as `<state>-elections-v<N>.html`.
-
-</details>
 
 ### 🖼️ Swap the home-screen pictures (no code)
 
@@ -246,21 +207,6 @@ Open two browser tabs to test host and guest side by side.
 - Push to `main` → `.github/workflows/deploy.yml` builds and publishes to GitHub Pages.
 - One-time setup: **Settings → Pages → Source → GitHub Actions**.
 - The site lives at `/frankie-labs/` (`base` in `vite.config.ts`). Change it if you rename the repo.
-
-### 🗳️ Know Your Ballot on its own address
-
-The voter guides also run as one Vercel project, `govbot-know-your-ballot`, so a shared link reads
-`https://govbot-know-your-ballot.vercel.app/illinois` (or `/michigan`) rather than a path under the lab, and the
-root is a pick-your-state page (`src/projects/know-your-ballot/KybHome.tsx`). The project imports this same
-repository with Vercel's default Vite settings and no extra configuration: `vercel.json` sets `VITE_KYB_SITE`
-for the build and sends every path to the app. That flag makes the build serve from `/` instead of
-`/frankie-labs/` (`vite.config.ts`) and gives each guide its short address (`src/lib/router.ts`: `/illinois` is the
-landing page, `/illinois/ballot` the ballot). Share cards, resume links and the link between the two guides use
-those addresses (`src/projects/know-your-ballot/hosts.ts`). A shared link previews as "Govbot Know Your Ballot" /
-"Know Your Illinois Ballot" / "Know Your Michigan Ballot" with a picture: `vite.config.ts` (`kybSiteMeta`) writes the title,
-description and Open Graph tags into the root page and a per-state copy of the app shell (`illinois/index.html`,
-`michigan/index.html`, which the rewrites serve for those paths); the pictures are `public/kyb-og/*.png`. The code stays here; every push to `main`, including
-the daily data refreshes, redeploys it. GitHub Pages keeps serving the whole lab as before.
 
 ### 🧩 How it works
 

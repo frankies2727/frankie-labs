@@ -14,14 +14,6 @@ const PlaceTimelapse = lazy(() =>
   })),
 );
 
-const KnowYourBallot = lazy(() =>
-  import('./know-your-ballot/KnowYourBallot').then((m) => ({ default: m.KnowYourBallot })),
-);
-
-const KnowYourBallotMichigan = lazy(() =>
-  import('./know-your-ballot/michigan/KnowYourBallotMichigan').then((m) => ({ default: m.KnowYourBallotMichigan })),
-);
-
 const AIArt = lazy(() =>
   import('./aiart/AIArt').then((m) => ({ default: m.AIArt })),
 );
@@ -30,24 +22,14 @@ const AIArt = lazy(() =>
 // VibeCheck is the first; add more here as they ship.
 export const PROJECTS: ProjectDefinition[] = [
   {
-    id: 'know-your-ballot-illinois',
-    name: 'Know Your Ballot: Illinois',
-    tagline: 'Every name on your Cook County ballot, explained.',
+    id: 'know-your-ballot',
+    name: 'Govbot Know Your Ballot',
+    tagline: 'Your exact ballot by address, every race and judge explained.',
     description:
-      'Enter your Chicago or suburban Cook address to see every race on your Nov 3 ballot, from U.S. Senate to judges: what each job does, who’s running, who’s funding them. Build your picks, plan your vote, take it to the booth. Official data, nonpartisan.',
+      'Enter your address and see your Nov 3 ballot: what each job does, who’s running, who’s funding them, who holds the seat now. Illinois and Michigan today; open source, non-partisan, built on Govbot. Now its own project at github.com/frankies2727/govbot-know-your-ballot ↗',
     emoji: '🗳️',
     gradient: 'from-[#009CDF] via-[#973999] to-[#0a0a0a]',
-    Component: KnowYourBallot,
-  },
-  {
-    id: 'know-your-ballot-michigan',
-    name: 'Know Your Ballot: Michigan',
-    tagline: 'Every race on your Michigan midterm ballot, explained.',
-    description:
-      'Enter any Michigan address to see your Nov 3 ballot: governor, U.S. Senate, Congress, every seat in Lansing, the Supreme Court, the university boards and both statewide proposals. What each job does, who’s running, who’s funding them. Pick, plan, print, share.',
-    emoji: '🧤',
-    gradient: 'from-[#0369A1] via-[#0F766E] to-[#0a0a0a]',
-    Component: KnowYourBallotMichigan,
+    href: 'https://govbot-know-your-ballot.vercel.app/',
   },
   {
     id: 'vibecheck',
